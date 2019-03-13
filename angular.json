@@ -23,9 +23,24 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/bootstrap/js/scrollspy.js",
+              "node_modules/bootstrap/js/tab.js",
+              "node_modules/bootstrap/js/tooltip.js",
+              "node_modules/bootstrap/js/popover.js",
+"node_modules/jquery/dist/jquery.slim.js",
+        
+           "node_modules/bootstrap/js/alert.js",
+              "node_modules/bootstrap/js/button.js",
+              "node_modules/bootstrap/js/carousel.js",
+              "node_modules/bootstrap/js/collapse.js",
+              "node_modules/bootstrap/js/dropdown.js",
+    "node_modules/bootstrap/js/modal.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -80,9 +95,19 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+              "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+              "node_modules/angular-bootstrap-md/scss/mdb-free.scss"
+              
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/hammerjs/hammer.min.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -132,5 +157,10 @@
       }
     }
   },
-  "defaultProject": "frontend"
+  "defaultProject": "frontend",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

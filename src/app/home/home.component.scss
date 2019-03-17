@@ -1,6 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: rgb(79, 200, 216);
+    background-color: rgb(243, 235, 159);
     overflow: hidden;
   }
   
@@ -8,17 +8,28 @@
   .topnav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #131111;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
   }
+  .star {
+    font-size: 1.5rem;
+    color: #e9f1fc;
+
+  }
+  .filled {
+    color: #ffd106;
+  }
   
   /* Add an active class to highlight the current page */
   .active {
-    background-color: #4CAF50;
+    background-color: #555;
     color: white;
+  }
+  #conta{
+   background-color: rgb(255, 253, 253) ; 
   }
   
   /* Hide the link that should open and close the topnav on small screens */
@@ -33,14 +44,36 @@
     background-color: #555;
     color: white;
   }
- 
+  .topnav input[type=text] {
+
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 12px;
+  }
   .glyphicon{
   font-size :30px ;
-  padding: 14px 400px;
+  padding: 0px 400px;}
+  .container {
+background-color: rgba(151, 151, 151, 0.918) ;
+
+
+border-radius: 2% ;
   }
-  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
-  .dropdown:hover .dropdown-content {
-    display: block;
+.input-group{
+  width: 300px;
+  height: 20px;
+  float:middle;
+ padding-top: 14px;
+
+}
+
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
   
   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */

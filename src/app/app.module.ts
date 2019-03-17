@@ -12,6 +12,9 @@ import { FollowersComponent } from './followers/followers.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FollowingComponent } from './following/following.component';
 import { MyBooksComponent } from './my-books/my-books.component';
+import { BookInfoComponent } from './book-info/book-info.component';
+import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 const routes: Routes = [
@@ -24,6 +27,8 @@ const routes: Routes = [
   
    
 ];
+
+
 
 @NgModule({
   declarations: [
@@ -40,8 +45,15 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     NgbModule.forRoot(),
-   RouterModule.forRoot(routes)
+   RouterModule.forRoot(routes),
+   BookInfoComponent,
+    
+    SharedModule,
+    AppRoutingModule
+    
+    
   ],
+
   providers: [HttpService],
   bootstrap: [AppComponent]
 })

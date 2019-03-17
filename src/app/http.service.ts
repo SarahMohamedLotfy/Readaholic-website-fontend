@@ -43,4 +43,11 @@ return this.http.get('http://localhost:3000/author');
     return throwError(
       'Something bad happened; please try again later.');
   };
+  getBook(id: number): Observable<any> {
+    return this.http.get("http://localhost:3000/book/" + id);
+ }
+ 
+ getBookReviews(): Observable<any> {
+   return this.http.get("http://localhost:3000/review");
+ }
 }

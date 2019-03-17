@@ -38,7 +38,8 @@ const routes: Routes = [
     ProfileComponent,
     FollowingComponent,
     FollowersComponent,
-    MyBooksComponent
+    MyBooksComponent,
+    BookInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +47,7 @@ const routes: Routes = [
     FormsModule,
     NgbModule.forRoot(),
    RouterModule.forRoot(routes),
-   BookInfoComponent,
-    
-    SharedModule,
+  SharedModule,
     AppRoutingModule
     
     

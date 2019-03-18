@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-=======
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
->>>>>>> e2df5e3bfb5e2b5d690712c55ec64a703cdefd56
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 @Injectable({
@@ -26,10 +22,7 @@ return this.http.get('http://localhost:3000/author');
   
    }
    getUpdates():Observable<any>{
-<<<<<<< HEAD
      
-=======
->>>>>>> e2df5e3bfb5e2b5d690712c55ec64a703cdefd56
      return this.http.get("http://localhost:3000/updates").pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
@@ -58,13 +51,10 @@ return this.http.get('http://localhost:3000/author');
  getBookReviews(): Observable<any> {
    return this.http.get("http://localhost:3000/review");
  }
-<<<<<<< HEAD
 
  login(email:string,password:string)
  {
    return this.http.post("http://localhost:3000/logIn",{email,password});
 
  }
-=======
->>>>>>> e2df5e3bfb5e2b5d690712c55ec64a703cdefd56
 }

@@ -5,10 +5,7 @@ import { update } from '../classes/update';
 import { actor } from '../classes/actor';
 import { action } from '../classes/action';
 import { ActionSequence } from 'protractor';
-<<<<<<< HEAD
 import { Router } from '@angular/router';
-=======
->>>>>>> e2df5e3bfb5e2b5d690712c55ec64a703cdefd56
 
 @Component({
   selector: 'app-home',
@@ -22,11 +19,7 @@ export class HomeComponent implements OnInit {
  books:book[];
   error: any;
  
-<<<<<<< HEAD
   constructor(private httpser:HttpService,private router:Router) { }
-=======
-  constructor(private httpser:HttpService) { }
->>>>>>> e2df5e3bfb5e2b5d690712c55ec64a703cdefd56
 
   ngOnInit() {
     this.httpser.getUpdates().subscribe(
@@ -46,13 +39,10 @@ export class HomeComponent implements OnInit {
       }*/
     }
 
-<<<<<<< HEAD
     onLogout()
     {
       console.log('hi');
       localStorage.removeItem('token');
       this.router.navigate(['/login']);
     }
-=======
->>>>>>> e2df5e3bfb5e2b5d690712c55ec64a703cdefd56
 }

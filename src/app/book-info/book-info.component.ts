@@ -20,7 +20,6 @@ export class BookInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("im onggg");
     this.http.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data:book) => this.myBook = data);
     this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
   }

@@ -14,12 +14,15 @@ export class LogInComponent implements OnInit {
   
   form:FormGroup;
   users:user[];
+  wrongPass:boolean;
 
   constructor(private service:HttpService,private fb:FormBuilder,private router:Router) { 
     this.form=this.fb.group({
       email: ['',Validators.required],
       password: ['',Validators.required]
     });
+
+    
     
   }
   
@@ -33,19 +36,25 @@ onSubmit(){
   this.service.login(val.email,val.password).subscribe(
 (data:any) => {
   localStorage.setItem('token',data.token);
+  this.users=data;
   this.router.navigateByUrl('/home');
+  this.wrongPass=false;
 },
 err => {
   if(err.status ==400)
+  {
   console.log('incorrect username or password');
+  this.wrongPass=true;
+  
+  }
   else
   console.log(err);
 
 }
   );
-
-
-
+}
+ngOnChanges(): void{
+  this.wrongPass=this.wrongPass;
 }
 
   

@@ -70,5 +70,9 @@ getUserfollowings(): Observable<following[]> {
  return this.http.get<following[]> (this.url + `/following`);
 }
 
+logOut():Observable<any>{
+  return this.http.get(this.url+'/logOut');
+}
+
 
 }

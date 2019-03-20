@@ -3,10 +3,12 @@
         <img src="assets/good.png" style="width:28% ; height: 50%; margin-left: 40%; margin-top: 4%;">
     </div>
     <div class="col-md-6" style="height: 100px; background-color: lightgoldenrodyellow">
+
         <form class="form-inline " [formGroup]="form" style="margin-top: 35px; margin-left: 50px;">
             <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email">
             <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password">
             <button class="btn btn-primary" type="submit" style="background-color:	#8B4513 " (click)="onSubmit()">Sign in</button>
+            <h6 *ngIf=wrongPass style="color:crimson">Incorrect username or password</h6>
         </form>
     </div>
 

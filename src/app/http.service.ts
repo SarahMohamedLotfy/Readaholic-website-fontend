@@ -2,13 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { following } from './classes/following';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpService {
 
+  url = 'http://localhost:3000';
+
   constructor(private http:HttpClient) {}
-   
+
   getdata(){
 return this.http.get('http://localhost:3000/author').subscribe(data =>
 console.log("wegot",data));
@@ -19,14 +24,14 @@ return this.http.get('http://localhost:3000/author');
  }
  getBooks():Observable<any>{
   return this.http.get('https://jsonplaceholder.typicode.com/posts');
-  
+
    }
    getUpdates():Observable<any>{
-     
+
      return this.http.get("http://localhost:3000/updates").pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
-    
+
     );
    }
    private handleError(error: HttpErrorResponse) {
@@ -47,7 +52,7 @@ return this.http.get('http://localhost:3000/author');
   getBook(id: number): Observable<any> {
     return this.http.get("http://localhost:3000/book/" + id);
  }
- 
+
  getBookReviews(): Observable<any> {
    return this.http.get("http://localhost:3000/review");
  }
@@ -57,4 +62,14 @@ return this.http.get('http://localhost:3000/author');
    return this.http.post("https://reqres.in/api/login?fbclid=IwAR05ivnPeZcoY3NF04Dt-1wve-YdIt6sw6KMyapYITRVxzdxjrNhyULkwFk",{email,password});
 
  }
+
+ getUserprofile(id: number): Observable<any> {
+  return this.http.get<any> (this.url + `/profile/${id}`);
+}
+
+getUserfollowings(): Observable<following[]> {
+ return this.http.get<following[]> (this.url + `/following`);
+}
+
+
 }

@@ -20,15 +20,15 @@ import { AuthInterceptor } from './auth.interceptor';
 
 
 const routes: Routes = [
-  {path:'logIn',component: LogInComponent},
- { path:  '', pathMatch:  'full', redirectTo:  'logIn'},
-  {path:'home', component: HomeComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'followers',component:FollowersComponent},
-  {path:'following',component:FollowingComponent},
-  {path:'myBooks',component:MyBooksComponent},
-  
-   
+  {path: 'logIn', component: LogInComponent},
+  {path: '', pathMatch:  'full', redirectTo: 'logIn'},
+  {path: 'home', component: HomeComponent},
+  {path: 'profile/:id', component: ProfileComponent},
+  {path: 'followers', component: FollowersComponent},
+  {path: 'following', component: FollowingComponent},
+  {path: 'myBooks', component: MyBooksComponent},
+
+
 ];
 
 
@@ -54,12 +54,12 @@ const routes: Routes = [
   SharedModule,
     AppRoutingModule,
     ReactiveFormsModule
-    
-    
+
+
   ],
 
-  providers: [HttpService, {provide:HTTP_INTERCEPTORS,
-  useClass:AuthInterceptor,
+  providers: [HttpService, {provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptor,
 multi: true}],
   bootstrap: [AppComponent]
 })

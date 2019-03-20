@@ -12,10 +12,10 @@ import { BookInfoComponent } from './book-info/book-info.component';
 
 const routes: Routes = [
   {path:  '', pathMatch: 'full', redirectTo:  'login'},
-  {path:'login',component: LogInComponent},  
+  {path:'login',component: LogInComponent},
   {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
   {path: 'book/:id' , component: BookInfoComponent},
-  {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
+  {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},

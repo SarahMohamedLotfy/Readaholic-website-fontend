@@ -59,7 +59,7 @@ return this.http.get('http://localhost:3000/author');
 
  login(email:string,password:string)
  {
-   return this.http.post("https://reqres.in/api/login?fbclid=IwAR05ivnPeZcoY3NF04Dt-1wve-YdIt6sw6KMyapYITRVxzdxjrNhyULkwFk",{email,password});
+   return this.http.post("https://reqres.in/api/login",{email,password}) ;
 
  }
 

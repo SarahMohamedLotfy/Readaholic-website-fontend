@@ -58,7 +58,34 @@
   "link": ""
 
 }
-  ]
+  ],
+  "book": [{
+    "id":5,
+    "book_title":"my bbok",
+    "image_url":"https://i.pinimg.com/originals/47/1b/4e/471b4e5042154149565890377ec7b784.jpg",
+    "num_pages": "5",
+    "publisher": "ffffff",
+    "publication_day": 4,
+    "publication_year": 5,
+    "publication_month": 6,
+    "average_rating": 4,
+    "ratings_count":2,
+    "description": "good book",
+    "author_id": 1234,
+    "author_name": "meme",
+    "genre": "action"
+  }],
+  "review": [{
+    "id" : "5",
+    "book_id": "5",
+    "body" : "encfoneiofvinen",
+    "rating" : "3",
+    "last_update": "ejnfne",
+    "likes_count": 6,
+    "comments_count": 2,
+    "user_id": 1,
+    "user_name": "MAi_mostafa99",
+    "image_url":"https://pbs.twimg.com/profile_images/955923907051184129/8LxKsoPl_400x400.jpg"
+  }]
 
 }
-

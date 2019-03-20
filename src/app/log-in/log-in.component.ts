@@ -3,6 +3,7 @@ import {  NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
 import { user } from '../classes/user';
+import { user_shelves } from '../classes/user_shelves';
 
 
 @Component({
@@ -57,6 +58,9 @@ ngOnChanges(): void{
   this.wrongPass=this.wrongPass;
 }
 
+getUser():user[]{
+  return this.users;
+}
   
 
 }

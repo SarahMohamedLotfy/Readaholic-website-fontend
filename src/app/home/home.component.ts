@@ -5,6 +5,7 @@ import { update } from '../classes/update';
 import { actor } from '../classes/actor';
 import { action } from '../classes/action';
 import { ActionSequence } from 'protractor';
+import { profile } from '../classes/profile';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
  actions:action[];
  books:book[];
   error: any;
- 
+ profile:profile ;
   constructor(private httpser:HttpService) { }
 
   ngOnInit() {
@@ -27,15 +28,13 @@ export class HomeComponent implements OnInit {
           this.actors=data; 
          this.actions=data;
           this.books=data;
-        }, error => this.error = error)
-        /*
-        var i;
-        for(i=1;i<2 ;i++){
-        if (this.updates[i].action.typee ==="rating")
-        { console.log("anything");
-            this.updates[i].action.typee = "rated a book"  ;
-          } 
-      }*/
+          }, error => this.error = error);
+    this.httpser.getUserInfo().subscribe(
+      data=>{
+        this.profile=data;
+      }
+    )
+    
     }
 
 }

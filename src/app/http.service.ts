@@ -21,6 +21,9 @@ return this.http.get('http://localhost:3000/author');
   return this.http.get('https://jsonplaceholder.typicode.com/posts');
   
    }
+   getUserInfo():Observable<any>{
+    return this.http.get("http://localhost:3000/showProfile");
+   }
    getUpdates():Observable<any>{
      return this.http.get("http://localhost:3000/updates").pipe(
       retry(3), // retry a failed request up to 3 times

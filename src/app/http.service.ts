@@ -57,10 +57,9 @@ return this.http.get('http://localhost:3000/author');
    return this.http.get("http://localhost:3000/review");
  }
 
- login(email:string,password:string)
+ login(email:string,password:string): Observable<any>
  {
    return this.http.post("https://reqres.in/api/login",{email,password}) ;
-
  }
 
  getUserprofile(id: number): Observable<any> {

@@ -65,12 +65,7 @@ return this.http.get('http://localhost:3000/author');
 
  login(email:string,password:string): Observable<any>
  {
-<<<<<<< HEAD
-   return this.http.post("https://reqres.in/api/login",{email,password});
-
-=======
    return this.http.post("https://reqres.in/api/login",{email,password}) ;
->>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
  }
 
  getUserprofile(id: number): Observable<any> {

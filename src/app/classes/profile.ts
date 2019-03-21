@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-export class profile{
-name:string;
-image_url:string;
-
-
-}
-=======
 import { user_shelves } from './user_shelves';
 
 export class profile {
@@ -22,4 +14,3 @@ export class profile {
   last_active: string;
   user_shelves: user_shelves ;
 }
->>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49

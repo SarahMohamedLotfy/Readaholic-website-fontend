@@ -5,12 +5,9 @@ import { updates } from '../classes/updates';
 import { actor } from '../classes/actor';
 import { action } from '../classes/action';
 import { ActionSequence } from 'protractor';
-<<<<<<< HEAD
 import { profile } from '../classes/profile';
-=======
 import { Router } from '@angular/router';
 import { LogInComponent } from '../log-in/log-in.component';
->>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
 
 @Component({
   selector: 'app-home',
@@ -91,21 +88,15 @@ export class HomeComponent implements OnInit {
     
     onLogout()
     {
-<<<<<<< HEAD
-      console.log('hi');
-      localStorage.removeItem('token');
-     // this.router.navigate(['/login']);
-=======
      
       this.httpser.logOut().subscribe(
         res=>{localStorage.removeItem('token');
-        this.router.navigate(['/login']);
+      //  this.router.navigate(['/login']);
 
         },err=>this.error=err)
 
         localStorage.removeItem('token');
-        this.router.navigate(['/login']);
+        //this.router.navigate(['/login']);
       
->>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
     }
 }

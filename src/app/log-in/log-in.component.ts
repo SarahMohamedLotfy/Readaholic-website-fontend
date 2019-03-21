@@ -41,12 +41,8 @@ onSubmit(){
   this.wrongPass=false;
 },
 err => {
-<<<<<<< HEAD
-  if(err.status == 400)
-=======
   if(err.status ==400)
   {
->>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
   console.log('incorrect username or password');
   this.wrongPass=true;
   

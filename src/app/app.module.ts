@@ -16,24 +16,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
-<<<<<<< HEAD
-
-
-const routes: Routes = [
-  {path:'logIn',component: HomeComponent},
- { path:  '', pathMatch:  'full', redirectTo:  'logIn'},
-  {path:'home', component: HomeComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'followers',component:FollowersComponent},
-  {path:'following',component:FollowingComponent},
-  {path:'myBooks',component:MyBooksComponent},
-  
-   
-];
-
-=======
 import { PageNotFoundComponent } from './page-not-found.component';
->>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
 
 
 @NgModule({

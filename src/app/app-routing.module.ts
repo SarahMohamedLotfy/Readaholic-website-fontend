@@ -14,16 +14,6 @@ import  { PageNotFoundComponent }  from './page-not-found.component' ;
 
 const routes: Routes = [
   {path:  '', pathMatch: 'full', redirectTo:  'login'},
-<<<<<<< HEAD
-  {path:'login',component: LogInComponent},  
-  {path: 'home', component: HomeComponent/*canActivate:[AuthGuard]*/},
-  {path: 'book/:id' , component: BookInfoComponent},
-  {path: 'profile', component: ProfileComponent/*canActivate:[AuthGuard]*/},
-  {path: 'followers', component: FollowersComponent/*canActivate:[AuthGuard]*/},
-  {path: 'following', component: FollowingComponent/*canActivate:[AuthGuard]*/},
-  {path: 'myBooks', component: MyBooksComponent/*canActivate:[AuthGuard]*/},
-  {path: '**', redirectTo: 'login', pathMatch:'full' }
-=======
   {path:'login',component: LogInComponent},
   {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
   {path: 'book/:id' , component: BookInfoComponent},
@@ -33,7 +23,6 @@ const routes: Routes = [
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
   {path:'pageNotfound',component: PageNotFoundComponent},
   {path: '**', redirectTo: 'pageNotfound', pathMatch:'full' }
->>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
  ];
 
 @NgModule({

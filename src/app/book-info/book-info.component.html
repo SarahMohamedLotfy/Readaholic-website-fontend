@@ -1,29 +1,54 @@
 <div class="container">
     <div class="row"> <!--book info-->
         <div class="media">
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-                <img src={{myBook?.image_url}} class="align-self-start mr-3" style="width:150px">
-                <app-dropdown id="addToshelf"></app-dropdown>
-                <small id="rateBook"><app-star  [starsCount]="0" [readOnly]="false"></app-star></small>
+            <div class="col-md-2" id="leftCol">
+                <img id="bookCover" src={{myBook?.image_url}} class="align-self-start mr-3">
+                <app-dropdown id="shelf"></app-dropdown>
+                <small><app-star  [starsCount]="0" [readOnly]="false"></app-star></small>
             </div>
-            <div class="media-body">
+            <div class="media-body" id="bookInfo">
                 <div class="col-md-9">
-                    <h3><b>{{myBook?.book_title}}</b></h3>
+                    <h1 id="Booktitle">{{myBook?.book_title}}</h1>
+                    <span id="authorName">by {{myBook?.author_name}}</span>
                     <small><app-star [starsCount]="myBook?.average_rating" [readOnly]="true"></app-star> {{myBook?.average_rating}}   {{myBook?.ratings_count}} ratings</small>
-                    <h5 id="authorName">by {{myBook?.author_name}}</h5>
                     <p>{{myBook?.description}}</p>
+                    <div id="bookFormat">
+                        <p>Paperback {{myBook?.num_pages}} pages</p>
+                        <p>Published {{myBook?.publication_year}} by {{myBook?.publisher}}</p>
+                    </div> 
                 </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
     </div>
 </div>  
- 
+<div class="container">
+    <div class="row">
+       
+       <div class="col-md-2">
+            <h6>My Activity</h6>
+       </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-md-2">
+            <h6>Review Of</h6>
+            <h6>Shelf</h6>
+            <h6>Review</h6>
+            <h6>Rating</h6>
+        </div>
+        <div class="col-md-7">
+            <p>book isbn</p>
+            <p>shelf</p>
+            <p>book isbn</p>
+            <small><app-star></app-star></small>
+        </div>
+    </div>
+</div>
 <div class="container">
     <hr>
     <div class="row">
         <div class="media" *ngFor="let review of reviews">
-            <div class="col-md-1"></div>
             <img id="reviewerImg" src={{review?.image_url}} class="align-self-start mr-3" style="width:70px;">
             <div class="media-body">
                 <h6><b id="reviewerName">{{review?.user_name}}</b> rated it
@@ -33,14 +58,6 @@
                 </h6>
                 <p>{{review?.body}}</p>
                 <small>{{review?.likes_count}} likes    {{review?.comments_count}} comments</small>
-                <div class="media p-3">
-                    <img src="https://openclipart.org/download/76555/1280793706.svg" alt="Jane Doe" class="align-self-start mr-3" style="width:45px;">
-                    <div class="media-body">
-                        <h4>Jane Doe <small><i>Posted on February 20 2016</i></small></h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>  
             </div>
             <div class="col-md-3"></div>
         </div>

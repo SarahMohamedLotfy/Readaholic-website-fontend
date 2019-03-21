@@ -1,43 +1,63 @@
-<div class="container">
-    <div class="row"> <!--book info-->
-        <div class="media">
-            <div class="col-md-2" id="leftCol">
-                <img id="bookCover" src={{myBook?.image_url}} class="align-self-start mr-3">
-                <app-dropdown id="shelf"></app-dropdown>
-                <small><app-star  [starsCount]="0" [readOnly]="false"></app-star></small>
-            </div>
-            <div class="media-body" id="bookInfo">
-                <div class="col-md-9">
-                    <h1 id="Booktitle">{{myBook?.book_title}}</h1>
-                    <span id="authorName">by {{myBook?.author_name}}</span>
-                    <small><app-star [starsCount]="myBook?.average_rating" [readOnly]="true"></app-star> {{myBook?.average_rating}}   {{myBook?.ratings_count}} ratings</small>
-                    <p>{{myBook?.description}}</p>
-                    <div id="bookFormat">
-                        <p>Paperback {{myBook?.num_pages}} pages</p>
-                        <p>Published {{myBook?.publication_year}} by {{myBook?.publisher}}</p>
+ 
+    <div class="container">
+        <div class="row"> <!--book info-->
+            <div class="media">
+                <div class="col-md-2" id="leftCol">
+                    <img id="bookCover" src={{myBook?.imageUrl}} class="align-self-start mr-3">
+                    <app-dropdown id="shelf"></app-dropdown>
+                    <app-star id="rateBook"  [starsCount]="0" [readOnly]="false"></app-star>
+                </div>
+                <div class="media-body" id="bookInfo">
+                    <div class="col-md-9">
+                        <h1 id="Booktitle">{{myBook?.title}}</h1>
+                        <h5 id="authorName">by {{myBook?.authorName}}</h5>
+                        <div>
+                            <app-star [starsCount]="myBook?.ratingsAvg" [readOnly]="true"></app-star>
+                            <span style="font-size: 13px; font-family: 'Segoe UI', Tahoma, sans-serif;">{{myBook?.ratingsAvg}}   {{myBook?.ratingsCount}} ratings {{myBook?.reviewsCount}} reviews</span>
+                        </div>
+                        <p>{{myBook?.description}}</p>
+                        <div id="bookFormat">
+                            <p>Paperback {{myBook?.pagesNum}} pages</p>
+                            <p>Published {{myBook?.publicationDate}} by {{myBook?.publisher}}</p>
+                        </div>
                     </div>
                 </div>
+                
             </div>
-            <div class="col-md-1"></div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <hr>
-    <div class="row">
-        <div class="media" *ngFor="let review of reviews">
-            <img id="reviewerImg" src={{review?.image_url}} class="align-self-start mr-3" style="width:70px;">
-            <div class="media-body">
-                <h6><b id="reviewerName">{{review?.user_name}}</b> rated it
-                    <small>
-                        <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star>
-                    </small>
-                </h6>
-                <p>{{review?.body}}</p>
-                <small>{{review?.likes_count}} likes    {{review?.comments_count}} comments</small>
+    <div class="container" *ngIf="isUser" id="activity">
+        <h6>MY ACTIVITY</h6>
+        <hr>
+        <div class="row" >
+            <div class="col-2" style="min-width: 50px">
+                <p>Review Of</p>
+                <p>shelf</p>
+                <p>Rating</p>
+                <p>Review</p>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-8" style="min-width: 300px">
+                <p>Review Of</p>
+                <p>shelf</p>
+                <app-star></app-star>
+                <p>After the first read, this book is the worst one in the Harry Potter series. Characters are not as likeable as they are in the other books. However, I recently reread it (after reading book 6), and found it to be a very good read.</p>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="media" *ngFor="let review of reviews">
+                <img  [routerLink]="['/profile',review.userId]" id="reviewerImg" src={{review?.userImg}} class="mr-3 mt-3 rounded-circle" style="width:70px;">
+                <div class="media-body" id="reviewInfo">
+                    <h6 ><b [routerLink]="['/profile',review.userId]" id="reviewerName">{{review?.userName}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>
+                    <p>{{review?.body}}</p>
+                    <small>{{review?.numberLikes}} likes    {{review?.numberComments}} comments</small>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+   

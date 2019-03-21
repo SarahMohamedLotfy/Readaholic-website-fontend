@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { HttpService } from '../http.service';
 import { review } from '../classes/review';
@@ -15,19 +15,20 @@ export class BookInfoComponent implements OnInit {
   reviews: review[];
   i: number;
   activity: boolean = true;
-  nehal:string = "neahl"
+  isUser: boolean;
 
-  constructor(private http: HttpService, private route: ActivatedRoute) {
+  constructor(private http: HttpService, private route: ActivatedRoute,private router: Router) {
   }
 
-  ngOnInit() { //as2ale philooooooo
-    this.myBook = this.route.snapshot.data['bookData'];
-    if(this.myBook){
-      this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
-    }
-
-   // this.http.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data:book) => this.myBook = data);
-    //this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
+  ngOnInit() {
+  this.http.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data:book) => this.myBook = data, error=> this.router.navigateByUrl("/404"));
+  this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
+  if(localStorage.getItem('token') == null){
+    this.isUser = false;
+  }
+  else{
+    this.isUser = true;
+  }
   }
 }
   

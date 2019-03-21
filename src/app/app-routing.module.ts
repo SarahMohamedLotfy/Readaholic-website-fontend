@@ -8,7 +8,7 @@ import { MyBooksComponent } from './my-books/my-books.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthGuard } from './auth.guard';
 import { BookInfoComponent } from './book-info/book-info.component';
-import { BookResolverService } from './book-resolver.service';
+
 
 
 

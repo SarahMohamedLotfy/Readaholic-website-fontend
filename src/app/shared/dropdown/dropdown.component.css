@@ -1,4 +1,6 @@
 .btn-group {
     transform: scale(0.75, 0.75);
     margin: 1px;
+    min-width: 100px;
 }
+ 

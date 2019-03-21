@@ -17,7 +17,6 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
-import { BookResolverService } from './book-resolver.service';
 
 
 

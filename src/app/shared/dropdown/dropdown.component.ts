@@ -9,15 +9,17 @@ import { Component, Input, OnChanges } from '@angular/core';
 export class DropdownComponent implements OnChanges {
 @Input() shelf: string;
 shelfStatus: string = "Want to Read";
-buttonStatus = false; 
+buttonStatus: boolean = false; 
 
 
   constructor() { }
 
   ngOnChanges() {
-    this.shelfStatus = this.shelf? this.shelf : this.shelfStatus;
-    this.buttonStatus = this.shelf? true : false;
-
+    if(this.shelf)
+    {
+      this.shelfStatus = this.shelf;
+      this.buttonStatus = true;
+    }
   }
 
 }

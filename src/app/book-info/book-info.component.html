@@ -15,36 +15,14 @@
                     <div id="bookFormat">
                         <p>Paperback {{myBook?.num_pages}} pages</p>
                         <p>Published {{myBook?.publication_year}} by {{myBook?.publisher}}</p>
-                    </div> 
+                    </div>
                 </div>
             </div>
             <div class="col-md-1"></div>
         </div>
     </div>
-</div>  
-<div class="container">
-    <div class="row">
-       
-       <div class="col-md-2">
-            <h6>My Activity</h6>
-       </div>
-    </div>
-    <div class="row">
-        
-        <div class="col-md-2">
-            <h6>Review Of</h6>
-            <h6>Shelf</h6>
-            <h6>Review</h6>
-            <h6>Rating</h6>
-        </div>
-        <div class="col-md-7">
-            <p>book isbn</p>
-            <p>shelf</p>
-            <p>book isbn</p>
-            <small><app-star></app-star></small>
-        </div>
-    </div>
 </div>
+
 <div class="container">
     <hr>
     <div class="row">
@@ -54,12 +32,12 @@
                 <h6><b id="reviewerName">{{review?.user_name}}</b> rated it
                     <small>
                         <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star>
-                    </small>    
+                    </small>
                 </h6>
                 <p>{{review?.body}}</p>
                 <small>{{review?.likes_count}} likes    {{review?.comments_count}} comments</small>
             </div>
             <div class="col-md-3"></div>
         </div>
-    </div>  
+    </div>
 </div>

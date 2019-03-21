@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { following } from './classes/following';
+import { InterceptorSkipHeader } from './auth.interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +51,8 @@ return this.http.get('http://localhost:3000/author');
       'Something bad happened; please try again later.');
   };
   getBook(id: number): Observable<any> {
-    return this.http.get("http://localhost:3000/book/" + id);
+    const headers = new HttpHeaders().set(InterceptorSkipHeader,'');
+    return this.http.get("http://localhost:3000/book/" + id,{headers});
  }
 
  getBookReviews(): Observable<any> {
@@ -73,6 +75,13 @@ getUserfollowings(): Observable<following[]> {
 logOut():Observable<any>{
   return this.http.get(this.url+'/logOut');
 }
-
+getfollowing(){
+  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
+  
+}
+getfollowers(){
+  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
+  
+   }
 
 }

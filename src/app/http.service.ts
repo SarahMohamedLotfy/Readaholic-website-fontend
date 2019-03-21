@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { book } from './classes/book';
 import { following } from './classes/following';
+import { InterceptorSkipHeader } from './auth.interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -74,6 +75,13 @@ getUserfollowings(): Observable<following[]> {
 logOut():Observable<any>{
   return this.http.get(this.url+'/logOut');
 }
-
+getfollowing(){
+  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
+  
+}
+getfollowers(){
+  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
+  
+   }
 
 }

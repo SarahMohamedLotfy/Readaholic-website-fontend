@@ -7,7 +7,7 @@
         <form class="form-inline " [formGroup]="form" style="margin-top: 35px; margin-left: 50px;">
             <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email">
             <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password">
-            <button class="btn btn-primary" type="submit" style="background-color:	#8B4513 " (click)="onSubmit()">Sign in</button>
+            <button id="signInButton" class="btn btn-primary" type="submit" style="background-color:	#8B4513 " (click)="onSubmit()">Sign in</button>
             <h6 *ngIf=wrongPass style="color:crimson">Incorrect username or password</h6>
         </form>
     </div>
@@ -38,7 +38,7 @@
                     <input type="password" class="form-control" placeholder="Password">
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" style="background-color:	#8B4513">Sign up</button>
+            <button id="signUpButton" type="submit" class="btn btn-primary" style="background-color:	#8B4513">Sign up</button>
         </form>
     </div>
 </div>

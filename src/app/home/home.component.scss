@@ -1,105 +1,9 @@
 /* Add a black background color to the top navigation */
-.topnav {
-    background-color: #f4f1ea;
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #5e2b02;
-    text-align: center;
-    padding-left: 10px ;
-    padding-right: 10px ;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  #Readholic{
-font-weight: bold ;
-font-size:30px ;
-
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    background-color: #f1f1f1;
-    font-family: sans-serif;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  .user-menu-wrap {
-    position: relative;
-    width: 36px;
-    margin: 50px auto;
-  }
-  
-  .mini-photo-wrapper {
-    display: block;
-  }
-  
-  .mini-photo {
-    border-radius: 50%;
-  }
-  
-  .menu-container {
-    visibility: hidden;
-    opacity: 0;
-  }
-  .menu-container.active {
-    visibility: visible;
-    opacity: 1;
-    transition: all .3s ease-in-out;
-  }
-  
-  .user-menu {
-    position: absolute;
-    right: -22px;
-    background-color: #fff;
-    width: 120px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 10px;
-  }
-  .user-menu .user-menu-link {
-    display: block;
-    text-decoration: none;
-    color: #444;
-    font-size: 14px;
-    padding: 5px 10px;
-  }
-  .user-menu .user-menu-link:hover {
-    background-color: #4183c4;
-    color: #fff;
-  }
-  .user-menu:before {
-    position: absolute;
-    top: -16px;
-    left: 72px;
-    display: inline-block;
-    content: "";
-    border: 8px solid transparent;
-    border-bottom-color: #ccc;
-    border-bottom-color: rgba(0, 0, 0, 0.15);
-  }
-  .user-menu:after {
-    position: absolute;
-    top: -14px;
-    left: 73px;
-    display: inline-block;
-    content: "";
-    border: 7px solid transparent;
-    border-bottom-color: #fff;
-  }
+  #updates{
+   margin-left: 300px;
+   color: #5e2b02 ;
+   font-weight: bold ;
+   }
   
   .star {
     font-size: 1.5rem;
@@ -109,22 +13,27 @@ font-size:30px ;
   .filled {
     color: #ffd106;
   }
-
+  
   /* Add an active class to highlight the current page */
   .active {
     background-color: #555;
     color: white;
   }
-  #conta{
-   background-color: rgb(255, 253, 253) ; 
+  #containerBook{
+   background-color: rgb(255, 255, 255) ; 
   }
   
   /* Hide the link that should open and close the topnav on small screens */
   .topnav .icon {
     display: none;
   }
-  
-  
+ 
+ h5{
+   display: inline-block;
+ }
+h6{
+  display: inline-block;
+}
   
   /* Add a dark background on topnav links and the dropdown button on hover */
   .topnav a:hover {
@@ -143,37 +52,30 @@ font-size:30px ;
   font-size :30px ;
   padding: 0px 400px;}
   .container {
-background-color:#3333 ;
+background-color:#f4f1ea ;
 border-radius: 2% ;
-margin-left: 9px;
-margin-right: 9px;
+width:900px ;
+float:middle ;
+padding: 10px;
+margin-bottom: 100px;
   }
-.input-group{
-  width: 300px;
-  height: 20px;
-  float:middle;
- padding-top: 14px;
-
-}
-
+ 
   .avatar {
     vertical-align: middle;
     width: 50px;
     height: 50px;
     border-radius: 50%;
   }
-  
-  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-  @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child), .dropdown .dropbtn {
-      display: none;
-    }
-    .topnav a.icon {
-      float: right;
-      display: block;
-    }
+  #action{
+    padding-left: 5px;
   }
-  
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  
+#updateImage{
+width:200px;
+height:200px;
+
+}
+.pr-3 img{ 
+  width:200px;
+  height:200px;
+}  
   

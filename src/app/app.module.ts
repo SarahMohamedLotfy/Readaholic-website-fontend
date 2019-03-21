@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http' ;
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http' ;
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { FollowersComponent } from './followers/followers.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -15,10 +15,13 @@ import { MyBooksComponent } from './my-books/my-books.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { LogInComponent } from './log-in/log-in.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 
 const routes: Routes = [
- { path:  '', pathMatch:  'full', redirectTo:  'home'},
+  {path:'logIn',component: HomeComponent},
+ { path:  '', pathMatch:  'full', redirectTo:  'logIn'},
   {path:'home', component: HomeComponent},
   {path:'profile',component:ProfileComponent},
   {path:'followers',component:FollowersComponent},
@@ -39,7 +42,8 @@ const routes: Routes = [
     FollowingComponent,
     FollowersComponent,
     MyBooksComponent,
-    BookInfoComponent
+    BookInfoComponent,
+    LogInComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,12 +52,15 @@ const routes: Routes = [
     NgbModule.forRoot(),
    RouterModule.forRoot(routes),
   SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
     
     
   ],
 
-  providers: [HttpService],
+  providers: [HttpService, {provide:HTTP_INTERCEPTORS,
+  useClass:AuthInterceptor,
+multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 @Injectable({
@@ -21,10 +21,12 @@ return this.http.get('http://localhost:3000/author');
   return this.http.get('https://jsonplaceholder.typicode.com/posts');
   
    }
+   /*
    getUserInfo():Observable<any>{
     return this.http.get("http://localhost:3000/showProfile");
-   }
+   }*/
    getUpdates():Observable<any>{
+     
      return this.http.get("http://localhost:3000/updates").pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
@@ -52,5 +54,11 @@ return this.http.get('http://localhost:3000/author');
  
  getBookReviews(): Observable<any> {
    return this.http.get("http://localhost:3000/review");
+ }
+
+ login(email:string,password:string)
+ {
+   return this.http.post("https://reqres.in/api/login",{email,password});
+
  }
 }

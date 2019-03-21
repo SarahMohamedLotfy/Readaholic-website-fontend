@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http' ;
-import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { FollowersComponent } from './followers/followers.component';
@@ -17,21 +16,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
-
-
-
-const routes: Routes = [
-  {path: 'logIn', component: LogInComponent},
-  {path: '', pathMatch:  'full', redirectTo: 'logIn'},
-  {path: 'home', component: HomeComponent},
-  {path: 'profile/:id', component: ProfileComponent},
-  {path: 'followers', component: FollowersComponent},
-  {path: 'following', component: FollowingComponent},
-  {path: 'myBooks', component: MyBooksComponent},
-
-
-];
-
+import { PageNotFoundComponent } from './page-not-found.component';
 
 
 @NgModule({
@@ -45,6 +30,7 @@ const routes: Routes = [
     MyBooksComponent,
     BookInfoComponent,
     LogInComponent,
+    PageNotFoundComponent
 
   ],
   imports: [
@@ -52,8 +38,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     NgbModule.forRoot(),
-   RouterModule.forRoot(routes),
-  SharedModule,
+    SharedModule,
     AppRoutingModule,
     ReactiveFormsModule
 

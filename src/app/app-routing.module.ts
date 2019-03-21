@@ -8,7 +8,7 @@ import { MyBooksComponent } from './my-books/my-books.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthGuard } from './auth.guard';
 import { BookInfoComponent } from './book-info/book-info.component';
-
+import  { PageNotFoundComponent }  from './page-not-found.component' ;
 
 
 
@@ -21,7 +21,8 @@ const routes: Routes = [
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
-  {path: '**', redirectTo: 'login', pathMatch:'full' }
+  {path:'pageNotfound',component: PageNotFoundComponent},
+  {path: '**', redirectTo: 'pageNotfound', pathMatch:'full' }
  ];
 
 @NgModule({

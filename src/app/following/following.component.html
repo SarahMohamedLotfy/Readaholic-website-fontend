@@ -1,3 +1,96 @@
-<p>
-  following works!
-</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <title>Followers</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <h1>>People You're Following</h1>
+
+
+    <div id="tfheader">
+        <form id="tfnewsearch" method="get">
+
+            <input type="text" id="searchtextfollowing" value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21" maxlength="120"><input id="searchfollowingg" type="button" (click)="search()" value="search" class="searchfollowing
+        ">
+        </form>
+
+        <div class="tfclear"></div>
+    </div>
+
+
+
+
+    <li class="parent" *ngFor="let post of posts | filter:searchText ">
+
+        <div class="directory-info-row">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="media">
+                                <a class="pull-left" href="{{post.link}}">
+                                    <img class="thumb media-object" src={{post.image_link}} alt="Profile image">
+                                </a>
+                                <div class="media-body">
+                                    <a href="{{post.link}}">
+                                        <h4>{{post.name}} </h4>
+
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="thumb media-object" src={{post.book_image}} alt="Book Image">
+                                </a>
+                                <div class="media-body">
+                                    <h4>Currently reading : </h4>
+                                    <div class="pull-right">
+                                        <button id="stopfollow" ng-click="follow()" type="button" class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
+                                    </div>
+                                    <address>
+                              <strong>{{post.currently_reading}}</strong><br>
+                             On Page : <br>
+                              Dream land, Australia <br>
+                          </address>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </li>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

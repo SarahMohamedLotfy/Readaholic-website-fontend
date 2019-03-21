@@ -6,6 +6,7 @@ import { actor } from '../classes/actor';
 import { action } from '../classes/action';
 import { ActionSequence } from 'protractor';
 import { Router } from '@angular/router';
+import { LogInComponent } from '../log-in/log-in.component';
 
 @Component({
   selector: 'app-home',

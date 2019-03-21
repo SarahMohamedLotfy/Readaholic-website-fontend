@@ -17,6 +17,8 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { BookResolverService } from './book-resolver.service';
+
 
 
 const routes: Routes = [
@@ -44,6 +46,7 @@ const routes: Routes = [
     MyBooksComponent,
     BookInfoComponent,
     LogInComponent,
+
   ],
   imports: [
     BrowserModule,

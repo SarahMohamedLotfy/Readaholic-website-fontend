@@ -1,0 +1,42 @@
+
+.container
+{
+    margin-left: 250px;
+}
+
+#leftCol {
+    margin-top: 20px;
+    margin-right: 35px;
+}
+
+#bookCover {
+    width: 180px;
+    height: 220px;
+    margin-right: 0px;
+}
+
+#bookTitle {
+    font-size: 24px;
+}
+
+#authorName {
+    font-size: 18px;
+}
+
+#shelf {
+    margin-left:12px;
+}
+
+#bookInfo {
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#bookFormat {
+    font-size: 11px;
+    line-height: 8px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+

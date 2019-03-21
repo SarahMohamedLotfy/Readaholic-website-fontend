@@ -8,6 +8,8 @@ import { MyBooksComponent } from './my-books/my-books.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthGuard } from './auth.guard';
 import { BookInfoComponent } from './book-info/book-info.component';
+import { BookResolverService } from './book-resolver.service';
+
 
 
 const routes: Routes = [
@@ -24,6 +26,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+
 })
 export class AppRoutingModule { }

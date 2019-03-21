@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-star',
@@ -8,13 +8,19 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class StarComponent implements OnInit {
  @Input() starsCount: number;
  @Input() readOnly: boolean;
- @Output() rate:EventEmitter<number> = new EventEmitter<number>();
+ floatEnable:boolean;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    if(this.readOnly === true)
+    {
+      this.floatEnable = true;
+    } 
+    else
+    {
+      this.floatEnable = false;
+    }
   }
 
-  onClick(){
-    this.rate.emit(this.starsCount);
-  }
 }

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { book } from './classes/book';
 import { following } from './classes/following';
 import { InterceptorSkipHeader } from './auth.interceptor';
+import { userBookInfo } from './classes/userBookInfo';
+import { review } from './classes/review';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +29,12 @@ return this.http.get('http://localhost:3000/author');
  getBooks():Observable<any>{
   return this.http.get('https://jsonplaceholder.typicode.com/posts');
 
-   }
+}
+
+getUserBookInfo(): Observable<userBookInfo> {
+  return this.http.get<userBookInfo>('http://localhost:3000/userBookInfo/5');
+}
+
    getUpdates():Observable<any>{
 
      return this.http.get("http://localhost:3000/updates").pipe(
@@ -55,8 +62,8 @@ return this.http.get('http://localhost:3000/author');
     return this.http.get<book>("http://localhost:3000/book/" + id);
  }
 
- getBookReviews(): Observable<any> {
-   return this.http.get("http://localhost:3000/review");
+ getBookReviews(): Observable<review[]> {
+   return this.http.get<review[]>("http://localhost:3000/review");
  }
 
  login(email:string,password:string): Observable<any>

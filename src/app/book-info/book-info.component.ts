@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from '../http.service';
 import { review } from '../classes/review';
 import { book } from '../classes/book';
+import { userBookInfo } from '../classes/userBookInfo';
 
 @Component({
   selector: 'app-book-info',
@@ -13,8 +14,7 @@ import { book } from '../classes/book';
 export class BookInfoComponent implements OnInit {
   myBook: book;
   reviews: review[];
-  i: number;
-  activity: boolean = true;
+  userInfo: userBookInfo;
   isUser: boolean;
 
   constructor(private http: HttpService, private route: ActivatedRoute,private router: Router) {
@@ -23,6 +23,7 @@ export class BookInfoComponent implements OnInit {
   ngOnInit() {
   this.http.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data:book) => this.myBook = data, error=> this.router.navigateByUrl("/404"));
   this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
+  this.http.getUserBookInfo().subscribe(data=> this.userInfo = data)
   if(localStorage.getItem('token') == null){
     this.isUser = false;
   }

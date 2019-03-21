@@ -62,7 +62,7 @@
 		{
 		"id": 11,
 		"title": "Deathcaster",
-		"isbn": 5,
+		"isbn": 57899,
 		"imageUrl": "https://images.gr-assets.com/books/1529823092l/39320115.jpg",
 		"pagesNum": 100,
 		"publisher": "team tuna",
@@ -164,5 +164,13 @@
 		"userName":"Phoebe Buffay",
 		"userImg": "https://images.gr-assets.com/users/1506617226p3/1.jpg"
 	  }
-	  ]  
+    ],
+    "userBookInfo": [
+      {
+        "id":5,
+        "rating":3.5,
+        "shelf_name": "Currently Reading",
+        "body": "Wow! Great closure on all levels. The pace was smooth. Written well. I couldn't put it down. I just found Cinda two years ago. Since then I have plowed through everything she has written. Every book was a joy to read. Highly recommend this author!!!"
+      }
+    ]  
 }

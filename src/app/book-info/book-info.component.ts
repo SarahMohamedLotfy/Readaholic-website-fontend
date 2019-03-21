@@ -21,13 +21,13 @@ export class BookInfoComponent implements OnInit {
   }
 
   ngOnInit() { //as2ale philooooooo
-    //this.myBook = this.route.snapshot.data['bookData'];
-    //if(this.myBook){
-    //  this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
-    //}
+    this.myBook = this.route.snapshot.data['bookData'];
+    if(this.myBook){
+      this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
+    }
 
-    this.http.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data:book) => this.myBook = data);
-    this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
+   // this.http.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data:book) => this.myBook = data);
+    //this.http.getBookReviews().subscribe((data:review[]) => this.reviews = data);
   }
 }
   

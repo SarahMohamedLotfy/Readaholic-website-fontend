@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { book } from './classes/book';
 @Injectable({
   providedIn: 'root'
 })
@@ -44,8 +45,8 @@ return this.http.get('http://localhost:3000/author');
     return throwError(
       'Something bad happened; please try again later.');
   };
-  getBook(id: number): Observable<any> {
-    return this.http.get("http://localhost:3000/book/" + id);
+  getBook(id: number): Observable<book> {
+    return this.http.get<book>("http://localhost:3000/book/" + id);
  }
  
  getBookReviews(): Observable<any> {

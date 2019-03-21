@@ -8,13 +8,15 @@ import { MyBooksComponent } from './my-books/my-books.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthGuard } from './auth.guard';
 import { BookInfoComponent } from './book-info/book-info.component';
+import { BookResolverService } from './book-resolver.service';
+
 
 
 const routes: Routes = [
   {path:  '', pathMatch: 'full', redirectTo:  'login'},
   {path:'login',component: LogInComponent},  
   {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
-  {path: 'book/:id' , component: BookInfoComponent},
+  {path: 'book/:id' , component: BookInfoComponent, resolve: {bookData: BookResolverService}},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
@@ -24,6 +26,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  
 })
 export class AppRoutingModule { }

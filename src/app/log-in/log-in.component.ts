@@ -3,6 +3,7 @@ import {  NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
 import { user } from '../classes/user';
+import { user_shelves } from '../classes/user_shelves';
 
 
 @Component({
@@ -14,12 +15,15 @@ export class LogInComponent implements OnInit {
   
   form:FormGroup;
   users:user[];
+  wrongPass:boolean;
 
   constructor(private service:HttpService,private fb:FormBuilder,private router:Router) { 
     this.form=this.fb.group({
     email: ['',Validators.required],
     password: ['',Validators.required]
     });
+
+    
     
   }
   
@@ -32,20 +36,33 @@ onSubmit(){
   this.service.login(val.email,val.password).subscribe(
 (data:any) => {
   localStorage.setItem('token',data.token);
+  this.users=data;
   this.router.navigateByUrl('/home');
+  this.wrongPass=false;
 },
 err => {
+<<<<<<< HEAD
   if(err.status == 400)
+=======
+  if(err.status ==400)
+  {
+>>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
   console.log('incorrect username or password');
+  this.wrongPass=true;
+  
+  }
   else
   console.log(err);
 }
   );
-
-
-
+}
+ngOnChanges(): void{
+  this.wrongPass=this.wrongPass;
 }
 
+getUser():user[]{
+  return this.users;
+}
   
 
 }

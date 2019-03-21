@@ -2,13 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { book } from './classes/book';
+import { following } from './classes/following';
+import { InterceptorSkipHeader } from './auth.interceptor';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpService {
 
+  url = 'http://localhost:3000';
+
   constructor(private http:HttpClient) {}
-   
+
   getdata(){
 return this.http.get('http://localhost:3000/author').subscribe(data =>
 console.log("wegot",data));
@@ -19,18 +26,18 @@ return this.http.get('http://localhost:3000/author');
  }
  getBooks():Observable<any>{
   return this.http.get('https://jsonplaceholder.typicode.com/posts');
-  
+
    }
    /*
    getUserInfo():Observable<any>{
     return this.http.get("http://localhost:3000/showProfile");
    }*/
    getUpdates():Observable<any>{
-     
+
      return this.http.get("http://localhost:3000/updates").pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
-    
+
     );
    }
    private handleError(error: HttpErrorResponse) {
@@ -48,17 +55,42 @@ return this.http.get('http://localhost:3000/author');
     return throwError(
       'Something bad happened; please try again later.');
   };
-  getBook(id: number): Observable<any> {
-    return this.http.get("http://localhost:3000/book/" + id);
+  getBook(id: number): Observable<book> {
+    return this.http.get<book>("http://localhost:3000/book/" + id);
  }
- 
+
  getBookReviews(): Observable<any> {
    return this.http.get("http://localhost:3000/review");
  }
 
- login(email:string,password:string)
+ login(email:string,password:string): Observable<any>
  {
+<<<<<<< HEAD
    return this.http.post("https://reqres.in/api/login",{email,password});
 
+=======
+   return this.http.post("https://reqres.in/api/login",{email,password}) ;
+>>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
  }
+
+ getUserprofile(id: number): Observable<any> {
+  return this.http.get<any> (this.url + `/profile/${id}`);
+}
+
+getUserfollowings(): Observable<following[]> {
+ return this.http.get<following[]> (this.url + `/following`);
+}
+
+logOut():Observable<any>{
+  return this.http.get(this.url+'/logOut');
+}
+getfollowing(){
+  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
+  
+}
+getfollowers(){
+  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
+  
+   }
+
 }

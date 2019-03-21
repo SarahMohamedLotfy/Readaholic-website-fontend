@@ -1,0 +1,81 @@
+
+.container
+{
+    margin-left: 210px;
+    margin-right: 280px;
+    margin-bottom: 20px;
+}
+
+#leftCol {
+    margin-top: 20px;
+    margin-right: 35px;
+    min-width: 180px;;
+}
+
+#reviewerName {
+    color: #00635d;
+    cursor: pointer;
+}
+
+#reviewerImg {
+    cursor: pointer;
+}
+#bookCover {
+    width: 180px;
+    height: 240px;
+    margin-right: 0px;
+}
+
+#rateBook {
+    margin-left: 45px;
+}
+
+#bookTitle {
+    font-size: 24px;
+    font-family: "Merriweather", "Georgia", serif;
+}
+
+#authorName {
+    font-size: 18px;
+}
+
+#shelf {
+    margin-left:12px;
+}
+
+#bookInfo {
+    margin-left: 0x;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    min-width:600px;
+    font-size: 1rem;
+    font-family:"Merriweather", "Georgia", serif;
+    
+}
+
+#reviewInfo {
+    font-family:"Merriweather", "Georgia", serif;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+#reviewInfo {
+    min-width:600px; 
+}
+
+#bookFormat {
+    font-size: 13px;
+    line-height: 8px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+#activity {
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 0.92rem;
+}
+
+
+
+

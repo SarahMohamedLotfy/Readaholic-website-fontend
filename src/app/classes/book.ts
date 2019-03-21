@@ -1,17 +1,13 @@
-import { author } from './author';
-
-
 export class book{
-    book_title: string;
-    image_url: string;
-    num_pages: string;
+    id: number; ///bta3y mo2ktn
+    title: string;
+    isbn: number;
+    imageUrl: string;
+    publicationDate: string; //as2ale
     publisher: string;
-    publication_day: number;
-    publication_year: number;
-    publication_month: number;
-    average_rating: number;
-    ratings_count: number;
+    language: string;
     description: string;
+<<<<<<< HEAD
     author_id: number;
     author_name: string;
     genre: string;
@@ -19,5 +15,15 @@ export class book{
 link:string ;
 author:author ;
   rating:number;
+=======
+    reviewsCount: number;
+    ratingsCount: number;
+    ratingsAvg: number;
+    link: string;
+    authorId: number;
+    authorName: string; //hamdy mrg3hash
+    pagesNum: number;
+    genre: string;     //mrg3hash brd
+>>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
     }
     

@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http' ;
-import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { FollowersComponent } from './followers/followers.component';
@@ -17,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
+<<<<<<< HEAD
 
 
 const routes: Routes = [
@@ -31,6 +31,9 @@ const routes: Routes = [
    
 ];
 
+=======
+import { PageNotFoundComponent } from './page-not-found.component';
+>>>>>>> 4117833d68f7a34f2d237b23c571c3d136ce4b49
 
 
 @NgModule({
@@ -44,22 +47,23 @@ const routes: Routes = [
     MyBooksComponent,
     BookInfoComponent,
     LogInComponent,
+    PageNotFoundComponent
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     NgbModule.forRoot(),
-   RouterModule.forRoot(routes),
-  SharedModule,
+    SharedModule,
     AppRoutingModule,
     ReactiveFormsModule
-    
-    
+
+
   ],
 
-  providers: [HttpService, {provide:HTTP_INTERCEPTORS,
-  useClass:AuthInterceptor,
+  providers: [HttpService, {provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptor,
 multi: true}],
   bootstrap: [AppComponent]
 })

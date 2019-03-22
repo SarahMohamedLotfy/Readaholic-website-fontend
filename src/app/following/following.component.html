@@ -10,10 +10,11 @@
 <router-outlet></router-outlet>
 
 <body>
-<div id="Myprofilename">
-  Sarah Mohamed <span> > People You're Following</span> 
+  <div *ngIf="selectedProfile">
+<div  id="Myprofilename">
+  {{ selectedProfile.name }} <span> > People You're Following</span> 
 </div>
-
+</div>
 
   <div id="tfheader" >
       <form id="tfnewsearch" method="get" >

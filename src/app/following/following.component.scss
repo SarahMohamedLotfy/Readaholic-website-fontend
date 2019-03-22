@@ -21,7 +21,6 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  border: 0 none;
 }
 .namecenter {
   left: 500;
@@ -61,8 +60,6 @@ border-radius: 3px;
     border: 1px solid #D6D0C4;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 14px;
-
-    cursor: pointer;
     display: inline-block;
     text-decoration: none;
     background-color: #F4F1EA;
@@ -199,6 +196,13 @@ body{
   border-radius: 5px;
   -webkit-border-radius: 5px;
 }
+.listt
+{
+  position: relative;
+  top:10px;
+  margin-top: 5px;
+  padding-top: 5px;
+}
 #bookimage
 {
   width: 50px;
@@ -226,7 +230,7 @@ body{
   display: block;
   width: 60%;
   margin-left: 5px;
-  margin-top: 15px;
+  margin-top: 5px;
   background: #FFFFFF;
   left:100px;
     
@@ -237,6 +241,7 @@ body{
   margin-top: 1px;
 }
 .directory-info-row1 {
+  
   display: inline-block;
   width: 40%;
   margin-top: 1px;
@@ -275,17 +280,19 @@ h4{
 .panelbodychar
 {
   position: absolute;
-left:34px;
+  top: -20px;
+  left:34px;
 right:5px;
-padding: 3px;}
+padding: 3px;
+}
 #Myprofilename
 {position: relative;
   color: #00635d;
-  line-height: 24px;
-  font-size: 20px;
+  line-height: 26px;
+  font-size: 22px;
   font-family: "Merriweather", Georgia, "Times New Roman", serif;
   font-weight: bold;
-  top:70px;
+  top:20px;
   left:215px;
 }
 hr {

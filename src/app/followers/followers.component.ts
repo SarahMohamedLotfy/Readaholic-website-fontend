@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { FilterPipe} from './filter.pipe.follower';
 import { profile } from '../classes/profile';
+import { HttpFollower } from './HttpFollower';
 
 @Component({
   selector: 'app-followers',
@@ -16,7 +17,7 @@ export class FollowersComponent implements OnInit {
   selectedProfile: profile ;
   searchText: string = ''
 
-  constructor(private myfirstservice :HttpService ) { }
+  constructor(private myfirstservice :HttpFollower ) { }
   
   
   ngOnInit() {

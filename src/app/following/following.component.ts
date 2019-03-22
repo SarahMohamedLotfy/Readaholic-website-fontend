@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FilterPipe} from './filter.pipe.following';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { profile } from '../classes/profile';
+import { HttpFollowing } from './HttpFollowing';
 
 @Component({
   selector: 'app-following',
@@ -17,7 +17,7 @@ export class FollowingComponent implements OnInit {
   temp: any =[];filterfollowing:[];
   searchText: string = ''
 
-  constructor(private myfirstservice :HttpService,private route: ActivatedRoute,private router:Router ) { }
+  constructor(private myfirstservice :HttpFollowing,private route: ActivatedRoute,private router:Router ) { }
 
 
 
@@ -30,7 +30,7 @@ export class FollowingComponent implements OnInit {
       this.filterfollowing=posts ;})
 
 
-      
+
       this.myfirstservice.getUserprofile(1).subscribe(
         data => {
           this.selectedProfile = data,

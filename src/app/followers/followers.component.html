@@ -11,12 +11,13 @@
 
 <body>
 
-    <div  id="Myprofilename">
-        <div id="Myprofilename"*ngIf="selectedProfile">
-          {{ selectedProfile.name }}</div> <span> > Followers</span> 
-        </div>
+   
 
-  
+        <div *ngIf="selectedProfile">
+            <div  id="Myprofilename">
+                <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > Followers</span> 
+            </div>
+            </div>
 
 
   <div id="tfheader" >

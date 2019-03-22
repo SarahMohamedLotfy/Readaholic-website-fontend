@@ -13,19 +13,15 @@ import { ActivatedRoute , Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
    selectedProfile: profile ;
-   allFollowings: following[];
+   allFollowings: any;
 
    toRead: number ;
    currentlyReading: number;
-
-
-
 
   constructor(private httpService: HttpService ,
               private route: ActivatedRoute , private router: Router ) { }
 
   ngOnInit() {
-    let id: number = parseInt( this.route.snapshot.params['id'] );
 
     this.httpService.getUserfollowings().subscribe(
           data => {
@@ -34,7 +30,7 @@ export class ProfileComponent implements OnInit {
             console.log(this.allFollowings)
           });
 
-    this.httpService.getUserprofile(id).subscribe(
+    this.httpService.getUserprofile(1).subscribe(
       data => {
         this.selectedProfile = data,
         (err: any) => console.log(err),
@@ -46,11 +42,6 @@ export class ProfileComponent implements OnInit {
    //   (err: any) => console.log(err),
    //   () => console.log(' Profile is displayed ')
    // );
-
-
-
-
-
   }
 
 }

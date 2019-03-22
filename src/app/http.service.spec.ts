@@ -5,7 +5,8 @@ import { profile } from './classes/profile';
 import { AppComponent } from './app.component';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-fdescribe('HttpService', () => {
+//fdescribe
+describe('HttpService', () => {
 let httpService: HttpService;
 let httpTestingController: HttpTestingController;
 
@@ -35,8 +36,8 @@ beforeEach(() => {
 afterEach(() => {
   httpTestingController.verify();
 });
-
-fit('should get auth profile', () => {
+//fit
+it('should get auth profile', () => {
      httpService.getUserprofile(2).subscribe(
        (data: profile[]) => {
          expect(data.length).toBe(2);

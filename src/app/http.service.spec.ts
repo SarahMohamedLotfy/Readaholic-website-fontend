@@ -62,14 +62,11 @@ afterEach(() => {
   httpTestingController.verify();
 
 });
-<<<<<<< HEAD
 afterEach((inject([HttpTestingController], (httpMock: HttpTestingController) => {
   httpMock.verify();
 })) );
 
-=======
 //fit
->>>>>>> 7c7fd4c9757d451e86f8ac5176bcf2db2e6afceb
 it('should get auth profile', () => {
      httpService.getUserprofile(2).subscribe(
        (data: profile[]) => {

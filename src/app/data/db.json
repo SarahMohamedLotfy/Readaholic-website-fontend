@@ -1,91 +1,380 @@
 {
-  "Profile" : [{
-    "id": "1",
-    "name": "Mai mostafa",
-    "user_name": "MAi_mostafa99",
-    "small_image_url": "https://res.cloudinary.com/teepublic/image/private/s--ym8sWp4w--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1535088284/production/designs/3061511_0.jpg",
-    "about": "i am very cool",
-    "age": "90",
-    "gender": "female",
-    "location": "giza haram",
-    "joined": " 2 days ago ",
-    "last_active": "1 day ago ",
-    "user_shelves":
-                     [{
-                        "id": "1" ,
-                         "name": "read",
-                         "book_count": "30"
-                     },
-                     {
-                       "id": "54321",
-                       "name": "currently-reading",
-                       "book_count": "40"
-                     },
-                     {
-                         "id": "22",
-                         "name": "to-read",
-                         "book_count": "20"
-                                     }
-                     ]
+    
+	"updates":
+			[
+	
+	{
+				"id":2,
+				"body":null,
+				"rating":3,
+				"likes_count":null,
+				"comments_count":null,
+				"updated_at":"2019-03-21 00:00:00",
+				"book_id":1,
+				"title":"Young Pharos",
+				"description":"book description ",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":2,
+				"name":"Sara",
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"author_name":"Taylor swift",
+				"update_type":"0",
+				"shelf":1
+		 },
+		 {
+				"id":1,
+				"type":3,
+				"updated_at":"2019-03-15 00:00:00",
+				"likes_count":null,
+				"comments_count":null,
+				"book_id":2,
+				"shelf":1,
+				"title":"eat ,pray and love",
+				"description":"great book ",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":2,
+				"name":"Salma",
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"author_name":"Taylor swift",
+				"update_type":"1"
+		 },
+		 {
+				"id":2,
+				"type":3,
+				"updated_at":"2019-03-01 00:00:00",
+				"likes_count":null,
+				"comments_count":null,
+				"book_id":3,
+				"title":"the last samuerai",
+				"shelf":1,
+				"description":"",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":3,
+				"name":"Mai",
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"author_name":"Taylor swift",
+				"update_type":"1"
+		 },
+		 {
+				"updated_at":"2019-03-19 00:00:00",
+				"u_id":2,
+				"user_image_link":null,
+				"user_name":"WAEL",
+				"followed_id":3,
+				"followed_image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"followed_name":"Youssef",
+				"update_type":"2"
+		 },
+		 {
+				"id":2,
+				"resourse_type":0,
+				"updated_at":null,
+				"review_id":1,
+				"body":null,
+				"rating":null,
+				"likes_count":null,
+				"comments_count":null,
+				"review_updated_at":"2019-03-03 00:00:00",
+				"book_id":4,
+				"title":"The reedeming Love",
+				"description":"",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":1,
+				"name":"Habiba",
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"author_name":"Cinda Williams",
+				"update_type":"3"
+			 
+		 },
+		 {
+				"id":2,
+				"resourse_type":0,
+				"updated_at":null,
+				"comment_body":"",
+				"review_id":1,
+				"body":null,
+				"rating":null,
+				"comments_count":null,
+				"review_updated_at":"2019-03-03 00:00:00",
+				"book_id":5,
+				"title":"Heaven here",
+				"description":"",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":1,
+				"name":"Muhamed",
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"author_name":"Cinda Williams",
+				"update_type":"4"
+				
+		 },
+		 {
+				"id":2,
+				"body":null,
+				"rating":null,
+				"likes_count":null,
+				"comments_count":null,
+				"updated_at":"2019-03-21 00:00:00",
+				"book_id":6,
+				"title":"Love what you do",
+				"description":"",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":2,
+				"name":"Mariam",
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"author_name":"Cinda Williams",
+				"update_type":"0",
+				"shelf":1
+		 },
+		 {
+				"id":1,
+				"type":3,
+				"updated_at":"2019-03-15 00:00:00",
+				"likes_count":null,
+				"comments_count":null,
+				"book_id":7,
+				"title":"Jasmine and princesses",
+				"description":"book description here",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":2,
+				"name":"Sara",
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"author_name":"Cinda Williams",
+				"update_type":"1",
+				"shelf":1
+		 },
+		 {
+				"id":2,
+				"type":3,
+				"updated_at":"2019-03-01 00:00:00",
+				"likes_count":null,
+				"comments_count":null,
+				"book_id":8,
+				"title":"Jasmine and princesses",
+				"description":"amazing story",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":3,
+				"name":"Salma",
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"author_name":"Cinda Williams",
+				"update_type":"1"
+		 },
+		 {
+				"updated_at":"2019-03-19 00:00:00",
+				"u_id":2,
+				"image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"user_name":"Mai",
+				"followed_id":3,
+				"followed_image_link":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"followed_name":"",
+				"update_type":"2"
+		 }
+	
+],
+"Profile" : [{
+ "id": "1",
+ "name": "Mai mostafa",
+ "user_name": "MAi_mostafa99",
+ "small_image_url": "https://res.cloudinary.com/teepublic/image/private/s--ym8sWp4w--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1535088284/production/designs/3061511_0.jpg",
+ "about": "i am very cool",
+ "age": "90",
+ "gender": "female",
+ "location": "giza haram",
+ "joined": " 2 days ago ",
+ "last_active": "1 day ago ",
+ "user_shelves":
+									[{
+										 "id": "1" ,
+											"name": "read",
+											"book_count": "30"
+									},
+									{
+										"id": "54321",
+										"name": "currently-reading",
+										"book_count": "40"
+									},
+									{
+											"id": "22",
+											"name": "to-read",
+											"book_count": "20"
+																	}
+									]
 
-                   ,
-    "updates": []
-  }]
-  ,
-  "following":[
-    {
-        "id": "000000",
-        "name": "killua",
-        "image_url": "https://pbs.twimg.com/profile_images/955923907051184129/8LxKsoPl_400x400.jpg",
-        "link": ""
-        },
-    {
-      "id": "000000",
-      "name": "kurapika",
-      "image_url": "https://i.pinimg.com/originals/47/1b/4e/471b4e5042154149565890377ec7b784.jpg",
-      "link": ""
-  },
-  {
-    "id": "1111111",
-    "name": "hisoka",
-    "image_url": "https://static.comicvine.com/uploads/original/14/147508/5258484-2.jpg",
-    "link": ""
+								,
+ "updates": []
+}]
+,
+"following":[
+ {
+		 "id": "000000",
+		 "name": "killua",
+		 "image_url": "https://pbs.twimg.com/profile_images/955923907051184129/8LxKsoPl_400x400.jpg",
+		 "link": ""
+		 },
+ {
+	 "id": "000000",
+	 "name": "kurapika",
+	 "image_url": "https://i.pinimg.com/originals/47/1b/4e/471b4e5042154149565890377ec7b784.jpg",
+	 "link": ""
 },
 {
-  "id": "999999",
-  "name": "Salma",
-  "image_url": "https://i.imgur.com/8zcsmU5.jpg",
-  "link": ""
+ "id": "1111111",
+ "name": "hisoka",
+ "image_url": "https://static.comicvine.com/uploads/original/14/147508/5258484-2.jpg",
+ "link": ""
+},
+{
+"id": "999999",
+"name": "Salma",
+"image_url": "https://i.imgur.com/8zcsmU5.jpg",
+"link": ""
 
+}],
+"book": [
+	 {
+	 "id": 11,
+	 "title": "Deathcaster",
+	 "isbn": 57899,
+	 "imageUrl": "https://images.gr-assets.com/books/1529823092l/39320115.jpg",
+	 "pagesNum": 100,
+	 "publisher": "team tuna",
+	 "publicationDate": "2010-10",
+	 "ratingsAvg": 3.5,
+	 "ratingsCount": 50,
+	 "reviewsCount": 50,
+	 "description": "Warrior Alyssa ana’Raisa would do anything to protect her home, the Fells, and her legacy, the Gray Wolf Line. But as a prisoner of Empress Celestine, Lyss is forced to turn her fearsome talents as an army commander against her beloved homeland. Refusal would swiftly lead to her death, and her death would end the Gray Wolf Line.",
+	 "authorId": 5,
+	 "authorName": "Cinda Williams Chima",
+	 "genre": "fiction",
+	 "link": "kkkkk"
+	 },
+	 {
+			"id": 1,
+			"title": "my book",
+			"isbn": 5,
+			"imageUrl": "https://images.gr-assets.com/users/1506617226p3/1.jpg",
+			"pagesNum": 100,
+			"publisher": "ahmeeed",
+			"publicationDate": "2010-10",
+			"ratingsAvg": 3.5,
+			"ratingsCount": 50,
+			"reviewssCount": 50,
+			"description": "Warrior Alyssa ana’Raisa would do anything to protect her home, the Fells, and her legacy, the Gray Wolf Line. But as a prisoner of Empress Celestine, Lyss is forced to turn her fearsome talents as an army commander against her beloved homeland. Refusal would swiftly lead to her death, and her death would end the Gray Wolf Line.",
+			"authorId": 5,
+			"authorName": "Cinda Williams Chima",
+			"genre": "fiction",
+			"link": "kkkkk"
+	 }
+],
+"review": [ {
+	"id": 5,
+	"bookId":11,
+	"body": "Ah. The last 200 pages were excellent, but the 400 before that were just all over the place. Connection to characters got lost in all the perspectives (seven, I think). And while I was inherently invested in the secondary characters, I wish it had not come at the detriment of Lyss and Ash. I love this world and these series, but was ultimately disappointed in this finale’s distraction with servicing every character a superficial character arc.",
+	 "rating": 3,
+	"lastUpdate": "2019-03-06 00:00:00",
+	"created_at":"maay",
+	"updated_at": "juuune",   
+	"numberLikes": 3,
+	"numberComments": 3,
+	"userId":5,
+	"userName":"Regina Falange",
+	 "userImg": "https://images.gr-assets.com/users/1506617226p3/1.jpg"
+	},
+	{
+	 "id": 4,
+	 "bookId":11,
+	 "body": "A truly well-earned, authentic happily ever after. Everything isn’t “fixed,” but all questions are answered, and characters completed. Difficult for non-high fantasy fans, but a truly perfect high fantasy novel.",
+	 "rating": 3,
+	 "lastUpdate": "2019-03-06 00:00:00",
+	 "created_at":"maay",
+	 "updated_at": "juuune",   
+	 "numberLikes": 3,
+	 "numberComments": 3,
+	 "userId":5,
+	 "userName":"nehal abdulkader",
+	 "userImg": "https://images.gr-assets.com/users/1506617226p3/1.jpg"
+	},
+	{
+	 "id": 3,
+	 "bookId":11,
+	 "body": "After the first read, this book is the worst one in the Harry Potter series. Characters are not as likeable as they are in the other books. However, I recently reread it (after reading book 6), and found it to be a very good read.",
+	 "rating": 3,
+	 "lastUpdate": "2019-03-06 00:00:00",
+	 "created_at":"maay",
+	 "updated_at": "juuune",   
+	 "numberLikes": 3,
+	 "numberComments": 3,
+	 "userId":5,
+	 "userName":"Chandler Bing",
+	 "userImg": "https://images.gr-assets.com/users/1506617226p3/1.jpg"
+	},
+	{
+	 "id": 2,
+	 "bookId":11,
+	 "body": "This may be the best series of ever. I mean, heists on heists, dragons, pirates, betrayals and oh yeah DRAGONS. I’m in love and I will reread this series every single year of my life. Good job Chima. You are Queen.",
+	 "rating": 3,
+	 "lastUpdate": "2019-03-06 00:00:00",
+	 "created_at":"maay",
+	 "updated_at": "juuune",   
+	 "numberLikes": 3,
+	 "numberComments": 3,
+	 "userId":5,
+	 "userName":"Monica Giller",
+	 "userImg": "https://images.gr-assets.com/users/1506617226p3/1.jpg"
+	},
+	{
+	 "id": 1,
+	 "bookId":11,
+	 "body": "Whose here after Stormcaster just staring at the blank page hoping that you will see something change through sheer force of will?",
+	 "rating": 3,
+	 "lastUpdate": "2019-03-06 00:00:00",
+	 "created_at":"maay",
+	 "updated_at": "juuune",   
+	 "numberLikes": 3,
+	 "numberComments": 3,
+	 "userId":5,
+	 "userName":"Phoebe Buffay",
+	 "userImg": "https://images.gr-assets.com/users/1506617226p3/1.jpg"
+	}
+ ],
+ "userBookInfo": [
+	 {
+		 "id":5,
+		 "rating":3.5,
+		 "shelf_name": "Currently Reading",
+		 "body": "Wow! Great closure on all levels. The pace was smooth. Written well. I couldn't put it down. I just found Cinda two years ago. Since then I have plowed through everything she has written. Every book was a joy to read. Highly recommend this author!!!"
+	 }
+ ]  
 }
-  ],
-  "book": [{
-    "id":5,
-    "book_title":"my bbok",
-    "image_url":"https://i.pinimg.com/originals/47/1b/4e/471b4e5042154149565890377ec7b784.jpg",
-    "num_pages": "5",
-    "publisher": "ffffff",
-    "publication_day": 4,
-    "publication_year": 5,
-    "publication_month": 6,
-    "average_rating": 4,
-    "ratings_count":2,
-    "description": "good book",
-    "author_id": 1234,
-    "author_name": "meme",
-    "genre": "action"
-  }],
-  "review": [{
-    "id" : "5",
-    "book_id": "5",
-    "body" : "encfoneiofvinen",
-    "rating" : "3",
-    "last_update": "ejnfne",
-    "likes_count": 6,
-    "comments_count": 2,
-    "user_id": 1,
-    "user_name": "MAi_mostafa99",
-    "image_url":"https://pbs.twimg.com/profile_images/955923907051184129/8LxKsoPl_400x400.jpg"
-  }]
 
-}

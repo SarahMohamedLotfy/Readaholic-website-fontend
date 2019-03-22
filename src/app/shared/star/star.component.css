@@ -1,6 +1,6 @@
-rating {
-    margin-left: 10px;
+.star {
+    margin-left: 0px;
     margin-bottom: 0px;
-    margin-top: 0px;
+    margin-top: -30px;
     margin-right: 0px;
 }

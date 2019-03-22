@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpService } from '../http.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FilterPipe} from './filter.pipe.following';
-import { HttpService } from '../http.service';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-following',
   templateUrl: './following.component.html',
@@ -11,14 +13,14 @@ import { HttpService } from '../http.service';
 export class FollowingComponent implements OnInit {
   posts:any=[];
   temp: any =[];filterfollowing:[];
-  constructor(private service:HttpService) { }
+  constructor(private myfirstservice :HttpService,private route: ActivatedRoute,private router:Router ) { }
 
   searchText: string = ''
 
 
   ngOnInit() {
 
-   this.service.getfollowing().subscribe((posts:any)=>{
+   this.myfirstservice.getfollowing().subscribe((posts:any)=>{
       this.posts =posts ;
       this.temp = posts;
 
@@ -39,7 +41,10 @@ search(){
     it["name"].toLocaleLowerCase().includes(this.searchText)
   );
 }
-  
+//onclick(){
+ // this.router.navigateByUrl('/bookinfo/https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following/id');
+//}
+
 
 
 

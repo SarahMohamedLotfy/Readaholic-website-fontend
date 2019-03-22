@@ -19,8 +19,8 @@ export class LogInComponent implements OnInit {
 
   constructor(private service:HttpService,private fb:FormBuilder,private router:Router) { 
     this.form=this.fb.group({
-      email: ['',Validators.required],
-      password: ['',Validators.required]
+    email: ['',Validators.required],
+    password: ['',Validators.required]
     });
 
     
@@ -33,7 +33,6 @@ export class LogInComponent implements OnInit {
   }
 onSubmit(){
   const val = this.form.value;
-   
   this.service.login(val.email,val.password).subscribe(
 (data:any) => {
   localStorage.setItem('token',data.token);
@@ -50,7 +49,6 @@ err => {
   }
   else
   console.log(err);
-
 }
   );
 }

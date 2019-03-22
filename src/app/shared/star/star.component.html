@@ -1,7 +1,9 @@
-   <rating class="star" [(ngModel)]="starsCount" 
-            [readonly]="readOnly" 
-            [float]="floatEnable" 
-            [titles]="['did not like it', 'it was okay', 'liked it', 'really liked it', 'it was amazing']"
-            (click)="onClick()">
-    </rating>
- 
+<small>
+        <small class="star">
+                <rating  [(ngModel)]="starsCount" 
+                        [readonly]="readOnly" 
+                        [float]="floatEnable" 
+                        [titles]="['did not like it', 'it was okay', 'liked it', 'really liked it', 'it was amazing']">   
+               </rating>
+        </small>                
+</small>

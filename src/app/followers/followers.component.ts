@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { FilterPipe} from './filter.pipe.follower';
 import { HttpService } from '../http.service';
+import { FilterPipe} from './filter.pipe.follower';
 @Component({
   selector: 'app-followers',
   templateUrl: './followers.component.html',
@@ -12,13 +11,13 @@ export class FollowersComponent implements OnInit {
   posts:any=[];
   temp: any =[];
   filterfollowing:[];
-  constructor(private service:HttpService ) { }
+  constructor(private myfirstservice :HttpService ) { }
   
   searchText: string = ''
   
   ngOnInit() {
 
-    this.service.getfollowers().subscribe((posts:any)=>{
+    this.myfirstservice.getfollowers().subscribe((posts:any)=>{
        this.posts =posts ;
        this.temp = posts;
        this.filterfollowing=posts ;})

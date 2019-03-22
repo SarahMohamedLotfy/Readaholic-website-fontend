@@ -1,55 +1,45 @@
-<div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <a href="myBooks">My Books</a>
-    <a href="profile">My Profile</a>
-    <a href="followers">Followers</a>
-    <a href="following">Following</a>
-    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
-    <div class="input-group">
-        <input class="form-control border-secondary py-2" type="search" value="search">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">
-              <i class="fa fa-search"></i>
-          </button>
-        </div>
-    </div>
-    <span class="glyphicon glyphicon-bell"></span>
-</div>
 
-<div class="container">
-    <ul *ngFor="let update of updates">
+<h5 id="updates"> Updates </h5>
 
+    
+    <ul *ngFor="let update of updatess">
+            <div class="container">
         <div class="media">
-
-            <img class="avatar" src={{update.actor.image_url}} alt="Generic placeholder image">
+                
+            <img class="avatar" src={{update.img_url}} alt="Generic placeholder image">
             <div class="media-body">
-                <h5 class="mt-0">{{update.actor.name}}</h5>
-                <div [ngSwitch]="update.action.typee">
-                    <div *ngSwitchCase="4">
-                        <h5 class="mt-0">rated a book</h5>
-                        <ngb-rating [(rate)]="update.action.rating" [readonly]=true max=5>
-                            <ng-template let-fill="fill" let-index="index">
-                                <span class="star" [class.filled]="fill === 100">&#9733;</span>
-                            </ng-template>
-                        </ngb-rating>
+                    <div style="clear: both">
+                <h5 class="mt-0"style="float: left" >{{update.name}}</h5>
+          
+                <h6 class="mt-0"style="float: left" id="action"> {{update.actionText}}</h6>
+                <app-star  *ngIf="update.actionText == ' rated a book '"[starsCount]="update.rating" [readOnly]="true"></app-star>
+            </div> 
 
-                    </div>
-                    <div *ngSwitchCase="3">
-                        <h5 class="mt-0">reviewed a book</h5>
-                    </div>
-                </div>
-                <div container id="conta">
-                    <div class="media mt-3">
-                        <a class="pr-3" href="#">
-                            <img src={{update.image_url}} alt="Generic placeholder image" style="width:120px" style="height:160px">
+            <div id="containerBook">
+                    <div class="media mt-3" id="updateImage">
+                        <a class="pr-3" href="#" *ngIf="update.actionText != ' started following  : '" >
+                            <img src={{update.image_link}} alt="Generic placeholder image" style="float: left" >
                         </a>
+                        <a class="pr-3" href="#"*ngIf="update.actionText == ' started following  : '"  >
+                                <img src={{followed_image_link}}} alt="Generic placeholder image" style="float: left"   >
+                            </a>
                         <div class="media-body">
-                            <h5 class="mt-0">{{update.object.book.title}}</h5>
-                            <h5> </h5>
+                            <div *ngIf="update.actionText != ' started following  : '">
+                            <h5 class="mt-0" style="display: inline" >{{update.title}}</h5>
+                            
+                            <h5 style="display: inline"> by {{update.author_name}}</h5>
+                          
+                            <app-dropdown > </app-dropdown>
+                            <h4>rate it </h4>
+                            
+                            <app-star  [readOnly]="false"></app-star> 
+                            <h4>{{update.description}}</h4>
+                            </div>
                         </div>
+                       
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </ul>
-</div>

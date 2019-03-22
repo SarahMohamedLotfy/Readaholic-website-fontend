@@ -12,7 +12,7 @@ import { user } from './classes/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'Readholic';
   user:user ;
   constructor(){}
   ngOnInit(){

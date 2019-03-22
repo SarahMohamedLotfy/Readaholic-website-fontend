@@ -10,15 +10,19 @@
 <router-outlet></router-outlet>
 
 <body>
-  
-<div  id="Myprofilename">
-<div id="Myprofilename"*ngIf="selectedProfile">
-  {{selectedProfile.name }</div> <span> > People You're Following</span> 
-</div>
+
+    <div *ngIf="selectedProfile">
+        <div  id="Myprofilename">
+            <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 
+        </div>
+        </div>
+        
+
+
 
   <div id="tfheader" >
       <form id="tfnewsearch" method="get" >
-		 
+
       <input type="text" id ="searchtextfollowing" value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"
         maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing
         ">
@@ -29,9 +33,9 @@
 
 
 
-   <ul style="list-style: none;">   
+   <ul style="list-style: none;">
   <li  class="list" *ngFor="let post of posts | filter:searchText ">
-  
+
   <div class="directory-info-row">
       <div class="directory-info-row1" class="row">
           <div class="directory-info-row1" class="col-md-5 col-sm-6">
@@ -43,17 +47,17 @@
                       </a>
                       <div class="media-body">
                         <a [routerLink]="['/profile', post.id]"  id ="profilename"class ="nameoffollower " >
-                          {{post.name}} 
-                             
+                          {{post.name}}
+
                         </a>
                       </div>
                   </div>
               </div>
             </div>
           </div>
-          
-          
-          
+
+
+
           <div class="directory-info-row2 "class="col-md-6 col-sm-6">
               <div class="panel">
               <div class="panel-body">
@@ -70,20 +74,20 @@
                           <address>
                             <a  id= "bookname" [routerLink]="['/my-book', post.bookid]" >
                               <h4 >{{post.bookname}} </h4>
-                                 
+
                             </a>
-                  
-                            
+
+
                           </address>
-                         
+
 
                       </div>
                   </div>
               </div>
             </div>
           </div>
-          
-          
+
+
     </div>
   </div>
   <hr/>

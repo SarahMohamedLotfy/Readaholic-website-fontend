@@ -1,57 +1,18 @@
-/* Add a black background color to the top navigation */
+
   #updates{
    margin-left: 300px;
    color: #5e2b02 ;
    font-weight: bold ;
    }
-  
-  .star {
-    font-size: 1.5rem;
-    color: #e9f1fc;
 
-  }
-  .filled {
-    color: #ffd106;
-  }
-  
-  /* Add an active class to highlight the current page */
-  .active {
-    background-color: #555;
-    color: white;
-  }
   #containerBook{
-   background-color: rgb(255, 255, 255) ; 
-  }
-  
-  /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
-    display: none;
+   background-color: #ffffff ; 
+   float:middle ;
+  display: inline-flex;
+  width:900px ;
   }
  
- h5{
-   display: inline-block;
- }
-h6{
-  display: inline-block;
-}
-  
-  /* Add a dark background on topnav links and the dropdown button on hover */
-  .topnav a:hover {
-    background-color: rgb(102, 41, 0);
-    color: white;
-  }
-  .topnav input[type=text] {
-
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 12px;
-  }
-  .glyphicon{
-  font-size :30px ;
-  padding: 0px 400px;}
-  .container {
+#updateContainer {
 background-color:#f4f1ea ;
 border-radius: 2% ;
 width:900px ;
@@ -59,7 +20,9 @@ float:middle ;
 padding: 10px;
 margin-bottom: 100px;
   }
- 
+ h5,h6,h4,small,i{
+   display: inline ;
+ }
   .avatar {
     vertical-align: middle;
     width: 50px;
@@ -69,13 +32,14 @@ margin-bottom: 100px;
   #action{
     padding-left: 5px;
   }
-#updateImage{
-width:200px;
-height:200px;
 
-}
+
 .pr-3 img{ 
   width:200px;
   height:200px;
-}  
-  
+} 
+#followButton{
+  background-color:green ;
+  display: inline-block;
+ 
+}

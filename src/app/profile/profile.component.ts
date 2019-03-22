@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
 
-    this.httpService.getUserfollowings().subscribe(
+    this.httpService.getfollowing().subscribe(
           data => {
             this.allFollowings = data,
             (err: any) => console.log(err),

@@ -1,45 +1,53 @@
 
 <h5 id="updates"> Updates </h5>
-
+ 
     
     <ul *ngFor="let update of updatess">
-            <div class="container">
+            <div class="container" id="updateContainer">
         <div class="media">
-                
-            <img class="avatar" src={{update.img_url}} alt="Generic placeholder image">
-            <div class="media-body">
-                    <div style="clear: both">
-                <h5 class="mt-0"style="float: left" >{{update.name}}</h5>
+             <a   href="Profile/{{update.user_id}}">
+            <img class="avatar" src={{update.img_url}} alt="Generic placeholder image" >
+              </a>
+            <div class="media-body" >
+                   
+                <h5 class="mt-0"  >{{update.name}}</h5>
           
-                <h6 class="mt-0"style="float: left" id="action"> {{update.actionText}}</h6>
+            <h6 class="mt-0" id="action"> {{update.actionText}}</h6>
                 <app-star  *ngIf="update.actionText == ' rated a book '"[starsCount]="update.rating" [readOnly]="true"></app-star>
-            </div> 
-
-            <div id="containerBook">
-                    <div class="media mt-3" id="updateImage">
-                        <a class="pr-3" href="#" *ngIf="update.actionText != ' started following  : '" >
-                            <img src={{update.image_link}} alt="Generic placeholder image" style="float: left" >
+            
+     
+           
+        
+                <div class="media mt-3">
+                        <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.actionText != ' started following  : '" >
+                            <img src={{update.image_link}} alt="Generic placeholder image" style="float:'left'"  >
                         </a>
-                        <a class="pr-3" href="#"*ngIf="update.actionText == ' started following  : '"  >
-                                <img src={{followed_image_link}}} alt="Generic placeholder image" style="float: left"   >
+                        <a class="pr-3" href="/Profile/{{update.followed_id}}" *ngIf="update.actionText === ' started following  : '">
+                                <img src={{update.followed_image_link}} alt="Generic placeholder image" style="float: 'left'"  >
                             </a>
-                        <div class="media-body">
-                            <div *ngIf="update.actionText != ' started following  : '">
-                            <h5 class="mt-0" style="display: inline" >{{update.title}}</h5>
-                            
-                            <h5 style="display: inline"> by {{update.author_name}}</h5>
+                        
+                        <div  class="media-body">
+                            <div  *ngIf="update.actionText != ' started following  : '">
+                            <h5 class="mt-0"  >{{update.title}}<small><i>by {{update.author_name}}</i></small></h5>
+                           
                           
                             <app-dropdown > </app-dropdown>
-                            <h4>rate it </h4>
-                            
-                            <app-star  [readOnly]="false"></app-star> 
-                            <h4>{{update.description}}</h4>
+                            <div style="clear: both" >
+                            <small style="float: 'left'">rate it </small>
+                            <app-star  [readOnly]="false" style="float: 'left'"></app-star> 
                             </div>
+                            <p>{{update.description}}</p>
+                            </div>
+                            <div *ngIf="update.actionText === ' started following  : '" >
+                                <h5 >{{update.followed_name}}</h5> 
+                                <button type="button" class="btn btn-primary" id="followButton">Follow {{update.followed_name}}</button>
+                        </div>
                         </div>
                        
-                    </div>
-                </div>
+                 
+              
             </div>
         </div>
+    </div>
     </div>
     </ul>

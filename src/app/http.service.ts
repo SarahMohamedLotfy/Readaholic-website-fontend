@@ -75,20 +75,20 @@ getUserBookInfo(): Observable<userBookInfo> {
   return this.http.get<any> (this.url + `/profile/${id}`);
 }
 
-getUserfollowings(): Observable<following[]> {
- return this.http.get<following[]> (this.url + `/following`);
-}
+//getUserfollowings(): Observable<following[]> {
+ //return this.http.get<following[]> (this.url + `/following`);
+//}
 
 logOut():Observable<any>{
   return this.http.get(this.url+'/logOut');
 }
 getfollowing(){
-  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
-  
+  return this.http.get('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
+
 }
 getfollowers(){
   return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
-  
+
    }
 
 }

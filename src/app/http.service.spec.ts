@@ -6,7 +6,8 @@ import { profile } from './classes/profile';
 import { AppComponent } from './app.component';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-fdescribe('HttpService', () => {
+//fdescribe
+describe('HttpService', () => {
 let httpService: HttpService;
 let httpTestingController: HttpTestingController;
 let testProfiles: profile [] = [{id: 1, name: 'killua zoldyck', user_name: 'killua_99', link: '',
@@ -61,10 +62,14 @@ afterEach(() => {
   httpTestingController.verify();
 
 });
+<<<<<<< HEAD
 afterEach((inject([HttpTestingController], (httpMock: HttpTestingController) => {
   httpMock.verify();
 })) );
 
+=======
+//fit
+>>>>>>> 7c7fd4c9757d451e86f8ac5176bcf2db2e6afceb
 it('should get auth profile', () => {
      httpService.getUserprofile(2).subscribe(
        (data: profile[]) => {

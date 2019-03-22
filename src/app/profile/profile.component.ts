@@ -43,5 +43,6 @@ export class ProfileComponent implements OnInit {
    //   () => console.log(' Profile is displayed ')
    // );
   }
+  
 
 }

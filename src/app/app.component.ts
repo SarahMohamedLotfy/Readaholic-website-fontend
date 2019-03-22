@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 import { book } from './classes/book';
 import { user } from './classes/user';
+import { Router } from '@angular/router';
 
 
 
@@ -14,12 +15,34 @@ import { user } from './classes/user';
 export class AppComponent {
   title = 'frontend';
   user:user ;
-  constructor(){}
-  ngOnInit(){
+  constructor(private service:HttpService,private router:Router){
+    
   }
-  
-  
-  
+  ngOnInit(){
+    
+  }
+  error:any;
+loggedIn:boolean;
+  onLogout()
+    {
+     
+      
+      this.service.logOut().subscribe(
+        res=>{localStorage.removeItem('token');
+        this.router.navigate(['/login']);
+
+        },err=>this.error=err)
+
+        
+      
+    }
+
+    
+    ngOnChanges(){
+     
+    }
+
+    
 
 
 

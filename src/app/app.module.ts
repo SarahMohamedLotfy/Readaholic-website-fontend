@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { fakeBackendProvider } from './fake-backend';
+
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
     MyBooksComponent,
     BookInfoComponent,
     LogInComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+   
 
   ],
   imports: [
@@ -47,7 +50,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
   providers: [HttpService, {provide: HTTP_INTERCEPTORS,
   useClass: AuthInterceptor,
-multi: true}],
+multi: true},fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

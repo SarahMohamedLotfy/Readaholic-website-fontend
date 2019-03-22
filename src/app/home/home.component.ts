@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
  profile:profile;
 
 
-  constructor(private httpser:HttpService) {
+  constructor(private httpser:HttpService,private router:Router) {
    
    }
 
@@ -91,12 +91,12 @@ export class HomeComponent implements OnInit {
      
       this.httpser.logOut().subscribe(
         res=>{localStorage.removeItem('token');
-      //  this.router.navigate(['/login']);
+        this.router.navigate(['/login']);
 
         },err=>this.error=err)
 
         localStorage.removeItem('token');
-        //this.router.navigate(['/login']);
+        this.router.navigate(['/login']);
       
     }
 }

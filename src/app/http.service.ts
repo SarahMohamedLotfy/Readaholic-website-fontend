@@ -83,7 +83,7 @@ logOut():Observable<any>{
   return this.http.get(this.url+'/logOut');
 }
 getfollowing(){
-  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
+  return this.http.get('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
   
 }
 getfollowers(){

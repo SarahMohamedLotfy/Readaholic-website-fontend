@@ -1,4 +1,4 @@
-import { updates } from './classes/updates';
+/* import { updates } from './classes/updates';
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
 import { HttpService } from './http.service';
@@ -170,8 +170,6 @@ fit('should get auth profile', () => {
      expect(profileRequest.request.method).toEqual('GET');
      profileRequest.flush(testProfiles);
 
-     const service: HttpService = TestBed.get(HttpService);
-     expect(service).toBeTruthy();
 
   });
 
@@ -220,5 +218,4 @@ fit('should get auth profile', () => {
     })
 );*/
 });
-});
-});
+

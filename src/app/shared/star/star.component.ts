@@ -1,3 +1,4 @@
+import { RatingModule } from 'ng2-rating';
 import { Component, OnInit, Input } from '@angular/core';
 /**used for rating a certain book and displaying its rate */
 @Component({

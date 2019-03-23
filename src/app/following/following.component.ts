@@ -4,31 +4,56 @@ import {FilterPipe} from './filter.pipe.following';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { profile } from '../classes/profile';
-//import { HttpFollowingService } from './HttpFollowing.service';
 import { HttpService } from '../http.service';
-@Component({
+/**
+ * Show the following list with books they are currently reading and Search for people following you 
+ */
+@Component(
+   /**
+ * Connect with the following.html and following.css .
+ */{
   selector: 'app-following',
   templateUrl: './following.component.html',
   styleUrls: ['./following.component.scss']
 })
 export class FollowingComponent implements OnInit {
-  posts:any=[];
-  selectedProfile: profile ;
-  temp: any =[];filterfollowing:[];
-  searchText: string = ''
 
+
+/**
+ * posts  is array of the data of people following  the main users ( id , name ,image,bookid,bookname,bookimage ) .
+
+ */
+  posts:any=[];
+ /**
+ * selectedProfile is the profile of the main user  who logged in . 
+ */
+  selectedProfile: profile ;
+   /**
+ * temp is array of people following the main users .
+ */
+  temp: any =[];filterfollowing:[];
+  //searchText: string = ''
+ /**
+*Constructer that take service and routing .
+ */
   constructor(private myfirstservice :HttpService,private route: ActivatedRoute,private router:Router ) { }
 
 
-
+/**
+ * Contains Get requests to get following list and books they are currently reading   and to get the profile data to get the name of the main user .
+ * Getfollowing () is a get request ti get the data of people following the main user 
+ * and the books they are currently reading . 
+ * The data i get is ( name of user , image of user  , id of user  , bookid, bookname,bookimage).
+ * GetUserprofile get the data of the profile of main user i used it to get the name of the main  user
+ */
   ngOnInit() {
 
+ 
    this.myfirstservice.getfollowing().subscribe((posts:any)=>{
       this.posts =posts ;
       this.temp = posts;
 
       this.filterfollowing=posts ;})
-
 
 
       this.myfirstservice.getUserprofile(1).subscribe(
@@ -40,7 +65,7 @@ export class FollowingComponent implements OnInit {
   
   }
 
-search(){
+/*search(){
 
   if (!this.posts) {
     return [];
@@ -53,7 +78,7 @@ search(){
   this.posts = this.temp.filter(it => 
     it["name"].toLocaleLowerCase().includes(this.searchText)
   );
-}
+}*/
 //onclick(){
  // this.router.navigateByUrl('/bookinfo/https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following/id');
 //}

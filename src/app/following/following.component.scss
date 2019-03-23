@@ -305,3 +305,145 @@ hr {
 margin-left: 14%;
 margin-right: 38%;
 }
+
+
+.country
+{
+  position: absolute;
+  color: #181818;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  text-align: left;
+  line-height: 18px;
+margin-left: 103px;
+font-size: 12px;
+top:13px;
+}
+
+@media (max-width: 1200px) {
+
+  #bookimage
+{
+  position: absolute;
+  width: 50px;
+  max-width: 100%;
+  height: 66px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  float: left;
+    margin-right: 2px;
+    left:30;
+}
+.left{
+position: absolute;
+left:90px;
+}
+.directory-info-row {
+  position: relative;
+  display: block;
+  width: 90%;
+  margin-left: 5px;
+  margin-top: 5px;
+  background: #FFFFFF;
+  left:100px;
+
+
+}
+
+#bookname{
+  position: absolute;
+  top:20px;
+  left:76px;
+  font-size: 12px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #181818;
+}
+.currentext
+{
+  position: absolute;
+  top:3px;
+  left:76px;
+  color: #999999;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+
+  font-size: 12px;
+}
+.directory-info-row1
+{
+  position: absolute;
+  left:20px;
+}
+#tfheader{
+  position: relative;
+  top: 25px;
+}
+hr {
+  position: relative;
+  display: block;
+  height: 1px;
+  border-top: 1px solid #D6D0C4;
+margin-left: 14%;
+margin-right: 15%;
+}
+}
+
+
+@media (max-width: 770px) {
+
+  #bookimage
+{
+  position: absolute;
+  width: 0px;
+  max-width: 100%;
+  height: 0px;
+  
+}
+.bookhide{
+  font-size: 0px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #181818;
+}
+.currentext
+{
+  font-size: 0px;
+}
+
+#stopfollow{
+  position:absolute;
+    top: -10px;
+    right: 10px;
+display: inline-block;
+border-radius: 3px;
+    
+
+}
+}
+
+@media (max-width: 680px) {
+
+  #bookimage
+{
+  position: absolute;
+  width: 0px;
+  max-width: 100%;
+  height: 0px;
+  
+}
+.bookhide{
+  font-size: 0px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #181818;
+}
+.currentext
+{
+  font-size: 0px;
+}
+
+#stopfollow{
+  position:absolute;
+    top: -10px;
+    right: -60px;
+display: inline-block;
+border-radius: 3px;
+    
+}}

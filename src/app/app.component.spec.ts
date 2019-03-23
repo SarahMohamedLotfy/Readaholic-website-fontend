@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterOutlet, RouterModule, Router } from '@angular/router';
@@ -20,7 +21,8 @@ fdescribe('AppComponent', () => {
         AppComponent
       ],
       imports: [ RouterTestingModule,
-      RouterModule]
+      RouterModule,
+     HttpClientModule]
     }).compileComponents();
   }));
 
@@ -31,10 +33,10 @@ fdescribe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  fit(`should have as title 'Readholic'`, () => {
+  fit(`should have as title 'frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Readholic');
+    expect(app.title).toEqual('frontend');
   });
   it('should have a router outlet',
     async(() => {

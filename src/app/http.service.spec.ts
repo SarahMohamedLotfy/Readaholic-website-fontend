@@ -101,9 +101,9 @@ fdescribe('HttpService', () => {
    shelf:1,
    actionText:"FR",
    followed_image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg"
-  }];*/
+  }];
 
-  fdescribe('HttpService', () => {
+  describe('HttpService', () => {
     let httpService: HttpService;
     let httpTestingController: HttpTestingController;
     let testFollower: followerComponent [] = [{
@@ -161,7 +161,7 @@ afterEach((inject([HttpTestingController], (httpMock: HttpTestingController) => 
 })) );
 
 //fit
-fit('should get auth profile', () => {
+it('should get auth profile', () => {
      httpService.getUserprofile(2).subscribe(
        (data: profile[]) => {
          expect(data.length).toBe(2);
@@ -173,7 +173,7 @@ fit('should get auth profile', () => {
 
   });
 
-  fit('should get followingList', () => {
+  it('should get followingList', () => {
     httpService.getfollowing().subscribe(
       (data: followingComponent[]) => {
         expect(data.length).toBe(6);
@@ -187,7 +187,7 @@ fit('should get auth profile', () => {
     expect(service).toBeTruthy();
 
  });
- fit('should get followingList', () => {
+ it('should get followingList', () => {
   httpService.getfollowers().subscribe(
     (data: followingComponent[]) => {
       expect(data.length).toBe(6);
@@ -216,6 +216,6 @@ fit('should get auth profile', () => {
       // Then we set the fake data to be returned by the mock
       req.flush({data: fakeUpdates});
     })
-);*/
+);
 });
-
+*/

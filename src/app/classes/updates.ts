@@ -1,6 +1,4 @@
-import { actor } from './actor';
-import { action } from './action';
-import { book } from './book';
+
 
 export class updates {
 image_link:string ;

@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Readholic';
+  title = 'frontend';
   user:user ;
   constructor(private service:HttpService,private router:Router){
     

@@ -3,7 +3,7 @@ import { FilterPipe } from './filter.pipe';
 import { HttpService } from './http.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http' ;
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +19,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { fakeBackendProvider } from './fake-backend';
+
 
 
 
@@ -45,7 +46,8 @@ import { fakeBackendProvider } from './fake-backend';
     NgbModule.forRoot(),
     SharedModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RatingModule
 
 
   ],

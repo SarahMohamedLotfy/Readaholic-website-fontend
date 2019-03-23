@@ -17,13 +17,14 @@ export class HomeService {
 
 
    getUpdates():Observable<any>{
-
-     return this.http.get("http://localhost:3000/updates").pipe(
+return this.http.get("http://localhost:3000/updates")
+.pipe(
       retry(3), // retry a failed request up to 3 times
-      catchError(this.handleError) // then handle the error
+    catchError(this.handleError) // then handle the error
 
     );
    }
+  
    private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -40,7 +41,6 @@ export class HomeService {
       'Something bad happened; please try again later.');
   };
  
-
   logOut():Observable<any>{
     return this.http.get('http://localhost:3000/logOut');
   }

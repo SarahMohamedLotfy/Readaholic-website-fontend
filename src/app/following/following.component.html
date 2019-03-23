@@ -1,6 +1,10 @@
 <!doctype html>
+
 <html lang="en">
+    <navbar></navbar>
 <head>
+  
+
   <meta charset="utf-8">
   <script src="angular.min.js"></script>
   <title>Followers</title>
@@ -10,6 +14,7 @@
 <router-outlet></router-outlet>
 
 <body>
+
     <div *ngIf="selectedProfile">
         <div  id="Myprofilename">
             <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 

@@ -15,8 +15,13 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { HomeService } from './home.service';
 import { HttpService } from '../http.service';
 import { EILSEQ } from 'constants';
-
+/**
+ *main home of readholic
+ */
 @Component({
+  /**
+ *selector of home
+ */
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
@@ -26,12 +31,13 @@ import { EILSEQ } from 'constants';
  * Home is where updates are viewed
  */
 export class HomeComponent implements OnInit {
+  /**
+ *array of updates 
+ */
   updatess:updates[];
-  actors:actor[];
-  actions:action[];
-  book:book[];
+  
    error: any;
-  profile:profile;
+  
  
  /**
  *we pass an object of  homeservice to the constructor 
@@ -39,7 +45,9 @@ export class HomeComponent implements OnInit {
    constructor(private httpser:HomeService,private router:Router) {
     
     }
- 
+ /**
+ * get data on loading home
+ */
    ngOnInit(){
      this.httpser.getUpdates().subscribe(
          data =>{

@@ -188,13 +188,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/home/home.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/home/home.component.ts:34</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>we pass the httpservice responsible of get requests to the constructor of home component</p>
+                            <div class="io-description"><p>we pass an object of  homeservice to the constructor </p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -271,15 +271,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/home/home.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/home/home.component.ts:54</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>function loadData is for checking type of updates and managing its html</p>
+                    <div class="io-description"><p>function loadData is for checking type of updates and managing its html view </p>
 </div>
 
                     <div class="io-description">
@@ -312,8 +312,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/home/home.component.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/home/home.component.ts:43</a></div>
                 </td>
             </tr>
 
@@ -355,7 +355,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/home/home.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/home/home.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -382,7 +382,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/home/home.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/home/home.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -409,7 +409,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/home/home.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/home/home.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -436,7 +436,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/home/home.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/home/home.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -463,7 +463,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/home/home.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/home/home.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -490,7 +490,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/home/home.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/home/home.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -519,6 +519,7 @@ import { StarComponent } from &#x27;../shared/star/star.component&#x27;;
 import { NavbarComponent } from &#x27;../shared/navbar/navbar.component&#x27;;
 import { HomeService } from &#x27;./home.service&#x27;;
 import { HttpService } from &#x27;../http.service&#x27;;
+import { EILSEQ } from &#x27;constants&#x27;;
 
 @Component({
   selector: &#x27;app-home&#x27;,
@@ -538,7 +539,7 @@ export class HomeComponent implements OnInit {
   profile:profile;
  
  /**
- *we pass the httpservice responsible of get requests to the constructor of home component
+ *we pass an object of  homeservice to the constructor 
  */
    constructor(private httpser:HomeService,private router:Router) {
     
@@ -553,49 +554,65 @@ export class HomeComponent implements OnInit {
        
      }
     /**
- * function loadData is for checking type of updates and managing its html
+ * function loadData is for checking type of updates and managing its html view 
  */
      loadData(){
        var i;
   
        for(i&#x3D;0;i&lt;this.updatess.length;i++){
+         /**
+ * update type 0 means user rated or reviewed a book  
+ */
      
     if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;0&#x27; &amp;&amp; !(this.updatess[i].rating)){
      this.updatess[i].actionText&#x3D;&quot; reviewed a book &quot; ;
     
     }
-    if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;0&#x27; &amp;&amp; !(this.updatess[i].body)){
+    else if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;0&#x27; &amp;&amp; !(this.updatess[i].body)){
   
     this.updatess[i].actionText&#x3D;&quot; rated a book &quot; ;
     
-    }
-    if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 1){
+    }        /**
+    * update type 1 and shelf number 1  means user read a book  
+    */
+    else if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 1){
     this.updatess[i].actionText&#x3D;&quot; read a book &quot; ;
    
-    }
-    if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 2){
+    }    /**
+    * update type 1 annd shelf number 2  means user is currently reading a book  
+    */
+   else if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 2){
         this.updatess[i].actionText&#x3D;&quot; is currently reading a book &quot; ;
         
-      }
-      if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 3){
+      } /**
+      * update type 1 annd shelf number 3  means user wants to read a book  
+      */
+     else if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 3){
          
           this.updatess[i].actionText&#x3D;&quot; wants to read a book &quot; ;
     
-        }
-      if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;2&#x27;){//follow
+        } /**
+        * update type 2 means user followed someone  
+        */
+    else  if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;2&#x27;){
          
         this.updatess[i].actionText&#x3D;&quot; started following  : &quot; ;
-      }
-      if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;3&#x27;){//like
+      } /**
+      * update type 3 means user liked a review
+      */
+     else if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;3&#x27;){
        
           this.updatess[i].actionText&#x3D;&quot; liked a review  &quot; ;
 
-        }
-        if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;4&#x27;){//comment
+        } /**
+        * update type 4 means user commented on a review
+        */
+      else  if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;4&#x27;){
           
             this.updatess[i].actionText&#x3D;&quot; commented on a review &quot; ;
       
-          }
+        }
+        else{  this.updatess[i].actionText&#x3D;&quot; &quot; ;}
        
        }
           }

@@ -382,7 +382,12 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
+<<<<<<< HEAD
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FilterPipe } from &#x27;./filter.pipe&#x27;;
+=======
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { RatingModule } from &#x27;ng2-rating&#x27;;
+import { FilterPipe } from &#x27;./filter.pipe&#x27;;
+>>>>>>> 92374155494290434901d89b282150f9df4f73f8
 import { HttpService } from &#x27;./http.service&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
@@ -401,7 +406,10 @@ import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
 import { LogInComponent } from &#x27;./log-in/log-in.component&#x27;;
 import { AuthInterceptor } from &#x27;./auth.interceptor&#x27;;
 import { PageNotFoundComponent } from &#x27;./page-not-found.component&#x27;;
+<<<<<<< HEAD
 import { fakeBackendProvider } from &#x27;./fake-backend&#x27;;
+=======
+>>>>>>> 92374155494290434901d89b282150f9df4f73f8
 
 
 
@@ -416,8 +424,12 @@ import { fakeBackendProvider } from &#x27;./fake-backend&#x27;;
     MyBooksComponent,
     BookInfoComponent,
     LogInComponent,
+<<<<<<< HEAD
     PageNotFoundComponent,
    
+=======
+    PageNotFoundComponent
+>>>>>>> 92374155494290434901d89b282150f9df4f73f8
 
   ],
   imports: [
@@ -434,7 +446,11 @@ import { fakeBackendProvider } from &#x27;./fake-backend&#x27;;
 
   providers: [HttpService, {provide: HTTP_INTERCEPTORS,
   useClass: AuthInterceptor,
+<<<<<<< HEAD
 multi: true},fakeBackendProvider],
+=======
+multi: true}],
+>>>>>>> 92374155494290434901d89b282150f9df4f73f8
   bootstrap: [AppComponent]
 })
 export class AppModule { }

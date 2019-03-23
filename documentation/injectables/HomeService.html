@@ -27,7 +27,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content interceptor">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -36,10 +36,9 @@
 
 
 
-
 <ol class="breadcrumb">
-  <li>Interceptors</li>
-  <li>AuthInterceptor</li>
+  <li>Injectables</li>
+  <li>HomeService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,8 +56,9 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/auth.interceptor.ts</code>
+            <code>src/app/home/home.service.ts</code>
         </p>
+
 
 
 
@@ -76,7 +76,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#intercept">intercept</a>
+                                <a href="#getUpdates">getUpdates</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#handleError">handleError</a>
+                            </li>
+                            <li>
+                                <a href="#logOut">logOut</a>
                             </li>
                         </ul>
                     </td>
@@ -96,12 +103,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/auth.interceptor.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/home.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -119,10 +126,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>router</td>
+                                                        <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -148,26 +155,67 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="intercept"></a>
+                    <a name="getUpdates"></a>
                     <span class="name">
                         <b>
-                            intercept
+                            getUpdates
                         </b>
-                        <a href="#intercept"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getUpdates"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>intercept(req: HttpRequest<any>, next: <a href="https://angular.io/api/common/http/HttpHandler" target="_blank">HttpHandler</a>)</code>
+<code>getUpdates()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/auth.interceptor.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/home/home.service.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleError"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            handleError
+                        </b>
+                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleError(error: <a href="https://angular.io/api/common/http/HttpErrorResponse" target="_blank">HttpErrorResponse</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/home/home.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -187,21 +235,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>req</td>
+                                    <td>error</td>
                                     <td>
-                                            <code>HttpRequest&lt;any&gt;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>next</td>
-                                    <td>
-                                                <code><a href="https://angular.io/api/common/http/HttpHandler" target="_blank" >HttpHandler</a></code>
+                                                <code><a href="https://angular.io/api/common/http/HttpErrorResponse" target="_blank" >HttpErrorResponse</a></code>
                                     </td>
 
                                     <td>
@@ -216,11 +252,50 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;HttpEvent&lt;any&gt;&gt;</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logOut"></a>
+                    <span class="name">
+                        <b>
+                            logOut
+                        </b>
+                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/home/home.service.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
                     </div>
                 </td>
             </tr>
@@ -232,52 +307,57 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from &#x27;@angular/common/http&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-import { tap } from &#x27;rxjs/operators&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-export const InterceptorSkipHeader&#x3D;&#x27;X-Skip-Interceptor&#x27;;
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor{
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpClient, HttpErrorResponse, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { Observable, throwError, observable } from &#x27;rxjs&#x27;;
+import { catchError, retry } from &#x27;rxjs/operators&#x27;;
 
-constructor(private router: Router){}
-intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;any&gt;&gt;{
-<<<<<<< HEAD
-    
-     if(localStorage.getItem(&#x27;token&#x27;)!&#x3D;null)
-    {
-        
-        const clonedReq&#x3D; req.clone({headers: req.headers.set(&#x27;Authorization&#x27;,&#x27;bearer &#x27;+localStorage.getItem(&#x27;token&#x27;))});
-        return next.handle(clonedReq).pipe( tap(
-            succ &#x3D;&gt;{},
-            err&#x3D;&gt; {
-                
-=======
-    if (req.headers.has(InterceptorSkipHeader))
-    {
-        return next.handle(req.clone());
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+
+export class HomeService {
+
+
+
+  constructor(private http:HttpClient) {}
+
+
+
+   getUpdates():Observable&lt;any&gt;{
+
+     return this.http.get(&quot;http://localhost:3000/updates&quot;).pipe(
+      retry(3), // retry a failed request up to 3 times
+      catchError(this.handleError) // then handle the error
+
+    );
+   }
+   private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error(&#x27;An error occurred:&#x27;, error.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        &#x60;Backend returned code ${error.status}, &#x60; +
+        &#x60;body was: ${error.error}&#x60;);
     }
-    else if(localStorage.getItem(&#x27;token&#x27;)!&#x3D;null)
-    {
-       
-        const clonedReq&#x3D; req.clone({headers: req.headers.set(&#x27;Authorization&#x27;,&#x27;Bearer&#x27;+localStorage.getItem(&#x27;token&#x27;))});
-        return next.handle(clonedReq).pipe( tap(
-            succ &#x3D;&gt;{},
-            err&#x3D;&gt; {
->>>>>>> 92374155494290434901d89b282150f9df4f73f8
-                if(err.status &#x3D;&#x3D;401)
-                {localStorage.removeItem(&#x27;token&#x27;);
-                this.router.navigateByUrl(&#x27;/login&#x27;);}
-            }
-        ))
-    }
-    else 
-    return next.handle(req.clone());
-}
+    // return an observable with a user-facing error message
+    return throwError(
+      &#x27;Something bad happened; please try again later.&#x27;);
+  };
+ 
+
+  logOut():Observable&lt;any&gt;{
+    return this.http.get(&#x27;http://localhost:3000/logOut&#x27;);
+  }
 }</code></pre>
     </div>
+
 </div>
+
 
 
 
@@ -304,8 +384,8 @@ intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEve
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interceptor';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthInterceptor.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

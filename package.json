@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "fontawesome": "^5.6.3",
     "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.5.1",
     "ng2-rating": "0.0.7",
     "popper.js": "^1.14.7",
     "rxjs": "~6.3.3",

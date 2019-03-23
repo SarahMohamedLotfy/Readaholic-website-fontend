@@ -1,6 +1,6 @@
 export class review{
     id: number;
-    userId: number;
+    userId: string;
     userName: string;
     userImg: string;
     bookId: number; /////

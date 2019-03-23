@@ -4,8 +4,8 @@ import {FilterPipe} from './filter.pipe.following';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { profile } from '../classes/profile';
-import { HttpFollowing } from './HttpFollowing';
-
+//import { HttpFollowingService } from './HttpFollowing.service';
+import { HttpService } from '../http.service';
 @Component({
   selector: 'app-following',
   templateUrl: './following.component.html',
@@ -17,7 +17,7 @@ export class FollowingComponent implements OnInit {
   temp: any =[];filterfollowing:[];
   searchText: string = ''
 
-  constructor(private myfirstservice :HttpFollowing,private route: ActivatedRoute,private router:Router ) { }
+  constructor(private myfirstservice :HttpService,private route: ActivatedRoute,private router:Router ) { }
 
 
 

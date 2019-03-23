@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { following } from '../classes/following';
+import { followingComponent } from '../classes/followingComponent';
 import { HttpService } from '../http.service';
 import { profile } from '../classes/profile';
 import { ActivatedRoute , Router } from '@angular/router';
@@ -43,5 +43,6 @@ export class ProfileComponent implements OnInit {
    //   () => console.log(' Profile is displayed ')
    // );
   }
+  
 
 }

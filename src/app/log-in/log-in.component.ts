@@ -15,7 +15,7 @@ import { user_shelves } from '../classes/user_shelves';
 export class LogInComponent implements OnInit {
   
   form:FormGroup;
-  users:user[];
+  users:user;
   wrongPass:boolean;
   appComponent:AppComponent;
   constructor(private service:HttpService,private fb:FormBuilder,private router:Router) { 
@@ -31,6 +31,7 @@ export class LogInComponent implements OnInit {
   ngOnInit() {
     if(localStorage.getItem('token')!=null)
     this.router.navigateByUrl('/home');
+    
   }
 onSubmit(){
   const val = this.form.value;
@@ -42,12 +43,14 @@ onSubmit(){
   this.wrongPass=false;
 },
 err => {
-  if(err.status ==400)
+  if(err.status ==405)
   {
   console.log('incorrect username or password');
   this.wrongPass=true;
   
   }
+  else if(err.status== 404)
+  console.log('no user');
   else
   console.log(err);
 }
@@ -57,9 +60,7 @@ ngOnChanges(): void{
   this.wrongPass=this.wrongPass;
 }
 
-getUser():user[]{
-  return this.users;
-}
+
   
 
 }

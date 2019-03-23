@@ -1,6 +1,6 @@
 export class user{
-
     username:string ;
-    imageLink:string;
+    password:string;
+    image_link:string;
    
     }

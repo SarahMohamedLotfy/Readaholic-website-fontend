@@ -227,7 +227,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgbRatingModule } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 import {RatingModule} from &quot;ng2-rating&quot;;
@@ -245,7 +246,8 @@ import { NavbarComponent } from &#x27;./navbar/navbar.component&#x27;;
   imports: [
     CommonModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    NgbRatingModule
   ],
   exports: [
     CommonModule,

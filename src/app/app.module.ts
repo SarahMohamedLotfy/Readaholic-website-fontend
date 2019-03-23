@@ -47,11 +47,7 @@ import { fakeBackendProvider } from './fake-backend';
     SharedModule,
     AppRoutingModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
     RatingModule
-=======
-    
->>>>>>> a84b38f26565b7a2db4a87591b64757b1c8f756f
 
 
   ],

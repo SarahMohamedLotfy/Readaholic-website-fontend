@@ -14,6 +14,7 @@ import { StarComponent } from '../shared/star/star.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { HomeService } from './home.service';
 import { HttpService } from '../http.service';
+import { EILSEQ } from 'constants';
 
 @Component({
   selector: 'app-home',
@@ -32,8 +33,10 @@ export class HomeComponent implements OnInit {
    error: any;
   profile:profile;
  
- 
-   constructor(private httpser:HttpService,private router:Router) {
+ /**
+ *we pass an object of  homeservice to the constructor 
+ */
+   constructor(private httpser:HomeService,private router:Router) {
     
     }
  
@@ -43,59 +46,69 @@ export class HomeComponent implements OnInit {
            this.updatess=data ;
            this.loadData();
         }, error => this.error = error);
-        /*
-     this.httpser.getUserInfo().subscribe(
-       data=>{
-         this.profile=data;
-       }
-      
-     )*/
+       
      }
     /**
- * function loadData is for checking type of updates and managing its html
+ * function loadData is for checking type of updates and managing its html view 
  */
      loadData(){
        var i;
   
        for(i=0;i<this.updatess.length;i++){
+         /**
+ * update type 0 means user rated or reviewed a book  
+ */
      
     if ( this.updatess[i].update_type === '0' && !(this.updatess[i].rating)){
      this.updatess[i].actionText=" reviewed a book " ;
     
     }
-    if ( this.updatess[i].update_type === '0' && !(this.updatess[i].body)){
+    else if ( this.updatess[i].update_type === '0' && !(this.updatess[i].body)){
   
     this.updatess[i].actionText=" rated a book " ;
     
-    }
-    if ( this.updatess[i].update_type === '1' && this.updatess[i].shelf === 1){
+    }        /**
+    * update type 1 and shelf number 1  means user read a book  
+    */
+    else if ( this.updatess[i].update_type === '1' && this.updatess[i].shelf === 1){
     this.updatess[i].actionText=" read a book " ;
    
-    }
-    if (  this.updatess[i].update_type === '1' && this.updatess[i].shelf === 2){
+    }    /**
+    * update type 1 annd shelf number 2  means user is currently reading a book  
+    */
+   else if (  this.updatess[i].update_type === '1' && this.updatess[i].shelf === 2){
         this.updatess[i].actionText=" is currently reading a book " ;
         
-      }
-      if (  this.updatess[i].update_type === '1' && this.updatess[i].shelf === 3){
+      } /**
+      * update type 1 annd shelf number 3  means user wants to read a book  
+      */
+     else if (  this.updatess[i].update_type === '1' && this.updatess[i].shelf === 3){
          
           this.updatess[i].actionText=" wants to read a book " ;
     
-        }
-      if ( this.updatess[i].update_type === '2'){//follow
+        } /**
+        * update type 2 means user followed someone  
+        */
+    else  if ( this.updatess[i].update_type === '2'){
          
         this.updatess[i].actionText=" started following  : " ;
-      }
-      if (  this.updatess[i].update_type === '3'){//like
+      } /**
+      * update type 3 means user liked a review
+      */
+     else if (  this.updatess[i].update_type === '3'){
        
           this.updatess[i].actionText=" liked a review  " ;
 
-        }
-        if (  this.updatess[i].update_type === '4'){//comment
+        } /**
+        * update type 4 means user commented on a review
+        */
+      else  if (  this.updatess[i].update_type === '4'){
           
             this.updatess[i].actionText=" commented on a review " ;
       
-          }
-          else{this.updatess[i].actionText="  " ;}
+        }
+        else{  this.updatess[i].actionText=" " ;}
+       
        }
           }
      

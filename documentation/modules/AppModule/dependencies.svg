@@ -32,9 +32,13 @@
 <title>cluster_AppModule_imports</title>
 <polygon fill="none" stroke="#000000" points="318,-78 318,-130 579,-130 579,-78 318,-78"/>
 </g>
+<g id="clust14" class="cluster">
+<title>cluster_AppModule_exports</title>
+<polygon fill="none" stroke="#000000" points="954,-208 954,-260 1044,-260 1044,-208 954,-208"/>
+</g>
 <g id="clust15" class="cluster">
 <title>cluster_AppModule_bootstrap</title>
-<polygon fill="none" stroke="#000000" points="994,-208 994,-260 1118,-260 1118,-208 994,-208"/>
+<polygon fill="none" stroke="#000000" points="1052,-208 1052,-260 1176,-260 1176,-208 1052,-208"/>
 </g>
 <g id="clust16" class="cluster">
 <title>cluster_AppModule_providers</title>
@@ -166,17 +170,29 @@
 <path fill="none" stroke="#000000" d="M655,-122.0336C655,-139.0597 655,-162 655,-162 655,-162 1004.2208,-162 1004.2208,-162"/>
 <polygon fill="#000000" stroke="#000000" points="1004.2208,-165.5001 1014.2208,-162 1004.2207,-158.5001 1004.2208,-165.5001"/>
 </g>
-<!-- AppComponent  -->
+<!-- FilterPipe  -->
 <g id="node14" class="node">
+<title>FilterPipe </title>
+<polygon fill="#fb8072" stroke="#000000" points="1036.2179,-252 961.7821,-252 961.7821,-216 1036.2179,-216 1036.2179,-252"/>
+<text text-anchor="middle" x="999" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">FilterPipe </text>
+</g>
+<!-- AppModule&#45;&gt;FilterPipe  -->
+<g id="edge13" class="edge">
+<title>AppModule&#45;&gt;FilterPipe </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1025.2653,-187.1061C1025.2653,-187.1061 1025.2653,-205.991 1025.2653,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="1021.7653,-205.9909 1025.2653,-215.991 1028.7653,-205.991 1021.7653,-205.9909"/>
+</g>
+<!-- AppComponent  -->
+<g id="node15" class="node">
 <title>AppComponent </title>
-<polygon fill="#80b1d3" stroke="#000000" points="1110.439,-252 1001.561,-252 1001.561,-216 1110.439,-216 1110.439,-252"/>
-<text text-anchor="middle" x="1056" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent </text>
+<polygon fill="#80b1d3" stroke="#000000" points="1168.439,-252 1059.561,-252 1059.561,-216 1168.439,-216 1168.439,-252"/>
+<text text-anchor="middle" x="1114" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent </text>
 </g>
 <!-- AppModule&#45;&gt;AppComponent  -->
-<g id="edge13" class="edge">
+<g id="edge14" class="edge">
 <title>AppModule&#45;&gt;AppComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="1,5" d="M1056,-187.1061C1056,-187.1061 1056,-205.991 1056,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="1052.5001,-205.9909 1056,-215.991 1059.5001,-205.991 1052.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="1,5" d="M1078.6793,-187.1061C1078.6793,-187.1061 1078.6793,-205.991 1078.6793,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="1075.1794,-205.9909 1078.6793,-215.991 1082.1794,-205.991 1075.1794,-205.9909"/>
 </g>
 <!-- AppRoutingModule -->
 <g id="node12" class="node">
@@ -203,25 +219,25 @@
 <polygon fill="#000000" stroke="#000000" points="1004.1703,-175.5001 1014.1703,-172 1004.1702,-168.5001 1004.1703,-175.5001"/>
 </g>
 <!-- AuthInterceptor -->
-<g id="node15" class="node">
+<g id="node16" class="node">
 <title>AuthInterceptor</title>
 <ellipse fill="#fdb462" stroke="#000000" cx="229" cy="-104" rx="72.9121" ry="18"/>
 <text text-anchor="middle" x="229" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AuthInterceptor</text>
 </g>
 <!-- AuthInterceptor&#45;&gt;AppModule -->
-<g id="edge14" class="edge">
+<g id="edge15" class="edge">
 <title>AuthInterceptor&#45;&gt;AppModule</title>
 <path fill="none" stroke="#000000" d="M229,-122.0449C229,-143.6623 229,-177 229,-177 229,-177 1004.1375,-177 1004.1375,-177"/>
 <polygon fill="#000000" stroke="#000000" points="1004.1376,-180.5001 1014.1375,-177 1004.1375,-173.5001 1004.1376,-180.5001"/>
 </g>
 <!-- HttpService -->
-<g id="node16" class="node">
+<g id="node17" class="node">
 <title>HttpService</title>
 <ellipse fill="#fdb462" stroke="#000000" cx="81" cy="-104" rx="57.3185" ry="18"/>
 <text text-anchor="middle" x="81" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">HttpService</text>
 </g>
 <!-- HttpService&#45;&gt;AppModule -->
-<g id="edge15" class="edge">
+<g id="edge16" class="edge">
 <title>HttpService&#45;&gt;AppModule</title>
 <path fill="none" stroke="#000000" d="M81,-122.0908C81,-145.1328 81,-182 81,-182 81,-182 1004.1055,-182 1004.1055,-182"/>
 <polygon fill="#000000" stroke="#000000" points="1004.1055,-185.5001 1014.1055,-182 1004.1054,-178.5001 1004.1055,-185.5001"/>

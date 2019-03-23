@@ -65,7 +65,7 @@
 				"update_type":"1"
          },
          {
-		 
+
          "updated_at":"2019-03-19 00:00:00",
 		 "user_id":2,
 		 "img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
@@ -145,7 +145,7 @@
 											"id": "22",
 											"name": "to-read",
 											"book_count": "20"
-                                                                    
+
                                     }
                                     ]
                                 }],
@@ -546,7 +546,7 @@
             "updated_at": "juuune",
             "numberLikes": 3,
             "numberComments": 3,
-            "userId":"000000",
+            "userId": "000000",
             "userName": "killua",
             "userImg": "https://pbs.twimg.com/profile_images/955923907051184129/8LxKsoPl_400x400.jpg"
         },

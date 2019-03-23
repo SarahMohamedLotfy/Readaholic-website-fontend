@@ -174,12 +174,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="../injectables/HttpService.html">HttpService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(service: <a href="../injectables/BookService.html">BookService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/book-info/book-info.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/book-info/book-info.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -197,10 +197,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>http</td>
+                                                        <td>service</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                                        <code><a href="../injectables/BookService.html" target="_self" >BookService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -272,14 +272,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/book-info/book-info.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>gets the information of the selected book from the server and setes user mode or guest mode  </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -315,10 +317,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/book-info/book-info.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/book-info/book-info.component.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>true if user mode false if guest mode </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -342,10 +350,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/book-info/book-info.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/book-info/book-info.component.ts:16</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>store information of the selected book </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -369,10 +383,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/book-info/book-info.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/book-info/book-info.component.ts:18</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>reviews array of the selectec book </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -396,10 +416,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/book-info/book-info.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/book-info/book-info.component.ts:20</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>stores user related book info </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -412,10 +438,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 
-import { HttpService } from &#x27;../http.service&#x27;;
 import { review } from &#x27;../classes/review&#x27;;
 import { book } from &#x27;../classes/book&#x27;;
 import { userBookInfo } from &#x27;../classes/userBookInfo&#x27;;
+import { BookService } from &#x27;./book.service&#x27;;
 
 @Component({
   selector: &#x27;app-book-info&#x27;,
@@ -423,18 +449,23 @@ import { userBookInfo } from &#x27;../classes/userBookInfo&#x27;;
   styleUrls: [&#x27;./book-info.component.css&#x27;]
 })
 export class BookInfoComponent implements OnInit {
+  /**store information of the selected book */
   myBook: book;
+  /**reviews array of the selectec book */
   reviews: review[];
+  /**stores user related book info */
   userInfo: userBookInfo;
+  /**true if user mode false if guest mode */
   isUser: boolean;
 
-  constructor(private http: HttpService, private route: ActivatedRoute,private router: Router) {
+  constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
   }
 
+  /**gets the information of the selected book from the server and setes user mode or guest mode  */
   ngOnInit() {
-  this.http.getBook(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data:book) &#x3D;&gt; this.myBook &#x3D; data, error&#x3D;&gt; this.router.navigateByUrl(&quot;/404&quot;));
-  this.http.getBookReviews().subscribe((data:review[]) &#x3D;&gt; this.reviews &#x3D; data);
-  this.http.getUserBookInfo().subscribe(data&#x3D;&gt; this.userInfo &#x3D; data)
+  this.service.getBook(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data:book) &#x3D;&gt; this.myBook &#x3D; data, error&#x3D;&gt; this.router.navigateByUrl(&quot;/404&quot;));
+  this.service.getBookReviews().subscribe((data:review[]) &#x3D;&gt; this.reviews &#x3D; data);
+  this.service.getUserBookInfo().subscribe(data&#x3D;&gt; this.userInfo &#x3D; data)
   if(localStorage.getItem(&#x27;token&#x27;) &#x3D;&#x3D; null){
     this.isUser &#x3D; false;
   }
@@ -449,11 +480,7 @@ export class BookInfoComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-<<<<<<< HEAD
-        <pre class="line-numbers"><code class="language-html"> 
-=======
         <pre class="line-numbers"><code class="language-html">&lt;navbar&gt;&lt;/navbar&gt;
->>>>>>> 92374155494290434901d89b282150f9df4f73f8
     &lt;div class&#x3D;&quot;container&quot;&gt;
         &lt;div class&#x3D;&quot;row&quot;&gt; &lt;!--book info--&gt;
             &lt;div class&#x3D;&quot;media&quot;&gt;
@@ -505,7 +532,7 @@ export class BookInfoComponent implements OnInit {
         &lt;hr&gt;
         &lt;div class&#x3D;&quot;row&quot;&gt;
             &lt;div class&#x3D;&quot;media&quot; *ngFor&#x3D;&quot;let review of reviews&quot;&gt;
-                &lt;img  [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.userId]&quot; id&#x3D;&quot;reviewerImg&quot; src&#x3D;{{review?.userImg}} class&#x3D;&quot;mr-3 mt-3 rounded-circle&quot; style&#x3D;&quot;width:70px;&quot;&gt;
+                &lt;img  [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.userId]&quot; id&#x3D;&quot;reviewerImg&quot; src&#x3D;{{review?.userImg}} class&#x3D;&quot;align-self-start mr-3&quot; style&#x3D;&quot;width:50px; height: 40;&quot;&gt;
                 &lt;div class&#x3D;&quot;media-body&quot; id&#x3D;&quot;reviewInfo&quot;&gt;
                     &lt;h6 &gt;&lt;b [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.userId]&quot; id&#x3D;&quot;reviewerName&quot;&gt;{{review?.userName}}&lt;/b&gt; rated it &lt;app-star  [starsCount]&#x3D;&quot;review?.rating&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;&lt;/h6&gt;
                     &lt;p&gt;{{review?.body}}&lt;/p&gt;
@@ -632,13 +659,8 @@ export class BookInfoComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-<<<<<<< HEAD
-        var COMPONENT_TEMPLATE = '<div>     <div class="container">        <div class="row"> <!--book info-->            <div class="media">                <div class="col-md-2" id="leftCol">                    <img id="bookCover" src={{myBook?.imageUrl}} class="align-self-start mr-3">                    <app-dropdown id="shelf"></app-dropdown>                    <app-star id="rateBook"  [starsCount]="0" [readOnly]="false"></app-star>                </div>                <div class="media-body" id="bookInfo">                    <div class="col-md-9">                        <h1 id="Booktitle">{{myBook?.title}}</h1>                        <h5 id="authorName">by {{myBook?.authorName}}</h5>                        <div>                            <app-star [starsCount]="myBook?.ratingsAvg" [readOnly]="true"></app-star>                            <span style="font-size: 13px; font-family: \'Segoe UI\', Tahoma, sans-serif;">{{myBook?.ratingsAvg}}   {{myBook?.ratingsCount}} ratings {{myBook?.reviewsCount}} reviews</span>                        </div>                        <p>{{myBook?.description}}</p>                        <div id="bookFormat">                            <p>Paperback {{myBook?.pagesNum}} pages</p>                            <p>Published {{myBook?.publicationDate}} by {{myBook?.publisher}}</p>                        </div>                    </div>                </div>                            </div>        </div>    </div>    <div class="container" *ngIf="isUser" id="activity">        <h6>MY ACTIVITY</h6>        <hr>        <div class="row" >            <div class="col-2" style="min-width: 50px">                <p>Review Of</p>                <p>shelf</p>                <p>Rating</p>                <p>Review</p>            </div>            <div class="col-8" style="min-width: 300px">                <p>{{myBook?.isbn}}</p>                <p>{{userInfo?.shelf_name}}</p>                <app-star [starsCount]="userInfo?.rating"></app-star>                <p>{{userInfo?.body}}</p>            </div>        </div>    </div>    <div class="container">        <hr>        <div class="row">            <div class="media" *ngFor="let review of reviews">                <img  [routerLink]="[\'/profile\',review.userId]" id="reviewerImg" src={{review?.userImg}} class="mr-3 mt-3 rounded-circle" style="width:70px;">                <div class="media-body" id="reviewInfo">                    <h6 ><b [routerLink]="[\'/profile\',review.userId]" id="reviewerName">{{review?.userName}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>                    <p>{{review?.body}}</p>                    <small>{{review?.numberLikes}} likes    {{review?.numberComments}} comments</small>                </div>                <div class="col-md-3"></div>            </div>        </div>    </div>   </div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
-=======
-        var COMPONENT_TEMPLATE = '<div><navbar></navbar>    <div class="container">        <div class="row"> <!--book info-->            <div class="media">                <div class="col-md-2" id="leftCol">                    <img id="bookCover" src={{myBook?.imageUrl}} class="align-self-start mr-3">                    <app-dropdown id="shelf"></app-dropdown>                    <app-star id="rateBook"  [starsCount]="0" [readOnly]="false"></app-star>                </div>                <div class="media-body" id="bookInfo">                    <div class="col-md-9">                        <h1 id="Booktitle">{{myBook?.title}}</h1>                        <h5 id="authorName">by {{myBook?.authorName}}</h5>                        <div>                            <app-star [starsCount]="myBook?.ratingsAvg" [readOnly]="true"></app-star>                            <span style="font-size: 13px; font-family: \'Segoe UI\', Tahoma, sans-serif;">{{myBook?.ratingsAvg}}   {{myBook?.ratingsCount}} ratings {{myBook?.reviewsCount}} reviews</span>                        </div>                        <p>{{myBook?.description}}</p>                        <div id="bookFormat">                            <p>Paperback {{myBook?.pagesNum}} pages</p>                            <p>Published {{myBook?.publicationDate}} by {{myBook?.publisher}}</p>                        </div>                    </div>                </div>                            </div>        </div>    </div>    <div class="container" *ngIf="isUser" id="activity">        <h6>MY ACTIVITY</h6>        <hr>        <div class="row" >            <div class="col-2" style="min-width: 50px">                <p>Review Of</p>                <p>shelf</p>                <p>Rating</p>                <p>Review</p>            </div>            <div class="col-8" style="min-width: 300px">                <p>{{myBook?.isbn}}</p>                <p>{{userInfo?.shelf_name}}</p>                <app-star [starsCount]="userInfo?.rating"></app-star>                <p>{{userInfo?.body}}</p>            </div>        </div>    </div>    <div class="container">        <hr>        <div class="row">            <div class="media" *ngFor="let review of reviews">                <img  [routerLink]="[\'/profile\',review.userId]" id="reviewerImg" src={{review?.userImg}} class="mr-3 mt-3 rounded-circle" style="width:70px;">                <div class="media-body" id="reviewInfo">                    <h6 ><b [routerLink]="[\'/profile\',review.userId]" id="reviewerName">{{review?.userName}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>                    <p>{{review?.body}}</p>                    <small>{{review?.numberLikes}} likes    {{review?.numberComments}} comments</small>                </div>                <div class="col-md-3"></div>            </div>        </div>    </div>   </div>'
+        var COMPONENT_TEMPLATE = '<div><navbar></navbar>    <div class="container">        <div class="row"> <!--book info-->            <div class="media">                <div class="col-md-2" id="leftCol">                    <img id="bookCover" src={{myBook?.imageUrl}} class="align-self-start mr-3">                    <app-dropdown id="shelf"></app-dropdown>                    <app-star id="rateBook"  [starsCount]="0" [readOnly]="false"></app-star>                </div>                <div class="media-body" id="bookInfo">                    <div class="col-md-9">                        <h1 id="Booktitle">{{myBook?.title}}</h1>                        <h5 id="authorName">by {{myBook?.authorName}}</h5>                        <div>                            <app-star [starsCount]="myBook?.ratingsAvg" [readOnly]="true"></app-star>                            <span style="font-size: 13px; font-family: \'Segoe UI\', Tahoma, sans-serif;">{{myBook?.ratingsAvg}}   {{myBook?.ratingsCount}} ratings {{myBook?.reviewsCount}} reviews</span>                        </div>                        <p>{{myBook?.description}}</p>                        <div id="bookFormat">                            <p>Paperback {{myBook?.pagesNum}} pages</p>                            <p>Published {{myBook?.publicationDate}} by {{myBook?.publisher}}</p>                        </div>                    </div>                </div>                            </div>        </div>    </div>    <div class="container" *ngIf="isUser" id="activity">        <h6>MY ACTIVITY</h6>        <hr>        <div class="row" >            <div class="col-2" style="min-width: 50px">                <p>Review Of</p>                <p>shelf</p>                <p>Rating</p>                <p>Review</p>            </div>            <div class="col-8" style="min-width: 300px">                <p>{{myBook?.isbn}}</p>                <p>{{userInfo?.shelf_name}}</p>                <app-star [starsCount]="userInfo?.rating"></app-star>                <p>{{userInfo?.body}}</p>            </div>        </div>    </div>    <div class="container">        <hr>        <div class="row">            <div class="media" *ngFor="let review of reviews">                <img  [routerLink]="[\'/profile\',review.userId]" id="reviewerImg" src={{review?.userImg}} class="align-self-start mr-3" style="width:50px; height: 40;">                <div class="media-body" id="reviewInfo">                    <h6 ><b [routerLink]="[\'/profile\',review.userId]" id="reviewerName">{{review?.userName}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>                    <p>{{review?.body}}</p>                    <small>{{review?.numberLikes}} likes    {{review?.numberComments}} comments</small>                </div>                <div class="col-md-3"></div>            </div>        </div>    </div>   </div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
->>>>>>> 92374155494290434901d89b282150f9df4f73f8
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BookInfoComponent'};
 </script>

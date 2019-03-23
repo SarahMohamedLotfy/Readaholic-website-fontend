@@ -103,17 +103,5 @@ export class HomeComponent implements OnInit {
           }
      
     
-    onLogout()
-    {
-     
-      this.httpser.logOut().subscribe(
-        res=>{localStorage.removeItem('token');
-        this.router.navigate(['/login']);
-
-        },err=>this.error=err)
-
-        localStorage.removeItem('token');
-        this.router.navigate(['/login']);
-      
-    }
+   
 }

@@ -57,10 +57,7 @@ return this.http.get('http://localhost:3000/author');
       'Something bad happened; please try again later.');
   };
  
- login(email:string,password:string): Observable<any>
- {
-   return this.http.post(this.url+'/login',{email,password}) ;
- }
+ 
 
  getUserprofile(id: number): Observable<any> {
   return this.http.get<any> (this.url + `/profile/${id}`);
@@ -70,9 +67,7 @@ return this.http.get('http://localhost:3000/author');
  //return this.http.get<following[]> (this.url + `/following`);
 //}
 
-logOut():Observable<any>{
-  return this.http.get(this.url+'/logOut');
-}
+
 
 /**
  *Getfollowing () is a get request to get the data of people following the main user 

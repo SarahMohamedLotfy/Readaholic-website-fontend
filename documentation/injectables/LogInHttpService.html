@@ -27,7 +27,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content guard">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -36,11 +36,9 @@
 
 
 
-
-
 <ol class="breadcrumb">
-    <li>Guards</li>
-    <li>AuthGuard</li>
+  <li>Injectables</li>
+  <li>LogInHttpService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -53,26 +51,25 @@
 </ul>
 
 <div class="tab-content">
-        <div class="tab-pane fade active in" id="c-info">
-            <p class="comment">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
             <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/log-in/log-in-http.service.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
             </p>
             <p class="comment">
-                <code>src/app/auth.guard.ts</code>
+                <p>An http service for the requests of logging in and out requests </p>
+
             </p>
 
-                <p class="comment">
-                <h3>Description</h3>
-                </p>
-                <p class="comment">
-                    <p>A guard to check if a user is logged in before directing the page they requested </p>
-
-                </p>
 
 
-
-
-                <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -86,7 +83,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#canActivate">canActivate</a>
+                                <a href="#login">login</a>
+                            </li>
+                            <li>
+                                <a href="#logOut">logOut</a>
                             </li>
                         </ul>
                     </td>
@@ -100,24 +100,24 @@
     </table>
 </section>
 
-                <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/auth.guard.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/log-in/log-in-http.service.ts:11</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor that takes routing </p>
+                            <div class="io-description"><p>Constructor that takes HttpClient </p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -131,10 +131,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>router</td>
+                                                        <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -151,7 +151,7 @@
         </table>
 </section>
 
-                <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -160,33 +160,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="canActivate"></a>
+                    <a name="login"></a>
                     <span class="name">
                         <b>
-                            canActivate
+                            login
                         </b>
-                        <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>canActivate(next: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
+<code>login(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/auth.guard.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:18</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Checks if the user is logged in or not by check for the token , if logged in the guard returns true if not it redirects the user to login page and returns false  </p>
+                    <div class="io-description"><p>Sends a request to the server with the email and password to checks if they&#39;re correct </p>
 </div>
 
                     <div class="io-description">
@@ -201,9 +201,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>next</td>
+                                    <td>email</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -213,9 +213,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>state</td>
+                                    <td>password</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -230,7 +230,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -240,38 +240,85 @@
             </tr>
         </tbody>
     </table>
-</section>
-        </div>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logOut"></a>
+                    <span class="name">
+                        <b>
+                            logOut
+                        </b>
+                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logOut()</code>
+                </td>
+            </tr>
 
 
-        <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree,CanActivate, Router} from &#x27;@angular/router&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-/**A guard to check if a user is logged in before directing the page they requested */
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
-export class AuthGuard implements CanActivate  {
-  /**Constructor that takes routing */
-  constructor(private router: Router)
-  {}
-  /**Checks if the user is logged in or not by check for the token , if logged in the guard returns true if not it redirects the user to login page and returns false  */
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean{
-      if (localStorage.getItem(&#x27;token&#x27;)!&#x3D; null)
-        return true;
-      else
-      {
-        this.router.navigate([&#x27;/login&#x27;]);
-        return false}
-    }
-  }
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:24</a></div>
+                </td>
+            </tr>
 
-</code></pre>
-        </div>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Loggs out the user from the website </p>
 </div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpClient, HttpErrorResponse, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { Observable, throwError, observable } from &#x27;rxjs&#x27;;
+import { catchError, retry } from &#x27;rxjs/operators&#x27;;
+
+/**An http service for the requests of logging in and out requests */
+@Injectable({
+    providedIn: &#x27;root&#x27;
+  })
+  
+  export class LogInHttpService {
+
+    /**Constructor that takes HttpClient */
+    constructor(private http:HttpClient) {}
+
+    
+    /**Sends a request to the server with the email and password to checks if they&#x27;re correct */
+    login(email:string,password:string): Observable&lt;any&gt;
+ {
+   return this.http.post(&#x27;http://localhost:3000/login&#x27;,{email,password}) ;
+ }
+
+/**Loggs out the user from the website */
+ logOut():Observable&lt;any&gt;{
+    return this.http.get(&#x27;http://localhost:3000/logOut&#x27;);
+  }
+  }</code></pre>
+    </div>
+
+</div>
+
+
 
 
 
@@ -297,8 +344,8 @@ export class AuthGuard implements CanActivate  {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthGuard.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'LogInHttpService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

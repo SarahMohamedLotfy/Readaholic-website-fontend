@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-export const InterceptorSkipHeader='X-Skip-Interceptor';
+
+
+/**interceptor that set the authorization header of all requests that needs authentication */
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor{
-
+/**constructor that takes routing */
 constructor(private router: Router){}
+/**It intercepts all http requests of logged in users and adds the token of the user to the Authorization header of the request  */
 intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
     
      if(localStorage.getItem('token')!=null)

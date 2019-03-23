@@ -60,6 +60,13 @@
             <code>src/app/auth.interceptor.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>interceptor that set the authorization header of all requests that needs authentication </p>
+
+            </p>
 
 
             <section>
@@ -101,12 +108,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/auth.interceptor.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/auth.interceptor.ts:10</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor that takes routing </p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -166,14 +175,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/auth.interceptor.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/auth.interceptor.ts:14</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>It intercepts all http requests of logged in users and adds the token of the user to the Authorization header of the request  </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -237,13 +248,15 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { tap } from &#x27;rxjs/operators&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-export const InterceptorSkipHeader&#x3D;&#x27;X-Skip-Interceptor&#x27;;
+
+
+/**interceptor that set the authorization header of all requests that needs authentication */
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor{
-
+/**constructor that takes routing */
 constructor(private router: Router){}
+/**It intercepts all http requests of logged in users and adds the token of the user to the Authorization header of the request  */
 intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;any&gt;&gt;{
-<<<<<<< HEAD
     
      if(localStorage.getItem(&#x27;token&#x27;)!&#x3D;null)
     {
@@ -253,19 +266,6 @@ intercept(req: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEve
             succ &#x3D;&gt;{},
             err&#x3D;&gt; {
                 
-=======
-    if (req.headers.has(InterceptorSkipHeader))
-    {
-        return next.handle(req.clone());
-    }
-    else if(localStorage.getItem(&#x27;token&#x27;)!&#x3D;null)
-    {
-       
-        const clonedReq&#x3D; req.clone({headers: req.headers.set(&#x27;Authorization&#x27;,&#x27;Bearer&#x27;+localStorage.getItem(&#x27;token&#x27;))});
-        return next.handle(clonedReq).pipe( tap(
-            succ &#x3D;&gt;{},
-            err&#x3D;&gt; {
->>>>>>> 92374155494290434901d89b282150f9df4f73f8
                 if(err.status &#x3D;&#x3D;401)
                 {localStorage.removeItem(&#x27;token&#x27;);
                 this.router.navigateByUrl(&#x27;/login&#x27;);}

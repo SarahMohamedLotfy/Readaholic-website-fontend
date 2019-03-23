@@ -104,24 +104,16 @@
 
             <tr>
                 <td class="col-md-4">
-<<<<<<< HEAD
                     <div class="io-line">Defined in <a href="" data-line="10"
                             class="link-to-prism">src/app/filter.pipe.ts:10</a></div>
-=======
-                    <div class="io-line">Defined in <a href="" data-line="7"
-                            class="link-to-prism">src/app/filter.pipe.ts:7</a></div>
->>>>>>> 92374155494290434901d89b282150f9df4f73f8
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-<<<<<<< HEAD
                     <div class="io-description"><p>Used in search .</p>
 </div>
-=======
->>>>>>> 92374155494290434901d89b282150f9df4f73f8
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -186,12 +178,9 @@
   name: &#x27;filter&#x27;
 })
 export class FilterPipe implements PipeTransform {
-<<<<<<< HEAD
   /**
 *Used in search .
  */
-=======
->>>>>>> 92374155494290434901d89b282150f9df4f73f8
   transform(items: any[], searchText: string): any[] {
 
     if (!items) {
@@ -201,13 +190,9 @@ export class FilterPipe implements PipeTransform {
       return items;
     }
     searchText &#x3D; searchText.toLocaleLowerCase();
-<<<<<<< HEAD
 /**
 *Used in search for name of follower or following
  */
-=======
-
->>>>>>> 92374155494290434901d89b282150f9df4f73f8
     return items.filter(it &#x3D;&gt; {
       return it[&quot;name&quot;].toLocaleLowerCase().includes(searchText);
     });

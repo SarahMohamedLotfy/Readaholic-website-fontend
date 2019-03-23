@@ -3,7 +3,9 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError, observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { book } from './classes/book';
-import { following } from './classes/following';
+import { followingComponent } from './classes/followingComponent';
+import { followerComponent } from './classes/followerComponent';
+
 import { InterceptorSkipHeader } from './auth.interceptor';
 import { userBookInfo } from './classes/userBookInfo';
 import { review } from './classes/review';

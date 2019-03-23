@@ -60,6 +60,13 @@
             <code>src/app/fake-backend.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>creates a mock backend to authenticate login requests and any other other request that needs authorization </p>
+
+            </p>
 
 
             <section>
@@ -101,12 +108,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/fake-backend.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/fake-backend.ts:10</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor that takes httpclient</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -166,14 +175,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/fake-backend.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/fake-backend.ts:18</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Mimics a backend server for the login requests by intercepting the request and checking if the user and password are correct and sending back a response accordingly , it also intercepts requests that require authorization to pass and check their authorization header for the token </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -238,14 +249,17 @@ import { Observable, of, throwError } from &#x27;rxjs&#x27;;
 import { delay, mergeMap, materialize, dematerialize } from &#x27;rxjs/operators&#x27;;
 import{user} from &#x27;src/app/classes/user&#x27;;
 import { user_shelves } from &#x27;./classes/user_shelves&#x27;;
-
+/**creates a mock backend to authenticate login requests and any other other request that needs authorization */
 @Injectable()
+
 export class FakeBackendInterceptor implements HttpInterceptor {
+
+    /** constructor that takes httpclient*/
     constructor(private http:HttpClient){}
 
    
     
-
+    /**Mimics a backend server for the login requests by intercepting the request and checking if the user and password are correct and sending back a response accordingly , it also intercepts requests that require authorization to pass and check their authorization header for the token */
     intercept(request: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;any&gt;&gt; {
 
 
@@ -335,7 +349,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         
     }
 }
-
+/**use fake backend in place of Http service for backend-less development */
 export let fakeBackendProvider &#x3D; {
     // use fake backend in place of Http service for backend-less development
     provide: HTTP_INTERCEPTORS,

@@ -90,12 +90,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getBook">getBook</a>
-                            </li>
-                            <li>
-                                <a href="#getBookReviews">getBookReviews</a>
-                            </li>
-                            <li>
                                 <a href="#getBooks">getBooks</a>
                             </li>
                             <li>
@@ -114,20 +108,11 @@
                                 <a href="#getUpdates">getUpdates</a>
                             </li>
                             <li>
-                                <a href="#getUserBookInfo">getUserBookInfo</a>
-                            </li>
-                            <li>
                                 <a href="#getUserprofile">getUserprofile</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#handleError">handleError</a>
-                            </li>
-                            <li>
-                                <a href="#login">login</a>
-                            </li>
-                            <li>
-                                <a href="#logOut">logOut</a>
                             </li>
                         </ul>
                     </td>
@@ -195,115 +180,6 @@
     <h3 id="methods">
         Methods
     </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getBook"></a>
-                    <span class="name">
-                        <b>
-                            getBook
-                        </b>
-                        <a href="#getBook"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getBook(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/http.service.ts:61</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/book.html" target="_self" >Observable&lt;book&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getBookReviews"></a>
-                    <span class="name">
-                        <b>
-                            getBookReviews
-                        </b>
-                        <a href="#getBookReviews"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getBookReviews()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/http.service.ts:65</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/review.html" target="_self" >Observable&lt;review[]&gt;</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -404,14 +280,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/app/http.service.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/http.service.ts:87</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Getfollowing () is a get request to get the data of the followers of the main user .
+The data i get is ( name of user , image , id of user  ).</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -443,14 +322,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/http.service.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/http.service.ts:77</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Getfollowing () is a get request to get the data of people following the main user 
+ and the books they are currently reading . 
+ The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -521,8 +404,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/http.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/http.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -532,45 +415,6 @@
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getUserBookInfo"></a>
-                    <span class="name">
-                        <b>
-                            getUserBookInfo
-                        </b>
-                        <a href="#getUserBookInfo"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getUserBookInfo()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/http.service.ts:34</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;userBookInfo&gt;</code>
 
                     </div>
                 </td>
@@ -599,8 +443,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/app/http.service.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/http.service.ts:62</a></div>
                 </td>
             </tr>
 
@@ -671,8 +515,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/app/http.service.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/http.service.ts:44</a></div>
                 </td>
             </tr>
 
@@ -714,127 +558,6 @@
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="login"></a>
-                    <span class="name">
-                        <b>
-                            login
-                        </b>
-                        <a href="#login"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>login(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/app/http.service.ts:69</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>email</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>password</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="logOut"></a>
-                    <span class="name">
-                        <b>
-                            logOut
-                        </b>
-                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>logOut()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="82"
-                            class="link-to-prism">src/app/http.service.ts:82</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
                     </div>
                 </td>
             </tr>
@@ -888,11 +611,11 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import { Observable, throwError, observable } from &#x27;rxjs&#x27;;
 import { catchError, retry } from &#x27;rxjs/operators&#x27;;
-import { book } from &#x27;./classes/book&#x27;;
-import { following } from &#x27;./classes/following&#x27;;
+import { followingComponent } from &#x27;./classes/followingComponent&#x27;;
+import { followerComponent } from &#x27;./classes/followerComponent&#x27;;
+
 import { InterceptorSkipHeader } from &#x27;./auth.interceptor&#x27;;
-import { userBookInfo } from &#x27;./classes/userBookInfo&#x27;;
-import { review } from &#x27;./classes/review&#x27;;
+
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -917,9 +640,7 @@ return this.http.get(&#x27;http://localhost:3000/author&#x27;);
 
 }
 
-getUserBookInfo(): Observable&lt;userBookInfo&gt; {
-  return this.http.get&lt;userBookInfo&gt;(&#x27;http://localhost:3000/userBookInfo/5&#x27;);
-}
+
 
    getUpdates():Observable&lt;any&gt;{
 
@@ -944,20 +665,10 @@ getUserBookInfo(): Observable&lt;userBookInfo&gt; {
     return throwError(
       &#x27;Something bad happened; please try again later.&#x27;);
   };
-  getBook(id: number): Observable&lt;book&gt; {
-    return this.http.get&lt;book&gt;(&quot;http://localhost:3000/book/&quot; + id);
- }
+ 
+ 
 
- getBookReviews(): Observable&lt;review[]&gt; {
-   return this.http.get&lt;review[]&gt;(&quot;http://localhost:3000/review&quot;);
- }
-
- login(email:string,password:string): Observable&lt;any&gt;
- {
-   return this.http.post(this.url+&#x27;/login&#x27;,{email,password}) ;
- }
-
- getUserprofile(id: number ): Observable&lt;any&gt; {
+ getUserprofile(id: number): Observable&lt;any&gt; {
   return this.http.get&lt;any&gt; (this.url + &#x60;/profile/${id}&#x60;);
 }
 
@@ -965,20 +676,29 @@ getUserBookInfo(): Observable&lt;userBookInfo&gt; {
  //return this.http.get&lt;following[]&gt; (this.url + &#x60;/following&#x60;);
 //}
 
-logOut():Observable&lt;any&gt;{
-  return this.http.get(this.url+&#x27;/logOut&#x27;);
-}
+
+
+/**
+ *Getfollowing () is a get request to get the data of people following the main user 
+ * and the books they are currently reading . 
+ * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
+ */
 getfollowing(){
   return this.http.get(&#x27;http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following&#x27;);
 
 }
+
+ /**
+ * Getfollowing () is a get request to get the data of the followers of the main user .
+ * The data i get is ( name of user , image , id of user  ).
+ */
+
 getfollowers(){
   return this.http.get(&#x27;https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following&#x27;);
 
    }
 
-}
-</code></pre>
+}</code></pre>
     </div>
 
 </div>

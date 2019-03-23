@@ -15,35 +15,13 @@ import { LogInHttpService } from './log-in/log-in-http.service';
 export class AppComponent {
   title = 'Readholic';
   
-  constructor(private service:LogInHttpService,private router:Router){
+  constructor(){
     
   }
-  ngOnInit(){
-    
-  }
-  error:any;
-loggedIn:boolean;
-  onLogout()
-    {
-     
-      
-      this.service.logOut().subscribe(
-        res=>{localStorage.removeItem('token');
-        this.router.navigate(['/login']);
-        
-        },err=>this.error=err)
+ 
+ 
+  
 
-
-
-        
-      
-    }
-
-    
-    ngOnChanges(){
-
-     
-    }
 
     
 

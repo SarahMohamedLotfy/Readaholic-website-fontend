@@ -1,6 +1,6 @@
 import { book } from './../classes/book';
 import { HttpService } from './../http.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { updates } from '../classes/updates';
 import { actor } from '../classes/actor';
 import { action } from '../classes/action';
@@ -8,12 +8,26 @@ import { ActionSequence } from 'protractor';
 import { profile } from '../classes/profile';
 import { Router } from '@angular/router';
 import { LogInComponent } from '../log-in/log-in.component';
+import { DropdownComponent } from '../shared/dropdown/dropdown.component';
+import { StarComponent } from '../shared/star/star.component';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+@NgModule({
+  declarations: [
+    
+    DropdownComponent,
+    NavbarComponent,
+    StarComponent
+ ] })
+ /**
+ * Home is where updates are viewed
+ */
 export class HomeComponent implements OnInit {
  updatess:updates[];
  actors:actor[];
@@ -41,6 +55,9 @@ export class HomeComponent implements OnInit {
      
     )*/
     }
+    /**
+ * function loadData is for checking type of updates and managing its html
+ */
      loadData(){
        var i;
   

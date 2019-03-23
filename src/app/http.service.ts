@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { book } from './classes/book';
-import { following } from './classes/following';
+import { followingComponent } from './classes/followingComponent';
+import { followerComponent } from './classes/followerComponent';
+
 import { InterceptorSkipHeader } from './auth.interceptor';
-import { userBookInfo } from './classes/userBookInfo';
-import { review } from './classes/review';
+
 
 @Injectable({
   providedIn: 'root'
@@ -31,9 +31,7 @@ return this.http.get('http://localhost:3000/author');
 
 }
 
-getUserBookInfo(): Observable<userBookInfo> {
-  return this.http.get<userBookInfo>('http://localhost:3000/userBookInfo/5');
-}
+
 
    getUpdates():Observable<any>{
 
@@ -58,17 +56,10 @@ getUserBookInfo(): Observable<userBookInfo> {
     return throwError(
       'Something bad happened; please try again later.');
   };
-  getBook(id: number): Observable<book> {
-    return this.http.get<book>("http://localhost:3000/book/" + id);
- }
-
- getBookReviews(): Observable<review[]> {
-   return this.http.get<review[]>("http://localhost:3000/review");
- }
-
+ 
  
 
- getUserprofile(id: number ): Observable<any> {
+ getUserprofile(id: number): Observable<any> {
   return this.http.get<any> (this.url + `/profile/${id}`);
 }
 
@@ -77,10 +68,22 @@ getUserBookInfo(): Observable<userBookInfo> {
 //}
 
 
+
+/**
+ *Getfollowing () is a get request to get the data of people following the main user 
+ * and the books they are currently reading . 
+ * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
+ */
 getfollowing(){
   return this.http.get('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
 
 }
+
+ /**
+ * Getfollowing () is a get request to get the data of the followers of the main user .
+ * The data i get is ( name of user , image , id of user  ).
+ */
+
 getfollowers(){
   return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
 

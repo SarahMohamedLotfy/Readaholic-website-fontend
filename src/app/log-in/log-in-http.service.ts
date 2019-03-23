@@ -3,21 +3,25 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError, observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
+/**An http service for the requests of logging in and out requests */
 @Injectable({
     providedIn: 'root'
   })
   
   export class LogInHttpService {
+
+    /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 
-    url = 'http://localhost:3000';
-
+    
+    /**Sends a request to the server with the email and password to checks if they're correct */
     login(email:string,password:string): Observable<any>
  {
-   return this.http.post(this.url+'/login',{email,password}) ;
+   return this.http.post('http://localhost:3000/login',{email,password}) ;
  }
 
+/**Loggs out the user from the website */
  logOut():Observable<any>{
-    return this.http.get(this.url+'/logOut');
+    return this.http.get('http://localhost:3000/logOut');
   }
   }

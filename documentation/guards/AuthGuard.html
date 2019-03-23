@@ -61,6 +61,13 @@
                 <code>src/app/auth.guard.ts</code>
             </p>
 
+                <p class="comment">
+                <h3>Description</h3>
+                </p>
+                <p class="comment">
+                    <p>A guard to check if a user is logged in before directing the page they requested </p>
+
+                </p>
 
 
 
@@ -110,6 +117,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor that takes routing </p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -169,14 +178,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/auth.guard.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/app/auth.guard.ts:13</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Checks if the user is logged in or not by check for the token , if logged in the guard returns true if not it redirects the user to login page and returns false  </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -237,14 +248,15 @@
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree,CanActivate, Router} from &#x27;@angular/router&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
-
+/**A guard to check if a user is logged in before directing the page they requested */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class AuthGuard implements CanActivate  {
-
+  /**Constructor that takes routing */
   constructor(private router: Router)
   {}
+  /**Checks if the user is logged in or not by check for the token , if logged in the guard returns true if not it redirects the user to login page and returns false  */
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean{

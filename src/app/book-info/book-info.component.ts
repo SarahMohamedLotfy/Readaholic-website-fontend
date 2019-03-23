@@ -12,14 +12,19 @@ import { BookService } from './book.service';
   styleUrls: ['./book-info.component.css']
 })
 export class BookInfoComponent implements OnInit {
+  /**store information of the selected book */
   myBook: book;
+  /**reviews array of the selectec book */
   reviews: review[];
+  /**stores user related book info */
   userInfo: userBookInfo;
+  /**true if user mode false if guest mode */
   isUser: boolean;
 
   constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
   }
 
+  /**gets the information of the selected book from the server and setes user mode or guest mode  */
   ngOnInit() {
   this.service.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data:book) => this.myBook = data, error=> this.router.navigateByUrl("/404"));
   this.service.getBookReviews().subscribe((data:review[]) => this.reviews = data);

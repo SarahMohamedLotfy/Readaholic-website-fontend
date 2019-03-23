@@ -1,3 +1,4 @@
+import { AppComponent } from './../app.component';
 import { Component, OnInit } from '@angular/core';
 import {  NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../http.service';
@@ -16,14 +17,14 @@ export class LogInComponent implements OnInit {
   form:FormGroup;
   users:user;
   wrongPass:boolean;
-
+  appComponent:AppComponent;
   constructor(private service:HttpService,private fb:FormBuilder,private router:Router) { 
     this.form=this.fb.group({
     email: ['',Validators.required],
     password: ['',Validators.required]
     });
-
     
+ 
     
   }
   

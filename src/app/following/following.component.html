@@ -10,7 +10,7 @@
 <router-outlet></router-outlet>
 
 <body>
-
+  <navbar></navbar>
     <div *ngIf="selectedProfile">
         <div  id="Myprofilename">
             <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 

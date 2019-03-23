@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+export const InterceptorSkipHeader='X-Skip-Interceptor';
 
 
 /**interceptor that set the authorization header of all requests that needs authentication */

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {FilterPipe} from './filter.pipe.following';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { profile } from '../classes/profile';
@@ -32,7 +31,7 @@ export class FollowingComponent implements OnInit {
  * temp is array of people following the main users .
  */
   temp: any =[];filterfollowing:[];
-  //searchText: string = ''
+  searchText: string = ''
  /**
 *Constructer that take service and routing .
  */
@@ -65,7 +64,7 @@ export class FollowingComponent implements OnInit {
   
   }
 
-/*search(){
+search(){
 
   if (!this.posts) {
     return [];
@@ -78,7 +77,7 @@ export class FollowingComponent implements OnInit {
   this.posts = this.temp.filter(it => 
     it["name"].toLocaleLowerCase().includes(this.searchText)
   );
-}*/
+}
 //onclick(){
  // this.router.navigateByUrl('/bookinfo/https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following/id');
 //}

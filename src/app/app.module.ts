@@ -22,7 +22,6 @@ import { fakeBackendProvider } from './fake-backend';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,9 +44,13 @@ import { fakeBackendProvider } from './fake-backend';
     NgbModule.forRoot(),
     SharedModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
 
 
+  ],
+  exports: [
+    FilterPipe
   ],
 
   providers: [HttpService, {provide: HTTP_INTERCEPTORS,

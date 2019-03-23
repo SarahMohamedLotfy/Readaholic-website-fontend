@@ -1,3 +1,8 @@
+import { RatingModule, Rating } from 'ng2-rating';
+import { DropdownComponent } from './../shared/dropdown/dropdown.component';
+import { NavbarComponent } from './../shared/navbar/navbar.component';
+import { StarComponent } from './../shared/star/star.component';
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
@@ -8,7 +13,13 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent,
+        DropdownComponent,
+        NavbarComponent,
+        StarComponent ],
+      imports:[
+        RatingModule
+        ]
     })
     .compileComponents();
   }));
@@ -19,7 +30,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+ it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

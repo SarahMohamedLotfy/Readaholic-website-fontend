@@ -1,3 +1,4 @@
+import { RatingModule } from 'ng2-rating';
 import { FilterPipe } from './filter.pipe';
 import { HttpService } from './http.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { PageNotFoundComponent } from './page-not-found.component';
+
 
 
 @NgModule({

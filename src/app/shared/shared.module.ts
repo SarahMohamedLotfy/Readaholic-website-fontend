@@ -5,11 +5,13 @@ import {RatingModule} from "ng2-rating";
 
 import { StarComponent } from './star/star.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [ 
     StarComponent,
-    DropdownComponent
+    DropdownComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     CommonModule,
     FormsModule,
     StarComponent,
-    DropdownComponent
+    DropdownComponent,
+    NavbarComponent
     
   ]
 })

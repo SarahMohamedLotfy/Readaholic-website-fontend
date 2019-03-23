@@ -1,3 +1,4 @@
+import { RatingModule } from 'ng2-rating';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

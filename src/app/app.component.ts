@@ -14,6 +14,9 @@ import { user } from './classes/user';
 export class AppComponent {
   title = 'Readholic';
   user:user ;
+
+  
+
   constructor(){}
   ngOnInit(){
   }

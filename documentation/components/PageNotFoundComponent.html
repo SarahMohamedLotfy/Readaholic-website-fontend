@@ -64,6 +64,13 @@
     <code>src/app/page-not-found.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The component that sets the page html and css  </p>
+
+    </p>
 
 
 
@@ -124,12 +131,14 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-
+/** The component that sets the page html and css  */
 @Component({
   selector: &#x27;app-404NotFound&#x27;,
   templateUrl: &#x27;./page-not-found.component.html&#x27;,
   styleUrls: [&#x27;./page-not-found.component.css&#x27;]
 })
+
+/** we route to this component if the url is not valid */
 export class PageNotFoundComponent {}
 </code></pre>
     </div>

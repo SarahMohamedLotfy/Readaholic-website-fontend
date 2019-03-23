@@ -101,7 +101,7 @@ describe('HttpService', () => {
    shelf:1,
    actionText:"FR",
    followed_image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg"
-  }];*/
+  }];
 
   describe('HttpService', () => {
     let httpService: HttpService;
@@ -217,6 +217,6 @@ it('should get auth profile', () => {
       req.flush({data: fakeUpdates});
     })
 );*/
+/**});
 });
-});
-});
+}); */

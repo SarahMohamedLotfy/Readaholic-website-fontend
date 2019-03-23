@@ -64,6 +64,13 @@
     <code>src/app/profile/profile.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The component that sets the profile page html and scss  </p>
+
+    </p>
 
 
     <p class="comment">
@@ -133,13 +140,7 @@
                                 <a href="#allFollowings">allFollowings</a>
                             </li>
                             <li>
-                                <a href="#currentlyReading">currentlyReading</a>
-                            </li>
-                            <li>
                                 <a href="#selectedProfile">selectedProfile</a>
-                            </li>
-                            <li>
-                                <a href="#toRead">toRead</a>
                             </li>
                         </ul>
                     </td>
@@ -185,6 +186,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>the constructor creates instances of http service and the routing to make the profile able to navigate between pages</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -272,14 +275,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/profile/profile.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/profile/profile.component.ts:27</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>get the auth user data and his following </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -315,37 +320,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/profile/profile.component.ts:16</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="currentlyReading"></a>
-                        <span class="name">
-                            <b>
-                            currentlyReading</b>
-                            <a href="#currentlyReading"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/profile/profile.component.ts:19</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>stores the following of user </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -369,37 +353,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/profile/profile.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/profile/profile.component.ts:17</a></div>
                             </td>
                         </tr>
 
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="toRead"></a>
-                        <span class="name">
-                            <b>
-                            toRead</b>
-                            <a href="#toRead"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <div class="io-description"><p>stores the profile information </p>
+</div>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/profile/profile.component.ts:18</a></div>
-                            </td>
-                        </tr>
-
 
             </tbody>
         </table>
@@ -416,31 +379,39 @@ import { profile } from &#x27;../classes/profile&#x27;;
 import { ActivatedRoute , Router } from &#x27;@angular/router&#x27;;
 
 
+
+/**The component that sets the profile page html and scss  */
 @Component({
   selector: &#x27;app-profile&#x27;,
   templateUrl: &#x27;./profile.component.html&#x27;,
   styleUrls: [&#x27;./profile.component.scss&#x27;]
 })
 export class ProfileComponent implements OnInit {
-
+   /**stores the profile information */
    selectedProfile: profile ;
+  /**stores the following of user */
    allFollowings: any;
 
-   toRead: number ;
-   currentlyReading: number;
-
+/**
+ * the constructor creates instances of http service and the routing to make the profile able to navigate between pages
+*/
   constructor(private httpService: HttpService ,
               private route: ActivatedRoute , private router: Router ) { }
-
+/** get the auth user data and his following */
   ngOnInit() {
 
+    /**
+     * subscribe to the data received from json file which contain the following users information and if any error occurs it prints it to the log
+     */
     this.httpService.getfollowing().subscribe(
           data &#x3D;&gt; {
             this.allFollowings &#x3D; data,
             (err: any) &#x3D;&gt; console.log(err),
             console.log(this.allFollowings)
           });
-
+     /**
+     * subscribe to the data received from json file which contain the profile of the authenticated user info information and if any error occurs it prints it to the log
+     */
     this.httpService.getUserprofile(1).subscribe(
       data &#x3D;&gt; {
         this.selectedProfile &#x3D; data,
@@ -448,13 +419,8 @@ export class ProfileComponent implements OnInit {
         console.log(this.selectedProfile)
                }) ;
 
-   // this.httpService.getUserprofile( id ).subscribe(
-   //   (data: profile) &#x3D;&gt; this.selectedProfile &#x3D; data,
-   //   (err: any) &#x3D;&gt; console.log(err),
-   //   () &#x3D;&gt; console.log(&#x27; Profile is displayed &#x27;)
-   // );
   }
-  
+
 
 }
 </code></pre>

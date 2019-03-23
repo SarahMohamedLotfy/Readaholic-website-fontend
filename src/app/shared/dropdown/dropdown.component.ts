@@ -12,7 +12,7 @@ export class DropdownComponent implements OnInit {
 /**shelf name to be displayed */
 shelfStatus: string = "Want to Read";
 /**@ignore */
-buttonStatus: boolean = false; 
+buttonDisabled: boolean = false; 
 
 
   constructor() { }
@@ -24,7 +24,7 @@ buttonStatus: boolean = false;
     if(this.shelf)
     {
       this.shelfStatus = this.shelf;
-      this.buttonStatus = true;
+      this.buttonDisabled = true;
     }
   }
 

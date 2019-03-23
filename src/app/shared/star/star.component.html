@@ -1,9 +1,8 @@
-<small>
-        <small class="star">
-                <rating  [(ngModel)]="starsCount" 
-                        [readonly]="readOnly" 
-                        [float]="floatEnable" 
-                        [titles]="['did not like it', 'it was okay', 'liked it', 'really liked it', 'it was amazing']">   
-               </rating>
-        </small>                
-</small>
+<ngb-rating [(rate)]="starsCount" 
+      [readonly]="readonly
+      " max=5 >
+        
+      <ng-template let-fill="fill" let-index="index">
+          <span class="star" [class.filled]="fill === 100" >&#9733;</span>
+        </ng-template>
+        </ngb-rating>

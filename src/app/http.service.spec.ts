@@ -10,7 +10,7 @@ import { followerComponent } from './classes/followerComponent';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 //fdescribe
-fdescribe('HttpService', () => {
+describe('HttpService', () => {
 let httpService: HttpService;
 let httpTestingController: HttpTestingController;
 let testProfiles: profile [] = [{id: 1, name: 'killua zoldyck', user_name: 'killua_99', link: '',
@@ -25,7 +25,7 @@ user_shelves: {id: 2, name: 'read', book_count: 0}}
 ];
 
 
-fdescribe('HttpService', () => {
+describe('HttpService', () => {
   let httpService: HttpService;
   let httpTestingController: HttpTestingController;
   let testFollowing: followingComponent [] = [{
@@ -103,7 +103,7 @@ fdescribe('HttpService', () => {
    followed_image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg"
   }];*/
 
-  fdescribe('HttpService', () => {
+  describe('HttpService', () => {
     let httpService: HttpService;
     let httpTestingController: HttpTestingController;
     let testFollower: followerComponent [] = [{
@@ -161,7 +161,7 @@ afterEach((inject([HttpTestingController], (httpMock: HttpTestingController) => 
 })) );
 
 //fit
-fit('should get auth profile', () => {
+it('should get auth profile', () => {
      httpService.getUserprofile(2).subscribe(
        (data: profile[]) => {
          expect(data.length).toBe(2);
@@ -173,7 +173,7 @@ fit('should get auth profile', () => {
 
   });
 
-  fit('should get followingList', () => {
+  it('should get followingList', () => {
     httpService.getfollowing().subscribe(
       (data: followingComponent[]) => {
         expect(data.length).toBe(6);
@@ -187,7 +187,7 @@ fit('should get auth profile', () => {
     expect(service).toBeTruthy();
 
  });
- fit('should get followingList', () => {
+ it('should get followingList', () => {
   httpService.getfollowers().subscribe(
     (data: followingComponent[]) => {
       expect(data.length).toBe(6);
@@ -201,22 +201,8 @@ fit('should get auth profile', () => {
   expect(service).toBeTruthy();
 
 });
-  fit('expects service to fetch updates ',
-  inject([HttpTestingController, HttpService],
-    (httpMock: HttpTestingController, service: HttpService) => {
-      // We call the service
-      service.getUpdates().subscribe(data => {
-        expect(data.updates.length).toBe(10);
-        expect(data.updates[0].update_type).toBe(0);
-        expect(data.updates[0].name).toBe("Sara");
-      });
-      // We set the expectations for the HttpClient mock
-      const req = httpMock.expectOne('http://localhost:3000/updates');
-      expect(req.request.method).toEqual('GET');
-      // Then we set the fake data to be returned by the mock
-      req.flush({data: fakeUpdates});
-    })
-);*/
+ 
+
 });
 });
 });

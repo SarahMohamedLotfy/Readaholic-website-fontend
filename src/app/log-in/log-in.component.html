@@ -11,7 +11,7 @@
                     <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password">
                     <button id="signInButton" class="btn btn-primary" type="submit" style="background-color:	#8B4513 " (click)="onSubmit()">Sign in</button>
 
-                    <h6 *ngIf=wrongPass style="color:crimson">Incorrect username or password</h6>
+                    <h6 *ngIf=wrongPass style="color:crimson">{{error}}</h6>
                 </div>
             </form>
         </div>

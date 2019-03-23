@@ -5,8 +5,6 @@ import { catchError, retry } from 'rxjs/operators';
 import { followingComponent } from './classes/followingComponent';
 import { followerComponent } from './classes/followerComponent';
 
-import { InterceptorSkipHeader } from './auth.interceptor';
-
 
 @Injectable({
   providedIn: 'root'

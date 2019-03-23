@@ -165,9 +165,6 @@
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
-                            <li>
-                                <a href="#onLogout">onLogout</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -186,7 +183,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(httpser: <a href="../injectables/HomeService.html">HomeService</a>)</code>
+<code>constructor(httpser: <a href="../injectables/HttpService.html">HttpService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -212,7 +209,19 @@
                                                         <td>httpser</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/HomeService.html" target="_self" >HomeService</a></code>
+                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -303,45 +312,6 @@
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="44"
                             class="link-to-prism">src/app/home/home.component.ts:44</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onLogout"></a>
-                    <span class="name">
-                        <b>
-                            onLogout
-                        </b>
-                        <a href="#onLogout"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onLogout()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="106"
-                            class="link-to-prism">src/app/home/home.component.ts:106</a></div>
                 </td>
             </tr>
 
@@ -570,7 +540,7 @@ export class HomeComponent implements OnInit {
  profile:profile;
 
 
-  constructor(private httpser:HomeService) {
+  constructor(private httpser:HttpService,private router:Router) {
    
    }
 
@@ -636,19 +606,7 @@ export class HomeComponent implements OnInit {
           }
      
     
-    onLogout()
-    {
-     
-      this.httpser.logOut().subscribe(
-        res&#x3D;&gt;{localStorage.removeItem(&#x27;token&#x27;);
-      //  this.router.navigate([&#x27;/login&#x27;]);
-
-        },err&#x3D;&gt;this.error&#x3D;err)
-
-        localStorage.removeItem(&#x27;token&#x27;);
-        //this.router.navigate([&#x27;/login&#x27;]);
-      
-    }
+   
 }
 </code></pre>
     </div>
@@ -679,7 +637,7 @@ export class HomeComponent implements OnInit {
                             &lt;img src&#x3D;{{update.image_link}} alt&#x3D;&quot;Generic placeholder image&quot; style&#x3D;&quot;float:&#x27;left&#x27;&quot;  &gt;
                         &lt;/a&gt;
                         &lt;a class&#x3D;&quot;pr-3&quot; href&#x3D;&quot;/Profile/{{update.followed_id}}&quot; *ngIf&#x3D;&quot;update.actionText &#x3D;&#x3D;&#x3D; &#x27; started following  : &#x27;&quot;&gt;
-                                &lt;img src&#x3D;{{update.followed_image_link}} alt&#x3D;&quot;Generic placeholder image&quot; style&#x3D;&quot;float: &#x27;left&#x27;&quot;  &gt;
+                                &lt;img src&#x3D;{{update.followed_image_link}} alt&#x3D;&quot;Generic placeholder image&quot; style&#x3D;&quot;float:&#x27;left&#x27;&quot;   &gt;
                             &lt;/a&gt;
                         
                         &lt;div  class&#x3D;&quot;media-body&quot;&gt;
@@ -786,7 +744,7 @@ margin-bottom: 100px;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><navbar></navbar><h5 id="updates"> Updates </h5>         <ul *ngFor="let update of updatess">            <div class="container" id="updateContainer">        <div class="media">             <a   href="Profile/{{update.user_id}}">            <img class="avatar" src={{update.img_url}} alt="Generic placeholder image" >              </a>            <div class="media-body" >                                   <h5 class="mt-0"  >{{update.name}}</h5>                      <h6 class="mt-0" id="action"> {{update.actionText}}</h6>                <app-star  *ngIf="update.actionText == \' rated a book \'"[starsCount]="update.rating" [readOnly]="true"></app-star>                                                    <div class="media mt-3">                        <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.actionText != \' started following  : \'" >                            <img src={{update.image_link}} alt="Generic placeholder image" style="float:\'left\'"  >                        </a>                        <a class="pr-3" href="/Profile/{{update.followed_id}}" *ngIf="update.actionText === \' started following  : \'">                                <img src={{update.followed_image_link}} alt="Generic placeholder image" style="float: \'left\'"  >                            </a>                                                <div  class="media-body">                            <div  *ngIf="update.actionText != \' started following  : \'">                            <h5 class="mt-0"  >{{update.title}}<small><i>by {{update.author_name}}</i></small></h5>                                                                                 <app-dropdown > </app-dropdown>                            <div style="clear: both" >                            <small style="float: \'left\'">rate it </small>                            <app-star  [readOnly]="false" style="float: \'left\'"></app-star>                             </div>                            <p>{{update.description}}</p>                            </div>                            <div *ngIf="update.actionText === \' started following  : \'" >                                <h5 >{{update.followed_name}}</h5>                                 <button type="button" class="btn btn-primary" id="followButton">Follow {{update.followed_name}}</button>                        </div>                        </div>                                                                  </div>        </div>    </div>    </div>    </ul></div>'
+        var COMPONENT_TEMPLATE = '<div><navbar></navbar><h5 id="updates"> Updates </h5>         <ul *ngFor="let update of updatess">            <div class="container" id="updateContainer">        <div class="media">             <a   href="Profile/{{update.user_id}}">            <img class="avatar" src={{update.img_url}} alt="Generic placeholder image" >              </a>            <div class="media-body" >                                   <h5 class="mt-0"  >{{update.name}}</h5>                      <h6 class="mt-0" id="action"> {{update.actionText}}</h6>                <app-star  *ngIf="update.actionText == \' rated a book \'"[starsCount]="update.rating" [readOnly]="true"></app-star>                                                    <div class="media mt-3">                        <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.actionText != \' started following  : \'" >                            <img src={{update.image_link}} alt="Generic placeholder image" style="float:\'left\'"  >                        </a>                        <a class="pr-3" href="/Profile/{{update.followed_id}}" *ngIf="update.actionText === \' started following  : \'">                                <img src={{update.followed_image_link}} alt="Generic placeholder image" style="float:\'left\'"   >                            </a>                                                <div  class="media-body">                            <div  *ngIf="update.actionText != \' started following  : \'">                            <h5 class="mt-0"  >{{update.title}}<small><i>by {{update.author_name}}</i></small></h5>                                                                                 <app-dropdown > </app-dropdown>                            <div style="clear: both" >                            <small style="float: \'left\'">rate it </small>                            <app-star  [readOnly]="false" style="float: \'left\'"></app-star>                             </div>                            <p>{{update.description}}</p>                            </div>                            <div *ngIf="update.actionText === \' started following  : \'" >                                <h5 >{{update.followed_name}}</h5>                                 <button type="button" class="btn btn-primary" id="followButton">Follow {{update.followed_name}}</button>                        </div>                        </div>                                                                  </div>        </div>    </div>    </div>    </ul></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};

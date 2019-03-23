@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,19 +6,25 @@ import { Component, Input, OnChanges } from '@angular/core';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css']
 })
-export class DropdownComponent implements OnChanges {
+export class DropdownComponent implements OnInit {
+ /**stores the input shelf */ 
 @Input() shelf: string;
+/**shelf name to be displayed */
 shelfStatus: string = "Want to Read";
-buttonStatus: boolean = false; 
+/**@ignore */
+buttonDisabled: boolean = false; 
 
 
   constructor() { }
-
-  ngOnChanges() {
+/** sets the displayed shelf
+ *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
+ * 
+ */
+  ngOnInit() {
     if(this.shelf)
     {
       this.shelfStatus = this.shelf;
-      this.buttonStatus = true;
+      this.buttonDisabled = true;
     }
   }
 

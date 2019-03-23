@@ -4,21 +4,24 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import{user} from 'src/app/classes/user';
 import { user_shelves } from './classes/user_shelves';
-
+/**creates a mock backend to authenticate login requests and any other other request that needs authorization */
 @Injectable()
+
 export class FakeBackendInterceptor implements HttpInterceptor {
+
+    /** constructor that takes httpclient*/
     constructor(private http:HttpClient){}
 
    
     
-
+    /**Mimics a backend server for the login requests by intercepting the request and checking if the user and password are correct and sending back a response accordingly , it also intercepts requests that require authorization to pass and check their authorization header for the token */
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
 
         
         const users: user[] = [
-            {  username: 'test', password: 'test', image_link: 'kd' },
-            {  username: 'mariam', password: 'mariam', image_link: 'kd' }
+           
+            { id:1,  username: 'mai', password: 'mai', image_link: 'kd' }
         ];
         const authHeader = request.headers.get('Authorization');
         const isLoggedIn = authHeader && authHeader.startsWith('Bearer fake-jwt-token');
@@ -38,6 +41,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return ok({
                     image_link: user.image_link,
                     username: user.username,
+                    id: user.id,
                     
                     token: `fake-jwt-token`
                 })
@@ -100,7 +104,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         
     }
 }
-
+/**use fake backend in place of Http service for backend-less development */
 export let fakeBackendProvider = {
     // use fake backend in place of Http service for backend-less development
     provide: HTTP_INTERCEPTORS,

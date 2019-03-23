@@ -1,4 +1,4 @@
-/* import { updates } from './classes/updates';
+ import { updates } from './classes/updates';
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
 import { HttpService } from './http.service';
@@ -10,7 +10,7 @@ import { followerComponent } from './classes/followerComponent';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 //fdescribe
-fdescribe('HttpService', () => {
+describe('HttpService', () => {
 let httpService: HttpService;
 let httpTestingController: HttpTestingController;
 let testProfiles: profile [] = [{id: 1, name: 'killua zoldyck', user_name: 'killua_99', link: '',
@@ -25,7 +25,7 @@ user_shelves: {id: 2, name: 'read', book_count: 0}}
 ];
 
 
-fdescribe('HttpService', () => {
+describe('HttpService', () => {
   let httpService: HttpService;
   let httpTestingController: HttpTestingController;
   let testFollowing: followingComponent [] = [{
@@ -78,7 +78,7 @@ fdescribe('HttpService', () => {
   }
   ];
 
-/*let fakeUpdates: updates [] = [{  
+/*let fakeUpdates: updates [] = [{
   id: 2,
     body:null,
    rating:3,
@@ -177,7 +177,7 @@ it('should get auth profile', () => {
     httpService.getfollowing().subscribe(
       (data: followingComponent[]) => {
         expect(data.length).toBe(6);
-        
+
       });
     let followingRequest: TestRequest = httpTestingController.expectOne('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
     expect(followingRequest.request.method).toEqual('GET');
@@ -191,7 +191,7 @@ it('should get auth profile', () => {
   httpService.getfollowers().subscribe(
     (data: followingComponent[]) => {
       expect(data.length).toBe(6);
-      
+
     });
   let followerRequest: TestRequest = httpTestingController.expectOne('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
   expect(followerRequest.request.method).toEqual('GET');
@@ -201,7 +201,7 @@ it('should get auth profile', () => {
   expect(service).toBeTruthy();
 
 });
- /* fit('expects service to fetch updates ',
+  /*fit('expects service to fetch updates ',
   inject([HttpTestingController, HttpService],
     (httpMock: HttpTestingController, service: HttpService) => {
       // We call the service
@@ -216,6 +216,13 @@ it('should get auth profile', () => {
       // Then we set the fake data to be returned by the mock
       req.flush({data: fakeUpdates});
     })
+<<<<<<< HEAD
 );
 });
 */
+=======
+);*/
+/**});
+});
+}); */
+>>>>>>> a84b38f26565b7a2db4a87591b64757b1c8f756f

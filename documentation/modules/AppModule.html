@@ -402,6 +402,8 @@ import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
 import { LogInComponent } from &#x27;./log-in/log-in.component&#x27;;
 import { AuthInterceptor } from &#x27;./auth.interceptor&#x27;;
 import { PageNotFoundComponent } from &#x27;./page-not-found.component&#x27;;
+import { fakeBackendProvider } from &#x27;./fake-backend&#x27;;
+
 
 
 
@@ -416,7 +418,8 @@ import { PageNotFoundComponent } from &#x27;./page-not-found.component&#x27;;
     MyBooksComponent,
     BookInfoComponent,
     LogInComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+   
 
   ],
   imports: [
@@ -433,7 +436,7 @@ import { PageNotFoundComponent } from &#x27;./page-not-found.component&#x27;;
 
   providers: [HttpService, {provide: HTTP_INTERCEPTORS,
   useClass: AuthInterceptor,
-multi: true}],
+multi: true},fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

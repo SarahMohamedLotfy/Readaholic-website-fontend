@@ -79,7 +79,7 @@ describe('loadData', function() {
     expect(document.getElementById('result').innerHTML).toBe('3');
   });
 
-  it('should calculate zero for invalid x value', function() {
+  it('should calculate zero for invalid x valung e', function() {
     document.getElementById('x').value = 'hello';
     document.getElementById('y').value = 2;
     document.getElementById('add').click();

@@ -4,7 +4,7 @@
             <div class="media">
                 <div class="col-md-2" id="leftCol">
                     <img id="bookCover" src={{myBook?.imageUrl}} class="align-self-start mr-3">
-                    <app-dropdown id="shelf"></app-dropdown>
+                    <app-dropdown id="shelf" [shelf]="userInfo?.shelf_name"></app-dropdown>
                     <app-star id="rateBook"  [starsCount]="0" [readOnly]="false"></app-star>
                 </div>
                 <div class="media-body" id="bookInfo">
@@ -50,7 +50,7 @@
         <hr>
         <div class="row">
             <div class="media" *ngFor="let review of reviews">
-                <img  [routerLink]="['/profile',review.userId]" id="reviewerImg" src={{review?.userImg}} class="align-self-start mr-3" style="width:50px; height: 40;">
+                <img  [routerLink]="['/profile',review.userId]" id="reviewerImg" src={{review?.userImg}} class="align-self-start mr-3" style="width:50px; height: 50;">
                 <div class="media-body" id="reviewInfo">
                     <h6 ><b [routerLink]="['/profile',review.userId]" id="reviewerName">{{review?.userName}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>
                     <p>{{review?.body}}</p>

@@ -1,6 +1,159 @@
 {
+<<<<<<< HEAD
 
 
+=======
+    "updates":
+		[{
+        		"id":2,
+				"body":null,
+				"rating":3,
+				"likes_count":null,
+				"comments_count":null,
+				"updated_at":"2019-03-21 00:00:00",
+				"book_id":11,
+				"title":"Deathcaster",
+				"description":"book description ",
+				"img_url":"https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":2,
+				"name":"Huda Yahya",
+				"image_link":"https://images.gr-assets.com/books/1529823092l/39320115.jpg",
+				"author_name":"Cinda Williams Chima",
+				"update_type":"0",
+				"shelf":1
+		 },
+		 {
+				"id":1,
+				"type":3,
+				"updated_at":"2019-03-15 00:00:00",
+				"likes_count":null,
+				"comments_count":null,
+				"book_id":1,
+				"shelf":1,
+				"title":"To Kill a Kingdom",
+				"description":"great book ",
+				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":2,
+				"name":"Ahmed Elsayed",
+				"image_link":"https://images.gr-assets.com/books/1524322945l/34499221.jpg",
+				"author_name":"Alexandra Christo",
+				"update_type":"1"
+		 },
+		 {
+				"id":2,
+				"type":3,
+				"updated_at":"2019-03-01 00:00:00",
+				"likes_count":null,
+				"comments_count":null,
+				"book_id":45,
+				"title":"The Coldest Girl in Coldtown",
+				"shelf":1,
+				"description":"",
+				"img_url":"https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+				"reviews_count":null,
+				"ratings_count":null,
+				"ratings_avg":null,
+				"pages_no":null,
+				"user_id":3,
+				"name":"Mohamed Hayalla",
+				"image_link":"https://images.gr-assets.com/books/1367312471l/12813630.jpg",
+				"author_name":"Holly Black",
+				"update_type":"1"
+         },
+         {
+
+         "updated_at":"2019-03-19 00:00:00",
+		 "user_id":2,
+		 "img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+         "user_name":"Ahmed Elsayed",
+         "followed_id":3,
+         "followed_image_link":"https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+         "followed_name":"Mohamed Hayalla",
+         "update_type":"2"
+	  },
+	  {
+		"id":5,
+		"type":3,
+		"updated_at":"2019-03-01 00:00:00",
+		"likes_count":null,
+		"comments_count":null,
+		"book_id":45,
+		"title":"The Coldest Girl in Coldtown",
+		"shelf":2,
+		"description":"",
+		"img_url":"https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+		"reviews_count":null,
+		"ratings_count":null,
+		"ratings_avg":null,
+		"pages_no":null,
+		"user_id":3,
+		"name":"Mohamed Hayalla",
+		"image_link":"https://images.gr-assets.com/books/1367312471l/12813630.jpg",
+		"author_name":"Holly Black",
+		"update_type":"1"
+      },
+      {
+	  "id":2,
+	  "type":3,
+	  "updated_at":"2019-03-01 00:00:00",
+	  "likes_count":null,
+	  "comments_count":null,
+	  "book_id":45,
+	  "title":"The Coldest Girl in Coldtown",
+	  "shelf":3,
+	  "description":"",
+	  "img_url":"https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+	  "reviews_count":null,
+	  "ratings_count":null,
+	  "ratings_avg":null,
+	  "pages_no":null,
+	  "user_id":2,
+	  "name":"Huda Yahia",
+	  "image_link":"https://images.gr-assets.com/books/1367312471l/12813630.jpg",
+	  "author_name":"Holly Black",
+	  "update_type":"1"
+
+	  }
+],
+"Profile" : [{
+ "id": "1",
+ "name": "Mai mostafa",
+ "user_name": "MAi_mostafa99",
+ "small_image_url": "https://res.cloudinary.com/teepublic/image/private/s--ym8sWp4w--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1535088284/production/designs/3061511_0.jpg",
+ "about": "i am very cool",
+ "age": "90",
+ "gender": "female",
+ "location": "giza haram",
+ "joined": " 2 days ago ",
+ "last_active": "1 day ago ",
+ "user_shelves":
+									[{
+										 "id": "1" ,
+											"name": "read",
+											"book_count": "30"
+									},
+									{
+										"id": "54321",
+										"name": "currently-reading",
+										"book_count": "40"
+									},
+									{
+											"id": "22",
+											"name": "to-read",
+											"book_count": "20"
+
+                                    }
+                                    ]
+                                }],
+>>>>>>> a84b38f26565b7a2db4a87591b64757b1c8f756f
 
     "updates": [
 
@@ -269,6 +422,7 @@
             "pagesNum": 100,
             "publisher": "Little, Brown Books for Young Readers",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 3.5,
             "ratingsCount": 50,
             "reviewsCount": 5,
@@ -286,6 +440,7 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 3.5,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -303,6 +458,7 @@
             "pagesNum": 1000,
             "publisher": "Little, Brown Books for Young Readers",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 3.85,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -320,6 +476,7 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -337,6 +494,7 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -354,6 +512,7 @@
             "pagesNum": 400,
             "publisher": " Harry N. Abrams",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -371,6 +530,7 @@
             "pagesNum": 400,
             "publisher": "Scholastic Press",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 4.06,
             "ratingsCount": 50,
             "reviewssCount": 50,

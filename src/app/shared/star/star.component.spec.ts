@@ -1,26 +1,25 @@
-
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LogInComponent } from './log-in.component';
+import { StarComponent } from './star.component';
 
-describe('LogInComponent', () => {
-  let component: LogInComponent;
-  let fixture: ComponentFixture<LogInComponent>;
+xdescribe('DropdownComponent', () => {
+  let component: StarComponent;
+  let fixture: ComponentFixture<StarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogInComponent ]
+      declarations: [ StarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LogInComponent);
+    fixture = TestBed.createComponent(StarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  xit('should create', () => {
     expect(component).toBeTruthy();
   });
 });

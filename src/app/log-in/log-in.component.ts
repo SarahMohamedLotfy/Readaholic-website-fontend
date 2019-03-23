@@ -5,20 +5,23 @@ import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
 import { user } from '../classes/user';
 import { user_shelves } from '../classes/user_shelves';
+import { LogInHttpService } from './log-in-http.service';
 
-
+/**The component that sets the login page html and css and the functionality of logging users in */
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-  
+  /**stores the input typed in the login form */
   form:FormGroup;
+  /**stores the information of the user logged in */
   users:user;
+  /**true if user entered wrong pass or username, false otherwise */
   wrongPass:boolean;
-  appComponent:AppComponent;
-  constructor(private service:HttpService,private fb:FormBuilder,private router:Router) { 
+/**sets the varibales in the form using form builder */
+  constructor(private service:LogInHttpService,private fb:FormBuilder,private router:Router) { 
     this.form=this.fb.group({
     email: ['',Validators.required],
     password: ['',Validators.required]
@@ -28,11 +31,13 @@ export class LogInComponent implements OnInit {
     
   }
   
+  /**Checks if the guest is already logged in or not if already logged in it re routes them automaticaly to the home page */
   ngOnInit() {
     if(localStorage.getItem('token')!=null)
     this.router.navigateByUrl('/home');
     
   }
+  /**On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they're valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  */
 onSubmit(){
   const val = this.form.value;
   this.service.login(val.email,val.password).subscribe(
@@ -56,6 +61,8 @@ err => {
 }
   );
 }
+
+/**Checks changes if the user enter a wrong password */
 ngOnChanges(): void{
   this.wrongPass=this.wrongPass;
 }

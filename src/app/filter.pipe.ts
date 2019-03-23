@@ -4,6 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
+  /**
+*Used in search .
+ */
   transform(items: any[], searchText: string): any[] {
 
     if (!items) {
@@ -13,7 +16,9 @@ export class FilterPipe implements PipeTransform {
       return items;
     }
     searchText = searchText.toLocaleLowerCase();
-
+/**
+*Used in search for name of follower or following
+ */
     return items.filter(it => {
       return it["name"].toLocaleLowerCase().includes(searchText);
     });

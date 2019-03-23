@@ -27,7 +27,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content guard">
+               <div class="content interceptor">
                    <div class="content-data">
 
 
@@ -37,10 +37,9 @@
 
 
 
-
 <ol class="breadcrumb">
-    <li>Guards</li>
-    <li>AuthGuard</li>
+  <li>Interceptors</li>
+  <li>FakeBackendInterceptor</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -53,26 +52,24 @@
 </ul>
 
 <div class="tab-content">
-        <div class="tab-pane fade active in" id="c-info">
-            <p class="comment">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
             <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/fake-backend.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
             </p>
             <p class="comment">
-                <code>src/app/auth.guard.ts</code>
+                <p>creates a mock backend to authenticate login requests and any other other request that needs authorization </p>
+
             </p>
 
-                <p class="comment">
-                <h3>Description</h3>
-                </p>
-                <p class="comment">
-                    <p>A guard to check if a user is logged in before directing the page they requested </p>
 
-                </p>
-
-
-
-
-                <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -86,7 +83,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#canActivate">canActivate</a>
+                                <a href="#intercept">intercept</a>
                             </li>
                         </ul>
                     </td>
@@ -100,24 +97,24 @@
     </table>
 </section>
 
-                <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/auth.guard.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/fake-backend.ts:10</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor that takes routing </p>
+                            <div class="io-description"><p>constructor that takes httpclient</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -131,10 +128,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>router</td>
+                                                        <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -151,7 +148,7 @@
         </table>
 </section>
 
-                <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -160,33 +157,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="canActivate"></a>
+                    <a name="intercept"></a>
                     <span class="name">
                         <b>
-                            canActivate
+                            intercept
                         </b>
-                        <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
+                        <a href="#intercept"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>canActivate(next: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
+<code>intercept(request: HttpRequest<any>, next: <a href="https://angular.io/api/common/http/HttpHandler" target="_blank">HttpHandler</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/auth.guard.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/fake-backend.ts:18</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Checks if the user is logged in or not by check for the token , if logged in the guard returns true if not it redirects the user to login page and returns false  </p>
+                    <div class="io-description"><p>Mimics a backend server for the login requests by intercepting the request and checking if the user and password are correct and sending back a response accordingly , it also intercepts requests that require authorization to pass and check their authorization header for the token </p>
 </div>
 
                     <div class="io-description">
@@ -201,9 +198,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>next</td>
+                                    <td>request</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                            <code>HttpRequest&lt;any&gt;</code>
                                     </td>
 
                                     <td>
@@ -213,9 +210,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>state</td>
+                                    <td>next</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
+                                                <code><a href="https://angular.io/api/common/http/HttpHandler" target="_blank" >HttpHandler</a></code>
                                     </td>
 
                                     <td>
@@ -230,7 +227,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;HttpEvent&lt;any&gt;&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -241,37 +238,127 @@
         </tbody>
     </table>
 </section>
-        </div>
+
+    </div>
 
 
-        <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree,CanActivate, Router} from &#x27;@angular/router&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-/**A guard to check if a user is logged in before directing the page they requested */
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
-export class AuthGuard implements CanActivate  {
-  /**Constructor that takes routing */
-  constructor(private router: Router)
-  {}
-  /**Checks if the user is logged in or not by check for the token , if logged in the guard returns true if not it redirects the user to login page and returns false  */
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean{
-      if (localStorage.getItem(&#x27;token&#x27;)!&#x3D; null)
-        return true;
-      else
-      {
-        this.router.navigate([&#x27;/login&#x27;]);
-        return false}
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS, HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Observable, of, throwError } from &#x27;rxjs&#x27;;
+import { delay, mergeMap, materialize, dematerialize } from &#x27;rxjs/operators&#x27;;
+import{user} from &#x27;src/app/classes/user&#x27;;
+import { user_shelves } from &#x27;./classes/user_shelves&#x27;;
+/**creates a mock backend to authenticate login requests and any other other request that needs authorization */
+@Injectable()
+
+export class FakeBackendInterceptor implements HttpInterceptor {
+
+    /** constructor that takes httpclient*/
+    constructor(private http:HttpClient){}
+
+   
+    
+    /**Mimics a backend server for the login requests by intercepting the request and checking if the user and password are correct and sending back a response accordingly , it also intercepts requests that require authorization to pass and check their authorization header for the token */
+    intercept(request: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;any&gt;&gt; {
+
+
+        
+        const users: user[] &#x3D; [
+           
+            { id:1,  username: &#x27;mai&#x27;, password: &#x27;mai&#x27;, image_link: &#x27;kd&#x27; }
+        ];
+        const authHeader &#x3D; request.headers.get(&#x27;Authorization&#x27;);
+        const isLoggedIn &#x3D; authHeader &amp;&amp; authHeader.startsWith(&#x27;Bearer fake-jwt-token&#x27;);
+
+        // wrap in delayed observable to simulate server api call
+        return of(null).pipe(mergeMap(() &#x3D;&gt; {
+            console.log(&#x27;first&#x27;);
+            // authenticate - public
+            if (request.url.endsWith(&#x27;/login&#x27;) &amp;&amp; request.method &#x3D;&#x3D;&#x3D; &#x27;POST&#x27;) {
+                
+                console.log(request.body.email);
+               
+               
+                const user &#x3D; users.find(x &#x3D;&gt; x.username &#x3D;&#x3D;&#x3D; request.body.email &amp;&amp; x.password &#x3D;&#x3D;&#x3D; request.body.password);
+                if(!request.body.email|| !request.body.password) return noInput(&#x27;You must enter user name and password&#x27;);
+                if (!user) return error(&#x27;Username or password is incorrect&#x27;);
+                return ok({
+                    image_link: user.image_link,
+                    username: user.username,
+                    id: user.id,
+                    
+                    token: &#x60;fake-jwt-token&#x60;
+                })
+            }
+
+
+            if (request.url.endsWith(&#x27;/updates&#x27;) &amp;&amp; request.method &#x3D;&#x3D;&#x3D; &#x27;GET&#x27;) {
+                // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
+                console.log(&#x27;enter&#x27;);
+                if (request.headers.get(&#x27;Authorization&#x27;) &#x3D;&#x3D;&#x3D; &#x27;bearer fake-jwt-token&#x27;) {
+                    
+                    return next.handle(request);
+                } else {
+                    // return 401 not authorised if token is null or invalid
+                    return throwError({ error: { message: &#x27;Unauthorised&#x27; } });
+                }
+            }
+
+            if (request.url.endsWith(&#x27;/logOut&#x27;) &amp;&amp; request.method &#x3D;&#x3D;&#x3D; &#x27;GET&#x27;) {
+                // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
+                
+                if (request.headers.get(&#x27;Authorization&#x27;) &#x3D;&#x3D;&#x3D; &#x27;bearer fake-jwt-token&#x27;) {
+                    
+                    
+                    return ok({});
+                } else {
+                    // return 401 not authorised if token is null or invalid
+                    return throwError({ error: { message: &#x27;Unauthorised&#x27; } });
+                }
+            }
+
+            
+
+            // pass through any requests not handled above
+            return next.handle(request);
+        }))
+        // call materialize and dematerialize to ensure delay even if an error is thrown 
+        .pipe(materialize())
+        .pipe(delay(500))
+        .pipe(dematerialize());
+
+        // private helper functions
+
+        function ok(body) {
+            return of(new HttpResponse({ status: 200, body }));
+        }
+
+        function unauthorised() {
+            return throwError({ status: 401, error: { message: &#x27;Unauthorised&#x27; } });
+        }
+
+        function error(message) {
+            return throwError({ status: 405, error: { message } });
+        }
+
+        function noInput(message){
+            return throwError({status:404, error:{message}});
+        }
+
+        
     }
-  }
-
-</code></pre>
-        </div>
+}
+/**use fake backend in place of Http service for backend-less development */
+export let fakeBackendProvider &#x3D; {
+    // use fake backend in place of Http service for backend-less development
+    provide: HTTP_INTERCEPTORS,
+    useClass: FakeBackendInterceptor,
+    multi: true
+};</code></pre>
+    </div>
 </div>
+
 
 
 
@@ -297,8 +384,8 @@ export class AuthGuard implements CanActivate  {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthGuard.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interceptor';
+            var COMPODOC_CURRENT_PAGE_URL = 'FakeBackendInterceptor.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

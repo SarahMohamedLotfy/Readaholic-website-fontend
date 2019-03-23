@@ -8,7 +8,7 @@ import {
   RouterTestingModule
 } from '@angular/router/testing';
 
-fdescribe('AppComponent', () => {
+/*fdescribe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   beforeEach(async(() => {
@@ -45,4 +45,4 @@ fdescribe('AppComponent', () => {
     })
   );
 
-});
+});*/

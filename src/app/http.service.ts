@@ -57,10 +57,7 @@ return this.http.get('http://localhost:3000/author');
       'Something bad happened; please try again later.');
   };
  
- login(email:string,password:string): Observable<any>
- {
-   return this.http.post(this.url+'/login',{email,password}) ;
- }
+ 
 
  getUserprofile(id: number): Observable<any> {
   return this.http.get<any> (this.url + `/profile/${id}`);
@@ -70,13 +67,23 @@ return this.http.get('http://localhost:3000/author');
  //return this.http.get<following[]> (this.url + `/following`);
 //}
 
-logOut():Observable<any>{
-  return this.http.get(this.url+'/logOut');
-}
+
+
+/**
+ *Getfollowing () is a get request to get the data of people following the main user 
+ * and the books they are currently reading . 
+ * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
+ */
 getfollowing(){
   return this.http.get('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
 
 }
+
+ /**
+ * Getfollowing () is a get request to get the data of the followers of the main user .
+ * The data i get is ( name of user , image , id of user  ).
+ */
+
 getfollowers(){
   return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
 

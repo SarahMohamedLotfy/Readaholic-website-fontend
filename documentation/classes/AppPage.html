@@ -27,7 +27,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content pipe">
+               <div class="content class">
                    <div class="content-data">
 
 
@@ -39,9 +39,10 @@
 
 
 
+
 <ol class="breadcrumb">
-  <li>Pipes</li>
-  <li>FilterPipe</li>
+  <li>Classes</li>
+  <li>AppPage</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -55,27 +56,49 @@
 
 <div class="tab-content">
     <div class="tab-pane fade active in" id="c-info">
-
         <p class="comment">
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/filter.pipe.ts</code>
+            <code>e2e/src/app.po.ts</code>
         </p>
 
 
 
-        <section>
-            <h3>Metadata</h3>
-            <table class="table table-sm table-hover">
-                <tbody>
-                    <tr>
-                        <td class="col-md-3">Name</td>
-                        <td class="col-md-9">filter</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getTitleText">getTitleText</a>
+                            </li>
+                            <li>
+                                <a href="#navigateTo">navigateTo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
 
             <section>
     
@@ -86,81 +109,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="transform"></a>
+                    <a name="getTitleText"></a>
                     <span class="name">
                         <b>
-                            transform
+                            getTitleText
                         </b>
-                        <a href="#transform"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getTitleText"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>transform(items: any[], searchText: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>getTitleText()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="10"
-                            class="link-to-prism">src/app/filter.pipe.ts:10</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="8"
+                            class="link-to-prism">e2e/src/app.po.ts:8</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Used in search .</p>
-</div>
 
                     <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>items</td>
-                                    <td>
-                                            <code>any[]</code>
-                                    </td>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>searchText</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
-                    <div>
-                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateTo"></a>
+                    <span class="name">
+                        <b>
+                            navigateTo
+                        </b>
+                        <a href="#navigateTo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateTo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="4"
+                            class="link-to-prism">e2e/src/app.po.ts:4</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
                     <div class="io-description">
-                        <b>Returns : </b>    <code>any[]</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -168,40 +185,28 @@
     </table>
 </section>
 
+
+
+
+
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { browser, by, element } from &#x27;protractor&#x27;;
 
-@Pipe({
-  name: &#x27;filter&#x27;
-})
-export class FilterPipe implements PipeTransform {
-  /**
-*Used in search .
- */
-  transform(items: any[], searchText: string): any[] {
-
-    if (!items) {
-      return [];
-    }
-    if (!searchText) {
-      return items;
-    }
-    searchText &#x3D; searchText.toLocaleLowerCase();
-/**
-*Used in search for name of follower or following
- */
-    return items.filter(it &#x3D;&gt; {
-      return it[&quot;name&quot;].toLocaleLowerCase().includes(searchText);
-    });
+export class AppPage {
+  navigateTo() {
+    return browser.get(browser.baseUrl) as Promise&lt;any&gt;;
   }
-}</code></pre>
+
+  getTitleText() {
+    return element(by.css(&#x27;app-root h1&#x27;)).getText() as Promise&lt;string&gt;;
+  }
+}
+</code></pre>
     </div>
-
 </div>
-
 
 
 
@@ -225,8 +230,8 @@ export class FilterPipe implements PipeTransform {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'pipe';
-            var COMPODOC_CURRENT_PAGE_URL = 'FilterPipe.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppPage.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

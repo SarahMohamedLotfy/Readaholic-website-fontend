@@ -64,6 +64,13 @@
     <code>src/app/log-in/log-in.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The component that sets the login page html and css and the functionality of logging users in </p>
+
+    </p>
 
 
     <p class="comment">
@@ -130,9 +137,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#appComponent">appComponent</a>
-                            </li>
-                            <li>
                                 <a href="#form">form</a>
                             </li>
                             <li>
@@ -153,9 +157,6 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
-                            <li>
-                                <a href="#getUser">getUser</a>
-                            </li>
                             <li>
                                 <a href="#ngOnChanges">ngOnChanges</a>
                             </li>
@@ -183,17 +184,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(service: <a href="../injectables/HttpService.html">HttpService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(service: <a href="../injectables/LogInHttpService.html">LogInHttpService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/log-in/log-in.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/log-in/log-in.component.ts:22</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>sets the varibales in the form using form builder </p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -209,7 +212,7 @@
                                                         <td>service</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                                        <code><a href="../injectables/LogInHttpService.html" target="_self" >LogInHttpService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -263,45 +266,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getUser"></a>
-                    <span class="name">
-                        <b>
-                            getUser
-                        </b>
-                        <a href="#getUser"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getUser()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:60</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/user.html" target="_self" >user[]</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="ngOnChanges"></a>
                     <span class="name">
                         <b>
@@ -320,14 +284,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:66</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Checks changes if the user enter a wrong password </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -359,14 +325,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:35</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Checks if the guest is already logged in or not if already logged in it re routes them automaticaly to the home page </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -398,14 +366,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:41</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they&#39;re valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -421,33 +391,6 @@
         <h3 id="inputs">
             Properties
         </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="appComponent"></a>
-                        <span class="name">
-                            <b>
-                            appComponent</b>
-                            <a href="#appComponent"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../components/AppComponent.html" target="_self" >AppComponent</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/log-in/log-in.component.ts:20</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -468,10 +411,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/log-in/log-in.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/log-in/log-in.component.ts:18</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>stores the input typed in the login form </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -489,16 +438,22 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../classes/user.html" target="_self" >user[]</a></code>
+                            <i>Type : </i>        <code><a href="../classes/user.html" target="_self" >user</a></code>
 
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/log-in/log-in.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/log-in/log-in.component.ts:20</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>stores the information of the user logged in </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -522,10 +477,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/log-in/log-in.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/log-in/log-in.component.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>true if user entered wrong pass or username, false otherwise </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -542,20 +503,23 @@ import { HttpService } from &#x27;../http.service&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { user } from &#x27;../classes/user&#x27;;
 import { user_shelves } from &#x27;../classes/user_shelves&#x27;;
+import { LogInHttpService } from &#x27;./log-in-http.service&#x27;;
 
-
+/**The component that sets the login page html and css and the functionality of logging users in */
 @Component({
   selector: &#x27;app-log-in&#x27;,
   templateUrl: &#x27;./log-in.component.html&#x27;,
   styleUrls: [&#x27;./log-in.component.css&#x27;]
 })
 export class LogInComponent implements OnInit {
-  
+  /**stores the input typed in the login form */
   form:FormGroup;
-  users:user[];
+  /**stores the information of the user logged in */
+  users:user;
+  /**true if user entered wrong pass or username, false otherwise */
   wrongPass:boolean;
-  appComponent:AppComponent;
-  constructor(private service:HttpService,private fb:FormBuilder,private router:Router) { 
+/**sets the varibales in the form using form builder */
+  constructor(private service:LogInHttpService,private fb:FormBuilder,private router:Router) { 
     this.form&#x3D;this.fb.group({
     email: [&#x27;&#x27;,Validators.required],
     password: [&#x27;&#x27;,Validators.required]
@@ -565,10 +529,13 @@ export class LogInComponent implements OnInit {
     
   }
   
+  /**Checks if the guest is already logged in or not if already logged in it re routes them automaticaly to the home page */
   ngOnInit() {
     if(localStorage.getItem(&#x27;token&#x27;)!&#x3D;null)
     this.router.navigateByUrl(&#x27;/home&#x27;);
+    
   }
+  /**On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they&#x27;re valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  */
 onSubmit(){
   const val &#x3D; this.form.value;
   this.service.login(val.email,val.password).subscribe(
@@ -579,24 +546,26 @@ onSubmit(){
   this.wrongPass&#x3D;false;
 },
 err &#x3D;&gt; {
-  if(err.status &#x3D;&#x3D;400)
+  if(err.status &#x3D;&#x3D;405)
   {
   console.log(&#x27;incorrect username or password&#x27;);
   this.wrongPass&#x3D;true;
   
   }
+  else if(err.status&#x3D;&#x3D; 404)
+  console.log(&#x27;no user&#x27;);
   else
   console.log(err);
 }
   );
 }
+
+/**Checks changes if the user enter a wrong password */
 ngOnChanges(): void{
   this.wrongPass&#x3D;this.wrongPass;
 }
 
-getUser():user[]{
-  return this.users;
-}
+
   
 
 }

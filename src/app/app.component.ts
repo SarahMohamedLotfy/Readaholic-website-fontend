@@ -1,9 +1,9 @@
-import { HttpService } from './http.service';
+
 import { Component } from '@angular/core';
 
-import { book } from './classes/book';
-import { user } from './classes/user';
+
 import { Router } from '@angular/router';
+import { LogInHttpService } from './log-in/log-in-http.service';
 
 
 
@@ -13,34 +13,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'frontend';
   user:user ;
   constructor(private service:HttpService,private router:Router){
+=======
+  title = 'Readholic';
+  
+  constructor(){
+>>>>>>> a84b38f26565b7a2db4a87591b64757b1c8f756f
     
   }
-  ngOnInit(){
-    
-  }
-  error:any;
-loggedIn:boolean;
-  onLogout()
-    {
-     
-      
-      this.service.logOut().subscribe(
-        res=>{localStorage.removeItem('token');
-        this.router.navigate(['/login']);
+ 
+ 
+  
 
-        },err=>this.error=err)
-
-        
-      
-    }
-
-    
-    ngOnChanges(){
-     
-    }
 
     
 

@@ -1,11 +1,10 @@
 {
-<<<<<<< HEAD
-
-
-=======
-    "updates":
-		[{
-        		"id":2,
+    
+	"updates":
+			[
+	
+	{
+				"id":2,
 				"body":null,
 				"rating":3,
 				"likes_count":null,
@@ -67,9 +66,8 @@
 				"image_link":"https://images.gr-assets.com/books/1367312471l/12813630.jpg",
 				"author_name":"Holly Black",
 				"update_type":"1"
-         },
-         {
-
+		 },{
+		 
          "updated_at":"2019-03-19 00:00:00",
 		 "user_id":2,
 		 "img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
@@ -99,8 +97,7 @@
 		"image_link":"https://images.gr-assets.com/books/1367312471l/12813630.jpg",
 		"author_name":"Holly Black",
 		"update_type":"1"
-      },
-      {
+	  },{
 	  "id":2,
 	  "type":3,
 	  "updated_at":"2019-03-01 00:00:00",
@@ -149,214 +146,9 @@
 											"id": "22",
 											"name": "to-read",
 											"book_count": "20"
+																	}
+									],
 
-                                    }
-                                    ]
-                                }],
->>>>>>> a84b38f26565b7a2db4a87591b64757b1c8f756f
-
-    "updates": [
-
-        {
-            "id": 2,
-            "body": null,
-            "rating": 3,
-            "likes_count": null,
-            "comments_count": null,
-            "updated_at": "2019-03-21 00:00:00",
-            "book_id": 11,
-            "title": "Deathcaster",
-            "description": "book description ",
-            "img_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-            "reviews_count": null,
-            "ratings_count": null,
-            "ratings_avg": null,
-            "pages_no": null,
-            "user_id": 2,
-            "name": "Huda Yahya",
-            "image_link": "https://images.gr-assets.com/books/1529823092l/39320115.jpg",
-            "author_name": "Cinda Williams Chima",
-            "update_type": "0",
-            "shelf": 1
-        },
-        {
-            "id": 1,
-            "type": 3,
-            "updated_at": "2019-03-15 00:00:00",
-            "likes_count": null,
-            "comments_count": null,
-            "book_id": 1,
-            "shelf": 1,
-            "title": "To Kill a Kingdom",
-            "description": "great book ",
-            "img_url": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "reviews_count": null,
-            "ratings_count": null,
-            "ratings_avg": null,
-            "pages_no": null,
-            "user_id": 2,
-            "name": "Ahmed Elsayed",
-            "image_link": "https://images.gr-assets.com/books/1524322945l/34499221.jpg",
-            "author_name": "Alexandra Christo",
-            "update_type": "1"
-        },
-        {
-            "id": 2,
-            "type": 3,
-            "updated_at": "2019-03-01 00:00:00",
-            "likes_count": null,
-            "comments_count": null,
-            "book_id": 45,
-            "title": "The Coldest Girl in Coldtown",
-            "shelf": 1,
-            "description": "",
-            "img_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
-            "reviews_count": null,
-            "ratings_count": null,
-            "ratings_avg": null,
-            "pages_no": null,
-            "user_id": 3,
-            "name": "Mohamed Hayalla",
-            "image_link": "https://images.gr-assets.com/books/1367312471l/12813630.jpg",
-            "author_name": "Holly Black",
-            "update_type": "1"
-        },
-        {
-            "updated_at": "2019-03-19 00:00:00",
-            "user_id": 4,
-            "img_url": "https://images.gr-assets.com/users/1503461635p8/70530862.jpgg",
-            "name": "Walid Hassan",
-            "followed_id": 3,
-            "followed_image_link": "https://images.gr-assets.com/books/1367312471l/12813630.jpg",
-            "followed_name": "Mohamed Hayalla",
-            "update_type": "2"
-        },
-        {
-            "id": 2,
-            "resourse_type": 0,
-            "updated_at": null,
-            "review_id": 1,
-            "body": null,
-            "rating": null,
-            "likes_count": null,
-            "comments_count": null,
-            "review_updated_at": "2019-03-03 00:00:00",
-            "book_id": 4,
-            "title": "The reedeming Love",
-            "description": "",
-            "img_url": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
-            "reviews_count": null,
-            "ratings_count": null,
-            "ratings_avg": null,
-            "pages_no": null,
-            "user_id": 5,
-            "name": "Kamal Shaker",
-            "image_link": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "author_name": "Cinda Williams",
-            "update_type": "3"
-
-        },
-        {
-            "id": 2,
-            "resourse_type": 0,
-            "updated_at": null,
-            "comment_body": "",
-            "review_id": 1,
-            "body": null,
-            "rating": null,
-            "comments_count": null,
-            "review_updated_at": "2019-03-03 00:00:00",
-            "book_id": 144,
-            "title": "A Gathering of Shadows",
-            "description": "",
-            "img_url": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "reviews_count": null,
-            "ratings_count": null,
-            "ratings_avg": null,
-            "pages_no": null,
-            "user_id": 1,
-            "name": "Muhamed",
-            "image_link": "https://images.gr-assets.com/books/1429627728l/20764879.jpg",
-            "author_name": "V.E. Schwab (Pseudonym),  Victoria Schwab",
-            "update_type": "4"
-
-        },
-        {
-            "id": 2,
-            "body": null,
-            "rating": null,
-            "likes_count": null,
-            "comments_count": null,
-            "updated_at": "2019-03-21 00:00:00",
-            "book_id": 6,
-            "title": "Love what you do",
-            "description": "",
-            "img_url": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "reviews_count": null,
-            "ratings_count": null,
-            "ratings_avg": null,
-            "pages_no": null,
-            "user_id": 2,
-            "name": "Mariam",
-            "image_link": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "author_name": "Cinda Williams",
-            "update_type": "0",
-            "shelf": 1
-        },
-        {
-            "id": 1,
-            "type": 3,
-            "updated_at": "2019-03-15 00:00:00",
-            "likes_count": null,
-            "comments_count": null,
-            "book_id": 7,
-            "title": "Jasmine and princesses",
-            "description": "book description here",
-            "img_url": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "reviews_count": null,
-            "ratings_count": null,
-            "ratings_avg": null,
-            "pages_no": null,
-            "user_id": 2,
-            "name": "Sara",
-            "image_link": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "author_name": "Cinda Williams",
-            "update_type": "1",
-            "shelf": 1
-        },
-        {
-            "id": 2,
-            "type": 3,
-            "updated_at": "2019-03-01 00:00:00",
-            "likes_count": null,
-            "comments_count": null,
-            "book_id": 8,
-            "title": "Jasmine and princesses",
-            "description": "amazing story",
-            "img_url": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "reviews_count": null,
-            "ratings_count": null,
-            "ratings_avg": null,
-            "pages_no": null,
-            "user_id": 3,
-            "name": "Salma",
-            "image_link": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "author_name": "Cinda Williams",
-            "update_type": "1"
-        },
-        {
-            "updated_at": "2019-03-19 00:00:00",
-            "u_id": 2,
-            "img_url": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "image_link": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "user_name": "Mai",
-            "followed_id": 3,
-            "followed_image_link": "https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-            "followed_name": "",
-            "update_type": "2"
-        }
-
-    ],
     "Profile": [{
         "id": "1",
         "name": "Mai mostafa",
@@ -422,7 +214,6 @@
             "pagesNum": 100,
             "publisher": "Little, Brown Books for Young Readers",
             "publicationDate": "2010",
-            "language": "English",
             "ratingsAvg": 3.5,
             "ratingsCount": 50,
             "reviewsCount": 5,
@@ -440,7 +231,6 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
-            "language": "English",
             "ratingsAvg": 3.5,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -458,7 +248,6 @@
             "pagesNum": 1000,
             "publisher": "Little, Brown Books for Young Readers",
             "publicationDate": "2010",
-            "language": "English",
             "ratingsAvg": 3.85,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -476,7 +265,6 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
-            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -494,7 +282,6 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
-            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -512,7 +299,6 @@
             "pagesNum": 400,
             "publisher": " Harry N. Abrams",
             "publicationDate": "2010",
-            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -530,7 +316,6 @@
             "pagesNum": 400,
             "publisher": "Scholastic Press",
             "publicationDate": "2010",
-            "language": "English",
             "ratingsAvg": 4.06,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -551,7 +336,7 @@
             "updated_at": "juuune",
             "numberLikes": 3,
             "numberComments": 3,
-            "userId": "000000",
+            "userId":"000000",
             "userName": "killua",
             "userImg": "https://pbs.twimg.com/profile_images/955923907051184129/8LxKsoPl_400x400.jpg"
         },

@@ -216,13 +216,7 @@ it('should get auth profile', () => {
       // Then we set the fake data to be returned by the mock
       req.flush({data: fakeUpdates});
     })
-<<<<<<< HEAD
-);
-});
-*/
-=======
 );*/
 /**});
 });
 }); */
->>>>>>> a84b38f26565b7a2db4a87591b64757b1c8f756f

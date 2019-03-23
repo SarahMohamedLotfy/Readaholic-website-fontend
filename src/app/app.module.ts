@@ -22,11 +22,8 @@ import { fakeBackendProvider } from './fake-backend';
 
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> a84b38f26565b7a2db4a87591b64757b1c8f756f
 @NgModule({
   declarations: [
     AppComponent,

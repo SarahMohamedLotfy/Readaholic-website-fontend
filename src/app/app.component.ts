@@ -15,16 +15,9 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Readholic';
   user:user ;
-<<<<<<< HEAD
-
-  
-
-  constructor(){}
-=======
   constructor(private service:HttpService,private router:Router){
     
   }
->>>>>>> 4d2611431bb276a64f771c5a0f48b42c32299448
   ngOnInit(){
     
   }

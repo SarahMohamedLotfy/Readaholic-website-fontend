@@ -37,11 +37,7 @@ export class HomeComponent implements OnInit {
  profile:profile;
 
 
-<<<<<<< HEAD
-  constructor(private httpser:HomeService) {
-=======
   constructor(private httpser:HttpService,private router:Router) {
->>>>>>> 4d2611431bb276a64f771c5a0f48b42c32299448
    
    }
 

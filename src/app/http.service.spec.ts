@@ -10,9 +10,6 @@ import { followerComponent } from './classes/followerComponent';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 //fdescribe
-<<<<<<< HEAD
-
-=======
 fdescribe('HttpService', () => {
 let httpService: HttpService;
 let httpTestingController: HttpTestingController;
@@ -141,7 +138,6 @@ fdescribe('HttpService', () => {
     }
     ];
 
->>>>>>> 4d2611431bb276a64f771c5a0f48b42c32299448
 
 beforeEach(() => {
    TestBed.configureTestingModule({
@@ -164,8 +160,6 @@ afterEach((inject([HttpTestingController], (httpMock: HttpTestingController) => 
   httpMock.verify();
 })) );
 
-<<<<<<< HEAD
-=======
 //fit
 fit('should get auth profile', () => {
      httpService.getUserprofile(2).subscribe(
@@ -175,12 +169,8 @@ fit('should get auth profile', () => {
      let profileRequest: TestRequest = httpTestingController.expectOne('http://localhost:3000/profile/2');
      expect(profileRequest.request.method).toEqual('GET');
      profileRequest.flush(testProfiles);
->>>>>>> 4d2611431bb276a64f771c5a0f48b42c32299448
 
 
-<<<<<<< HEAD
-});*/
-=======
   });
 
   fit('should get followingList', () => {
@@ -228,6 +218,4 @@ fit('should get auth profile', () => {
     })
 );*/
 });
-});
-});
->>>>>>> 4d2611431bb276a64f771c5a0f48b42c32299448
+

@@ -66,12 +66,9 @@ getUserBookInfo(): Observable<userBookInfo> {
    return this.http.get<review[]>("http://localhost:3000/review");
  }
 
- login(email:string,password:string): Observable<any>
- {
-   return this.http.post(this.url+'/login',{email,password}) ;
- }
+ 
 
- getUserprofile(id: number): Observable<any> {
+ getUserprofile(id: number ): Observable<any> {
   return this.http.get<any> (this.url + `/profile/${id}`);
 }
 
@@ -79,9 +76,7 @@ getUserBookInfo(): Observable<userBookInfo> {
  //return this.http.get<following[]> (this.url + `/following`);
 //}
 
-logOut():Observable<any>{
-  return this.http.get(this.url+'/logOut');
-}
+
 getfollowing(){
   return this.http.get('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
 

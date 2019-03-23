@@ -1,9 +1,9 @@
-import { HttpService } from './http.service';
+
 import { Component } from '@angular/core';
 
-import { book } from './classes/book';
-import { user } from './classes/user';
+
 import { Router } from '@angular/router';
+import { LogInHttpService } from './log-in/log-in-http.service';
 
 
 
@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Readholic';
-  user:user ;
-  constructor(private service:HttpService,private router:Router){
+  
+  constructor(private service:LogInHttpService,private router:Router){
     
   }
   ngOnInit(){
@@ -30,8 +30,10 @@ loggedIn:boolean;
       this.service.logOut().subscribe(
         res=>{localStorage.removeItem('token');
         this.router.navigate(['/login']);
-
+        
         },err=>this.error=err)
+
+
 
         
       
@@ -39,6 +41,7 @@ loggedIn:boolean;
 
     
     ngOnChanges(){
+
      
     }
 

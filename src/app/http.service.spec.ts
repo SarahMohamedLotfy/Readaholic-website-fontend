@@ -20,30 +20,6 @@ small_image_url: 'https://pbs.twimg.com/profile_images/955923907051184129/8LxKso
 about: 'coolest father ever ', age: 40, gender: 'male', location: 'far away mountain', joined: 'at 1999' , last_active: 'at 2011',
 user_shelves: {id: 2, name: 'read', book_count: 0}}
 ];
-let fakeUpdates: updates [] = [{  
-  id: 2,
-    body:null,
-   rating:3,
-   likes_count:null,
-   comments_count:null,
-   updated_at:"2019-03-21 00:00:00",
-   book_id:1,
-   title:"Young Pharos",
-   description:"book description ",
-   img_url:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-   reviews_count:null,
-   ratings_count:null,
-   ratings_avg:null,
-   pages_no:null,
-   user_id:2,
-   name:"Sara",
-   image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-   author_name:"Taylor swift",
-   update_type:"0",
-   shelf:1,
-   actionText:"FR",
-   followed_image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg"
-  }];
 
 beforeEach(() => {
    TestBed.configureTestingModule({
@@ -80,20 +56,5 @@ it('should get auth profile', () => {
      expect(service).toBeTruthy();
 
   });
-  fit('expects service to fetch updates ',
-  inject([HttpTestingController, HttpService],
-    (httpMock: HttpTestingController, service: HttpService) => {
-      // We call the service
-      service.getUpdates().subscribe(data => {
-        expect(data.updates.length).toBe(10);
-        expect(data.updates[0].update_type).toBe(0);
-        expect(data.updates[0].name).toBe("Sara");
-      });
-      // We set the expectations for the HttpClient mock
-      const req = httpMock.expectOne('http://localhost:3000/updates');
-      expect(req.request.method).toEqual('GET');
-      // Then we set the fake data to be returned by the mock
-      req.flush({data: fakeUpdates});
-    })
-);
+ 
 });

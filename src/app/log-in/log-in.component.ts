@@ -4,6 +4,7 @@ import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
 import { user } from '../classes/user';
 import { user_shelves } from '../classes/user_shelves';
+import { LogInHttpService } from './log-in-http.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class LogInComponent implements OnInit {
   users:user;
   wrongPass:boolean;
 
-  constructor(private service:HttpService,private fb:FormBuilder,private router:Router) { 
+  constructor(private service:LogInHttpService,private fb:FormBuilder,private router:Router) { 
     this.form=this.fb.group({
     email: ['',Validators.required],
     password: ['',Validators.required]

@@ -27,4 +27,5 @@ import { NavbarComponent } from './navbar/navbar.component';
     
   ]
 })
+/**manges the shared components between the app and exports the shared angular modules */
 export class SharedModule { }

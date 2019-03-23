@@ -8,6 +8,7 @@ import { userBookInfo } from '../classes/userBookInfo';
 @Injectable({
   providedIn: 'root'
 })
+/**handles book related http requests */
 export class BookService {
 
   constructor(private http:HttpClient) { }

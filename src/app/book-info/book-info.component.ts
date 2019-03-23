@@ -24,7 +24,9 @@ export class BookInfoComponent implements OnInit {
   constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
   }
 
-  /**gets the information of the selected book from the server and setes user mode or guest mode  */
+  /**gets the information of the selected book from the server and setes user mode or guest mode
+   * and navigates to page not found if the user types a wrong book id
+    */
   ngOnInit() {
   this.service.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data:book) => this.myBook = data, error=> this.router.navigateByUrl("/404"));
   this.service.getBookReviews().subscribe((data:review[]) => this.reviews = data);

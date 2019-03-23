@@ -201,7 +201,7 @@ fit('should get auth profile', () => {
   expect(service).toBeTruthy();
 
 });
- /* fit('expects service to fetch updates ',
+  fit('expects service to fetch updates ',
   inject([HttpTestingController, HttpService],
     (httpMock: HttpTestingController, service: HttpService) => {
       // We call the service
@@ -218,4 +218,3 @@ fit('should get auth profile', () => {
     })
 );*/
 });
-

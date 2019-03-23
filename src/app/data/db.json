@@ -1,10 +1,7 @@
 {
-    
-	"updates":
-			[
-	
-	{
-				"id":2,
+    "updates":
+		[{
+        		"id":2,
 				"body":null,
 				"rating":3,
 				"likes_count":null,
@@ -66,7 +63,8 @@
 				"image_link":"https://images.gr-assets.com/books/1367312471l/12813630.jpg",
 				"author_name":"Holly Black",
 				"update_type":"1"
-		 },{
+         },
+         {
 		 
          "updated_at":"2019-03-19 00:00:00",
 		 "user_id":2,
@@ -97,7 +95,8 @@
 		"image_link":"https://images.gr-assets.com/books/1367312471l/12813630.jpg",
 		"author_name":"Holly Black",
 		"update_type":"1"
-	  },{
+      },
+      {
 	  "id":2,
 	  "type":3,
 	  "updated_at":"2019-03-01 00:00:00",
@@ -146,8 +145,10 @@
 											"id": "22",
 											"name": "to-read",
 											"book_count": "20"
-																	}
-									]
+                                                                    
+                                    }
+                                    ]
+                                }],
 
     "updates": [
 
@@ -416,6 +417,7 @@
             "pagesNum": 100,
             "publisher": "Little, Brown Books for Young Readers",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 3.5,
             "ratingsCount": 50,
             "reviewsCount": 5,
@@ -433,6 +435,7 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 3.5,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -450,6 +453,7 @@
             "pagesNum": 1000,
             "publisher": "Little, Brown Books for Young Readers",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 3.85,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -467,6 +471,7 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -484,6 +489,7 @@
             "pagesNum": 400,
             "publisher": "Feiwel & Friends",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -501,6 +507,7 @@
             "pagesNum": 400,
             "publisher": " Harry N. Abrams",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 4.6,
             "ratingsCount": 50,
             "reviewssCount": 50,
@@ -518,6 +525,7 @@
             "pagesNum": 400,
             "publisher": "Scholastic Press",
             "publicationDate": "2010",
+            "language": "English",
             "ratingsAvg": 4.06,
             "ratingsCount": 50,
             "reviewssCount": 50,

@@ -25,7 +25,7 @@ user_shelves: {id: 2, name: 'read', book_count: 0}}
 ];
 
 
-fdescribe('HttpService', () => {
+/*fdescribe('HttpService', () => {
   let httpService: HttpService;
   let httpTestingController: HttpTestingController;
   let testFollowing: followingComponent [] = [{
@@ -103,7 +103,7 @@ fdescribe('HttpService', () => {
    followed_image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg"
   }];*/
 
-  fdescribe('HttpService', () => {
+  /*fdescribe('HttpService', () => {
     let httpService: HttpService;
     let httpTestingController: HttpTestingController;
     let testFollower: followerComponent [] = [{
@@ -217,6 +217,6 @@ fit('should get auth profile', () => {
       req.flush({data: fakeUpdates});
     })
 );*/
+/**});
 });
-});
-});
+}); */

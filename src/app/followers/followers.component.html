@@ -11,7 +11,7 @@
 
 <body>
 
-  <navbar></navbar>
+  
 
         <div *ngIf="selectedProfile">
             <div  id="Myprofilename">
@@ -46,12 +46,12 @@
         </div>
         <div class="panel-body">
           <ul class="list-group list-group-dividered list-group-full">
-            <li *ngFor="let post of posts | filter:searchText "class="list-group-item">
+            <li *ngFor="let post of posts  "class="list-group-item">
 
               <div class="media-body">
                 <div class="media">
                   <div class="media-left">
-                    <a  href={{post.link}}>
+                    <a  [routerLink]="['/profile', post.id]">
                       <img id ="profilepage"src={{post.image_url}} alt="">
                       <i></i>
                     </a>
@@ -61,7 +61,7 @@
                       class="btn btn-info btn-sm waves-effect waves-light">Follow </button>
                   </div>
                   <div class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter"
-                      style="clear:right" href={{post.link}}>{{post.name}}</a></div>
+                      style="clear:right" [routerLink]="['/profile', post.id]">{{post.name}}</a></div>
 
                 </div>
                 <hr/>

@@ -12,6 +12,7 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 
@@ -22,7 +23,8 @@ describe('FollowingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FollowingComponent ],
+      declarations: [ ,
+      NavbarComponent ],
       imports:[
         RatingModule,
         HttpClientModule,
@@ -63,8 +65,8 @@ describe('FollowingComponent', () => {
     };
 
     fixture.detectChanges();
-    const titleElement: HTMLElement = fixture.debugElement.query( By.css('#profilename')).nativeElement;
-   expect(titleElement.innerText).toContain(component.posts.name);
+    const titleElement: HTMLElement = fixture.debugElement.query( By.css('#bookname')).nativeElement;
+   expect(titleElement.innerText).toContain('اخر ايام الارض');
  });
 
 

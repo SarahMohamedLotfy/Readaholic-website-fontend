@@ -8,7 +8,7 @@ import {
   RouterTestingModule
 } from '@angular/router/testing';
 
-/*fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   beforeEach(async(() => {
@@ -26,14 +26,14 @@ import {
     }).compileComponents();
   }));
 
-  fit('should create the app', () => {
+  it('should create the app', () => {
    
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  fit(`should have as title 'frontend'`, () => {
+  it(`should have as title 'frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('frontend');
@@ -45,4 +45,4 @@ import {
     })
   );
 
-});*/
+});

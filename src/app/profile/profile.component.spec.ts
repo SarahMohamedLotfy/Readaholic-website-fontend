@@ -5,9 +5,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { NgbRatingModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
+
 
 fdescribe('ProfileComponent', () => {
   let component: ProfileComponent;

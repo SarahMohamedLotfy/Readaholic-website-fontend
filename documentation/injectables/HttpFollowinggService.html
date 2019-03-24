@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>HomeService</li>
+  <li>HttpFollowinggService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,9 +56,16 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/home/home.service.ts</code>
+            <code>src/app/following/httpfollowing.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Handles http requests related to people following the main user</p>
+
+            </p>
 
 
 
@@ -76,14 +83,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getUpdates">getUpdates</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#handleError">handleError</a>
-                            </li>
-                            <li>
-                                <a href="#logOut">logOut</a>
+                                <a href="#getfollowing">getfollowing</a>
                             </li>
                         </ul>
                     </td>
@@ -108,13 +108,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home/home.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/following/httpfollowing.service.ts:11</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>we pass an object of httpclient to the constuctor</p>
+                            <div class="io-description"><p>Constructor for httpfollowng service . </p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -157,152 +157,39 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getUpdates"></a>
+                    <a name="getfollowing"></a>
                     <span class="name">
                         <b>
-                            getUpdates
+                            getfollowing
                         </b>
-                        <a href="#getUpdates"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getfollowing"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getUpdates()</code>
+<code>getfollowing()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/home/home.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/following/httpfollowing.service.ts:24</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>updates get requests</p>
+                    <div class="io-description"><p>Getfollowing () is a get request to get the data of people following the main user 
+ and the books they are currently reading . 
+ The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="handleError"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Private</span>
-                            handleError
-                        </b>
-                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleError(error: <a href="https://angular.io/api/common/http/HttpErrorResponse" target="_blank">HttpErrorResponse</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/home/home.service.ts:36</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>function for handling errors in ui and in console</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>error</td>
-                                    <td>
-                                                <code><a href="https://angular.io/api/common/http/HttpErrorResponse" target="_blank" >HttpErrorResponse</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="logOut"></a>
-                    <span class="name">
-                        <b>
-                            logOut
-                        </b>
-                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>logOut()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/home/home.service.ts:54</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>logOut get request</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                     </div>
                 </td>
@@ -316,62 +203,36 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient, HttpErrorResponse, HttpHeaders } from &#x27;@angular/common/http&#x27;;
-import { Observable, throwError, observable } from &#x27;rxjs&#x27;;
-import { catchError, retry } from &#x27;rxjs/operators&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { followingComponent } from &#x27;../classes/followingComponent&#x27;;
 
+/**Handles http requests related to people following the main user*/
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+export class HttpFollowinggService {
 /**
- * Home service is responsible for http get requests od updates 
- */
-export class HomeService {
+ * Constructor for httpfollowng service . 
+ 
+*/
+  constructor(private http:HttpClient) { }
 
-
-/**
- * we pass an object of httpclient to the constuctor
- */
-  constructor(private http:HttpClient) {}
-
-
-/**
- * updates get requests
- */
-   getUpdates():Observable&lt;any&gt;{
-return this.http.get(&quot;http://localhost:3000/updates&quot;)
-.pipe(
-      retry(3), // retry a failed request up to 3 times
-    catchError(this.handleError) // then handle the error
-
-    );
-   }
-  /**
- * function for handling errors in ui and in console
- */
-   private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error(&#x27;An error occurred:&#x27;, error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(
-        &#x60;Backend returned code ${error.status}, &#x60; +
-        &#x60;body was: ${error.error}&#x60;);
-    }
-    // return an observable with a user-facing error message
-    return throwError(
-      &#x27;Something bad happened; please try again later.&#x27;);
-  };
+  
  /**
- * logOut get request
+ *Getfollowing () is a get request to get the data of people following the main user 
+ * and the books they are currently reading . 
+ * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
-  logOut():Observable&lt;any&gt;{
-    return this.http.get(&#x27;http://localhost:3000/logOut&#x27;);
-  }
-}</code></pre>
+getfollowing(){
+  return this.http.get(&#x27;https://my-json-server.typicode.com/SarahMohamedLotfy/ggfollow/following&#x27;);
+
+}
+
+
+}
+</code></pre>
     </div>
 
 </div>
@@ -403,7 +264,7 @@ return this.http.get(&quot;http://localhost:3000/updates&quot;)
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'HomeService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'HttpFollowinggService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

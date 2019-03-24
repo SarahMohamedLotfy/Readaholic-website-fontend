@@ -3,12 +3,16 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { followingComponent } from '../classes/followingComponent';
 
+/**Handles http requests related to people following the main user*/
+
 @Injectable({
   providedIn: 'root'
 })
-/**handles Followers list related http requests */
 export class HttpFollowinggService {
-
+/**
+ * Constructor for httpfollowng service . 
+ 
+*/
   constructor(private http:HttpClient) { }
 
   

@@ -27,7 +27,12 @@ export class FollowersComponent implements OnInit {
  * selectedProfile is the profile of the main user  who logged in . 
  */
   selectedProfile: profile ;
+   /**
+ * Search input text in search box .
+ */
  searchText: string = '';
+ /**
+* To Check if the json file is empty or not  */ 
  empty:boolean;
  /**
 *Constructer that take service and routing .
@@ -64,6 +69,9 @@ export class FollowersComponent implements OnInit {
                  }
   }
   
+  /**
+*Search for the name of following person when click on search button  .
+ */ 
   search(){
 
       if (!this.posts) {

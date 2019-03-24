@@ -218,7 +218,31 @@ color: #333333;
     #tfheader{
       position: relative;
       top: 25px;
-    }}
+    }
+    #Myprofilename
+    {position: relative;
+      color: #00635d;
+      line-height: 24px;
+      font-size: 20px;
+      font-family: "Merriweather", Georgia, "Times New Roman", serif;
+      font-weight: bold;
+      top:55px;
+      left:80px;
+    }
+  }
+  @media(max-width: 700px)
+  {
+    #Myprofilename
+    {position: relative;
+      color: #00635d;
+      line-height: 24px;
+      font-size: 20px;
+      font-family: "Merriweather", Georgia, "Times New Roman", serif;
+      font-weight: bold;
+      top:40px;
+      left:80px;
+    }
+  }
 
     .country
 {
@@ -230,4 +254,6 @@ color: #333333;
 font-size: 12px;
 left:75px;
 top:17px;
+
+
 }

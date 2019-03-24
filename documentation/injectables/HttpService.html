@@ -137,7 +137,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/http.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/http.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -202,8 +202,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/http.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/http.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -241,8 +241,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/http.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/http.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -322,16 +322,16 @@ The data i get is ( name of user , image , id of user  ).</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/http.service.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/http.service.ts:73</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Getfollowing () is a get request to get the data of people following the main user 
- and the books they are currently reading . 
+                    <div class="io-description"><p>Getfollowing () is a get request to get the data of people following the main user
+ and the books they are currently reading .
  The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).</p>
 </div>
 
@@ -365,8 +365,8 @@ The data i get is ( name of user , image , id of user  ).</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/http.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/http.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -404,8 +404,8 @@ The data i get is ( name of user , image , id of user  ).</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/http.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/http.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -443,8 +443,8 @@ The data i get is ( name of user , image , id of user  ).</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/http.service.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/http.service.ts:58</a></div>
                 </td>
             </tr>
 
@@ -481,7 +481,7 @@ The data i get is ( name of user , image , id of user  ).</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                        <b>Returns : </b>        <code><a href="../classes/profile.html" target="_self" >Observable&lt;profile&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -515,8 +515,8 @@ The data i get is ( name of user , image , id of user  ).</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/http.service.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/http.service.ts:43</a></div>
                 </td>
             </tr>
 
@@ -594,7 +594,7 @@ The data i get is ( name of user , image , id of user  ).</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/http.service.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/http.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -613,12 +613,8 @@ import { Observable, throwError, observable } from &#x27;rxjs&#x27;;
 import { catchError, retry } from &#x27;rxjs/operators&#x27;;
 import { followingComponent } from &#x27;./classes/followingComponent&#x27;;
 import { followerComponent } from &#x27;./classes/followerComponent&#x27;;
+import { profile } from &#x27;./classes/profile&#x27;;
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 7ab2de2a26f792005aee4788da8fab3a21d3495e
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -668,11 +664,8 @@ return this.http.get(&#x27;http://localhost:3000/author&#x27;);
     return throwError(
       &#x27;Something bad happened; please try again later.&#x27;);
   };
- 
- 
-
- getUserprofile(id: number): Observable&lt;any&gt; {
-  return this.http.get&lt;any&gt; (this.url + &#x60;/profile/${id}&#x60;);
+ getUserprofile(id: number): Observable&lt;profile&gt; {
+  return this.http.get&lt;profile&gt; (this.url +&quot;/profile/&quot;+ id );
 }
 
 //getUserfollowings(): Observable&lt;following[]&gt; {
@@ -682,12 +675,14 @@ return this.http.get(&#x27;http://localhost:3000/author&#x27;);
 
 
 /**
- *Getfollowing () is a get request to get the data of people following the main user 
- * and the books they are currently reading . 
+ *Getfollowing () is a get request to get the data of people following the main user
+ * and the books they are currently reading .
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
 getfollowing(){
+
   return this.http.get(&#x27;http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following&#x27;);
+
 
 }
 
@@ -697,11 +692,12 @@ getfollowing(){
  */
 
 getfollowers(){
-  return this.http.get(&#x27;https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following&#x27;);
+  return this.http.get(&#x27;https://my-json-server.typicode.com/SarahMohamedLotfy/mmm/following&#x27;);
 
    }
 
-}</code></pre>
+}
+</code></pre>
     </div>
 
 </div>

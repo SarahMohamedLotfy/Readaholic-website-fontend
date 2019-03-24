@@ -30,9 +30,9 @@ export class FollowingComponent implements OnInit {
    /**
  * temp is array of people following the main users .
  */
-  temp: any =[];filterfollowing:[];
+  temp: any =[];
    /**
- * Search input text.
+ * Search input text in search box .
  */
   searchText: string = ''
  /**
@@ -55,7 +55,7 @@ export class FollowingComponent implements OnInit {
       this.posts =posts ;
       this.temp = posts;
 
-      this.filterfollowing=posts ;})
+       ;})
 
 
       this.myfirstservice.getUserprofile(1).subscribe(
@@ -67,6 +67,9 @@ export class FollowingComponent implements OnInit {
   
   }
 
+ /**
+*Search for the name of following person when click on search button  .
+ */ 
 search(){
 
   if (!this.posts) {
@@ -76,7 +79,9 @@ search(){
     this.posts = this.temp;
   }
   this.searchText = this.searchText.toLocaleLowerCase();
-
+/**
+*Filter for names of following people.
+ */ 
   this.posts = this.temp.filter(it => 
     it["name"].toLocaleLowerCase().includes(this.searchText)
   );

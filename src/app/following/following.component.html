@@ -1,16 +1,18 @@
-
-
 <!doctype html>
 
-<html lang="en">
-<head>
-  
 
-  <meta charset="utf-8">
-  <script src="angular.min.js"></script>
-  <title>Followers</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<navbar></navbar>
+
+<head>
+
+
+
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <title>Followers</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <router-outlet></router-outlet>
 
@@ -19,70 +21,68 @@
 
 
     <div *ngIf="selectedProfile">
-        <div  id="Myprofilename">
-            <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 
+        <div id="Myprofilename">
+            <a [routerLink]="['/profile']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
         </div>
-        </div>
-        
+    </div>
 
 
 
 
-  <div id="tfheader" >
-      <form id="tfnewsearch" method="get" >
 
-      <input type="text" id ="searchtextfollowing" value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"
-        maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing
+    <div id="tfheader">
+        <form id="tfnewsearch" method="get">
+
+            <input type="text" id="searchtextfollowing" value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21" maxlength="120"><input id="searchfollowingg" type="button" (click)="search()" value="search" class="searchfollowing
         ">
-      </form>
+        </form>
 
-    <div class="tfclear"></div>
-  </div>
+        <div class="tfclear"></div>
+    </div>
 
 
 
-   <ul style="list-style: none;">
-  <li  class="list" *ngFor="let post of posts  ">
+    <ul style="list-style: none;">
+        <li class="list" *ngFor="let post of posts  ">
 
-  <div class="directory-info-row">
-      <div class="directory-info-row1" class ="rowcolumn"class="row">
-          <div class="directory-info-row1" class="col-md-5 col-sm-6">
-              <div class ="panelbodychar"class="panel">
-              <div class ="panelbodychar" class="panel-body">
-                  <div class ="panelbodychar"class="media">
-                      <a class = "left"class="pull-left"  [routerLink]="['/profile', post.id]">
-                          <img id ="profilepagef"  src={{post.image_url}} alt="">
-                      </a>
-                      <div class="media-body">
-                        <a [routerLink]="['/profile', post.id]"  id ="profilename"class ="nameoffollower " >
+            <div class="directory-info-row">
+                <div class="directory-info-row1" class="rowcolumn" class="row">
+                    <div class="directory-info-row1" class="col-md-5 col-sm-6">
+                        <div class="panelbodychar" class="panel">
+                            <div class="panelbodychar" class="panel-body">
+                                <div class="panelbodychar" class="media">
+                                    <a class="left" class="pull-left" [routerLink]="['/profile', post.id]">
+                                        <img id="profilepagef" src={{post.image_url}} alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <a [routerLink]="['/profile', post.id]" id="profilename" class="nameoffollower ">
                           {{post.name}}
 
                         </a>
-                       
-                        
-                      </div>
-                  </div>
-                  {{post.country}}
-              </div>
-            </div>
-          </div>
 
-          
 
-          <div class="directory-info-row2 "class="col-md-7 col-sm-7">
-              <div class="panel">
-              <div class="panel-body">
-                  <div class="media">
-                      <a class="pull-left"  [routerLink]="['/my-book', post.bookid]">
-                          <img id ="bookimage"  src={{post.bookimage}} alt="">
-                      </a>
-                      <div class="media-body">
-                          <div class="currentext"> Currently reading : </div>
-                          <div class="pull-right">
-                            <button id ="stopfollow" ng-click="follow()" type="button"
-                              class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
-                          </div>
-                          <address>
+                                    </div>
+                                </div>
+                                {{post.country}}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="directory-info-row2 " class="col-md-7 col-sm-7">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="media">
+                                    <a class="pull-left" [routerLink]="['/my-book', post.bookid]">
+                                        <img id="bookimage" src={{post.bookimage}} alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <div class="currentext"> Currently reading : </div>
+                                        <div class="pull-right">
+                                            <button id="stopfollow" ng-click="follow()" type="button" class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
+                                        </div>
+                                        <address>
                             <a   id= "bookname" [routerLink]="['/my-book', post.bookid]" >
                               <h4 class="bookhide" >{{post.bookname}} </h4>
 
@@ -92,18 +92,18 @@
                           </address>
 
 
-                      </div>
-                  </div>
-              </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
-          </div>
-
-
-    </div>
-  </div>
-  <hr/>
-</li>
-</ul>
+            <hr/>
+        </li>
+    </ul>
 
 
 
@@ -115,4 +115,5 @@
 
 
 </body>
+
 </html>

@@ -63,8 +63,8 @@ fdescribe('FollowingComponent', () => {
     };
 
     fixture.detectChanges();
-    const titleElement: HTMLElement = fixture.debugElement.query( By.css('#profilename')).nativeElement;
-   expect(titleElement.innerText).toContain(component.posts.name);
+    const titleElement: HTMLElement = fixture.debugElement.query( By.css('#bookname')).nativeElement;
+   expect(titleElement.innerText).toContain('اخر ايام الارض');
  });
 
 

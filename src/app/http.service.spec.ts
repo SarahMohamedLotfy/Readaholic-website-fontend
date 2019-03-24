@@ -29,7 +29,7 @@ user_shelves: {id: 2, name: 'read', book_count: 0}}
 
 
 
-  describe('HttpService', () => {
+ /* describe('HttpService', () => {
     let httpService: HttpService;
     let httpTestingController: HttpTestingController;
     let testFollower: followerComponent [] = [{
@@ -149,5 +149,4 @@ it('should get auth profile', () => {
 });
  
 
-});});})
 

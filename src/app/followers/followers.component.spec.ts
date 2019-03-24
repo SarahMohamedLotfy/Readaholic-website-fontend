@@ -12,6 +12,7 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 
@@ -22,7 +23,8 @@ fdescribe('FollowersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FollowersComponent ],
+      declarations: [ FollowersComponent,
+      NavbarComponent ],
       imports:[
         RatingModule,
         HttpClientModule,

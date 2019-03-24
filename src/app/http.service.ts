@@ -6,8 +6,6 @@ import { followingComponent } from './classes/followingComponent';
 import { followerComponent } from './classes/followerComponent';
 
 
-
-
 @Injectable({
   providedIn: 'root'
 })

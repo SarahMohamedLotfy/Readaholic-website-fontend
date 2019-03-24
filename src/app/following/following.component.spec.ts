@@ -12,17 +12,19 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 
-fdescribe('FollowingComponent', () => {
+describe('FollowingComponent', () => {
   let component: FollowingComponent;
   let fixture: ComponentFixture<FollowingComponent>;
   let de: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FollowingComponent ],
+      declarations: [ ,
+      NavbarComponent ],
       imports:[
         RatingModule,
         HttpClientModule,
@@ -43,7 +45,7 @@ fdescribe('FollowingComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,7 +1,7 @@
 <div style="min-width:1400px; margin: 0 auto;">
     <div class="row" style="background-color:black;height:100px;">
         <div class="col-md-6" style="height: 100px; background-color: lightgoldenrodyellow; min-width: 550px;">
-            <img src="assets/good.png" style="width:28% ; height: 50%; margin-left: 40%; margin-top: 4%;">
+            <h1 id="Read">Readholic</h1>
         </div>
         <div class="col-md-6" style="height: 100px; background-color: lightgoldenrodyellow; min-width: 550px;">
 
@@ -11,7 +11,7 @@
                     <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password">
                     <button id="signInButton" class="btn btn-primary" type="submit" style="background-color:	#8B4513 " (click)="onSubmit()">Sign in</button>
 
-                    <h6 *ngIf=wrongPass style="color:crimson">Incorrect username or password</h6>
+                    <h6 *ngIf=wrongPass style="color:crimson">{{error}}</h6>
                 </div>
             </form>
         </div>

@@ -5,16 +5,20 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
-describe('ProfileComponent', () => {
+fdescribe('ProfileComponent', () => {
   let component: ProfileComponent;
   let fixture: ComponentFixture<ProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ]
+      declarations: [ ProfileComponent,
+      NavbarComponent ],
+      imports:[HttpClientModule,
+       RouterTestingModule ]
     })
     .compileComponents();
   }));
@@ -25,7 +29,7 @@ describe('ProfileComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 });

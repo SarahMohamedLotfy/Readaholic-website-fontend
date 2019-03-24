@@ -7,7 +7,7 @@ import { AppComponent } from '../app.component';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 //fdescribe
-describe('HomeService', () => {
+fdescribe('HomeService', () => {
 let service: HomeService;
 let httpTestingController: HttpTestingController;
 
@@ -32,8 +32,7 @@ afterEach(() => {
 });
 
 
-  it('expects service to fetch updates ',() => {
-
+  fit('expects service to fetch updates ',() => {
       // We call the service
       const fakeUpdates: updates [] = [{
         id: 2,
@@ -77,4 +76,3 @@ afterEach(() => {
     })
 
 });
-//*/

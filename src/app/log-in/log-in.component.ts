@@ -20,11 +20,13 @@ export class LogInComponent implements OnInit {
   users:user;
   /**true if user entered wrong pass or username, false otherwise */
   wrongPass:boolean;
+  /** stores in it the error message */
+  error:string;
 /**sets the varibales in the form using form builder */
   constructor(private service:LogInHttpService,private fb:FormBuilder,private router:Router) { 
     this.form=this.fb.group({
-    email: ['',Validators.required],
-    password: ['',Validators.required]
+    email: ['',[Validators.required,Validators.minLength(1)]],
+    password: ['',[Validators.required,Validators.minLength(1)]]
     });
     
  
@@ -40,6 +42,7 @@ export class LogInComponent implements OnInit {
   /**On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they're valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  */
 onSubmit(){
   const val = this.form.value;
+  if(this.form.valid){
   this.service.login(val.email,val.password).subscribe(
 (data:any) => {
   localStorage.setItem('token',data.token);
@@ -52,19 +55,29 @@ err => {
   {
   console.log('incorrect username or password');
   this.wrongPass=true;
+  this.error="incorrect username or password";
   
   }
   else if(err.status== 404)
-  console.log('no user');
+  {
+    this.wrongPass=true;
+    this.error="incorrect username or password";}
   else
   console.log(err);
 }
-  );
+  );}
+
+  else
+  {
+    this.wrongPass=true;
+  this.error="You must enter username and password";
+  }
 }
 
 /**Checks changes if the user enter a wrong password */
 ngOnChanges(): void{
   this.wrongPass=this.wrongPass;
+  this.error=this.error;
 }
 
 

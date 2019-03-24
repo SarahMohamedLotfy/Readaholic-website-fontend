@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 fdescribe('ProfileComponent', () => {
   let component: ProfileComponent;
   let fixture: ComponentFixture<ProfileComponent>;
+  let selectedProfile;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -32,6 +33,8 @@ fdescribe('ProfileComponent', () => {
     fixture = TestBed.createComponent(ProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+
   });
 
   fit('should create', () => {

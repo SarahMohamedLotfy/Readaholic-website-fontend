@@ -17,15 +17,21 @@ export class ProfileComponent implements OnInit {
    allFollowings: followingComponent[];
 
 /**
- * the constructor creates instances of http service and the routing to make the profile able to navigate between pages
+ * the constructor creates instances of http service
+ *
+ *  and the routing to make the profile able to navigate between pages
 */
   constructor(private httpService: ProfileService ,
               private route: ActivatedRoute , private router: Router ) { }
 /** get the auth user data and his following */
   ngOnInit() {
+    /** receives id from url and send it to the get request */
     let id: number = +this.route.snapshot.paramMap.get('id');
+
      /**
-     * subscribe to the data received from json file which contain the profile of the authenticated user info information and if any error occurs it prints it to the log
+     * subscribe to the data received from json file which contain the profile of the authenticated user info information
+     *
+     * and if any error occurs it prints it to the log
      */
     this.httpService.getUserprofile(id).subscribe(
         (data: profile) => this.selectedProfile = data,

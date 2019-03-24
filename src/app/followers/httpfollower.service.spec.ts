@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@ang
 import { HttpFollowingService } from './httpfollower.service';
 import { followerComponent } from '../classes/followerComponent';
 
-fdescribe('HttpFollowingService', () => {
+describe('HttpFollowingService', () => {
   let service: HttpFollowingService;
   let httpTestingController: HttpTestingController;
   let testfollower: followerComponent []= [{
@@ -43,8 +43,8 @@ fdescribe('HttpFollowingService', () => {
     "country": "Aswan,11,Egypt"
   }
   ];
-  
-  
+
+
 
   beforeEach( () =>  {
     TestBed.configureTestingModule({
@@ -60,8 +60,8 @@ fdescribe('HttpFollowingService', () => {
   });
 
 
-  
-  
+
+
  fit('should get followerList', () => {
     service.getfollowers().subscribe(
       (data: followerComponent[]) => {
@@ -73,9 +73,9 @@ fdescribe('HttpFollowingService', () => {
 
   });
 
-  
 
-  fit('should be created', () => {
+
+  it('should be created', () => {
     const service: HttpFollowingService = TestBed.get(HttpFollowingService);
     expect(service).toBeTruthy();
   });

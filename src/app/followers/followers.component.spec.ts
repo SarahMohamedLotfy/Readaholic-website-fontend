@@ -9,22 +9,23 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 import { DropdownComponent } from './../shared/dropdown/dropdown.component';
 import { StarComponent } from './../shared/star/star.component';
 
-import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 
-fdescribe('FollowersComponent', () => {
+describe('FollowersComponent', () => {
   let component: FollowersComponent;
   let fixture: ComponentFixture<FollowersComponent>;
   let de: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FollowersComponent ],
+      declarations: [ FollowersComponent,
+      NavbarComponent ],
       imports:[
         HttpClientModule,
         RouterModule,
@@ -44,7 +45,7 @@ fdescribe('FollowersComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 

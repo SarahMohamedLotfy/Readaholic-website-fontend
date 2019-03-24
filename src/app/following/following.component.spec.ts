@@ -12,17 +12,19 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 
-fdescribe('FollowingComponent', () => {
+describe('FollowingComponent', () => {
   let component: FollowingComponent;
   let fixture: ComponentFixture<FollowingComponent>;
   let de: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FollowingComponent ],
+      declarations: [ ,
+      NavbarComponent ],
       imports:[
         RatingModule,
         HttpClientModule,
@@ -43,14 +45,14 @@ fdescribe('FollowingComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
 
-  fit('should show followers list ', () => {
+  it('should show followers list ', () => {
     component.posts = {
-    
+
         "id": 1,
         "name": "Huda Yahya",
         "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
@@ -58,8 +60,8 @@ fdescribe('FollowingComponent', () => {
         "bookname": "اخر ايام الارض ",
         "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
         "country": "Asuit,Egypt"
-      
-      
+
+
     };
 
     fixture.detectChanges();
@@ -73,4 +75,4 @@ fdescribe('FollowingComponent', () => {
 
 });
 
-  
+

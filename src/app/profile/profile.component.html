@@ -5,7 +5,7 @@
            <img id="profilePicture" [src]="selectedProfile.small_image_url" >
       </div>
       <div class=" col-md-4" >
-        <div class="userName">  {{ selectedProfile.name }} ( edit profile ) </div>
+        <div class="userName" id="userNameprofile">  {{ selectedProfile.name }} ( edit profile ) </div>
           <hr>
           <div class="Details">
              <b>Details:</b>
@@ -50,16 +50,16 @@
                <b>
                   {{ selectedProfile.name }}'S RECENT UPDATES </b>
                   <hr>
-
                         </div>
                         <div class="col-md-4"  >
                          <b> {{ selectedProfile.name }} IS FOLLOWING  </b>
                           <hr>
                           <tbody>
                             <tr *ngFor='let allFollowing of allFollowings'>
-                                <td> <img [src]="allFollowing.image_url"  id="followerProfilepicture"  >
+                                <td>
+                                   <img [src]="allFollowing.image_url"  id="followerProfilepicture"  >
                                    </td>
-                                <td>  <a [routerLink]= "['/profile', allFollowing.id]"> {{ allFollowing.name }} </a>
+                                 <td>  <a href="profile/{{ allFollowing.id }}"> {{ allFollowing.name }} </a>
                                 </td>
                             </tr>
                           </tbody>

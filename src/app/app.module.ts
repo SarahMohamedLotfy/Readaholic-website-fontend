@@ -1,6 +1,7 @@
 import { RatingModule } from 'ng2-rating';
 import { FilterPipe } from './filter.pipe';
 import { HttpService } from './http.service';
+import { HttpFollowingService} from '../app/followers/httpfollower.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +20,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { fakeBackendProvider } from './fake-backend';
+import { LogInHttpService } from './log-in/log-in-http.service';
 
 
 
@@ -55,7 +57,9 @@ import { fakeBackendProvider } from './fake-backend';
     FilterPipe
   ],
 
-  providers: [HttpService, {provide: HTTP_INTERCEPTORS,
+
+  providers: [HttpService, HttpFollowingService,LogInHttpService ,{provide: HTTP_INTERCEPTORS,
+
   useClass: AuthInterceptor,
 multi: true},fakeBackendProvider],
   bootstrap: [AppComponent]

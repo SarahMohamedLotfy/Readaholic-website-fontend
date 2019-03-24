@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http.service';
+import { HttpFollowingService } from './httpfollower.service';
 import { profile } from '../classes/profile';
 import {followingComponent} from '../classes/followingComponent';
-
+import  {HttpService} from '../http.service';
 /**
  * Show the followers list and Search for the followers of the main user .
  */
@@ -27,12 +27,12 @@ export class FollowersComponent implements OnInit {
  * selectedProfile is the profile of the main user  who logged in . 
  */
   selectedProfile: profile ;
- searchText: string = ''
-
+ searchText: string = '';
+ empty:boolean;
  /**
 *Constructer that take service and routing .
  */
-  constructor(private myfirstservice :HttpService ) { }
+  constructor(private myfirstservice :HttpFollowingService ,private profilesevice:HttpService ) { }
   
   /**
  * Contains Get requests to get followers list and to get the profile data to get the name of the main user .
@@ -40,6 +40,8 @@ export class FollowersComponent implements OnInit {
  * The data i get is ( name of user , image of user , id of user ).
  * GetUserprofile get the data of the profile of main user i used it to get the name of the main  user
  */
+
+
   ngOnInit() {
 
     this.myfirstservice.getfollowers().subscribe((posts:any)=>{
@@ -48,14 +50,20 @@ export class FollowersComponent implements OnInit {
        })
 
 
-       this.myfirstservice.getUserprofile(1).subscribe(
+       this.profilesevice.getUserprofile(1).subscribe(
         data => {
           this.selectedProfile = data,
           (err: any) => console.log(err),
           console.log(this.selectedProfile)
                  }) ;
-   
+
+                 
+                 if (this.posts==[] )
+                 {
+                   this.empty=true;
+                 }
   }
+  
   search(){
 
       if (!this.posts) {

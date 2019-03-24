@@ -33,7 +33,6 @@ afterEach(() => {
 
 
   it('expects service to fetch updates ',() => {
-
       // We call the service
       const fakeUpdates: updates [] = [{
         id: 2,
@@ -77,4 +76,3 @@ afterEach(() => {
     })
 
 });
-//*/

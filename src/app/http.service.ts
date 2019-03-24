@@ -7,8 +7,6 @@ import { followerComponent } from './classes/followerComponent';
 import { profile } from './classes/profile';
 
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -73,7 +71,10 @@ return this.http.get('http://localhost:3000/author');
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
 getfollowing(){
+
   return this.http.get('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
+
+
 }
 
  /**
@@ -82,7 +83,7 @@ getfollowing(){
  */
 
 getfollowers(){
-  return this.http.get('https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following');
+  return this.http.get('https://my-json-server.typicode.com/SarahMohamedLotfy/mmm/following');
 
    }
 

@@ -18,7 +18,7 @@
 				"ratings_count":null,
 				"ratings_avg":null,
 				"pages_no":null,
-				"user_id":2,
+				"user_id":1,
 				"name":"Huda Yahya",
 				"image_link":"https://images.gr-assets.com/books/1529823092l/39320115.jpg",
 				"author_name":"Cinda Williams Chima",
@@ -35,7 +35,7 @@
 				"shelf":1,
 				"title":"To Kill a Kingdom",
 				"description":"great book ",
-				"img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
+				"img_url":"https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
 				"reviews_count":null,
 				"ratings_count":null,
 				"ratings_avg":null,
@@ -70,8 +70,8 @@
 
          "updated_at":"2019-03-19 00:00:00",
 		 "user_id":2,
-		 "img_url":"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-         "user_name":"Ahmed Elsayed",
+		 "img_url":"https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+         "name":"Ahmed Elsayed",
          "followed_id":3,
          "followed_image_link":"https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
          "followed_name":"Mohamed Hayalla",
@@ -148,7 +148,7 @@
             }
         ]
     },{
-      "id": "1",
+      "id": 1,
         "name": "Huda Yahya",
         "user_name": "MAi_mostafa99",
         "small_image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",

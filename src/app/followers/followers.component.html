@@ -12,7 +12,6 @@
 <body>
 
   
-
         <div *ngIf="selectedProfile">
             <div  id="Myprofilename">
                 <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > Followers</span> 
@@ -36,7 +35,13 @@
   
 
 
-
+  <div  *ngIf= "empty">
+      
+      <h1>have no followers</h1> 
+    </div>
+    
+    <div *ngIf= "!empty">
+  
   <div class="row bootstrap snippet">
     <div class="col-md-6 col-xs-12 col-md-offset-3">
       <div class="panel" id="followers">
@@ -64,6 +69,13 @@
                       style="clear:right" [routerLink]="['/profile', post.id]">{{post.name}}</a></div>
 
                 </div>
+
+                <address class="country">
+                    <br >
+                    {{post.country}}<br>
+                   
+                
+                </address>
                 <hr/>
 
               </div>
@@ -75,7 +87,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
 
 

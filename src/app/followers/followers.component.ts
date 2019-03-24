@@ -27,8 +27,8 @@ export class FollowersComponent implements OnInit {
  * selectedProfile is the profile of the main user  who logged in . 
  */
   selectedProfile: profile ;
- searchText: string = ''
-
+ searchText: string = '';
+ empty:boolean;
  /**
 *Constructer that take service and routing .
  */
@@ -40,6 +40,8 @@ export class FollowersComponent implements OnInit {
  * The data i get is ( name of user , image of user , id of user ).
  * GetUserprofile get the data of the profile of main user i used it to get the name of the main  user
  */
+
+
   ngOnInit() {
 
     this.myfirstservice.getfollowers().subscribe((posts:any)=>{
@@ -54,8 +56,15 @@ export class FollowersComponent implements OnInit {
           (err: any) => console.log(err),
           console.log(this.selectedProfile)
                  }) ;
-   
+
+                 
+                 if (this.posts===null )
+                 {
+                   this.empty=true;
+              
+                 }
   }
+  
   search(){
 
       if (!this.posts) {

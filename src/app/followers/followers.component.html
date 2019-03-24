@@ -1,4 +1,4 @@
-<navbar></navbar><!doctype html>
+<!doctype html>
 <html lang="en">
  
 <head>
@@ -32,7 +32,6 @@
 
 
 
-  
 
 
   <div  *ngIf= "empty">
@@ -65,7 +64,7 @@
                     <button id ="followbutton"ng-click="follow()" type="button"
                       class="btn btn-info btn-sm waves-effect waves-light">Follow </button>
                   </div>
-                  <div class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter"
+                  <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter"
                       style="clear:right" [routerLink]="['/profile', post.id]">{{post.name}}</a></div>
 
                 </div>

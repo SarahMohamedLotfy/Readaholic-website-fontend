@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http.service';
+import { HttpFollowingService } from './httpfollower.service';
 import { profile } from '../classes/profile';
 import {followingComponent} from '../classes/followingComponent';
-
+import  {HttpService} from '../http.service';
 /**
  * Show the followers list and Search for the followers of the main user .
  */
@@ -27,12 +27,17 @@ export class FollowersComponent implements OnInit {
  * selectedProfile is the profile of the main user  who logged in . 
  */
   selectedProfile: profile ;
+   /**
+ * Search input text in search box .
+ */
  searchText: string = '';
+ /**
+* To Check if the json file is empty or not  */ 
  empty:boolean;
  /**
 *Constructer that take service and routing .
  */
-  constructor(private myfirstservice :HttpService ) { }
+  constructor(private myfirstservice :HttpFollowingService ,private profilesevice:HttpService ) { }
   
   /**
  * Contains Get requests to get followers list and to get the profile data to get the name of the main user .
@@ -50,7 +55,7 @@ export class FollowersComponent implements OnInit {
        })
 
 
-       this.myfirstservice.getUserprofile(1).subscribe(
+       this.profilesevice.getUserprofile(1).subscribe(
         data => {
           this.selectedProfile = data,
           (err: any) => console.log(err),
@@ -58,13 +63,15 @@ export class FollowersComponent implements OnInit {
                  }) ;
 
                  
-                 if (this.posts===null )
+                 if (this.posts==[] )
                  {
                    this.empty=true;
-              
                  }
   }
   
+  /**
+*Search for the name of following person when click on search button  .
+ */ 
   search(){
 
       if (!this.posts) {

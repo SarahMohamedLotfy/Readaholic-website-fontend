@@ -14,8 +14,13 @@ const routes: Routes = [
   {path:  '', pathMatch: 'full', redirectTo:  'login'},
   {path:'login',component: LogInComponent},
   {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
+<<<<<<< HEAD
+  {path: 'book/:id' , component: BookInfoComponent,canActivate:[AuthGuard]},
+  {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
+=======
   {path: 'book/:id' , component: BookInfoComponent},
   {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
+>>>>>>> 63ef008da1db1981db24e923bb407a651e0718ce
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},

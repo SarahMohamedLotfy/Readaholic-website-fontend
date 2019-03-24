@@ -2,13 +2,19 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { followerComponent } from '../classes/followerComponent';
-
+/**
+ * handles  http requests of followers list 
+ 
+*/
 @Injectable({
   providedIn: 'root'
 })
-/**handles Followers list related http requests */
-export class HttpFollowingService {
 
+export class HttpFollowingService {
+/**
+ * Constructor for httpfollower service . 
+ 
+*/
   constructor(private http:HttpClient) { }
 
   

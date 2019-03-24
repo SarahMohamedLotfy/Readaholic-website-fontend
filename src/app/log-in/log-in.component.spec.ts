@@ -1,8 +1,4 @@
 
-
-
-
-
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LogInComponent } from './log-in.component';
@@ -15,8 +11,9 @@ import { RouterModule } from '@angular/router';
 import { LogInHttpService } from './log-in-http.service';
 import {  By } from '@angular/platform-browser';
 import { FakeBackendInterceptor } from '../fake-backend';
+import { user } from '../classes/user';
 
-describe('LogInComponent', () => {
+fdescribe('LogInComponent', () => {
   let component: LogInComponent;
   let fixture: ComponentFixture<LogInComponent>;
   let de:DebugElement;
@@ -43,17 +40,12 @@ describe('LogInComponent', () => {
     
   });
 
-  it('should call  login method', async(()=>{
-    let loginElement: DebugElement;
-    const debugElement= fixture.debugElement;
-    let authService= debugElement.injector.get(LogInHttpService);
-    let loginSpy= spyOn(authService,'login').and.callThrough();
-    loginElement= fixture.debugElement.query(By.css('form'));
+  fit('form invalid when empty', ()=>{
+    expect(component.form.valid).toBeFalsy();
+    
+});
 
-    component.form.controls['email'].setValue('user');
-    component.form.controls['password'].setValue('123');
-    loginElement.triggerEventHandler('click',null);
-    expect(loginSpy).toHaveBeenCalledTimes(1);
 
-  }))
+
+
 });

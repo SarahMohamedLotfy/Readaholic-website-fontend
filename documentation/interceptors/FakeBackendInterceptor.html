@@ -297,6 +297,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                 console.log(&#x27;enter&#x27;);
                 if (request.headers.get(&#x27;Authorization&#x27;) &#x3D;&#x3D;&#x3D; &#x27;bearer fake-jwt-token&#x27;) {
+                    console.log(&#x27;holaaa&#x27;);
                     
                     return next.handle(request);
                 } else {

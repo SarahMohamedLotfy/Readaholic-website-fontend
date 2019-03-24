@@ -10,7 +10,6 @@
 <router-outlet></router-outlet>
 
 <body>
-  <navbar></navbar>
     <div *ngIf="selectedProfile">
         <div  id="Myprofilename">
             <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 
@@ -35,7 +34,7 @@
 
 
    <ul style="list-style: none;">
-  <li  class="list" *ngFor="let post of posts | filter:searchText ">
+  <li  class="list" *ngFor="let post of posts  ">
 
   <div class="directory-info-row">
       <div class="directory-info-row1" class="row">

@@ -20,7 +20,7 @@ export class LogInComponent implements OnInit {
   users:user;
   /**true if user entered wrong pass or username, false otherwise */
   wrongPass:boolean;
-
+  /** stores in it the error message */
   error:string;
 /**sets the varibales in the form using form builder */
   constructor(private service:LogInHttpService,private fb:FormBuilder,private router:Router) { 

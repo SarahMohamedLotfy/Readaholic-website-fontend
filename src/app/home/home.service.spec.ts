@@ -33,9 +33,8 @@ afterEach(() => {
 
 
   it('expects service to fetch updates ',() => {
- 
       // We call the service
-      const fakeUpdates: updates [] = [{  
+      const fakeUpdates: updates [] = [{
         id: 2,
           body:null,
          rating:3,
@@ -60,19 +59,19 @@ afterEach(() => {
          followed_image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
          followed_name:null,
          followed_id:null
-         
+
         }];
       service.getUpdates().subscribe((updatesData : updates[])=> {
        expect(updatesData[0].update_type).toEqual('0');
        expect(updatesData[0].name).toEqual('Huda Yahyaa');
-       
- 
+
+
       });
       let updatesRequest: TestRequest = httpTestingController.expectOne('http://localhost:3000/updates');
       expect(updatesRequest.request.method).toEqual('GET');
       updatesRequest.flush(fakeUpdates);
- 
-     
+
+
       expect(service).toBeTruthy();
     })
 

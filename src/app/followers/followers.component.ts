@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
-import { FilterPipe} from './filter.pipe.follower';
 import { profile } from '../classes/profile';
 import {followingComponent} from '../classes/followingComponent';
 
@@ -28,7 +27,7 @@ export class FollowersComponent implements OnInit {
  * selectedProfile is the profile of the main user  who logged in . 
  */
   selectedProfile: profile ;
- // searchText: string = ''
+ searchText: string = ''
 
  /**
 *Constructer that take service and routing .
@@ -57,7 +56,7 @@ export class FollowersComponent implements OnInit {
                  }) ;
    
   }
-  /*search(){
+  search(){
 
       if (!this.posts) {
         return [];
@@ -70,6 +69,6 @@ export class FollowersComponent implements OnInit {
       this.posts = this.temp.filter(it => 
         it["name"].toLocaleLowerCase().includes(this.searchText)
       );
-  }*/
+  }
 
 }

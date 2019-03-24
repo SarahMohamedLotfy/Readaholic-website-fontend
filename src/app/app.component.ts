@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { LogInHttpService } from './log-in/log-in-http.service';
+import { HttpService } from './http.service';
+import { user } from './classes/user';
 
 
 
@@ -13,9 +15,9 @@ import { LogInHttpService } from './log-in/log-in-http.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Readholic';
-  
-  constructor(){
+  title = 'frontend';
+  user:user ;
+  constructor(private service:HttpService,private router:Router){
     
   }
  

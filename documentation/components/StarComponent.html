@@ -64,13 +64,6 @@
     <code>src/app/shared/star/star.component.ts</code>
 </p>
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>used for rating a certain book and displaying its rate </p>
-
-    </p>
 
 
     <p class="comment">
@@ -177,7 +170,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/star/star.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/star/star.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -203,7 +196,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/star/star.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/star/star.component.ts:14</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -245,8 +238,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/shared/star/star.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/shared/star/star.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -270,14 +263,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { RatingModule } from &#x27;ng2-rating&#x27;;
-import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
-/**used for rating a certain book and displaying its rate */
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgbRatingModule } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+import { RatingModule } from &#x27;ng2-rating&#x27;;
+import { Component, OnInit, Input, NgModule } from &#x27;@angular/core&#x27;;
+
 @Component({
   selector: &#x27;app-star&#x27;,
   templateUrl: &#x27;./star.component.html&#x27;,
   styleUrls: [&#x27;./star.component.css&#x27;]
 })
+
+
 export class StarComponent implements OnInit {
   /**displayed rate */
  @Input() starsCount: number;
@@ -305,16 +301,13 @@ export class StarComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;small&gt;
-        &lt;small class&#x3D;&quot;star&quot;&gt;
-                &lt;rating  [(ngModel)]&#x3D;&quot;starsCount&quot; 
-                        [readonly]&#x3D;&quot;readOnly&quot; 
-                        [float]&#x3D;&quot;floatEnable&quot; 
-                        [titles]&#x3D;&quot;[&#x27;did not like it&#x27;, &#x27;it was okay&#x27;, &#x27;liked it&#x27;, &#x27;really liked it&#x27;, &#x27;it was amazing&#x27;]&quot;&gt;   
-               &lt;/rating&gt;
-        &lt;/small&gt;                
-&lt;/small&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;ngb-rating [(rate)]&#x3D;&quot;starsCount&quot; [readonly]&#x3D;&quot;readOnly
+      &quot; max&#x3D;5&gt;
+
+    &lt;ng-template let-fill&#x3D;&quot;fill&quot; let-index&#x3D;&quot;index&quot;&gt;
+        &lt;span class&#x3D;&quot;star&quot; [class.filled]&#x3D;&quot;fill &#x3D;&#x3D;&#x3D; 100&quot;&gt;&amp;#9733;&lt;/span&gt;
+    &lt;/ng-template&gt;
+&lt;/ngb-rating&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -322,11 +315,15 @@ export class StarComponent implements OnInit {
                     <code>./star.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.star {
-    margin-left: 0px;
-    margin-bottom: 0px;
-    margin-top: -30px;
-    margin-right: 0px;
-}</code></pre>
+    font-size: 1.5rem;
+    color: #e9f1fc;
+
+  }
+  .filled {
+    color: #ffd106;
+  }
+  
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -354,7 +351,7 @@ export class StarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><small>        <small class="star">                <rating  [(ngModel)]="starsCount"                         [readonly]="readOnly"                         [float]="floatEnable"                         [titles]="[\'did not like it\', \'it was okay\', \'liked it\', \'really liked it\', \'it was amazing\']">                  </rating>        </small>                </small></div>'
+        var COMPONENT_TEMPLATE = '<div><ngb-rating [(rate)]="starsCount" [readonly]="readOnly      " max=5>    <ng-template let-fill="fill" let-index="index">        <span class="star" [class.filled]="fill === 100">&#9733;</span>    </ng-template></ngb-rating></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StarComponent'};

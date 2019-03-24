@@ -6,11 +6,19 @@ import { StarComponent } from './../shared/star/star.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { updates } from '../classes/updates';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
-/*describe('HomeComponent', () => {
+
+fdescribe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-
+  let de: DebugElement;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent,
@@ -18,7 +26,11 @@ import { HomeComponent } from './home.component';
         NavbarComponent,
         StarComponent ],
       imports:[
-        RatingModule
+        RatingModule,
+        HttpClientModule,
+        RouterModule,
+        RouterTestingModule,
+        NgbRatingModule
         ]
     })
     .compileComponents();
@@ -30,18 +42,20 @@ import { HomeComponent } from './home.component';
     fixture.detectChanges();
   });
 
- it('should create', () => {
+ fit('should create', () => {
     expect(component).toBeTruthy();
   });
+  /*
+  it('should have a h5 tag of `Updates`', () => {
+    expect(de.query(By.css('updates')).nativeElement.innerText).toBe('Updates');
+});*/
 });
-describe('loaddata', function() {
-
+/*
+describe('loadData', function() {
+ 
   // inject the HTML fixture for the tests
   beforeEach(function() {
-    var fixture = '<div id="fixture"><input id="x" type="text">' + 
-      '<input id="y" type="text">' + 
-      '<input id="add" type="button" value="Add Numbers">' +
-      'Result: <span id="result" /></div>';
+    var type=update.update_type ;
 
     document.body.insertAdjacentHTML(
       'afterbegin', 
@@ -55,7 +69,7 @@ describe('loaddata', function() {
 
   // call the init function of calculator to register DOM elements
   beforeEach(function() {
-    window.calculator.init();
+    window.loadData().init();
   });
 
   it('should return 3 for 1 + 2', function() {
@@ -65,7 +79,7 @@ describe('loaddata', function() {
     expect(document.getElementById('result').innerHTML).toBe('3');
   });
 
-  it('should calculate zero for invalid x value', function() {
+  it('should calculate zero for invalid x valung e', function() {
     document.getElementById('x').value = 'hello';
     document.getElementById('y').value = 2;
     document.getElementById('add').click();
@@ -77,6 +91,6 @@ describe('loaddata', function() {
     document.getElementById('y').value = 'goodbye';
     document.getElementById('add').click();
     expect(document.getElementById('result').innerHTML).toBe('0');
-  });
+  }); 
 
 });*/

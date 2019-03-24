@@ -78,30 +78,7 @@ describe('HttpService', () => {
   }
   ];
 
-/*let fakeUpdates: updates [] = [{
-  id: 2,
-    body:null,
-   rating:3,
-   likes_count:null,
-   comments_count:null,
-   updated_at:"2019-03-21 00:00:00",
-   book_id:1,
-   title:"Young Pharos",
-   description:"book description ",
-   img_url:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-   reviews_count:null,
-   ratings_count:null,
-   ratings_avg:null,
-   pages_no:null,
-   user_id:2,
-   name:"Sara",
-   image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg",
-   author_name:"Taylor swift",
-   update_type:"0",
-   shelf:1,
-   actionText:"FR",
-   followed_image_link:"https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg"
-  }];*/
+
 
   describe('HttpService', () => {
     let httpService: HttpService;
@@ -203,6 +180,5 @@ it('should get auth profile', () => {
 });
  
 
-});
-});
-});
+});});})
+

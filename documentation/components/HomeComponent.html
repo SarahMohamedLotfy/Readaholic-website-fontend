@@ -188,7 +188,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/home/home.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/home/home.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -269,8 +269,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/home/home.component.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/home/home.component.ts:57</a></div>
                 </td>
             </tr>
 
@@ -310,8 +310,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/home/home.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/home/home.component.ts:40</a></div>
                 </td>
             </tr>
 
@@ -353,7 +353,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/home/home.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/home/home.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -380,7 +380,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/home/home.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/home/home.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -407,7 +407,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/home/home.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/home/home.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -434,7 +434,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/home/home.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/home/home.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -461,7 +461,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/home/home.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/home/home.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -488,7 +488,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/home/home.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/home/home.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -501,8 +501,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { book } from &#x27;./../classes/book&#x27;;
-import { HttpService } from &#x27;./../http.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { RatingModule } from &#x27;ng2-rating&#x27;;
+import { book } from &#x27;./../classes/book&#x27;;
+
 import { Component, OnInit, NgModule } from &#x27;@angular/core&#x27;;
 import { updates } from &#x27;../classes/updates&#x27;;
 import { actor } from &#x27;../classes/actor&#x27;;
@@ -515,49 +516,44 @@ import { DropdownComponent } from &#x27;../shared/dropdown/dropdown.component&#x
 import { StarComponent } from &#x27;../shared/star/star.component&#x27;;
 import { NavbarComponent } from &#x27;../shared/navbar/navbar.component&#x27;;
 import { HomeService } from &#x27;./home.service&#x27;;
+import { HttpService } from &#x27;../http.service&#x27;;
 
 @Component({
   selector: &#x27;app-home&#x27;,
   templateUrl: &#x27;./home.component.html&#x27;,
   styleUrls: [&#x27;./home.component.scss&#x27;]
 })
-@NgModule({
-  declarations: [
-    
-    DropdownComponent,
-    NavbarComponent,
-    StarComponent
- ] })
+
  /**
  * Home is where updates are viewed
  */
 export class HomeComponent implements OnInit {
- updatess:updates[];
- actors:actor[];
- actions:action[];
- book:book[];
-  error: any;
- profile:profile;
-
-
-  constructor(private httpser:HttpService,private router:Router) {
-   
-   }
-
-  ngOnInit(){
-    this.httpser.getUpdates().subscribe(
-        data &#x3D;&gt;{
-          this.updatess&#x3D;data ;
-          this.loadData();
-       }, error &#x3D;&gt; this.error &#x3D; error);
-       /*
-    this.httpser.getUserInfo().subscribe(
-      data&#x3D;&gt;{
-        this.profile&#x3D;data;
-      }
-     
-    )*/
+  updatess:updates[];
+  actors:actor[];
+  actions:action[];
+  book:book[];
+   error: any;
+  profile:profile;
+ 
+ 
+   constructor(private httpser:HttpService,private router:Router) {
+    
     }
+ 
+   ngOnInit(){
+     this.httpser.getUpdates().subscribe(
+         data &#x3D;&gt;{
+           this.updatess&#x3D;data ;
+           this.loadData();
+        }, error &#x3D;&gt; this.error &#x3D; error);
+        /*
+     this.httpser.getUserInfo().subscribe(
+       data&#x3D;&gt;{
+         this.profile&#x3D;data;
+       }
+      
+     )*/
+     }
     /**
  * function loadData is for checking type of updates and managing its html
  */
@@ -565,43 +561,44 @@ export class HomeComponent implements OnInit {
        var i;
   
        for(i&#x3D;0;i&lt;this.updatess.length;i++){
-      console.log(&#x27;iteration&#x27;);
+     
     if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;0&#x27; &amp;&amp; !(this.updatess[i].rating)){
      this.updatess[i].actionText&#x3D;&quot; reviewed a book &quot; ;
-     console.log(&quot;reviewed&quot;); 
+    
     }
     if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;0&#x27; &amp;&amp; !(this.updatess[i].body)){
   
     this.updatess[i].actionText&#x3D;&quot; rated a book &quot; ;
-    console.log(&quot;rated&quot;); 
+    
     }
     if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 1){
     this.updatess[i].actionText&#x3D;&quot; read a book &quot; ;
-    console.log(&quot;any&quot;); 
+   
     }
     if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 2){
         this.updatess[i].actionText&#x3D;&quot; is currently reading a book &quot; ;
-        console.log(&quot;any&quot;); 
+        
       }
       if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;1&#x27; &amp;&amp; this.updatess[i].shelf &#x3D;&#x3D;&#x3D; 3){
-          console.log(&quot;any&quot;); 
+         
           this.updatess[i].actionText&#x3D;&quot; wants to read a book &quot; ;
     
         }
       if ( this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;2&#x27;){//follow
-          console.log(&quot;follow&quot;);
+         
         this.updatess[i].actionText&#x3D;&quot; started following  : &quot; ;
       }
       if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;3&#x27;){//like
-          console.log(&quot;liked&quot;);
+       
           this.updatess[i].actionText&#x3D;&quot; liked a review  &quot; ;
 
         }
         if (  this.updatess[i].update_type &#x3D;&#x3D;&#x3D; &#x27;4&#x27;){//comment
-            console.log(&quot;commented&quot;);
+          
             this.updatess[i].actionText&#x3D;&quot; commented on a review &quot; ;
       
           }
+          else{this.updatess[i].actionText&#x3D;&quot;  &quot; ;}
        }
           }
      
@@ -664,8 +661,7 @@ export class HomeComponent implements OnInit {
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;/div&gt;
-    &lt;/ul&gt;
-</code></pre>
+    &lt;/ul&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">

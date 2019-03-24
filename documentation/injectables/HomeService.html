@@ -214,8 +214,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/home/home.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/home/home.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -326,13 +326,14 @@ export class HomeService {
 
 
    getUpdates():Observable&lt;any&gt;{
-
-     return this.http.get(&quot;http://localhost:3000/updates&quot;).pipe(
+return this.http.get(&quot;http://localhost:3000/updates&quot;)
+.pipe(
       retry(3), // retry a failed request up to 3 times
-      catchError(this.handleError) // then handle the error
+    catchError(this.handleError) // then handle the error
 
     );
    }
+  
    private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -349,7 +350,6 @@ export class HomeService {
       &#x27;Something bad happened; please try again later.&#x27;);
   };
  
-
   logOut():Observable&lt;any&gt;{
     return this.http.get(&#x27;http://localhost:3000/logOut&#x27;);
   }

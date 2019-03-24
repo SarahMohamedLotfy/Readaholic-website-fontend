@@ -2,9 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DropdownComponent } from './dropdown.component';
 
-xdescribe('DropdownComponent', () => {
+describe('DropdownComponent', () => {
   let component: DropdownComponent;
   let fixture: ComponentFixture<DropdownComponent>;
+  let testShelf = "Read";
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -19,7 +20,18 @@ xdescribe('DropdownComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('button should be disabled when an input shelf is passed', () => {
+    component.shelf = testShelf;
+    component.ngOnInit()
+    expect(component.buttonDisabled).toEqual(true);
+    
+  });
+
+
+
+
 });

@@ -1,3 +1,4 @@
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +17,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     CommonModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    NgbRatingModule
   ],
   exports: [
     CommonModule,
@@ -27,5 +29,4 @@ import { NavbarComponent } from './navbar/navbar.component';
     
   ]
 })
-/**manges the shared components between the app and exports the shared angular modules */
 export class SharedModule { }

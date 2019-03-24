@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 
-fdescribe('HomeComponent', () => {
+describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   let de: DebugElement;
@@ -42,7 +42,7 @@ fdescribe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
- fit('should create', () => {
+ it('should create', () => {
     expect(component).toBeTruthy();
   });
  

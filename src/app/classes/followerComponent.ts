@@ -15,5 +15,8 @@
  * Image of the user that the main user follow .
  */
   image_url: string;
-  
+   /**
+ * Country of the user following the main user  .
+ */ 
+country :string;
 }

@@ -1,6 +1,7 @@
 import { RatingModule } from 'ng2-rating';
 import { FilterPipe } from './filter.pipe';
 import { HttpService } from './http.service';
+import { HttpFollowingService} from '../app/followers/httpfollower.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
@@ -56,7 +57,9 @@ import { LogInHttpService } from './log-in/log-in-http.service';
     FilterPipe
   ],
 
-  providers: [HttpService, LogInHttpService ,{provide: HTTP_INTERCEPTORS,
+
+  providers: [HttpService, HttpFollowingService,LogInHttpService ,{provide: HTTP_INTERCEPTORS,
+
   useClass: AuthInterceptor,
 multi: true},fakeBackendProvider],
   bootstrap: [AppComponent]

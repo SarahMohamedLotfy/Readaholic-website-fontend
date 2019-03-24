@@ -5,7 +5,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MyBooksComponent } from './my-books.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 
-fdescribe('MyBooksComponent', () => {
+describe('MyBooksComponent', () => {
   let component: MyBooksComponent;
   let fixture: ComponentFixture<MyBooksComponent>;
 
@@ -25,7 +25,7 @@ fdescribe('MyBooksComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

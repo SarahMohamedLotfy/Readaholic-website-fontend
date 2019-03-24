@@ -4,6 +4,7 @@ import { Observable, throwError, observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { followingComponent } from './classes/followingComponent';
 import { followerComponent } from './classes/followerComponent';
+import { profile } from './classes/profile';
 
 
 @Injectable({
@@ -54,11 +55,8 @@ return this.http.get('http://localhost:3000/author');
     return throwError(
       'Something bad happened; please try again later.');
   };
- 
- 
-
- getUserprofile(id: number): Observable<any> {
-  return this.http.get<any> (this.url + `/profile/${id}`);
+ getUserprofile(id: number): Observable<profile> {
+  return this.http.get<profile> (this.url +"/profile/"+ id );
 }
 
 //getUserfollowings(): Observable<following[]> {
@@ -68,12 +66,14 @@ return this.http.get('http://localhost:3000/author');
 
 
 /**
- *Getfollowing () is a get request to get the data of people following the main user 
- * and the books they are currently reading . 
+ *Getfollowing () is a get request to get the data of people following the main user
+ * and the books they are currently reading .
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
 getfollowing(){
-  return this.http.get('https://my-json-server.typicode.com/SarahMohamedLotfy/ggfollow/following');
+
+  return this.http.get('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
+
 
 }
 

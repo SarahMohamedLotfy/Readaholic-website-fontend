@@ -61,8 +61,8 @@ fdescribe('HttpFollowingService', () => {
     "country": "Aswan,11,Egypt"
   }
   ];
-  
-  
+
+
 
   beforeEach( () =>  {
     TestBed.configureTestingModule({
@@ -78,8 +78,8 @@ fdescribe('HttpFollowingService', () => {
   });
 
 
-  
-  
+
+
  fit('should get followerList', () => {
     service.getfollowing().subscribe(
       (data: followingComponent[]) => {
@@ -91,7 +91,7 @@ fdescribe('HttpFollowingService', () => {
 
   });
 
-  
+
 
   fit('should be created', () => {
     const service: HttpFollowinggService = TestBed.get(HttpFollowinggService);

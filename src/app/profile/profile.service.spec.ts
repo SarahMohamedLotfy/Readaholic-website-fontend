@@ -5,7 +5,7 @@ import { profile } from '../classes/profile';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 //fdescribe
-describe('HttpService', () => {
+fdescribe('HttpService', () => {
 let httpService: ProfileService;
 
 let httpTestingController: HttpTestingController;
@@ -37,7 +37,7 @@ afterEach(() => {
   httpTestingController.verify();
 });
 //fit
-it('should get auth profile', () => {
+fit('should get auth profile', () => {
      httpService.getUserprofile(2).subscribe(
        (data: profile[]) => {
          expect(data.length).toBe(2);
@@ -52,11 +52,4 @@ it('should get auth profile', () => {
   });
 });
 
-describe('ProfileService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', () => {
-    const service: ProfileService = TestBed.get(ProfileService);
-    expect(service).toBeTruthy();
-  });
-});

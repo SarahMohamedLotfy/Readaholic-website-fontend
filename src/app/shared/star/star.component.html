@@ -1,8 +1,7 @@
-<ngb-rating [(rate)]="starsCount" 
-      [readonly]="readonly
-      " max=5 >
-        
-      <ng-template let-fill="fill" let-index="index">
-          <span class="star" [class.filled]="fill === 100" >&#9733;</span>
-        </ng-template>
-        </ngb-rating>
+<ngb-rating [(rate)]="starsCount" [readonly]="readOnly
+      " max=5>
+
+    <ng-template let-fill="fill" let-index="index">
+        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+    </ng-template>
+</ngb-rating>

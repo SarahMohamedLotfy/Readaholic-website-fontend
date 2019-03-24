@@ -37,10 +37,8 @@
                     {{ selectedProfile.user_shelves[0].name }} ({{selectedProfile.user_shelves[0].book_count}})
                     {{ selectedProfile.user_shelves[1].name }} ({{ selectedProfile.user_shelves[1].book_count }})
                     {{ selectedProfile.user_shelves[2].name }} ({{ selectedProfile.user_shelves[2].book_count }})
-
-
                   </div>
-                  <a href="myBooks" id="bookShelvesmore" > More.. </a>
+                  <a [routerLink]="['/myBooks']" id="bookShelvesmore" > More.. </a>
                </div>
 
                   <br>
@@ -61,7 +59,8 @@
                             <tr *ngFor='let allFollowing of allFollowings'>
                                 <td> <img [src]="allFollowing.image_url"  id="followerProfilepicture"  >
                                    </td>
-                                <td > {{ allFollowing.name }}  </td>
+                                <td>  <a [routerLink]= "['/profile', allFollowing.id]"> {{ allFollowing.name }} </a>
+                                </td>
                             </tr>
                           </tbody>
 

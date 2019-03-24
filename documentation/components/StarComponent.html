@@ -301,6 +301,7 @@ export class StarComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
+<<<<<<< HEAD
         <pre class="line-numbers"><code class="language-html">&lt;ngb-rating [(rate)]&#x3D;&quot;starsCount&quot; [readonly]&#x3D;&quot;readOnly
       &quot; max&#x3D;5&gt;
 
@@ -308,6 +309,17 @@ export class StarComponent implements OnInit {
         &lt;span class&#x3D;&quot;star&quot; [class.filled]&#x3D;&quot;fill &#x3D;&#x3D;&#x3D; 100&quot;&gt;&amp;#9733;&lt;/span&gt;
     &lt;/ng-template&gt;
 &lt;/ngb-rating&gt;</code></pre>
+=======
+        <pre class="line-numbers"><code class="language-html">&lt;ngb-rating [(rate)]&#x3D;&quot;starsCount&quot; 
+      [readonly]&#x3D;&quot;readonly
+      &quot; max&#x3D;5 &gt;
+        
+      &lt;ng-template let-fill&#x3D;&quot;fill&quot; let-index&#x3D;&quot;index&quot;&gt;
+          &lt;span class&#x3D;&quot;star&quot; [class.filled]&#x3D;&quot;fill &#x3D;&#x3D;&#x3D; 100&quot; &gt;&amp;#9733;&lt;/span&gt;
+        &lt;/ng-template&gt;
+        &lt;/ngb-rating&gt;
+</code></pre>
+>>>>>>> 7ab2de2a26f792005aee4788da8fab3a21d3495e
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -351,7 +363,11 @@ export class StarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
+<<<<<<< HEAD
         var COMPONENT_TEMPLATE = '<div><ngb-rating [(rate)]="starsCount" [readonly]="readOnly      " max=5>    <ng-template let-fill="fill" let-index="index">        <span class="star" [class.filled]="fill === 100">&#9733;</span>    </ng-template></ngb-rating></div>'
+=======
+        var COMPONENT_TEMPLATE = '<div><ngb-rating [(rate)]="starsCount"       [readonly]="readonly      " max=5 >              <ng-template let-fill="fill" let-index="index">          <span class="star" [class.filled]="fill === 100" >&#9733;</span>        </ng-template>        </ngb-rating></div>'
+>>>>>>> 7ab2de2a26f792005aee4788da8fab3a21d3495e
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StarComponent'};

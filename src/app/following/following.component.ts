@@ -31,6 +31,9 @@ export class FollowingComponent implements OnInit {
  * temp is array of people following the main users .
  */
   temp: any =[];filterfollowing:[];
+   /**
+ * Search input text.
+ */
   searchText: string = ''
  /**
 *Constructer that take service and routing .

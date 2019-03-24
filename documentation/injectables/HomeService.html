@@ -108,12 +108,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/home.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home/home.service.ts:13</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>we pass an object of httpclient to the constuctor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -173,14 +175,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/home/home.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/home/home.service.ts:25</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>updates get requests</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
@@ -214,14 +218,21 @@
 
             <tr>
                 <td class="col-md-4">
+<<<<<<< HEAD
                     <div class="io-line">Defined in <a href="" data-line="28"
                             class="link-to-prism">src/app/home/home.service.ts:28</a></div>
+=======
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/home/home.service.ts:36</a></div>
+>>>>>>> 7ab2de2a26f792005aee4788da8fab3a21d3495e
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>function for handling errors in ui and in console</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -284,14 +295,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/home/home.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/home/home.service.ts:54</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>logOut get request</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
@@ -316,15 +329,21 @@ import { catchError, retry } from &#x27;rxjs/operators&#x27;;
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-
+/**
+ * Home service is responsible for http get requests od updates 
+ */
 export class HomeService {
 
 
-
+/**
+ * we pass an object of httpclient to the constuctor
+ */
   constructor(private http:HttpClient) {}
 
 
-
+/**
+ * updates get requests
+ */
    getUpdates():Observable&lt;any&gt;{
 return this.http.get(&quot;http://localhost:3000/updates&quot;)
 .pipe(
@@ -333,7 +352,13 @@ return this.http.get(&quot;http://localhost:3000/updates&quot;)
 
     );
    }
+<<<<<<< HEAD
   
+=======
+  /**
+ * function for handling errors in ui and in console
+ */
+>>>>>>> 7ab2de2a26f792005aee4788da8fab3a21d3495e
    private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -349,7 +374,13 @@ return this.http.get(&quot;http://localhost:3000/updates&quot;)
     return throwError(
       &#x27;Something bad happened; please try again later.&#x27;);
   };
+<<<<<<< HEAD
  
+=======
+ /**
+ * logOut get request
+ */
+>>>>>>> 7ab2de2a26f792005aee4788da8fab3a21d3495e
   logOut():Observable&lt;any&gt;{
     return this.http.get(&#x27;http://localhost:3000/logOut&#x27;);
   }

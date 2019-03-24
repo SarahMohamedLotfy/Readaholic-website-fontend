@@ -202,3 +202,32 @@ color: #333333;
       margin-bottom: 15px;
       line-height: 24px;
     }
+
+    @media (max-width: 1200px) {
+      #followbutton{
+        position: relative;;
+        top: 20px;
+        left:200px;
+        display: inline-block;
+        border-radius: 3px;
+        border: 1px solid #D6D0C4;
+        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+        font-size: 14px;
+    }
+  
+    #tfheader{
+      position: relative;
+      top: 25px;
+    }}
+
+    .country
+{
+  position: absolute;
+  color: #181818;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  text-align: left;
+  line-height: 18px;
+font-size: 12px;
+left:75px;
+top:17px;
+}

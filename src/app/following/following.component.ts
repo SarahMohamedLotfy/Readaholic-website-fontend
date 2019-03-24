@@ -53,9 +53,7 @@ export class FollowingComponent implements OnInit {
  
    this.myfirstservice.getfollowing().subscribe((posts:any)=>{
       this.posts =posts ;
-      this.temp = posts;
-
-       ;})
+      this.temp = posts;});
 
 
       this.myfirstservice.getUserprofile(1).subscribe(

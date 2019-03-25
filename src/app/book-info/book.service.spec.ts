@@ -5,7 +5,7 @@ import { book } from '../classes/book';
 import { review } from '../classes/review';
 import { userBookInfo } from '../classes/userBookInfo';
 
-describe('BookService', () => {
+fdescribe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;
   let testBook: book = {
@@ -77,7 +77,7 @@ describe('BookService', () => {
     httpTestingController.verify();
   });
 
- it('should the selected book', () => {
+ fit('should the selected book', () => {
     service.getBook(155).subscribe(
       (data: book) => {
         expect(data.genre).toBe('fiction');
@@ -88,7 +88,7 @@ describe('BookService', () => {
 
   });
 
-  it('should get the reviews', () => {
+  fit('should get the reviews', () => {
     service.getBookReviews().subscribe(
       (data: review[]) => {
         expect(data.length).toBe(2);
@@ -106,12 +106,13 @@ describe('BookService', () => {
         expect(data.rating).toBe(3.5);
       });
     let request: TestRequest = httpTestingController.expectOne('http://localhost:3000/userBookInfo/1');
+    
     expect(request.request.method).toEqual('GET');
     request.flush(testUserBookinfo);
 
   });
 
-  it('should be created', () => {
+  fit('should be created', () => {
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
   });

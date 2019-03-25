@@ -13,7 +13,7 @@ import {  By } from '@angular/platform-browser';
 import { FakeBackendInterceptor } from '../fake-backend';
 import { user } from '../classes/user';
 
-describe('LogInComponent', () => {
+fdescribe('LogInComponent', () => {
   let component: LogInComponent;
   let fixture: ComponentFixture<LogInComponent>;
   let de:DebugElement;
@@ -40,7 +40,7 @@ describe('LogInComponent', () => {
     
   });
 
-  it('form invalid when empty', ()=>{
+  fit('form invalid when empty', ()=>{
     expect(component.form.valid).toBeFalsy();
     
 });

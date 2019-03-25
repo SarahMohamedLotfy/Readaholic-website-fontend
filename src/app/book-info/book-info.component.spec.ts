@@ -11,7 +11,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { BookInfoComponent } from './book-info.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 
-describe('BookInfoComponent', () => {
+fdescribe('BookInfoComponent', () => {
   let component: BookInfoComponent;
   let fixture: ComponentFixture<BookInfoComponent>;
 
@@ -37,11 +37,11 @@ describe('BookInfoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should show book details for a particular book', () => {
+  fit('should show book details for a particular book', () => {
      component.myBook = {
         "id": 155,
         "title": "The Raven Boys",
@@ -66,7 +66,7 @@ describe('BookInfoComponent', () => {
     expect(titleElement.innerText).toContain('The Raven Boys');
   });
 
-  it('should show book reviews', () => {
+  fit('should show book reviews', () => {
     component.reviews =  [{
       "id": 5,
       "bookId": 11,

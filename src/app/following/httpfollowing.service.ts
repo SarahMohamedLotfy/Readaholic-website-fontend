@@ -22,7 +22,7 @@ export class HttpFollowinggService {
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
 getfollowing(){
-  return this.http.get('https://my-json-server.typicode.com/SarahMohamedLotfy/ggfollow/following');
+  return this.http.get('http://localhost:3000/following');
 
 }
 

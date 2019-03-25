@@ -42,7 +42,7 @@
 
 
    <ul style="list-style: none;">
-  <li  class="list" *ngFor="let post of posts  ">
+  <li  class="list" *ngFor="let post of posts | filter : searchText ">
 
   <div class="directory-info-row">
       <div class="directory-info-row1" class ="rowcolumn"class="row">
@@ -57,12 +57,14 @@
                         <a [routerLink]="['/profile', post.id]"  id ="profilename"class ="nameoffollower " >
                           {{post.name}}
 
-                        </a>
+                        </a> </div>
                        
-                        
-                      </div>
+                        <address class="country">
+                          <br>
+                        {{post.country}}<br>
+                      </address>
+                     
                   </div>
-                  {{post.country}}
               </div>
             </div>
           </div>

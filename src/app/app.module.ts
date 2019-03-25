@@ -37,7 +37,7 @@ import { LogInHttpService } from './log-in/log-in-http.service';
     MyBooksComponent,
     BookInfoComponent,
     LogInComponent,
-    PageNotFoundComponent,
+    PageNotFoundComponent
    
 
   ],
@@ -53,12 +53,10 @@ import { LogInHttpService } from './log-in/log-in-http.service';
 
 
   ],
-  exports: [
-    FilterPipe
-  ],
+  
 
 
-  providers: [HttpService, HttpFollowingService,LogInHttpService ,{provide: HTTP_INTERCEPTORS,
+  providers: [HttpService,LogInHttpService ,{provide: HTTP_INTERCEPTORS,
 
   useClass: AuthInterceptor,
 multi: true},fakeBackendProvider],

@@ -15,9 +15,5 @@ export class ProfileService {
   getUserprofile(id: number): Observable<any> {
     return this.http.get<any> (this.url +"/profile/"+ id );
   }
-  /** http request to get the user followings from json server */
-  getfollowing(): Observable<any> {
-    return this.http.get<any>('http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following');
-  }
-
+ 
 }

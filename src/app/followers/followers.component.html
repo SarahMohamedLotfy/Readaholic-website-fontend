@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
- 
+ <navbar></navbar>
 <head>
   <meta charset="utf-8">
   <script src="angular.min.js"></script>
@@ -11,18 +11,18 @@
 
 <body>
 
-  
+
 
         <div *ngIf="selectedProfile">
             <div  id="Myprofilename">
-                <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > Followers</span> 
+                <a [routerLink]="['/profile/90']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > Followers</span>
             </div>
             </div>
 
 
   <div id="tfheader" >
       <form id="tfnewsearch" method="get">
-		 
+
       <input type="text" value="searchText" [(ngModel)]="searchText" id ="searchtextfollower" name="q" size="21"
         maxlength="120"><input id = "searchfollower" type="button" (click)="search()" value="search" class ="searchfollowers
         ">
@@ -35,8 +35,14 @@
 
 
 
-    
-  
+
+  <div  *ngIf= "empty">
+
+      <h1>have no followers</h1>
+    </div>
+
+    <div *ngIf= "!empty">
+
   <div class="row bootstrap snippet">
     <div class="col-md-6 col-xs-12 col-md-offset-3">
       <div class="panel" id="followers">
@@ -68,8 +74,8 @@
                 <address class="country">
                     <br >
                     {{post.country}}<br>
-                   
-                
+
+
                 </address>
                 <hr/>
 

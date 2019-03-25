@@ -24,7 +24,7 @@ export class HttpFollowingService {
  */
 
 getfollowers(){
-  return this.http.get('https://my-json-server.typicode.com/SarahMohamedLotfy/ggfollow/following');
+  return this.http.get('http://localhost:3000/followers');
 
    }
 

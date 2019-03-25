@@ -23,7 +23,8 @@ fdescribe('FollowingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FollowingComponent,
+
+      declarations: [FollowingComponent ,
       NavbarComponent ],
       imports:[
         HttpClientModule,

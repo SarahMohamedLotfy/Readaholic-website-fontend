@@ -184,12 +184,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(myfirstservice: <a href="../injectables/HttpService.html">HttpService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(myfirstservice: <a href="../injectables/HttpFollowinggService.html">HttpFollowinggService</a>, profileservice: <a href="../injectables/ProfileService.html">ProfileService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/following/following.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/following/following.component.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -212,7 +212,19 @@
                                                         <td>myfirstservice</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                                        <code><a href="../injectables/HttpFollowinggService.html" target="_self" >HttpFollowinggService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>profileservice</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProfileService.html" target="_self" >ProfileService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -284,8 +296,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/following/following.component.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/following/following.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -329,8 +341,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/app/following/following.component.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/following/following.component.ts:74</a></div>
                 </td>
             </tr>
 
@@ -379,7 +391,7 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/following/following.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/following/following.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -417,7 +429,7 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/following/following.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/following/following.component.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -450,7 +462,7 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/following/following.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/following/following.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -488,7 +500,7 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/following/following.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/following/following.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -513,6 +525,8 @@ import { Router } from &#x27;@angular/router&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { profile } from &#x27;../classes/profile&#x27;;
 import { HttpService } from &#x27;../http.service&#x27;;
+import {HttpFollowinggService} from &#x27;./httpfollowing.service&#x27;;
+import {ProfileService} from &#x27;../profile/profile.service&#x27;;
 /**
  * Show the following list with books they are currently reading and Search for people following you 
  */
@@ -547,7 +561,7 @@ export class FollowingComponent implements OnInit {
  /**
 *Constructer that take service and routing .
  */
-  constructor(private myfirstservice :HttpService,private route: ActivatedRoute,private router:Router ) { }
+  constructor(private myfirstservice :HttpFollowinggService,private profileservice :ProfileService,private route: ActivatedRoute,private router:Router ) { }
 
 
 /**
@@ -558,16 +572,15 @@ export class FollowingComponent implements OnInit {
  * GetUserprofile get the data of the profile of main user i used it to get the name of the main  user
  */
   ngOnInit() {
+    
 
  
    this.myfirstservice.getfollowing().subscribe((posts:any)&#x3D;&gt;{
       this.posts &#x3D;posts ;
-      this.temp &#x3D; posts;
-
-       ;})
+      this.temp &#x3D; posts;});
 
 
-      this.myfirstservice.getUserprofile(1).subscribe(
+      this.profileservice.getUserprofile(90).subscribe(
         data &#x3D;&gt; {
           this.selectedProfile &#x3D; data,
           (err: any) &#x3D;&gt; console.log(err),
@@ -614,6 +627,7 @@ search(){
 &lt;!doctype html&gt;
 
 &lt;html lang&#x3D;&quot;en&quot;&gt;
+ &lt;navbar&gt;&lt;/navbar&gt; 
 &lt;head&gt;
   
 
@@ -631,7 +645,7 @@ search(){
 
     &lt;div *ngIf&#x3D;&quot;selectedProfile&quot;&gt;
         &lt;div  id&#x3D;&quot;Myprofilename&quot;&gt;
-            &lt;a [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;]&quot;  style&#x3D;&quot; color: #00635d;&quot; &gt;{{ selectedProfile.name }} &lt;/a&gt;&lt;span&gt; &gt; People You&#x27;re Following&lt;/span&gt; 
+            &lt;a [routerLink]&#x3D;&quot;[&#x27;/profile/90&#x27;]&quot;  style&#x3D;&quot; color: #00635d;&quot; &gt;{{ selectedProfile.name }} &lt;/a&gt;&lt;span&gt; &gt; People You&#x27;re Following&lt;/span&gt; 
         &lt;/div&gt;
         &lt;/div&gt;
         
@@ -669,26 +683,23 @@ search(){
                           {{post.name}}
 
                         &lt;/a&gt;
-
-                        &lt;address class&#x3D;&quot;country&quot;&gt;
-        	                  &lt;br &gt;
-        	                  {{post.country}}&lt;br&gt;
-        	                 
-        	              
-        	              &lt;/address&gt;
+                       
+                        
                       &lt;/div&gt;
                   &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;country&quot;&gt;{{post.country}}&lt;/div&gt;
+                  
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
 
-
+          
 
           &lt;div class&#x3D;&quot;directory-info-row2 &quot;class&#x3D;&quot;col-md-7 col-sm-7&quot;&gt;
               &lt;div class&#x3D;&quot;panel&quot;&gt;
               &lt;div class&#x3D;&quot;panel-body&quot;&gt;
                   &lt;div class&#x3D;&quot;media&quot;&gt;
-                      &lt;a class&#x3D;&quot;pull-left&quot;  [routerLink]&#x3D;&quot;[&#x27;/my-book&#x27;, post.bookid]&quot;&gt;
+                      &lt;a class&#x3D;&quot;pull-left&quot;  [routerLink]&#x3D;&quot;[&#x27;/book&#x27;, post.bookid]&quot;&gt;
                           &lt;img id &#x3D;&quot;bookimage&quot;  src&#x3D;{{post.bookimage}} alt&#x3D;&quot;&quot;&gt;
                       &lt;/a&gt;
                       &lt;div class&#x3D;&quot;media-body&quot;&gt;
@@ -698,7 +709,7 @@ search(){
                               class&#x3D;&quot;btn btn-info btn-sm waves-effect waves-light&quot;&gt;Stop Follow &lt;/button&gt;
                           &lt;/div&gt;
                           &lt;address&gt;
-                            &lt;a   id&#x3D; &quot;bookname&quot; [routerLink]&#x3D;&quot;[&#x27;/my-book&#x27;, post.bookid]&quot; &gt;
+                            &lt;a   id&#x3D; &quot;bookname&quot; [routerLink]&#x3D;&quot;[&#x27;/book&#x27;, post.bookid]&quot; &gt;
                               &lt;h4 class&#x3D;&quot;bookhide&quot; &gt;{{post.bookname}} &lt;/h4&gt;
 
                             &lt;/a&gt;
@@ -775,12 +786,12 @@ search(){
   font-size: 16px;
 
 }
-  .nameoffollower {
-    position: relative;
-   color: #00635d;
-   font-family: &quot;Lato&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, sans-serif;
-   text-align: left;
-   line-height: 18px;
+.nameoffollower {
+  position: relative;
+  color: #00635d;
+  font-family: &quot;Lato&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, sans-serif;
+  text-align: left;
+  line-height: 18px;
 margin-left: 103px;}
 #profilename
 {
@@ -792,11 +803,11 @@ margin-left: 103px;}
 width: 150px;
 }
 #stopfollow{
-  position:absolute;
+   position:absolute;
     top: 20px;
     right: 50px;
-display: inline-block;
-border-radius: 3px;
+    display: inline-block;
+    border-radius: 3px;
     border: 1px solid #D6D0C4;
     font-family: &quot;Lato&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, sans-serif;
     font-size: 14px;
@@ -806,7 +817,6 @@ border-radius: 3px;
     line-height: 1;
     padding: 8px 12px;
     color: #333333;
-
 }
 
 #Myprofilename{
@@ -884,8 +894,7 @@ border-radius: 3px;
     position: absolute;
     color: #0076a3;
     top :10%;
-  right: 25px;
-
+    right: 25px;
   }
   hr {
     display: block;
@@ -930,7 +939,6 @@ body{
   -moz-transition: all 0.2s ease-out 0s;
   -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
-  text-decoration: none;
   border-radius: 5px;
   -webkit-border-radius: 5px;
 }
@@ -979,7 +987,6 @@ body{
   margin-top: 1px;
 }
 .directory-info-row1 {
-
   display: inline-block;
   width: 40%;
   margin-top: 1px;
@@ -1052,11 +1059,12 @@ margin-right: 38%;
   position: absolute;
   color: #181818;
   font-family: &quot;Lato&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, sans-serif;
-  text-align: left;
   line-height: 18px;
-margin-left: 103px;
 font-size: 12px;
-top:13px;
+left:168px;
+top:17px;
+
+
 }
 
 @media (max-width: 1200px) {
@@ -1214,7 +1222,7 @@ border-radius: 3px;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!doctype html><html lang="en"><head>    <meta charset="utf-8">  <script src="angular.min.js"></script>  <title>Followers</title>  <base href="/">  <meta name="viewport" content="width=device-width, initial-scale=1"></head><router-outlet></router-outlet><body>    <div *ngIf="selectedProfile">        <div  id="Myprofilename">            <a [routerLink]="[\'/profile\']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You\'re Following</span>         </div>        </div>          <div id="tfheader" >      <form id="tfnewsearch" method="get" >      <input type="text" id ="searchtextfollowing" value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"        maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing        ">      </form>    <div class="tfclear"></div>  </div>   <ul style="list-style: none;">  <li  class="list" *ngFor="let post of posts  ">  <div class="directory-info-row">      <div class="directory-info-row1" class ="rowcolumn"class="row">          <div class="directory-info-row1" class="col-md-5 col-sm-6">              <div class ="panelbodychar"class="panel">              <div class ="panelbodychar" class="panel-body">                  <div class ="panelbodychar"class="media">                      <a class = "left"class="pull-left"  [routerLink]="[\'/profile\', post.id]">                          <img id ="profilepagef"  src={{post.image_url}} alt="">                      </a>                      <div class="media-body">                        <a [routerLink]="[\'/profile\', post.id]"  id ="profilename"class ="nameoffollower " >                          {{post.name}}                        </a>                        <address class="country">        	                  <br >        	                  {{post.country}}<br>        	                         	                      	              </address>                      </div>                  </div>              </div>            </div>          </div>          <div class="directory-info-row2 "class="col-md-7 col-sm-7">              <div class="panel">              <div class="panel-body">                  <div class="media">                      <a class="pull-left"  [routerLink]="[\'/my-book\', post.bookid]">                          <img id ="bookimage"  src={{post.bookimage}} alt="">                      </a>                      <div class="media-body">                          <div class="currentext"> Currently reading : </div>                          <div class="pull-right">                            <button id ="stopfollow" ng-click="follow()" type="button"                              class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>                          </div>                          <address>                            <a   id= "bookname" [routerLink]="[\'/my-book\', post.bookid]" >                              <h4 class="bookhide" >{{post.bookname}} </h4>                            </a>                          </address>                      </div>                  </div>              </div>            </div>          </div>    </div>  </div>  <hr/></li></ul></body></html></div>'
+        var COMPONENT_TEMPLATE = '<div><!doctype html><html lang="en"> <navbar></navbar> <head>    <meta charset="utf-8">  <script src="angular.min.js"></script>  <title>Followers</title>  <base href="/">  <meta name="viewport" content="width=device-width, initial-scale=1"></head><router-outlet></router-outlet><body>    <div *ngIf="selectedProfile">        <div  id="Myprofilename">            <a [routerLink]="[\'/profile/90\']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You\'re Following</span>         </div>        </div>          <div id="tfheader" >      <form id="tfnewsearch" method="get" >      <input type="text" id ="searchtextfollowing" value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"        maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing        ">      </form>    <div class="tfclear"></div>  </div>   <ul style="list-style: none;">  <li  class="list" *ngFor="let post of posts  ">  <div class="directory-info-row">      <div class="directory-info-row1" class ="rowcolumn"class="row">          <div class="directory-info-row1" class="col-md-5 col-sm-6">              <div class ="panelbodychar"class="panel">              <div class ="panelbodychar" class="panel-body">                  <div class ="panelbodychar"class="media">                      <a class = "left"class="pull-left"  [routerLink]="[\'/profile\', post.id]">                          <img id ="profilepagef"  src={{post.image_url}} alt="">                      </a>                      <div class="media-body">                        <a [routerLink]="[\'/profile\', post.id]"  id ="profilename"class ="nameoffollower " >                          {{post.name}}                        </a>                                                                     </div>                  </div>                  <div class="country">{{post.country}}</div>                                </div>            </div>          </div>                    <div class="directory-info-row2 "class="col-md-7 col-sm-7">              <div class="panel">              <div class="panel-body">                  <div class="media">                      <a class="pull-left"  [routerLink]="[\'/book\', post.bookid]">                          <img id ="bookimage"  src={{post.bookimage}} alt="">                      </a>                      <div class="media-body">                          <div class="currentext"> Currently reading : </div>                          <div class="pull-right">                            <button id ="stopfollow" ng-click="follow()" type="button"                              class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>                          </div>                          <address>                            <a   id= "bookname" [routerLink]="[\'/book\', post.bookid]" >                              <h4 class="bookhide" >{{post.bookname}} </h4>                            </a>                          </address>                      </div>                  </div>              </div>            </div>          </div>    </div>  </div>  <hr/></li></ul></body></html></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FollowingComponent'};

@@ -17,7 +17,7 @@ import { StarComponent } from './../shared/star/star.component';
 
 
 
-describe('FollowersComponent', () => {
+fdescribe('FollowersComponent', () => {
   let component: FollowersComponent;
   let fixture: ComponentFixture<FollowersComponent>;
   let de: DebugElement;
@@ -45,7 +45,7 @@ describe('FollowersComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 

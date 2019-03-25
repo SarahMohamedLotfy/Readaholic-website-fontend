@@ -4,13 +4,13 @@ import { book } from '../classes/book';
 import { review } from '../classes/review';
 import { HttpClient } from '@angular/common/http';
 import { userBookInfo } from '../classes/userBookInfo';
-
+/**handles book related http requests */
 @Injectable({
   providedIn: 'root'
 })
-/**handles book related http requests */
-export class BookService {
 
+export class BookService {
+/**constructor of book service */
   constructor(private http:HttpClient) { }
 
   /**gets the selected book information by id */

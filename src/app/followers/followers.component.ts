@@ -3,6 +3,7 @@ import { HttpFollowingService } from './httpfollower.service';
 import { profile } from '../classes/profile';
 import {followingComponent} from '../classes/followingComponent';
 import  {HttpService} from '../http.service';
+import { ActivatedRoute } from '@angular/router';
 /**
  * Show the followers list and Search for the followers of the main user .
  */
@@ -37,7 +38,7 @@ export class FollowersComponent implements OnInit {
  /**
 *Constructer that take service and routing .
  */
-  constructor(private myfirstservice :HttpFollowingService ,private profilesevice:HttpService ) { }
+  constructor(private myfirstservice :HttpFollowingService ,private profilesevice:HttpService, private route:ActivatedRoute ) { }
   
   /**
  * Contains Get requests to get followers list and to get the profile data to get the name of the main user .
@@ -48,6 +49,7 @@ export class FollowersComponent implements OnInit {
 
 
   ngOnInit() {
+    
 
     this.myfirstservice.getfollowers().subscribe((posts:any)=>{
        this.posts =posts ;
@@ -55,7 +57,7 @@ export class FollowersComponent implements OnInit {
        })
 
 
-       this.profilesevice.getUserprofile(1).subscribe(
+       this.profilesevice.getUserprofile(90).subscribe(
         data => {
           this.selectedProfile = data,
           (err: any) => console.log(err),

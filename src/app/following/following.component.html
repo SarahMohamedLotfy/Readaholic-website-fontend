@@ -3,6 +3,7 @@
 <!doctype html>
 
 <html lang="en">
+ <navbar></navbar> 
 <head>
   
 
@@ -20,7 +21,7 @@
 
     <div *ngIf="selectedProfile">
         <div  id="Myprofilename">
-            <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 
+            <a [routerLink]="['/profile/90']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 
         </div>
         </div>
         
@@ -62,7 +63,8 @@
                         
                       </div>
                   </div>
-                  {{post.country}}
+                  <div class="country">{{post.country}}</div>
+                  
               </div>
             </div>
           </div>
@@ -73,7 +75,7 @@
               <div class="panel">
               <div class="panel-body">
                   <div class="media">
-                      <a class="pull-left"  [routerLink]="['/my-book', post.bookid]">
+                      <a class="pull-left"  [routerLink]="['/book', post.bookid]">
                           <img id ="bookimage"  src={{post.bookimage}} alt="">
                       </a>
                       <div class="media-body">
@@ -83,7 +85,7 @@
                               class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
                           </div>
                           <address>
-                            <a   id= "bookname" [routerLink]="['/my-book', post.bookid]" >
+                            <a   id= "bookname" [routerLink]="['/book', post.bookid]" >
                               <h4 class="bookhide" >{{post.bookname}} </h4>
 
                             </a>

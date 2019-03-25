@@ -16,14 +16,14 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 
-describe('FollowingComponent', () => {
+fdescribe('FollowingComponent', () => {
   let component: FollowingComponent;
   let fixture: ComponentFixture<FollowingComponent>;
   let de: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ,
+      declarations: [FollowingComponent ,
       NavbarComponent ],
       imports:[
         RatingModule,
@@ -45,7 +45,7 @@ describe('FollowingComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 

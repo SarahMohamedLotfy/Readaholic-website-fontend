@@ -86,7 +86,7 @@ const routes: Routes &#x3D; [
   {path:  &#x27;&#x27;, pathMatch: &#x27;full&#x27;, redirectTo:  &#x27;login&#x27;},
   {path:&#x27;login&#x27;,component: LogInComponent},
   {path: &#x27;home&#x27;, component: HomeComponent,canActivate:[AuthGuard]},
-  {path: &#x27;book/:id&#x27; , component: BookInfoComponent},
+  {path: &#x27;book/:id&#x27; , component: BookInfoComponent,canActivate:[AuthGuard]},
   {path: &#x27;profile/:id&#x27;, component: ProfileComponent,canActivate:[AuthGuard]},
   {path: &#x27;followers&#x27;, component: FollowersComponent,canActivate:[AuthGuard]},
   {path: &#x27;following&#x27;, component: FollowingComponent,canActivate:[AuthGuard]},

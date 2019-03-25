@@ -59,6 +59,13 @@
             <code>src/app/book-info/book.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>handles book related http requests </p>
+
+            </p>
 
 
 
@@ -113,6 +120,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor of book service </p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -316,13 +325,13 @@ import { book } from &#x27;../classes/book&#x27;;
 import { review } from &#x27;../classes/review&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { userBookInfo } from &#x27;../classes/userBookInfo&#x27;;
-
+/**handles book related http requests */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-/**handles book related http requests */
-export class BookService {
 
+export class BookService {
+/**constructor of book service */
   constructor(private http:HttpClient) { }
 
   /**gets the selected book information by id */

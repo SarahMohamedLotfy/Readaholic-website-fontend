@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@ang
 import { HttpFollowingService } from './httpfollower.service';
 import { followerComponent } from '../classes/followerComponent';
 
-describe('HttpFollowingService', () => {
+fdescribe('HttpFollowingService', () => {
   let service: HttpFollowingService;
   let httpTestingController: HttpTestingController;
   let testfollower: followerComponent []= [{
@@ -67,7 +67,7 @@ describe('HttpFollowingService', () => {
       (data: followerComponent[]) => {
         expect(data.length).toBe(6);
       });
-    let request: TestRequest = httpTestingController.expectOne('https://my-json-server.typicode.com/SarahMohamedLotfy/ggfollow/following');
+    let request: TestRequest = httpTestingController.expectOne('http://localhost:3000/followers');
     expect(request.request.method).toEqual('GET');
     request.flush(testfollower);
 
@@ -75,7 +75,7 @@ describe('HttpFollowingService', () => {
 
 
 
-  it('should be created', () => {
+  fit('should be created', () => {
     const service: HttpFollowingService = TestBed.get(HttpFollowingService);
     expect(service).toBeTruthy();
   });

@@ -6,6 +6,7 @@ import { profile } from '../classes/profile';
 import { HttpService } from '../http.service';
 import {HttpFollowinggService} from './httpfollowing.service';
 import {ProfileService} from '../profile/profile.service';
+
 /**
  * Show the following list with books they are currently reading and Search for people following you 
  */
@@ -37,9 +38,11 @@ export class FollowingComponent implements OnInit {
  * Search input text in search box .
  */
   searchText: string = ''
+
  /**
 *Constructer that take service and routing .
  */
+
   constructor(private myfirstservice :HttpFollowinggService,private profileservice :ProfileService,private route: ActivatedRoute,private router:Router ) { }
 
 
@@ -59,6 +62,8 @@ export class FollowingComponent implements OnInit {
       this.temp = posts;});
 
 
+      
+
       this.profileservice.getUserprofile(90).subscribe(
         data => {
           this.selectedProfile = data,
@@ -66,8 +71,16 @@ export class FollowingComponent implements OnInit {
           console.log(this.selectedProfile)
                  }) ;
   
+
+                 
+  }
+  delFollowing(id:number){
+    this.myfirstservice.unfollow(id).subscribe((data)=>{
+         console.log("success");
+    });
   }
 
+  
  /**
 *Search for the name of following person when click on search button  .
  */ 

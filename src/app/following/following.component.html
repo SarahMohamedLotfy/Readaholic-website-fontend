@@ -84,8 +84,8 @@
                       <div class="media-body">
                           <div class="currentext"> Currently reading : </div>
                           <div class="pull-right">
-                            <button id ="stopfollow" ng-click="follow()" type="button"
-                              class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
+                            <button id ="stopfollow" (click)="delFollowing(post.id)"  type="button"
+                              class="btn btn-info btn-sm waves-effect waves-light"> UnFollow </button>
                           </div>
                           <address>
                             <a   id= "bookname" [routerLink]="['/book', post.bookid]" >

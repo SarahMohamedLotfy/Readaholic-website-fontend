@@ -81,7 +81,7 @@ fdescribe('HttpmybooksService', () => {
 
 
  fit('should get followerList', () => {
-    service.getfollowing().subscribe(
+    service.getMybooks().subscribe(
       (data: followingComponent[]) => {
         expect(data.length).toBe(6);
       });

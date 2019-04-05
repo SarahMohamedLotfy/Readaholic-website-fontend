@@ -27,5 +27,8 @@ getfollowers(){
   return this.http.get('http://localhost:3000/followers');
 
    }
-
+   addFollowing (followwing: followerComponent): Observable<followerComponent> {
+    return this.http.post<followerComponent>('http://localhost:3000/following', followwing)
+      
+  } 
 }

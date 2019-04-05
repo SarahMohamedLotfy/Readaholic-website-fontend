@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpFollowingService } from './httpfollower.service';
 import { profile } from '../classes/profile';
-import {followingComponent} from '../classes/followingComponent';
+import {followerComponent} from '../classes/followerComponent';
 import  {HttpService} from '../http.service';
 import { ActivatedRoute } from '@angular/router';
 /**
@@ -70,6 +70,19 @@ export class FollowersComponent implements OnInit {
                    this.empty=true;
                  }
   }
+  add(id: number,name: string,image_url: string,bookid:number,bookname:string,  bookimage:string, country :string
+    ): void {
+    //name = name.trim();
+    //if (!name) { return; }
+
+    // The server will generate the id for this new hero
+    const newFollowing: followerComponent = { id,name ,image_url,bookid,bookname,  bookimage,country } as followerComponent;
+    this.myfirstservice.addFollowing(newFollowing)
+      .subscribe(hero => this.posts.push(hero));
+  }
+
+
+  
   
   /**
 *Search for the name of following person when click on search button  .

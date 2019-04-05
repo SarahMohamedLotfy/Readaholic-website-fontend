@@ -18,6 +18,9 @@ export class MyBooksComponent implements OnInit {
 
  */
 posts:any=[];
+
+shelves:any=[];
+
 /**
 * selectedProfile is the profile of the main user  who logged in . 
 */
@@ -47,11 +50,16 @@ posts:any=[];
    
 
 
-  this.myfirstservice.getfollowing().subscribe((posts:any)=>{
+  this.myfirstservice.getMybooks().subscribe((posts:any)=>{
      this.posts =posts ;
      this.temp = posts;});
 
-
+     this.myfirstservice.getUsershelves().subscribe((shelves:any)=>{
+      this.shelves =shelves ;
+     });
+ 
+ 
+     
      this.profileservice.getUserprofile(90).subscribe(
        data => {
          this.selectedProfile = data,

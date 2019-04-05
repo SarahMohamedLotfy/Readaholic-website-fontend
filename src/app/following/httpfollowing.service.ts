@@ -25,6 +25,9 @@ getfollowing(){
   return this.http.get('http://localhost:3000/following');
 
 }
-
-
+unfollow(id: number): Observable<any> {
+      return this.http.delete('http://localhost:3000/following/'+id )
+    }
+    
+    
 }

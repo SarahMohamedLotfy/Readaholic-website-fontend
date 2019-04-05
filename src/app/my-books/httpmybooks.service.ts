@@ -21,10 +21,12 @@ export class HttpmybooksService {
  * and the books they are currently reading . 
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
-getfollowing(){
+getMybooks(){
   return this.http.get('http://localhost:3000/following');
 
 }
-
+getUsershelves(){
+  return this.http.get('http://localhost:3000/following');
+}
 
 }

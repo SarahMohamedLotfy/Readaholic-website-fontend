@@ -1,4 +1,84 @@
-<navbar></navbar>
-<p>
-  my-books works!
-</p>
+
+<div class="mybooksTitle"> 
+  My Books
+</div>
+<hr/>
+
+<table  class ="leftActivityy">
+    <th>Bookshelves</th>
+    <tr> <td> <a href="#" class="leftActivity">Read ‎(0)</a></td></tr>
+    <tr> <td> <a href="#" class="leftActivity">Currently Reading ‎(1)</a></td></tr>
+    <tr> <td> <a href="#" class="leftActivity">Want to Read ‎(2)</a></td></tr>
+ </table>
+   
+ 
+    <form id="tfnewsearch" method="get" >
+    <input type="text" id ="searchtextfollowing" placeholder="search for books"value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"
+      maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing
+      ">
+    </form>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class ="tablePlace" >
+<div class ="tablePlace"class="row">
+	<div class="col-lg-6">
+		<div class="main-box clearfix">
+			<div class="table-responsive">
+				<table class="table user-list"   >
+					<thead>
+						<tr>
+              <th><span>Cover</span></th>
+              <th><span>Title</span></th>
+              <th><span>Author</span></th>
+              <th><span>avgrating</span></th>
+              <th><span>rating</span></th>
+							<th><span>DataAdded</span></th>
+							
+						</tr>
+					</thead>
+					<tbody *ngFor="let post of posts">
+						<tr>
+							<td>
+								<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+
+              </td>
+              <td>
+                <a href="#" class="user-link">{{post.name}}</a>
+						
+              </td>
+              <td>
+                <a href="#" class="user-link">{{post.name}}</a>
+						
+              </td>
+              <td>
+                <a href="#" class="user-link">2.38</a>
+						
+              </td>
+              <td>
+                <p class="ratings">
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star-o"></span></a>
+                            </p>
+            </td>
+							<td>
+								2013/08/08
+							</td>
+								
+            </tr>
+					
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+

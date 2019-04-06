@@ -31,4 +31,9 @@ getfollowers(){
     return this.http.post<followerComponent>('http://localhost:3000/following', followwing)
       
   } 
+
+  getfollowing(){
+    return this.http.get('http://localhost:3000/following');
+  
+  }
 }

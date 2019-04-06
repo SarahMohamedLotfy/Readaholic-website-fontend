@@ -52,7 +52,8 @@
                       <i></i>
                     </a>
                   </div>
-                  <div class="pull-right">
+                  <div  *ngIf="noFollowbutton (post.id) ==true "class="pull-right">
+
                     <button id ="followbutton"(click)="add(post.id,post.name,post.image_url,post.bookid,post.bookname,post.bookimage,
                     post.country)"type="button"
                       class="btn btn-info btn-sm waves-effect waves-light">Follow </button>

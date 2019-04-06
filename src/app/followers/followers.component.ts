@@ -20,7 +20,11 @@ export class FollowersComponent implements OnInit {
  * posts is array of the follwers of the main users it contains ( name , id , image) .
  */
   posts:any=[];
+  following:any=[];
   count:number;
+  followingId:number;
+  i:number;
+result:number;
   /**
  * temp is array of the follwers of the main users it contains ( name , id , image) .
  */
@@ -57,6 +61,9 @@ export class FollowersComponent implements OnInit {
        this.temp = posts;
        })
 
+       this.myfirstservice.getfollowing().subscribe((following:any)=>{
+        this.following =following ;
+        });
 
        this.profilesevice.getUserprofile(90).subscribe(
         data => {
@@ -107,5 +114,27 @@ export class FollowersComponent implements OnInit {
         it["name"].toLocaleLowerCase().includes(this.searchText)
       );
   }
+
+
+noFollowbutton (followingId):boolean
+{
+  for ( this.i =0; this.i<(Object.keys(this.following).length);this.i ++ )
+  {
+  if (followingId==this.following[this.i].id)
+  {
+    this.result=80;
+  }
+}
+if (this.result==80)
+{
+  return false;
+}
+else 
+{
+return true;
+}
+}
+
+
 
 }

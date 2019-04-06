@@ -103,12 +103,7 @@ noBooks ():number
   console.log('count');
   return this.count;
 }
-rating ():number
-{
-  this.stars = this.posts.id;
-  console.log('count');
-  return this.stars;
-}
+
  
 //onclick(){
 // this.router.navigateByUrl('/bookinfo/https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following/id');

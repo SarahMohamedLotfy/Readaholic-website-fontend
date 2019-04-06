@@ -4,9 +4,9 @@
 </div>
 <hr/>
 
-<table  class ="leftActivityy">
+<table  class ="leftActivityy" *ngIf=" shelves">
     <th>Bookshelves</th>
-    <tr> <td> <a href="#" class="leftActivity">Read ‎(0)</a></td></tr>
+    <tr> <td> <a href="#" class="leftActivity">{{shelves.id}}</a></td></tr>
     <tr> <td> <a href="#" class="leftActivity">Currently Reading ‎(1)</a></td></tr>
     <tr> <td> <a href="#" class="leftActivity">Want to Read ‎(2)</a></td></tr>
  </table>
@@ -55,14 +55,12 @@
 						
               </td>
               <td>
-                <p class="ratings">
-                                <a href="#"><span class="fa fa-star"></span></a>
                                 <a href="#"><span class="fa fa-star"></span></a>
                                 <a href="#"><span class="fa fa-star"></span></a>
                                 <a href="#"><span class="fa fa-star"></span></a>
                                 <a href="#"><span class="fa fa-star-o"></span></a>
-                            </p>
-            </td>
+                                <a href="#"><span class="fa fa-star-o"></span></a>
+                            
 							<td>
 								2013/08/08
 							</td>

@@ -1,3 +1,7 @@
+/**
+ * Contains the names and types of data that i get from jsonfile of mybooks
+ */
+
 export class myBooks {
     /**
   * Id of the user following the main user .

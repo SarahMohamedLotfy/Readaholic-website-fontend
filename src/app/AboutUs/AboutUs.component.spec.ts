@@ -50,24 +50,7 @@ fdescribe('FollowingComponent', () => {
   });
 
 
-  it('should show followers list ', () => {
-    component.posts = {
-
-        "id": 1,
-        "name": "Huda Yahya",
-        "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-        "bookid": 3,
-        "bookname": "اخر ايام الارض ",
-        "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
-        "country": "Asuit,Egypt"
-
-
-    };
-
-    fixture.detectChanges();
-    const titleElement: HTMLElement = fixture.debugElement.query( By.css('#bookname')).nativeElement;
-   expect(titleElement.innerText).toContain('اخر ايام الارض');
- });
+  
 
 
 

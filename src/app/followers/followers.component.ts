@@ -17,13 +17,29 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FollowersComponent implements OnInit {
 /**
- * posts is array of the follwers of the main users it contains ( name , id , image) .
+ * posts is array of the followers of the main users it contains ( name , id , image) .
  */
   posts:any=[];
+  /**
+ * Following is array of the following of the main users it contains ( name , id , image) .
+ */
   following:any=[];
+  /**
+ * Count is the length of json file array
+
+ */
   count:number;
+  /**
+ * Id of the follower . 
+ */
   followingId:number;
+  /**
+ * used to loop over the following list . 
+ */
   i:number;
+  /**
+ * result of for loop over the following list.
+ */
 result:number;
   /**
  * temp is array of the follwers of the main users it contains ( name , id , image) .
@@ -33,6 +49,10 @@ result:number;
  * selectedProfile is the profile of the main user  who logged in . 
  */
   selectedProfile: profile ;
+  /**
+ * Name of th following person .  
+ */
+  nameFollowing:string;
    /**
  * Search input text in search box .
  */
@@ -61,6 +81,7 @@ result:number;
        this.temp = posts;
        })
 
+       
        this.myfirstservice.getfollowing().subscribe((following:any)=>{
         this.following =following ;
         });
@@ -78,6 +99,9 @@ result:number;
                    this.empty=true;
                  }
   }
+  /**
+ * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
+ */
   add(id: number,name: string,image_url: string,bookid:number,bookname:string,  bookimage:string, country :string
     ): void {
     //name = name.trim();
@@ -89,7 +113,9 @@ result:number;
       .subscribe(hero => this.posts.push(hero));
   }
 
-
+/**
+ * noFollowers () is function to show message to the user if he has no one folow him .
+ */
   noFollowers ():number
 {
    this.count = Object.keys(this.posts).length;
@@ -98,7 +124,7 @@ result:number;
 }
   
   /**
-*Search for the name of following person when click on search button  .
+*Search for the name of follower person when click on search button  .
  */ 
   search(){
 
@@ -115,8 +141,10 @@ result:number;
       );
   }
 
-
-noFollowbutton (followingId):boolean
+/**
+*Remove the follow button if the person is already in following list .
+ */ 
+noFollowbutton(followingId):boolean
 {
   for ( this.i =0; this.i<(Object.keys(this.following).length);this.i ++ )
   {

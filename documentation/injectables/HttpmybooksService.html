@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>HttpFollowingService</li>
+  <li>HttpmybooksService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,14 +56,14 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/followers/httpfollower.service.ts</code>
+            <code>src/app/my-books/httpmybooks.service.ts</code>
         </p>
 
             <p class="comment">
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>handles  http requests of followers list </p>
+                <p>Handles http requests related to the boks of the user</p>
 
             </p>
 
@@ -73,6 +73,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#url">url</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -83,13 +97,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#addFollowing">addFollowing</a>
+                                <a href="#getMybooks">getMybooks</a>
                             </li>
                             <li>
-                                <a href="#getfollowers">getfollowers</a>
-                            </li>
-                            <li>
-                                <a href="#getfollowing">getfollowing</a>
+                                <a href="#getUsershelves">getUsershelves</a>
                             </li>
                         </ul>
                     </td>
@@ -114,13 +125,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/followers/httpfollower.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:11</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor for httpfollower service . </p>
+                            <div class="io-description"><p>Constructor for httpmyBooks service . </p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -163,106 +174,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="addFollowing"></a>
+                    <a name="getMybooks"></a>
                     <span class="name">
                         <b>
-                            addFollowing
+                            getMybooks
                         </b>
-                        <a href="#addFollowing"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getMybooks"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addFollowing(followwing: <a href="../classes/followerComponent.html">followerComponent</a>)</code>
+<code>getMybooks()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/followers/httpfollower.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:23</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>followwing</td>
-                                    <td>
-                                                <code><a href="../classes/followerComponent.html" target="_self" >followerComponent</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/followerComponent.html" target="_self" >Observable&lt;followerComponent&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getfollowers"></a>
-                    <span class="name">
-                        <b>
-                            getfollowers
-                        </b>
-                        <a href="#getfollowers"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getfollowers()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/followers/httpfollower.service.ts:26</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Getfollowers () is a get request to get the data of the followers of the main user .
-The data i get is ( name of user , image , id of user  ).</p>
+                    <div class="io-description"><p>getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read<br> The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).</p>
 </div>
 
                     <div class="io-description">
@@ -277,45 +215,81 @@ The data i get is ( name of user , image , id of user  ).</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getfollowing"></a>
+                    <a name="getUsershelves"></a>
                     <span class="name">
                         <b>
-                            getfollowing
+                            getUsershelves
                         </b>
-                        <a href="#getfollowing"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getUsershelves"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getfollowing()</code>
+<code>getUsershelves()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/followers/httpfollower.service.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Getfollowing () is a get request to get the data of people following the main user 
- and the books they are currently reading . 
- The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).</p>
+                    <div class="io-description"><p>getUsershelves() is a get request to number of books the user read and currently reading an to read </p>
 </div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="url"></a>
+                        <span class="name">
+                            <b>
+                            url</b>
+                            <a href="#url"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;http://localhost:3000&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
     </div>
@@ -325,49 +299,37 @@ The data i get is ( name of user , image , id of user  ).</p>
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { followerComponent } from &#x27;../classes/followerComponent&#x27;;
-/**
- * handles  http requests of followers list 
- 
-*/
+import { myBooks } from &#x27;../classes/myBooks&#x27;;
+
+/**Handles http requests related to the boks of the user*/
+
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
-
-export class HttpFollowingService {
+export class HttpmybooksService {
 /**
- * Constructor for httpfollower service . 
+ * Constructor for httpmyBooks service . 
  
 */
   constructor(private http:HttpClient) { }
 
   
  /**
- * Getfollowers () is a get request to get the data of the followers of the main user .
- * The data i get is ( name of user , image , id of user  ).
+ *getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read  
+ * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
+getMybooks(){
+  return this.http.get(&#x27;http://localhost:3000/following&#x27;);
 
-getfollowers(){
-  return this.http.get(&#x27;http://localhost:3000/followers&#x27;);
+}
+url &#x3D; &#x27;http://localhost:3000&#x27;;
 
-   }
+/**
+ *getUsershelves() is a get request to number of books the user read and currently reading an to read */
 
-   /**
- * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
- */
-   addFollowing (followwing: followerComponent): Observable&lt;followerComponent&gt; {
-    return this.http.post&lt;followerComponent&gt;(&#x27;http://localhost:3000/following&#x27;, followwing)
-      
-  } 
- /**
- *Getfollowing () is a get request to get the data of people following the main user 
- * and the books they are currently reading . 
- * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
- */
-  getfollowing(){
-    return this.http.get(&#x27;http://localhost:3000/following&#x27;);
-  
-  }
+getUsershelves(): Observable&lt;any&gt;{
+  return this.http.get&lt;any&gt;(this.url+&quot;/user_shelf&quot;);
+}
 }
 </code></pre>
     </div>
@@ -401,7 +363,7 @@ getfollowers(){
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'HttpFollowingService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'HttpmybooksService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

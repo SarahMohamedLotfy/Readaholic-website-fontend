@@ -26,7 +26,7 @@ export class FollowingComponent implements OnInit {
 
  */
   posts:any=[];
-  postssss:any=[];
+  //postssss:any=[];
  /**
  * selectedProfile is the profile of the main user  who logged in . 
  */
@@ -35,6 +35,9 @@ export class FollowingComponent implements OnInit {
  * temp is array of people following the main users .
  */
   temp: any =[];
+  /**
+ * Count is the length of json file array
+ */
   count:number;
    /**
  * Search input text in search box .
@@ -75,6 +78,9 @@ export class FollowingComponent implements OnInit {
   
                  
   }
+  /**
+ * delFollowing () is a post request to remove the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
+ */
   delFollowing(id:number){
     this.myfirstservice.unfollow(id).subscribe((data)=>{
          console.log("success");
@@ -102,6 +108,9 @@ export class FollowingComponent implements OnInit {
     it["name"].toLocaleLowerCase().includes(this.searchText)
   );
 }
+/**
+ * noFollowing () is function to show message to the user if he has no one he following .
+ */
 noFollowing ():number
 {
    this.count = Object.keys(this.posts).length;

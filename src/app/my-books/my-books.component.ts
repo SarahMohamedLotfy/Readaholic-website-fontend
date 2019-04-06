@@ -7,35 +7,46 @@ import { HttpService } from '../http.service';
 import {HttpmybooksService} from './httpmybooks.service';
 import {ProfileService} from '../profile/profile.service';
 import {myBooks}  from '../classes/myBooks'
+
+ /**
+ * Connect with the fmy-books.html and my-books.css .
+ */
 @Component({
   selector: 'app-my-books',
   templateUrl: './my-books.component.html',
   styleUrls: ['./my-books.component.scss']
 })
+/**
+ * Show the  list of books that the user have and Search for books .
+ */
 export class MyBooksComponent implements OnInit {
 
  /**
- * posts  is array of the data of people following  the main users ( id , name ,image,bookid,bookname,bookimage ) .
+ * posts  is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ) .
 
  */
 posts:any=[];
+/**
+ * Count is the length of json file array
+
+ */
 count:number;
-stars:number;
+/**
+ * Shelves is the status of the book and the number of currently reading , to read , read .
+
+ */
 shelves:myBooks;
 
-/**
-* selectedProfile is the profile of the main user  who logged in . 
-*/
- selectedProfile: profile ;
+
   /**
-* temp is array of people following the main users .
+* temp is is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ) .
+used it in search function.
 */
  temp: any =[];
   /**
 * Search input text in search box .
 */
  searchText: string = ''
- name:string='read'
 /**
 *Constructer that take service and routing .
 */
@@ -43,24 +54,23 @@ shelves:myBooks;
 
 
 /**
-* Contains Get requests to get following list and books they are currently reading   and to get the profile data to get the name of the main user .
-* Getfollowing () is a get request ti get the data of people following the main user 
-* and the books they are currently reading . 
-* The data i get is ( name of user , image of user  , id of user  , bookid, bookname,bookimage).
-* GetUserprofile get the data of the profile of main user i used it to get the name of the main  user
-*/
+* Contains getUsershelves() is a get request to number of books the user read and currently reading an to read.
+* getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read  
+ * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
+ */
  ngOnInit() {
    
-
+/**
+ *getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read  
+ * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
+ */
 
   this.myfirstservice.getMybooks().subscribe((posts:any)=>{
      this.posts =posts ;
      this.temp = posts;});
 
-     /*this.myfirstservice.getUsershelves().subscribe((data:myBooks)=>{
-      this.shelves =data ;
-     });*/
-     
+     /**
+ *getUsershelves() is a get request to number of books the user read and currently reading an to read */
      this.myfirstservice.getUsershelves().subscribe(
       data => {
         this.shelves = data,
@@ -68,17 +78,11 @@ shelves:myBooks;
         console.log(this.shelves)
                }) ;
      
-     this.profileservice.getUserprofile(90).subscribe(
-       data => {
-         this.selectedProfile = data,
-         (err: any) => console.log(err),
-         console.log(this.selectedProfile)
-                }) ;
- 
+     
  }
 
 /**
-*Search for the name of following person when click on search button  .
+*Search for the name of the book when click on search button  .
 */ 
 search(){
 
@@ -90,13 +94,16 @@ search(){
  }
  this.searchText = this.searchText.toLocaleLowerCase();
 /**
-*Filter for names of following people.
+*Filter for names of books.
 */ 
  this.posts = this.temp.filter(it => 
    it["name"].toLocaleLowerCase().includes(this.searchText)
  );
 }
 
+/**
+*noBooks() is a function that show mmessage that thre is no books to the user if there are no books he have .
+*/
 noBooks ():number
 {
    this.count = Object.keys(this.posts).length;

@@ -39,11 +39,12 @@
 					<tbody *ngFor="let post of posts">
 						<tr>
 							<td>
-								<img src={{post.bookimage}} alt="">
-
+                  <a class="bookimage"  [routerLink]="['/book', post.bookid]">
+								<img class="bookimage" src={{post.bookimage}} alt="">
+</a>
               </td>
               <td>
-                <a href="#" class="user-link">{{post.name}}</a>
+                <a  [routerLink]="['/book', post.bookid]" class="user-link">{{post.bookname}}</a>
 						
               </td>
               <td>

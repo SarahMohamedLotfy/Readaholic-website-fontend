@@ -97,7 +97,7 @@ search(){
 *Filter for names of books.
 */ 
  this.posts = this.temp.filter(it => 
-   it["name"].toLocaleLowerCase().includes(this.searchText)
+   it["bookname"].toLocaleLowerCase().includes(this.searchText)
  );
 }
 

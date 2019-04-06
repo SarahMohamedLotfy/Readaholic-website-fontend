@@ -26,6 +26,7 @@ export class FollowingComponent implements OnInit {
 
  */
   posts:any=[];
+  postssss:any=[];
  /**
  * selectedProfile is the profile of the main user  who logged in . 
  */
@@ -34,6 +35,7 @@ export class FollowingComponent implements OnInit {
  * temp is array of people following the main users .
  */
   temp: any =[];
+  count:number;
    /**
  * Search input text in search box .
  */
@@ -71,7 +73,6 @@ export class FollowingComponent implements OnInit {
           console.log(this.selectedProfile)
                  }) ;
   
-
                  
   }
   delFollowing(id:number){
@@ -84,7 +85,8 @@ export class FollowingComponent implements OnInit {
  /**
 *Search for the name of following person when click on search button  .
  */ 
-search(){
+
+ search(){
 
   if (!this.posts) {
     return [];
@@ -100,6 +102,13 @@ search(){
     it["name"].toLocaleLowerCase().includes(this.searchText)
   );
 }
+noFollowing ():number
+{
+   this.count = Object.keys(this.posts).length;
+  console.log('count');
+  return this.count;
+}
+
 //onclick(){
  // this.router.navigateByUrl('/bookinfo/https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following/id');
 //}
@@ -107,6 +116,30 @@ search(){
 
 
 
+ /*search(){
+
+  if (!this.posts) {
+    return [];
+  }
+  if (this.searchText=='') {
+    this.posts = this.temp;
+  }
+  this.searchText = this.searchText.toLocaleLowerCase();
+/**
+*Filter for names of following people.
+ */ 
+ /* this.posts = this.temp.filter(it => 
+    it["name"].toLocaleLowerCase().includes(this.searchText)
+  );*/
+
+ /* this.myfirstservice.getfollowingg('searchText').subscribe(
+    data => {
+      this.postssss = data,
+      (err: any) => console.log(err),
+      console.log(this.postssss)
+             }) ;
+   
+}*/
 
 
 }

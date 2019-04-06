@@ -3,20 +3,20 @@
   My Books
 </div>
 <hr/>
-
-<table  class ="leftActivityy" *ngIf=" shelves">
-    <th>Bookshelves</th>
-    <tr> <td> <a href="#" class="leftActivity">{{shelves.id}}</a></td></tr>
-    <tr> <td> <a href="#" class="leftActivity">Currently Reading ‎(1)</a></td></tr>
-    <tr> <td> <a href="#" class="leftActivity">Want to Read ‎(2)</a></td></tr>
+<th class ="bookShelves">Bookshelves</th>
+<table  class ="leftActivityy" *ngFor="let shelf of shelves">
+   
+    <tr> <td> <a href="#" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})</a></td></tr>
+   
  </table>
    
- 
     <form id="tfnewsearch" method="get" >
     <input type="text" id ="searchtextfollowing" placeholder="search for books"value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"
       maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing
       ">
     </form>
+
+    <p   *ngIf="noBooks() == 0" id ="tagrba">You have no books.</p> 
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class ="tablePlace" >
@@ -54,13 +54,47 @@
                 <a href="#" class="user-link">2.38</a>
 						
               </td>
-              <td>
+              <td
+                  *ngIf="post.id == 5" >
                                 <a href="#"><span class="fa fa-star"></span></a>
                                 <a href="#"><span class="fa fa-star"></span></a>
                                 <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star-o"></span></a>
-                                <a href="#"><span class="fa fa-star-o"></span></a>
-                            
+                                <a href="#"><span class="fa fa-star"></span></a>
+                                <a href="#"><span class="fa fa-star"></span></a>
+              </td>
+              <td
+              *ngIf="post.id == 4" >
+                            <a href="#"><span class="fa fa-star"></span></a>
+                            <a href="#"><span class="fa fa-star"></span></a>
+                            <a href="#"><span class="fa fa-star"></span></a>
+                            <a href="#"><span class="fa fa-star"></span></a>
+                            <a href="#"><span class="fa fa-star-o"></span></a>
+          </td>  
+          <td
+          *ngIf="post.id == 1" >
+                        <a href="#"><span class="fa fa-star"></span></a>
+                        <a href="#"><span class="fa fa-star-o"></span></a>
+                        <a href="#"><span class="fa fa-star-o"></span></a>
+                        <a href="#"><span class="fa fa-star-o"></span></a>
+                        <a href="#"><span class="fa fa-star-o"></span></a>
+      </td>      
+      <td
+      *ngIf="post.id == 2" >
+                    <a href="#"><span class="fa fa-star"></span></a>
+                    <a href="#"><span class="fa fa-star"></span></a>
+                    <a href="#"><span class="fa fa-star-o"></span></a>
+                    <a href="#"><span class="fa fa-star-o"></span></a>
+                    <a href="#"><span class="fa fa-star-o"></span></a>
+  </td>
+  <td
+  *ngIf="post.id == 3" >
+                <a href="#"><span class="fa fa-star"></span></a>
+                <a href="#"><span class="fa fa-star"></span></a>
+                <a href="#"><span class="fa fa-star"></span></a>
+                <a href="#"><span class="fa fa-star-o"></span></a>
+                <a href="#"><span class="fa fa-star-o"></span></a>
+</td>
+
 							<td>
 								2013/08/08
 							</td>

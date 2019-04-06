@@ -28,6 +28,9 @@ getfollowing(){
 unfollow(id: number): Observable<any> {
       return this.http.delete('http://localhost:3000/following/'+id )
     }
+    getfollowingg(name:string){
+      return this.http.get('http://localhost:3000/following/'+name);
     
+    } 
     
 }

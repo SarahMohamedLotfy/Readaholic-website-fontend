@@ -621,15 +621,19 @@
       "body": "Wow! Great closure on all levels. The pace was smooth. Written well. I couldn't put it down. I just found Cinda two years ago. Since then I have plowed through everything she has written. Every book was a joy to read. Highly recommend this author!!!"
     }
   ],
-  "MyBooks": [
+  "user_shelf": [
     {
-      "id": 1,
-      "name": "Huda Yahya",
-      "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-      "bookid": 1,
-      "bookname": "To Kill a Kingdom ",
-      "bookimage": "https://images.gr-assets.com/books/1524322945l/34499221.jpg",
-      "country": "Asuit,Egypt"
+        "name": "read",
+        "book_count": "0"
+    },
+    {
+        "name": "currently-reading",
+        "book_count": "0"
+    },
+    {
+        "name": "to-read",
+        "book_count": "0"
     }
-  ]
+]
+  
 }

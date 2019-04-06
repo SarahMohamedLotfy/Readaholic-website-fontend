@@ -20,6 +20,7 @@ export class FollowersComponent implements OnInit {
  * posts is array of the follwers of the main users it contains ( name , id , image) .
  */
   posts:any=[];
+  count:number;
   /**
  * temp is array of the follwers of the main users it contains ( name , id , image) .
  */
@@ -82,7 +83,12 @@ export class FollowersComponent implements OnInit {
   }
 
 
-  
+  noFollowers ():number
+{
+   this.count = Object.keys(this.posts).length;
+  console.log('count');
+  return this.count;
+}
   
   /**
 *Search for the name of following person when click on search button  .

@@ -19,8 +19,9 @@ export class MyBooksComponent implements OnInit {
 
  */
 posts:any=[];
-
-shelves:any=[];
+count:number;
+stars:number;
+shelves:myBooks;
 
 /**
 * selectedProfile is the profile of the main user  who logged in . 
@@ -34,6 +35,7 @@ shelves:any=[];
 * Search input text in search box .
 */
  searchText: string = ''
+ name:string='read'
 /**
 *Constructer that take service and routing .
 */
@@ -55,10 +57,16 @@ shelves:any=[];
      this.posts =posts ;
      this.temp = posts;});
 
-     this.myfirstservice.getUsershelves().subscribe((data:myBooks)=>{
+     /*this.myfirstservice.getUsershelves().subscribe((data:myBooks)=>{
       this.shelves =data ;
-     });
+     });*/
      
+     this.myfirstservice.getUsershelves().subscribe(
+      data => {
+        this.shelves = data,
+        (err: any) => console.log(err),
+        console.log(this.shelves)
+               }) ;
      
      this.profileservice.getUserprofile(90).subscribe(
        data => {
@@ -89,13 +97,24 @@ search(){
  );
 }
 
+noBooks ():number
+{
+   this.count = Object.keys(this.posts).length;
+  console.log('count');
+  return this.count;
+}
+rating ():number
+{
+  this.stars = this.posts.id;
+  console.log('count');
+  return this.stars;
+}
  
 //onclick(){
 // this.router.navigateByUrl('/bookinfo/https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following/id');
 //}
 
-title = 'Star Rating';
-rating:number;  
+/*title = 'Star Rating';
 
   recordList:any[]=[  
     {'Id':1,'Framework':'Angular JS', 'myList':[true,true,true,true,true]},  
@@ -116,7 +135,7 @@ rating:number;
           tableList.myList[i]=true;  
         }  
       }  
-    } 
+    } */
 }
 
 

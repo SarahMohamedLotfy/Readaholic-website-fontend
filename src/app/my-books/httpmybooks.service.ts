@@ -25,8 +25,17 @@ getMybooks(){
   return this.http.get('http://localhost:3000/following');
 
 }
-getUsershelves(){
-  return this.http.get('http://localhost:3000/following');
-}
+url = 'http://localhost:3000';
+   /** http request to get user profile info from json server */
+  getUserprofile(id: number): Observable<any> {
+    return this.http.get<any> (this.url +"/profile/"+ id );
+  }
 
+/*getUsershelves(name:string): Observable<any>{
+  return this.http.get<any>(this.url+"/user_shelf/"+name);
+}*/
+
+getUsershelves(): Observable<any>{
+  return this.http.get<any>(this.url+"/user_shelf");
+}
 }

@@ -15,9 +15,9 @@
       maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing
       ">
     </form>
-
-    <p   *ngIf="noBooks() == 0" id ="tagrba">You have no books.</p> 
-
+<div *ngIf="noBooks() == 0" >
+    <p   id ="tagrba">You have no books.</p> 
+  </div>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class ="tablePlace" >
 <div class ="tablePlace"class="row">

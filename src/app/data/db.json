@@ -324,24 +324,6 @@
   ],
   "following": [
     {
-      "id": 1,
-      "name": "Huda Yahya",
-      "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-      "bookid": 1,
-      "bookname": "To Kill a Kingdom ",
-      "bookimage": "https://images.gr-assets.com/books/1524322945l/34499221.jpg",
-      "country": "Asuit,Egypt"
-    },
-    {
-      "id": 2,
-      "name": "Ahmed Elsayed",
-      "image_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
-      "bookid": 45,
-      "bookname": "The Coldest Girl in Coldtown",
-      "bookimage": "https://images.gr-assets.com/books/1367312471l/12813630.jpg",
-      "country": "Aswan,11,Egypt"
-    },
-    {
       "id": 3,
       "name": "Mohamed Hayalla",
       "image_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
@@ -349,15 +331,6 @@
       "bookname": "A Gathering of Shadows",
       "bookimage": "https://images.gr-assets.com/books/1429627728l/20764879.jpg",
       "country": "Cairo,11,Egypt"
-    },
-    {
-      "id": 6,
-      "name": "Eslam Ahmed",
-      "image_url": "https://images.gr-assets.com/photos/1551961617p8/3783093.jpg",
-      "bookid": 173,
-      "bookname": "The Undomestic Goddess",
-      "bookimage": "https://images.gr-assets.com/books/1546431135l/33722.jpg",
-      "country": "Aswan,11,Egypt"
     },
     {
       "id": 5,
@@ -376,6 +349,24 @@
       "bookname": "Stormcaster-Shattered Realms",
       "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
       "country": "Giza,11,Egypt"
+    },
+    {
+      "id": 1,
+      "name": "Huda Yahya",
+      "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+      "bookid": 3,
+      "bookname": "اخر ايام الارض ",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
+      "country": "Asuit,Egypt"
+    },
+    {
+      "id": 2,
+      "name": "Ahmed Elsayed",
+      "image_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+      "bookid": 8,
+      "bookname": "Deathcaster - Shattered Realms",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529823092i/39320115._SY180_.jpg",
+      "country": "Aswan,11,Egypt"
     }
   ],
   "followers": [
@@ -623,17 +614,16 @@
   ],
   "user_shelf": [
     {
-        "name": "read",
-        "book_count": "0"
+      "name": "read",
+      "book_count": "0"
     },
     {
-        "name": "currently-reading",
-        "book_count": "0"
+      "name": "currently-reading",
+      "book_count": "0"
     },
     {
-        "name": "to-read",
-        "book_count": "0"
+      "name": "to-read",
+      "book_count": "0"
     }
-]
-  
+  ]
 }

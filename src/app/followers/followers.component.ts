@@ -32,11 +32,11 @@ export class FollowersComponent implements OnInit {
   /**
  * Id of the follower . 
  */
-  followingId:number;
+personId:number;
   /**
  * used to loop over the following list . 
  */
-  i:number;
+  //i:number;
   /**
  * result of for loop over the following list.
  */
@@ -88,9 +88,8 @@ result:number;
 
        this.profilesevice.getUserprofile(90).subscribe(
         data => {
-          this.selectedProfile = data,
-          (err: any) => console.log(err),
-          console.log(this.selectedProfile)
+          this.selectedProfile = data
+          
                  }) ;
 
                  
@@ -99,6 +98,8 @@ result:number;
                    this.empty=true;
                  }
   }
+
+  
   /**
  * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
  */
@@ -119,7 +120,6 @@ result:number;
   noFollowers ():number
 {
    this.count = Object.keys(this.posts).length;
-  console.log('count');
   return this.count;
 }
   
@@ -144,23 +144,20 @@ result:number;
 /**
 *Remove the follow button if the person is already in following list .
  */ 
-noFollowbutton(followingId):boolean
+noFollowbutton(personId):boolean
 {
-  for ( this.i =0; this.i<(Object.keys(this.following).length);this.i ++ )
+
+  for ( let i of this.following)
   {
-  if (followingId==this.following[this.i].id)
+   
+  if (personId==i.id)
   {
-    this.result=80;
+    return false;
   }
+  console.log(i.id);
+
 }
-if (this.result==80)
-{
-  return false;
-}
-else 
-{
 return true;
-}
 }
 
 

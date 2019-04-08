@@ -40,7 +40,7 @@
                             </div>
                             <div *ngIf="update.actionText === ' started following  : '" >
                                 <h5 >{{update.followed_name}}</h5> 
-                                <button type="button" class="btn btn-primary" id="followButton">Follow {{update.followed_name}}</button>
+                                <button type="button" class="btn btn-primary" id="followButton"(click)="addFollowing(update.followed_id)" >Follow {{update.followed_name}}</button>
                         </div>
                         </div>
                        

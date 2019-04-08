@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { profile } from '../classes/profile';
 import { HttpService } from '../http.service';
+import {HttpFollowinggService} from './httpfollowing.service';
+import {ProfileService} from '../profile/profile.service';
 /**
  * Show the following list with books they are currently reading and Search for people following you 
  */
@@ -38,7 +40,7 @@ export class FollowingComponent implements OnInit {
  /**
 *Constructer that take service and routing .
  */
-  constructor(private myfirstservice :HttpService,private route: ActivatedRoute,private router:Router ) { }
+  constructor(private myfirstservice :HttpFollowinggService,private profileservice :ProfileService,private route: ActivatedRoute,private router:Router ) { }
 
 
 /**
@@ -49,6 +51,7 @@ export class FollowingComponent implements OnInit {
  * GetUserprofile get the data of the profile of main user i used it to get the name of the main  user
  */
   ngOnInit() {
+    
 
  
    this.myfirstservice.getfollowing().subscribe((posts:any)=>{
@@ -56,7 +59,7 @@ export class FollowingComponent implements OnInit {
       this.temp = posts;});
 
 
-      this.myfirstservice.getUserprofile(1).subscribe(
+      this.profileservice.getUserprofile(90).subscribe(
         data => {
           this.selectedProfile = data,
           (err: any) => console.log(err),

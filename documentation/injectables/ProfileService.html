@@ -59,6 +59,13 @@
             <code>src/app/profile/profile.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>insert the service in the root of the application </p>
+
+            </p>
 
 
 
@@ -89,9 +96,6 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
-                            <li>
-                                <a href="#getfollowing">getfollowing</a>
-                            </li>
                             <li>
                                 <a href="#getUserprofile">getUserprofile</a>
                             </li>
@@ -124,6 +128,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>create http object in the constructor to use httpClient  </p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -165,45 +171,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getfollowing"></a>
-                    <span class="name">
-                        <b>
-                            getfollowing
-                        </b>
-                        <a href="#getfollowing"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getfollowing()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/profile/profile.service.ts:19</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="getUserprofile"></a>
                     <span class="name">
                         <b>
@@ -230,6 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>http request to get user profile info from json server </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -305,6 +274,12 @@
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>url of localhost </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -318,24 +293,20 @@
 import { Observable } from &#x27;rxjs&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 
-
+/** insert the service in the root of the application */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class ProfileService {
-
+  /** create http object in the constructor to use httpClient  */
   constructor( private http: HttpClient ) { }
-
+ /** url of localhost */
   url &#x3D; &#x27;http://localhost:3000&#x27;;
-
+   /** http request to get user profile info from json server */
   getUserprofile(id: number): Observable&lt;any&gt; {
     return this.http.get&lt;any&gt; (this.url +&quot;/profile/&quot;+ id );
   }
-
-  getfollowing(): Observable&lt;any&gt; {
-    return this.http.get&lt;any&gt;(&#x27;http://my-json-server.typicode.com/SarahMohamedLotfy/followlast/following&#x27;);
-  }
-
+ 
 }
 </code></pre>
     </div>

@@ -67,7 +67,7 @@ fdescribe('HttpFollowingService', () => {
       (data: followerComponent[]) => {
         expect(data.length).toBe(6);
       });
-    let request: TestRequest = httpTestingController.expectOne('https://my-json-server.typicode.com/SarahMohamedLotfy/ggfollow/following');
+    let request: TestRequest = httpTestingController.expectOne('http://localhost:3000/followers');
     expect(request.request.method).toEqual('GET');
     request.flush(testfollower);
 

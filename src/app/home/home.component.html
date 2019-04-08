@@ -5,7 +5,7 @@
     <ul *ngFor="let update of updatess">
             <div class="container" id="updateContainer">
         <div class="media">
-             <a   href="Profile/{{update.user_id}}">
+             <a   href="profile/{{update.user_id}}">
             <img class="avatar" src={{update.img_url}} alt="Generic placeholder image" >
               </a>
             <div class="media-body" >
@@ -22,7 +22,7 @@
                         <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.actionText != ' started following  : '" >
                             <img src={{update.image_link}} alt="Generic placeholder image" style="float:'left'"  >
                         </a>
-                        <a class="pr-3" href="/Profile/{{update.followed_id}}" *ngIf="update.actionText === ' started following  : '">
+                        <a class="pr-3" href="/profile/{{update.followed_id}}" *ngIf="update.actionText === ' started following  : '">
                                 <img src={{update.followed_image_link}} alt="Generic placeholder image" style="float:'left'"   >
                             </a>
                         

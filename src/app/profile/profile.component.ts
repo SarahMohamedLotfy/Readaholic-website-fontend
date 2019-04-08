@@ -3,6 +3,8 @@ import { followingComponent } from '../classes/followingComponent';
 import { profile } from '../classes/profile';
 import { ActivatedRoute , Router } from '@angular/router';
 import { ProfileService } from './profile.service';
+import { HttpFollowinggService } from '../following/httpfollowing.service';
+
 
 /** The component that sets the profile page html and scss  */
 @Component({
@@ -22,7 +24,7 @@ export class ProfileComponent implements OnInit {
  *  and the routing to make the profile able to navigate between pages
 */
   constructor(private httpService: ProfileService ,
-              private route: ActivatedRoute , private router: Router ) { }
+              private route: ActivatedRoute , private router: Router , private pro: HttpFollowinggService ) { }
 /** get the auth user data and his following */
   ngOnInit() {
     /** receives id from url and send it to the get request */
@@ -39,7 +41,7 @@ export class ProfileComponent implements OnInit {
     /**
      * subscribe to the data received from json file which contain the following users information and if any error occurs it prints it to the log
      */
-    this.httpService.getfollowing().subscribe(
+    this.pro.getfollowing().subscribe(
             (data:followingComponent[]) => this.allFollowings = data,
            // (err: any) => console.log(err),
           );

@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="en">
+<<<<<<< HEAD
 <navbar></navbar>
 
+=======
+ <navbar></navbar>
+>>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
 <head>
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
@@ -12,6 +16,16 @@
 
 <body>
 
+<<<<<<< HEAD
+=======
+
+
+        <div *ngIf="selectedProfile">
+            <div  id="Myprofilename">
+                <a [routerLink]="['/profile/90']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > Followers</span>
+            </div>
+            </div>
+>>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
 
     <div *ngIf="selectedProfile">
         <div id="Myprofilename">
@@ -23,7 +37,15 @@
     <div id="tfheader">
         <form id="tfnewsearch" method="get">
 
+<<<<<<< HEAD
             <input type="text" value="searchText" [(ngModel)]="searchText" id="searchtextfollower" name="q" size="21" maxlength="120"><input id="searchfollower" type="button" (click)="search()" value="search" class="searchfollowers
+=======
+  <div id="tfheader" >
+      <form id="tfnewsearch" method="get">
+
+      <input type="text" value="searchText" [(ngModel)]="searchText" id ="searchtextfollower" name="q" size="21"
+        maxlength="120"><input id = "searchfollower" type="button" (click)="search()" value="search" class ="searchfollowers
+>>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
         ">
         </form>
 
@@ -34,7 +56,43 @@
 
 
 
+<<<<<<< HEAD
     <div *ngIf="empty">
+=======
+
+  <div  *ngIf= "empty">
+
+      <h1>have no followers</h1>
+    </div>
+
+    <div *ngIf= "!empty">
+
+  <div class="row bootstrap snippet">
+    <div class="col-md-6 col-xs-12 col-md-offset-3">
+      <div class="panel" id="followers">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+          </h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group list-group-dividered list-group-full">
+            <li *ngFor="let post of posts | filter : searchText "class="list-group-item">
+
+              <div class="media-body">
+                <div class="media">
+                  <div class="media-left">
+                    <a  [routerLink]="['/profile', post.id]">
+                      <img id ="profilepage"src={{post.image_url}} alt="">
+                      <i></i>
+                    </a>
+                  </div>
+                  <div class="pull-right">
+                    <button id ="followbutton"ng-click="follow()" type="button"
+                      class="btn btn-info btn-sm waves-effect waves-light">Follow </button>
+                  </div>
+                  <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter"
+                      style="clear:right" [routerLink]="['/profile', post.id]">{{post.name}}</a></div>
+>>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
 
         <h1>have no followers</h1>
     </div>
@@ -70,8 +128,8 @@
                                     <address class="country">
                     <br >
                     {{post.country}}<br>
-                   
-                
+
+
                 </address>
                                     <hr/>
 
@@ -85,6 +143,11 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+  </div>
+
+>>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
 
 
 

@@ -21,6 +21,8 @@ import { AuthInterceptor } from './auth.interceptor';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { fakeBackendProvider } from './fake-backend';
 import { LogInHttpService } from './log-in/log-in-http.service';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -50,16 +52,20 @@ import { LogInHttpService } from './log-in/log-in-http.service';
     AppRoutingModule,
     ReactiveFormsModule,
     RatingModule
+  
 
 
   ],
   
 
 
-  providers: [HttpService,LogInHttpService ,{provide: HTTP_INTERCEPTORS,
+  providers: [HttpService,LogInHttpService 
+    
+    ,{provide: HTTP_INTERCEPTORS,
 
-  useClass: AuthInterceptor,
-multi: true},fakeBackendProvider],
+ useClass: AuthInterceptor,
+multi: true}],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

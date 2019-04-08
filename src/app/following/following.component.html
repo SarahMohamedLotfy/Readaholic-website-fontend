@@ -1,17 +1,9 @@
 <!doctype html>
-<<<<<<< HEAD
-
 
 <html lang="en">
 <navbar></navbar>
 
-=======
-<navbar></navbar>
-<html lang="en">
- <navbar></navbar> 
->>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
 <head>
-
 
 
     <meta charset="utf-8">
@@ -27,14 +19,8 @@
 
 
     <div *ngIf="selectedProfile">
-<<<<<<< HEAD
         <div id="Myprofilename">
-            <a [routerLink]="['/profile']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
-=======
-        <div  id="Myprofilename">
-            <a [routerLink]="['/profile/90']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 
-        </div>
->>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
+            <a [routerLink]="['/profile/90']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
         </div>
     </div>
 
@@ -54,13 +40,8 @@
 
 
 
-<<<<<<< HEAD
     <ul style="list-style: none;">
-        <li class="list" *ngFor="let post of posts  ">
-=======
-   <ul style="list-style: none;">
-  <li  class="list" *ngFor="let post of posts | filter : searchText ">
->>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
+        <li class="list" *ngFor="let post of posts | filter : searchText ">
 
             <div class="directory-info-row">
                 <div class="directory-info-row1" class="rowcolumn" class="row">
@@ -75,13 +56,17 @@
                                         <a [routerLink]="['/profile', post.id]" id="profilename" class="nameoffollower ">
                           {{post.name}}
 
-<<<<<<< HEAD
-                        </a>
+                        </a> </div>
 
+                                    <address class="country">
+                          <br>
+                        {{post.country}}<br>
+                      </address>
 
-                                    </div>
                                 </div>
-                                {{post.country}}
+
+                                <div class="country">{{post.country}}</div>
+
                             </div>
                         </div>
                     </div>
@@ -92,7 +77,7 @@
                         <div class="panel">
                             <div class="panel-body">
                                 <div class="media">
-                                    <a class="pull-left" [routerLink]="['/my-book', post.bookid]">
+                                    <a class="pull-left" [routerLink]="['/book', post.bookid]">
                                         <img id="bookimage" src={{post.bookimage}} alt="">
                                     </a>
                                     <div class="media-body">
@@ -101,41 +86,7 @@
                                             <button id="stopfollow" ng-click="follow()" type="button" class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
                                         </div>
                                         <address>
-                            <a   id= "bookname" [routerLink]="['/my-book', post.bookid]" >
-=======
-                        </a> </div>
-                       
-                        <address class="country">
-                          <br>
-                        {{post.country}}<br>
-                      </address>
-                     
-                  </div>
-
-                  <div class="country">{{post.country}}</div>
-                  
-              </div>
-            </div>
-          </div>
-
-          
-
-          <div class="directory-info-row2 "class="col-md-7 col-sm-7">
-              <div class="panel">
-              <div class="panel-body">
-                  <div class="media">
-                      <a class="pull-left"  [routerLink]="['/book', post.bookid]">
-                          <img id ="bookimage"  src={{post.bookimage}} alt="">
-                      </a>
-                      <div class="media-body">
-                          <div class="currentext"> Currently reading : </div>
-                          <div class="pull-right">
-                            <button id ="stopfollow" ng-click="follow()" type="button"
-                              class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
-                          </div>
-                          <address>
                             <a   id= "bookname" [routerLink]="['/book', post.bookid]" >
->>>>>>> 89a7077dd440780b0f967e5630782de9af9941f2
                               <h4 class="bookhide" >{{post.bookname}} </h4>
 
                             </a>

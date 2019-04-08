@@ -25,7 +25,17 @@ export class NavbarComponent implements OnInit {
         res=>{localStorage.removeItem('token');
         this.router.navigate(['/login']);
         
-        },err=>this.error=err)
+        },err => {
+          if(err.status ==405)
+          {
+          
+           // localStorage.removeItem('token');
+           // this.router.navigate(['/login']);
+          }
+          
+          else
+          console.log(err);
+        })
 
 
 

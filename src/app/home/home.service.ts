@@ -30,6 +30,13 @@ return this.http.get("http://localhost:3000/updates")
 
     );
    }
+   addFollowing ( nb):Observable<any> {
+  return this.http.post('http://localhost:3000/follow',{"user_id" : nb});
+  } 
+  addBook(shelf,book_id):Observable<any>{
+    return this.http.post('http://localhost:3000/shelf/add_book',{"shelf_id": shelf,
+    "book_id": book_id});
+  }
   /**
  * function for handling errors in ui and in console
  */

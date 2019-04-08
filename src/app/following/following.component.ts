@@ -6,6 +6,7 @@ import { profile } from '../classes/profile';
 import { HttpService } from '../http.service';
 import {HttpFollowinggService} from './httpfollowing.service';
 import {ProfileService} from '../profile/profile.service';
+
 /**
  * Show the following list with books they are currently reading and Search for people following you 
  */
@@ -25,6 +26,7 @@ export class FollowingComponent implements OnInit {
 
  */
   posts:any=[];
+  //postssss:any=[];
  /**
  * selectedProfile is the profile of the main user  who logged in . 
  */
@@ -33,13 +35,19 @@ export class FollowingComponent implements OnInit {
  * temp is array of people following the main users .
  */
   temp: any =[];
+  /**
+ * Count is the length of json file array
+ */
+  count:number;
    /**
  * Search input text in search box .
  */
   searchText: string = ''
+
  /**
 *Constructer that take service and routing .
  */
+
   constructor(private myfirstservice :HttpFollowinggService,private profileservice :ProfileService,private route: ActivatedRoute,private router:Router ) { }
 
 
@@ -59,6 +67,8 @@ export class FollowingComponent implements OnInit {
       this.temp = posts;});
 
 
+      
+
       this.profileservice.getUserprofile(90).subscribe(
         data => {
           this.selectedProfile = data,
@@ -66,12 +76,23 @@ export class FollowingComponent implements OnInit {
           console.log(this.selectedProfile)
                  }) ;
   
+                 
+  }
+  /**
+ * delFollowing () is a post request to remove the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
+ */
+  delFollowing(id:number){
+    this.myfirstservice.unfollow(id).subscribe((data)=>{
+         console.log("success");
+    });
   }
 
+  
  /**
 *Search for the name of following person when click on search button  .
  */ 
-search(){
+
+ search(){
 
   if (!this.posts) {
     return [];
@@ -87,6 +108,16 @@ search(){
     it["name"].toLocaleLowerCase().includes(this.searchText)
   );
 }
+/**
+ * noFollowing () is function to show message to the user if he has no one he following .
+ */
+noFollowing ():number
+{
+   this.count = Object.keys(this.posts).length;
+  console.log('count');
+  return this.count;
+}
+
 //onclick(){
  // this.router.navigateByUrl('/bookinfo/https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following/id');
 //}
@@ -94,6 +125,30 @@ search(){
 
 
 
+ /*search(){
+
+  if (!this.posts) {
+    return [];
+  }
+  if (this.searchText=='') {
+    this.posts = this.temp;
+  }
+  this.searchText = this.searchText.toLocaleLowerCase();
+/**
+*Filter for names of following people.
+ */ 
+ /* this.posts = this.temp.filter(it => 
+    it["name"].toLocaleLowerCase().includes(this.searchText)
+  );*/
+
+ /* this.myfirstservice.getfollowingg('searchText').subscribe(
+    data => {
+      this.postssss = data,
+      (err: any) => console.log(err),
+      console.log(this.postssss)
+             }) ;
+   
+}*/
 
 
 }

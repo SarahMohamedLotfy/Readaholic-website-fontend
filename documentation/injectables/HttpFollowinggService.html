@@ -85,6 +85,12 @@
                             <li>
                                 <a href="#getfollowing">getfollowing</a>
                             </li>
+                            <li>
+                                <a href="#getfollowingg">getfollowingg</a>
+                            </li>
+                            <li>
+                                <a href="#unfollow">unfollow</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -196,6 +202,152 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getfollowingg"></a>
+                    <span class="name">
+                        <b>
+                            getfollowingg
+                        </b>
+                        <a href="#getfollowingg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getfollowingg(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/following/httpfollowing.service.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Getfollowing () is a get request to get the data of people following the main user 
+ and the books they are currently reading by the name of following .
+ The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unfollow"></a>
+                    <span class="name">
+                        <b>
+                            unfollow
+                        </b>
+                        <a href="#unfollow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unfollow(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/following/httpfollowing.service.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>unfollow () is a post request to remove the data of certain user from the followers of the main user the data is  ( name of user , image , id of user ).</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -229,8 +381,23 @@ getfollowing(){
   return this.http.get(&#x27;http://localhost:3000/following&#x27;);
 
 }
+ /**
+ * unfollow () is a post request to remove the data of certain user from the followers of the main user the data is  ( name of user , image , id of user ).
+ */
+unfollow(id: number): Observable&lt;any&gt; {
+      return this.http.delete(&#x27;http://localhost:3000/following/&#x27;+id )
+    }
 
-
+    /**
+ *Getfollowing () is a get request to get the data of people following the main user 
+ * and the books they are currently reading by the name of following .
+ * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
+ */
+    getfollowingg(name:string){
+      return this.http.get(&#x27;http://localhost:3000/following/&#x27;+name);
+    
+    } 
+    
 }
 </code></pre>
     </div>

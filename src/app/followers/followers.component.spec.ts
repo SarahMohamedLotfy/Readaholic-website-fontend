@@ -13,6 +13,7 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 import { DropdownComponent } from './../shared/dropdown/dropdown.component';
 import { StarComponent } from './../shared/star/star.component';
+import { followerComponent } from '../classes/followerComponent';
 
 
 

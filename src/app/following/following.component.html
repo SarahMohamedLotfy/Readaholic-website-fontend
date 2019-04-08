@@ -16,7 +16,7 @@
 
 <body>
 
-
+<p   *ngIf="noFollowing() == 0" id ="tagrba">You are not following anyone.</p> 
 
     <div *ngIf="selectedProfile">
         <div id="Myprofilename">
@@ -40,8 +40,13 @@
 
 
 
+<<<<<<< HEAD
     <ul style="list-style: none;">
         <li class="list" *ngFor="let post of posts | filter : searchText ">
+=======
+   <ul style="list-style: none;">
+  <li  class="list" *ngFor="let post of posts  ">
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
 
             <div class="directory-info-row">
                 <div class="directory-info-row1" class="rowcolumn" class="row">
@@ -63,6 +68,7 @@
                         {{post.country}}<br>
                       </address>
 
+<<<<<<< HEAD
                                 </div>
 
                                 <div class="country">{{post.country}}</div>
@@ -86,6 +92,29 @@
                                             <button id="stopfollow" ng-click="follow()" type="button" class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
                                         </div>
                                         <address>
+=======
+                  
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="directory-info-row2 "class="col-md-7 col-sm-7">
+              <div class="panel">
+              <div class="panel-body">
+                  <div class="media">
+                      <a class="pull-left"  [routerLink]="['/book', post.bookid]">
+                          <img id ="bookimage"  src={{post.bookimage}} alt="">
+                      </a>
+                      <div class="media-body">
+                          <div class="currentext"> Currently reading : </div>
+                          <div class="pull-right">
+                            <button id ="stopfollow" (click)="delFollowing(post.id)"  type="button"
+                              class="btn btn-info btn-sm waves-effect waves-light"> UnFollow </button>
+                          </div>
+                          <address>
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
                             <a   id= "bookname" [routerLink]="['/book', post.bookid]" >
                               <h4 class="bookhide" >{{post.bookname}} </h4>
 

@@ -11,12 +11,25 @@
  * Name of the user that the main user follow .
  */
   name: string;
+  
    /**
  * Image of the user that the main user follow .
  */
   image_url: string;
    /**
- * Country of the user following the main user  .
- */ 
+ * Id of the book tht the user is currently reading .
+ */
+bookid:number;
+/**
+* Name of the book tht the user is currently reading .
+*/
+bookname:string; 
+/**
+* Image of the book tht the user is currently reading .
+*/ 
+bookimage:string;
+/**
+* Country of the user following the main user  .
+*/ 
 country :string;
 }

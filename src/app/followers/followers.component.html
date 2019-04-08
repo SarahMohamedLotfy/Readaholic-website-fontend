@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <navbar></navbar>
@@ -9,16 +10,26 @@
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+=======
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
 
-<body>
 
 
+  <p   *ngIf="noFollowers() == 0" id ="tagrba">You haven't got any followers ,don't be sad..</p> 
 
+<<<<<<< HEAD
     <div *ngIf="selectedProfile">
         <div id="Myprofilename">
             <a [routerLink]="['/profile/90']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>
         </div>
     </div>
+=======
+        <div *ngIf="selectedProfile">
+            <div  id="Myprofilename">
+              <a [routerLink]="['/profile/90']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > Followers</span>
+            </div>
+            </div>
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
 
 
     <div id="tfheader">
@@ -41,6 +52,7 @@
         <h1>have no followers</h1>
     </div>
 
+<<<<<<< HEAD
     <div *ngIf="!empty">
 
         <div class="row bootstrap snippet">
@@ -70,6 +82,41 @@
                                     </div>
 
                                     <address class="country">
+=======
+    <div *ngIf= "!empty">
+
+  <div class="row bootstrap snippet">
+    <div class="col-md-6 col-xs-12 col-md-offset-3">
+      <div class="panel" id="followers">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+          </h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group list-group-dividered list-group-full">
+            <li *ngFor="let post of posts "class="list-group-item">
+
+              <div class="media-body">
+                <div class="media">
+                  <div class="media-left">
+                    <a  [routerLink]="['/profile', post.id]">
+                      <img id ="profilepage"src={{post.image_url}} alt="">
+                      <i></i>
+                    </a>
+                  </div>
+                  <div  *ngIf="noFollowbutton(post.id) ==true "class="pull-right">
+
+                    <button id ="followbutton"(click)="add(post.id,post.name,post.image_url,post.bookid,post.bookname,post.bookimage,
+                    post.country)"type="button"
+                      class="btn btn-info btn-sm waves-effect waves-light">Follow </button>
+                  </div>
+                  <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter"
+                      style="clear:right" [routerLink]="['/profile', post.id]">{{post.name}}</a></div>
+
+                </div>
+
+                <address class="country">
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
                     <br >
                     {{post.country}}<br>
 
@@ -92,6 +139,10 @@
 
 
 
-</body>
 
+<<<<<<< HEAD
 </html>
+=======
+
+
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669

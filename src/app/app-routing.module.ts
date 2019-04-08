@@ -9,6 +9,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { AuthGuard } from './auth.guard';
 import { BookInfoComponent } from './book-info/book-info.component';
 import  { PageNotFoundComponent }  from './page-not-found.component' ;
+import  { AboutusComponent} from './AboutUs/AboutUs.component';
 
 const routes: Routes = [
   {path:  '', pathMatch: 'full', redirectTo:  'login'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
+  {path: 'Aboutus', component: AboutusComponent,canActivate:[AuthGuard]},
   {path:'pageNotfound',component: PageNotFoundComponent},
   {path: '**', redirectTo: 'pageNotfound', pathMatch:'full' }
  ];

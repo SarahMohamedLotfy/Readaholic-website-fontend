@@ -270,9 +270,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         ];
         const authHeader &#x3D; request.headers.get(&#x27;Authorization&#x27;);
         const isLoggedIn &#x3D; authHeader &amp;&amp; authHeader.startsWith(&#x27;Bearer fake-jwt-token&#x27;);
-
+    
         // wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() &#x3D;&gt; {
+            
             console.log(&#x27;first&#x27;);
             // authenticate - public
             if (request.url.endsWith(&#x27;/login&#x27;) &amp;&amp; request.method &#x3D;&#x3D;&#x3D; &#x27;POST&#x27;) {
@@ -310,7 +311,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
                 
                 if (request.headers.get(&#x27;Authorization&#x27;) &#x3D;&#x3D;&#x3D; &#x27;bearer fake-jwt-token&#x27;) {
-                    
+                   
                     
                     return ok({});
                 } else {

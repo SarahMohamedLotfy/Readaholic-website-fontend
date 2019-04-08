@@ -123,6 +123,28 @@ export class HomeComponent implements OnInit {
        }
           }
      
-    
-   
+    addFollowing(nb){
+      this.httpser.addFollowing(nb).subscribe(
+        data  => {
+        console.log("POST Request is successful ", data);
+        },
+        error  => {
+        
+        console.log("Error", error);
+        
+        }
+        
+        );}
+        addBook(shelf,book_id){
+          this.httpser.addBook(shelf,book_id).subscribe(
+            data  => {
+              console.log("POST Request is successful ", data);
+              },
+              error  => {
+              
+              console.log("Error", error);
+              
+              }
+          )
+        }
 }

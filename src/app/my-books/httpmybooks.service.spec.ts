@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
-import { HttpFollowinggService } from './httpfollowing.service';
+import { HttpmybooksService } from './httpmybooks.service';
 import { followingComponent } from '../classes/followingComponent';
 
-fdescribe('HttpFollowingService', () => {
-  let service: HttpFollowinggService;
+fdescribe('HttpmybooksService', () => {
+  let service: HttpmybooksService;
   let httpTestingController: HttpTestingController;
   let testfollowing: followingComponent []= [{
     "id": 1,
@@ -67,9 +67,9 @@ fdescribe('HttpFollowingService', () => {
   beforeEach( () =>  {
     TestBed.configureTestingModule({
     imports: [ HttpClientTestingModule ],
-    providers: [HttpFollowinggService],
+    providers: [HttpmybooksService],
   });
-  service = TestBed.get(HttpFollowinggService);
+  service = TestBed.get(HttpmybooksService);
   httpTestingController = TestBed.get(HttpTestingController);
   });
 
@@ -81,7 +81,7 @@ fdescribe('HttpFollowingService', () => {
 
 
  fit('should get followerList', () => {
-    service.getfollowing().subscribe(
+    service.getMybooks().subscribe(
       (data: followingComponent[]) => {
         expect(data.length).toBe(6);
       });
@@ -94,7 +94,7 @@ fdescribe('HttpFollowingService', () => {
 
 
   fit('should be created', () => {
-    const service: HttpFollowinggService = TestBed.get(HttpFollowinggService);
+    const service: HttpmybooksService = TestBed.get(HttpmybooksService);
     expect(service).toBeTruthy();
   });
 });

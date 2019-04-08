@@ -19,13 +19,29 @@ export class HttpFollowingService {
 
   
  /**
- * Getfollowing () is a get request to get the data of the followers of the main user .
+ * Getfollowers () is a get request to get the data of the followers of the main user .
  * The data i get is ( name of user , image , id of user  ).
  */
 
 getfollowers(){
-  return this.http.get('https://my-json-server.typicode.com/SarahMohamedLotfy/ggfollow/following');
+  return this.http.get('http://localhost:3000/followers');
 
    }
 
+   /**
+ * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
+ */
+   addFollowing (followwing: followerComponent): Observable<followerComponent> {
+    return this.http.post<followerComponent>('http://localhost:3000/following', followwing)
+      
+  } 
+ /**
+ *Getfollowing () is a get request to get the data of people following the main user 
+ * and the books they are currently reading . 
+ * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
+ */
+  getfollowing(){
+    return this.http.get('http://localhost:3000/following');
+  
+  }
 }

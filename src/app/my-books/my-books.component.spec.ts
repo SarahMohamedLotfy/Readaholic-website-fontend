@@ -4,18 +4,32 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyBooksComponent } from './my-books.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 
-describe('MyBooksComponent', () => {
+
+import {FormsModule} from '@angular/forms'
+//import { FilterPipe }from '../filter.pipe';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+
+fdescribe('MyBooksComponent', () => {
   let component: MyBooksComponent;
   let fixture: ComponentFixture<MyBooksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MyBooksComponent,
-      NavbarComponent ],
-      imports:[HttpClientModule,
-      RouterTestingModule]
-    })
+        NavbarComponent ],
+        imports:[
+          HttpClientModule,
+          RouterModule,
+          RouterTestingModule,
+          NgbRatingModule,
+          FormsModule
+  
+          ]
+      })
     .compileComponents();
   }));
 
@@ -25,7 +39,7 @@ describe('MyBooksComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 });

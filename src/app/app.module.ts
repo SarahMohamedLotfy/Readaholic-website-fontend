@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { FollowingComponent } from './following/following.component';
 import { MyBooksComponent } from './my-books/my-books.component';
 import { BookInfoComponent } from './book-info/book-info.component';
+import {AboutusComponent} from './AboutUs/AboutUs.component';
+
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
@@ -21,7 +23,6 @@ import { AuthInterceptor } from './auth.interceptor';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { fakeBackendProvider } from './fake-backend';
 import { LogInHttpService } from './log-in/log-in-http.service';
-
 
 
 
@@ -37,7 +38,8 @@ import { LogInHttpService } from './log-in/log-in-http.service';
     MyBooksComponent,
     BookInfoComponent,
     LogInComponent,
-    PageNotFoundComponent,
+    AboutusComponent,
+    PageNotFoundComponent
    
 
   ],
@@ -53,12 +55,10 @@ import { LogInHttpService } from './log-in/log-in-http.service';
 
 
   ],
-  exports: [
-    FilterPipe
-  ],
+  
 
 
-  providers: [HttpService, HttpFollowingService,LogInHttpService ,{provide: HTTP_INTERCEPTORS,
+  providers: [HttpService,LogInHttpService ,{provide: HTTP_INTERCEPTORS,
 
   useClass: AuthInterceptor,
 multi: true},fakeBackendProvider],

@@ -1,7 +1,9 @@
 /** receive the data of book from the json file */
 
 export class book{
+  /**id */
     id: number; 
+    /** book title */
     title: string;
   
     /** all info about book */
@@ -19,7 +21,9 @@ export class book{
     language: string;
   /** avrage rating of the book*/
     ratingsAvg: number;
+    /** number of ratings */
     ratingsCount: number;
+    /** number of reviews */
     reviewsCount: number;
   /** summry of the book*/
     description: string;    
@@ -28,6 +32,7 @@ export class book{
     authorName: string; 
     /** genre:comedy,tragedy,..etc */
     genre: string;  
+    /**link*/ 
     link:string ;   
     }
     

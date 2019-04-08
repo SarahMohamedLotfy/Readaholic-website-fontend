@@ -13,11 +13,12 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 import { DropdownComponent } from './../shared/dropdown/dropdown.component';
 import { StarComponent } from './../shared/star/star.component';
+import { followerComponent } from '../classes/followerComponent';
 
 
 
 
-describe('FollowersComponent', () => {
+fdescribe('FollowersComponent', () => {
   let component: FollowersComponent;
   let fixture: ComponentFixture<FollowersComponent>;
   let de: DebugElement;
@@ -45,7 +46,7 @@ describe('FollowersComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 

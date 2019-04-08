@@ -5,7 +5,7 @@ import { book } from '../classes/book';
 import { review } from '../classes/review';
 import { userBookInfo } from '../classes/userBookInfo';
 
-describe('BookService', () => {
+fdescribe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;
   let testBook: book = {
@@ -29,32 +29,32 @@ describe('BookService', () => {
 
   let testReview: review[] = [
     {
-      "id": 2,
+      "id": 5,
       "bookId": 11,
-      "body": "This may be the best series of ever. I mean, heists on heists, dragons, pirates, betrayals and oh yeah DRAGONS. I’m in love and I will reread this series every single year of my life. Good job Chima. You are Queen.",
+      "body": "Ah. The last 200 pages were excellent, but the 400 before that were just all over the place. Connection to characters got lost in all the perspectives (seven, I think). And while I was inherently invested in the secondary characters, I wish it had not come at the detriment of Lyss and Ash. I love this world and these series, but was ultimately disappointed in this finale’s distraction with servicing every character a superficial character arc.",
       "rating": 3,
       "lastUpdate": "2019-03-06 00:00:00",
       "created_at": "maay",
       "updated_at": "juuune",
       "numberLikes": 3,
       "numberComments": 3,
-      "userId": "1111111",
-      "userName": "hisoka",
-      "userImg": "https://static.comicvine.com/uploads/original/14/147508/5258484-2.jpg"
+      "userId": "5",
+      "userName": "Kamal Shaker",
+      "userImg": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg"
   },
   {
-      "id": 1,
+      "id": 3,
       "bookId": 11,
-      "body": "Whose here after Stormcaster just staring at the blank page hoping that you will see something change through sheer force of will?",
+      "body": "After the first read, this book is the worst one in the Harry Potter series. Characters are not as likeable as they are in the other books. However, I recently reread it (after reading book 6), and found it to be a very good read.",
       "rating": 3,
       "lastUpdate": "2019-03-06 00:00:00",
       "created_at": "maay",
       "updated_at": "juuune",
       "numberLikes": 3,
       "numberComments": 3,
-      "userId": "999999",
-      "userName": "Salma",
-      "userImg": "https://i.imgur.com/8zcsmU5.jpg"
+      "userId": "2",
+      "userName": "Ahmed Elsayed",
+      "userImg": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg"
   }];
 
   let testUserBookinfo: userBookInfo = {
@@ -77,7 +77,7 @@ describe('BookService', () => {
     httpTestingController.verify();
   });
 
- it('should the selected book', () => {
+ fit('should the selected book', () => {
     service.getBook(155).subscribe(
       (data: book) => {
         expect(data.genre).toBe('fiction');
@@ -88,11 +88,11 @@ describe('BookService', () => {
 
   });
 
-  it('should get the reviews', () => {
+  fit('should get the reviews', () => {
     service.getBookReviews().subscribe(
       (data: review[]) => {
         expect(data.length).toBe(2);
-        expect(data[0].userName).toBe('hisoka');
+        expect(data[0].userName).toBe('Kamal Shaker');
       });
     let request: TestRequest = httpTestingController.expectOne('http://localhost:3000/review');
     expect(request.request.method).toEqual('GET');
@@ -111,7 +111,7 @@ describe('BookService', () => {
 
   });
 
-  it('should be created', () => {
+  fit('should be created', () => {
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
   });

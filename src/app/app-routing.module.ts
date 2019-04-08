@@ -9,16 +9,18 @@ import { LogInComponent } from './log-in/log-in.component';
 import { AuthGuard } from './auth.guard';
 import { BookInfoComponent } from './book-info/book-info.component';
 import  { PageNotFoundComponent }  from './page-not-found.component' ;
+import  { AboutusComponent} from './AboutUs/AboutUs.component';
 
 const routes: Routes = [
   {path:  '', pathMatch: 'full', redirectTo:  'login'},
   {path:'login',component: LogInComponent},
   {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
-  {path: 'book/:id' , component: BookInfoComponent},
+  {path: 'book/:id' , component: BookInfoComponent,canActivate:[AuthGuard]},
   {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
+  {path: 'Aboutus', component: AboutusComponent,canActivate:[AuthGuard]},
   {path:'pageNotfound',component: PageNotFoundComponent},
   {path: '**', redirectTo: 'pageNotfound', pathMatch:'full' }
  ];

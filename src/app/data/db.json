@@ -20,6 +20,7 @@
       "image_link": "https://images.gr-assets.com/books/1529823092l/39320115.jpg",
       "author_name": "Cinda Williams Chima",
       "update_type": "0",
+<<<<<<< HEAD
       "shelf_type": 1
     },
     {
@@ -159,6 +160,137 @@
     },
     {
       "id": 1,
+=======
+      "shelf": 1
+    },
+    {
+      "id": 1,
+      "type": 3,
+      "updated_at": "2019-03-15 00:00:00",
+      "likes_count": null,
+      "comments_count": null,
+      "book_id": 1,
+      "shelf": 1,
+      "title": "To Kill a Kingdom",
+      "description": "great book ",
+      "img_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+      "reviews_count": null,
+      "ratings_count": null,
+      "ratings_avg": null,
+      "pages_no": null,
+      "user_id": 2,
+      "name": "Ahmed Elsayed",
+      "image_link": "https://images.gr-assets.com/books/1524322945l/34499221.jpg",
+      "author_name": "Alexandra Christo",
+      "update_type": "1"
+    },
+    {
+      "id": 2,
+      "type": 3,
+      "updated_at": "2019-03-01 00:00:00",
+      "likes_count": null,
+      "comments_count": null,
+      "book_id": 45,
+      "title": "The Coldest Girl in Coldtown",
+      "shelf": 1,
+      "description": "",
+      "img_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+      "reviews_count": null,
+      "ratings_count": null,
+      "ratings_avg": null,
+      "pages_no": null,
+      "user_id": 3,
+      "name": "Mohamed Hayalla",
+      "image_link": "https://images.gr-assets.com/books/1367312471l/12813630.jpg",
+      "author_name": "Holly Black",
+      "update_type": "1"
+    },
+    {
+      "updated_at": "2019-03-19 00:00:00",
+      "user_id": 2,
+      "img_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+      "name": "Ahmed Elsayed",
+      "followed_id": 3,
+      "followed_image_link": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+      "followed_name": "Mohamed Hayalla",
+      "update_type": "2"
+    },
+    {
+      "id": 5,
+      "type": 3,
+      "updated_at": "2019-03-01 00:00:00",
+      "likes_count": null,
+      "comments_count": null,
+      "book_id": 45,
+      "title": "The Coldest Girl in Coldtown",
+      "shelf": 2,
+      "description": "",
+      "img_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+      "reviews_count": null,
+      "ratings_count": null,
+      "ratings_avg": null,
+      "pages_no": null,
+      "user_id": 3,
+      "name": "Mohamed Hayalla",
+      "image_link": "https://images.gr-assets.com/books/1367312471l/12813630.jpg",
+      "author_name": "Holly Black",
+      "update_type": "1"
+    },
+    {
+      "id": 2,
+      "type": 3,
+      "updated_at": "2019-03-01 00:00:00",
+      "likes_count": null,
+      "comments_count": null,
+      "book_id": 45,
+      "title": "The Coldest Girl in Coldtown",
+      "shelf": 3,
+      "description": "",
+      "img_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+      "reviews_count": null,
+      "ratings_count": null,
+      "ratings_avg": null,
+      "pages_no": null,
+      "user_id": 2,
+      "name": "Huda Yahia",
+      "image_link": "https://images.gr-assets.com/books/1367312471l/12813630.jpg",
+      "author_name": "Holly Black",
+      "update_type": "1"
+    }
+  ],
+  "Profile": [
+    {
+      "id": 90,
+      "name": "Mai mostafa",
+      "user_name": "MAi_mostafa99",
+      "small_image_url": "https://res.cloudinary.com/teepublic/image/private/s--ym8sWp4w--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1535088284/production/designs/3061511_0.jpg",
+      "about": "i am very cool",
+      "age": "90",
+      "gender": "female",
+      "location": "giza haram",
+      "joined": " 2 days ago ",
+      "last_active": "1 day ago ",
+      "user_shelves": [
+        {
+          "id": "1",
+          "name": "read",
+          "book_count": "30"
+        },
+        {
+          "id": "54321",
+          "name": "currently-reading",
+          "book_count": "40"
+        },
+        {
+          "id": "22",
+          "name": "to-read",
+          "book_count": "20"
+        }
+      ]
+    },
+    {
+      "id": 1,
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
       "name": "Huda Yahya",
       "user_name": "MAi_mostafa99",
       "small_image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
@@ -332,6 +464,112 @@
       ]
     }
   ],
+<<<<<<< HEAD
+=======
+  "following": [
+    {
+      "id": 3,
+      "name": "Mohamed Hayalla",
+      "image_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+      "bookid": 144,
+      "bookname": "A Gathering of Shadows",
+      "bookimage": "https://images.gr-assets.com/books/1429627728l/20764879.jpg",
+      "country": "Cairo,11,Egypt"
+    },
+    {
+      "id": 5,
+      "name": "Kamal Shaker",
+      "image_url": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
+      "bookid": 6,
+      "bookname": "حكاية الاسم الجيديد",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377934260i/18400361._SX120_.jpg",
+      "country": "Suez,Egypt"
+    },
+    {
+      "id": 4,
+      "name": "Walid Hassan",
+      "image_url": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
+      "bookid": 2,
+      "bookname": "Stormcaster-Shattered Realms",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
+      "country": "Giza,11,Egypt"
+    },
+    {
+      "id": 1,
+      "name": "Huda Yahya",
+      "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+      "bookid": 3,
+      "bookname": "اخر ايام الارض ",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
+      "country": "Asuit,Egypt"
+    },
+    {
+      "id": 2,
+      "name": "Ahmed Elsayed",
+      "image_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+      "bookid": 8,
+      "bookname": "Deathcaster - Shattered Realms",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529823092i/39320115._SY180_.jpg",
+      "country": "Aswan,11,Egypt"
+    }
+  ],
+  "followers": [
+    {
+      "id": 1,
+      "name": "Huda Yahya",
+      "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+      "bookid": 3,
+      "bookname": "اخر ايام الارض ",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
+      "country": "Asuit,Egypt"
+    },
+    {
+      "id": 2,
+      "name": "Ahmed Elsayed",
+      "image_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+      "bookid": 8,
+      "bookname": "Deathcaster - Shattered Realms",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529823092i/39320115._SY180_.jpg",
+      "country": "Aswan,11,Egypt"
+    },
+    {
+      "id": 3,
+      "name": "Mohamed Hayalla",
+      "image_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+      "bookid": 7,
+      "bookname": "A Tale of Two Cities",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310124698i/9847899._SY180_.jpg",
+      "country": "Cairo,11,Egypt"
+    },
+    {
+      "id": 4,
+      "name": "Walid Hassan",
+      "image_url": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
+      "bookid": 2,
+      "bookname": "Stormcaster-Shattered Realms",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
+      "country": "Giza,11,Egypt"
+    },
+    {
+      "id": 5,
+      "name": "Kamal Shaker",
+      "image_url": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
+      "bookid": 6,
+      "bookname": "حكاية الاسم الجيديد",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377934260i/18400361._SX120_.jpg",
+      "country": "Suez,Egypt"
+    },
+    {
+      "id": 6,
+      "name": "Eslam Ahmed",
+      "image_url": "https://images.gr-assets.com/photos/1551961617p8/3783093.jpg",
+      "bookid": 5,
+      "bookname": "شاى بالنعناع ",
+      "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309610934i/11922284._SX120_.jpg",
+      "country": "Aswan,11,Egypt"
+    }
+  ],
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
   "book": [
     {
       "id": 11,
@@ -464,9 +702,15 @@
       "updated_at": "juuune",
       "numberLikes": 3,
       "numberComments": 3,
+<<<<<<< HEAD
       "userId": "000000",
       "userName": "killua",
       "userImg": "https://pbs.twimg.com/profile_images/955923907051184129/8LxKsoPl_400x400.jpg"
+=======
+      "userId": "5",
+      "userName": "Kamal Shaker",
+      "userImg": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg"
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
     },
     {
       "id": 3,
@@ -478,9 +722,15 @@
       "updated_at": "juuune",
       "numberLikes": 3,
       "numberComments": 3,
+<<<<<<< HEAD
       "userId": "000000",
       "userName": "kurapika",
       "userImg": "https://i.pinimg.com/originals/47/1b/4e/471b4e5042154149565890377ec7b784.jpg"
+=======
+      "userId": "2",
+      "userName": "Ahmed Elsayed",
+      "userImg": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg"
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
     },
     {
       "id": 2,
@@ -492,9 +742,15 @@
       "updated_at": "juuune",
       "numberLikes": 3,
       "numberComments": 3,
+<<<<<<< HEAD
       "userId": "1111111",
       "userName": "hisoka",
       "userImg": "https://static.comicvine.com/uploads/original/14/147508/5258484-2.jpg"
+=======
+      "userId": "3",
+      "userName": "Mohamed Hayalla",
+      "userImg": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg"
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
     },
     {
       "id": 1,
@@ -506,9 +762,15 @@
       "updated_at": "juuune",
       "numberLikes": 3,
       "numberComments": 3,
+<<<<<<< HEAD
       "userId": "999999",
       "userName": "Salma",
       "userImg": "https://i.imgur.com/8zcsmU5.jpg"
+=======
+      "userId": "4",
+      "userName": "Walid Hassan",
+      "userImg": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg"
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
     }
   ],
   "userBookInfo": [
@@ -518,5 +780,22 @@
       "shelf_name": "Currently Reading",
       "body": "Wow! Great closure on all levels. The pace was smooth. Written well. I couldn't put it down. I just found Cinda two years ago. Since then I have plowed through everything she has written. Every book was a joy to read. Highly recommend this author!!!"
     }
+<<<<<<< HEAD
+=======
+  ],
+  "user_shelf": [
+    {
+      "name": "read",
+      "book_count": "0"
+    },
+    {
+      "name": "currently-reading",
+      "book_count": "0"
+    },
+    {
+      "name": "to-read",
+      "book_count": "0"
+    }
+>>>>>>> df7f534055317066a2ce89f9d28d158c11762669
   ]
 }

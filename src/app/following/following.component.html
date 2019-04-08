@@ -3,6 +3,7 @@
 <!doctype html>
 <navbar></navbar>
 <html lang="en">
+ <navbar></navbar> 
 <head>
   
 
@@ -16,11 +17,11 @@
 
 <body>
 
-
+<p   *ngIf="noFollowing() == 0" id ="tagrba">You are not following anyone.</p> 
 
     <div *ngIf="selectedProfile">
         <div  id="Myprofilename">
-            <a [routerLink]="['/profile']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 
+            <a [routerLink]="['/profile/90']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You're Following</span> 
         </div>
         </div>
         
@@ -57,12 +58,16 @@
                         <a [routerLink]="['/profile', post.id]"  id ="profilename"class ="nameoffollower " >
                           {{post.name}}
 
-                        </a>
+                        </a> </div>
                        
-                        
-                      </div>
+                        <address class="country">
+                          <br>
+                        {{post.country}}<br>
+                      </address>
+                     
                   </div>
-                  {{post.country}}
+
+                  
               </div>
             </div>
           </div>
@@ -73,17 +78,17 @@
               <div class="panel">
               <div class="panel-body">
                   <div class="media">
-                      <a class="pull-left"  [routerLink]="['/my-book', post.bookid]">
+                      <a class="pull-left"  [routerLink]="['/book', post.bookid]">
                           <img id ="bookimage"  src={{post.bookimage}} alt="">
                       </a>
                       <div class="media-body">
                           <div class="currentext"> Currently reading : </div>
                           <div class="pull-right">
-                            <button id ="stopfollow" ng-click="follow()" type="button"
-                              class="btn btn-info btn-sm waves-effect waves-light">Stop Follow </button>
+                            <button id ="stopfollow" (click)="delFollowing(post.id)"  type="button"
+                              class="btn btn-info btn-sm waves-effect waves-light"> UnFollow </button>
                           </div>
                           <address>
-                            <a   id= "bookname" [routerLink]="['/my-book', post.bookid]" >
+                            <a   id= "bookname" [routerLink]="['/book', post.bookid]" >
                               <h4 class="bookhide" >{{post.bookname}} </h4>
 
                             </a>

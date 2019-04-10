@@ -18,7 +18,7 @@ import { catchError, retry } from 'rxjs/operators';
     /**Sends a request to the server with the email and password to checks if they're correct */
     login(email:string,password:string): Observable<any>
  {
-   return this.http.post('http://localhost:3000/login',{email,password}) ;
+   return this.http.post('cd5885f7.ngrok.io/api/login',{email,password}) ;
  }
 
 /**Loggs out the user from the website */

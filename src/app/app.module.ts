@@ -56,7 +56,7 @@ import { LogInHttpService } from './log-in/log-in-http.service';
 
   ],
   
-
+  
 
   providers: [HttpService,LogInHttpService ,{provide: HTTP_INTERCEPTORS,
 
@@ -64,4 +64,6 @@ import { LogInHttpService } from './log-in/log-in-http.service';
 multi: true},fakeBackendProvider],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

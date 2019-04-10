@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { ShelfService } from './shelf.service';
 
 
 @Component({
@@ -6,26 +7,74 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css']
 })
-export class DropdownComponent implements OnInit {
- /**stores the input shelf */ 
-@Input() shelf: string;
-/**shelf name to be displayed */
-shelfStatus: string = "Want to Read";
+export class DropdownComponent implements OnChanges {
+/**the input shelf id from the parent component */ 
+@Input() shelfId: number;
+
+/**the input book id from the parent component */
+@Input() bookId: number;
+
+/**shelves array */
+shelves: string[] = ["Read", "Currently Reading", "Want To Read"];
+
+/** the displayed shelf */
+shelfStatus: string = this.shelves[2];
+
 /**@ignore */
 buttonDisabled: boolean = false; 
 
+/**@ignore */
+removeEnabled: boolean = false;
 
-  constructor() { }
+
+  constructor(private service: ShelfService) { }
 /** sets the displayed shelf
  *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
  * 
  */
-  ngOnInit() {
-    if(this.shelf)
+  ngOnChanges() {
+    
+    if(this.shelfId !== null)
     {
-      this.shelfStatus = this.shelf;
+      this.shelfStatus = this.shelves[this.shelfId];
       this.buttonDisabled = true;
+      this.removeEnabled = true;
     }
   }
+
+  /**changes the state of the remove button on hover */
+  mouseEnter(eventObj: Event){
+    var e = <HTMLElement> eventObj.srcElement;
+    e.innerHTML = "&#10008; "
+  //  obj.srcElement.innerHTML = "&#10008; "
+  }
+
+  /**changes the state of the remove button on leave */
+  mouseLeave(eventObj: Event){
+    var e = <HTMLElement> eventObj.srcElement;
+    e.innerHTML = "&#10003; "
+   // obj.srcElement.innerHTML = "&#10003; "
+  }
+
+  /** remove a book from the shelf it was added to */
+  removeBookFromShelf() {
+    this.service.removeFromShelf(this.shelfId,this.bookId).subscribe(() => {
+      this.shelfStatus = this.shelves[2];
+      this.buttonDisabled = false;
+      this.removeEnabled = false;
+    })
+  }
+
+  /**add a book to the selected shelf*/
+  addBookToShelf(eventObj: Event) {
+    var e = <HTMLElement> eventObj.srcElement;
+    this.shelfId = +e.id
+    this.service.addToShelf(this.shelfId,this.bookId).subscribe( ()=> {
+      this.shelfStatus = this.shelves[this.shelfId];
+      this.buttonDisabled = true;
+      this.removeEnabled = true;
+    })
+  }
+
 
 }

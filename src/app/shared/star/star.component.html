@@ -1,7 +1,8 @@
-<ngb-rating [(rate)]="starsCount" [readonly]="readOnly
-      " max=5>
-
+<ngb-rating [(ngModel)]="userRate"  [(rate)]="starsCount" [readonly]="readOnly " max=5 (click)="onRating()">
     <ng-template let-fill="fill" let-index="index">
-        <span class="star" [class.filled]="fill === 100">&#9733;</span>
+        <span class="star" [class.filled]="fill">&#9733;</span>
     </ng-template>
 </ngb-rating>
+
+
+  

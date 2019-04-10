@@ -16,18 +16,39 @@ import { LogInHttpService } from './log-in-http.service';
 export class LogInComponent implements OnInit {
   /**stores the input typed in the login form */
   form:FormGroup;
+
+  formUp:FormGroup;
   /**stores the information of the user logged in */
   users:user;
   /**true if user entered wrong pass or username, false otherwise */
   wrongPass:boolean;
   /** stores in it the error message */
   error:string;
+
+  errorUp:string;
+
+  signUpError:boolean;
+
+  
 /**sets the varibales in the form using form builder */
   constructor(private service:LogInHttpService,private fb:FormBuilder,private router:Router) { 
     this.form=this.fb.group({
     email: ['',[Validators.required,Validators.minLength(1)]],
     password: ['',[Validators.required,Validators.minLength(1)]]
     });
+
+    this.formUp=this.fb.group({
+      email: ['',[Validators.required]],
+      password: ['',[Validators.required]],
+      password_confirmation: ['',[Validators.required]],
+      name:['',[Validators.required]],
+      gender: ['',[Validators.required]],
+      birthday:['',[Validators.required]],
+      country: ['',[Validators.required]],
+      city:['',[Validators.required]]
+      });
+
+
     
  
     
@@ -41,7 +62,9 @@ export class LogInComponent implements OnInit {
   }
   /**On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they're valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  */
 onSubmit(){
+  
   const val = this.form.value;
+
   if(this.form.valid){
   this.service.login(val.email,val.password).subscribe(
 (data:any) => {
@@ -53,13 +76,14 @@ onSubmit(){
 err => {
   if(err.status ==405)
   {
-  console.log('incorrect username or password');
+  
   this.wrongPass=true;
   this.error="incorrect username or password";
   
   }
   else if(err.status== 404)
   {
+    console.log('udd');
     this.wrongPass=true;
     this.error="incorrect username or password";}
   else
@@ -74,10 +98,45 @@ err => {
   }
 }
 
+onSigUp(){
+  const val = this.formUp.value;
+
+  
+  this.service.signUp(val.email,val.password,val.password_confirmation,val.name,val.gender,val.birthday,val.country,val.city).subscribe(
+(data:any) => {
+  localStorage.setItem('token',data.token);
+  this.users=data;
+  this.router.navigateByUrl('/home'); 
+},
+err => {
+  if(err.status ==405)
+  {
+  this.signUpError=true;
+  this.errorUp=err.error.errors;
+  
+  }
+  else if(err.status== 404)
+  {
+    this.signUpError=true;
+  this.errorUp=err.error.errors;
+
+  console.log(err);
+  }
+  else
+  console.log(err);
+}
+  );
+
+ 
+
+  }
+
 /**Checks changes if the user enter a wrong password */
 ngOnChanges(): void{
   this.wrongPass=this.wrongPass;
   this.error=this.error;
+  this.errorUp=this.errorUp;
+  this.signUpError=this.signUpError;
 }
 
 

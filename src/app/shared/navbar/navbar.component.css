@@ -1,6 +1,7 @@
 .topnav {
     background-color: #f4f1ea;
-    overflow: hidden;
+    overflow:visible ;
+    
   }
   .active {
     background-color: #555;
@@ -33,4 +34,8 @@ font-size:30px ;
  #right{
 
   float:right ;
+ }
+ #notif{
+   clear:both;
+   float:left ;
  }

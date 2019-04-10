@@ -4,7 +4,7 @@
             <div class="media">
                 <div class="col-md-2" id="leftCol">
                     <img id="bookCover" src={{myBook?.imageUrl}} class="align-self-start mr-3">
-                    <app-dropdown id="shelf" [shelf]="userInfo?.shelf_name"></app-dropdown>
+                    <app-dropdown id="shelf" [bookId]="myBook?.id" [shelfId]="userInfo?.shelf_name"></app-dropdown>
                     <app-star id="rateBook"  [starsCount]="0" [readOnly]="false"></app-star>
                 </div>
                 <div class="media-body" id="bookInfo">

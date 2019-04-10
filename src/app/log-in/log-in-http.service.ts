@@ -18,11 +18,17 @@ import { catchError, retry } from 'rxjs/operators';
     /**Sends a request to the server with the email and password to checks if they're correct */
     login(email:string,password:string): Observable<any>
  {
-   return this.http.post('cd5885f7.ngrok.io/api/login',{email,password}) ;
+
+   return this.http.post('http://0c896ef8.ngrok.io/api/login',{email,password}) ;
  }
 
+
+ signUp(email:string,password:string,password_confirmation:string,name:string,gender:string,birthday:Date,country:string,city:string): Observable<any>
+ {
+   return this.http.post('http://0c896ef8.ngrok.io/api/signup',{email,password,password_confirmation,name,gender,birthday,country,city}) ;
+ }
 /**Loggs out the user from the website */
  logOut():Observable<any>{
-    return this.http.get('http://localhost:3000/logOut');
+    return this.http.delete('http://0c896ef8.ngrok.io/api/logout');
   }
   }

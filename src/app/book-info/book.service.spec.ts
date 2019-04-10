@@ -106,6 +106,7 @@ fdescribe('BookService', () => {
         expect(data.rating).toBe(3.5);
       });
     let request: TestRequest = httpTestingController.expectOne('http://localhost:3000/userBookInfo/1');
+    
     expect(request.request.method).toEqual('GET');
     request.flush(testUserBookinfo);
 

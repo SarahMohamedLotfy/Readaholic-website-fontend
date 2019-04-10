@@ -1,6 +1,7 @@
-import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
-import { RatingModule } from 'ng2-rating';
-import { Component, OnInit, Input, NgModule } from '@angular/core';
+//import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+//import { RatingModule } from 'ng2-rating';
+
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-star',
@@ -9,26 +10,33 @@ import { Component, OnInit, Input, NgModule } from '@angular/core';
 })
 
 
-export class StarComponent implements OnInit {
+export class StarComponent implements OnChanges {
   /**displayed rate */
  @Input() starsCount: number;
- /**@ignore */
+
+ /**detemines the state of the component whether it can be used to rate a book or display its average rate */
  @Input() readOnly: boolean;
- /**@ignore */
- floatEnable:boolean;
+
+ /**the rate done by the user */
+  userRate: number;
 
   constructor() { }
 
-  /**sets rating mode or displaying mode */
-  ngOnInit() {
+  ngOnChanges() {
     if(this.readOnly === true)
     {
-      this.floatEnable = true;
+      if((Math.floor(this.starsCount)) > (this.starsCount-0.5))
+      {
+        this.starsCount = Math.floor(this.starsCount);
+      }  
+      else
+      {
+        this.starsCount = Math.ceil(this.starsCount);
+      }
     } 
-    else
-    {
-      this.floatEnable = false;
-    }
   }
 
+  onRating() {
+  
+}
 }

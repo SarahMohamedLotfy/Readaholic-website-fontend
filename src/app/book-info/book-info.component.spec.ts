@@ -66,7 +66,7 @@ fdescribe('BookInfoComponent', () => {
     expect(titleElement.innerText).toContain('The Raven Boys');
   });
 
-  it('should show book reviews', () => {
+  fit('should show book reviews', () => {
     component.reviews =  [{
       "id": 5,
       "bookId": 11,

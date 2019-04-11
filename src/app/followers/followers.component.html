@@ -1,15 +1,15 @@
 <navbar>
 </navbar>
-<p *ngIf="noFollowers() == 0" id="tagrba">
 
 
-    You haven't got any followers ,don't be sad..</p>
 
 <div *ngIf="selectedProfile">
     <div id="Myprofilename">
-        <a [routerLink]="['/profile/90']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>
+        <a [routerLink]="['/profile',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>
     </div>
 </div>
+<p *ngIf="noFollowers() == 0" id="tagrba">
+    You haven't got any followers ,don't be sad..</p>
 
 
 <div id="tfheader">

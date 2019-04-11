@@ -16,14 +16,12 @@
 
 <body>
 
-    <p *ngIf="noFollowing() == 0" id="tagrba">You are not following anyone.</p>
-
+    
     <div *ngIf="selectedProfile">
         <div id="Myprofilename">
-            <a [routerLink]="['/profile/90']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
+            <a [routerLink]="['/profile',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
         </div>
     </div>
-
 
 
 
@@ -38,6 +36,8 @@
         <div class="tfclear"></div>
     </div>
 
+
+    <p *ngIf="noFollowing() == 0" id="tagrba">You are not following anyone.</p>
 
 
     <ul style="list-style: none;">

@@ -20,7 +20,7 @@ import { catchError, retry } from 'rxjs/operators';
  {
 
    return this.http.post('http://be1989bd.ngrok.io/api/login',{email,password}) ;
-  
+ }
 
  signUp(email:string,password:string,password_confirmation:string,name:string,gender:string,birthday:Date,country:string,city:string): Observable<any>
  {
@@ -30,4 +30,4 @@ import { catchError, retry } from 'rxjs/operators';
  logOut():Observable<any>{
     return this.http.delete('http://be1989bd.ngrok.io/api/logout');
  
-  }
+  }}

@@ -66,11 +66,12 @@
 }
 /*footer bottom */
 .footer-bottom {
+  position: relative;
   padding-top: 5px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   border-top: 1px solid rgba(0,0,0,0.09);
   background: #fff;
-  
+  bottom:5px;
 }
 .copyright-text p {
   color: #707070;

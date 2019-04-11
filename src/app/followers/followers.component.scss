@@ -83,6 +83,7 @@
 #profilename
 {
   font-size: 12px;
+  top:2px;
 }
   
   #profilepage{
@@ -91,7 +92,7 @@
   }
   #followbutton{
 position: relative;;
-top: 20px;
+top: 11px;
 left:400px;
 display: inline-block;
 border-radius: 3px;
@@ -181,6 +182,7 @@ color: #333333;
       height: 1px;
       border-top: 1px solid #D6D0C4;
     margin-right: 15%;
+    
     }
     #Myprofilename
     {position: relative;
@@ -261,7 +263,7 @@ top:17px;
 {
   position: relative;
   top:150px;
-  left:230px;
+  right:500px;
   line-height: 26px;
   font-size: 16px;
   font-family: "Merriweather", Georgia, "Times New Roman", serif;

@@ -13,7 +13,13 @@ export class ProfileService {
   url = 'http://localhost:3000';
    /** http request to get user profile info from json server */
   getUserprofile(id: number): Observable<any> {
-    return this.http.get<any> (this.url +"/profile/"+ id );
+    return this.http.get<any> ('http://be1989bd.ngrok.io/api/showProfile/'+ id );
   }
- 
+
+  getAuthUserprofile(): Observable<any> {
+    return this.http.get<any> ('http://be1989bd.ngrok.io/api/showProfile');
+  }
+
+
+
 }

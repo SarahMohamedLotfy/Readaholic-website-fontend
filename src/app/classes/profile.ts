@@ -1,28 +1,28 @@
-import { user_shelves } from './user_shelves';
+
 /** receive the data of profile from the json file */
 export class profile {
   /** id of user */
-  id: number;
-  /** name of user */
+  id : number;
   name: string;
-  /** user_name of user */
-  user_name: string;
-  /** link of user */
+  username: string;
+  email: string;
+  email_verified_at: string;
   link: string;
-  /** image of user */
-  small_image_url: string ;
-  /** information of of user */
+  image_link: string;
+  small_image_link: string;
   about: string;
-  /** age of user */
   age: number;
-  /** gender of user */
   gender: string;
-  /** location of user */
-  location: string;
-  /** when the user joined the site */
-  joined: string;
-  /** last activity of user */
+  country: string;
+  city: string;
+  joined_at: string;
   last_active: string;
-  /** shelves of user */
-  user_shelves: user_shelves ;
+  followers_count: number;
+  following_count: number;
+  rating_avg: number;
+  rating_count: number;
+  books_count: number;
+  birthday: string;
+  created_at: string;
+  updated_at:string;
 }

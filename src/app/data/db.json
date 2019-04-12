@@ -630,7 +630,35 @@
   ],
   "ReadShelf": [
     {
+      "bookId": 5,
+      "shelf": 0,
+      "body": "",
+      "rating": 4,
+      "id": 1
+    },
+    {
+      "bookId": 5,
+      "shelf": 3,
+      "body": "",
+      "rating": 4,
+      "id": 2
+    },
+    {
+      "bookId": 11,
+      "shelf": 0,
+      "body": "",
+      "rating": 5,
+      "id": 3
+    },
+    {
+      "bookId": 11,
+      "shelf": 0,
+      "body": "",
+      "rating": 4,
       "id": 12
+    },
+    {
+      "id": 99
     },
     {
       "id": 11

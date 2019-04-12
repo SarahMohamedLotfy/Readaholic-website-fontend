@@ -24,7 +24,7 @@ export class HttpFollowingService {
  */
 
 getfollowers(){
-  return this.http.get('http://localhost:3000/followers');
+  return this.http.get('http://ffb1e410.ngrok.io/api/followers');
 
    }
 
@@ -32,7 +32,7 @@ getfollowers(){
  * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
  */
    addFollowing (followwing: followerComponent): Observable<followerComponent> {
-    return this.http.post<followerComponent>('http://localhost:3000/following', followwing)
+    return this.http.post<followerComponent>('http://ffb1e410.ngrok.io/api/following', followwing)
       
   } 
  /**
@@ -41,7 +41,7 @@ getfollowers(){
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
   getfollowing(){
-    return this.http.get('http://localhost:3000/following');
+    return this.http.get('http://ffb1e410.ngrok.io/api/following');
   
   }
 }

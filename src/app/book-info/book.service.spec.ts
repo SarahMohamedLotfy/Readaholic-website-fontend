@@ -60,7 +60,7 @@ fdescribe('BookService', () => {
   let testUserBookinfo: userBookInfo = {
     "id": 1,
     "rating": 3.5,
-    "shelf_name": "Currently Reading",
+    "shelf_name": 1,
     "body": "Wow! Great closure on all levels. The pace was smooth. Written well. I couldn't put it down. I just found Cinda two years ago. Since then I have plowed through everything she has written. Every book was a joy to read. Highly recommend this author!!!"
   }
 

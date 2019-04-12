@@ -23,7 +23,7 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
-return this.http.get("http://localhost:3000/updates")
+return this.http.get("http://ffb1e410.ngrok.io/api/updates")
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
@@ -31,10 +31,10 @@ return this.http.get("http://localhost:3000/updates")
     );
    }
    addFollowing ( nb):Observable<any> {
-  return this.http.post('http://localhost:3000/follow',{"user_id" : nb});
+  return this.http.post('http://ffb1e410.ngrok.io/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
-    return this.http.post('http://localhost:3000/shelf/add_book',{"shelf_id": shelf,
+    return this.http.post('http://ffb1e410.ngrok.io/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
   /**
@@ -55,10 +55,5 @@ return this.http.get("http://localhost:3000/updates")
     return throwError(
       'Something bad happened; please try again later.');
   };
- /**
- * logOut get request
- */
-  logOut():Observable<any>{
-    return this.http.get('http://localhost:3000/logOut');
-  }
+
 }

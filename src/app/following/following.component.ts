@@ -63,7 +63,8 @@ export class FollowingComponent implements OnInit {
 
  
    this.myfirstservice.getfollowing().subscribe((posts:any)=>{
-      this.posts =posts ;
+     console.log(posts.following);
+      this.posts =posts.following ;
       this.temp = posts;});
 
 
@@ -71,6 +72,7 @@ export class FollowingComponent implements OnInit {
 
       this.profileservice.getUserprofile(90).subscribe(
         data => {
+          
           this.selectedProfile = data,
           (err: any) => console.log(err),
           console.log(this.selectedProfile)

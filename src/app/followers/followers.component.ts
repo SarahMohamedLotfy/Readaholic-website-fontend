@@ -77,8 +77,9 @@ result:number;
     
 
     this.myfirstservice.getfollowers().subscribe((posts:any)=>{
-       this.posts =posts ;
+       this.posts =posts.followers ;
        this.temp = posts;
+      console.log(this.posts);
        })
 
        

@@ -15,7 +15,7 @@ export class BookService {
 
   /**gets the selected book information by id */
   getBook(id: number): Observable<book> {
-    return this.http.get<book>("http://localhost:3000/book/" + id);
+    return this.http.get<book>("http://f8b0ca5b.ngrok.io/api/books/show/" + id);
  }
 
  /**gets the reviews of the book */

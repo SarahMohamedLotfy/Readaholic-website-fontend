@@ -16,14 +16,12 @@
 
 <body>
 
-    <p *ngIf="noFollowing() == 0" id="tagrba">You are not following anyone.</p>
 
     <div *ngIf="selectedProfile">
         <div id="Myprofilename">
-            <a [routerLink]="['/profile/90']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
+            <a [routerLink]="['/profile',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
         </div>
     </div>
-
 
 
 
@@ -38,6 +36,8 @@
         <div class="tfclear"></div>
     </div>
 
+
+    <p *ngIf="noFollowing() == 0" id="tagrba">You are not following anyone.</p>
 
 
     <ul style="list-style: none;">
@@ -58,10 +58,7 @@
 
                         </a> </div>
 
-                                    <address class="country">
-                          <br>
-                        {{post.country}}<br>
-                      </address>
+
 
                                 </div>
 
@@ -76,8 +73,8 @@
                         <div class="panel">
                             <div class="panel-body">
                                 <div class="media">
-                                    <a class="pull-left" [routerLink]="['/book', post.book_id]">
-                                        <img id="bookimage" src={{post.book_image}} alt="">
+                                    <a class="pull-left" [routerLink]="['/book', post.bookid]">
+                                        <img id="bookimage" src={{post.book_image}} alt="jj">
                                     </a>
                                     <div class="media-body">
                                         <div class="currentext"> Currently reading : </div>
@@ -85,7 +82,7 @@
                                             <button id="stopfollow" (click)="delFollowing(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light"> UnFollow </button>
                                         </div>
                                         <address>
-                            <a   id= "bookname" [routerLink]="['/book', post.book_id]" >
+                            <a   id= "bookname" [routerLink]="['/book', post.bookid]" >
                               <h4 class="bookhide" >{{post.currently_reading}} </h4>
 
                             </a>

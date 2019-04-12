@@ -10,10 +10,10 @@ export class ProfileService {
   /** create http object in the constructor to use httpClient  */
   constructor( private http: HttpClient ) { }
  /** url of localhost */
-  url = 'http://localhost:3000';
+  url = 'http://972c6e5d.ngrok.io/api';
    /** http request to get user profile info from json server */
   getUserprofile(id: number): Observable<any> {
-    return this.http.get<any> (this.url +"/profile/"+ id );
+    return this.http.get<any> (this.url +"/profile");
   }
  
 }

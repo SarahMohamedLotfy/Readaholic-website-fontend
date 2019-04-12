@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { followingComponent } from '../classes/followingComponent';
+import { nbind } from 'q';
+import {  HttpHeaders } from '@angular/common/http';
 
 /**Handles http requests related to people following the main user*/
 
@@ -15,7 +17,10 @@ export class HttpFollowinggService {
 */
   constructor(private http:HttpClient) { }
 
-  
+   httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    responseType: 'text' as 'text'
+  }
  /**
  *Getfollowing () is a get request to get the data of people following the main user 
  * and the books they are currently reading . 
@@ -31,6 +36,7 @@ getfollowing(){
 unfollow(id: number): Observable<any> {
       return this.http.delete('http://ffb1e410.ngrok.io/api/following/'+id )
     }
+    
 
     /**
  *Getfollowing () is a get request to get the data of people following the main user 

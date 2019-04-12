@@ -68,17 +68,21 @@ onSubmit(){
   if(this.form.valid){
   this.service.login(val.email,val.password).subscribe(
 (data:any) => {
+  console.log(data);
   localStorage.setItem('token',data.token);
-  this.users=data;
+  this.users=data.user;
   this.router.navigateByUrl('/home');
   this.wrongPass=false;
+  console.log(this.users);
 },
 err => {
   if(err.status ==405)
   {
   
   this.wrongPass=true;
-  this.error="incorrect username or password";
+  this.error=err.error.errors;
+  console.log(err);
+ 
   
   }
   else if(err.status== 404)

@@ -63,19 +63,16 @@ export class FollowingComponent implements OnInit {
 
  
    this.myfirstservice.getfollowing().subscribe((posts:any)=>{
-     console.log(posts.following);
       this.posts =posts.following ;
-      this.temp = posts;});
+      this.temp = posts.following;
+    console.log(posts)});
 
 
       
 
       this.profileservice.getUserprofile(90).subscribe(
         data => {
-          
-          this.selectedProfile = data,
-          (err: any) => console.log(err),
-          console.log(this.selectedProfile)
+          this.selectedProfile = data
                  }) ;
   
                  
@@ -83,12 +80,16 @@ export class FollowingComponent implements OnInit {
   /**
  * delFollowing () is a post request to remove the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
  */
-  delFollowing(id:number){
-    this.myfirstservice.unfollow(id).subscribe((data)=>{
+  delFollowing(user_id){
+    this.myfirstservice.unfollow(user_id).subscribe((data) =>{
          console.log("success");
-    });
+         this.myfirstservice.getfollowing().subscribe((posts:any)=>{
+          this.posts =posts.following ;
+          this.temp = posts.following;
+        console.log(posts)});
+           });
   }
-
+  
   
  /**
 *Search for the name of following person when click on search button  .

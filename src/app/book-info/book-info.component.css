@@ -9,7 +9,7 @@
 #leftCol {
     margin-top: 20px;
     margin-right: 35px;
-    min-width: 180px;;
+    min-width: 180px;
 }
 
 #reviewerName {
@@ -74,6 +74,16 @@
 #activity {
     font-family: "Merriweather", "Georgia", serif;
     font-size: 0.92rem;
+}
+
+.modal-content {
+    font-family: "Merriweather", "Georgia", serif;
+}
+
+textarea {
+    padding: 0px;
+    margin-left:10px;
+    margin-right:20px;
 }
 
 

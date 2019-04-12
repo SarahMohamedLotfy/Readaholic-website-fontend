@@ -21,9 +21,7 @@ import { catchError, retry } from 'rxjs/operators';
    return this.http.post('http://595e1fcd.ngrok.io/api/login',{email,password}) ;
  }
 
-   return this.http.post('http://972c6e5d.ngrok.io/api/login',{email,password}) ;
- }
-
+  
  signUp(email:string,password:string,password_confirmation:string,name:string,gender:string,birthday:Date,country:string,city:string): Observable<any>
  {
 

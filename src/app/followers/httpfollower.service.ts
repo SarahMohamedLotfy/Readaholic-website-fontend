@@ -24,7 +24,7 @@ export class HttpFollowingService {
  */
 
 getfollowers(){
-  return this.http.get('http://be1989bd.ngrok.io/api/followers');
+  return this.http.get('http://ffb1e410.ngrok.io/api/followers');
 
    }
    
@@ -37,7 +37,7 @@ getfollowers(){
   } */
   
   addFollowing ( nb):Observable<any> {
-    return this.http.post('http://be1989bd.ngrok.io/api/follow',{"user_id" : nb});
+    return this.http.post('http://ffb1e410.ngrok.io/api/follow',{"user_id" : nb});
     } 
   
  /**
@@ -46,11 +46,11 @@ getfollowers(){
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
   getfollowing(){
-    return this.http.get('http://be1989bd.ngrok.io/api/following');
+    return this.http.get('http://ffb1e410.ngrok.io/api/following');
   
   }
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://be1989bd.ngrok.io/api/unfollow?user_id='+ user_id);
+    return this.http.delete('http://ffb1e410.ngrok.io/api/unfollow?user_id='+ user_id);
   }
 }

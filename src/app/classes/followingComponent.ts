@@ -15,21 +15,18 @@
   /**
  * Image of the user following the main user .
  */
-  image_url: string;
+image_link: string;
   /**
  * Id of the book tht the user is currently reading .
  */
-  bookid:number;
+book_id:number;
   /**
  * Name of the book tht the user is currently reading .
  */
-  bookname:string; 
+currently_reading:string; 
  /**
  * Image of the book tht the user is currently reading .
  */ 
-  bookimage:string;
-  /**
- * Country of the user following the main user  .
- */ 
-country :string;
+book_image:string;
+  
 }

@@ -2,18 +2,22 @@
   <div class="container" id="firstContainer" *ngIf="selectedProfile" >
     <div class="row">
       <div class=" col-md-4 ">
-           <img id="profilePicture" [src]="selectedProfile.small_image_url" >
+           <img id="profilePicture" [src]="selectedProfile.image_link" >
+           <div class="moreUseractivity" >
+            <a [routerLink]="['/myBooks']" style="color: #B7673C"> {{ selectedProfile.rating_count }} rating</a>( {{ selectedProfile.rating_avg }} avg ) <br>
+
+           </div>
       </div>
       <div class=" col-md-4" >
         <div class="userName" id="userNameprofile">  {{ selectedProfile.name }} ( edit profile ) </div>
           <hr>
           <div class="Details">
              <b>Details:</b>
-            {{ selectedProfile.location }}
+            {{ selectedProfile.about }}
           </div>
           <div class="Activity">
            <b>Activity:</b>
-            {{ selectedProfile.joined }} , {{ selectedProfile.last_active }}
+            {{ selectedProfile.joined_at }} , {{ selectedProfile.last_active }}
           </div>
       </div>
 
@@ -34,9 +38,9 @@
                <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
                  <hr>
               <div class="userBookshelves">
-                    {{ selectedProfile.user_shelves[0].name }} ({{selectedProfile.user_shelves[0].book_count}})
-                    {{ selectedProfile.user_shelves[1].name }} ({{ selectedProfile.user_shelves[1].book_count }})
-                    {{ selectedProfile.user_shelves[2].name }} ({{ selectedProfile.user_shelves[2].book_count }})
+                     read (0)
+                     to-read (0)
+                     currently-reading (0)
                   </div>
                   <a [routerLink]="['/myBooks']" id="bookShelvesmore" > More.. </a>
                </div>

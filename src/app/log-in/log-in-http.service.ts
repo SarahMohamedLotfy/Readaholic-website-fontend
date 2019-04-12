@@ -7,20 +7,22 @@ import { catchError, retry } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root'
   })
-  
+
   export class LogInHttpService {
 
-    
+
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 
-    
+
     /**Sends a request to the server with the email and password to checks if they're correct */
     login(email:string,password:string): Observable<any>
  {
    return this.http.post('http://595e1fcd.ngrok.io/api/login',{email,password}) ;
  }
 
+   return this.http.post('http://ffb1e410.ngrok.io/api/login',{email,password}) ;
+ }
 
  signUp(email:string,password:string,password_confirmation:string,name:string,gender:string,birthday:Date,country:string,city:string): Observable<any>
  {

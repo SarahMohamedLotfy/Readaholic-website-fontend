@@ -6,3 +6,58 @@
     font-weight: bolder;
     font-size: -webkit-xxx-large;
 }
+
+#main {
+    min-width: 1400px;
+    margin: 0 auto;
+    max-height: 1000px;
+}
+
+#head {
+    background-color: black;
+    height: 100px;
+}
+
+#title {
+    height: 100%;
+    background-color: lightgoldenrodyellow;
+    min-width: 550px;
+    width: 50%;
+}
+
+#signIn {
+    height: 100%;
+    background-color: lightgoldenrodyellow;
+    min-width: 550px;
+    width: 50%;
+}
+
+#signInForm {
+    margin-top: 35px;
+    margin-left: 50px;
+}
+
+#signUp {
+    background-color: lightyellow;
+    min-height: 650px;
+    min-width: 700px;
+}
+
+#nextBook {
+    min-width: 500px;
+    width: 60%;
+    height: 100%;
+}
+
+#nextBookImg {
+    width: 52%;
+    height: 15%;
+    margin-top: 10%;
+    margin-left: 35%;
+    overflow: hidden;
+}
+
+#signUpForm {
+    min-width: 200px;
+    width: 40%;
+}

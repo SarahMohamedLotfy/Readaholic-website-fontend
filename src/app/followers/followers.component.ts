@@ -144,7 +144,9 @@ result:number;
    this.count = Object.keys(this.posts).length;
   return this.count;
 }
-  
+
+
+
   /**
 *Search for the name of follower person when click on search button  .
  */ 

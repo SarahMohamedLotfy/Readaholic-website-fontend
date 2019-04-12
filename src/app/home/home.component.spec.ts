@@ -30,7 +30,8 @@ fdescribe('HomeComponent', () => {
         HttpClientModule,
         RouterModule,
         RouterTestingModule,
-        NgbRatingModule
+        NgbRatingModule,
+        
         ]
     })
     .compileComponents();

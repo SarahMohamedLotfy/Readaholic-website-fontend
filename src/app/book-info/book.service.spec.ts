@@ -5,7 +5,7 @@ import { book } from '../classes/book';
 import { review } from '../classes/review';
 import { userBookInfo } from '../classes/userBookInfo';
 
-fdescribe('BookService', () => {
+describe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;
   let testBook: book = {
@@ -60,7 +60,7 @@ fdescribe('BookService', () => {
   let testUserBookinfo: userBookInfo = {
     "id": 1,
     "rating": 3.5,
-    "shelf_name": "Currently Reading",
+    "shelf_name": 1,
     "body": "Wow! Great closure on all levels. The pace was smooth. Written well. I couldn't put it down. I just found Cinda two years ago. Since then I have plowed through everything she has written. Every book was a joy to read. Highly recommend this author!!!"
   }
 
@@ -77,7 +77,7 @@ fdescribe('BookService', () => {
     httpTestingController.verify();
   });
 
- fit('should the selected book', () => {
+ it('should the selected book', () => {
     service.getBook(155).subscribe(
       (data: book) => {
         expect(data.genre).toBe('fiction');
@@ -88,7 +88,7 @@ fdescribe('BookService', () => {
 
   });
 
-  fit('should get the reviews', () => {
+  it('should get the reviews', () => {
     service.getBookReviews().subscribe(
       (data: review[]) => {
         expect(data.length).toBe(2);
@@ -112,7 +112,7 @@ fdescribe('BookService', () => {
 
   });
 
-  fit('should be created', () => {
+it('should be created', () => {
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
   });

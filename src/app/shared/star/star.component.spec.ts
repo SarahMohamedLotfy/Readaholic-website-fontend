@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StarComponent } from './star.component';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
-fdescribe('DropdownComponent', () => {
+describe('StarComponent', () => {
   let component: StarComponent;
   let fixture: ComponentFixture<StarComponent>;
 
@@ -21,7 +21,7 @@ fdescribe('DropdownComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

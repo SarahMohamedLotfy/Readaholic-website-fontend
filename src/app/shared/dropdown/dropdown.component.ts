@@ -34,7 +34,7 @@ removeEnabled: boolean = false;
  */
   ngOnChanges() {
     
-    if(this.shelfId !== null)
+    if(this.shelfId !== null &&this.shelfId !==3 )
     {
       this.shelfStatus = this.shelves[this.shelfId];
       this.buttonDisabled = true;

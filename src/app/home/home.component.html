@@ -13,35 +13,48 @@
                 <h5 class="mt-0"  >{{update.name}}</h5>
           
             <h6 class="mt-0" id="action"> {{update.actionText}}</h6>
+            <!--if it a book rate it-->
                 <app-star  *ngIf="update.actionText == ' rated a book '"[starsCount]="update.rating" [readOnly]="true"></app-star>
             
-     
-           
-        
+                <div class="pr-1"  *ngIf="update.update_type != 2" style="clear: both"   >
+                    <img class="avatar" src={{update.rev_user_imageLink}} alt="Generic placeholder image"  *ngIf="update.update_type === 3 ||update.update_type === 4"  >
+                    <small id="bodyOfreview" > {{update.body}}</small>
+                </div>
+             
+           <div  class="container" id="bookContainer" >
+    
                 <div class="media mt-3">
-                        <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.actionText != ' started following  : '" >
+                        <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.update_type === 0 || update.update_type === 1" >
                             <img src={{update.image_link}} alt="Generic placeholder image" style="float:'left'"  >
                         </a>
-                        <a class="pr-3" href="/profile/{{update.followed_id}}" *ngIf="update.actionText === ' started following  : '">
+                            <!--if someone followed someone -->
+                        <a class="pr-3" href="/profile/{{update.followed_id}}" *ngIf="update.update_type === 2">
                                 <img src={{update.followed_image_link}} alt="Generic placeholder image" style="float:'left'"   >
                             </a>
-                        
+                        <!--any update concerned with a review-->
+                      
+                            <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.update_type === 4 || update.update_type === 3" >
+                                <img src={{update.rev_user_imageLink}} alt="Generic placeholder image" style="float:'left'"  >
+                            </a>
+                           
                         <div  class="media-body">
                             <div  *ngIf="update.actionText != ' started following  : '">
                             <h5 class="mt-0"  >{{update.title}}<small><i>by {{update.author_name}}</i></small></h5>
                            
                           
-                            <app-dropdown > </app-dropdown>
+                            <app-dropdown [bookId]="update.book_id" [shelfId]="update.shelf" > </app-dropdown>
                             <div style="clear: both" >
                             <small style="float: 'left'">rate it </small>
-                            <app-star  [readOnly]="false" style="float: 'left'"></app-star> 
+                            <app-star   [bookId]="update.book_id" [shelf]="update.shelf"[readOnly]="false" style="float: 'left'"></app-star> 
                             </div>
                             <p>{{update.description}}</p>
                             </div>
+                            <!--if i folllowe dsomoen i will be able to folllow him-->
                             <div *ngIf="update.actionText === ' started following  : '" >
                                 <h5 >{{update.followed_name}}</h5> 
                                 <button type="button" class="btn btn-primary" id="followButton"(click)="addFollowing(update.followed_id)" >Follow {{update.followed_name}}</button>
                         </div>
+                      </div>
                         </div>
                        
                  

@@ -23,18 +23,18 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
-return this.http.get("http://5c456cf6.ngrok.io/api/updates")
+return this.http.get("http://972c6e5d.ngrok.io/api/updates")
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
 
     );
    }
-   addFollowing ( nb):Observable<any> {
-  return this.http.post('http://http://0c896ef8.ngrok.io/api/follow',{"user_id" : nb});
+   addFollowing (nb):Observable<any> {
+  return this.http.post('http://972c6e5d.ngrok.io/api/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
-    return this.http.post('http://localhost:3000/shelf/add_book',{"shelf_id": shelf,
+    return this.http.post('http://972c6e5d.ngrok.io/api/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
   /**

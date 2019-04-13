@@ -25,11 +25,8 @@ import { CommentsComponent } from './comments/comments.component';
    // RatingModule,
     FormsModule,
     NgbModule,
-<<<<<<< HEAD
-    AppRoutingModule
-=======
+    AppRoutingModule,
     ReactiveFormsModule
->>>>>>> b8e4d8029e95b3e0fe434def682186f1583db578
   ],
   exports: [
     CommonModule,

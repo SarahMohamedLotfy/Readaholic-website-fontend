@@ -8,6 +8,7 @@ import { Comments } from 'src/app/classes/Comments';
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
+ 
 })
 export class CommentsComponent implements OnInit {
   /** FormGroup to control the commentForm  */

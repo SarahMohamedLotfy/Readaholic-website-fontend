@@ -1,26 +1,23 @@
+/** receive the data of book from the json file */
 export class review{
- /**   id: number;
-    userId: string;
-    userName: string;
-    userImg: string;
-    bookId: number; /////
-    body: string;
-    rating: number;
-    lastUpdate: string; //as2ale 3l date
-    numberLikes: number;
-    numberComments: number; 
-    created_at:string;
-    updated_at: string;   ////data el ktab
-    */
-
+   /**id of the review */
    id: number;
+   /**id of the reviewed book */
    book_id: number;
+   /**body of the review */
    body: string;
+   /**rating of the book */
    rating: number;
+   /**the shelf where the reviewer stores the book */
    shelf_name: string;
+   /**number of likes on the review */
    likes_count: number;
+   /**number of commnets on the review */
    comments_count: number;
+   /**id of the user */
    user_id: number;
+   /**name of the user */
    username: string;
+   /**image of the user */
    userimagelink: string;
 }

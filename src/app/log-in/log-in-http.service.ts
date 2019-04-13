@@ -16,12 +16,12 @@ import { catchError, retry } from 'rxjs/operators';
 
 
     /**Sends a request to the server with the email and password to checks if they're correct */
-    login(email:string,password:string): Observable<any>
+ login(email:string,password:string): Observable<any>
  {
    return this.http.post('http://972c6e5d.ngrok.io/api/login',{email,password}) ;
  }
 
- 
+
 /**Sends a request to server with the variables that user entered to sign up a new user */
  signUp(email:string,password:string,password_confirmation:string,name:string,gender:string,birthday:Date,country:string,city:string): Observable<any>
  {
@@ -32,3 +32,4 @@ import { catchError, retry } from 'rxjs/operators';
     return this.http.delete('http://972c6e5d.ngrok.io/api/logout');
   }
   }
+

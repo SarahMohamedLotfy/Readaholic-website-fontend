@@ -64,6 +64,13 @@
     <code>src/app/shared/star/star.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>used to rate a book or display user rate on the book </p>
+
+    </p>
 
 
     <p class="comment">
@@ -196,7 +203,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/star/star.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/star/star.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -210,6 +217,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -224,6 +232,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>the http service which the star component uses to make a rating request </p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -252,7 +264,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/shared/star/star.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/shared/star/star.component.ts:25</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -279,7 +291,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/star/star.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/star/star.component.ts:19</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -300,7 +312,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/shared/star/star.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/star/star.component.ts:22</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -327,7 +339,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/star/star.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/star/star.component.ts:16</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -369,8 +381,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/shared/star/star.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/shared/star/star.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -408,15 +420,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/shared/star/star.component.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/shared/star/star.component.ts:40</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>rates a book </p>
+                    <div class="io-description"><p>rates a book when the user clicks on the stars </p>
 </div>
 
                     <div class="io-description">
@@ -458,7 +470,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/star/star.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/star/star.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -480,14 +492,12 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit, Output,EventEmitter, OnChanges } from &#x27;@angular/core&#x27;;
 import { BookService } from &#x27;src/app/book-info/book.service&#x27;;
 
-
-
+/**used to rate a book or display user rate on the book */
 @Component({
   selector: &#x27;app-star&#x27;,
   templateUrl: &#x27;./star.component.html&#x27;,
   styleUrls: [&#x27;./star.component.css&#x27;]
 })
-
 
 export class StarComponent implements OnInit {
   /**displayed rate */
@@ -503,30 +513,25 @@ export class StarComponent implements OnInit {
  @Input() bookId : number;
 
  /**@ignore */
- @Output() rated:EventEmitter&lt;string&gt; &#x3D; new EventEmitter&lt;string&gt;();
+ @Output() rated:EventEmitter&lt;number&gt; &#x3D; new EventEmitter&lt;number&gt;();
 
 /**rate done by the user */
 userRate: number &#x3D; 0;
-
+  /**@param {BookService} service the http service which the star component uses to make a rating request */
   constructor(private service: BookService) { }
 
   ngOnInit() {
    
   }
   
-  /**rates a book */
+  /**rates a book when the user clicks on the stars */
   onClick() {
-    
     if(this.readOnly &#x3D;&#x3D; false) {
       if(!this.shelf) {
         this.shelf &#x3D; 3;
       }
-      this.service.createReview(this.bookId,this.shelf,&quot;&quot;,this.userRate).subscribe((data)&#x3D;&gt;{
-        console.log(this.shelf);
-        console.log(data);
-        this.rated.emit();
-      });
-}
+      this.service.createReview(this.bookId,this.shelf,&quot;&quot;,this.userRate).subscribe(() &#x3D;&gt; this.rated.emit(this.userRate));
+    }
   }
 }
 </code></pre>
@@ -590,7 +595,7 @@ userRate: number &#x3D; 0;
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ngb-rating class="comp" [(ngModel)]="userRate"  [(rate)]="starsCount" [readonly]="readOnly " max=5 (click)="onClick()">    <ng-template let-fill="fill" let-index="index">        <span class="star" [class.filled]="fill">&#9733;</span>    </ng-template></ngb-rating>  </div>'
-    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'StarComponent'};
 </script>

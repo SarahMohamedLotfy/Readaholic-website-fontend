@@ -81,7 +81,7 @@ afterEach(() => {
 
       expect(service).toBeTruthy();
     })
-    fit('should be called with proper arguments', () => {
+    it('should be called with proper arguments', () => {
       const responseForm = '<form />';
       const homeService = TestBed.get(HomeService);
       const http = TestBed.get(HttpTestingController);

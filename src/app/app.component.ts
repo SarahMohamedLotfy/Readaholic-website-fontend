@@ -8,12 +8,17 @@ import { HttpService } from './http.service';
 import { user } from './classes/user';
 
 
-
+/**
+ * App component
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+/**
+ * App component
+ */
 export class AppComponent {
   title = 'frontend';
   user:user ;

@@ -89,9 +89,6 @@
                                 <a href="#getfollowing">getfollowing</a>
                             </li>
                             <li>
-                                <a href="#getfollowingg">getfollowingg</a>
-                            </li>
-                            <li>
                                 <a href="#getUserprofile">getUserprofile</a>
                             </li>
                             <li>
@@ -187,8 +184,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/app/following/httpfollowing.service.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/following/httpfollowing.service.ts:49</a></div>
                 </td>
             </tr>
 
@@ -253,80 +250,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getfollowingg"></a>
-                    <span class="name">
-                        <b>
-                            getfollowingg
-                        </b>
-                        <a href="#getfollowingg"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getfollowingg(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/app/following/httpfollowing.service.ts:45</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Getfollowing () is a get request to get the data of people following the main user 
- and the books they are currently reading by the name of following .
- The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>name</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="getUserprofile"></a>
                     <span class="name">
                         <b>
@@ -345,8 +268,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/following/httpfollowing.service.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/following/httpfollowing.service.ts:43</a></div>
                 </td>
             </tr>
 
@@ -512,15 +435,6 @@ getfollowing(){
     }
     
 
-    /**
- *Getfollowing () is a get request to get the data of people following the main user 
- * and the books they are currently reading by the name of following .
- * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
- */
-    getfollowingg(name:string){
-      return this.http.get(&#x27;http://972c6e5d.ngrok.io/api/following/&#x27;+name);
-    
-    } 
     /**
      * Get the profile information i used it to get the  name of the user.
      * */

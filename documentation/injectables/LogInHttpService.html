@@ -306,14 +306,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:26</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Sends a request to server with the variables that user entered to sign up a new user </p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -462,23 +464,22 @@ import { catchError, retry } from &#x27;rxjs/operators&#x27;;
 
 
     /**Sends a request to the server with the email and password to checks if they&#x27;re correct */
-    login(email:string,password:string): Observable&lt;any&gt;
+ login(email:string,password:string): Observable&lt;any&gt;
  {
-   return this.http.post(&#x27;http://595e1fcd.ngrok.io/api/login&#x27;,{email,password}) ;
+   return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/login&#x27;,{email,password}) ;
  }
 
-  
+
+/**Sends a request to server with the variables that user entered to sign up a new user */
  signUp(email:string,password:string,password_confirmation:string,name:string,gender:string,birthday:Date,country:string,city:string): Observable&lt;any&gt;
  {
-
    return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/signup&#x27;,{email,password,password_confirmation,name,gender,birthday,country,city}) ;
  }
 /**Loggs out the user from the website */
  logOut():Observable&lt;any&gt;{
     return this.http.delete(&#x27;http://972c6e5d.ngrok.io/api/logout&#x27;);
- 
-  }}
-
+  }
+  }
 </code></pre>
     </div>
 

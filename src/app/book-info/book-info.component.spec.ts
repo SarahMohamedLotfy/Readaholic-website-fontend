@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 
 
-fdescribe('BookInfoComponent', () => {
+describe('BookInfoComponent', () => {
   let fixture: ComponentFixture<BookInfoComponent>;
   let mockActivatedRoute,mockRouter,mockService;
 
@@ -93,14 +93,14 @@ fdescribe('BookInfoComponent', () => {
     fixture = TestBed.createComponent(BookInfoComponent); 
   });
 
-  fit('should render the book title', () => {
+  it('should render the book title', () => {
     fixture.detectChanges();
     expect(fixture.componentInstance.myBook.title).toEqual('book title');
     //expect(document.getElementById('Booktitle').innerText).toContain("book title");
   });
 
 
-  fit('should create review', () => {
+  it('should create review', () => {
     fixture.componentInstance.ngOnInit();
     fixture.componentInstance.createReview();
     //document.getElementById('post').click();

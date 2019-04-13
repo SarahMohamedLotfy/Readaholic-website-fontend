@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { review } from '../classes/review';
 import { book } from '../classes/book';
 import { userBookInfo } from '../classes/userBookInfo';
 import { BookService } from './book.service';
+import { LikesService } from '../shared/likes/likes.service';
+
 /**component to show details of a specific book */
 @Component({
   selector: 'app-book-info',
@@ -20,6 +21,8 @@ export class BookInfoComponent implements OnInit {
   userInfo: userBookInfo;
   /**true if user mode false if guest mode */
   isUser: boolean;
+
+
 /**takes as parameters object of book service and activiated route to get the selected book id */
   constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
   }
@@ -38,6 +41,7 @@ export class BookInfoComponent implements OnInit {
     this.isUser = true;
   }
   }
+
 }
-  
+
 

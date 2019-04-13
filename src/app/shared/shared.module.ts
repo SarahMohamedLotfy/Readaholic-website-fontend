@@ -2,32 +2,39 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 //import {RatingModule} from "ng2-rating";
 
 import { StarComponent } from './star/star.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LikesComponent } from './likes/likes.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     StarComponent,
     DropdownComponent,
-    NavbarComponent
+    NavbarComponent,
+    LikesComponent,
+    CommentsComponent
   ],
   imports: [
     CommonModule,
    // RatingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
     FormsModule,
     StarComponent,
     DropdownComponent,
-    NavbarComponent
-    
+    NavbarComponent,
+    LikesComponent,
+    CommentsComponent
+
   ]
 })
 export class SharedModule { }

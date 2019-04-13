@@ -3,9 +3,10 @@
     <div class="row">
       <div class=" col-md-4 ">
            <img id="profilePicture" [src]="selectedProfile.image_link" >
-           <div class="moreUseractivity" >
+           <div >
+             <p class="moreUseractivity" >
             <a [routerLink]="['/myBooks']" style="color: #B7673C"> {{ selectedProfile.rating_count }} rating</a>( {{ selectedProfile.rating_avg }} avg ) <br>
-
+             </p>
            </div>
       </div>
       <div class=" col-md-4" >
@@ -13,12 +14,16 @@
           <hr>
           <div class="Details">
              <b>Details:</b>
-            {{ selectedProfile.about }}
+            Age {{ selectedProfile.age }} , {{ selectedProfile.city }}
           </div>
           <div class="Activity">
            <b>Activity:</b>
-            {{ selectedProfile.joined_at }} , {{ selectedProfile.last_active }}
+            Joined in {{ selectedProfile.joined_at }} , Last Active in {{ selectedProfile.last_active }}
           </div>
+          <div class="Birthday">
+          <b>Birthday:</b>
+          {{ selectedProfile.birthday }}
+        </div>
       </div>
 
     </div>

@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -54,10 +54,18 @@
                 <div class="media-body" id="reviewInfo">
                     <h6 ><b [routerLink]="['/profile',review.userId]" id="reviewerName">{{review?.userName}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>
                     <p>{{review?.body}}</p>
-                    <small>{{review?.numberLikes}} likes    {{review?.numberComments}} comments</small>
+                    <small>{{review?.numberLikes}} like
+
+                     <app-likes [user]='review.userId' [resourse_id]= 'review.id' ></app-likes>
+
+                      {{review?.numberComments}} Comments
+                       <app-comments  [user]='review.userId' [resourse_id]='review.id' ></app-comments>
+
+
+                    </small>
                 </div>
                 <div class="col-md-3"></div>
             </div>
         </div>
     </div>
-   
+

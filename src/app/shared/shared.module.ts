@@ -21,13 +21,14 @@ import { CommentsComponent } from './comments/comments.component';
   ],
   imports: [
     
-      CommonModule,
-    //RatingModule,
-      FormsModule,
-      NgbModule,
-      AppRoutingModule,
-      ReactiveFormsModule
     
+    CommonModule,
+  //RatingModule,
+    FormsModule,
+    NgbModule,
+    AppRoutingModule,
+    ReactiveFormsModule
+
   ],
   exports: [
     CommonModule,

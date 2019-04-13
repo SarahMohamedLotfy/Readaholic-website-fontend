@@ -8,6 +8,7 @@ import { Comments } from 'src/app/classes/Comments';
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
+ 
 })
 export class CommentsComponent implements OnInit {
   /** FormGroup to control the commentForm  */
@@ -25,7 +26,7 @@ export class CommentsComponent implements OnInit {
     this.createForm();
    }
   ngOnInit() {
-    this.ser.getCommentsList().subscribe((data: Comments[]) => this.CommentList = data);
+   // this.ser.getCommentsList().subscribe((data: Comments[]) => this.CommentList = data);
   }
 
   createForm(){
@@ -44,6 +45,7 @@ export class CommentsComponent implements OnInit {
      onSubmit()
      {
            this.ser.commentOnobject( this.user, this.resourse_id, 0 , this.CommentForm.get('content').value);
+           this.CommentForm.reset();
      }
 
 

@@ -10,7 +10,8 @@ let httpService: ProfileService;
 
 let httpTestingController: HttpTestingController;
 
-/*let testProfiles: profile [] = [{id: 1, name: 'killua zoldyck', /*, link: '',
+
+let testProfiles: any [] = [{id: 1, name: 'killua zoldyck', user_name: 'killua_99', link: '',
 small_image_url: 'https://pbs.twimg.com/profile_images/955923907051184129/8LxKsoPl_400x400.jpg',
 about: 'coolest kid ever ', age: 14, gender: 'male', location: 'far away mountain', joined: 'at 1999' , last_active: 'at 2011',
 user_shelves: {id: 2, name: 'read', book_count: 0}},

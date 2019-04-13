@@ -2,12 +2,11 @@
 
 export class user{
 
-    /**id of the user */
-    id: number;
+    /**the name of the user */
+    name:string;
     /**the username of the logged in user */
     username:string ;
-    /**the password of the user */
-    password:string;
+    
     /**the image url of the logged in user */
     image_link:string;
    

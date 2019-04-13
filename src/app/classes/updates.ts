@@ -6,13 +6,13 @@ image_link:string ;
 /** date of update */
 updated_at: string ;
 rating:number ;
-update_type:string;
+update_type:number;
 /** rated,reviewed,liked,commented,added to shelf */
 actionText:string;
 name:string;
 title:string;
 body:string;
-shelf:number ;
+shelf_type:number ;
 author_name:string ;
 followed_image_link:string ;
 /** avatar of autheticated user*/
@@ -31,4 +31,9 @@ book_id:number;
   /** in case of type 2 of updates */
   followed_name:string ;
   followed_id:number ;
+  rev_user_id:number;
+  rev_user_image:string;
+  rev_user_imageLink:string;
+  shelf:number ;
+  auth_user_following:number;
 }

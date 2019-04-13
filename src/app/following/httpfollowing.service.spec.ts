@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@ang
 import { HttpFollowinggService } from './httpfollowing.service';
 import { followingComponent } from '../classes/followingComponent';
 
-fdescribe('HttpFollowingService', () => {
+describe('HttpFollowingService', () => {
   let service: HttpFollowinggService;
   let httpTestingController: HttpTestingController;
   
@@ -20,7 +20,7 @@ fdescribe('HttpFollowingService', () => {
     httpTestingController.verify();
   });
 
-  fit('should be created', () => {
+  it('should be created', () => {
     const service: HttpFollowinggService = TestBed.get(HttpFollowinggService);
     expect(service).toBeTruthy();
   });

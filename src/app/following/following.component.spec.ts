@@ -16,7 +16,7 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 
-fdescribe('FollowingComponent', () => {
+describe('FollowingComponent', () => {
   let component: FollowingComponent;
   let fixture: ComponentFixture<FollowingComponent>;
   let de: DebugElement;
@@ -45,7 +45,7 @@ fdescribe('FollowingComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 

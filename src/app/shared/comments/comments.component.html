@@ -1,0 +1,28 @@
+<small><button (click)="toggleComments()" > Comment
+   </button>
+  </small>
+  <div *ngIf="commentFlag==true">
+<div class="detailBox">
+    <div class="actionBox" >
+          <div class="CommentsList" *ngFor='let com of CommentList'>
+            <div class="condition" *ngIf=" com.resourse_id == resourse_id ">
+             <div class="commenterImage">
+                  <img src="http://placekitten.com/40/40" />
+                </div>
+                      <div class="commentText">
+                       <p>{{com?.comment_body}}</p>
+                            </div>
+                            <hr>
+              </div>
+          </div>
+        <form [formGroup]="CommentForm" class="form-inline" role="form">
+            <div class="form-group">
+                <input class="form-control" type="text" formControlName="content" placeholder="Write a comment.." />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" [disabled]="CommentForm.invalid" (click)="onSubmit()" >Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

@@ -11,7 +11,7 @@ import { userBookInfo } from '../classes/userBookInfo';
 })
 
 export class BookService {
-/**constructor of book service */
+/**@param {HttpClient} http to handle http requests get,post etc */
   constructor(private http:HttpClient) { }
 
   /**

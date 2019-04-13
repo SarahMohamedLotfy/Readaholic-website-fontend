@@ -4,19 +4,36 @@ import { BookService } from './book.service';
 import { book } from '../classes/book';
 import { review } from '../classes/review';
 import { userBookInfo } from '../classes/userBookInfo';
+import { async } from 'q';
 
 describe('Book Service', () => {
-  let httpTestingController: HttpTestingController;
+  let http: HttpTestingController;
+  let service
 
-  TestBed.configureTestingModule({
-    providers: [BookService],
-    imports: [HttpClientTestingModule]
-  });
-
-  httpTestingController = TestBed.get(HttpClientTestingModule);
-
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [BookService],
+      imports: [HttpClientTestingModule]
+    });
   
+    http = TestBed.get(HttpClientTestingModule);
+    service = TestBed.get(BookService);
+  }) 
+
+  it('get book', () => {
+    const responseForm = '<form />';
+    let bookResponse;
+    service.getBook(173).subscribe((response) => bookResponse = response );
+
+    http.expectOne({
+      url: 'https://localhost:3000/book/173',
+      method: 'GET'
+    }).flush(responseForm);
+    expect(bookResponse).toEqual(responseForm);
+  })
+
 })
+
 /*describe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;

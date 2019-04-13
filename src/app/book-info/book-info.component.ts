@@ -4,6 +4,7 @@ import { review } from '../classes/review';
 import { book } from '../classes/book';
 import { userBookInfo } from '../classes/userBookInfo';
 import { BookService } from './book.service';
+import { generateExpandoInstructionBlock } from '@angular/core/src/render3/instructions';
 
 /**component to show details of a specific book */
 @Component({
@@ -101,8 +102,6 @@ open(rate: number) {
   if(!this.userInfo) {
     document.getElementById("openModalButton").click();
   }
-
 }
-
 
 }

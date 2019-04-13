@@ -37,20 +37,3 @@ updated_at: string;
 /** genre:comedy,tragedy,..etc */
 genre: string;  
 }
-    
-/*   id: number;
-  title: string;
-  isbn: number;
-  imageUrl: string;
-  pagesNum: number;
-  publisher: string;
-  publicationDate: string;
-  ratingsAvg: number;
-  ratingsCount:number;
-  reviewsCount: number;
-  description: string;
-  authorId: number;
-  authorName: string;
-  genre: string;
-  link: string;
-*/

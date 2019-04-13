@@ -4,14 +4,12 @@
 import { Component, Input, OnInit, Output,EventEmitter, OnChanges } from '@angular/core';
 import { BookService } from 'src/app/book-info/book.service';
 
-
-
+/**used to rate a book or display user rate on the book */
 @Component({
   selector: 'app-star',
   templateUrl: './star.component.html',
   styleUrls: ['./star.component.css']
 })
-
 
 export class StarComponent implements OnInit {
   /**displayed rate */
@@ -31,14 +29,14 @@ export class StarComponent implements OnInit {
 
 /**rate done by the user */
 userRate: number = 0;
-
+  /**@param {BookService} service the http service which the star component uses to make a rating request */
   constructor(private service: BookService) { }
 
   ngOnInit() {
    
   }
   
-  /**rates a book */
+  /**rates a book when the user clicks on the stars */
   onClick() {
     if(this.readOnly == false) {
       if(!this.shelf) {

@@ -1,8 +1,6 @@
 import { Component, Input, OnChanges, AfterViewChecked, Output,EventEmitter } from '@angular/core';
 
-
-
-
+/**used to add or remove a book from a shelf  */
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
@@ -21,8 +19,6 @@ shelves: string[] = ["Read", "Currently Reading", "Want To Read"];
 /** the displayed shelf */
 shelfStatus: string = this.shelves[2];
 
-/**event emitter  */ //fakre feha
-@Output() shelfSelected: EventEmitter<string> = new EventEmitter<string>();
 /**@ignore */
 buttonDisabled: boolean = false; 
 
@@ -30,7 +26,7 @@ buttonDisabled: boolean = false;
 removeEnabled: boolean = false;
 
 
-  constructor() { }
+constructor() { }
 /** sets the displayed shelf
  *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
  * 
@@ -44,13 +40,17 @@ ngOnChanges() {
     }
   }
 
-  /**changes the state of the remove button on hover */
+  /**changes the state of the remove button on hover
+   * @param {Event} eventObj
+   */
   mouseEnter(eventObj: Event){
     var e = <HTMLElement> eventObj.srcElement;
     e.innerHTML = "&#10008; "
   }
 
-  /**changes the state of the remove button on leave */
+  /**changes the state of the remove button on leave
+   * @param {Event} eventObj
+   */
   mouseLeave(eventObj: Event){
     var e = <HTMLElement> eventObj.srcElement;
     e.innerHTML = "&#10003; "

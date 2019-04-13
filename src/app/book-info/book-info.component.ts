@@ -4,7 +4,6 @@ import { review } from '../classes/review';
 import { book } from '../classes/book';
 import { userBookInfo } from '../classes/userBookInfo';
 import { BookService } from './book.service';
-import { userInfo } from 'os';
 
 /**component to show details of a specific book */
 @Component({
@@ -36,13 +35,15 @@ export class BookInfoComponent implements OnInit {
   shelfName:string = "";
 
 
-/**takes as parameters object of book service and activiated route to get the selected book id */
+/**
+ * @param {BookService} service injected book service instance
+ * @param {ActivatedRoute} route activated route instance
+ * @param {Router} router router inastance to route by code 
+ */
   constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
   }
 
-  /**gets the information of the selected book from the server and setes user mode or guest mode
-   * and navigates to page not found if the user types a wrong book id
-    */
+  /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
 
     this.service.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
@@ -78,9 +79,6 @@ export class BookInfoComponent implements OnInit {
 
  this.service.getBookReviews(+this.route.snapshot.paramMap.get('id')).subscribe((data) => this.reviews = data.pages);
 
-
-
-
   if(localStorage.getItem('token') == null){
     this.isUser = false;
   }
@@ -89,8 +87,8 @@ export class BookInfoComponent implements OnInit {
   }
 }
 
+/**calls the book service funstion to create a review */
 createReview () {
-  console.log(this.info.rating);
  this.service.createReview(this.myBook.id,this.info.shelf_name,this.info.body,this.info.rating).subscribe((data) => {this.userInfo = data.pages; console.log(data);});
 }
 

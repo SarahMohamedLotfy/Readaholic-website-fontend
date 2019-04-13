@@ -19,13 +19,8 @@
       "name": "Huda Yahya",
       "image_link": "https://images.gr-assets.com/books/1529823092l/39320115.jpg",
       "author_name": "Cinda Williams Chima",
-<<<<<<< HEAD
       "update_type": 0,
       "shelf_type": 1
-=======
-      "update_type": "0",
-      "shelf": 1
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
     },
     {
       "id": 1,
@@ -34,24 +29,19 @@
       "likes_count": null,
       "comments_count": null,
       "book_id": 1,
-<<<<<<< HEAD
+
       "body": "i think this book is amazing and i enjoyed reading it",
       "shelf_type": 1,
-=======
+
       "shelf": 1,
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
       "title": "To Kill a Kingdom",
       "description": "great book ",
-      "img_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
-      "reviews_count": null,
-      "ratings_count": null,
       "ratings_avg": null,
       "pages_no": null,
       "user_id": 2,
       "name": "Ahmed Elsayed",
       "image_link": "https://images.gr-assets.com/books/1524322945l/34499221.jpg",
       "author_name": "Alexandra Christo",
-<<<<<<< HEAD
       "update_type": 0
     },
     {
@@ -81,9 +71,6 @@
       "author_name": "Dr. Christop Williamson",
       "update_type": 3,
       "shelf": 3
-=======
-      "update_type": "1"
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
     },
     {
       "id": 2,
@@ -122,11 +109,7 @@
       "followed_id": 3,
       "followed_image_link": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
       "followed_name": "Mohamed Hayalla",
-<<<<<<< HEAD
       "update_type": 2
-=======
-      "update_type": "2"
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
     },
     {
       "id": 5,
@@ -172,7 +155,6 @@
       "name": "Huda Yahia",
       "image_link": "https://images.gr-assets.com/books/1367312471l/12813630.jpg",
       "author_name": "Holly Black",
-<<<<<<< HEAD
       "update_type": 1
     }
   ],
@@ -184,9 +166,6 @@
     {
       "user_id": 3,
       "id": 2
-=======
-      "update_type": "1"
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
     }
   ],
   "Profile": [
@@ -202,7 +181,6 @@
       "joined": " 2 days ago ",
       "last_active": "1 day ago ",
       "user_shelves": [
-<<<<<<< HEAD
         {
           "id": 1,
           "type": 3,
@@ -833,196 +811,6 @@
         {
           "name": "to-read",
           "book_count": "0"
-=======
-        {
-          "id": "1",
-          "name": "read",
-          "book_count": "30"
-        },
-        {
-          "id": "54321",
-          "name": "currently-reading",
-          "book_count": "40"
-        },
-        {
-          "id": "22",
-          "name": "to-read",
-          "book_count": "20"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "name": "Huda Yahya",
-      "user_name": "MAi_mostafa99",
-      "small_image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-      "about": "i am very cool",
-      "age": "90",
-      "gender": "female",
-      "location": "giza haram",
-      "joined": " 2 days ago ",
-      "last_active": "1 day ago ",
-      "user_shelves": [
-        {
-          "id": "1",
-          "name": "read",
-          "book_count": "30"
-        },
-        {
-          "id": "54321",
-          "name": "currently-reading",
-          "book_count": "40"
-        },
-        {
-          "id": "22",
-          "name": "to-read",
-          "book_count": "20"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Ahmed Elsayed",
-      "user_name": "MAi_mostafa99",
-      "small_image_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
-      "about": "i am very cool",
-      "age": "90",
-      "gender": "female",
-      "location": "giza haram",
-      "joined": " 2 days ago ",
-      "last_active": "1 day ago ",
-      "user_shelves": [
-        {
-          "id": "1",
-          "name": "read",
-          "book_count": "30"
-        },
-        {
-          "id": "54321",
-          "name": "currently-reading",
-          "book_count": "40"
-        },
-        {
-          "id": "22",
-          "name": "to-read",
-          "book_count": "20"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Mohamed Hayalla",
-      "user_name": "MAi_mostafa99",
-      "small_image_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
-      "about": "i am very cool",
-      "age": "90",
-      "gender": "female",
-      "location": "giza haram",
-      "joined": " 2 days ago ",
-      "last_active": "1 day ago ",
-      "user_shelves": [
-        {
-          "id": "1",
-          "name": "read",
-          "book_count": "30"
-        },
-        {
-          "id": "54321",
-          "name": "currently-reading",
-          "book_count": "40"
-        },
-        {
-          "id": "22",
-          "name": "to-read",
-          "book_count": "20"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Walid Hassan",
-      "user_name": "MAi_mostafa99",
-      "small_image_url": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
-      "about": "i am very cool",
-      "age": "90",
-      "gender": "female",
-      "location": "giza haram",
-      "joined": " 2 days ago ",
-      "last_active": "1 day ago ",
-      "user_shelves": [
-        {
-          "id": "1",
-          "name": "read",
-          "book_count": "30"
-        },
-        {
-          "id": "54321",
-          "name": "currently-reading",
-          "book_count": "40"
-        },
-        {
-          "id": "22",
-          "name": "to-read",
-          "book_count": "20"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Kamal Shaker",
-      "user_name": "MAi_mostafa99",
-      "small_image_url": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
-      "about": "i am very cool",
-      "age": "90",
-      "gender": "female",
-      "location": "giza haram",
-      "joined": " 2 days ago ",
-      "last_active": "1 day ago ",
-      "user_shelves": [
-        {
-          "id": "1",
-          "name": "read",
-          "book_count": "30"
-        },
-        {
-          "id": "54321",
-          "name": "currently-reading",
-          "book_count": "40"
-        },
-        {
-          "id": "22",
-          "name": "to-read",
-          "book_count": "20"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "Eslam Ahmed",
-      "user_name": "MAi_mostafa99",
-      "small_image_url": "https://images.gr-assets.com/photos/1551961617p8/3783093.jpg",
-      "about": "i am very cool",
-      "age": "90",
-      "gender": "female",
-      "location": "giza haram",
-      "joined": " 2 days ago ",
-      "last_active": "1 day ago ",
-      "user_shelves": [
-        {
-          "id": "1",
-          "name": "read",
-          "book_count": "30"
-        },
-        {
-          "id": "54321",
-          "name": "currently-reading",
-          "book_count": "40"
-        },
-        {
-          "id": "22",
-          "name": "to-read",
-          "book_count": "20"
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
         }
       ]
     }

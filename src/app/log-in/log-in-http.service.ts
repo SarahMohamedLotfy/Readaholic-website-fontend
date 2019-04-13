@@ -18,11 +18,7 @@ import { catchError, retry } from 'rxjs/operators';
     /**Sends a request to the server with the email and password to checks if they're correct */
     login(email:string,password:string): Observable<any>
  {
-<<<<<<< HEAD
    return this.http.post('http://972c6e5d.ngrok.io/api/login',{email,password}) ;
-=======
-   return this.http.post('http://a6df2b7f.ngrok.io/api/login',{email,password}) ;
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
  }
 
  
@@ -33,10 +29,5 @@ import { catchError, retry } from 'rxjs/operators';
  }
 /**Loggs out the user from the website */
  logOut():Observable<any>{
-<<<<<<< HEAD
     return this.http.delete('http://972c6e5d.ngrok.io/api/logout');
-=======
-    return this.http.delete('http://a6df2b7f.ngrok.io/api/logout');
-  }
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
   }

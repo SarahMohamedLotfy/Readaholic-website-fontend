@@ -35,15 +35,9 @@ removeEnabled: boolean = false;
  *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
  * 
  */
-<<<<<<< HEAD
-  ngOnChanges() {
-    
-    if(this.shelfId !== null &&this.shelfId !==3 )
-=======
 ngOnChanges() {
     console.log(this.shelfId);
     if(this.shelfId !== null)
->>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
     {
       console.log(this.shelfId);
       this.shelfStatus = this.shelves[this.shelfId];

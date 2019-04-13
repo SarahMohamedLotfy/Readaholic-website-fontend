@@ -50,30 +50,22 @@ fdescribe('FollowersComponent', () => {
     expect(component).toBeTruthy();
   });
 
+// Unit test for deletefollowing function check if the count of following peole decrease ?
 
+  it('should be able to decrement the count (-1)', () => {
 
-  it('should show followers list ', () => {
-    component.posts = {
-    
-        "id": 1,
-        "name": "Huda Yahya",
-        "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-        "bookid": 3,
-        "bookname": "اخر ايام الارض ",
-        "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
-        "country": "Asuit,Egypt"
-      
-      
-    };
+    component.delFollowing(7);
+    expect(component.count).toEqual(5);
+  });
 
-    fixture.detectChanges();
-    const titleElement: HTMLElement = fixture.debugElement.query( By.css('#profilename')).nativeElement;
-   expect(titleElement.innerText).toContain('Huda Yahya');
- });
+  
+  // Unit test for addfollowing function check if the count of following peole decrease ?
 
+  it('should be able to increment the count (+1)', () => {
 
-
-
+    component.add(7);
+    expect(component.count).toEqual(6);
+  });
 
 
 });

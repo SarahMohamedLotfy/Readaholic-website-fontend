@@ -279,7 +279,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             if (request.url.endsWith(&#x27;/login&#x27;) &amp;&amp; request.method &#x3D;&#x3D;&#x3D; &#x27;POST&#x27;) {
                 
                 console.log(request.body.email);
-               
+               console.log(&#x27;djkf&#x27;);
                
                 const user &#x3D; users.find(x &#x3D;&gt; x.username &#x3D;&#x3D;&#x3D; request.body.email &amp;&amp; x.password &#x3D;&#x3D;&#x3D; request.body.password);
                 if(!request.body.email|| !request.body.password) return noInput(&#x27;You must enter user name and password&#x27;);
@@ -296,9 +296,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             if (request.url.endsWith(&#x27;/updates&#x27;) &amp;&amp; request.method &#x3D;&#x3D;&#x3D; &#x27;GET&#x27;) {
                 // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
-                console.log(&#x27;enter&#x27;);
+                
                 if (request.headers.get(&#x27;Authorization&#x27;) &#x3D;&#x3D;&#x3D; &#x27;bearer fake-jwt-token&#x27;) {
-                    console.log(&#x27;holaaa&#x27;);
+                    
                     
                     return next.handle(request);
                 } else {

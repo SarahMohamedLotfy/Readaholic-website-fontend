@@ -8,7 +8,7 @@ import { userBookInfo } from '../classes/userBookInfo';
 describe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;
-  let testBook: book = {
+ /* let testBook: book = {
     "id": 155,
     "title": "The Raven Boys",
     "isbn": 53333338,
@@ -27,7 +27,7 @@ describe('BookService', () => {
     "link": "kkkkk"
   }
 
-  let testReview: review[] = [
+  /*let testReview: review[] = [
     {
       "id": 5,
       "bookId": 11,
@@ -110,7 +110,7 @@ describe('BookService', () => {
     expect(request.request.method).toEqual('GET');
     request.flush(testUserBookinfo);
 
-  });
+  });*/
 
   it('should be created', () => {
     const service: BookService = TestBed.get(BookService);

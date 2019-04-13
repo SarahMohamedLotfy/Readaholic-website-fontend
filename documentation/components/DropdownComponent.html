@@ -70,7 +70,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
     </p>
 
 
@@ -132,6 +132,9 @@
                             <li>
                                 <a href="#shelfStatus">shelfStatus</a>
                             </li>
+                            <li>
+                                <a href="#shelves">shelves</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -145,7 +148,19 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#addBookToShelf">addBookToShelf</a>
+                            </li>
+                            <li>
+                                <a href="#mouseEnter">mouseEnter</a>
+                            </li>
+                            <li>
+                                <a href="#mouseLeave">mouseLeave</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#removeBookFromShelf">removeBookFromShelf</a>
                             </li>
                         </ul>
                     </td>
@@ -160,12 +175,29 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#shelf">shelf</a>
+                                <a href="#bookId">bookId</a>
+                            </li>
+                            <li>
+                                <a href="#shelfId">shelfId</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#shelfSelected">shelfSelected</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -179,15 +211,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(service: <a href="../injectables/ShelfService.html">ShelfService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:30</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ShelfService.html" target="_self" >ShelfService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -198,31 +260,87 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="shelf"></a>
-                        <b>shelf</b>
+                        <a name="bookId"></a>
+                        <b>bookId</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:16</a></div>
                             </td>
                         </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>stores the input shelf </p>
+                        <div class="io-description"><p>the input book id from the parent component </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shelfId"></a>
+                        <b>shelfId</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:13</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>the input shelf id from the parent component </p>
 </div>
                     </td>
                 </tr>
             </tbody>
         </table>
 </section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shelfSelected"></a>
+                        <b>shelfSelected</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;string&gt;</code>
 
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:25</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>event emitter  </p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
     <section>
@@ -234,26 +352,242 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
+                    <a name="addBookToShelf"></a>
                     <span class="name">
                         <b>
-                            ngOnInit
+                            addBookToShelf
                         </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        <a href="#addBookToShelf"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnInit()</code>
+<code>addBookToShelf(eventObj: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>add a book to the selected shelf</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>eventObj</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mouseEnter"></a>
+                    <span class="name">
+                        <b>
+                            mouseEnter
+                        </b>
+                        <a href="#mouseEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mouseEnter(eventObj: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>changes the state of the remove button on hover </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>eventObj</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mouseLeave"></a>
+                    <span class="name">
+                        <b>
+                            mouseLeave
+                        </b>
+                        <a href="#mouseLeave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mouseLeave(eventObj: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>changes the state of the remove button on leave </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>eventObj</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <b>
+                            ngOnChanges
+                        </b>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -262,6 +596,47 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>sets the displayed shelf
 if the user has the specified book on a certain shelf then it displayes the shelf name other wise it&#39;s set to its default value</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeBookFromShelf"></a>
+                    <span class="name">
+                        <b>
+                            removeBookFromShelf
+                        </b>
+                        <a href="#removeBookFromShelf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeBookFromShelf()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>remove a book from the shelf it was added to </p>
 </div>
 
                     <div class="io-description">
@@ -298,18 +673,56 @@ if the user has the specified book on a certain shelf then it displayes the shel
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&quot;Want to Read&quot;</code>
+                            <i>Default value : </i><code>this.shelves[2]</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:22</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>shelf name to be displayed </p>
+                        <div class="io-description"><p>the displayed shelf </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shelves"></a>
+                        <span class="name">
+                            <b>
+                            shelves</b>
+                            <a href="#shelves"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&quot;Read&quot;, &quot;Currently Reading&quot;, &quot;Want To Read&quot;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>shelves array </p>
 </div>
                     </td>
                 </tr>
@@ -322,7 +735,9 @@ if the user has the specified book on a certain shelf then it displayes the shel
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit, OnChanges, AfterViewChecked, Output,EventEmitter  } from &#x27;@angular/core&#x27;;
+import { ShelfService } from &#x27;./shelf.service&#x27;;
+
 
 
 @Component({
@@ -330,27 +745,79 @@ if the user has the specified book on a certain shelf then it displayes the shel
   templateUrl: &#x27;./dropdown.component.html&#x27;,
   styleUrls: [&#x27;./dropdown.component.css&#x27;]
 })
-export class DropdownComponent implements OnInit {
- /**stores the input shelf */ 
-@Input() shelf: string;
-/**shelf name to be displayed */
-shelfStatus: string &#x3D; &quot;Want to Read&quot;;
+export class DropdownComponent implements OnChanges {
+/**the input shelf id from the parent component */ 
+@Input() shelfId: number;
+
+/**the input book id from the parent component */
+@Input() bookId: number;
+
+/**shelves array */
+shelves: string[] &#x3D; [&quot;Read&quot;, &quot;Currently Reading&quot;, &quot;Want To Read&quot;];
+
+/** the displayed shelf */
+shelfStatus: string &#x3D; this.shelves[2];
+
+/**event emitter  */ //fakre feha
+@Output() shelfSelected: EventEmitter&lt;string&gt; &#x3D; new EventEmitter&lt;string&gt;();
 /**@ignore */
 buttonDisabled: boolean &#x3D; false; 
 
+/**@ignore */
+removeEnabled: boolean &#x3D; false;
 
-  constructor() { }
+
+  constructor(private service: ShelfService) { }
 /** sets the displayed shelf
  *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it&#x27;s set to its default value
  * 
  */
-  ngOnInit() {
-    if(this.shelf)
+ngOnChanges() {
+    console.log(this.shelfId);
+    if(this.shelfId !&#x3D;&#x3D; null)
     {
-      this.shelfStatus &#x3D; this.shelf;
+      console.log(this.shelfId);
+      this.shelfStatus &#x3D; this.shelves[this.shelfId];
       this.buttonDisabled &#x3D; true;
+      this.removeEnabled &#x3D; true;
     }
   }
+
+  /**changes the state of the remove button on hover */
+  mouseEnter(eventObj: Event){
+    var e &#x3D; &lt;HTMLElement&gt; eventObj.srcElement;
+    e.innerHTML &#x3D; &quot;&amp;#10008; &quot;
+  //  obj.srcElement.innerHTML &#x3D; &quot;&amp;#10008; &quot;
+  }
+
+  /**changes the state of the remove button on leave */
+  mouseLeave(eventObj: Event){
+    var e &#x3D; &lt;HTMLElement&gt; eventObj.srcElement;
+    e.innerHTML &#x3D; &quot;&amp;#10003; &quot;
+   // obj.srcElement.innerHTML &#x3D; &quot;&amp;#10003; &quot;
+  }
+
+  /** remove a book from the shelf it was added to */
+  removeBookFromShelf() {
+    this.service.removeFromShelf(this.shelfId,this.bookId).subscribe(() &#x3D;&gt; {
+      this.shelfStatus &#x3D; this.shelves[2];
+      this.buttonDisabled &#x3D; false;
+      this.removeEnabled &#x3D; false;
+    })
+  }
+
+  /**add a book to the selected shelf*/
+  addBookToShelf(eventObj: Event) {
+    var e &#x3D; &lt;HTMLElement&gt; eventObj.srcElement;
+    this.shelfId &#x3D; +e.id
+    this.service.addToShelf(this.shelfId,this.bookId).subscribe( ()&#x3D;&gt; {
+      this.shelfStatus &#x3D; this.shelves[this.shelfId];
+      this.buttonDisabled &#x3D; true;
+      this.removeEnabled &#x3D; true;
+
+    })
+  }
+
 
 }
 </code></pre>
@@ -358,13 +825,16 @@ buttonDisabled: boolean &#x3D; false;
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;btn-group&quot;  &gt;
-  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot; [disabled]&#x3D;&quot;buttonDisabled&quot; id&#x3D;&quot;buttonColor&quot; &gt;{{shelfStatus}}&lt;/button&gt;
-  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success dropdown-toggle dropdown-toggle-split&quot; data-toggle&#x3D;&quot;dropdown&quot; id&#x3D;&quot;buttonColor&quot;&gt;
+  &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success&quot; [disabled]&#x3D;&quot;buttonDisabled&quot; id&#x3D;&quot;buttonColor&quot; id&#x3D;&quot;2&quot; (click)&#x3D;&quot;addBookToShelf($event)&quot;&gt;
+    &lt;span title&#x3D;&quot;Remove this book from your shelves&quot; *ngIf&#x3D;&quot;removeEnabled&quot; (mouseenter) &#x3D;&quot;mouseEnter($event)&quot; (mouseleave) &#x3D;&quot;mouseLeave($event)&quot; (click)&#x3D;&quot;removeBookFromShelf()&quot;&gt;&amp;#10003; &lt;/span&gt;
+    {{shelfStatus}}
+  &lt;/button&gt;
+  &lt;button type&#x3D;&quot;button&quot;style&#x3D;&quot;max-width:40px;&quot; class&#x3D;&quot;btn btn-success dropdown-toggle dropdown-toggle-split&quot; data-toggle&#x3D;&quot;dropdown&quot; id&#x3D;&quot;buttonColor&quot;&gt;
   &lt;/button&gt;
   &lt;div class&#x3D;&quot;dropdown-menu&quot; &gt;
-    &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Want to Read&lt;/a&gt;
-    &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Currently Reading&lt;/a&gt;
-    &lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Read&lt;/a&gt;
+    &lt;a class&#x3D;&quot;dropdown-item&quot;  id&#x3D;&quot;2&quot; (click)&#x3D;&quot;addBookToShelf($event)&quot;&gt;Want to Read&lt;/a&gt;
+    &lt;a class&#x3D;&quot;dropdown-item&quot;  id&#x3D;&quot;1&quot; (click)&#x3D;&quot;addBookToShelf($event)&quot;&gt;Currently Reading&lt;/a&gt;
+    &lt;a class&#x3D;&quot;dropdown-item&quot;  id&#x3D;&quot;0&quot; (click)&#x3D;&quot;addBookToShelf($event)&quot;&gt;Read&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -377,7 +847,19 @@ buttonDisabled: boolean &#x3D; false;
                 <pre class="line-numbers"><code class="language-scss">.btn-group {
     transform: scale(0.75, 0.75);
     margin: 1px;
-    min-width: 100px;
+    width:160px;
+    max-height: 35px;
+    cursor: pointer;
+}
+
+.btn btn-success {
+    padding: 0px;
+    text-align: left;
+    text-overflow: initial;
+}
+
+span {
+    cursor: pointer;
 }
  </code></pre>
     </div>
@@ -407,7 +889,7 @@ buttonDisabled: boolean &#x3D; false;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="btn-group"  >  <button type="button" class="btn btn-success" [disabled]="buttonDisabled" id="buttonColor" >{{shelfStatus}}</button>  <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="buttonColor">  </button>  <div class="dropdown-menu" >    <a class="dropdown-item" href="#">Want to Read</a>    <a class="dropdown-item" href="#">Currently Reading</a>    <a class="dropdown-item" href="#">Read</a>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="btn-group"  >  <button type="button" class="btn btn-success" [disabled]="buttonDisabled" id="buttonColor" id="2" (click)="addBookToShelf($event)">    <span title="Remove this book from your shelves" *ngIf="removeEnabled" (mouseenter) ="mouseEnter($event)" (mouseleave) ="mouseLeave($event)" (click)="removeBookFromShelf()">&#10003; </span>    {{shelfStatus}}  </button>  <button type="button"style="max-width:40px;" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="buttonColor">  </button>  <div class="dropdown-menu" >    <a class="dropdown-item"  id="2" (click)="addBookToShelf($event)">Want to Read</a>    <a class="dropdown-item"  id="1" (click)="addBookToShelf($event)">Currently Reading</a>    <a class="dropdown-item"  id="0" (click)="addBookToShelf($event)">Read</a>  </div></div></div>'
     var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DropdownComponent'};

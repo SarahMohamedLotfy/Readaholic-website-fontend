@@ -22,7 +22,7 @@ import { CommentsComponent } from './comments/comments.component';
   ],
   imports: [
     CommonModule,
-   // RatingModule,
+  //RatingModule,
     FormsModule,
     NgbModule,
     AppRoutingModule,

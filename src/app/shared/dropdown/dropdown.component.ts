@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, AfterViewChecked, Output,EventEmitter  } from '@angular/core';
 import { ShelfService } from './shelf.service';
+
 
 
 @Component({
@@ -20,6 +21,8 @@ shelves: string[] = ["Read", "Currently Reading", "Want To Read"];
 /** the displayed shelf */
 shelfStatus: string = this.shelves[2];
 
+/**event emitter  */ //fakre feha
+@Output() shelfSelected: EventEmitter<string> = new EventEmitter<string>();
 /**@ignore */
 buttonDisabled: boolean = false; 
 
@@ -32,10 +35,11 @@ removeEnabled: boolean = false;
  *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
  * 
  */
-  ngOnChanges() {
-    
+ngOnChanges() {
+    console.log(this.shelfId);
     if(this.shelfId !== null)
     {
+      console.log(this.shelfId);
       this.shelfStatus = this.shelves[this.shelfId];
       this.buttonDisabled = true;
       this.removeEnabled = true;
@@ -73,6 +77,7 @@ removeEnabled: boolean = false;
       this.shelfStatus = this.shelves[this.shelfId];
       this.buttonDisabled = true;
       this.removeEnabled = true;
+
     })
   }
 

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, OnChanges, AfterViewChecked, Output,EventEmitter  } from '@angular/core';
-import { ShelfService } from './shelf.service';
+import { Component, Input, OnChanges, AfterViewChecked, Output,EventEmitter } from '@angular/core';
+
 
 
 
@@ -30,16 +30,14 @@ buttonDisabled: boolean = false;
 removeEnabled: boolean = false;
 
 
-  constructor(private service: ShelfService) { }
+  constructor() { }
 /** sets the displayed shelf
  *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
  * 
  */
 ngOnChanges() {
-    console.log(this.shelfId);
-    if(this.shelfId !== null)
+    if(this.shelfId != null && this.shelfId != 3)
     {
-      console.log(this.shelfId);
       this.shelfStatus = this.shelves[this.shelfId];
       this.buttonDisabled = true;
       this.removeEnabled = true;
@@ -50,17 +48,15 @@ ngOnChanges() {
   mouseEnter(eventObj: Event){
     var e = <HTMLElement> eventObj.srcElement;
     e.innerHTML = "&#10008; "
-  //  obj.srcElement.innerHTML = "&#10008; "
   }
 
   /**changes the state of the remove button on leave */
   mouseLeave(eventObj: Event){
     var e = <HTMLElement> eventObj.srcElement;
     e.innerHTML = "&#10003; "
-   // obj.srcElement.innerHTML = "&#10003; "
   }
 
-  /** remove a book from the shelf it was added to */
+ /*
   removeBookFromShelf() {
     this.service.removeFromShelf(this.shelfId,this.bookId).subscribe(() => {
       this.shelfStatus = this.shelves[2];
@@ -69,9 +65,9 @@ ngOnChanges() {
     })
   }
 
-  /**add a book to the selected shelf*/
+
   addBookToShelf(eventObj: Event) {
-    var e = <HTMLElement> eventObj.srcElement;
+   var e = <HTMLElement> eventObj.srcElement;
     this.shelfId = +e.id
     this.service.addToShelf(this.shelfId,this.bookId).subscribe( ()=> {
       this.shelfStatus = this.shelves[this.shelfId];
@@ -79,7 +75,7 @@ ngOnChanges() {
       this.removeEnabled = true;
 
     })
-  }
+  }*/
 
 
 }

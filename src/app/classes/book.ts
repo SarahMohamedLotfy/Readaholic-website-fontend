@@ -24,8 +24,6 @@ reviews_count: number;
 ratings_count: number;
 /** avrage rating of the book*/
 ratings_avg: number;
-/**link*/ 
-// link:string ;   
 /**book author id */
 author_id: number;
 /**book author name */

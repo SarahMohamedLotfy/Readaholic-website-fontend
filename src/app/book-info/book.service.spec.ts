@@ -5,7 +5,19 @@ import { book } from '../classes/book';
 import { review } from '../classes/review';
 import { userBookInfo } from '../classes/userBookInfo';
 
-describe('BookService', () => {
+describe('Book Service', () => {
+  let httpTestingController: HttpTestingController;
+
+  TestBed.configureTestingModule({
+    providers: [BookService],
+    imports: [HttpClientTestingModule]
+  });
+
+  httpTestingController = TestBed.get(HttpClientTestingModule);
+
+  
+})
+/*describe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;
   let testBook: book = {
@@ -117,3 +129,4 @@ describe('BookService', () => {
     expect(service).toBeTruthy();
   });
 });
+*/

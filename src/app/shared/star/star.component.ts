@@ -27,7 +27,7 @@ export class StarComponent implements OnInit {
  @Input() bookId : number;
 
  /**@ignore */
- @Output() rated:EventEmitter<string> = new EventEmitter<string>();
+ @Output() rated:EventEmitter<number> = new EventEmitter<number>();
 
 /**rate done by the user */
 userRate: number = 0;
@@ -40,16 +40,11 @@ userRate: number = 0;
   
   /**rates a book */
   onClick() {
-    
     if(this.readOnly == false) {
       if(!this.shelf) {
         this.shelf = 3;
       }
-      this.service.createReview(this.bookId,this.shelf,"",this.userRate).subscribe((data)=>{
-        console.log(this.shelf);
-        console.log(data);
-        this.rated.emit();
-      });
-}
+      this.service.createReview(this.bookId,this.shelf,"",this.userRate).subscribe(() => this.rated.emit(this.userRate));
+    }
   }
 }

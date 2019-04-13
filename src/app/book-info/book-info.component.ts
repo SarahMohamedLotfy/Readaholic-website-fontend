@@ -5,9 +5,7 @@ import { review } from '../classes/review';
 import { book } from '../classes/book';
 import { userBookInfo } from '../classes/userBookInfo';
 import { BookService } from './book.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
-
+import { userInfo } from 'os';
 
 /**component to show details of a specific book */
 @Component({
@@ -23,21 +21,24 @@ export class BookInfoComponent implements OnInit {
   reviews: review[];
 
   /**stores user related book info */
-  userInfo: userBookInfo;
+  userInfo:userBookInfo;
 
-  /**book shelf */
-  userShelf: number = 0;
   /**true if user mode false if guest mode */
   isUser: boolean;
 
-  /**logged in user review on the book*/
-  userReview: string = "";
+  /**@ignore */
+  info: userBookInfo = {
+    "body": "",
+    "shelf_name": 0,
+    "rating": 0
+  };
 
   /**@ignore */
-  shelfName: string = "--";
+  shelfName:string = "";
+
 
 /**takes as parameters object of book service and activiated route to get the selected book id */
-  constructor(private service: BookService, private route: ActivatedRoute,private router: Router,private modalService: NgbModal) {
+  constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
   }
 
   /**gets the information of the selected book from the server and setes user mode or guest mode
@@ -46,12 +47,8 @@ export class BookInfoComponent implements OnInit {
   ngOnInit() {
     
     this.service.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
-     // 
-     //this.myBook = data.
      this.myBook = data.pages[0];
-     // console.log(data.page);
-     // console.log(this.myBook.id);
-      //console.log(this.myBook.image_url);
+     console.log(data);
       if(Math.floor(this.myBook.ratings_avg) > this.myBook.ratings_avg-0.5)
       {
         this.myBook.ratings_avg = Math.floor(this.myBook.ratings_avg);
@@ -60,11 +57,12 @@ export class BookInfoComponent implements OnInit {
       {
         this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
       } 
-    },(data)=>console.log(data));
+    },()=> this.router.navigateByUrl("/pageNotfound"));
 
   this.service.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
-    console.log(data);
+    
     this.userInfo = data.pages[0];
+    this.info = data.pages[0];
     if(this.userInfo.shelf_name == 0)
     {
       this.shelfName = "Read";
@@ -77,14 +75,10 @@ export class BookInfoComponent implements OnInit {
     {
       this.shelfName = "Want To Read";
     }
-  });
+  }, (data)=> console.log(data));
 
-
- this.service.getBookReviews(+this.route.snapshot.paramMap.get('id')).subscribe((data) => this.reviews = data.pages);
+ this.service.getBookReviews(+this.route.snapshot.paramMap.get('id')).subscribe((data) => this.reviews = data.pages, (data)=> console.log(data));
  
-
- 
-
   if(localStorage.getItem('token') == null){
     this.isUser = false;
   }
@@ -94,13 +88,20 @@ export class BookInfoComponent implements OnInit {
 }
 
 createReview () {
-  console.log(this.userShelf);
- this.service.createReview(this.myBook.id,2,"ana nehal ya waleeed",4).subscribe(() => console.log("hhhhellooo"));
+  console.log(this.info.rating);
+ this.service.createReview(this.myBook.id,this.info.shelf_name,this.info.body,this.info.rating).subscribe((data) => {this.userInfo = data.pages; console.log(data);});
 }
 
-open() {
-  document.getElementById("openModalButton").click();
-  //this.modalService.open(e);
+/**
+ * opens the review model when the user rates a book
+ * @param {number} rate The output rate from the star component
+ */
+open(rate: number) {
+  this.info.rating = rate;
+  if(!this.userInfo) {
+    document.getElementById("openModalButton").click();
+  }
+  
 }
   
 

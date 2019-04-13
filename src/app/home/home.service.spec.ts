@@ -3,6 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
 import { HomeService } from './home.service';
 import { AppComponent } from '../app.component';
+import { HttpRequest } from '@angular/common/http';
 
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
@@ -32,7 +33,7 @@ afterEach(() => {
 });
 
 
-  it('expects service to fetch updates ',() => {
+  fit('expects service to fetch updates ',() => {
       // We call the service
       const fakeUpdates: updates [] = [{
         id: 2,
@@ -53,16 +54,22 @@ afterEach(() => {
          name:"Huda Yahyaa",
          image_link:"",
          author_name:"Huda Yahyaa",
-         update_type:"0",
+         update_type: 0,
          shelf:1,
          actionText:"FR",
          followed_image_link:"",
          followed_name:null,
-         followed_id:null
+         followed_id:null,
+         shelf_type:1,
+         rev_user_id:1,
+         rev_user_imageLink:"",
+         rev_user_image:"",
+         auth_user_following:1
+
 
         }];
       service.getUpdates().subscribe((updatesData : updates[])=> {
-       expect(updatesData[0].update_type).toEqual('0');
+       expect(updatesData[0].update_type).toEqual(0);
        expect(updatesData[0].name).toEqual('Huda Yahyaa');
 
 
@@ -74,5 +81,20 @@ afterEach(() => {
 
       expect(service).toBeTruthy();
     })
-
-});
+    fit('should be called with proper arguments', () => {
+      const responseForm = '<form />';
+      const homeService = TestBed.get(HomeService);
+      const http = TestBed.get(HttpTestingController);
+      let followResponse;
+    
+      homeService.addFollowing(5).subscribe((response) => {
+        followResponse = response;
+      });
+    
+      http.expectOne({
+        url: 'https://localhost:3000/follow',
+        method: 'POST'
+      }).flush(responseForm);
+      expect(followResponse).toEqual(responseForm);
+    });
+})

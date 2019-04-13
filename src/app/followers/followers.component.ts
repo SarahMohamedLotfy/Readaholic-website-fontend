@@ -116,6 +116,15 @@ result:number;
   add(nb) {
   this.myfirstservice.addFollowing(nb).subscribe(
     data  => {
+      this.myfirstservice.getfollowing().subscribe((following:any)=>{
+        this.following =following.following ;
+        });
+
+      this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+        this.posts =posts.followers ;
+        this.temp = posts;
+        console.log(posts);
+        })
     console.log("POST Request is successful ", data);
     },
     error  => {
@@ -135,7 +144,9 @@ result:number;
    this.count = Object.keys(this.posts).length;
   return this.count;
 }
-  
+
+
+
   /**
 *Search for the name of follower person when click on search button  .
  */ 
@@ -173,13 +184,30 @@ return true;
 }
 
   delFollowing(id:number){
+
+
     this.myfirstservice.unfollow(id).subscribe((data)=>{
-      this.noFollowbutton(id);
-         console.log("success");
+      this.myfirstservice.getfollowing().subscribe((following:any)=>{
+        this.following =following.following ;
+        });
+
+      this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+        this.posts =posts.followers ;
+        this.temp = posts;
+        console.log(posts);
+        })
+ 
+        
+        
+        console.log("success");
+  
+        
+
     });
   }
 
 
-
+  
+  
 
 }

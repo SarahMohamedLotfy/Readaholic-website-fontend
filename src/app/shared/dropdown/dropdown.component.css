@@ -2,6 +2,14 @@
     transform: scale(0.75, 0.75);
     margin: 1px;
     width:160px;
+    max-height: 35px;
+    cursor: pointer;
+}
+
+.btn btn-success {
+    padding: 0px;
+    text-align: left;
+    text-overflow: initial;
 }
 
 span {

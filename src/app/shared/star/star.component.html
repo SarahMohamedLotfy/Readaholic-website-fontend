@@ -1,4 +1,4 @@
-<ngb-rating [(ngModel)]="userRate"  [(rate)]="starsCount" [readonly]="readOnly " max=5 (click)="onRating()">
+<ngb-rating class="comp" [(ngModel)]="userRate"  [(rate)]="starsCount" [readonly]="readOnly " max=5 (click)="onClick()">
     <ng-template let-fill="fill" let-index="index">
         <span class="star" [class.filled]="fill">&#9733;</span>
     </ng-template>

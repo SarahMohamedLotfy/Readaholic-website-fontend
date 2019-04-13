@@ -5,6 +5,9 @@ import { TestBed, ComponentFixture } from "@angular/core/testing";
 import { of } from 'rxjs';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
+describe('StarComponent', () => {
+  let component: StarComponent;
+  let fixture: ComponentFixture<StarComponent>;
 
 fdescribe("star component", () => {
     let fixture: ComponentFixture<StarComponent>;

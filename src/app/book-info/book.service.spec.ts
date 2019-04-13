@@ -118,13 +118,15 @@ describe('Book Service', () => {
         expect(data.rating).toBe(3.5);
       });
     let request: TestRequest = httpTestingController.expectOne('http://localhost:3000/userBookInfo/1');
-    
+
     expect(request.request.method).toEqual('GET');
     request.flush(testUserBookinfo);
 
   });
 
+
   it('should be created', () => {
+
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
   });

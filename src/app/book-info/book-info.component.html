@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-md-1"></div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -55,26 +55,34 @@
                 <div class="media-body" id="reviewInfo">
                     <h6 ><b [routerLink]="['/profile',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>
                     <p>{{review?.body}}</p>
-                    <small>{{review?.likes_count}} likes    {{review?.comments_count}} comments</small>
+                    <small>{{review?.numberLikes}} like
+
+                     <app-likes [user]='review.userId' [resourse_id]= 'review.id' ></app-likes>
+
+                      {{review?.numberComments}} Comments
+                       <app-comments  [user]='review.userId' [resourse_id]='review.id' ></app-comments>
+
+
+                    </small>
                 </div>
-                
+
             </div>
         </div>
     </div>
 
-    
+
 
       <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-          
-           
+
+
             <div class="modal-header">
                 <h5 class="modal-title">Thanks for rating! would you like to write a review?</h5>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
-              
-              
+
+
               <div class="modal-body" style="margin-bottom:5px; padding-bottom: 0px;">
                       <div class="row" style="margin-bottom:0px">
                               <div class="col-2" style="min-width: 50px">
@@ -91,22 +99,20 @@
                                       <input type="radio" (click)="info.shelf_name=2">
                                       <label style="margin-right:10px">want to read</label>
                                   </div>
-                                  
-                      </div> 
+
+                      </div>
               </div>
               <p >What did you think?</p>
               <textarea rows="10" cols="92" wrap="physical" [(ngModel)]="info.body" ></textarea>
-                      
-             
+
+
               <div class="modal-footer">
                 <button type="button" id="post" class="btn btn-secondary" data-dismiss="modal" (click)="createReview()" style="background-color: #218838">Post</button>
               </div>
-              
+
             </div>
           </div>
         </div>
       </div>
 
       <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;"  ></button>
-     
-        

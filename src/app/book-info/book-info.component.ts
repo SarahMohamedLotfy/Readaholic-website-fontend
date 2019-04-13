@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { review } from '../classes/review';
 import { book } from '../classes/book';
 import { userBookInfo } from '../classes/userBookInfo';
@@ -45,7 +44,7 @@ export class BookInfoComponent implements OnInit {
    * and navigates to page not found if the user types a wrong book id
     */
   ngOnInit() {
-    
+
     this.service.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
      this.myBook = data.pages[0];
      console.log(data);
@@ -53,14 +52,14 @@ export class BookInfoComponent implements OnInit {
       {
         this.myBook.ratings_avg = Math.floor(this.myBook.ratings_avg);
       }
-      else 
+      else
       {
         this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
-      } 
+      }
     },()=> this.router.navigateByUrl("/pageNotfound"));
 
   this.service.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
-    
+
     this.userInfo = data.pages[0];
     this.info = data.pages[0];
     if(this.userInfo.shelf_name == 0)
@@ -77,8 +76,11 @@ export class BookInfoComponent implements OnInit {
     }
   }, (data)=> console.log(data));
 
- this.service.getBookReviews(+this.route.snapshot.paramMap.get('id')).subscribe((data) => this.reviews = data.pages, (data)=> console.log(data));
- 
+ this.service.getBookReviews(+this.route.snapshot.paramMap.get('id')).subscribe((data) => this.reviews = data.pages);
+
+
+
+
   if(localStorage.getItem('token') == null){
     this.isUser = false;
   }
@@ -101,9 +103,8 @@ open(rate: number) {
   if(!this.userInfo) {
     document.getElementById("openModalButton").click();
   }
-  
-}
-  
 
 }
 
+
+}

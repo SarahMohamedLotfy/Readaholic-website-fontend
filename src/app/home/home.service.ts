@@ -23,20 +23,25 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
-return this.http.get("http://localhost:3000/updates")
+return this.http.get("http://972c6e5d.ngrok.io/api/updates")
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
 
     );
    }
-   addFollowing ( nb):Observable<any> {
-  return this.http.post('http://localhost:3000/follow',{"user_id" : nb});
+   addFollowing (nb):Observable<any> {
+  return this.http.post('http://972c6e5d.ngrok.io/api/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
-    return this.http.post('http://localhost:3000/shelf/add_book',{"shelf_id": shelf,
+    return this.http.post('http://972c6e5d.ngrok.io/api/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
+  unfollow ( user_id:number):Observable<any> {
+      
+    return this.http.delete('http://972c6e5d.ngrok.io/api/unfollow?user_id='+ user_id);
+  }
+  
   /**
  * function for handling errors in ui and in console
  */
@@ -55,10 +60,5 @@ return this.http.get("http://localhost:3000/updates")
     return throwError(
       'Something bad happened; please try again later.');
   };
- /**
- * logOut get request
- */
-  logOut():Observable<any>{
-    return this.http.get('http://localhost:3000/logOut');
-  }
+
 }

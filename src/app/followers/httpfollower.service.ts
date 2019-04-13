@@ -24,7 +24,7 @@ export class HttpFollowingService {
  */
 
 getfollowers(){
-  return this.http.get('http://a6df2b7f.ngrok.io/api/followers');
+  return this.http.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/followers');
 
    }
    
@@ -37,7 +37,7 @@ getfollowers(){
   } */
   
   addFollowing ( nb):Observable<any> {
-    return this.http.post('http://a6df2b7f.ngrok.io/api/follow',{"user_id" : nb});
+    return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
     } 
   
  /**
@@ -46,11 +46,11 @@ getfollowers(){
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
   getfollowing(){
-    return this.http.get('http://a6df2b7f.ngrok.io/api/following');
+    return this.http.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/following');
   
   }
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://a6df2b7f.ngrok.io/api/unfollow?user_id='+ user_id);
+    return this.http.delete('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/unfollow?user_id='+ user_id);
   }
 }

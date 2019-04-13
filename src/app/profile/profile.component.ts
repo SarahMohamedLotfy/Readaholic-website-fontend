@@ -34,7 +34,9 @@ export class ProfileComponent implements OnInit {
      * subscribe to the data received from json file which contain the profile of the authenticated user info information
      *
      * and if any error occurs it prints it to the log
-*/  if (id > 0 ){
+*/  
+console.log(id);
+if (id > 0 ){
 
     this.httpService.getUserprofile(id).subscribe(
         (data: profile) => this.selectedProfile = data,

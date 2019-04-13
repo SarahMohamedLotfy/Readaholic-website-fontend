@@ -30,9 +30,9 @@ describe('Book Service', () => {
       method: 'GET'
     }).flush(responseForm);
     expect(bookResponse).toEqual(responseForm);
-  })
+  });
 
-})
+});
 
 /*describe('BookService', () => {
   let service: BookService;
@@ -142,10 +142,10 @@ describe('Book Service', () => {
   });*/
 
 
-  it('should be created', () => {
+  /*it('should be created', () => {
 
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
-  });
-});
-*/
+  });*/
+
+

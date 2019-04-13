@@ -28,7 +28,7 @@ describe('HttpFollowingService', () => {
 
 
 // Unit testing for Get following request
-fdescribe('#Get the following people', () => {
+describe('#Get the following people', () => {
   fit('returned Observable should match the right data', () => {
     const mockFollowing = [
       {

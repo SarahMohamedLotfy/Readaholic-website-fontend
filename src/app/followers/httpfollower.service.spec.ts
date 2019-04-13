@@ -77,3 +77,4 @@ describe('HttpFollowingService', () => {
     expect(service).toBeTruthy();
   });
 });
+});

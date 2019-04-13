@@ -35,5 +35,5 @@ book_id:number;
   rev_user_image:string;
   rev_user_imageLink:string;
   shelf:number ;
-
+  auth_user_following:number;
 }

@@ -37,6 +37,11 @@ return this.http.get("http://972c6e5d.ngrok.io/api/updates")
     return this.http.post('http://972c6e5d.ngrok.io/api/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
+  unfollow ( user_id:number):Observable<any> {
+      
+    return this.http.delete('http://972c6e5d.ngrok.io/api/unfollow?user_id='+ user_id);
+  }
+  
   /**
  * function for handling errors in ui and in console
  */

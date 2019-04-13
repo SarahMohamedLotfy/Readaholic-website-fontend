@@ -63,7 +63,8 @@ afterEach(() => {
          shelf_type:1,
          rev_user_id:1,
          rev_user_imageLink:"",
-         rev_user_image:""
+         rev_user_image:"",
+         auth_user_following:1
 
 
         }];

@@ -150,4 +150,15 @@ export class HomeComponent implements OnInit {
               }
           )
         }
+        delFollowing(nb){
+          this.httpser.unfollow(nb).subscribe((data) =>{
+            console.log("delete Request is successful ", data);
+          },
+          error  => {
+          
+          console.log("Error", error);
+          
+          }
+                 )
+        }
 }

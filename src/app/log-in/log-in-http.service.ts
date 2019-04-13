@@ -31,3 +31,4 @@ import { catchError, retry } from 'rxjs/operators';
  logOut():Observable<any>{
     return this.http.delete('http://972c6e5d.ngrok.io/api/logout');
   }
+  }

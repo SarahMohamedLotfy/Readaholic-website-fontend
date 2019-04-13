@@ -52,7 +52,8 @@
                             <!--if i folllowe dsomoen i will be able to folllow him-->
                             <div *ngIf="update.actionText === ' started following  : '" >
                                 <h5 >{{update.followed_name}}</h5> 
-                                <button type="button" class="btn btn-primary" id="followButton"(click)="addFollowing(update.followed_id)" >Follow {{update.followed_name}}</button>
+                                <button type="button" class="btn btn-primary" id="followButton"(click)="addFollowing(update.followed_id)"*ngIf="update.auth_user_following === 0"  >Follow {{update.followed_name}}</button>
+                                <button type="button" class="btn btn-primary" id="followButton"(click)="delFollowing(update.followed_id)"*ngIf="update.auth_user_following === 1"  >Unfollow {{update.followed_name}}</button>
                         </div>
                       </div>
                         </div>

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { followingComponent } from '../classes/followingComponent';
 
 /**Handles About Us page Service*/
 
@@ -15,7 +14,10 @@ export class aboutusService {
 */
   constructor(private http:HttpClient) { }
 
+  getImg(){
+    return this.http.get('http://localhost:3000/AboutUs');
   
+  }
  
     
 }

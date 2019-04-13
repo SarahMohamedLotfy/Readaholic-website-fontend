@@ -77,13 +77,14 @@ result:number;
     
 
     this.myfirstservice.getfollowers().subscribe((posts:any)=>{
-       this.posts =posts ;
+       this.posts =posts.followers ;
        this.temp = posts;
+       console.log(posts);
        })
 
        
        this.myfirstservice.getfollowing().subscribe((following:any)=>{
-        this.following =following ;
+        this.following =following.following ;
         });
 
        this.profilesevice.getUserprofile(90).subscribe(
@@ -103,16 +104,37 @@ result:number;
   /**
  * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
  */
-  add(id: number,name: string,image_url: string,bookid:number,bookname:string,  bookimage:string, country :string
-    ): void {
+ /* add(id: number): void {
     //name = name.trim();
     //if (!name) { return; }
 
     // The server will generate the id for this new hero
-    const newFollowing: followerComponent = { id,name ,image_url,bookid,bookname,  bookimage,country } as followerComponent;
+    const newFollowing: followerComponent = { id } as followerComponent;
     this.myfirstservice.addFollowing(newFollowing)
       .subscribe(hero => this.posts.push(hero));
-  }
+  }*/
+  add(nb) {
+  this.myfirstservice.addFollowing(nb).subscribe(
+    data  => {
+      this.myfirstservice.getfollowing().subscribe((following:any)=>{
+        this.following =following.following ;
+        });
+
+      this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+        this.posts =posts.followers ;
+        this.temp = posts;
+        console.log(posts);
+        })
+    console.log("POST Request is successful ", data);
+    },
+    error  => {
+    
+    console.log("Error", error);
+    
+    }
+    
+    );}
+
 
 /**
  * noFollowers () is function to show message to the user if he has no one folow him .
@@ -122,7 +144,9 @@ result:number;
    this.count = Object.keys(this.posts).length;
   return this.count;
 }
-  
+
+
+
   /**
 *Search for the name of follower person when click on search button  .
  */ 
@@ -141,7 +165,7 @@ result:number;
       );
   }
 
-/**
+  /**
 *Remove the follow button if the person is already in following list .
  */ 
 noFollowbutton(personId):boolean
@@ -154,12 +178,36 @@ noFollowbutton(personId):boolean
   {
     return false;
   }
-  console.log(i.id);
 
 }
 return true;
 }
 
+  delFollowing(id:number){
 
+
+    this.myfirstservice.unfollow(id).subscribe((data)=>{
+      this.myfirstservice.getfollowing().subscribe((following:any)=>{
+        this.following =following.following ;
+        });
+
+      this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+        this.posts =posts.followers ;
+        this.temp = posts;
+        console.log(posts);
+        })
+ 
+        
+        
+        console.log("success");
+  
+        
+
+    });
+  }
+
+
+  
+  
 
 }

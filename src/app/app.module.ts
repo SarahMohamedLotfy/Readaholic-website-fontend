@@ -59,7 +59,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
   ],
   
-
+  
 
   providers: [HttpService,LogInHttpService 
     
@@ -70,4 +70,6 @@ multi: true}],
 
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }

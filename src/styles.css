@@ -1,6 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

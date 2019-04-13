@@ -1,9 +1,14 @@
 .star {
     font-size: 1.5rem;
     color: #e9f1fc;
-
   }
+
   .filled {
     color: #ffd106;
   }
+
+.comp {
+  margin-top: -4px;
+  margin-bottom: 8px; 
+}
   

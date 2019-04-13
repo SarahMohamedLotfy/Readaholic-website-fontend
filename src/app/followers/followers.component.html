@@ -1,15 +1,15 @@
 <navbar>
 </navbar>
-<p *ngIf="noFollowers() == 0" id="tagrba">
 
 
-    You haven't got any followers ,don't be sad..</p>
 
 <div *ngIf="selectedProfile">
     <div id="Myprofilename">
-        <a [routerLink]="['/profile/90']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>
+        <a [routerLink]="['/profile',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>
     </div>
 </div>
+<p *ngIf="noFollowers() == 0" id="tagrba">
+    You haven't got any followers ,don't be sad..</p>
 
 
 <div id="tfheader">
@@ -49,25 +49,23 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <a [routerLink]="['/profile', post.id]">
-                                            <img id="profilepage" src={{post.image_url}} alt="">
+                                            <img id="profilepage" src={{post.image_link}} alt="">
                                             <i></i>
                                         </a>
                                     </div>
                                     <div *ngIf="noFollowbutton(post.id) ==true " class="pull-right">
 
-                                        <button id="followbutton" (click)="add(post.id,post.name,post.image_url,post.bookid,post.bookname,post.bookimage,
-                    post.country)" type="button" class="btn btn-info btn-sm waves-effect waves-light">Follow </button>
+                                        <button id="followbutton" (click)="add(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">Follow </button>
+                                    </div>
+                                    <div *ngIf="noFollowbutton(post.id) ==false " class="pull-right">
+
+                                        <button id="followbutton" (click)="delFollowing(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">UnFollow </button>
                                     </div>
                                     <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter" style="clear:right" [routerLink]="['/profile', post.id]">{{post.name}}</a></div>
 
                                 </div>
 
-                                <address class="country">
-                    <br >
-                    {{post.country}}<br>
-
-
-                </address>
+                              
                                 <hr/>
 
                             </div>

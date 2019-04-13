@@ -3,7 +3,7 @@
     <span title="Remove this book from your shelves" *ngIf="removeEnabled" (mouseenter) ="mouseEnter($event)" (mouseleave) ="mouseLeave($event)" (click)="removeBookFromShelf()">&#10003; </span>
     {{shelfStatus}}
   </button>
-  <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="buttonColor">
+  <button type="button"style="max-width:40px;" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="buttonColor">
   </button>
   <div class="dropdown-menu" >
     <a class="dropdown-item"  id="2" (click)="addBookToShelf($event)">Want to Read</a>

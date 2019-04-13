@@ -16,14 +16,12 @@
 
 <body>
 
-    <p *ngIf="noFollowing() == 0" id="tagrba">You are not following anyone.</p>
 
     <div *ngIf="selectedProfile">
         <div id="Myprofilename">
-            <a [routerLink]="['/profile/90']" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
+            <a [routerLink]="['/profile',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You're Following</span>
         </div>
     </div>
-
 
 
 
@@ -39,6 +37,8 @@
     </div>
 
 
+    <p *ngIf="noFollowing() == 0" id="tagrba">You are not following anyone.</p>
+
 
     <ul style="list-style: none;">
         <li class="list" *ngFor="let post of posts  ">
@@ -50,7 +50,7 @@
                             <div class="panelbodychar" class="panel-body">
                                 <div class="panelbodychar" class="media">
                                     <a class="left" class="pull-left" [routerLink]="['/profile', post.id]">
-                                        <img id="profilepagef" src={{post.image_url}} alt="">
+                                        <img id="profilepagef" src={{post.image_link}} alt="">
                                     </a>
                                     <div class="media-body">
                                         <a [routerLink]="['/profile', post.id]" id="profilename" class="nameoffollower ">
@@ -58,10 +58,7 @@
 
                         </a> </div>
 
-                                    <address class="country">
-                          <br>
-                        {{post.country}}<br>
-                      </address>
+
 
                                 </div>
 
@@ -77,7 +74,7 @@
                             <div class="panel-body">
                                 <div class="media">
                                     <a class="pull-left" [routerLink]="['/book', post.bookid]">
-                                        <img id="bookimage" src={{post.bookimage}} alt="">
+                                        <img id="bookimage" src={{post.book_image}} alt="jj">
                                     </a>
                                     <div class="media-body">
                                         <div class="currentext"> Currently reading : </div>
@@ -86,7 +83,7 @@
                                         </div>
                                         <address>
                             <a   id= "bookname" [routerLink]="['/book', post.bookid]" >
-                              <h4 class="bookhide" >{{post.bookname}} </h4>
+                              <h4 class="bookhide" >{{post.currently_reading}} </h4>
 
                             </a>
 

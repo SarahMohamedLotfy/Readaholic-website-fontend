@@ -19,7 +19,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
 
         
-        const users: user[] = [
+        const users: any[] = [
            
             { id:1,  username: 'mai', password: 'mai', image_link: 'kd' }
         ];

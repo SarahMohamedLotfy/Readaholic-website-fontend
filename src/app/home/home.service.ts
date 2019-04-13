@@ -23,18 +23,30 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
+<<<<<<< HEAD
 return this.http.get("http://972c6e5d.ngrok.io/api/updates")
+=======
+return this.http.get("http://a6df2b7f.ngrok.io/api/updates")
+>>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
 
     );
    }
+<<<<<<< HEAD
    addFollowing (nb):Observable<any> {
   return this.http.post('http://972c6e5d.ngrok.io/api/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
     return this.http.post('http://972c6e5d.ngrok.io/api/shelf/add_book',{"shelf_id": shelf,
+=======
+   addFollowing ( nb):Observable<any> {
+  return this.http.post('http://a6df2b7f.ngrok.io/api/follow',{"user_id" : nb});
+  } 
+  addBook(shelf,book_id):Observable<any>{
+    return this.http.post('http://a6df2b7f.ngrok.io/api/shelf/add_book',{"shelf_id": shelf,
+>>>>>>> 44abdb8cd6dba3177b7b922ce896b51c161e905c
     "book_id": book_id});
   }
   /**
@@ -55,10 +67,5 @@ return this.http.get("http://972c6e5d.ngrok.io/api/updates")
     return throwError(
       'Something bad happened; please try again later.');
   };
- /**
- * logOut get request
- */
-  logOut():Observable<any>{
-    return this.http.get('http://localhost:3000/logOut');
-  }
+
 }

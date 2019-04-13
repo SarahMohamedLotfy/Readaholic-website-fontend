@@ -20,7 +20,10 @@ import {ProfileService} from '../profile/profile.service';
 })
 export class AboutusComponent implements OnInit {
 
-
+/**
+ * posts is array of the followers of the main users it contains ( name , id , image) .
+ */
+about:any=[];
 
  /**
 *Constructer that take AboutUs service  .
@@ -34,7 +37,12 @@ export class AboutusComponent implements OnInit {
 
   ngOnInit() {
     
+    
 
+      this.myfirstservice.getImg().subscribe((about:any)=>{
+         this.about =about ;
+         })
+  
  
   }
 

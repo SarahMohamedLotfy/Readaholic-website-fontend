@@ -66,11 +66,12 @@
 }
 /*footer bottom */
 .footer-bottom {
+  position: relative;
   padding-top: 5px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   border-top: 1px solid rgba(0,0,0,0.09);
   background: #fff;
-  
+  bottom:5px;
 }
 .copyright-text p {
   color: #707070;
@@ -184,10 +185,15 @@
   text-align: center;
 
 }
+.sliderImg
+{
+  height: 435px;
+  width:1000px;
+}
 .text 
 {
   position: relative;
-  left: 400px;
+  left: 450px;
 }
 .image-aboutus-para {
   color:#fff;
@@ -651,4 +657,42 @@ color: #b40028;
 .paragaph
 {
   font-size: 14px;
+}
+.slider
+{
+  position: relative;
+left:150px;
+  width: 1000px;
+  height: 10px;;
+  bottom: 200px;
+  top:150px;
+}
+.h3-responsive
+{
+  color:white;
+}
+.color
+{
+  color:white;
+}
+.youCan
+{
+  position: relative;
+  top:130px;
+  font-style: italic;
+  text-align: center;
+  font-size: 40px;
+}
+.memberslist
+{
+  position: relative;
+  top:690px;
+}
+.colorBlack
+{
+  color:black;
+}
+.description
+{
+  padding-top: 20px;
 }

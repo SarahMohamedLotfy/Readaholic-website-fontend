@@ -22,11 +22,11 @@ export class LogInComponent implements OnInit {
   users:user;
   /**true if user entered wrong pass or username, false otherwise */
   wrongPass:boolean;
-  /** stores in it the error message */
+  /** stores in it the error message for logging in */
   error:string;
-
+/**stores in it the error message for signin up */
   errorUp:string;
-
+/**true if there is an error in signing up false otherwise */
   signUpError:boolean;
 
   
@@ -68,17 +68,21 @@ onSubmit(){
   if(this.form.valid){
   this.service.login(val.email,val.password).subscribe(
 (data:any) => {
+  console.log(data);
   localStorage.setItem('token',data.token);
-  this.users=data;
+  this.users=data.user;
   this.router.navigateByUrl('/home');
   this.wrongPass=false;
+  console.log(this.users);
 },
 err => {
   if(err.status ==405)
   {
   
   this.wrongPass=true;
-  this.error="incorrect username or password";
+  this.error=err.error.errors;
+  console.log(err);
+ 
   
   }
   else if(err.status== 404)
@@ -97,7 +101,7 @@ err => {
   this.error="You must enter username and password";
   }
 }
-
+/**on clicking the sign up button it sends the variables entered in the login form to the server and checks the response if they're valid it signs up the user and redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message */
 onSigUp(){
   const val = this.formUp.value;
 

@@ -68,4 +68,12 @@ fdescribe('FollowersComponent', () => {
   });
 
 
+// Unit test for search function
+it('should be able to find the user', () => {
+
+  component.searchText='waleed';
+  expect(component.search).toEqual('waleed');
+});
+
+
 });

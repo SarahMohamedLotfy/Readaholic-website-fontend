@@ -57,7 +57,20 @@ it('should be able to decrement the count (-1)', () => {
 
   expect(component.count).toEqual(5);
 });
+// Unit test for deletefollowing function check if the count of following peole decrease ?
 
+it('should be able to decrement the count (-1)', () => {
+
+  component.delFollowing(7);
+  expect(component.count).toEqual(5);
+});
+
+// Unit test for search function
+it('should be able to find the user', () => {
+
+  component.searchText='waleed';
+  expect(component.search).toEqual('waleed');
+});
 
 });
 

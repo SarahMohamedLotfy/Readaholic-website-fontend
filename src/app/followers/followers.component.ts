@@ -168,15 +168,12 @@ result:number;
  */ 
 noFollowbutton(personId):boolean
 {
-
   for ( let i of this.following)
   {
-   
   if (personId==i.id)
   {
-    return false;
+   return false;
   }
-
 }
 return true;
 }
@@ -184,8 +181,6 @@ return true;
  * delFollowing () function contains a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
  */
   delFollowing(id:number){
-
-
     this.myfirstservice.unfollow(id).subscribe((data)=>{
       this.myfirstservice.getfollowing().subscribe((following:any)=>{
         this.following =following.following ;
@@ -196,12 +191,8 @@ return true;
         this.temp = posts;
         console.log(posts);
         })
- 
-        
         
         console.log("success");
-  
-        
 
     });
   }

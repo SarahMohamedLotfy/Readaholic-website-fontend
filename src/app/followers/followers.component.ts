@@ -5,7 +5,7 @@ import {followerComponent} from '../classes/followerComponent';
 import  {HttpService} from '../http.service';
 import { ActivatedRoute } from '@angular/router';
 /**
- * Show the followers list and Search for the followers of the main user .
+ * Show the followers list and Search for the followers of the main user, You can Follow or unfollow somwone .
  */
 @Component(
    /**
@@ -33,10 +33,7 @@ export class FollowersComponent implements OnInit {
  * Id of the follower . 
  */
 personId:number;
-  /**
- * used to loop over the following list . 
- */
-  //i:number;
+ 
   /**
  * result of for loop over the following list.
  */
@@ -69,7 +66,7 @@ result:number;
  * Contains Get requests to get followers list and to get the profile data to get the name of the main user .
  * Getfollowing () is a get request to get the data of the followers of the main user .
  * The data i get is ( name of user , image of user , id of user ).
- * GetUserprofile get the data of the profile of main user i used it to get the name of the main  user
+ * GetUserprofile get the data of the profile of main user i used it to get the name of the main  user.
  */
 
 
@@ -87,32 +84,33 @@ result:number;
         this.following =following.following ;
         });
 
-       this.profilesevice.getUserprofile(90).subscribe(
-        data => {
-          this.selectedProfile = data
-          
-                 }) ;
+     /** receives id from url and send it to the get request */
+    const id: number = +this.route.snapshot.paramMap.get('id');
 
-                 
-                 if (this.posts==[] )
-                 {
-                   this.empty=true;
-                 }
+    /**
+    * subscribe to the data received from json file which contain the profile of the authenticated user info information
+    *
+    * and if any error occurs it prints it to the log
+*/  if (id > 0 ){
+
+   this.myfirstservice.getUserprofile(id).subscribe(
+       (data: profile) => this.selectedProfile = data,
+              )
+   }
+   else
+   {
+   this.myfirstservice.getAuthUserprofile().subscribe(
+   (data: profile) => this.selectedProfile = data,
+   (err: any) => console.log(err)
+    );
+   }
   }
 
   
   /**
- * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
+ * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
- /* add(id: number): void {
-    //name = name.trim();
-    //if (!name) { return; }
-
-    // The server will generate the id for this new hero
-    const newFollowing: followerComponent = { id } as followerComponent;
-    this.myfirstservice.addFollowing(newFollowing)
-      .subscribe(hero => this.posts.push(hero));
-  }*/
+ 
   add(nb) {
   this.myfirstservice.addFollowing(nb).subscribe(
     data  => {
@@ -137,7 +135,7 @@ result:number;
 
 
 /**
- * noFollowers () is function to show message to the user if he has no one folow him .
+ * noFollowers () is function to show message to the user if he has no one follow him .
  */
   noFollowers ():number
 {
@@ -166,26 +164,23 @@ result:number;
   }
 
   /**
-*Remove the follow button if the person is already in following list .
+*Remove the follow button if the person is already in following list and make it  unfollow .
  */ 
 noFollowbutton(personId):boolean
 {
-
   for ( let i of this.following)
   {
-   
   if (personId==i.id)
   {
-    return false;
+   return false;
   }
-
 }
 return true;
 }
-
+/**
+ * delFollowing () function contains a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
+ */
   delFollowing(id:number){
-
-
     this.myfirstservice.unfollow(id).subscribe((data)=>{
       this.myfirstservice.getfollowing().subscribe((following:any)=>{
         this.following =following.following ;
@@ -196,12 +191,8 @@ return true;
         this.temp = posts;
         console.log(posts);
         })
- 
-        
         
         console.log("success");
-  
-        
 
     });
   }

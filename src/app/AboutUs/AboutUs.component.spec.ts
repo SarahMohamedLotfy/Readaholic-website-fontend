@@ -50,12 +50,6 @@ fdescribe('FollowingComponent', () => {
   });
 
 
-  
-
-
-
-
-
 });
 
 

@@ -28,14 +28,9 @@ getfollowers(){
 
    }
    
-   /**
- * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
+  /**
+ * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
-  /* addFollowing (followwing: followerComponent): Observable<followerComponent> {
-    return this.http.post<followerComponent>('http://f8b0ca5b.ngrok.io/api/follow', followwing)
-      
-  } */
-  
   addFollowing ( nb):Observable<any> {
     return this.http.post('http://972c6e5d.ngrok.io/api/follow',{"user_id" : nb});
     } 
@@ -49,8 +44,27 @@ getfollowers(){
     return this.http.get('http://972c6e5d.ngrok.io/api/following');
   
   }
+  /**
+ * Unfollow is a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
+ */
   unfollow ( user_id:number):Observable<any> {
       
     return this.http.delete('http://972c6e5d.ngrok.io/api/unfollow?user_id='+ user_id);
   }
+ /**
+     * Get the profile information i used it to get the  name of the user.
+     *
+     * */
+  getUserprofile(id: number): Observable<any> {
+    return this.http.get<any> ('http://972c6e5d.ngrok.io/api/showProfile/'+ id );
+  }
+  /**
+     * Get the profile information i used it to get the  name of the user.
+     *
+     * */
+  getAuthUserprofile(): Observable<any> {
+    return this.http.get<any> ('http://972c6e5d.ngrok.io/api/showProfile');
+  }
+
 }
+

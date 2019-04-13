@@ -87,22 +87,19 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#bookid">bookid</a>
+                                <a href="#book_id">book_id</a>
                             </li>
                             <li>
-                                <a href="#bookimage">bookimage</a>
+                                <a href="#book_image">book_image</a>
                             </li>
                             <li>
-                                <a href="#bookname">bookname</a>
-                            </li>
-                            <li>
-                                <a href="#country">country</a>
+                                <a href="#currently_reading">currently_reading</a>
                             </li>
                             <li>
                                 <a href="#id">id</a>
                             </li>
                             <li>
-                                <a href="#image_url">image_url</a>
+                                <a href="#image_link">image_link</a>
                             </li>
                             <li>
                                 <a href="#name">name</a>
@@ -130,11 +127,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="bookid"></a>
+                        <a name="book_id"></a>
                         <span class="name">
                             <b>
-                            bookid</b>
-                            <a href="#bookid"><span class="icon ion-ios-link"></span></a>
+                            book_id</b>
+                            <a href="#book_id"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -163,11 +160,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="bookimage"></a>
+                        <a name="book_image"></a>
                         <span class="name">
                             <b>
-                            bookimage</b>
-                            <a href="#bookimage"><span class="icon ion-ios-link"></span></a>
+                            book_image</b>
+                            <a href="#book_image"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -196,11 +193,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="bookname"></a>
+                        <a name="currently_reading"></a>
                         <span class="name">
                             <b>
-                            bookname</b>
-                            <a href="#bookname"><span class="icon ion-ios-link"></span></a>
+                            currently_reading</b>
+                            <a href="#currently_reading"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -219,39 +216,6 @@
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>Name of the book tht the user is currently reading .</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="country"></a>
-                        <span class="name">
-                            <b>
-                            country</b>
-                            <a href="#country"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/classes/followingComponent.ts:34</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Country of the user following the main user  .</p>
 </div>
                     </td>
                 </tr>
@@ -295,11 +259,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="image_url"></a>
+                        <a name="image_link"></a>
                         <span class="name">
                             <b>
-                            image_url</b>
-                            <a href="#image_url"><span class="icon ion-ios-link"></span></a>
+                            image_link</b>
+                            <a href="#image_link"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -381,23 +345,20 @@
   /**
  * Image of the user following the main user .
  */
-  image_url: string;
+image_link: string;
   /**
  * Id of the book tht the user is currently reading .
  */
-  bookid:number;
+book_id:number;
   /**
  * Name of the book tht the user is currently reading .
  */
-  bookname:string; 
+currently_reading:string; 
  /**
  * Image of the book tht the user is currently reading .
  */ 
-  bookimage:string;
-  /**
- * Country of the user following the main user  .
- */ 
-country :string;
+book_image:string;
+  
 }
 </code></pre>
     </div>

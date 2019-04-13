@@ -10,6 +10,7 @@ import { of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 
+
 fdescribe('BookInfoComponent', () => {
   let fixture: ComponentFixture<BookInfoComponent>;
   let mockActivatedRoute,mockRouter,mockService;
@@ -98,6 +99,7 @@ fdescribe('BookInfoComponent', () => {
     //expect(document.getElementById('Booktitle').innerText).toContain("book title");
   });
 
+
   fit('should create review', () => {
     fixture.componentInstance.ngOnInit();
     fixture.componentInstance.createReview();
@@ -141,6 +143,8 @@ fdescribe('BookInfoComponent', () => {
      const titleElement: HTMLElement = fixture.debugElement.query( By.css('#Booktitle')).nativeElement;
     expect(titleElement.innerText).toContain('The Raven Boys');
   });
+
+  it('should show book reviews', () => {
 */
 /*
   fit('should show book reviews', () => {
@@ -161,6 +165,8 @@ fdescribe('BookInfoComponent', () => {
   fixture.detectChanges();
   const titleElement: HTMLElement = fixture.debugElement.query( By.css('#reviewerName')).nativeElement;
  expect(titleElement.innerText).toContain('killua');
+  });*/
+});
   });
 */
 /**@Component({

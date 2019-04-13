@@ -83,6 +83,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#createReview">createReview</a>
+                            </li>
+                            <li>
                                 <a href="#getBook">getBook</a>
                             </li>
                             <li>
@@ -114,7 +117,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/book-info/book.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/book-info/book.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -163,6 +166,114 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="createReview"></a>
+                    <span class="name">
+                        <b>
+                            createReview
+                        </b>
+                        <a href="#createReview"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createReview(bookId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, shelf: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, rating: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/book-info/book.service.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>create book review </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bookId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>shelf</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>body</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>rating</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getBook"></a>
                     <span class="name">
                         <b>
@@ -181,8 +292,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/book-info/book.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/book-info/book.service.ts:18</a></div>
                 </td>
             </tr>
 
@@ -221,7 +332,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/book.html" target="_self" >Observable&lt;book&gt;</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -246,15 +357,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getBookReviews()</code>
+<code>getBookReviews(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/book-info/book.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/book-info/book.service.ts:25</a></div>
                 </td>
             </tr>
 
@@ -265,8 +376,39 @@
 </div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/review.html" target="_self" >Observable&lt;review[]&gt;</a></code>
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -287,15 +429,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getUserBookInfo()</code>
+<code>getUserBookInfo(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/book-info/book.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/book-info/book.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -306,8 +448,39 @@
 </div>
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;userBookInfo&gt;</code>
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -320,11 +493,12 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
+import { Observable, throwError } from &#x27;rxjs&#x27;;
 import { book } from &#x27;../classes/book&#x27;;
 import { review } from &#x27;../classes/review&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
 import { userBookInfo } from &#x27;../classes/userBookInfo&#x27;;
+
 /**handles book related http requests */
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -335,18 +509,36 @@ export class BookService {
   constructor(private http:HttpClient) { }
 
   /**gets the selected book information by id */
-  getBook(id: number): Observable&lt;book&gt; {
-    return this.http.get&lt;book&gt;(&quot;http://localhost:3000/book/&quot; + id);
+  getBook(id: number): Observable&lt;any&gt; {
+  //  return this.http.get&lt;book&gt;(&#x27;http://localhost:3000/book/&#x27;+id);
+    //let params &#x3D; new HttpParams({ fromObject: { book_id:id} });
+    return this.http.get(&#x27;http://595e1fcd.ngrok.io/api/books/show?book_id&#x3D;&#x27;+id);
  }
 
  /**gets the reviews of the book */
- getBookReviews(): Observable&lt;review[]&gt; {
-   return this.http.get&lt;review[]&gt;(&quot;http://localhost:3000/review&quot;);
+ getBookReviews(id: number): Observable&lt;any&gt; {
+  //let params &#x3D; new HttpParams().set(&quot;bookId&quot;,id);
+  return this.http.get&lt;any&gt;(&#x27;http://595e1fcd.ngrok.io/api/showReviewsForABook?bookId&#x3D;&#x27;+id);
+  // return this.http.get&lt;review[]&gt;(&quot;http://localhost:3000/review&quot;);
  }
 
  /** gets user related book info */
- getUserBookInfo(): Observable&lt;userBookInfo&gt; {
-  return this.http.get&lt;userBookInfo&gt;(&#x27;http://localhost:3000/userBookInfo/1&#x27;);
+ getUserBookInfo(id: number): Observable&lt;any&gt; {
+  return this.http.get&lt;userBookInfo&gt;(&#x27;http://595e1fcd.ngrok.io/api/showReviewForBookForUser?bookId&#x3D;&#x27;+id);
+}
+
+/**create book review */
+createReview(bookId:number, shelf: number, body: string, rating: number): Observable&lt;any&gt; {
+  if(body &#x3D;&#x3D; &quot;&quot;)
+  {
+    return this.http.post(&#x27;http://595e1fcd.ngrok.io/api/reviwes/create&#x27;,{bookId,shelf,rating});
+  }
+  else
+  {
+    return this.http.post(&#x27;http://595e1fcd.ngrok.io/api/reviwes/create&#x27;,{bookId,shelf,body,rating});
+  }
+  
+   // return this.http.post(&#x27;http://localhost:3000/ReadShelf&#x27;,{bookId,shelf,body,rating});
 }
 
 }

@@ -68,12 +68,28 @@ export class FollowingComponent implements OnInit {
     console.log(posts)});
 
 
-      
+       /** receives id from url and send it to the get request */
+    const id: number = +this.route.snapshot.paramMap.get('id');
 
-      this.profileservice.getUserprofile(90).subscribe(
-        data => {
-          this.selectedProfile = data
-                 }) ;
+    /**
+    * subscribe to the data received from json file which contain the profile of the authenticated user info information
+    *
+    * and if any error occurs it prints it to the log
+*/  if (id > 0 ){
+
+   this.myfirstservice.getUserprofile(id).subscribe(
+       (data: profile) => this.selectedProfile = data,
+              )
+   }
+   else
+   {
+   this.myfirstservice.getAuthUserprofile().subscribe(
+   (data: profile) => this.selectedProfile = data,
+   (err: any) => console.log(err)
+    );
+   }
+
+      
   
                  
   }

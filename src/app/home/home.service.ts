@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 
 @Injectable({

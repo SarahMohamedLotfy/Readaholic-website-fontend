@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../app-routing.module';
 //import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     CommonModule,
    // RatingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
   ],
   exports: [
     CommonModule,

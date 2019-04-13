@@ -25,7 +25,7 @@ import { catchError, retry } from 'rxjs/operators';
 /**Sends a request to server with the variables that user entered to sign up a new user */
  signUp(email:string,password:string,password_confirmation:string,name:string,gender:string,birthday:Date,country:string,city:string): Observable<any>
  {
-   return this.http.post('http://a6df2b7f.ngrok.io/api/signup',{email,password,password_confirmation,name,gender,birthday,country,city}) ;
+   return this.http.post('http://972c6e5d.ngrok.io/api/signup',{email,password,password_confirmation,name,gender,birthday,country,city}) ;
  }
 /**Loggs out the user from the website */
  logOut():Observable<any>{

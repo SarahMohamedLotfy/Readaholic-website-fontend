@@ -1,15 +1,17 @@
-<div class="topnav" id="myTopnav">
-    <a href="home" id="Readholic">Readholic </a>
-    <a href="home" id="home">Home </a>
-    <a href="myBooks" id="myBooks">My Books</a>
-    <a href="profile" id="profile">My Profile</a>
-    <a href="followers" id="followers">Followers</a>
-    <a href="following" id="following">Following</a>
-    <a href="Aboutus" id="aboutUs">Aboutus</a>
+
+    <div class="topnav" id="myTopnav">
+    <a class="nav-link" [routerLink]="['/home']"  id="Readholic">Readholic </a>
+    <a class="nav-link" [routerLink]="['/home']"   id="home">Home </a>
+    <a class="nav-link" [routerLink]="['/myBooks']"  id="myBooks">My Books</a>
+    <a class="nav-link" [routerLink]="['/profile']"  id="profile">My Profile</a>
+    <a class="nav-link" [routerLink]="['/followers']" id="followers">Followers</a>
+    <a class="nav-link" [routerLink]="['/following']"  id="following">Following</a>
+    <a class="nav-link" [routerLink]="['/Aboutus']"   id="aboutUs">Aboutus</a>
 
     <div id="right">
          
-        <a href="#" id="accountSettings">Account Settings </a>
+ 
+    <a  href="#" id="accountSettings">Account Settings </a>
         <button (click)="onLogout()" id="logOut">Log out</button>
     
     </div>
@@ -51,5 +53,6 @@
 </li>
 -->
         </div>
-       
 
+
+   <router-outlet></router-outlet>

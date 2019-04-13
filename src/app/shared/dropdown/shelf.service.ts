@@ -11,12 +11,12 @@ export class ShelfService {
     constructor(private http:HttpClient) { }
 
     removeFromShelf(shelfId:number, bookId: number):Observable<void> {
-        return this.http.delete<void>('http://a6df2b7f.ngrok.io/ReadShelf/'+ bookId) ;
+        return this.http.delete<void>('http://972c6e5d.ngrok.io/ReadShelf/'+ bookId) ;
 
     }
 
     addToShelf(shelfId:number, id: number):Observable<any> {
-      return this.http.post<any>('http://a6df2b7f.ngrok.io/ReadShelf',{id}) ;
+      return this.http.post<any>('http://972c6e5d.ngrok.io/ReadShelf',{id}) ;
     }
     
 }

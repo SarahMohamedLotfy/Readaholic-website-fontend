@@ -5,7 +5,7 @@
     <ul *ngFor="let update of updatess">
             <div class="container" id="updateContainer">
         <div class="media">
-             <a   href="profile/{{update.user_id}}">
+             <a   [routerLink]="['/profile',update.user_id]">
             <img class="avatar" src={{update.img_url}} alt="Generic placeholder image" >
               </a>
             <div class="media-body" >
@@ -24,16 +24,16 @@
            <div  class="container" id="bookContainer" >
     
                 <div class="media mt-3">
-                        <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.update_type === 0 || update.update_type === 1" >
+                        <a class="pr-3" [routerLink]="['/book',update.book_id]" *ngIf="update.update_type === 0 || update.update_type === 1" >
                             <img src={{update.image_link}} alt="Generic placeholder image" style="float:'left'"  >
                         </a>
                             <!--if someone followed someone -->
-                        <a class="pr-3" href="/profile/{{update.followed_id}}" *ngIf="update.update_type === 2">
+                        <a class="pr-3" [routerLink]="['/profile',update.followed_id]" *ngIf="update.update_type === 2">
                                 <img src={{update.followed_image_link}} alt="Generic placeholder image" style="float:'left'"   >
                             </a>
                         <!--any update concerned with a review-->
                       
-                            <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.update_type === 4 || update.update_type === 3" >
+                            <a class="pr-3" [routerLink]="['/book',update.book_id]" *ngIf="update.update_type === 4 || update.update_type === 3" >
                                 <img src={{update.rev_user_imageLink}} alt="Generic placeholder image" style="float:'left'"  >
                             </a>
                            

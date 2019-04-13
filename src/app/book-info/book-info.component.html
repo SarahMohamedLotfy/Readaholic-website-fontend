@@ -5,7 +5,7 @@
                 <div class="col-md-2" id="leftCol">
                     <img id="bookCover" src={{myBook?.img_url}} class="align-self-start mr-3">
                     <app-dropdown id="shelf" [bookId]="myBook?.id" [shelfId]="userInfo?.shelf_name"></app-dropdown>
-                    <app-star id="rateBook" (rated)="open()" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name" [readOnly]="false"></app-star>
+                    <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name" [readOnly]="false"></app-star>
                 </div>
                 <div class="media-body" id="bookInfo">
                     <div class="col-md-9">
@@ -21,13 +21,14 @@
                             <p>Published {{myBook?.publication_date}} by {{myBook?.publisher}}</p>
                         </div>
                     </div>
+                    <div class="col-md-1"></div>
                 </div>
 
             </div>
         </div>
     </div>
 
-    <div class="container" *ngIf="isUser" id="activity">
+    <div class="container" *ngIf="isUser && userInfo" id="activity">
         <h6>MY ACTIVITY</h6>
         <hr>
         <div class="row" >
@@ -42,14 +43,13 @@
                 <p>{{userInfo?.shelf_name}}</p>
                 <app-star [starsCount]="userInfo?.rating" [readOnly]="true"></app-star>
                 <p>{{userInfo?.body}}</p>
-               <!--<p>{{userInfo?.body}}</p>-->
             </div>
         </div>
     </div>
 
     <div class="container">
         <hr>
-        <div class="row">
+        <div class="row" style="float: down">
             <div class="media" *ngFor="let review of reviews">
                 <img  [routerLink]="['/profile',review.user_id]" id="reviewerImg" src={{review?.userimagelink}} class="align-self-start mr-3" style="width:50px; height: 50px">
                 <div class="media-body" id="reviewInfo">
@@ -65,7 +65,7 @@
 
                     </small>
                 </div>
-                <div class="col-md-3"></div>
+
             </div>
         </div>
     </div>
@@ -90,24 +90,24 @@
                                   <p>Book shelf</p>
                               </div>
                               <div class="col-8" style="min-width: 300px">
-                                  <app-star [starsCount]="4" [readOnly]="true"></app-star>
+                                  <app-star [starsCount]="info?.rating" [readOnly]="false" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"></app-star>
                                   <div>
-                                      <input type="checkbox" (click)="userShelf=0">
+                                      <input type="radio" (click)="info.shelf_name=0">
                                       <label style="margin-right:10px">read</label>
-                                      <input type="checkbox" (click)="userShelf=1">
+                                      <input type="radio" (click)="info.shelf_name=1">
                                       <label style="margin-right:10px">currently reading</label>
-                                      <input type="checkbox" (click)="userShelf=2">
+                                      <input type="radio" (click)="info.shelf_name=2">
                                       <label style="margin-right:10px">want to read</label>
                                   </div>
 
                       </div>
               </div>
               <p >What did you think?</p>
-              <textarea rows="10" cols="92" wrap="physical" [(ngModel)]="userReview" ></textarea>
+              <textarea rows="10" cols="92" wrap="physical" [(ngModel)]="info.body" ></textarea>
 
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="createReview()">Post</button>
+                <button type="button" id="post" class="btn btn-secondary" data-dismiss="modal" (click)="createReview()" style="background-color: #218838">Post</button>
               </div>
 
             </div>
@@ -115,6 +115,4 @@
         </div>
       </div>
 
-      <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;" ></button>
-
-
+      <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;"  ></button>

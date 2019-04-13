@@ -14,10 +14,7 @@ export class aboutusService {
 */
   constructor(private http:HttpClient) { }
 
-  getImg(){
-    return this.http.get('http://localhost:3000/AboutUs');
   
-  }
  
     
 }

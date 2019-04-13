@@ -155,6 +155,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#addBook">addBook</a>
+                            </li>
+                            <li>
+                                <a href="#addFollowing">addFollowing</a>
+                            </li>
+                            <li>
                                 <a href="#loadData">loadData</a>
                             </li>
                             <li>
@@ -244,6 +250,147 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addBook"></a>
+                    <span class="name">
+                        <b>
+                            addBook
+                        </b>
+                        <a href="#addBook"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addBook(shelf, book_id)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/home/home.component.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>shelf</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>book_id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addFollowing"></a>
+                    <span class="name">
+                        <b>
+                            addFollowing
+                        </b>
+                        <a href="#addFollowing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addFollowing(nb)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/app/home/home.component.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nb</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -523,8 +670,30 @@ export class HomeComponent implements OnInit {
        }
           }
      
-    
-   
+    addFollowing(nb){
+      this.httpser.addFollowing(nb).subscribe(
+        data  &#x3D;&gt; {
+        console.log(&quot;POST Request is successful &quot;, data);
+        },
+        error  &#x3D;&gt; {
+        
+        console.log(&quot;Error&quot;, error);
+        
+        }
+        
+        );}
+        addBook(shelf,book_id){
+          this.httpser.addBook(shelf,book_id).subscribe(
+            data  &#x3D;&gt; {
+              console.log(&quot;POST Request is successful &quot;, data);
+              },
+              error  &#x3D;&gt; {
+              
+              console.log(&quot;Error&quot;, error);
+              
+              }
+          )
+        }
 }
 </code></pre>
     </div>
@@ -572,7 +741,7 @@ export class HomeComponent implements OnInit {
                             &lt;/div&gt;
                             &lt;div *ngIf&#x3D;&quot;update.actionText &#x3D;&#x3D;&#x3D; &#x27; started following  : &#x27;&quot; &gt;
                                 &lt;h5 &gt;{{update.followed_name}}&lt;/h5&gt; 
-                                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot; id&#x3D;&quot;followButton&quot;&gt;Follow {{update.followed_name}}&lt;/button&gt;
+                                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot; id&#x3D;&quot;followButton&quot;(click)&#x3D;&quot;addFollowing(update.followed_id)&quot; &gt;Follow {{update.followed_name}}&lt;/button&gt;
                         &lt;/div&gt;
                         &lt;/div&gt;
                        
@@ -661,7 +830,7 @@ margin-bottom: 100px;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><navbar></navbar><h5 id="updates"> Updates </h5>         <ul *ngFor="let update of updatess">            <div class="container" id="updateContainer">        <div class="media">             <a   href="profile/{{update.user_id}}">            <img class="avatar" src={{update.img_url}} alt="Generic placeholder image" >              </a>            <div class="media-body" >                                   <h5 class="mt-0"  >{{update.name}}</h5>                      <h6 class="mt-0" id="action"> {{update.actionText}}</h6>                <app-star  *ngIf="update.actionText == \' rated a book \'"[starsCount]="update.rating" [readOnly]="true"></app-star>                                                    <div class="media mt-3">                        <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.actionText != \' started following  : \'" >                            <img src={{update.image_link}} alt="Generic placeholder image" style="float:\'left\'"  >                        </a>                        <a class="pr-3" href="/profile/{{update.followed_id}}" *ngIf="update.actionText === \' started following  : \'">                                <img src={{update.followed_image_link}} alt="Generic placeholder image" style="float:\'left\'"   >                            </a>                                                <div  class="media-body">                            <div  *ngIf="update.actionText != \' started following  : \'">                            <h5 class="mt-0"  >{{update.title}}<small><i>by {{update.author_name}}</i></small></h5>                                                                                 <app-dropdown > </app-dropdown>                            <div style="clear: both" >                            <small style="float: \'left\'">rate it </small>                            <app-star  [readOnly]="false" style="float: \'left\'"></app-star>                             </div>                            <p>{{update.description}}</p>                            </div>                            <div *ngIf="update.actionText === \' started following  : \'" >                                <h5 >{{update.followed_name}}</h5>                                 <button type="button" class="btn btn-primary" id="followButton">Follow {{update.followed_name}}</button>                        </div>                        </div>                                                                  </div>        </div>    </div>    </div>    </ul></div>'
+        var COMPONENT_TEMPLATE = '<div><navbar></navbar><h5 id="updates"> Updates </h5>         <ul *ngFor="let update of updatess">            <div class="container" id="updateContainer">        <div class="media">             <a   href="profile/{{update.user_id}}">            <img class="avatar" src={{update.img_url}} alt="Generic placeholder image" >              </a>            <div class="media-body" >                                   <h5 class="mt-0"  >{{update.name}}</h5>                      <h6 class="mt-0" id="action"> {{update.actionText}}</h6>                <app-star  *ngIf="update.actionText == \' rated a book \'"[starsCount]="update.rating" [readOnly]="true"></app-star>                                                    <div class="media mt-3">                        <a class="pr-3" href="book/{{update.book_id}}" *ngIf="update.actionText != \' started following  : \'" >                            <img src={{update.image_link}} alt="Generic placeholder image" style="float:\'left\'"  >                        </a>                        <a class="pr-3" href="/profile/{{update.followed_id}}" *ngIf="update.actionText === \' started following  : \'">                                <img src={{update.followed_image_link}} alt="Generic placeholder image" style="float:\'left\'"   >                            </a>                                                <div  class="media-body">                            <div  *ngIf="update.actionText != \' started following  : \'">                            <h5 class="mt-0"  >{{update.title}}<small><i>by {{update.author_name}}</i></small></h5>                                                                                 <app-dropdown > </app-dropdown>                            <div style="clear: both" >                            <small style="float: \'left\'">rate it </small>                            <app-star  [readOnly]="false" style="float: \'left\'"></app-star>                             </div>                            <p>{{update.description}}</p>                            </div>                            <div *ngIf="update.actionText === \' started following  : \'" >                                <h5 >{{update.followed_name}}</h5>                                 <button type="button" class="btn btn-primary" id="followButton"(click)="addFollowing(update.followed_id)" >Follow {{update.followed_name}}</button>                        </div>                        </div>                                                                  </div>        </div>    </div>    </div>    </ul></div>'
     var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};

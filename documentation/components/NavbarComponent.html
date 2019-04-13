@@ -384,7 +384,17 @@ export class NavbarComponent implements OnInit {
         res&#x3D;&gt;{localStorage.removeItem(&#x27;token&#x27;);
         this.router.navigate([&#x27;/login&#x27;]);
         
-        },err&#x3D;&gt;this.error&#x3D;err)
+        },err &#x3D;&gt; {
+          if(err.status &#x3D;&#x3D;405)
+          {
+          
+           localStorage.removeItem(&#x27;token&#x27;);
+            this.router.navigate([&#x27;/login&#x27;]);
+          }
+          
+          else
+          console.log(err);
+        })
 
 
 
@@ -401,7 +411,7 @@ export class NavbarComponent implements OnInit {
     &lt;a href&#x3D;&quot;home&quot; id&#x3D;&quot;Readholic&quot;&gt;Readholic &lt;/a&gt;
     &lt;a href&#x3D;&quot;home&quot; id&#x3D;&quot;home&quot;&gt;Home &lt;/a&gt;
     &lt;a href&#x3D;&quot;myBooks&quot; id&#x3D;&quot;myBooks&quot;&gt;My Books&lt;/a&gt;
-    &lt;a href&#x3D;&quot;profile/90&quot; id&#x3D;&quot;profile&quot;&gt;My Profile&lt;/a&gt;
+    &lt;a href&#x3D;&quot;profile&quot; id&#x3D;&quot;profile&quot;&gt;My Profile&lt;/a&gt;
     &lt;a href&#x3D;&quot;followers&quot; id&#x3D;&quot;followers&quot;&gt;Followers&lt;/a&gt;
     &lt;a href&#x3D;&quot;following&quot; id&#x3D;&quot;following&quot;&gt;Following&lt;/a&gt;
     &lt;a href&#x3D;&quot;Aboutus&quot; id&#x3D;&quot;aboutUs&quot;&gt;Aboutus&lt;/a&gt;
@@ -414,7 +424,37 @@ export class NavbarComponent implements OnInit {
         &lt;div class&#x3D;&quot;input-group-append&quot;&gt;
         &lt;/div&gt;
     &lt;/div&gt;
+    &lt;li class&#x3D;&quot;nav-item dropdown&quot;&gt;
+        &lt;a class&#x3D;&quot;nav-link dropdown-toggle&quot; href&#x3D;&quot;#&quot; id&#x3D;&quot;navbarDropdown&quot; role&#x3D;&quot;button&quot; data-toggle&#x3D;&quot;dropdown&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;
+            &lt;i class&#x3D;&quot;fa fa-bell&quot;&gt;
+                &lt;span class&#x3D;&quot;badge badge-primary&quot;&gt;11&lt;/span&gt;
+              &lt;/i&gt;
+        &lt;/a&gt;
 
+        &lt;div class&#x3D;&quot;dropdown-menu&quot; aria-labelledby&#x3D;&quot;navbarDropdown&quot;&gt;
+            &lt;a class&#x3D;&quot;menu-title pull-right&quot; href&#x3D;&#x27;/notifications&#x27;&gt;View all&lt;i class&#x3D;&quot;glyphicon glyphicon-circle-arrow-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+
+
+            &lt;div class&#x3D;&quot;notification-wrapper&quot; id&#x3D;&quot;notif&quot;&gt;
+
+                &lt;a class&#x3D;&quot;notification-image&quot;&gt;
+                    &lt;img src&#x3D;&quot;https://appharbor.com/assets/images/stackoverflow-logo.png&quot; alt&#x3D;&quot;&quot; width&#x3D;&quot;32&quot;&gt;
+                &lt;/a&gt;
+                &lt;a class&#x3D;&quot;notification-text&quot;&gt;
+                    &lt;span class&#x3D;&quot;highlight&quot;&gt;Sara&lt;/span&gt; reviewed a book
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;notification-wrapper&quot;&gt;
+                &lt;a class&#x3D;&quot;notification-image&quot;&gt;
+                    &lt;img src&#x3D;&quot;https://appharbor.com/assets/images/stackoverflow-logo.png&quot; alt&#x3D;&quot;&quot; width&#x3D;&quot;32&quot;&gt;
+                &lt;/a&gt;
+                &lt;a class&#x3D;&quot;notification-text&quot;&gt;
+                    &lt;span class&#x3D;&quot;highlight&quot;&gt;Sara&lt;/span&gt;reviewed a book
+                &lt;/a&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/li&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -425,7 +465,8 @@ export class NavbarComponent implements OnInit {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.topnav {
     background-color: #f4f1ea;
-    overflow: hidden;
+    overflow:visible ;
+    
   }
   .active {
     background-color: #555;
@@ -459,7 +500,10 @@ font-size:30px ;
 
   float:right ;
  }
-</code></pre>
+ #notif{
+   clear:both;
+   float:left ;
+ }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -487,7 +531,7 @@ font-size:30px ;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="topnav" id="myTopnav">    <a href="home" id="Readholic">Readholic </a>    <a href="home" id="home">Home </a>    <a href="myBooks" id="myBooks">My Books</a>    <a href="profile/90" id="profile">My Profile</a>    <a href="followers" id="followers">Followers</a>    <a href="following" id="following">Following</a>    <a href="Aboutus" id="aboutUs">Aboutus</a>    <div id="right">        <a href="#" id="accountSettings">Account Settings </a>        <button (click)="onLogout()" id="logOut">Log out</button>    </div>    <div class="input-group" id="searchBox">        <input class="form-control border-secondary py-2" type="search" value="search books">        <div class="input-group-append">        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="topnav" id="myTopnav">    <a href="home" id="Readholic">Readholic </a>    <a href="home" id="home">Home </a>    <a href="myBooks" id="myBooks">My Books</a>    <a href="profile" id="profile">My Profile</a>    <a href="followers" id="followers">Followers</a>    <a href="following" id="following">Following</a>    <a href="Aboutus" id="aboutUs">Aboutus</a>    <div id="right">        <a href="#" id="accountSettings">Account Settings </a>        <button (click)="onLogout()" id="logOut">Log out</button>    </div>    <div class="input-group" id="searchBox">        <input class="form-control border-secondary py-2" type="search" value="search books">        <div class="input-group-append">        </div>    </div>    <li class="nav-item dropdown">        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">            <i class="fa fa-bell">                <span class="badge badge-primary">11</span>              </i>        </a>        <div class="dropdown-menu" aria-labelledby="navbarDropdown">            <a class="menu-title pull-right" href=\'/notifications\'>View all<i class="glyphicon glyphicon-circle-arrow-right"></i></a>            <div class="notification-wrapper" id="notif">                <a class="notification-image">                    <img src="https://appharbor.com/assets/images/stackoverflow-logo.png" alt="" width="32">                </a>                <a class="notification-text">                    <span class="highlight">Sara</span> reviewed a book                </a>            </div>            <div class="notification-wrapper">                <a class="notification-image">                    <img src="https://appharbor.com/assets/images/stackoverflow-logo.png" alt="" width="32">                </a>                <a class="notification-text">                    <span class="highlight">Sara</span>reviewed a book                </a>            </div>        </div>    </li></div></div>'
     var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};

@@ -1,0 +1,51 @@
+
+  #updates{
+   margin-left: 300px;
+   color: #5e2b02 ;
+   font-weight: bold ;
+   }
+
+  #containerBook{
+   background-color: #ffffff ; 
+   float:middle ;
+  display: inline-flex;
+  width:900px ;
+  }
+ 
+#updateContainer {
+background-color:#f4f1ea ;
+border-radius: 2% ;
+width:900px ;
+float:middle ;
+padding: 10px;
+margin-bottom: 100px;
+  }
+ h5,h6,h4,small,i{
+   display: inline ;
+ }
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  #action{
+    padding-left: 5px;
+  }
+
+
+.pr-3 img{ 
+  width:200px;
+  height:200px;
+} 
+#followButton{
+  background-color:green ;
+  display: inline-block;
+ 
+}
+#bodyOfreview{
+  font-size:13px;
+}
+#bookContainer{
+  background-color:#fffaeefb ;
+}

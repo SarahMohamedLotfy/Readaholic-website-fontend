@@ -1,7 +1,7 @@
 <div class="btn-group"  >
-  <button type="button" class="btn btn-success" [disabled]="buttonDisabled" id="buttonColor" id="2" (click)="addBookToShelf($event)">
+  <button type="button"  class="btn btn-success" [disabled]="buttonDisabled" id="buttonColor" id="2" (click)="addBookToShelf($event)">
     <span title="Remove this book from your shelves" *ngIf="removeEnabled" (mouseenter) ="mouseEnter($event)" (mouseleave) ="mouseLeave($event)" (click)="removeBookFromShelf()">&#10003; </span>
-    {{shelfStatus}}
+    <span id="test">{{shelfStatus}}</span>
   </button>
   <button type="button"style="max-width:40px;" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" id="buttonColor">
   </button>

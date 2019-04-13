@@ -298,15 +298,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>delFollowing(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>delFollowing(user_id)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="84"
-                            class="link-to-prism">src/app/following/following.component.ts:84</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/following/following.component.ts:99</a></div>
                 </td>
             </tr>
 
@@ -322,16 +322,12 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
-                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
+                                    <td>user_id</td>
 
                                     <td>
                                         No
@@ -422,8 +418,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="114"
-                            class="link-to-prism">src/app/following/following.component.ts:114</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/following/following.component.ts:133</a></div>
                 </td>
             </tr>
 
@@ -463,8 +459,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/app/following/following.component.ts:95</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/app/following/following.component.ts:114</a></div>
                 </td>
             </tr>
 
@@ -739,30 +735,49 @@ export class FollowingComponent implements OnInit {
 
  
    this.myfirstservice.getfollowing().subscribe((posts:any)&#x3D;&gt;{
-      this.posts &#x3D;posts ;
-      this.temp &#x3D; posts;});
+      this.posts &#x3D;posts.following ;
+      this.temp &#x3D; posts.following;
+    console.log(posts)});
 
+
+       /** receives id from url and send it to the get request */
+    const id: number &#x3D; +this.route.snapshot.paramMap.get(&#x27;id&#x27;);
+
+    /**
+    * subscribe to the data received from json file which contain the profile of the authenticated user info information
+    *
+    * and if any error occurs it prints it to the log
+*/  if (id &gt; 0 ){
+
+   this.myfirstservice.getUserprofile(id).subscribe(
+       (data: profile) &#x3D;&gt; this.selectedProfile &#x3D; data,
+              )
+   }
+   else
+   {
+   this.myfirstservice.getAuthUserprofile().subscribe(
+   (data: profile) &#x3D;&gt; this.selectedProfile &#x3D; data,
+   (err: any) &#x3D;&gt; console.log(err)
+    );
+   }
 
       
-
-      this.profileservice.getUserprofile(90).subscribe(
-        data &#x3D;&gt; {
-          this.selectedProfile &#x3D; data,
-          (err: any) &#x3D;&gt; console.log(err),
-          console.log(this.selectedProfile)
-                 }) ;
   
                  
   }
   /**
  * delFollowing () is a post request to remove the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
  */
-  delFollowing(id:number){
-    this.myfirstservice.unfollow(id).subscribe((data)&#x3D;&gt;{
+  delFollowing(user_id){
+    this.myfirstservice.unfollow(user_id).subscribe((data) &#x3D;&gt;{
          console.log(&quot;success&quot;);
-    });
+         this.myfirstservice.getfollowing().subscribe((posts:any)&#x3D;&gt;{
+          this.posts &#x3D;posts.following ;
+          this.temp &#x3D; posts.following;
+        console.log(posts)});
+           });
   }
-
+  
   
  /**
 *Search for the name of following person when click on search button  .
@@ -832,98 +847,92 @@ noFollowing ():number
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
+        <pre class="line-numbers"><code class="language-html">&lt;!doctype html&gt;
 
-&lt;!doctype html&gt;
-&lt;navbar&gt;&lt;/navbar&gt;
 &lt;html lang&#x3D;&quot;en&quot;&gt;
- &lt;navbar&gt;&lt;/navbar&gt; 
-&lt;head&gt;
-  
+&lt;navbar&gt;&lt;/navbar&gt;
 
-  &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;
-  &lt;script src&#x3D;&quot;angular.min.js&quot;&gt;&lt;/script&gt;
-  &lt;title&gt;Followers&lt;/title&gt;
-  &lt;base href&#x3D;&quot;/&quot;&gt;
-  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1&quot;&gt;
+&lt;head&gt;
+
+
+    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;
+    &lt;script src&#x3D;&quot;angular.min.js&quot;&gt;&lt;/script&gt;
+    &lt;title&gt;Followers&lt;/title&gt;
+    &lt;base href&#x3D;&quot;/&quot;&gt;
+    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1&quot;&gt;
 &lt;/head&gt;
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
 
 &lt;body&gt;
 
-&lt;p   *ngIf&#x3D;&quot;noFollowing() &#x3D;&#x3D; 0&quot; id &#x3D;&quot;tagrba&quot;&gt;You are not following anyone.&lt;/p&gt; 
-
+    
     &lt;div *ngIf&#x3D;&quot;selectedProfile&quot;&gt;
-        &lt;div  id&#x3D;&quot;Myprofilename&quot;&gt;
-            &lt;a [routerLink]&#x3D;&quot;[&#x27;/profile/90&#x27;]&quot;  style&#x3D;&quot; color: #00635d;&quot; &gt;{{ selectedProfile.name }} &lt;/a&gt;&lt;span&gt; &gt; People You&#x27;re Following&lt;/span&gt; 
+        &lt;div id&#x3D;&quot;Myprofilename&quot;&gt;
+            &lt;a [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,selectedProfile.id ]&quot; style&#x3D;&quot; color: #00635d;&quot;&gt;{{ selectedProfile.name }} &lt;/a&gt;&lt;span&gt; &gt; People You&#x27;re Following&lt;/span&gt;
         &lt;/div&gt;
-        &lt;/div&gt;
-        
+    &lt;/div&gt;
 
 
 
 
-  &lt;div id&#x3D;&quot;tfheader&quot; &gt;
-      &lt;form id&#x3D;&quot;tfnewsearch&quot; method&#x3D;&quot;get&quot; &gt;
+    &lt;div id&#x3D;&quot;tfheader&quot;&gt;
+        &lt;form id&#x3D;&quot;tfnewsearch&quot; method&#x3D;&quot;get&quot;&gt;
 
-      &lt;input type&#x3D;&quot;text&quot; id &#x3D;&quot;searchtextfollowing&quot; value&#x3D;&quot;searchText&quot; [(ngModel)]&#x3D;&quot;searchText&quot; class&#x3D;&quot;tftextinput&quot; name&#x3D;&quot;q&quot; size&#x3D;&quot;21&quot;
-        maxlength&#x3D;&quot;120&quot;&gt;&lt;input id &#x3D; &quot;searchfollowingg&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;search()&quot; value&#x3D;&quot;search&quot; class &#x3D;&quot;searchfollowing
+            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;searchtextfollowing&quot; value&#x3D;&quot;searchText&quot; [(ngModel)]&#x3D;&quot;searchText&quot; class&#x3D;&quot;tftextinput&quot; name&#x3D;&quot;q&quot; size&#x3D;&quot;21&quot; maxlength&#x3D;&quot;120&quot;&gt;&lt;input id&#x3D;&quot;searchfollowingg&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;search()&quot; value&#x3D;&quot;search&quot; class&#x3D;&quot;searchfollowing
         &quot;&gt;
-      &lt;/form&gt;
+        &lt;/form&gt;
 
-    &lt;div class&#x3D;&quot;tfclear&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
+        &lt;div class&#x3D;&quot;tfclear&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
 
 
+    &lt;p *ngIf&#x3D;&quot;noFollowing() &#x3D;&#x3D; 0&quot; id&#x3D;&quot;tagrba&quot;&gt;You are not following anyone.&lt;/p&gt;
 
-   &lt;ul style&#x3D;&quot;list-style: none;&quot;&gt;
-  &lt;li  class&#x3D;&quot;list&quot; *ngFor&#x3D;&quot;let post of posts  &quot;&gt;
 
-  &lt;div class&#x3D;&quot;directory-info-row&quot;&gt;
-      &lt;div class&#x3D;&quot;directory-info-row1&quot; class &#x3D;&quot;rowcolumn&quot;class&#x3D;&quot;row&quot;&gt;
-          &lt;div class&#x3D;&quot;directory-info-row1&quot; class&#x3D;&quot;col-md-5 col-sm-6&quot;&gt;
-              &lt;div class &#x3D;&quot;panelbodychar&quot;class&#x3D;&quot;panel&quot;&gt;
-              &lt;div class &#x3D;&quot;panelbodychar&quot; class&#x3D;&quot;panel-body&quot;&gt;
-                  &lt;div class &#x3D;&quot;panelbodychar&quot;class&#x3D;&quot;media&quot;&gt;
-                      &lt;a class &#x3D; &quot;left&quot;class&#x3D;&quot;pull-left&quot;  [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;, post.id]&quot;&gt;
-                          &lt;img id &#x3D;&quot;profilepagef&quot;  src&#x3D;{{post.image_url}} alt&#x3D;&quot;&quot;&gt;
-                      &lt;/a&gt;
-                      &lt;div class&#x3D;&quot;media-body&quot;&gt;
-                        &lt;a [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;, post.id]&quot;  id &#x3D;&quot;profilename&quot;class &#x3D;&quot;nameoffollower &quot; &gt;
+    &lt;ul style&#x3D;&quot;list-style: none;&quot;&gt;
+        &lt;li class&#x3D;&quot;list&quot; *ngFor&#x3D;&quot;let post of posts  &quot;&gt;
+
+            &lt;div class&#x3D;&quot;directory-info-row&quot;&gt;
+                &lt;div class&#x3D;&quot;directory-info-row1&quot; class&#x3D;&quot;rowcolumn&quot; class&#x3D;&quot;row&quot;&gt;
+                    &lt;div class&#x3D;&quot;directory-info-row1&quot; class&#x3D;&quot;col-md-5 col-sm-6&quot;&gt;
+                        &lt;div class&#x3D;&quot;panelbodychar&quot; class&#x3D;&quot;panel&quot;&gt;
+                            &lt;div class&#x3D;&quot;panelbodychar&quot; class&#x3D;&quot;panel-body&quot;&gt;
+                                &lt;div class&#x3D;&quot;panelbodychar&quot; class&#x3D;&quot;media&quot;&gt;
+                                    &lt;a class&#x3D;&quot;left&quot; class&#x3D;&quot;pull-left&quot; [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;, post.id]&quot;&gt;
+                                        &lt;img id&#x3D;&quot;profilepagef&quot; src&#x3D;{{post.image_link}} alt&#x3D;&quot;&quot;&gt;
+                                    &lt;/a&gt;
+                                    &lt;div class&#x3D;&quot;media-body&quot;&gt;
+                                        &lt;a [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;, post.id]&quot; id&#x3D;&quot;profilename&quot; class&#x3D;&quot;nameoffollower &quot;&gt;
                           {{post.name}}
 
                         &lt;/a&gt; &lt;/div&gt;
-                       
-                        &lt;address class&#x3D;&quot;country&quot;&gt;
-                          &lt;br&gt;
-                        {{post.country}}&lt;br&gt;
-                      &lt;/address&gt;
-                     
-                  &lt;/div&gt;
 
-                  
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+                                   
 
-          
+                                &lt;/div&gt;
 
-          &lt;div class&#x3D;&quot;directory-info-row2 &quot;class&#x3D;&quot;col-md-7 col-sm-7&quot;&gt;
-              &lt;div class&#x3D;&quot;panel&quot;&gt;
-              &lt;div class&#x3D;&quot;panel-body&quot;&gt;
-                  &lt;div class&#x3D;&quot;media&quot;&gt;
-                      &lt;a class&#x3D;&quot;pull-left&quot;  [routerLink]&#x3D;&quot;[&#x27;/book&#x27;, post.bookid]&quot;&gt;
-                          &lt;img id &#x3D;&quot;bookimage&quot;  src&#x3D;{{post.bookimage}} alt&#x3D;&quot;&quot;&gt;
-                      &lt;/a&gt;
-                      &lt;div class&#x3D;&quot;media-body&quot;&gt;
-                          &lt;div class&#x3D;&quot;currentext&quot;&gt; Currently reading : &lt;/div&gt;
-                          &lt;div class&#x3D;&quot;pull-right&quot;&gt;
-                            &lt;button id &#x3D;&quot;stopfollow&quot; (click)&#x3D;&quot;delFollowing(post.id)&quot;  type&#x3D;&quot;button&quot;
-                              class&#x3D;&quot;btn btn-info btn-sm waves-effect waves-light&quot;&gt; UnFollow &lt;/button&gt;
-                          &lt;/div&gt;
-                          &lt;address&gt;
+
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+
+
+                    &lt;div class&#x3D;&quot;directory-info-row2 &quot; class&#x3D;&quot;col-md-7 col-sm-7&quot;&gt;
+                        &lt;div class&#x3D;&quot;panel&quot;&gt;
+                            &lt;div class&#x3D;&quot;panel-body&quot;&gt;
+                                &lt;div class&#x3D;&quot;media&quot;&gt;
+                                    &lt;a class&#x3D;&quot;pull-left&quot; [routerLink]&#x3D;&quot;[&#x27;/book&#x27;, post.bookid]&quot;&gt;
+                                        &lt;img id&#x3D;&quot;bookimage&quot; src&#x3D;{{post.book_image}} alt&#x3D;&quot;jj&quot;&gt;
+                                    &lt;/a&gt;
+                                    &lt;div class&#x3D;&quot;media-body&quot;&gt;
+                                        &lt;div class&#x3D;&quot;currentext&quot;&gt; Currently reading : &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;pull-right&quot;&gt;
+                                            &lt;button id&#x3D;&quot;stopfollow&quot; (click)&#x3D;&quot;delFollowing(post.id)&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-info btn-sm waves-effect waves-light&quot;&gt; UnFollow &lt;/button&gt;
+                                        &lt;/div&gt;
+                                        &lt;address&gt;
                             &lt;a   id&#x3D; &quot;bookname&quot; [routerLink]&#x3D;&quot;[&#x27;/book&#x27;, post.bookid]&quot; &gt;
-                              &lt;h4 class&#x3D;&quot;bookhide&quot; &gt;{{post.bookname}} &lt;/h4&gt;
+                              &lt;h4 class&#x3D;&quot;bookhide&quot; &gt;{{post.currently_reading}} &lt;/h4&gt;
 
                             &lt;/a&gt;
 
@@ -931,18 +940,18 @@ noFollowing ():number
                           &lt;/address&gt;
 
 
-                      &lt;/div&gt;
-                  &lt;/div&gt;
-              &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+
+                &lt;/div&gt;
             &lt;/div&gt;
-          &lt;/div&gt;
-
-
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;hr/&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+            &lt;hr/&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
 
 
 
@@ -954,8 +963,8 @@ noFollowing ():number
 
 
 &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+
+&lt;/html&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -1032,14 +1041,7 @@ width: 150px;
     color: #333333;
 }
 
-#Myprofilename{
-  color: #382110;
-  font-size: 20px;
-  font-family: &quot;Merriweather&quot;, Georgia, &quot;Times New Roman&quot;, serif;
-  font-weight: bold;
-  margin-top: 0;
-  line-height: 24px;
-}
+
 // search box //
 
 	#tfheader{
@@ -1250,8 +1252,8 @@ padding: 3px;
   font-size: 22px;
   font-family: &quot;Merriweather&quot;, Georgia, &quot;Times New Roman&quot;, serif;
   font-weight: bold;
-  top:20px;
-  left:215px;
+  top:28px;
+  right:65px;
 }
 #Myprofilename ,span
 {
@@ -1446,7 +1448,7 @@ border-radius: 3px;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!doctype html><navbar></navbar><html lang="en"> <navbar></navbar> <head>    <meta charset="utf-8">  <script src="angular.min.js"></script>  <title>Followers</title>  <base href="/">  <meta name="viewport" content="width=device-width, initial-scale=1"></head><router-outlet></router-outlet><body><p   *ngIf="noFollowing() == 0" id ="tagrba">You are not following anyone.</p>     <div *ngIf="selectedProfile">        <div  id="Myprofilename">            <a [routerLink]="[\'/profile/90\']"  style=" color: #00635d;" >{{ selectedProfile.name }} </a><span> > People You\'re Following</span>         </div>        </div>          <div id="tfheader" >      <form id="tfnewsearch" method="get" >      <input type="text" id ="searchtextfollowing" value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"        maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing        ">      </form>    <div class="tfclear"></div>  </div>   <ul style="list-style: none;">  <li  class="list" *ngFor="let post of posts  ">  <div class="directory-info-row">      <div class="directory-info-row1" class ="rowcolumn"class="row">          <div class="directory-info-row1" class="col-md-5 col-sm-6">              <div class ="panelbodychar"class="panel">              <div class ="panelbodychar" class="panel-body">                  <div class ="panelbodychar"class="media">                      <a class = "left"class="pull-left"  [routerLink]="[\'/profile\', post.id]">                          <img id ="profilepagef"  src={{post.image_url}} alt="">                      </a>                      <div class="media-body">                        <a [routerLink]="[\'/profile\', post.id]"  id ="profilename"class ="nameoffollower " >                          {{post.name}}                        </a> </div>                                               <address class="country">                          <br>                        {{post.country}}<br>                      </address>                                       </div>                                </div>            </div>          </div>                    <div class="directory-info-row2 "class="col-md-7 col-sm-7">              <div class="panel">              <div class="panel-body">                  <div class="media">                      <a class="pull-left"  [routerLink]="[\'/book\', post.bookid]">                          <img id ="bookimage"  src={{post.bookimage}} alt="">                      </a>                      <div class="media-body">                          <div class="currentext"> Currently reading : </div>                          <div class="pull-right">                            <button id ="stopfollow" (click)="delFollowing(post.id)"  type="button"                              class="btn btn-info btn-sm waves-effect waves-light"> UnFollow </button>                          </div>                          <address>                            <a   id= "bookname" [routerLink]="[\'/book\', post.bookid]" >                              <h4 class="bookhide" >{{post.bookname}} </h4>                            </a>                          </address>                      </div>                  </div>              </div>            </div>          </div>    </div>  </div>  <hr/></li></ul></body></html></div>'
+        var COMPONENT_TEMPLATE = '<div><!doctype html><html lang="en"><navbar></navbar><head>    <meta charset="utf-8">    <script src="angular.min.js"></script>    <title>Followers</title>    <base href="/">    <meta name="viewport" content="width=device-width, initial-scale=1"></head><router-outlet></router-outlet><body>        <div *ngIf="selectedProfile">        <div id="Myprofilename">            <a [routerLink]="[\'/profile\',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > People You\'re Following</span>        </div>    </div>    <div id="tfheader">        <form id="tfnewsearch" method="get">            <input type="text" id="searchtextfollowing" value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21" maxlength="120"><input id="searchfollowingg" type="button" (click)="search()" value="search" class="searchfollowing        ">        </form>        <div class="tfclear"></div>    </div>    <p *ngIf="noFollowing() == 0" id="tagrba">You are not following anyone.</p>    <ul style="list-style: none;">        <li class="list" *ngFor="let post of posts  ">            <div class="directory-info-row">                <div class="directory-info-row1" class="rowcolumn" class="row">                    <div class="directory-info-row1" class="col-md-5 col-sm-6">                        <div class="panelbodychar" class="panel">                            <div class="panelbodychar" class="panel-body">                                <div class="panelbodychar" class="media">                                    <a class="left" class="pull-left" [routerLink]="[\'/profile\', post.id]">                                        <img id="profilepagef" src={{post.image_link}} alt="">                                    </a>                                    <div class="media-body">                                        <a [routerLink]="[\'/profile\', post.id]" id="profilename" class="nameoffollower ">                          {{post.name}}                        </a> </div>                                                                   </div>                            </div>                        </div>                    </div>                    <div class="directory-info-row2 " class="col-md-7 col-sm-7">                        <div class="panel">                            <div class="panel-body">                                <div class="media">                                    <a class="pull-left" [routerLink]="[\'/book\', post.bookid]">                                        <img id="bookimage" src={{post.book_image}} alt="jj">                                    </a>                                    <div class="media-body">                                        <div class="currentext"> Currently reading : </div>                                        <div class="pull-right">                                            <button id="stopfollow" (click)="delFollowing(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light"> UnFollow </button>                                        </div>                                        <address>                            <a   id= "bookname" [routerLink]="[\'/book\', post.bookid]" >                              <h4 class="bookhide" >{{post.currently_reading}} </h4>                            </a>                          </address>                                    </div>                                </div>                            </div>                        </div>                    </div>                </div>            </div>            <hr/>        </li>    </ul></body></html></div>'
     var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FollowingComponent'};

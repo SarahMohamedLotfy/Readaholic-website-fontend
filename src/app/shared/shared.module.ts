@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../app-routing.module';
 //import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
@@ -21,9 +22,10 @@ import { CommentsComponent } from './comments/comments.component';
   ],
   imports: [
     CommonModule,
-   // RatingModule,
+  //RatingModule,
     FormsModule,
     NgbModule,
+    AppRoutingModule,
     ReactiveFormsModule
   ],
   exports: [

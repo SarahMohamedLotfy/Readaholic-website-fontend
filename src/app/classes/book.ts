@@ -24,8 +24,6 @@ reviews_count: number;
 ratings_count: number;
 /** avrage rating of the book*/
 ratings_avg: number;
-/**link*/ 
-// link:string ;   
 /**book author id */
 author_id: number;
 /**book author name */
@@ -39,20 +37,3 @@ updated_at: string;
 /** genre:comedy,tragedy,..etc */
 genre: string;  
 }
-    
-/*   id: number;
-  title: string;
-  isbn: number;
-  imageUrl: string;
-  pagesNum: number;
-  publisher: string;
-  publicationDate: string;
-  ratingsAvg: number;
-  ratingsCount:number;
-  reviewsCount: number;
-  description: string;
-  authorId: number;
-  authorName: string;
-  genre: string;
-  link: string;
-*/

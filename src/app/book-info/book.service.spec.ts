@@ -4,11 +4,40 @@ import { BookService } from './book.service';
 import { book } from '../classes/book';
 import { review } from '../classes/review';
 import { userBookInfo } from '../classes/userBookInfo';
+import { async } from 'q';
 
-describe('BookService', () => {
+describe('Book Service', () => {
+  let http: HttpTestingController;
+  let service
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [BookService],
+      imports: [HttpClientTestingModule]
+    });
+  
+    http = TestBed.get(HttpClientTestingModule);
+    service = TestBed.get(BookService);
+  }) 
+
+  it('get book', () => {
+    const responseForm = '<form />';
+    let bookResponse;
+    service.getBook(173).subscribe((response) => bookResponse = response );
+
+    http.expectOne({
+      url: 'https://localhost:3000/book/173',
+      method: 'GET'
+    }).flush(responseForm);
+    expect(bookResponse).toEqual(responseForm);
+  })
+
+})
+
+/*describe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;
-  let testBook: book = {
+ /* let testBook: book = {
     "id": 155,
     "title": "The Raven Boys",
     "isbn": 53333338,
@@ -27,7 +56,7 @@ describe('BookService', () => {
     "link": "kkkkk"
   }
 
-  let testReview: review[] = [
+  /*let testReview: review[] = [
     {
       "id": 5,
       "bookId": 11,
@@ -110,7 +139,7 @@ describe('BookService', () => {
     expect(request.request.method).toEqual('GET');
     request.flush(testUserBookinfo);
 
-  });
+  });*/
 
 
   it('should be created', () => {
@@ -119,3 +148,4 @@ describe('BookService', () => {
     expect(service).toBeTruthy();
   });
 });
+*/

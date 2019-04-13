@@ -16,6 +16,7 @@ const routes: Routes = [
   {path:'login',component: LogInComponent},
   {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
   {path: 'book/:id' , component: BookInfoComponent,canActivate:[AuthGuard]},
+  {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},

@@ -27,14 +27,19 @@ export class HttpFollowinggService {
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
 getfollowing(){
-  return this.http.get('http://ffb1e410.ngrok.io/api/following');
+  return this.http.get('http://972c6e5d.ngrok.io/api/following');
 
 }
  /**
  * unfollow () is a post request to remove the data of certain user from the followers of the main user the data is  ( name of user , image , id of user ).
  */
-unfollow(id: number): Observable<any> {
-      return this.http.delete('http://ffb1e410.ngrok.io/api/following/'+id )
+/*unfollow(id: number): Observable<any> {
+      return this.http.delete('http://be1989bd.ngrok.io/api/unfollow/'+id )
+    }*/
+    
+    unfollow ( user_id:number):Observable<any> {
+      
+      return this.http.delete('http://972c6e5d.ngrok.io/api/unfollow?user_id='+ user_id);
     }
     
 
@@ -44,7 +49,7 @@ unfollow(id: number): Observable<any> {
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
     getfollowingg(name:string){
-      return this.http.get('http://ffb1e410.ngrok.io/api/following/'+name);
+      return this.http.get('http://972c6e5d.ngrok.io/api/following/'+name);
     
     } 
     

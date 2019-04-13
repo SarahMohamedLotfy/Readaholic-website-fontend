@@ -37,7 +37,7 @@ getfollowers(){
   } */
   
   addFollowing ( nb):Observable<any> {
-    return this.http.post('http://be1989bd.ngrok.io/api/follow',{"user_id" : nb});
+    return this.http.post('http://ffb1e410.ngrok.io/api/follow',{"user_id" : nb});
     } 
   
  /**
@@ -51,6 +51,6 @@ getfollowers(){
   }
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://be1989bd.ngrok.io/api/unfollow?user_id='+ user_id);
+    return this.http.delete('http://ffb1e410.ngrok.io/api/unfollow?user_id='+ user_id);
   }
 }

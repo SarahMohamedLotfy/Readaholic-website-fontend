@@ -3,10 +3,10 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@ang
 import { HttpmybooksService } from './httpmybooks.service';
 import { followingComponent } from '../classes/followingComponent';
 
-fdescribe('HttpmybooksService', () => {
+describe('HttpmybooksService', () => {
   let service: HttpmybooksService;
   let httpTestingController: HttpTestingController;
-  let testfollowing: followingComponent []= [{
+  let testfollowing: any []= [{
     "id": 1,
     "name": "Huda Yahya",
     "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
@@ -80,7 +80,7 @@ fdescribe('HttpmybooksService', () => {
 
 
 
- fit('should get followerList', () => {
+ it('should get followerList', () => {
     service.getMybooks().subscribe(
       (data: followingComponent[]) => {
         expect(data.length).toBe(6);
@@ -93,7 +93,7 @@ fdescribe('HttpmybooksService', () => {
 
 
 
-  fit('should be created', () => {
+  it('should be created', () => {
     const service: HttpmybooksService = TestBed.get(HttpmybooksService);
     expect(service).toBeTruthy();
   });

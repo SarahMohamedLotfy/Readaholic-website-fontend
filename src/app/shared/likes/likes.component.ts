@@ -22,9 +22,12 @@ likeFlag: boolean = false;
   }
 
 /** like a review  */
-likereview(): void {
-    this.likeFlag=!this.likeFlag;
-    this.likeservice.likeObject(this.user,this.resourse_id, 2);
+likeOrUnlikereview(): void {
+    this.likeFlag = !this.likeFlag;
+
+    this.likeservice.likeObject(this.user, this.resourse_id, 0);
+
+
 }
 
 }

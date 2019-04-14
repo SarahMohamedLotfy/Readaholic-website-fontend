@@ -30,9 +30,9 @@ describe('Book Service', () => {
       method: 'GET'
     }).flush(responseForm);
     expect(bookResponse).toEqual(responseForm);
-  })
+  });
 
-})
+});
 
 /*describe('BookService', () => {
   let service: BookService;
@@ -142,8 +142,14 @@ describe('Book Service', () => {
   });*/
 
 
-  it('should be created', () => {
+  /*it('should be created', () => {
 
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
+<<<<<<< HEAD
   });
+=======
+  });*/
+
+
+>>>>>>> d26fb4c3ab919c72b0b3693153224c6d5bd99cc2

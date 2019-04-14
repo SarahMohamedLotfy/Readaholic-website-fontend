@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@ang
 import { HttpFollowingService } from './httpfollower.service';
 import { followerComponent } from '../classes/followerComponent';
 
-describe('HttpFollowingService', () => {
+fdescribe('HttpFollowingService', () => {
   let service: HttpFollowingService;
   let httpTestingController: HttpTestingController;
   
@@ -30,7 +30,11 @@ describe('HttpFollowingService', () => {
 
 
   // Unit testing for Get followers request
+<<<<<<< HEAD
  
+=======
+  /*describe('#Get the followers', () => {
+>>>>>>> d26fb4c3ab919c72b0b3693153224c6d5bd99cc2
     it('returned Observable should match the right data', () => {
      
     const mockFollowers = [
@@ -68,11 +72,11 @@ describe('HttpFollowingService', () => {
     );
 
     req.flush(mockFollowers);
-  });
+  });*/
 
 
 
-  it('should be created', () => {
+  fit('should be created', () => {
     const service: HttpFollowingService = TestBed.get(HttpFollowingService);
     expect(service).toBeTruthy();
   });

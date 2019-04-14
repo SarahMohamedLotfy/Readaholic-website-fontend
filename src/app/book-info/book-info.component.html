@@ -55,12 +55,12 @@
                 <div class="media-body" id="reviewInfo">
                     <h6 ><b [routerLink]="['/profile',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>
                     <p>{{review?.body}}</p>
-                    <small>{{review?.numberLikes}} like
+                    <small>{{review?.likes_count}} like
 
-                     <app-likes [user]='review.userId' [resourse_id]= 'review.id' ></app-likes>
+                     <app-likes [user]='review.user_id' [resourse_id]= 'review.id' ></app-likes>
 
-                      {{review?.numberComments}} Comments
-                       <app-comments  [user]='review.userId' [resourse_id]='review.id' ></app-comments>
+                      {{review?.comments_count}} Comments
+                       <app-comments  [user]='review.user_id' [resourse_id]='review.id' ></app-comments>
 
 
                     </small>

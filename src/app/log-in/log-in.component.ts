@@ -16,7 +16,7 @@ import { LogInHttpService } from './log-in-http.service';
 export class LogInComponent implements OnInit {
   /**stores the input typed in the login form */
   form:FormGroup;
-
+ /**stores the input typed in the signup form */
   formUp:FormGroup;
   /**stores the information of the user logged in */
   users:user;

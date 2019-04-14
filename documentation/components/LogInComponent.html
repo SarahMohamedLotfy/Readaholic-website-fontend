@@ -299,8 +299,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="135"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:135</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:139</a></div>
                 </td>
             </tr>
 
@@ -381,14 +381,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="101"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:101</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:105</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>on clicking the sign up button it sends the variables entered in the login form to the server and checks the response if they&#39;re valid it signs up the user and redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -471,7 +473,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>stores in it the error message </p>
+                        <div class="io-description"><p>stores in it the error message for logging in </p>
 </div>
                     </td>
                 </tr>
@@ -502,6 +504,12 @@
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>stores in it the error message for signin up </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -562,6 +570,12 @@
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>stores the input typed in the signup form </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -589,6 +603,12 @@
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>true if there is an error in signing up false otherwise </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -682,17 +702,17 @@ import { LogInHttpService } from &#x27;./log-in-http.service&#x27;;
 export class LogInComponent implements OnInit {
   /**stores the input typed in the login form */
   form:FormGroup;
-
+ /**stores the input typed in the signup form */
   formUp:FormGroup;
   /**stores the information of the user logged in */
   users:user;
   /**true if user entered wrong pass or username, false otherwise */
   wrongPass:boolean;
-  /** stores in it the error message */
+  /** stores in it the error message for logging in */
   error:string;
-
+/**stores in it the error message for signin up */
   errorUp:string;
-
+/**true if there is an error in signing up false otherwise */
   signUpError:boolean;
 
   
@@ -734,17 +754,21 @@ onSubmit(){
   if(this.form.valid){
   this.service.login(val.email,val.password).subscribe(
 (data:any) &#x3D;&gt; {
+  console.log(data);
   localStorage.setItem(&#x27;token&#x27;,data.token);
-  this.users&#x3D;data;
+  this.users&#x3D;data.user;
   this.router.navigateByUrl(&#x27;/home&#x27;);
   this.wrongPass&#x3D;false;
+  console.log(this.users);
 },
 err &#x3D;&gt; {
   if(err.status &#x3D;&#x3D;405)
   {
   
   this.wrongPass&#x3D;true;
-  this.error&#x3D;&quot;incorrect username or password&quot;;
+  this.error&#x3D;err.error.errors;
+  console.log(err);
+ 
   
   }
   else if(err.status&#x3D;&#x3D; 404)
@@ -763,7 +787,7 @@ err &#x3D;&gt; {
   this.error&#x3D;&quot;You must enter username and password&quot;;
   }
 }
-
+/**on clicking the sign up button it sends the variables entered in the login form to the server and checks the response if they&#x27;re valid it signs up the user and redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message */
 onSigUp(){
   const val &#x3D; this.formUp.value;
 
@@ -995,7 +1019,7 @@ ngOnChanges(): void{
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div id="main">    <div class="row" id="head">        <div class="col-md-6" id="title">            <h1 id="Read">Readholic</h1>        </div>        <div class="col-md-6" id="signIn">            <form class="form-inline " [formGroup]="form" id="signInForm">                <div class="row" style=" width: 635px;height: 38px;  min-width: 635px;">                    <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email" style="width: 208.4px">                    <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password" style="width: 208.4px">                    <button id="signInButton" class="btn btn-primary" type="submit" style="background-color:	#8B4513; width:73.86px  " (click)="onSubmit()">Sign in</button>                    <h6 *ngIf=wrongPass style="color:crimson">{{error}}</h6>                </div>            </form>        </div>    </div>    <div class="row" id="signUp">        <div class="col-md-7" id="nextBook">            <img src="assets/book.png" id="nextBookImg" />        </div>        <div class="col-md-5" id="signUpForm">            <br>            <h4>New here? Create a free account!</h4>            <br>            <h6 *ngIf=signUpError style="color:crimson">{{errorUp}}</h6>            <form [formGroup]="formUp">                <div class="form-group row">                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="Name" formControlName="name">                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="Email Address" formControlName="email">                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <input type="password" class="form-control" placeholder="Password" formControlName="password">                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <input type="password" class="form-control" placeholder="Confirm password" formControlName="password_confirmation">                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <label>Gender: </label>                        <label class="radio-inline" style="margin-left: 1%; margin-right: 3%;">                                <input type="radio" value="Male" name="gender" formControlName="gender"  >Male                            </label>                        <label class="radio-inline">                                    <input type="radio" value="Female" name="gender" formControlName="gender"  >Female                                </label>                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <input type="date" class="form-control" formControlName="birthday">                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="Country" formControlName="country">                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="City" formControlName="city">                    </div>                </div>                <button id="signUpButton" type="submit" class="btn btn-primary" style="background-color:	#8B4513" (click)="onSigUp()">Sign up</button>            </form>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LogInComponent'};
 </script>

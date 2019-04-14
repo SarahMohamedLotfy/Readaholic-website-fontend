@@ -165,10 +165,17 @@ describe('BookInfoComponent', () => {
   fixture.detectChanges();
   const titleElement: HTMLElement = fixture.debugElement.query( By.css('#reviewerName')).nativeElement;
  expect(titleElement.innerText).toContain('killua');
+<<<<<<< HEAD
   })
 });
   });
 */
+=======
+  });*/
+
+  
+
+>>>>>>> d26fb4c3ab919c72b0b3693153224c6d5bd99cc2
 /**@Component({
     selector: 'app-star',
     template: '<div></div>'

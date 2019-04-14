@@ -382,8 +382,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="186"
-                            class="link-to-prism">src/app/followers/followers.component.ts:186</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/app/followers/followers.component.ts:183</a></div>
                 </td>
             </tr>
 
@@ -1158,15 +1158,12 @@ result:number;
  */ 
 noFollowbutton(personId):boolean
 {
-
   for ( let i of this.following)
   {
-   
   if (personId&#x3D;&#x3D;i.id)
   {
-    return false;
+   return false;
   }
-
 }
 return true;
 }
@@ -1174,8 +1171,6 @@ return true;
  * delFollowing () function contains a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
  */
   delFollowing(id:number){
-
-
     this.myfirstservice.unfollow(id).subscribe((data)&#x3D;&gt;{
       this.myfirstservice.getfollowing().subscribe((following:any)&#x3D;&gt;{
         this.following &#x3D;following.following ;
@@ -1186,12 +1181,8 @@ return true;
         this.temp &#x3D; posts;
         console.log(posts);
         })
- 
-        
         
         console.log(&quot;success&quot;);
-  
-        
 
     });
   }
@@ -1593,7 +1584,7 @@ top:17px;
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><navbar></navbar><div *ngIf="selectedProfile">    <div id="Myprofilename">        <a [routerLink]="[\'/profile\',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>    </div></div><p *ngIf="noFollowers() == 0" id="tagrba">    You haven\'t got any followers ,don\'t be sad..</p><div id="tfheader">    <form id="tfnewsearch" method="get">        <input type="text" value="searchText" [(ngModel)]="searchText" id="searchtextfollower" name="q" size="21" maxlength="120"><input id="searchfollower" type="button" (click)="search()" value="search" class="searchfollowers        ">    </form>    <div class="tfclear"></div></div><div *ngIf="empty">    <h1>have no followers</h1></div><div *ngIf="!empty">    <div class="row bootstrap snippet">        <div class="col-md-6 col-xs-12 col-md-offset-3">            <div class="panel" id="followers">                <div class="panel-heading">                    <h3 class="panel-title">                    </h3>                </div>                <div class="panel-body">                    <ul class="list-group list-group-dividered list-group-full">                        <li *ngFor="let post of posts " class="list-group-item">                            <div class="media-body">                                <div class="media">                                    <div class="media-left">                                        <a [routerLink]="[\'/profile\', post.id]">                                            <img id="profilepage" src={{post.image_link}} alt="">                                            <i></i>                                        </a>                                    </div>                                    <div *ngIf="noFollowbutton(post.id) ==true " class="pull-right">                                        <button id="followbutton" (click)="add(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">Follow </button>                                    </div>                                    <div *ngIf="noFollowbutton(post.id) ==false " class="pull-right">                                        <button id="followbutton" (click)="delFollowing(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">UnFollow </button>                                    </div>                                    <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter" style="clear:right" [routerLink]="[\'/profile\', post.id]">{{post.name}}</a></div>                                </div>                                                              <hr/>                            </div>                        </li>                    </ul>                </div>            </div>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FollowersComponent'};
 </script>

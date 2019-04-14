@@ -18,17 +18,20 @@ export class LikesService {
   constructor(private http: HttpClient) { }
 
   /** post a new like */
-   addLike(newLike: Likes): Observable<Likes> {
-    return this.http.post<Likes>('http://localhost:3000/Likes', newLike)
+  addLLike(newLike: Likes): Observable<Likes> {
+    return this.http.post<Likes>('http://972c6e5d.ngrok.io/api/LikeOrUnLike?id='+newLike.resourse_id+'&type='+newLike.resourse_type, newLike)
   }
   /** like a specific object wether a review or update */
   likeObject(user: string , resourse_id: number , resourse_type: number
     ): void {
-    const newLike: Likes = { user, resourse_id, resourse_type } as Likes;
-    console.log(newLike);
-    this.addLike(newLike)
-      .subscribe(hero => this.posts.push(hero),
-      (err: any) => console.log(err));
+    const newLike: Likes = {user, resourse_id, resourse_type} as Likes;
+    this.addLLike(newLike)
+      .subscribe(data => {this.posts.push(data),
+        console.log(data);
+      },
+      (err: any) => console.log(err)
+      );
+      console.log(newLike);
   }
 
 

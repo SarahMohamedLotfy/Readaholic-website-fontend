@@ -8,7 +8,7 @@ import { HttpRequest } from '@angular/common/http';
 // import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 //fdescribe
-describe('HomeService', () => {
+fdescribe('HomeService', () => {
 let service: HomeService;
 let httpTestingController: HttpTestingController;
 
@@ -71,10 +71,8 @@ afterEach(() => {
       service.getUpdates().subscribe((updatesData : updates[])=> {
        expect(updatesData[0].update_type).toEqual(0);
        expect(updatesData[0].name).toEqual('Huda Yahyaa');
-
-
       });
-      let updatesRequest: TestRequest = httpTestingController.expectOne('http://localhost:3000/updates');
+      let updatesRequest: TestRequest = httpTestingController.expectOne('http://972c6e5d.ngrok.io/api/updates');
       expect(updatesRequest.request.method).toEqual('GET');
       updatesRequest.flush(fakeUpdates);
 
@@ -92,7 +90,7 @@ afterEach(() => {
       });
     
       http.expectOne({
-        url: 'https://localhost:3000/follow',
+        url: 'http://972c6e5d.ngrok.io/api/follow',
         method: 'POST'
       }).flush(responseForm);
       expect(followResponse).toEqual(responseForm);

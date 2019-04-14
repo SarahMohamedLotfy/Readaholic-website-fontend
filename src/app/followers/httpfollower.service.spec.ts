@@ -27,10 +27,10 @@ describe('HttpFollowingService', () => {
     expect(service).toBeTruthy();
   });
 
- 
+
 
   // Unit testing for Get followers request
-  describe('#Get the followers', () => {
+ 
     it('returned Observable should match the right data', () => {
      
     const mockFollowers = [
@@ -76,4 +76,4 @@ describe('HttpFollowingService', () => {
     const service: HttpFollowingService = TestBed.get(HttpFollowingService);
     expect(service).toBeTruthy();
   });
-});
+})

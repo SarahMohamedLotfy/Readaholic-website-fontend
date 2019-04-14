@@ -47,7 +47,7 @@ describe('ProfileComponent', () => {
     fixture.detectChanges();
      const titleElement: HTMLElement = fixture.debugElement.query( By.css('#userNameprofile')).nativeElement;
     expect(titleElement.innerText).toContain('killua zoldyck');
-});*/
+});
 
 
 });

@@ -50,7 +50,7 @@ it('should get auth profile', () => {
      const service: ProfileService = TestBed.get(ProfileService);
      expect(service).toBeTruthy();
 
-  });*/
+  });
 });
 
 

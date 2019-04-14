@@ -1,7 +1,7 @@
 
   #updates{
-   margin-left: 300px;
-   color: #5e2b02 ;
+   margin-left: 200px;
+   color: #c0b6af ;
    font-weight: bold ;
    }
 
@@ -40,8 +40,7 @@ margin-bottom: 100px;
 } 
 #followButton{
   background-color:green ;
-  display: inline-block;
- 
+ margin-left:20px ;
 }
 #bodyOfreview{
   font-size:13px;

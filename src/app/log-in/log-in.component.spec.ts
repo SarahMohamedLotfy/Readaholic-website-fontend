@@ -1,4 +1,3 @@
-
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 
 import { LogInComponent } from './log-in.component';
@@ -19,6 +18,7 @@ fdescribe('LogInComponent', () => {
   let fixture: ComponentFixture<LogInComponent>;
   let de:DebugElement;
   let el:HTMLElement;
+  var originalTimeout;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -38,8 +38,14 @@ fdescribe('LogInComponent', () => {
       fixture = TestBed.createComponent(LogInComponent);
       component = fixture.componentInstance;
      component.ngOnInit();
+     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
-    })
+    });
+
+    afterEach(function() {
+      jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
   
     
   
@@ -107,4 +113,3 @@ fit('sign up button clicked',fakeAsync(()=>{
 
 
 });
-

@@ -14,11 +14,11 @@ export class ProfileService {
    /** http request to get user profile info  */
   getUserprofile(id: number): Observable<any> {
 
-    return this.http.get<any> ('http://972c6e5d.ngrok.io/api/showProfile?id='+ id );
+    return this.http.get<any> ('http://ec2-3-87-221-152.compute-1.amazonaws.com/showProfile?id='+ id );
   }
 /** http request to get authenticated user profile info */
   getAuthUserprofile(): Observable<any> {
-    return this.http.get<any> ('http://972c6e5d.ngrok.io/api/showProfile');
+    return this.http.get<any> ('http://ec2-3-87-221-152.compute-1.amazonaws.com/showProfile');
   }
 
 

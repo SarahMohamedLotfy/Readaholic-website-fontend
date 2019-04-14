@@ -8,7 +8,7 @@ import { async } from 'q';
 
 describe('Book Service', () => {
   let http: HttpTestingController;
-  let service
+  let service ;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -146,10 +146,5 @@ describe('Book Service', () => {
 
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
-<<<<<<< HEAD
-  });
-=======
-  });*/
-
-
->>>>>>> d26fb4c3ab919c72b0b3693153224c6d5bd99cc2
+  }) 
+  */

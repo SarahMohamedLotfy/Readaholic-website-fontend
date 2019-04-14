@@ -24,7 +24,7 @@ export class HttpFollowingService {
  */
 
 getfollowers(){
-  return this.http.get('http://972c6e5d.ngrok.io/api/followers');
+  return this.http.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/followers');
 
    }
    
@@ -32,7 +32,7 @@ getfollowers(){
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
   addFollowing ( nb):Observable<any> {
-    return this.http.post('http://972c6e5d.ngrok.io/api/follow',{"user_id" : nb});
+    return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/follow',{"user_id" : nb});
     } 
   
  /**
@@ -41,7 +41,7 @@ getfollowers(){
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
   getfollowing(){
-    return this.http.get('http://972c6e5d.ngrok.io/api/following');
+    return this.http.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/following');
   
   }
   /**
@@ -49,21 +49,21 @@ getfollowers(){
  */
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://972c6e5d.ngrok.io/api/unfollow?user_id='+ user_id);
+    return this.http.delete('http://ec2-3-87-221-152.compute-1.amazonaws.com/unfollow?user_id='+ user_id);
   }
  /**
      * Get the profile information i used it to get the  name of the user.
      *
      * */
   getUserprofile(id: number): Observable<any> {
-    return this.http.get<any> ('http://972c6e5d.ngrok.io/api/showProfile/'+ id );
+    return this.http.get<any> ('http://ec2-3-87-221-152.compute-1.amazonaws.com/showProfile/'+ id );
   }
   /**
      * Get the profile information i used it to get the  name of the user.
      *
      * */
   getAuthUserprofile(): Observable<any> {
-    return this.http.get<any> ('http://972c6e5d.ngrok.io/api/showProfile');
+    return this.http.get<any> ('http://ec2-3-87-221-152.compute-1.amazonaws.com/showProfile');
   }
 
 }

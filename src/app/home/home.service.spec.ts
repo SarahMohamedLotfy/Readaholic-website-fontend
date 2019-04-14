@@ -72,7 +72,7 @@ afterEach(() => {
        expect(updatesData[0].update_type).toEqual(0);
        expect(updatesData[0].name).toEqual('Huda Yahyaa');
       });
-      let updatesRequest: TestRequest = httpTestingController.expectOne('http://972c6e5d.ngrok.io/api/updates');
+      let updatesRequest: TestRequest = httpTestingController.expectOne('http://ec2-3-87-221-152.compute-1.amazonaws.com/updates');
       expect(updatesRequest.request.method).toEqual('GET');
       updatesRequest.flush(fakeUpdates);
 
@@ -90,7 +90,7 @@ afterEach(() => {
       });
     
       http.expectOne({
-        url: 'http://972c6e5d.ngrok.io/api/follow',
+        url: 'http://ec2-3-87-221-152.compute-1.amazonaws.com/follow',
         method: 'POST'
       }).flush(responseForm);
       expect(followResponse).toEqual(responseForm);

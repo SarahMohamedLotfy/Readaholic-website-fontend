@@ -25,7 +25,7 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
-return this.http.get("http://972c6e5d.ngrok.io/api/updates")
+return this.http.get("http://ec2-3-87-221-152.compute-1.amazonaws.com/updates")
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
@@ -33,15 +33,15 @@ return this.http.get("http://972c6e5d.ngrok.io/api/updates")
     );
    }
    addFollowing (nb):Observable<any> {
-  return this.http.post('http://972c6e5d.ngrok.io/api/follow',{"user_id" : nb});
+  return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
-    return this.http.post('http://972c6e5d.ngrok.io/api/shelf/add_book',{"shelf_id": shelf,
+    return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://972c6e5d.ngrok.io/api/unfollow?user_id='+ user_id);
+    return this.http.delete('http://ec2-3-87-221-152.compute-1.amazonaws.com//unfollow?user_id='+ user_id);
   }
   
   /**
@@ -60,7 +60,7 @@ return this.http.get("http://972c6e5d.ngrok.io/api/updates")
     }
     // return an observable with a user-facing error message
     return throwError(
-      'Something bad happened; please try again later.');
+      'Something bad happened; please try again later');
   };
 
 }

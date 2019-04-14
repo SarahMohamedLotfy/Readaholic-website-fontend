@@ -30,11 +30,7 @@ fdescribe('HttpFollowingService', () => {
 
 
   // Unit testing for Get followers request
-<<<<<<< HEAD
  
-=======
-  /*describe('#Get the followers', () => {
->>>>>>> d26fb4c3ab919c72b0b3693153224c6d5bd99cc2
     it('returned Observable should match the right data', () => {
      
     const mockFollowers = [
@@ -68,11 +64,11 @@ fdescribe('HttpFollowingService', () => {
         expect(followerComponent[1].id).toEqual('3');
       });
     const req = httpTestingController.expectOne(
-      'http://0f626498.ngrok.io/api/follower'
+      'http://ec2-3-87-221-152.compute-1.amazonaws.com/follower'
     );
 
     req.flush(mockFollowers);
-  });*/
+  })
 
 
 

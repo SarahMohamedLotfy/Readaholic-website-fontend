@@ -1,13 +1,14 @@
 
   #updates{
-   margin-left: 300px;
+
    color: #5e2b02 ;
    font-weight: bold ;
+   display: inline-flex;
    }
 
   #containerBook{
    background-color: #ffffff ; 
-   float:middle ;
+   float:middle;
   display: inline-flex;
   width:900px ;
   }
@@ -42,4 +43,10 @@ margin-bottom: 100px;
   background-color:green ;
   display: inline-block;
  
+}
+#bodyOfreview{
+  font-size:13px;
+}
+#bookContainer{
+  background-color:#fffaeefb ;
 }

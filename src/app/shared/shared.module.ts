@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { StarComponent } from './star/star.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [ 
@@ -16,17 +18,23 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
+    AppRoutingModule,
+    RouterModule,
     CommonModule,
    // RatingModule,
     FormsModule,
     NgbModule
+    
   ],
   exports: [
+    AppRoutingModule,
+    RouterModule,
     CommonModule,
     FormsModule,
     StarComponent,
     DropdownComponent,
-    NavbarComponent
+    NavbarComponent,
+    
     
   ]
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LogInHttpService } from 'src/app/log-in/log-in-http.service';
-import { Router } from '@angular/router';
+import { Router,RouterLink} from '@angular/router';
+
 
 @Component({
   selector: 'navbar',
@@ -31,6 +32,7 @@ export class NavbarComponent implements OnInit {
           
            localStorage.removeItem('token');
             this.router.navigate(['/login']);
+            console.log(err);
           }
           
           else

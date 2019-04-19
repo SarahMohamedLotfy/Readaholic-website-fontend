@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
    /** stores the profile information */
    selectedProfile: profile ;
   /** stores the following of user */
-   allFollowings: followingComponent[];
+   allFollowings: any[];
 
 /**
  * the constructor creates instances of http service
@@ -52,13 +52,13 @@ if (id > 0 ){
     /**
      * subscribe to the data received from json file which contain the following users information and if any error occurs it prints it to the log
      */
-    this.pro.getfollowing().subscribe(
-            (data: followingComponent[]) => this.allFollowings = data,
+    this.pro.getfollowing().subscribe( (data: any) =>{ this.allFollowings = data.following;}
            // (err: any) => console.log(err),
           );
 
 
   }
+  
 
 
 }

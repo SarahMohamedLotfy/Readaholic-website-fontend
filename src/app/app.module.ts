@@ -24,6 +24,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { fakeBackendProvider } from './fake-backend';
 import { LogInHttpService } from './log-in/log-in-http.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -46,14 +47,16 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
     NgbModule.forRoot(),
     SharedModule,
-    AppRoutingModule,
+    
     ReactiveFormsModule,
-    RatingModule
+    RatingModule,
+    RouterModule
   
 
 

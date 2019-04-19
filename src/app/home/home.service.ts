@@ -23,20 +23,25 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
-return this.http.get("http://0f626498.ngrok.io/api/updates")
+return this.http.get("http://ec2-3-87-221-152.compute-1.amazonaws.com/api/updates")
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
 
     );
    }
-   addFollowing ( nb):Observable<any> {
-  return this.http.post('http://0f626498.ngrok.io/api/follow',{"user_id" : nb});
+   addFollowing (nb):Observable<any> {
+  return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
-    return this.http.post('http://0f626498.ngrok.io/api/shelf/add_book',{"shelf_id": shelf,
+    return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
+  unfollow ( user_id:number):Observable<any> {
+      
+    return this.http.delete('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/unfollow?user_id='+ user_id);
+  }
+  
   /**
  * function for handling errors in ui and in console
  */

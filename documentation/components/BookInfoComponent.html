@@ -161,7 +161,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#createReview">createReview</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#open">open</a>
                             </li>
                         </ul>
                     </td>
@@ -186,14 +192,12 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/book-info/book-info.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/book-info/book-info.component.ts:36</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>takes as parameters object of book service and activiated route to get the selected book id </p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -202,6 +206,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -216,6 +221,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>injected book service instance</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>route</td>
@@ -228,6 +237,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>activated route instance</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -240,6 +253,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>router inastance to route by code </p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -263,6 +280,47 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="createReview"></a>
+                    <span class="name">
+                        <b>
+                            createReview
+                        </b>
+                        <a href="#createReview"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createReview()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>calls the book service funstion to create a review </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
@@ -281,21 +339,97 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/book-info/book-info.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:48</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>gets the information of the selected book from the server and setes user mode or guest mode
-and navigates to page not found if the user types a wrong book id</p>
+                    <div class="io-description"><p>calss the needed requests to the get the selected book info  </p>
 </div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="open"></a>
+                    <span class="name">
+                        <b>
+                            open
+                        </b>
+                        <a href="#open"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>open(rate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>opens the review model when the user rates a book</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>rate</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The output rate from the star component</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -327,7 +461,7 @@ and navigates to page not found if the user types a wrong book id</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/book-info/book-info.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/book-info/book-info.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -360,7 +494,7 @@ and navigates to page not found if the user types a wrong book id</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/book-info/book-info.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/book-info/book-info.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -393,7 +527,7 @@ and navigates to page not found if the user types a wrong book id</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/book-info/book-info.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/book-info/book-info.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -426,7 +560,7 @@ and navigates to page not found if the user types a wrong book id</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/book-info/book-info.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/book-info/book-info.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -447,11 +581,12 @@ and navigates to page not found if the user types a wrong book id</p>
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
-
 import { review } from &#x27;../classes/review&#x27;;
 import { book } from &#x27;../classes/book&#x27;;
 import { userBookInfo } from &#x27;../classes/userBookInfo&#x27;;
 import { BookService } from &#x27;./book.service&#x27;;
+import { generateExpandoInstructionBlock } from &#x27;@angular/core/src/render3/instructions&#x27;;
+
 /**component to show details of a specific book */
 @Component({
   selector: &#x27;app-book-info&#x27;,
@@ -461,67 +596,131 @@ import { BookService } from &#x27;./book.service&#x27;;
 export class BookInfoComponent implements OnInit {
   /**store information of the selected book */
   myBook: book;
+
   /**reviews array of the selectec book */
   reviews: review[];
+
   /**stores user related book info */
-  userInfo: userBookInfo;
+  userInfo:userBookInfo;
+
   /**true if user mode false if guest mode */
   isUser: boolean;
-/**takes as parameters object of book service and activiated route to get the selected book id */
+
+  /**@ignore */
+  info: userBookInfo &#x3D; {
+    &quot;body&quot;: &quot;&quot;,
+    &quot;shelf_name&quot;: 0,
+    &quot;rating&quot;: 0
+  };
+
+  /**@ignore */
+  shelfName:string &#x3D; &quot;&quot;;
+
+
+/**
+ * @param {BookService} service injected book service instance
+ * @param {ActivatedRoute} route activated route instance
+ * @param {Router} router router inastance to route by code 
+ */
   constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
   }
 
-  /**gets the information of the selected book from the server and setes user mode or guest mode
-   * and navigates to page not found if the user types a wrong book id
-    */
+  /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
-  this.service.getBook(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data:book) &#x3D;&gt; this.myBook &#x3D; data, error&#x3D;&gt; this.router.navigateByUrl(&quot;/404&quot;));
-  this.service.getBookReviews().subscribe((data:review[]) &#x3D;&gt; this.reviews &#x3D; data);
-  this.service.getUserBookInfo().subscribe(data&#x3D;&gt; this.userInfo &#x3D; data)
+
+    this.service.getBook(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data) &#x3D;&gt; {
+     this.myBook &#x3D; data.pages[0];
+     console.log(data);
+      if(Math.floor(this.myBook.ratings_avg) &gt; this.myBook.ratings_avg-0.5)
+      {
+        this.myBook.ratings_avg &#x3D; Math.floor(this.myBook.ratings_avg);
+      }
+      else
+      {
+        this.myBook.ratings_avg &#x3D; Math.ceil(this.myBook.ratings_avg);
+      }
+    },()&#x3D;&gt; this.router.navigateByUrl(&quot;/pageNotfound&quot;));
+
+  this.service.getUserBookInfo(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data) &#x3D;&gt; {
+
+    this.userInfo &#x3D; data.pages[0];
+    this.info &#x3D; data.pages[0];
+    if(this.userInfo.shelf_name &#x3D;&#x3D; 0)
+    {
+      this.shelfName &#x3D; &quot;Read&quot;;
+    }
+    else if(this.userInfo.shelf_name &#x3D;&#x3D; 1)
+    {
+      this.shelfName &#x3D; &quot;Currently Reading&quot;;
+    }
+    else if(this.userInfo.shelf_name &#x3D;&#x3D; 2)
+    {
+      this.shelfName &#x3D; &quot;Want To Read&quot;;
+    }
+  }, (data)&#x3D;&gt; console.log(data));
+
+ this.service.getBookReviews(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data) &#x3D;&gt; this.reviews &#x3D; data.pages);
+
   if(localStorage.getItem(&#x27;token&#x27;) &#x3D;&#x3D; null){
     this.isUser &#x3D; false;
   }
   else{
     this.isUser &#x3D; true;
   }
+}
+
+/**calls the book service funstion to create a review */
+createReview () {
+ this.service.createReview(this.myBook.id,this.info.shelf_name,this.info.body,this.info.rating).subscribe((data) &#x3D;&gt; {this.userInfo &#x3D; data.pages; console.log(data);});
+}
+
+/**
+ * opens the review model when the user rates a book
+ * @param {number} rate The output rate from the star component
+ */
+open(rate: number) {
+  this.info.rating &#x3D; rate;
+  if(!this.userInfo) {
+    document.getElementById(&quot;openModalButton&quot;).click();
   }
 }
-  
 
+}
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;navbar&gt;&lt;/navbar&gt;
     &lt;div class&#x3D;&quot;container&quot;&gt;
-        &lt;div class&#x3D;&quot;row&quot;&gt; &lt;!--book info--&gt;
+        &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;float:left&quot;&gt; &lt;!--book info--&gt;
             &lt;div class&#x3D;&quot;media&quot;&gt;
                 &lt;div class&#x3D;&quot;col-md-2&quot; id&#x3D;&quot;leftCol&quot;&gt;
-                    &lt;img id&#x3D;&quot;bookCover&quot; src&#x3D;{{myBook?.imageUrl}} class&#x3D;&quot;align-self-start mr-3&quot;&gt;
-                    &lt;app-dropdown id&#x3D;&quot;shelf&quot; [shelf]&#x3D;&quot;userInfo?.shelf_name&quot;&gt;&lt;/app-dropdown&gt;
-                    &lt;app-star id&#x3D;&quot;rateBook&quot;  [starsCount]&#x3D;&quot;0&quot; [readOnly]&#x3D;&quot;false&quot;&gt;&lt;/app-star&gt;
+                    &lt;img id&#x3D;&quot;bookCover&quot; src&#x3D;{{myBook?.img_url}} class&#x3D;&quot;align-self-start mr-3&quot;&gt;
+                    &lt;app-dropdown id&#x3D;&quot;shelf&quot; [bookId]&#x3D;&quot;myBook?.id&quot; [shelfId]&#x3D;&quot;userInfo?.shelf_name&quot;&gt;&lt;/app-dropdown&gt;
+                    &lt;app-star id&#x3D;&quot;rateBook&quot; (rated)&#x3D;&quot;open($event)&quot; [bookId]&#x3D;&quot;myBook?.id&quot; [shelf]&#x3D;&quot;userInfo?.shelf_name&quot; [readOnly]&#x3D;&quot;false&quot;&gt;&lt;/app-star&gt;
                 &lt;/div&gt;
                 &lt;div class&#x3D;&quot;media-body&quot; id&#x3D;&quot;bookInfo&quot;&gt;
                     &lt;div class&#x3D;&quot;col-md-9&quot;&gt;
                         &lt;h1 id&#x3D;&quot;Booktitle&quot;&gt;{{myBook?.title}}&lt;/h1&gt;
-                        &lt;h5 id&#x3D;&quot;authorName&quot;&gt;by {{myBook?.authorName}}&lt;/h5&gt;
+                        &lt;h5 id&#x3D;&quot;authorName&quot;&gt;by {{myBook?.author_name}}&lt;/h5&gt;
                         &lt;div&gt;
-                            &lt;app-star [starsCount]&#x3D;&quot;myBook?.ratingsAvg&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
-                            &lt;span style&#x3D;&quot;font-size: 13px; font-family: &#x27;Segoe UI&#x27;, Tahoma, sans-serif;&quot;&gt;{{myBook?.ratingsAvg}}   {{myBook?.ratingsCount}} ratings {{myBook?.reviewsCount}} reviews&lt;/span&gt;
+                            &lt;app-star [starsCount]&#x3D;&quot;myBook?.ratings_avg&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
+                            &lt;span style&#x3D;&quot;font-size: 13px; font-family: &#x27;Segoe UI&#x27;, Tahoma, sans-serif;&quot;&gt;{{myBook?.ratings_avg}}   {{myBook?.ratings_count}} ratings {{myBook?.reviews_count}} reviews&lt;/span&gt;
                         &lt;/div&gt;
                         &lt;p&gt;{{myBook?.description}}&lt;/p&gt;
                         &lt;div id&#x3D;&quot;bookFormat&quot;&gt;
-                            &lt;p&gt;Paperback {{myBook?.pagesNum}} pages&lt;/p&gt;
-                            &lt;p&gt;Published {{myBook?.publicationDate}} by {{myBook?.publisher}}&lt;/p&gt;
+                            &lt;p&gt;Paperback {{myBook?.pages_no}} pages&lt;/p&gt;
+                            &lt;p&gt;Published {{myBook?.publication_date}} by {{myBook?.publisher}}&lt;/p&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col-md-1&quot;&gt;&lt;/div&gt;
                 &lt;/div&gt;
-                
+
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;isUser&quot; id&#x3D;&quot;activity&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;isUser &amp;&amp; userInfo&quot; id&#x3D;&quot;activity&quot;&gt;
         &lt;h6&gt;MY ACTIVITY&lt;/h6&gt;
         &lt;hr&gt;
         &lt;div class&#x3D;&quot;row&quot; &gt;
@@ -542,19 +741,73 @@ export class BookInfoComponent implements OnInit {
 
     &lt;div class&#x3D;&quot;container&quot;&gt;
         &lt;hr&gt;
-        &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;float: down&quot;&gt;
             &lt;div class&#x3D;&quot;media&quot; *ngFor&#x3D;&quot;let review of reviews&quot;&gt;
-                &lt;img  [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.userId]&quot; id&#x3D;&quot;reviewerImg&quot; src&#x3D;{{review?.userImg}} class&#x3D;&quot;align-self-start mr-3&quot; style&#x3D;&quot;width:50px; height: 50px&quot;&gt;
+                &lt;img  [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.user_id]&quot; id&#x3D;&quot;reviewerImg&quot; src&#x3D;{{review?.userimagelink}} class&#x3D;&quot;align-self-start mr-3&quot; style&#x3D;&quot;width:50px; height: 50px&quot;&gt;
                 &lt;div class&#x3D;&quot;media-body&quot; id&#x3D;&quot;reviewInfo&quot;&gt;
-                    &lt;h6 &gt;&lt;b [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.userId]&quot; id&#x3D;&quot;reviewerName&quot;&gt;{{review?.userName}}&lt;/b&gt; rated it &lt;app-star  [starsCount]&#x3D;&quot;review?.rating&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;&lt;/h6&gt;
+                    &lt;h6 &gt;&lt;b [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.user_id]&quot; id&#x3D;&quot;reviewerName&quot;&gt;{{review?.username}}&lt;/b&gt; rated it &lt;app-star  [starsCount]&#x3D;&quot;review?.rating&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;&lt;/h6&gt;
                     &lt;p&gt;{{review?.body}}&lt;/p&gt;
-                    &lt;small&gt;{{review?.numberLikes}} likes    {{review?.numberComments}} comments&lt;/small&gt;
+                    &lt;small&gt;{{review?.likes_count}} like
+
+                     &lt;app-likes [user]&#x3D;&#x27;review.user_id&#x27; [resourse_id]&#x3D; &#x27;review.id&#x27; &gt;&lt;/app-likes&gt;
+
+                      {{review?.comments_count}} Comments
+                       &lt;app-comments  [user]&#x3D;&#x27;review.user_id&#x27; [resourse_id]&#x3D;&#x27;review.id&#x27; &gt;&lt;/app-comments&gt;
+
+
+                    &lt;/small&gt;
                 &lt;/div&gt;
-                &lt;div class&#x3D;&quot;col-md-3&quot;&gt;&lt;/div&gt;
+
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-   
+
+
+
+      &lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;myModal&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+          &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+
+
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Thanks for rating! would you like to write a review?&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;&amp;times;&lt;/button&gt;
+              &lt;/div&gt;
+
+
+              &lt;div class&#x3D;&quot;modal-body&quot; style&#x3D;&quot;margin-bottom:5px; padding-bottom: 0px;&quot;&gt;
+                      &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-bottom:0px&quot;&gt;
+                              &lt;div class&#x3D;&quot;col-2&quot; style&#x3D;&quot;min-width: 50px&quot;&gt;
+                                  &lt;p&gt;My rating&lt;/p&gt;
+                                  &lt;p&gt;Book shelf&lt;/p&gt;
+                              &lt;/div&gt;
+                              &lt;div class&#x3D;&quot;col-8&quot; style&#x3D;&quot;min-width: 300px&quot;&gt;
+                                  &lt;app-star [starsCount]&#x3D;&quot;info?.rating&quot; [readOnly]&#x3D;&quot;false&quot; [bookId]&#x3D;&quot;myBook?.id&quot; [shelf]&#x3D;&quot;userInfo?.shelf_name&quot;&gt;&lt;/app-star&gt;
+                                  &lt;div&gt;
+                                      &lt;input type&#x3D;&quot;radio&quot; (click)&#x3D;&quot;info.shelf_name&#x3D;0&quot;&gt;
+                                      &lt;label style&#x3D;&quot;margin-right:10px&quot;&gt;read&lt;/label&gt;
+                                      &lt;input type&#x3D;&quot;radio&quot; (click)&#x3D;&quot;info.shelf_name&#x3D;1&quot;&gt;
+                                      &lt;label style&#x3D;&quot;margin-right:10px&quot;&gt;currently reading&lt;/label&gt;
+                                      &lt;input type&#x3D;&quot;radio&quot; (click)&#x3D;&quot;info.shelf_name&#x3D;2&quot;&gt;
+                                      &lt;label style&#x3D;&quot;margin-right:10px&quot;&gt;want to read&lt;/label&gt;
+                                  &lt;/div&gt;
+
+                      &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;p &gt;What did you think?&lt;/p&gt;
+              &lt;textarea rows&#x3D;&quot;10&quot; cols&#x3D;&quot;92&quot; wrap&#x3D;&quot;physical&quot; [(ngModel)]&#x3D;&quot;info.body&quot; &gt;&lt;/textarea&gt;
+
+
+              &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; id&#x3D;&quot;post&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot; (click)&#x3D;&quot;createReview()&quot; style&#x3D;&quot;background-color: #218838&quot;&gt;Post&lt;/button&gt;
+              &lt;/div&gt;
+
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;button type&#x3D;&quot;button&quot; id&#x3D;&quot;openModalButton&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#myModal&quot; style&#x3D;&quot;display: none;&quot;  &gt;&lt;/button&gt;
 </code></pre>
     </div>
 
@@ -573,7 +826,7 @@ export class BookInfoComponent implements OnInit {
 #leftCol {
     margin-top: 20px;
     margin-right: 35px;
-    min-width: 180px;;
+    min-width: 180px;
 }
 
 #reviewerName {
@@ -640,6 +893,16 @@ export class BookInfoComponent implements OnInit {
     font-size: 0.92rem;
 }
 
+.modal-content {
+    font-family: &quot;Merriweather&quot;, &quot;Georgia&quot;, serif;
+}
+
+textarea {
+    padding: 0px;
+    margin-left:10px;
+    margin-right:20px;
+}
+
 
 
 
@@ -671,8 +934,8 @@ export class BookInfoComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><navbar></navbar>    <div class="container">        <div class="row"> <!--book info-->            <div class="media">                <div class="col-md-2" id="leftCol">                    <img id="bookCover" src={{myBook?.imageUrl}} class="align-self-start mr-3">                    <app-dropdown id="shelf" [shelf]="userInfo?.shelf_name"></app-dropdown>                    <app-star id="rateBook"  [starsCount]="0" [readOnly]="false"></app-star>                </div>                <div class="media-body" id="bookInfo">                    <div class="col-md-9">                        <h1 id="Booktitle">{{myBook?.title}}</h1>                        <h5 id="authorName">by {{myBook?.authorName}}</h5>                        <div>                            <app-star [starsCount]="myBook?.ratingsAvg" [readOnly]="true"></app-star>                            <span style="font-size: 13px; font-family: \'Segoe UI\', Tahoma, sans-serif;">{{myBook?.ratingsAvg}}   {{myBook?.ratingsCount}} ratings {{myBook?.reviewsCount}} reviews</span>                        </div>                        <p>{{myBook?.description}}</p>                        <div id="bookFormat">                            <p>Paperback {{myBook?.pagesNum}} pages</p>                            <p>Published {{myBook?.publicationDate}} by {{myBook?.publisher}}</p>                        </div>                    </div>                </div>                            </div>        </div>    </div>    <div class="container" *ngIf="isUser" id="activity">        <h6>MY ACTIVITY</h6>        <hr>        <div class="row" >            <div class="col-2" style="min-width: 50px">                <p>Review Of</p>                <p>shelf</p>                <p>Rating</p>                <p>Review</p>            </div>            <div class="col-8" style="min-width: 300px">                <p>{{myBook?.isbn}}</p>                <p>{{userInfo?.shelf_name}}</p>                <app-star [starsCount]="userInfo?.rating" [readOnly]="true"></app-star>                <p>{{userInfo?.body}}</p>            </div>        </div>    </div>    <div class="container">        <hr>        <div class="row">            <div class="media" *ngFor="let review of reviews">                <img  [routerLink]="[\'/profile\',review.userId]" id="reviewerImg" src={{review?.userImg}} class="align-self-start mr-3" style="width:50px; height: 50px">                <div class="media-body" id="reviewInfo">                    <h6 ><b [routerLink]="[\'/profile\',review.userId]" id="reviewerName">{{review?.userName}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>                    <p>{{review?.body}}</p>                    <small>{{review?.numberLikes}} likes    {{review?.numberComments}} comments</small>                </div>                <div class="col-md-3"></div>            </div>        </div>    </div>   </div>'
-    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
+        var COMPONENT_TEMPLATE = '<div><navbar></navbar>    <div class="container">        <div class="row" style="float:left"> <!--book info-->            <div class="media">                <div class="col-md-2" id="leftCol">                    <img id="bookCover" src={{myBook?.img_url}} class="align-self-start mr-3">                    <app-dropdown id="shelf" [bookId]="myBook?.id" [shelfId]="userInfo?.shelf_name"></app-dropdown>                    <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name" [readOnly]="false"></app-star>                </div>                <div class="media-body" id="bookInfo">                    <div class="col-md-9">                        <h1 id="Booktitle">{{myBook?.title}}</h1>                        <h5 id="authorName">by {{myBook?.author_name}}</h5>                        <div>                            <app-star [starsCount]="myBook?.ratings_avg" [readOnly]="true"></app-star>                            <span style="font-size: 13px; font-family: \'Segoe UI\', Tahoma, sans-serif;">{{myBook?.ratings_avg}}   {{myBook?.ratings_count}} ratings {{myBook?.reviews_count}} reviews</span>                        </div>                        <p>{{myBook?.description}}</p>                        <div id="bookFormat">                            <p>Paperback {{myBook?.pages_no}} pages</p>                            <p>Published {{myBook?.publication_date}} by {{myBook?.publisher}}</p>                        </div>                    </div>                    <div class="col-md-1"></div>                </div>            </div>        </div>    </div>    <div class="container" *ngIf="isUser && userInfo" id="activity">        <h6>MY ACTIVITY</h6>        <hr>        <div class="row" >            <div class="col-2" style="min-width: 50px">                <p>Review Of</p>                <p>shelf</p>                <p>Rating</p>                <p>Review</p>            </div>            <div class="col-8" style="min-width: 300px">                <p>{{myBook?.isbn}}</p>                <p>{{userInfo?.shelf_name}}</p>                <app-star [starsCount]="userInfo?.rating" [readOnly]="true"></app-star>                <p>{{userInfo?.body}}</p>            </div>        </div>    </div>    <div class="container">        <hr>        <div class="row" style="float: down">            <div class="media" *ngFor="let review of reviews">                <img  [routerLink]="[\'/profile\',review.user_id]" id="reviewerImg" src={{review?.userimagelink}} class="align-self-start mr-3" style="width:50px; height: 50px">                <div class="media-body" id="reviewInfo">                    <h6 ><b [routerLink]="[\'/profile\',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>                    <p>{{review?.body}}</p>                    <small>{{review?.likes_count}} like                     <app-likes [user]=\'review.user_id\' [resourse_id]= \'review.id\' ></app-likes>                      {{review?.comments_count}} Comments                       <app-comments  [user]=\'review.user_id\' [resourse_id]=\'review.id\' ></app-comments>                    </small>                </div>            </div>        </div>    </div>      <div class="modal fade" id="myModal">        <div class="modal-dialog modal-lg">          <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Thanks for rating! would you like to write a review?</h5>                <button type="button" class="close" data-dismiss="modal">&times;</button>              </div>              <div class="modal-body" style="margin-bottom:5px; padding-bottom: 0px;">                      <div class="row" style="margin-bottom:0px">                              <div class="col-2" style="min-width: 50px">                                  <p>My rating</p>                                  <p>Book shelf</p>                              </div>                              <div class="col-8" style="min-width: 300px">                                  <app-star [starsCount]="info?.rating" [readOnly]="false" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"></app-star>                                  <div>                                      <input type="radio" (click)="info.shelf_name=0">                                      <label style="margin-right:10px">read</label>                                      <input type="radio" (click)="info.shelf_name=1">                                      <label style="margin-right:10px">currently reading</label>                                      <input type="radio" (click)="info.shelf_name=2">                                      <label style="margin-right:10px">want to read</label>                                  </div>                      </div>              </div>              <p >What did you think?</p>              <textarea rows="10" cols="92" wrap="physical" [(ngModel)]="info.body" ></textarea>              <div class="modal-footer">                <button type="button" id="post" class="btn btn-secondary" data-dismiss="modal" (click)="createReview()" style="background-color: #218838">Post</button>              </div>            </div>          </div>        </div>      </div>      <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;"  ></button></div>'
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BookInfoComponent'};
 </script>

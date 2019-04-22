@@ -25,6 +25,7 @@ import { fakeBackendProvider } from './fake-backend';
 import { LogInHttpService } from './log-in/log-in-http.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -42,7 +43,8 @@ import { RouterModule } from '@angular/router';
     BookInfoComponent,
     LogInComponent,
     AboutusComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AccountSettingsComponent
    
 
   ],

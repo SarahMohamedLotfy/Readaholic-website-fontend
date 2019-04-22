@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FollowingComponent } from './following.component';
+import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 
 
 import { RatingModule, Rating } from 'ng2-rating';
@@ -13,10 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
+import { followingComponent } from '../classes/followingComponent';
 
 
 
-describe('FollowingComponent', () => {
+fdescribe('FollowingComponent', () => {
   let component: FollowingComponent;
   let fixture: ComponentFixture<FollowingComponent>;
   let de: DebugElement;
@@ -45,32 +46,61 @@ describe('FollowingComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 
-
-  it('should show followers list ', () => {
-    component.posts = {
-
-        "id": 1,
-        "name": "Huda Yahya",
-        "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-        "bookid": 3,
-        "bookname": "اخر ايام الارض ",
-        "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
-        "country": "Asuit,Egypt"
-
-
-    };
-
-    fixture.detectChanges();
-    const titleElement: HTMLElement = fixture.debugElement.query( By.css('#bookname')).nativeElement;
-   expect(titleElement.innerText).toContain('اخر ايام الارض');
- });
+  // Unit test for search function
+  fit(' Search button clicked',fakeAsync(()=>{
+    spyOn(component, 'search');
+    let bt= fixture.debugElement.query(By.css('#searchfollowingg'));
+      bt.triggerEventHandler('click',null);
+  
+    tick(); // simulates the passage of time until all pending asynchronous activities finish
+     fixture.detectChanges();
+      expect(component.search).toHaveBeenCalled();
+  
+  }));
 
 
+/*it(' Unfollow button clicked',fakeAsync((id)=>{
+        spyOn(component, 'delFollowing');
+        let bt= fixture.debugElement.query(By.css('#stopfollow'));
+          bt.triggerEventHandler('click',id);
+        tick(); // simulates the passage of time until all pending asynchronous activities finish
+         fixture.detectChanges();
+          expect(component.delFollowing(id)).toHaveBeenCalled();
+}));
 
+fit('should', async(() => {
+  spyOn(component, 'delFollowing');
+  let button = fixture.debugElement.nativeElement.querySelector('#stopfollow');
+  button.click();
+  fixture.whenStable().then(() => {
+      expect(component.delFollowing).toHaveBeenCalled();
+  })
+  alert(1);
+}));
+
+
+
+
+
+
+// Unit test for delete function check if the count of following peole decrease ?
+it('should be able to decrement the count (-1)', () => {
+
+  component.delFollowing(7);
+
+  expect(component.count).toEqual(5);
+});
+// Unit test for deletefollowing function check if the count of following peole decrease ?
+
+it('should be able to decrement the count (-1)', () => {
+
+  component.delFollowing(7);
+  expect(component.count).toEqual(5);
+});*/
 
 
 });

@@ -1,7 +1,9 @@
+import { AppRoutingModule } from './../../app-routing.module';
 import { Component, OnInit, Input } from '@angular/core';
 import { LogInHttpService } from 'src/app/log-in/log-in-http.service';
-import { Router,RouterLink} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'navbar',
@@ -10,7 +12,7 @@ import { Router,RouterLink} from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private service:LogInHttpService,private router:Router) { }
+  constructor(private service:LogInHttpService,private route: ActivatedRoute,private router: Router,private modalService: NgbModal) { }
 
   ngOnInit() {
   

@@ -29,21 +29,16 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     /** receives id from url and send it to the get request */
     const id: number = +this.route.snapshot.paramMap.get('id');
-
-     /**
-     * subscribe to the data received from json file which contain the profile of the authenticated user info information
-     *
-     * and if any error occurs it prints it to the log
-*/  
-console.log(id);
-if (id > 0 ){
-
-    this.httpService.getUserprofile(id).subscribe(
+/** to choose auth or another profile */
+  if (id > 0 ) {
+/** get user profile by id */
+   this.httpService.getUserprofile(id).subscribe(
         (data: profile) => this.selectedProfile = data,
                )
     }
     else
     {
+      /** get authenticated user profile */
     this.httpService.getAuthUserprofile().subscribe(
     (data: profile) => this.selectedProfile = data,
     (err: any) => console.log(err)
@@ -52,7 +47,9 @@ if (id > 0 ){
     /**
      * subscribe to the data received from json file which contain the following users information and if any error occurs it prints it to the log
      */
-    this.pro.getfollowing().subscribe( (data: any) =>{ this.allFollowings = data.following;}
+    /** get folowing of the user */
+    this.pro.getfollowing().subscribe(
+            (data: followingComponent[]) => this.allFollowings = data,
            // (err: any) => console.log(err),
           );
 

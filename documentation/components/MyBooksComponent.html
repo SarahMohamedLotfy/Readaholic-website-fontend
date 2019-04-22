@@ -696,7 +696,7 @@ search(){
 *Filter for names of books.
 */ 
  this.posts &#x3D; this.temp.filter(it &#x3D;&gt; 
-   it[&quot;name&quot;].toLocaleLowerCase().includes(this.searchText)
+   it[&quot;bookname&quot;].toLocaleLowerCase().includes(this.searchText)
  );
 }
 
@@ -764,13 +764,13 @@ noBooks ():number
       maxlength&#x3D;&quot;120&quot;&gt;&lt;input id &#x3D; &quot;searchfollowingg&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;search()&quot; value&#x3D;&quot;search&quot; class &#x3D;&quot;searchfollowing
       &quot;&gt;
     &lt;/form&gt;
-
-    &lt;p   *ngIf&#x3D;&quot;noBooks() &#x3D;&#x3D; 0&quot; id &#x3D;&quot;tagrba&quot;&gt;You have no books.&lt;/p&gt; 
-
+&lt;div *ngIf&#x3D;&quot;noBooks() &#x3D;&#x3D; 0&quot; &gt;
+    &lt;p   id &#x3D;&quot;tagrba&quot;&gt;You have no books.&lt;/p&gt; 
+  &lt;/div&gt;
 &lt;link href&#x3D;&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css&quot; rel&#x3D;&quot;stylesheet&quot;&gt;
 &lt;div class &#x3D;&quot;tablePlace&quot; &gt;
 &lt;div class &#x3D;&quot;tablePlace&quot;class&#x3D;&quot;row&quot;&gt;
-	&lt;div class&#x3D;&quot;col-lg-6&quot;&gt;
+	&lt;div class&#x3D;&quot;col-lg-7&quot;&gt;
 		&lt;div class&#x3D;&quot;main-box clearfix&quot;&gt;
 			&lt;div class&#x3D;&quot;table-responsive&quot;&gt;
 				&lt;table class&#x3D;&quot;table user-list&quot;   &gt;
@@ -788,11 +788,12 @@ noBooks ():number
 					&lt;tbody *ngFor&#x3D;&quot;let post of posts&quot;&gt;
 						&lt;tr&gt;
 							&lt;td&gt;
-								&lt;img src&#x3D;{{post.bookimage}} alt&#x3D;&quot;&quot;&gt;
-
+                  &lt;a class&#x3D;&quot;bookimage&quot;  [routerLink]&#x3D;&quot;[&#x27;/book&#x27;, post.bookid]&quot;&gt;
+								&lt;img class&#x3D;&quot;bookimage&quot; src&#x3D;{{post.bookimage}} alt&#x3D;&quot;&quot;&gt;
+&lt;/a&gt;
               &lt;/td&gt;
               &lt;td&gt;
-                &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;user-link&quot;&gt;{{post.name}}&lt;/a&gt;
+                &lt;a  [routerLink]&#x3D;&quot;[&#x27;/book&#x27;, post.bookid]&quot; class&#x3D;&quot;user-link&quot;&gt;{{post.bookname}}&lt;/a&gt;
 						
               &lt;/td&gt;
               &lt;td&gt;
@@ -1101,7 +1102,12 @@ hr {
   line-height: 26px;
   font-size: 16px;
   font-family: &quot;Merriweather&quot;, Georgia, &quot;Times New Roman&quot;, serif;
-  font-weight: bold;}</code></pre>
+  font-weight: bold;}
+  .bookimage
+  {
+    height:70px;
+    width:60px;
+  }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1129,8 +1135,8 @@ hr {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="mybooksTitle">   My Books</div><hr/><th class ="bookShelves">Bookshelves</th><table  class ="leftActivityy" *ngFor="let shelf of shelves">       <tr> <td> <a href="#" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})</a></td></tr>    </table>       <form id="tfnewsearch" method="get" >    <input type="text" id ="searchtextfollowing" placeholder="search for books"value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"      maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing      ">    </form>    <p   *ngIf="noBooks() == 0" id ="tagrba">You have no books.</p> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"><div class ="tablePlace" ><div class ="tablePlace"class="row">	<div class="col-lg-6">		<div class="main-box clearfix">			<div class="table-responsive">				<table class="table user-list"   >					<thead>						<tr>              <th><span>Cover</span></th>              <th><span>Title</span></th>              <th><span>Author</span></th>              <th><span>avgrating</span></th>              <th><span>rating</span></th>							<th><span>DataAdded</span></th>													</tr>					</thead>					<tbody *ngFor="let post of posts">						<tr>							<td>								<img src={{post.bookimage}} alt="">              </td>              <td>                <a href="#" class="user-link">{{post.name}}</a>						              </td>              <td>                <a href="#" class="user-link">{{post.name}}</a>						              </td>              <td>                <a href="#" class="user-link">2.38</a>						              </td>              <td                  *ngIf="post.id == 5" >                                <a href="#"><span class="fa fa-star"></span></a>                                <a href="#"><span class="fa fa-star"></span></a>                                <a href="#"><span class="fa fa-star"></span></a>                                <a href="#"><span class="fa fa-star"></span></a>                                <a href="#"><span class="fa fa-star"></span></a>              </td>              <td              *ngIf="post.id == 4" >                            <a href="#"><span class="fa fa-star"></span></a>                            <a href="#"><span class="fa fa-star"></span></a>                            <a href="#"><span class="fa fa-star"></span></a>                            <a href="#"><span class="fa fa-star"></span></a>                            <a href="#"><span class="fa fa-star-o"></span></a>          </td>            <td          *ngIf="post.id == 1" >                        <a href="#"><span class="fa fa-star"></span></a>                        <a href="#"><span class="fa fa-star-o"></span></a>                        <a href="#"><span class="fa fa-star-o"></span></a>                        <a href="#"><span class="fa fa-star-o"></span></a>                        <a href="#"><span class="fa fa-star-o"></span></a>      </td>            <td      *ngIf="post.id == 2" >                    <a href="#"><span class="fa fa-star"></span></a>                    <a href="#"><span class="fa fa-star"></span></a>                    <a href="#"><span class="fa fa-star-o"></span></a>                    <a href="#"><span class="fa fa-star-o"></span></a>                    <a href="#"><span class="fa fa-star-o"></span></a>  </td>  <td  *ngIf="post.id == 3" >                <a href="#"><span class="fa fa-star"></span></a>                <a href="#"><span class="fa fa-star"></span></a>                <a href="#"><span class="fa fa-star"></span></a>                <a href="#"><span class="fa fa-star-o"></span></a>                <a href="#"><span class="fa fa-star-o"></span></a></td>							<td>								2013/08/08							</td>								            </tr>										</tbody>				</table>			</div>					</div>	</div></div></div></div>'
-    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
+        var COMPONENT_TEMPLATE = '<div><div class="mybooksTitle">   My Books</div><hr/><th class ="bookShelves">Bookshelves</th><table  class ="leftActivityy" *ngFor="let shelf of shelves">       <tr> <td> <a href="#" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})</a></td></tr>    </table>       <form id="tfnewsearch" method="get" >    <input type="text" id ="searchtextfollowing" placeholder="search for books"value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"      maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing      ">    </form><div *ngIf="noBooks() == 0" >    <p   id ="tagrba">You have no books.</p>   </div><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"><div class ="tablePlace" ><div class ="tablePlace"class="row">	<div class="col-lg-7">		<div class="main-box clearfix">			<div class="table-responsive">				<table class="table user-list"   >					<thead>						<tr>              <th><span>Cover</span></th>              <th><span>Title</span></th>              <th><span>Author</span></th>              <th><span>avgrating</span></th>              <th><span>rating</span></th>							<th><span>DataAdded</span></th>													</tr>					</thead>					<tbody *ngFor="let post of posts">						<tr>							<td>                  <a class="bookimage"  [routerLink]="[\'/book\', post.bookid]">								<img class="bookimage" src={{post.bookimage}} alt=""></a>              </td>              <td>                <a  [routerLink]="[\'/book\', post.bookid]" class="user-link">{{post.bookname}}</a>						              </td>              <td>                <a href="#" class="user-link">{{post.name}}</a>						              </td>              <td>                <a href="#" class="user-link">2.38</a>						              </td>              <td                  *ngIf="post.id == 5" >                                <a href="#"><span class="fa fa-star"></span></a>                                <a href="#"><span class="fa fa-star"></span></a>                                <a href="#"><span class="fa fa-star"></span></a>                                <a href="#"><span class="fa fa-star"></span></a>                                <a href="#"><span class="fa fa-star"></span></a>              </td>              <td              *ngIf="post.id == 4" >                            <a href="#"><span class="fa fa-star"></span></a>                            <a href="#"><span class="fa fa-star"></span></a>                            <a href="#"><span class="fa fa-star"></span></a>                            <a href="#"><span class="fa fa-star"></span></a>                            <a href="#"><span class="fa fa-star-o"></span></a>          </td>            <td          *ngIf="post.id == 1" >                        <a href="#"><span class="fa fa-star"></span></a>                        <a href="#"><span class="fa fa-star-o"></span></a>                        <a href="#"><span class="fa fa-star-o"></span></a>                        <a href="#"><span class="fa fa-star-o"></span></a>                        <a href="#"><span class="fa fa-star-o"></span></a>      </td>            <td      *ngIf="post.id == 2" >                    <a href="#"><span class="fa fa-star"></span></a>                    <a href="#"><span class="fa fa-star"></span></a>                    <a href="#"><span class="fa fa-star-o"></span></a>                    <a href="#"><span class="fa fa-star-o"></span></a>                    <a href="#"><span class="fa fa-star-o"></span></a>  </td>  <td  *ngIf="post.id == 3" >                <a href="#"><span class="fa fa-star"></span></a>                <a href="#"><span class="fa fa-star"></span></a>                <a href="#"><span class="fa fa-star"></span></a>                <a href="#"><span class="fa fa-star-o"></span></a>                <a href="#"><span class="fa fa-star-o"></span></a></td>							<td>								2013/08/08							</td>								            </tr>										</tbody>				</table>			</div>					</div>	</div></div></div></div>'
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MyBooksComponent'};
 </script>

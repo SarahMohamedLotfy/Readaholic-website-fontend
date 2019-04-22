@@ -10,14 +10,15 @@ export class ProfileService {
   /** create http object in the constructor to use httpClient  */
   constructor( private http: HttpClient ) { }
  /** url of localhost */
-  url = 'http://ec2-3-87-221-152.compute-1.amazonaws.com/api';
-   /** http request to get user profile info from json server */
+  url = 'http://localhost:3000';
+   /** http request to get user profile info  */
   getUserprofile(id: number): Observable<any> {
-    return this.http.get<any> ('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/showProfile?id='+ id );
-  }
 
+    return this.http.get<any> ('http://972c6e5d.ngrok.io/api/showProfile?id='+ id );
+  }
+/** http request to get authenticated user profile info */
   getAuthUserprofile(): Observable<any> {
-    return this.http.get<any> ('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/showProfile');
+    return this.http.get<any> ('http://972c6e5d.ngrok.io/api/showProfile');
   }
 
 

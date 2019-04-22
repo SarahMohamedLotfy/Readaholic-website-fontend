@@ -86,10 +86,19 @@
                                 <a href="#addFollowing">addFollowing</a>
                             </li>
                             <li>
+                                <a href="#getAuthUserprofile">getAuthUserprofile</a>
+                            </li>
+                            <li>
                                 <a href="#getfollowers">getfollowers</a>
                             </li>
                             <li>
                                 <a href="#getfollowing">getfollowing</a>
+                            </li>
+                            <li>
+                                <a href="#getUserprofile">getUserprofile</a>
+                            </li>
+                            <li>
+                                <a href="#unfollow">unfollow</a>
                             </li>
                         </ul>
                     </td>
@@ -174,7 +183,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addFollowing(followwing: <a href="../classes/followerComponent.html">followerComponent</a>)</code>
+<code>addFollowing(nb)</code>
                 </td>
             </tr>
 
@@ -189,7 +198,7 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).</p>
+                    <div class="io-description"><p>addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.</p>
 </div>
 
                     <div class="io-description">
@@ -198,16 +207,12 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
-                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>followwing</td>
-                                    <td>
-                                                <code><a href="../classes/followerComponent.html" target="_self" >followerComponent</a></code>
-                                    </td>
+                                    <td>nb</td>
 
                                     <td>
                                         No
@@ -221,11 +226,52 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/followerComponent.html" target="_self" >Observable&lt;followerComponent&gt;</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAuthUserprofile"></a>
+                    <span class="name">
+                        <b>
+                            getAuthUserprofile
+                        </b>
+                        <a href="#getAuthUserprofile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAuthUserprofile()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/followers/httpfollower.service.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the profile information i used it to get the  name of the user.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
                     </div>
                 </td>
             </tr>
@@ -316,6 +362,150 @@ The data i get is ( name of user , image , id of user  ).</p>
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserprofile"></a>
+                    <span class="name">
+                        <b>
+                            getUserprofile
+                        </b>
+                        <a href="#getUserprofile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserprofile(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/followers/httpfollower.service.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the profile information i used it to get the  name of the user.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unfollow"></a>
+                    <span class="name">
+                        <b>
+                            unfollow
+                        </b>
+                        <a href="#unfollow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unfollow(user_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/followers/httpfollower.service.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Unfollow is a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user_id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -348,27 +538,50 @@ export class HttpFollowingService {
  */
 
 getfollowers(){
-  return this.http.get(&#x27;http://localhost:3000/followers&#x27;);
+  return this.http.get(&#x27;http://972c6e5d.ngrok.io/api/followers&#x27;);
 
    }
-
-   /**
- * addFollowing () is a post request to add the data of certain user to the followers of the main user the data is  ( name of user , image , id of user ).
+   
+  /**
+ * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
-   addFollowing (followwing: followerComponent): Observable&lt;followerComponent&gt; {
-    return this.http.post&lt;followerComponent&gt;(&#x27;http://localhost:3000/following&#x27;, followwing)
-      
-  } 
+  addFollowing ( nb):Observable&lt;any&gt; {
+    return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/follow&#x27;,{&quot;user_id&quot; : nb});
+    } 
+  
  /**
  *Getfollowing () is a get request to get the data of people following the main user 
  * and the books they are currently reading . 
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
   getfollowing(){
-    return this.http.get(&#x27;http://localhost:3000/following&#x27;);
+    return this.http.get(&#x27;http://972c6e5d.ngrok.io/api/following&#x27;);
   
   }
+  /**
+ * Unfollow is a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
+ */
+  unfollow ( user_id:number):Observable&lt;any&gt; {
+      
+    return this.http.delete(&#x27;http://972c6e5d.ngrok.io/api/unfollow?user_id&#x3D;&#x27;+ user_id);
+  }
+ /**
+     * Get the profile information i used it to get the  name of the user.
+     *
+     * */
+  getUserprofile(id: number): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt; (&#x27;http://972c6e5d.ngrok.io/api/showProfile/&#x27;+ id );
+  }
+  /**
+     * Get the profile information i used it to get the  name of the user.
+     *
+     * */
+  getAuthUserprofile(): Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt; (&#x27;http://972c6e5d.ngrok.io/api/showProfile&#x27;);
+  }
+
 }
+
 </code></pre>
     </div>
 

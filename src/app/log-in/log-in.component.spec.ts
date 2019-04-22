@@ -1,4 +1,3 @@
-
 import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 
 import { LogInComponent } from './log-in.component';
@@ -114,7 +113,3 @@ fit('sign up button clicked',fakeAsync(()=>{
 
 
 });
-
-
-
-

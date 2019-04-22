@@ -28,5 +28,8 @@ currently_reading:string;
  * Image of the book tht the user is currently reading .
  */ 
 book_image:string;
-  
+ /**
+* Country of the user following the main user  .
+*/ 
+country :string; 
 }

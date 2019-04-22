@@ -1,0 +1,189 @@
+<navbar></navbar>
+<div class="mainContentContainer">
+    <div class="mainContent">
+        <div class="mainContentFloat">
+            <h1 id="setting">Account settings</h1>
+            <h1 id="preferences">ACCOUNT PREFERENCES</h1>
+            <div class="row">
+                <div class="col-md-9">
+
+                    <div class="email">
+                        <div class="userEmail">
+
+                            <h1 style="font-size: 19px">Password</h1>
+
+
+                            <p>Password must be at least 3 characters long</p>
+                        </div>
+
+                        <div class="buttonPlace">
+                            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal" style="color:black;background-color: white">Change</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <img id="profileImg" src={{settings?.image_link}} alt="Avatar">
+                    <input type="file" (change)="onFileSelected($event)" style="    margin-left: 8%; margin-top: 5%;">
+                    <button type="button" (click)="onUpload()" style="    margin-left: 14%; margin-top: 5%;">Upload</button>
+
+                </div>
+            </div>
+            <h1 id="preferences">PROFILE SETTINGS</h1>
+
+            <br>
+
+
+            <form [formGroup]="form" onsubmit="return false">
+
+                <label id="formLabels">Name </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="Name" formControlName="name" value={{settings?.name}}>
+                    </div>
+                </div>
+                <label id="formLabels">Country </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="Country" formControlName="country" value={{settings?.country}}>
+                    </div>
+                </div>
+                <label id="formLabels">Country viewable by</label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <select class="form-control" id="countryView" formControlName="countryViewable" value={{settings?.see_my_country}}><option value="Everyone" >Everyone</option>
+                          <option value="Friends">Friends</option>
+                          <option  value="OnlyMe">Only me</option>
+        
+                        </select>
+                    </div>
+                </div>
+                <label id="formLabels">City</label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" placeholder="City" formControlName="city" value={{settings?.city}}>
+                    </div>
+                </div>
+                <label id="formLabels">City viewable by </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <select class="form-control" id="cityView" formControlName="cityViewable" value={{settings?.see_my_city}}>
+                          <option value="Everyone" >Everyone</option>
+                          <option value="Friends">Friends</option>
+                          <option  value="OnlyMe">Only me</option>
+        
+                        </select>
+                    </div>
+                </div>
+                <label id="formLabels">Birthday </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" formControlName="birthday" value={{settings?.birthday}}>
+                    </div>
+                </div>
+                <label id="formLabels">Birthday viewable by </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <select class="form-control" id="birthView" formControlName="birthViewable" value={{settings?.see_my_birthday}}><option value="Everyone" >Everyone</option>
+                          <option value="Friends">Friends</option>
+                          <option  value="OnlyMe">Only me</option>
+        
+                        </select>
+                    </div>
+                </div>
+                <br>
+
+                <button id="saveButton" type="submit" class="btn btn-primary" style="background-color:white; color: black; margin-left: 40%; margin-top: 2%;" (click)="onSaving()">Save changes</button>
+            </form>
+            <br>
+            <h1 id="preferences">DEACTIVATE ACCOUNT</h1>
+
+            <br>
+
+            <button type="submit" class="btn btn-primary" style="background-color:white; color: rgb(228, 10, 10); float: right; margin-bottom: 20%;" data-toggle="modal" data-target="#myModalDelete">Deactivate Account</button>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="margin-left: 10%;">
+
+
+                <h4 class="modal-title">Change Password</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form [formGroup]="formPass" style="margin-left: 10%;">
+
+                <label id="formLabels">Current password </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" placeholder="Current password" formControlName="password">
+                    </div>
+                </div>
+                <label id="formLabels">New password </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" placeholder="New password" formControlName="newPassword">
+                    </div>
+                </div>
+                <label id="formLabels">Confirm new password </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" placeholder="Confirm new password" formControlName="newPassword_confirmation">
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" style="margin-right: 45%;" (click)="changePass()">Save</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Modal end-->
+
+
+
+
+<div class="modal fade" id="myModalDelete" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="margin-left: 10%;">
+
+
+                <h4 class="modal-title">Deactivate Account</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form [formGroup]="formDelete" style="margin-left: 10%;">
+
+                <label id="formLabels"> password </label>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" placeholder="password" formControlName="password">
+                    </div>
+                </div>
+
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" style="margin-right: 45%;" (click)="deactivate()"> Deactivate</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Modal end-->

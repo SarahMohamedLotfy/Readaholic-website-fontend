@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 
 import { FollowersComponent } from './followers.component';
 import {FormsModule} from '@angular/forms'
@@ -52,26 +52,38 @@ fdescribe('FollowersComponent', () => {
 
 
 
-  it('should show followers list ', () => {
-    component.posts = {
-    
-        "id": 1,
-        "name": "Huda Yahya",
-        "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-        "bookid": 3,
-        "bookname": "اخر ايام الارض ",
-        "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
-        "country": "Asuit,Egypt"
-      
-      
-    };
+  // Unit test for search function
+fit(' Search button clicked',fakeAsync(()=>{
+  spyOn(component, 'search');
+  let bt= fixture.debugElement.query(By.css('#searchfollower'));
+    bt.triggerEventHandler('click',null);
 
-    fixture.detectChanges();
-    const titleElement: HTMLElement = fixture.debugElement.query( By.css('#profilename')).nativeElement;
-   expect(titleElement.innerText).toContain('Huda Yahya');
- });
+  tick(); // simulates the passage of time until all pending asynchronous activities finish
+   fixture.detectChanges();
+    expect(component.search).toHaveBeenCalled();
 
+}));
+//Unit test for deletefollowing function check if the count of following peole decrease ?
+  /*it('should be able to decrement the count (-1)', () => {
+    component.delFollowing(7);
+    expect(component.count).toEqual(5);
+  });*/
+  // Unit test for addfollowing function check if the count of following peole decrease ?
 
+  /*it('should be able to increment the count (+1)', () => {
+
+    component.add(7);
+    expect(component.count).toEqual(6);
+  });*/
+
+  /*fit(' Unfollow button clicked',fakeAsync(()=>{
+    spyOn(component, 'add');
+    let bt= fixture.debugElement.query(By.css('#followbutton'));
+      bt.triggerEventHandler('click',null);
+    tick(); // simulates the passage of time until all pending asynchronous activities finish
+     fixture.detectChanges();
+      expect(component.add).toHaveBeenCalled();
+}));*/
 
 
 

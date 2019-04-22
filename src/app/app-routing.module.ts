@@ -10,6 +10,7 @@ import { AuthGuard } from './auth.guard';
 import { BookInfoComponent } from './book-info/book-info.component';
 import  { PageNotFoundComponent }  from './page-not-found.component' ;
 import  { AboutusComponent} from './AboutUs/AboutUs.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 const routes: Routes = [
   {path:  '', pathMatch: 'full', redirectTo:  'login'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'book/:id' , component: BookInfoComponent,canActivate:[AuthGuard]},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
+  {path: 'accountSettings', component: AccountSettingsComponent},
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},

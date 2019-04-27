@@ -20,9 +20,9 @@ export class BookService {
    * @returns the book of the passed id
    */
   getBook(id: number): Observable<any> {
-    return this.http.get<any>('http://localhost:3000/book/'+id);
+   // return this.http.get<any>('http://localhost:3000/book/'+id);
     //let params = new HttpParams({ fromObject: { book_id:id} });
-   // return this.http.get('http://972c6e5d.ngrok.io/api/books/show?book_id='+id);
+    return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/books/show?book_id='+id);
  }
 
  /**
@@ -36,15 +36,7 @@ export class BookService {
   // return this.http.get<review[]>("http://localhost:3000/review");
  }
 
- /**
-  * gets user related book info
-  * @param {number} id the book id
-  * @returs user ralated book info
-  * @example when we pass the book id the function tells us if the user has this book on any of his shelves, if he rated it or posted a review
-  *  */
- getUserBookInfo(id: number): Observable<any> {
-  return this.http.get<userBookInfo>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showReviewForBookForUser?bookId='+id);
-}
+ 
 
 /**
  * create book review
@@ -60,7 +52,7 @@ createReview(bookId:number, shelf: number, body: string, rating: number): Observ
   }
   else
   {
-    return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.como/api/reviwes/create',{bookId,shelf,body,rating});
+    return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/reviwes/create',{bookId,shelf,body,rating});
   }
 
    // return this.http.post('http://localhost:3000/ReadShelf',{bookId,shelf,body,rating});

@@ -11,7 +11,7 @@ export class ShelfService {
 
     constructor(private http:HttpClient) { }
 
-    url = 'http://a6df2b7f.ngrok.io/api/shelf/';
+    url = 'http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf/';
 
     /**
      * removes book from its shelf
@@ -31,5 +31,15 @@ export class ShelfService {
     addToShelf(shelf_id:number, book_id: number):Observable<any> {
       return this.http.post<any>(this.url + 'add_book',{shelf_id,book_id}) ;
     }
+
+    /**
+  * gets user related book info
+  * @param {number} id the book id
+  * @returs user ralated book info
+  * @example when we pass the book id the function tells us if the user has this book on any of his shelves, if he rated it or posted a review
+  *  */
+ getUserBookInfo(id: number): Observable<any> {
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showReviewForBookForUser?bookId='+id);
+}
 
 }

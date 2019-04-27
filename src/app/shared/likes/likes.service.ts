@@ -19,7 +19,7 @@ export class LikesService {
 
   /** post a new like */
   addLLike(newLike: Likes): Observable<Likes> {
-    return this.http.post<Likes>('http://972c6e5d.ngrok.io/api/LikeOrUnLike?id='+newLike.resourse_id+'&type='+newLike.resourse_type, newLike)
+    return this.http.post<Likes>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/LikeOrUnLike?id='+newLike.resourse_id+'&type='+newLike.resourse_type, newLike)
   }
   /** like a specific object wether a review or update */
   likeObject(user: string , resourse_id: number , resourse_type: number

@@ -18,11 +18,11 @@ import { catchError, retry } from 'rxjs/operators';
     /**Sends a request to the server with the email and password to checks if they're correct */
  check(token:string): Observable<any>
  {
-   return this.http.get('http://78881396.ngrok.io/api/checktoken?token='+token) ;
+   return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/checktoken?token='+token) ;
  }
  changePass(password:string,password_confirmation:string,userId:number)
  {
-     return this.http.post('http://78881396.ngrok.io/api/resetpassword',{password,password_confirmation,userId});
+     return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/resetpassword',{password,password_confirmation,userId});
  }
 
 

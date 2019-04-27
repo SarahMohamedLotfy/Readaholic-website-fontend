@@ -6,6 +6,7 @@ import { userBookInfo } from '../classes/userBookInfo';
 import { BookService } from './book.service';
 import { generateExpandoInstructionBlock } from '@angular/core/src/render3/instructions';
 import { user } from '../classes/user';
+import { ShelfService } from '../shared/dropdown/shelf.service';
 
 /**component to show details of a specific book */
 @Component({
@@ -45,7 +46,7 @@ nehal = 5;
  * @param {ActivatedRoute} route activated route instance
  * @param {Router} router router inastance to route by code 
  */
-  constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
+  constructor(private service: BookService, private route: ActivatedRoute,private router: Router,private shelfService: ShelfService) {
   }
 
   /** calss the needed requests to the get the selected book info  */
@@ -67,8 +68,8 @@ getBookInfo() {
   this.service.getBook(+this.route.snapshot.paramMap.get('id'))
   .subscribe((data) => {
     // console.log(data)
-    this.myBook = data;
-console.log(this.myBook.title);
+    this.myBook = data.pages[0];
+    console.log(this.myBook.title);
 
 
     
@@ -80,7 +81,7 @@ console.log(this.myBook.title);
      {
        this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
      }
-   });
+   }, (data) => console.log(data));
    //,()=> this.router.navigateByUrl("/pageNotfound")
 }
 
@@ -92,7 +93,7 @@ getBookReviews() {
 
 /**gets user related book information */
 getUserInfo() {
-  this.service.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
+  this.shelfService.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
     this.userInfo = data.pages[0];
     this.info = data.pages[0];
 

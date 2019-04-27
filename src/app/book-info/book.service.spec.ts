@@ -8,7 +8,7 @@ import { async } from 'q';
 
 describe('Book Service', () => {
   let http: HttpTestingController;
-  let service
+  let service: BookService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -16,20 +16,12 @@ describe('Book Service', () => {
       imports: [HttpClientTestingModule]
     });
   
-    http = TestBed.get(HttpClientTestingModule);
+    http = TestBed.get(HttpTestingController);
     service = TestBed.get(BookService);
   }) 
 
   it('get book', () => {
-    const responseForm = '<form />';
-    let bookResponse;
-    service.getBook(173).subscribe((response) => bookResponse = response );
-
-    http.expectOne({
-      url: 'https://localhost:3000/book/173',
-      method: 'GET'
-    }).flush(responseForm);
-    expect(bookResponse).toEqual(responseForm);
+    
   })
 
 })

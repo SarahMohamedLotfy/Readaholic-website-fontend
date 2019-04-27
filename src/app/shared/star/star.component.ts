@@ -38,6 +38,7 @@ userRate: number = 0;
   
   /**rates a book when the user clicks on the stars */
   onClick() {
+    this.rated.emit(this.userRate)
     if(this.readOnly == false) {
       if(!this.shelf) {
         this.shelf = 3;

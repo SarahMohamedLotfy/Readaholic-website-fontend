@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BookInfoComponent } from './book-info.component';
-import {  NO_ERRORS_SCHEMA, DebugElement } from '@angular/core';
+import {  NO_ERRORS_SCHEMA, DebugElement, Directive, Input } from '@angular/core';
 import { BookService } from './book.service';
 import { StarComponent } from '../shared/star/star.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
@@ -9,6 +9,26 @@ import { DropdownComponent } from '../shared/dropdown/dropdown.component';
 import { of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
+import { CommentsComponent } from '../shared/comments/comments.component';
+import { LikesComponent } from '../shared/likes/likes.component';
+import { FormsModule, FormGroup } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserModule } from '@angular/platform-browser';
+import { Validators, FormBuilder,  FormControl , ReactiveFormsModule } from '@angular/forms';
+
+@Directive({
+  selector: '[routerLink]',
+  host: { '(click)': 'onClick()' }
+
+})
+export class RouterLinkDirectiveStub {
+  @Input('routerLink') linkParams: any;
+  navigateTo: any = null;
+
+  onClick() {
+    this.navigateTo = this.linkParams;
+  }
+}
 
 fdescribe('BookInfoComponent', () => {
   let fixture: ComponentFixture<BookInfoComponent>;
@@ -25,19 +45,24 @@ fdescribe('BookInfoComponent', () => {
         BookInfoComponent, 
         StarComponent,
         DropdownComponent,
-        NavbarComponent
+        NavbarComponent,
+        LikesComponent,
+        CommentsComponent,
+        RouterLinkDirectiveStub
       ],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: Router, useValue: mockRouter },
         { provide: BookService, useValue: mockService }
       ],
-      schemas: [ NO_ERRORS_SCHEMA  ],
-      imports: [HttpClientModule]
+     // schemas: [ NO_ERRORS_SCHEMA  ],
+      //as2ale 3la de
+      imports: [HttpClientModule,FormsModule, NgbModule,BrowserModule,ReactiveFormsModule]
     })
 
     mockService.getBook.and.returnValue(of({
-      id: 3,
+      
+        id: 3,
       title: "book title",
       isbn: 555,
       img_url: "https://images.gr-assets.com/books/1529823092l/39320115.jpg",
@@ -54,6 +79,8 @@ fdescribe('BookInfoComponent', () => {
       created_at: "2010",
       updated_at: "2010",
       genre: "action" 
+      
+      
     }));
 
     mockService.getBookReviews.and.returnValue(of({
@@ -76,6 +103,19 @@ fdescribe('BookInfoComponent', () => {
       body: "great book"
     }));
 
+    
+
+    fixture = TestBed.createComponent(BookInfoComponent); 
+
+  });
+
+  fit('myBook should be equal to the book returned from getBookInfo()', () => {
+    fixture.detectChanges();
+    console.log(fixture.componentInstance)
+    expect(fixture.componentInstance.myBook.title).toEqual('book title');
+  });
+
+  fit('should create review', () => {
     mockService.createReview.and.returnValue(of({
       id: 2,
       book_id: 3,
@@ -88,28 +128,19 @@ fdescribe('BookInfoComponent', () => {
       username: "menna",
       userimagelink: "https://images.gr-assets.com/books/1529823092l/39320115.jpg"
     }));
+    
+    fixture.componentInstance.open(1);
+    let  saveBtn: DebugElement = fixture.debugElement.query( By.css('button#save'));
+    saveBtn.triggerEventHandler('click',null);
 
-    fixture = TestBed.createComponent(BookInfoComponent); 
-  });
-
-  fit('should render the book title', () => {
-    fixture.detectChanges();
-    expect(fixture.componentInstance.myBook.title).toEqual('book title');
-    //expect(document.getElementById('Booktitle').innerText).toContain("book title");
-  });
-
-  fit('should create review', () => {
-    fixture.componentInstance.ngOnInit();
-    fixture.componentInstance.createReview();
-    //document.getElementById('post').click();
     expect(mockService.createReview).toHaveBeenCalled();
-   /* let de = fixture.debugElement;
-    let bookService = de.injector.get(BookService);
-    let createReviewSpy = spyOn(bookService,'createReview').and.callThrough();
-    let  postButton: DebugElement = fixture.debugElement.query( By.css('#post'));
 
-    postButton.triggerEventHandler('click',null);
-   expect(createReviewSpy).toHaveBeenCalled();*/
+  });
+
+  fit('should pass book id to dropsown component', () => {
+    fixture.detectChanges();
+    let shelfComp =  fixture.debugElement.query(By.css('#shelf'));
+    expect(shelfComp.componentInstance.bookId).toEqual(3);
   });
 
   

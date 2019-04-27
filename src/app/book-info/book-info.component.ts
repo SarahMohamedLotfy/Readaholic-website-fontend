@@ -5,6 +5,7 @@ import { book } from '../classes/book';
 import { userBookInfo } from '../classes/userBookInfo';
 import { BookService } from './book.service';
 import { generateExpandoInstructionBlock } from '@angular/core/src/render3/instructions';
+import { user } from '../classes/user';
 
 /**component to show details of a specific book */
 @Component({
@@ -33,7 +34,10 @@ export class BookInfoComponent implements OnInit {
   };
 
   /**@ignore */
-  shelfName:string = "";
+  shelfName: string = "";
+   /**@ignore */
+   modelShelf: string = "read";
+nehal = 5;
 
 
 /**
@@ -46,24 +50,52 @@ export class BookInfoComponent implements OnInit {
 
   /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
+    this.getBookInfo();
+    this.getBookReviews();
+    this.getUserInfo();
 
-    this.service.getBook(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
-     this.myBook = data.pages[0];
-     console.log(data);
-      if(Math.floor(this.myBook.ratings_avg) > this.myBook.ratings_avg-0.5)
-      {
-        this.myBook.ratings_avg = Math.floor(this.myBook.ratings_avg);
-      }
-      else
-      {
-        this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
-      }
-    },()=> this.router.navigateByUrl("/pageNotfound"));
+    if(localStorage.getItem('token') == null){
+      this.isUser = false;
+    }
+    else{
+     this.isUser = true;
+    }
+}
 
+/**get the selected book information */
+getBookInfo() {
+  this.service.getBook(+this.route.snapshot.paramMap.get('id'))
+  .subscribe((data) => {
+    // console.log(data)
+    this.myBook = data;
+console.log(this.myBook.title);
+
+
+    
+    if(Math.floor(this.myBook.ratings_avg) > this.myBook.ratings_avg-0.5)
+     {
+       this.myBook.ratings_avg = Math.floor(this.myBook.ratings_avg);
+     }
+     else
+     {
+       this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
+     }
+   });
+   //,()=> this.router.navigateByUrl("/pageNotfound")
+}
+
+/**gets the selected book reviews */
+getBookReviews() {
+  this.service.getBookReviews(+this.route.snapshot.paramMap.get('id'))
+  .subscribe((data) => this.reviews = data.pages);
+}
+
+/**gets user related book information */
+getUserInfo() {
   this.service.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
-
     this.userInfo = data.pages[0];
     this.info = data.pages[0];
+
     if(this.userInfo.shelf_name == 0)
     {
       this.shelfName = "Read";
@@ -77,20 +109,22 @@ export class BookInfoComponent implements OnInit {
       this.shelfName = "Want To Read";
     }
   }, (data)=> console.log(data));
-
- this.service.getBookReviews(+this.route.snapshot.paramMap.get('id')).subscribe((data) => this.reviews = data.pages);
-
-  if(localStorage.getItem('token') == null){
-    this.isUser = false;
-  }
-  else{
-    this.isUser = true;
-  }
 }
 
+
 /**calls the book service funstion to create a review */
-createReview () {
- this.service.createReview(this.myBook.id,this.info.shelf_name,this.info.body,this.info.rating).subscribe((data) => {this.userInfo = data.pages; console.log(data);});
+review () {
+  console.log(this.nehal);
+  if(!this.userInfo.body || this.userInfo.body == "no body")
+  {
+    this.service.createReview(this.myBook.id,this.info.shelf_name,this.info.body,this.info.rating)
+    .subscribe((data) => {this.userInfo = data.pages; console.log(data);});
+  }
+  else
+  {
+    //H3ML CALL BL USERINFO
+  }
+
 }
 
 /**
@@ -98,10 +132,33 @@ createReview () {
  * @param {number} rate The output rate from the star component
  */
 open(rate: number) {
+  //hl a3ml hna call l get user info?
+
+  document.getElementById("openModalButton").click();
   this.info.rating = rate;
   if(!this.userInfo) {
-    document.getElementById("openModalButton").click();
+  //  document.getElementById("openModalButton").click();
   }
 }
 
+ openShelves() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+ filterFunction() {
+  var input, filter, a, i,text;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+
+  var div  = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    text = a[i].textContent || a[i].innerText;
+    if (text.toUpperCase().indexOf(filter) == 0) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
 }

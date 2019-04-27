@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, AfterViewChecked, Output,EventEmitter } from '@angular/core';
+import { ShelfService } from './shelf.service';
 
 /**used to add or remove a book from a shelf  */
 @Component({
@@ -26,7 +27,7 @@ buttonDisabled: boolean = false;
 removeEnabled: boolean = false;
 
 
-constructor() { }
+constructor(private service : ShelfService) { }
 /** sets the displayed shelf
  *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
  * 
@@ -56,7 +57,7 @@ ngOnChanges() {
     e.innerHTML = "&#10003; "
   }
 
- /*
+ /**removes a book from its shelf */
   removeBookFromShelf() {
     this.service.removeFromShelf(this.shelfId,this.bookId).subscribe(() => {
       this.shelfStatus = this.shelves[2];
@@ -66,6 +67,7 @@ ngOnChanges() {
   }
 
 
+  /**adds a book to the selected shelf */
   addBookToShelf(eventObj: Event) {
    var e = <HTMLElement> eventObj.srcElement;
     this.shelfId = +e.id
@@ -75,7 +77,7 @@ ngOnChanges() {
       this.removeEnabled = true;
 
     })
-  }*/
+  }
 
 
 }

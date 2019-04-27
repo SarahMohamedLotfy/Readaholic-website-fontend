@@ -20,9 +20,9 @@ export class BookService {
    * @returns the book of the passed id
    */
   getBook(id: number): Observable<any> {
-  //  return this.http.get<book>('http://localhost:3000/book/'+id);
+    return this.http.get<any>('http://localhost:3000/book/'+id);
     //let params = new HttpParams({ fromObject: { book_id:id} });
-    return this.http.get('http://972c6e5d.ngrok.io/api/books/show?book_id='+id);
+   // return this.http.get('http://972c6e5d.ngrok.io/api/books/show?book_id='+id);
  }
 
  /**

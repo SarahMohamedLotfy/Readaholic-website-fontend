@@ -139,6 +139,8 @@ export class AccountSettingsComponent implements OnInit {
         console.log(data);
       }
     )}
+
+   
     
   }
 
@@ -157,9 +159,7 @@ export class AccountSettingsComponent implements OnInit {
     this.service.delete(val.password).subscribe(
       (data:any)=>{
         localStorage.removeItem('token');
-            this.router.navigate(['/login']);
-
-        console.log(data);
+        this.router.navigateByUrl('/login');
       },err=>{console.log(err)})
 
   }

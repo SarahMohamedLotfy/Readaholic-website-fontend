@@ -25,7 +25,7 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
-return this.http.get("http://ec2-3-87-221-152.compute-1.amazonaws.com/api/updates")
+return this.http.get("http://ec2-52-90-5-77.compute-1.amazonaws.com/api/updates")
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
@@ -33,7 +33,7 @@ return this.http.get("http://ec2-3-87-221-152.compute-1.amazonaws.com/api/update
     );
    }
    addFollowing (nb):Observable<any> {
-  return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
+  return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
     return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/shelf/add_book',{"shelf_id": shelf,

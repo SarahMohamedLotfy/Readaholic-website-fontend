@@ -26,6 +26,10 @@ import { LogInHttpService } from './log-in/log-in-http.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { SearchBooksComponent } from './search-books/search-books.component';
 
 
 
@@ -44,7 +48,11 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     LogInComponent,
     AboutusComponent,
     PageNotFoundComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+   
+    ForgetPasswordComponent,
+   
+    SearchBooksComponent
    
 
   ],
@@ -66,7 +74,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
   
   
 
-  providers: [HttpService,LogInHttpService 
+  providers: [HttpService,LogInHttpService,{provide: LocationStrategy, useClass: HashLocationStrategy}
     
     ,{provide: HTTP_INTERCEPTORS,
 

@@ -1,0 +1,65 @@
+<navbar (clickBtn)="search()"></navbar>
+<div id="mainSearchContainer">
+    <div id="mainSearchContent">
+        <div id="mainSearchFloat">
+            <div id="leftSearchContainer">
+                <h1 id="search">Search </h1>
+
+                <form name="searchForm" id="searchBox" [formGroup]="form">
+                    <div style="padding-bottom: 10px;">
+                        <input id="searchBoxInput" type="text" placeholder="Search by Book Title,Author,Genre,or ISBN" formControlName="searchBox">
+                        <button id="searchButton" (click)="search()">Search</button>
+                    </div>
+                    <div>
+                        <label class="radio-inline">
+                        <input type="radio"  value="title" style="vertical-align:middle; margin: 3px 3px 0px 5px;" formControlName="searchType" name="searchType" checked="checked" > title</label>
+                        <label class="radio-inline">
+                        <input type="radio" value="author" style="vertical-align:middle; margin: 3px 3px 0px 5px;" name="searchType" formControlName="searchType" > author</label>
+                        <label class="radio-inline">
+                        <input type="radio" value="genre" style="vertical-align:middle; margin: 3px 3px 0px 5px;" name="searchType" formControlName="searchType"> genre</label>
+                        <label class="radio-inline">
+                        <input type="radio" value="ISBN" style="vertical-align:middle;margin: 3px 3px 0px 5px;" name="searchType" formControlName="searchType"> ISBN</label>
+                    </div>
+
+                </form>
+
+                <h1 id="searchSubNav">Results for search</h1>
+                <table id="searchTable" *ngFor="let book of books ">
+                    <tbody id="searchTableBody">
+                        <tr id="singleBook">
+                            <td id="img">
+                                <div></div>
+                                <img src={{book.img_url}} id="bookImg">
+                            </td>
+                            <td id="bookDetails">
+                                <a id="bookTitle" [routerLink]="['/book',book.id]">{{book.title}}</a>
+                                <br>
+                                <span>by </span>
+                                <span>{{book.author_name}}</span>
+                                <br>
+
+
+
+                                <div style=" margin-top: 1%;">
+                                    <span id="ratings">
+                                        <span id="miniRating">
+                                    <app-star [starsCount]="book?.ratings_avg" [readOnly]="true"></app-star>
+                                    {{book.ratings_avg}} avg rating - {{book.ratings_count}} ratings
+                                </span> - published {{book.publication_date}}
+                                    </span>
+                                </div>
+
+                                <div id="reviewing">
+                                    <app-dropdown [bookId]="book?.id"></app-dropdown>
+                                    <app-star id="rateBook" [bookId]="book?.id" [readOnly]="false"></app-star>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>

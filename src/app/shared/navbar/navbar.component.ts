@@ -1,5 +1,5 @@
 import { AppRoutingModule } from './../../app-routing.module';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { LogInHttpService } from 'src/app/log-in/log-in-http.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -19,11 +19,12 @@ export class NavbarComponent implements OnInit {
   }
   /**stores any error message recived  */
   error :any;
+  searchTerm:string;
+  @Output() clickBtn = new EventEmitter<boolean>();
   /**On clicking the logout button it sends a request to the server to logout the user and if the response it gets from the server is positive it removes the token from the storage and redirects the user to the login page */
   onLogout()
     {
-     
-      
+ 
       this.service.logOut().subscribe(
         res=>{localStorage.removeItem('token');
         this.router.navigate(['/login']);
@@ -40,10 +41,13 @@ export class NavbarComponent implements OnInit {
           else
           console.log(err);
         })
+      
+    }
 
-
-
-        
+    search(){
+      this.router.navigate(['/searchBooks'],{queryParams:{'search':this.searchTerm}});
+      
+      this.clickBtn.emit(true);
       
     }
 

@@ -31,5 +31,12 @@ import { catchError, retry } from 'rxjs/operators';
  logOut():Observable<any>{
     return this.http.delete('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/logout');
   }
+
+  resetPass(email:string): Observable<any> {
+        
+    return this.http.post<any>('http://f829bfdb.ngrok.io/api/forgotpassword',{email});
+    
+   }
+  
   }
   

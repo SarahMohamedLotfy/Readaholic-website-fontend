@@ -15,7 +15,8 @@
 
     </div>
     <div class="input-group" id="searchBox">
-        <input class="form-control border-secondary py-2" type="search" value="search books">
+        <input class="form-control border-secondary py-2" type="search" placeholder="Search books by title" [(ngModel)]='searchTerm'>
+        <button type="button" (click)="search()"><i class="fa fa-search"></i></button>
         <div class="input-group-append">
         </div>
     </div>

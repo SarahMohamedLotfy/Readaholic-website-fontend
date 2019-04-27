@@ -11,12 +11,17 @@ import { BookInfoComponent } from './book-info/book-info.component';
 import  { PageNotFoundComponent }  from './page-not-found.component' ;
 import  { AboutusComponent} from './AboutUs/AboutUs.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { SearchBooksComponent } from './search-books/search-books.component';
+
 
 const routes: Routes = [
   {path:  '', pathMatch: 'full', redirectTo:  'login'},
   {path:'login',component: LogInComponent},
   {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
+  {path:'searchBooks',component: SearchBooksComponent},
   {path: 'book/:id' , component: BookInfoComponent,canActivate:[AuthGuard]},
+  {path:'forgetPassword',component: ForgetPasswordComponent},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'accountSettings', component: AccountSettingsComponent},

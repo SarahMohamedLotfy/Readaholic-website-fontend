@@ -22,7 +22,7 @@ export class BookService {
   getBook(id: number): Observable<any> {
   //  return this.http.get<book>('http://localhost:3000/book/'+id);
     //let params = new HttpParams({ fromObject: { book_id:id} });
-    return this.http.get('http://972c6e5d.ngrok.io/api/books/show?book_id='+id);
+    return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/books/show?book_id='+id);
  }
 
  /**
@@ -32,7 +32,7 @@ export class BookService {
   */
  getBookReviews(id: number): Observable<any> {
   //let params = new HttpParams().set("bookId",id);
-  return this.http.get<any>('http://972c6e5d.ngrok.io/api/showReviewsForABook?bookId='+id);
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showReviewsForABook?bookId='+id);
   // return this.http.get<review[]>("http://localhost:3000/review");
  }
 
@@ -43,7 +43,7 @@ export class BookService {
   * @example when we pass the book id the function tells us if the user has this book on any of his shelves, if he rated it or posted a review
   *  */
  getUserBookInfo(id: number): Observable<any> {
-  return this.http.get<userBookInfo>('http://972c6e5d.ngrok.io/api/showReviewForBookForUser?bookId='+id);
+  return this.http.get<userBookInfo>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showReviewForBookForUser?bookId='+id);
 }
 
 /**
@@ -56,11 +56,11 @@ export class BookService {
 createReview(bookId:number, shelf: number, body: string, rating: number): Observable<any> {
   if(body == "")
   {
-    return this.http.post('http://972c6e5d.ngrok.io/api/reviwes/create',{bookId,shelf,rating});
+    return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/reviwes/create',{bookId,shelf,rating});
   }
   else
   {
-    return this.http.post('http://972c6e5d.ngrok.io/api/reviwes/create',{bookId,shelf,body,rating});
+    return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.como/api/reviwes/create',{bookId,shelf,body,rating});
   }
 
    // return this.http.post('http://localhost:3000/ReadShelf',{bookId,shelf,body,rating});

@@ -1,26 +1,28 @@
 <div class="topnav" id="myTopnav">
-    <a href="home" id="Readholic">Readholic </a>
-    <a href="home" id="home">Home </a>
-    <a href="myBooks" id="myBooks">My Books</a>
-    <a href="profile" id="profile">My Profile</a>
-    <a href="followers" id="followers">Followers</a>
-    <a href="following" id="following">Following</a>
-    <a href="Aboutus" id="aboutUs">Aboutus</a>
+    <a class="nav-link" [routerLink]="['/home']" id="Readholic">Readholic </a>
+    <a class="nav-link" [routerLink]="['/home']" id="home">Home </a>
+    <a class="nav-link" [routerLink]="['/myBooks']" id="myBooks">My Books</a>
+    <a class="nav-link" [routerLink]="['/profile']" id="profile">My Profile</a>
+    <a class="nav-link" [routerLink]="['/followers']" id="followers">Followers</a>
+    <a class="nav-link" [routerLink]="['/following']" id="following">Following</a>
+    <a class="nav-link" [routerLink]="['/Aboutus']" id="aboutUs">Aboutus</a>
 
     <div id="right">
-         
-        <a href="#" id="accountSettings">Account Settings </a>
+
+
+        <a class="nav-link" [routerLink]="['/accountSettings']" id="accountSettings">Account Settings </a>
         <button (click)="onLogout()" id="logOut">Log out</button>
-    
+
     </div>
     <div class="input-group" id="searchBox">
-        <input class="form-control border-secondary py-2" type="search" value="search books">
+        <input class="form-control border-secondary py-2" type="search" placeholder="Search books by title" [(ngModel)]='searchTerm'>
+        <button type="button" (click)="search()"><i class="fa fa-search"></i></button>
         <div class="input-group-append">
         </div>
     </div>
 
 
-<!--
+    <!--
 <li class="nav-item dropdown" id="#notifications" >
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-bell">
@@ -50,6 +52,7 @@
     </div>
 </li>
 -->
-        </div>
-       
+</div>
 
+
+<router-outlet></router-outlet>

@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@ang
 import { HttpFollowingService } from './httpfollower.service';
 import { followerComponent } from '../classes/followerComponent';
 
-describe('HttpFollowingService', () => {
+fdescribe('HttpFollowingService', () => {
   let service: HttpFollowingService;
   let httpTestingController: HttpTestingController;
   
@@ -22,15 +22,62 @@ describe('HttpFollowingService', () => {
   afterEach(() => {
     httpTestingController.verify();
   });
-
-
-
-
- 
-
-
-  it('should be created', () => {
+  fit('should be created', () => {
     const service: HttpFollowingService = TestBed.get(HttpFollowingService);
     expect(service).toBeTruthy();
   });
-});
+
+
+
+  // Unit testing for Get followers request
+<<<<<<< HEAD
+ 
+=======
+  /*describe('#Get the followers', () => {
+>>>>>>> d26fb4c3ab919c72b0b3693153224c6d5bd99cc2
+    it('returned Observable should match the right data', () => {
+     
+    const mockFollowers = [
+      {
+        "book_id": null,
+        "book_image": null,
+        "currently_reading": null,
+        "id": 2,
+        "image_link": "http://0f626498.ngrok.io/storage/avatars/ta7a.jpg",
+        "name": "ta7a",
+        "is_followed": 0,
+        "pages": null
+      },
+      {
+        "book_id": null,
+        "book_image": null,
+        "currently_reading": null,
+        "id": 3,
+        "image_link": "http://0f626498.ngrok.io/storage/avatars/waleed.jpg",
+        "name": "waleed",
+        "is_followed": 1,
+        "pages": null
+      }
+    ];
+
+    service.getfollowing()
+      .subscribe(coursesData => {
+        expect(followerComponent[0].name).toEqual('ta7a');
+        expect(followerComponent[0].id).toEqual('2');
+        expect(followerComponent[1].name).toEqual('waleed');
+        expect(followerComponent[1].id).toEqual('3');
+      });
+    const req = httpTestingController.expectOne(
+      'http://0f626498.ngrok.io/api/follower'
+    );
+
+    req.flush(mockFollowers);
+  });*/
+
+
+
+  fit('should be created', () => {
+    const service: HttpFollowingService = TestBed.get(HttpFollowingService);
+    expect(service).toBeTruthy();
+  });
+})

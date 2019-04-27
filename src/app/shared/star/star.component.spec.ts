@@ -4,6 +4,8 @@ import { BookService } from 'src/app/book-info/book.service';
 import { TestBed, ComponentFixture } from "@angular/core/testing";
 import { of } from 'rxjs';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HomeService } from 'src/app/home/home.service';
+import { HomeComponent } from 'src/app/home/home.component';
 
 
 fdescribe("star component", () => {
@@ -14,7 +16,7 @@ fdescribe("star component", () => {
       mockService = jasmine.createSpyObj(['createReview']);
         TestBed.configureTestingModule({
             declarations: [StarComponent],
-            providers: [{ provide: BookService, useValue: mockService }],
+            providers: [{ provide: BookService,HomeComponent, useValue: mockService }],
             schemas: [ NO_ERRORS_SCHEMA  ]
         });
         fixture = TestBed.createComponent(StarComponent);

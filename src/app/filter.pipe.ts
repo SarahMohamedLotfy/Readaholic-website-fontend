@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
+ /**
+*Used in search .
+ */
 @Pipe({
   name: 'filter'
 })

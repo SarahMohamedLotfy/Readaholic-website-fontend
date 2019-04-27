@@ -31,5 +31,5 @@ export class ShelfService {
     addToShelf(shelf_id:number, book_id: number):Observable<any> {
       return this.http.post<any>(this.url + 'add_book',{shelf_id,book_id}) ;
     }
-    
+
 }

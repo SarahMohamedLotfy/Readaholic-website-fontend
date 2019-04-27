@@ -16,8 +16,9 @@ import { LogInHttpService } from './log-in-http.service';
 export class LogInComponent implements OnInit {
   /**stores the input typed in the login form */
   form:FormGroup;
-
+ /**stores the input typed in the signup form */
   formUp:FormGroup;
+  formReset:FormGroup;
   /**stores the information of the user logged in */
   users:user;
   /**true if user entered wrong pass or username, false otherwise */
@@ -28,6 +29,8 @@ export class LogInComponent implements OnInit {
   errorUp:string;
 /**true if there is an error in signing up false otherwise */
   signUpError:boolean;
+
+
 
   
 /**sets the varibales in the form using form builder */
@@ -48,6 +51,12 @@ export class LogInComponent implements OnInit {
       city:['',[Validators.required]]
       });
 
+      this.formReset=this.fb.group({
+        email: ['',[Validators.required]],
+       
+        
+         });
+
 
     
  
@@ -56,6 +65,7 @@ export class LogInComponent implements OnInit {
   
   /**Checks if the guest is already logged in or not if already logged in it re routes them automaticaly to the home page */
   ngOnInit() {
+    
     if(localStorage.getItem('token')!=null)
     this.router.navigateByUrl('/home');
     
@@ -134,9 +144,21 @@ err => {
  
 
   }
+reset(){
+  const val = this.formReset.value;
+  this.service.resetPass(val.email).subscribe(
+    (data:any)=>{console.log(data)},err=>{
+      console.log(err);
+    }
+  );
+
+
+}
+
 
 /**Checks changes if the user enter a wrong password */
 ngOnChanges(): void{
+ 
   this.wrongPass=this.wrongPass;
   this.error=this.error;
   this.errorUp=this.errorUp;

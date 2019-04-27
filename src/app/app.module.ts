@@ -24,6 +24,12 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { fakeBackendProvider } from './fake-backend';
 import { LogInHttpService } from './log-in/log-in-http.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { SearchBooksComponent } from './search-books/search-books.component';
 
 
 
@@ -41,19 +47,26 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     BookInfoComponent,
     LogInComponent,
     AboutusComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AccountSettingsComponent,
+   
+    ForgetPasswordComponent,
+   
+    SearchBooksComponent
    
 
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
     NgbModule.forRoot(),
     SharedModule,
-    AppRoutingModule,
+    
     ReactiveFormsModule,
-    RatingModule
+    RatingModule,
+    RouterModule
   
 
 
@@ -61,7 +74,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   
   
 
-  providers: [HttpService,LogInHttpService 
+  providers: [HttpService,LogInHttpService,{provide: LocationStrategy, useClass: HashLocationStrategy}
     
     ,{provide: HTTP_INTERCEPTORS,
 

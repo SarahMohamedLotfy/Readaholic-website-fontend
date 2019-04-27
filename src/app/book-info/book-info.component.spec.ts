@@ -8,7 +8,7 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { DropdownComponent } from '../shared/dropdown/dropdown.component';
 import { of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 import { CommentsComponent } from '../shared/comments/comments.component';
 import { LikesComponent } from '../shared/likes/likes.component';
 import { FormsModule, FormGroup } from '@angular/forms';
@@ -30,7 +30,8 @@ export class RouterLinkDirectiveStub {
   }
 }
 
-fdescribe('BookInfoComponent', () => {
+
+describe('BookInfoComponent', () => {
   let fixture: ComponentFixture<BookInfoComponent>;
   let mockActivatedRoute,mockRouter,mockService;
 
@@ -41,8 +42,8 @@ fdescribe('BookInfoComponent', () => {
   mockService = jasmine.createSpyObj(['getBook','getBookReviews','getUserBookInfo','createReview'])
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
-        BookInfoComponent, 
+      declarations: [
+        BookInfoComponent,
         StarComponent,
         DropdownComponent,
         NavbarComponent,
@@ -61,7 +62,7 @@ fdescribe('BookInfoComponent', () => {
     })
 
     mockService.getBook.and.returnValue(of({
-      
+
         id: 3,
       title: "book title",
       isbn: 555,
@@ -78,9 +79,9 @@ fdescribe('BookInfoComponent', () => {
       pages_no: 100,
       created_at: "2010",
       updated_at: "2010",
-      genre: "action" 
-      
-      
+      genre: "action"
+
+
     }));
 
     mockService.getBookReviews.and.returnValue(of({
@@ -103,9 +104,9 @@ fdescribe('BookInfoComponent', () => {
       body: "great book"
     }));
 
-    
 
-    fixture = TestBed.createComponent(BookInfoComponent); 
+
+    fixture = TestBed.createComponent(BookInfoComponent);
 
   });
 
@@ -128,22 +129,35 @@ fdescribe('BookInfoComponent', () => {
       username: "menna",
       userimagelink: "https://images.gr-assets.com/books/1529823092l/39320115.jpg"
     }));
-    
+
     fixture.componentInstance.open(1);
     let  saveBtn: DebugElement = fixture.debugElement.query( By.css('button#save'));
     saveBtn.triggerEventHandler('click',null);
 
     expect(mockService.createReview).toHaveBeenCalled();
 
-  });
-
-  fit('should pass book id to dropsown component', () => {
+  it('should render the book title', () => {
     fixture.detectChanges();
-    let shelfComp =  fixture.debugElement.query(By.css('#shelf'));
-    expect(shelfComp.componentInstance.bookId).toEqual(3);
+    expect(fixture.componentInstance.myBook.title).toEqual('book title');
+    //expect(document.getElementById('Booktitle').innerText).toContain("book title");
   });
 
-  
+
+  it('should create review', () => {
+    fixture.componentInstance.ngOnInit();
+    fixture.componentInstance.createReview();
+    //document.getElementById('post').click();
+    expect(mockService.createReview).toHaveBeenCalled();
+   /* let de = fixture.debugElement;
+    let bookService = de.injector.get(BookService);
+    let createReviewSpy = spyOn(bookService,'createReview').and.callThrough();
+    let  postButton: DebugElement = fixture.debugElement.query( By.css('#post'));
+
+    postButton.triggerEventHandler('click',null);
+   expect(createReviewSpy).toHaveBeenCalled();*/
+  });
+
+
 
 
 });
@@ -172,6 +186,8 @@ fdescribe('BookInfoComponent', () => {
      const titleElement: HTMLElement = fixture.debugElement.query( By.css('#Booktitle')).nativeElement;
     expect(titleElement.innerText).toContain('The Raven Boys');
   });
+
+  it('should show book reviews', () => {
 */
 /*
   fit('should show book reviews', () => {
@@ -192,6 +208,8 @@ fdescribe('BookInfoComponent', () => {
   fixture.detectChanges();
   const titleElement: HTMLElement = fixture.debugElement.query( By.css('#reviewerName')).nativeElement;
  expect(titleElement.innerText).toContain('killua');
+  })
+});
   });
 */
 /**@Component({
@@ -205,7 +223,7 @@ fdescribe('BookInfoComponent', () => {
    @Input() bookId : number;
   // @Output() rated:EventEmitter<string> = new EventEmitter<string>();
   userRate: number = 0;
-  };  
+  };
 
   @Component({
     selector: 'app-dropdown',
@@ -217,7 +235,7 @@ fdescribe('BookInfoComponent', () => {
   shelves: string[] = ["Read", "Currently Reading", "Want To Read"];
   shelfStatus: string = this.shelves[2];
   //@Output() shelfSelected: EventEmitter<string> = new EventEmitter<string>();
-  buttonDisabled: boolean = false; 
+  buttonDisabled: boolean = false;
   removeEnabled: boolean = false;
   };
 

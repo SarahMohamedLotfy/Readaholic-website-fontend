@@ -76,6 +76,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#addBook">addBook</a>
+                            </li>
+                            <li>
+                                <a href="#addFollowing">addFollowing</a>
+                            </li>
+                            <li>
                                 <a href="#getUpdates">getUpdates</a>
                             </li>
                             <li>
@@ -83,7 +89,7 @@
                                 <a href="#handleError">handleError</a>
                             </li>
                             <li>
-                                <a href="#logOut">logOut</a>
+                                <a href="#unfollow">unfollow</a>
                             </li>
                         </ul>
                     </td>
@@ -108,7 +114,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home/home.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/home/home.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -157,6 +163,147 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="addBook"></a>
+                    <span class="name">
+                        <b>
+                            addBook
+                        </b>
+                        <a href="#addBook"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addBook(shelf, book_id)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/home/home.service.ts:38</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>shelf</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>book_id</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addFollowing"></a>
+                    <span class="name">
+                        <b>
+                            addFollowing
+                        </b>
+                        <a href="#addFollowing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addFollowing(nb)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/home/home.service.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nb</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getUpdates"></a>
                     <span class="name">
                         <b>
@@ -175,8 +322,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/home/home.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/home/home.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -218,8 +365,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/home/home.service.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/home/home.service.ts:50</a></div>
                 </td>
             </tr>
 
@@ -272,38 +419,67 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="logOut"></a>
+                    <a name="unfollow"></a>
                     <span class="name">
                         <b>
-                            logOut
+                            unfollow
                         </b>
-                        <a href="#logOut"><span class="icon ion-ios-link"></span></a>
+                        <a href="#unfollow"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>logOut()</code>
+<code>unfollow(user_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/home/home.service.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/home/home.service.ts:42</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>logOut get request</p>
-</div>
 
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user_id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -315,10 +491,12 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, NgModule } from &#x27;@angular/core&#x27;;
 import { HttpClient, HttpErrorResponse, HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import { Observable, throwError, observable } from &#x27;rxjs&#x27;;
 import { catchError, retry } from &#x27;rxjs/operators&#x27;;
+import { RouterModule } from &#x27;@angular/router&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
 
 
 @Injectable({
@@ -340,13 +518,25 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable&lt;any&gt;{
-return this.http.get(&quot;http://localhost:3000/updates&quot;)
+return this.http.get(&quot;http://972c6e5d.ngrok.io/api/updates&quot;)
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
 
     );
    }
+   addFollowing (nb):Observable&lt;any&gt; {
+  return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/follow&#x27;,{&quot;user_id&quot; : nb});
+  } 
+  addBook(shelf,book_id):Observable&lt;any&gt;{
+    return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/shelf/add_book&#x27;,{&quot;shelf_id&quot;: shelf,
+    &quot;book_id&quot;: book_id});
+  }
+  unfollow ( user_id:number):Observable&lt;any&gt; {
+      
+    return this.http.delete(&#x27;http://972c6e5d.ngrok.io/api/unfollow?user_id&#x3D;&#x27;+ user_id);
+  }
+  
   /**
  * function for handling errors in ui and in console
  */
@@ -365,12 +555,7 @@ return this.http.get(&quot;http://localhost:3000/updates&quot;)
     return throwError(
       &#x27;Something bad happened; please try again later.&#x27;);
   };
- /**
- * logOut get request
- */
-  logOut():Observable&lt;any&gt;{
-    return this.http.get(&#x27;http://localhost:3000/logOut&#x27;);
-  }
+
 }</code></pre>
     </div>
 

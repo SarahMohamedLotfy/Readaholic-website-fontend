@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LikesComponent } from './likes.component';
+import { BookInfoComponent } from 'src/app/book-info/book-info.component';
+import { Component } from '@angular/core';
+
+
 
 describe('LikesComponent', () => {
   let component: LikesComponent;
@@ -8,18 +11,18 @@ describe('LikesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LikesComponent ]
+      declarations: [ LikesComponent]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LikesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+   // expect(testHostFixture.nativeElement.querySelector('div').innerText).toEqual('TEST INPUT');
   });
-});
+
+})
+

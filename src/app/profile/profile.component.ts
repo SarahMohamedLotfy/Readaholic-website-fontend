@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
    /** stores the profile information */
    selectedProfile: profile ;
   /** stores the following of user */
-   allFollowings: followingComponent[];
+   allFollowings: any[];
 
 /**
  * the constructor creates instances of http service
@@ -55,6 +55,7 @@ export class ProfileComponent implements OnInit {
 
 
   }
+  
 
 
 }

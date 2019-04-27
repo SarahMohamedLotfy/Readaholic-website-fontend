@@ -64,6 +64,13 @@
     <code>src/app/app.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>App component</p>
+
+    </p>
 
 
 
@@ -153,7 +160,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/app.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/app.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -238,7 +245,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/app.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -265,7 +272,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/app.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/app.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -287,12 +294,17 @@ import { HttpService } from &#x27;./http.service&#x27;;
 import { user } from &#x27;./classes/user&#x27;;
 
 
-
+/**
+ * App component
+ */
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
   styleUrls: [&#x27;./app.component.css&#x27;]
 })
+/**
+ * App component
+ */
 export class AppComponent {
   title &#x3D; &#x27;frontend&#x27;;
   user:user ;
@@ -319,6 +331,9 @@ export class AppComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;router-outlet&gt;
+       
+                   
+            
 &lt;/router-outlet&gt;</code></pre>
     </div>
 
@@ -354,8 +369,8 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
+        var COMPONENT_TEMPLATE = '<div><router-outlet>                                      </router-outlet></div>'
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

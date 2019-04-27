@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, observable } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 
 @Injectable({
@@ -23,7 +25,7 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
-return this.http.get("http://972c6e5d.ngrok.io/api/updates")
+return this.http.get("http://ec2-52-90-5-77.compute-1.amazonaws.com/api/updates")
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
@@ -31,15 +33,15 @@ return this.http.get("http://972c6e5d.ngrok.io/api/updates")
     );
    }
    addFollowing (nb):Observable<any> {
-  return this.http.post('http://972c6e5d.ngrok.io/api/follow',{"user_id" : nb});
+  return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
-    return this.http.post('http://972c6e5d.ngrok.io/api/shelf/add_book',{"shelf_id": shelf,
+    return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://972c6e5d.ngrok.io/api/unfollow?user_id='+ user_id);
+    return this.http.delete('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/unfollow?user_id='+ user_id);
   }
   
   /**

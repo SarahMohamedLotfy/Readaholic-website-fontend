@@ -1,0 +1,78 @@
+#setting {
+    color: #5e2b02;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 40px 0px;
+    border-bottom: 2px solid rgb(237, 239, 241);
+}
+
+.mainContentContainer {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.mainContent {
+    margin: 0px auto;
+    text-align: left;
+    width: 970px;
+    background: #FFFFFF;
+}
+
+.mainContentFloat {
+    float: left;
+    width: 960px;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-size: 12px;
+    min-height: 400px;
+    background: #FFFFFF;
+}
+
+#preferences {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: rgb(124, 124, 124);
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgb(237, 239, 241);
+}
+
+.email {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 32px;
+    margin-top: 50px;
+}
+
+.userEmail {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.buttonPlace {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 40%;
+    margin-bottom: 20px;
+}
+
+#formLabels {
+    font-size: medium;
+}
+
+#profileImg {
+    width: 111px;
+    height: 111px;
+    margin-top: 15%;
+    border: 5px solid #5e2b02;
+}

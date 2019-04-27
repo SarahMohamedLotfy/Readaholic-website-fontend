@@ -63,6 +63,13 @@
             <code>src/app/classes/userBookInfo.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>receive the data of user ralated book info from the json file </p>
+
+            </p>
 
 
 
@@ -81,9 +88,6 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#body">body</a>
-                            </li>
-                            <li>
-                                <a href="#id">id</a>
                             </li>
                             <li>
                                 <a href="#rating">rating</a>
@@ -130,37 +134,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/classes/userBookInfo.ts:5</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/classes/userBookInfo.ts:8</a></div>
                             </td>
                         </tr>
 
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="id"></a>
-                        <span class="name">
-                            <b>
-                            id</b>
-                            <a href="#id"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <div class="io-description"><p>the body of the review made by the user on a book </p>
+</div>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="2" class="link-to-prism">src/app/classes/userBookInfo.ts:2</a></div>
-                            </td>
-                        </tr>
-
 
             </tbody>
         </table>
@@ -184,10 +167,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">src/app/classes/userBookInfo.ts:3</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/classes/userBookInfo.ts:4</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>user rating of a book </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -205,16 +194,22 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/classes/userBookInfo.ts:4</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/classes/userBookInfo.ts:6</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>the shelf where the user stores aa book </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -231,9 +226,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class userBookInfo {
-    id: number;
+    /** user rating of a book */
     rating: number;
-    shelf_name: string;
+    /**the shelf where the user stores aa book */
+    shelf_name:number;
+    /**the body of the review made by the user on a book */
     body: string;
 }</code></pre>
     </div>

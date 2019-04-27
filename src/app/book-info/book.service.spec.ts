@@ -15,21 +15,21 @@ describe('Book Service', () => {
       providers: [BookService],
       imports: [HttpClientTestingModule]
     });
-  
+
     http = TestBed.get(HttpTestingController);
     service = TestBed.get(BookService);
-  }) 
-
-  it('get book', () => {
-    
   })
 
-})
+  it('get book', () => {
+
+  })
+
+});
 
 /*describe('BookService', () => {
   let service: BookService;
   let httpTestingController: HttpTestingController;
-  let testBook: book = {
+ /* let testBook: book = {
     "id": 155,
     "title": "The Raven Boys",
     "isbn": 53333338,
@@ -48,7 +48,7 @@ describe('Book Service', () => {
     "link": "kkkkk"
   }
 
-  let testReview: review[] = [
+  /*let testReview: review[] = [
     {
       "id": 5,
       "bookId": 11,
@@ -131,13 +131,11 @@ describe('Book Service', () => {
     expect(request.request.method).toEqual('GET');
     request.flush(testUserBookinfo);
 
-  });
+  });*/
 
 
-  it('should be created', () => {
+  /*it('should be created', () => {
 
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
   });
-});
-*/

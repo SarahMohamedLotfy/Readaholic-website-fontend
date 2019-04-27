@@ -39,10 +39,6 @@ about:any=[];
     
     
 
-      this.myfirstservice.getImg().subscribe((about:any)=>{
-         this.about =about ;
-         })
-  
  
   }
 

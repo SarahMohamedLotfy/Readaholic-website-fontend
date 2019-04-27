@@ -41,6 +41,7 @@ describe('ProfileComponent', () => {
     expect(component).toBeTruthy();
   });
 
+
   it (' should show user profile' , () => {
    
     fixture.detectChanges();

@@ -49,7 +49,7 @@
                                     </span>
                                 </div>
 
-                                <div id="reviewing">
+                                <div id="reviewing" *ngIf="isUser">
                                     <app-dropdown [bookId]="book?.id"></app-dropdown>
                                     <app-star id="rateBook" [bookId]="book?.id" [readOnly]="false"></app-star>
                                 </div>

@@ -21,10 +21,20 @@ searchTerm:any;
 
 books:any=[];
 form: FormGroup;
+isUser:boolean;
   ngOnInit() {
     this.activatedRoute.queryParams .subscribe(params => {
      
       this.searchTerm = params['search'];});
+
+      if(localStorage.getItem('token') == null){
+        this.isUser = false;}
+      
+      else{
+        this.isUser = true;
+      }
+    
+    
 
      this.searchForBook();
 

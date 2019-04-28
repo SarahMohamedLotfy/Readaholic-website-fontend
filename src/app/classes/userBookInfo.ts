@@ -6,4 +6,6 @@ export class userBookInfo {
     shelf_name:number;
     /**the body of the review made by the user on a book */
     body: string;
+    /**review id */
+    id: number;
 }

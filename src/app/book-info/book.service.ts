@@ -11,6 +11,9 @@ import { userBookInfo } from '../classes/userBookInfo';
 })
 
 export class BookService {
+
+  /**url */
+  url: string = 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
 /**@param {HttpClient} http to handle http requests get,post etc */
   constructor(private http:HttpClient) { }
 
@@ -22,7 +25,7 @@ export class BookService {
   getBook(id: number): Observable<any> {
    // return this.http.get<any>('http://localhost:3000/book/'+id);
     //let params = new HttpParams({ fromObject: { book_id:id} });
-    return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/books/show?book_id='+id);
+    return this.http.get(this.url +'/api/books/show?book_id='+id);
  }
 
  /**
@@ -32,7 +35,7 @@ export class BookService {
   */
  getBookReviews(id: number): Observable<any> {
   //let params = new HttpParams().set("bookId",id);
-  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showReviewsForABook?bookId='+id);
+  return this.http.get<any>(this.url + '/api/showReviewsForABook?bookId='+id);
   // return this.http.get<review[]>("http://localhost:3000/review");
  }
 
@@ -48,11 +51,11 @@ export class BookService {
 createReview(bookId:number, shelf: number, body: string, rating: number): Observable<any> {
   if(body == "")
   {
-    return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/reviwes/create',{bookId,shelf,rating});
+    return this.http.post(this.url + '/api/reviwes/create',{bookId,shelf,rating});
   }
   else
   {
-    return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/reviwes/create',{bookId,shelf,body,rating});
+    return this.http.post(this.url + '/api/reviwes/create',{bookId,shelf,body,rating});
   }
 
    // return this.http.post('http://localhost:3000/ReadShelf',{bookId,shelf,body,rating});

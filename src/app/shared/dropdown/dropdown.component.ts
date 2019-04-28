@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, AfterViewChecked, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, AfterViewChecked, Output, EventEmitter, OnInit, AfterContentInit, AfterViewInit, SimpleChanges } from '@angular/core';
 import { ShelfService } from './shelf.service';
 
 /**used to add or remove a book from a shelf  */
@@ -7,7 +7,7 @@ import { ShelfService } from './shelf.service';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css']
 })
-export class DropdownComponent implements OnInit {
+export class DropdownComponent implements OnChanges {
 
   /**the input book id from the parent component */
   @Input() bookId: number;
@@ -27,21 +27,26 @@ export class DropdownComponent implements OnInit {
   /**@ignore */
   removeEnabled: boolean = false;
 
-
   constructor(private service: ShelfService) { }
   /** sets the displayed shelf
    *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
    * 
    */
-  ngOnInit() {
-    this.service.getUserBookInfo(this.bookId).subscribe((data) => {
-      if (data.shelf_name != 3) {
-        this.shelfId = data.shelf_name ;
-        this.shelfStatus = this.shelves[this.shelfId];
-        this.buttonDisabled = true;
-        this.removeEnabled = true;
-      }
-    });
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['bookId'].currentValue != null) {
+      this.service.getUserBookInfo(changes['bookId'].currentValue).subscribe((data) => {
+        this.shelfId = data.pages[0].shelf_name;
+        if (this.shelfId != 3) {
+          this.shelfStatus = this.shelves[this.shelfId];
+          this.buttonDisabled = true;
+          this.removeEnabled = true;
+        }
+      },  err => {
+        if (err.status == 400)
+        {
+          console.log(err);
+        }});
+    }
   }
 
   /**changes the state of the remove button on hover
@@ -78,7 +83,6 @@ export class DropdownComponent implements OnInit {
       this.shelfStatus = this.shelves[this.shelfId];
       this.buttonDisabled = true;
       this.removeEnabled = true;
-
     })
   }
 

@@ -87,8 +87,8 @@ fdescribe('HomeComponent', () => {
     const follow = De.query(By.css('#followButton'));
     const p: HTMLElement = follow.nativeElement;
     fixture.detectChanges();
-    fixture.whenStable().then(() => { // wait for async getQuote
-    //  fixture.detectChanges();        // update view with quote
+    fixture.whenStable().then(() => { // wait for async 
+    //  fixture.detectChanges();        
       expect(p.textContent).toContain('Unfollow');
 
  })

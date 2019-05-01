@@ -81,9 +81,11 @@ export class BookInfoComponent implements OnInit {
  this.service.getBookReviews(+this.route.snapshot.paramMap.get('id')).subscribe((data) => this.reviews = data.pages);
 
   if(localStorage.getItem('token') == null){
+    
     this.isUser = false;
   }
   else{
+   
     this.isUser = true;
   }
 }

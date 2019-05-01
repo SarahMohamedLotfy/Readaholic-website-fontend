@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'forgetPassword',component: ForgetPasswordComponent},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
-  {path: 'accountSettings', component: AccountSettingsComponent},
+  {path: 'accountSettings', component: AccountSettingsComponent,canActivate:[AuthGuard]},
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'searchpeople', component: SearchPeopleComponent,canActivate:[AuthGuard]},

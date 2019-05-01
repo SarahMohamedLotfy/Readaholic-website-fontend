@@ -8,29 +8,21 @@ import { async } from 'q';
 
 describe('Book Service', () => {
   let http: HttpTestingController;
-  let service
+  let service: BookService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [BookService],
       imports: [HttpClientTestingModule]
     });
-  
-    http = TestBed.get(HttpClientTestingModule);
+
+    http = TestBed.get(HttpTestingController);
     service = TestBed.get(BookService);
-  }) 
+  })
 
   it('get book', () => {
-    const responseForm = '<form />';
-    let bookResponse;
-    service.getBook(173).subscribe((response) => bookResponse = response );
 
-    http.expectOne({
-      url: 'https://localhost:3000/book/173',
-      method: 'GET'
-    }).flush(responseForm);
-    expect(bookResponse).toEqual(responseForm);
-  });
+  })
 
 });
 
@@ -146,10 +138,4 @@ describe('Book Service', () => {
 
     const service: BookService = TestBed.get(BookService);
     expect(service).toBeTruthy();
-<<<<<<< HEAD
   });
-=======
-  });*/
-
-
->>>>>>> d26fb4c3ab919c72b0b3693153224c6d5bd99cc2

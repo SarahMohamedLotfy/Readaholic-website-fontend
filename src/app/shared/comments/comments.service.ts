@@ -13,7 +13,7 @@ export class CommentsService {
   constructor(private http: HttpClient) { }
 /** post a new comment */
   addComment(newComment: Comments): Observable<Comments> {
-    return this.http.post<Comments>('http://972c6e5d.ngrok.io/api/makeComment?id='+ newComment.resourse_id+'&type='+ newComment.resourse_type + '&body=' + newComment.comment_body, newComment)
+    return this.http.post<Comments>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/makeComment?id='+ newComment.resourse_id+'&type='+ newComment.resourse_type + '&body=' + newComment.comment_body, newComment)
   }
 
 /** comments on a specific object and subscribe to the given data */
@@ -29,7 +29,7 @@ export class CommentsService {
   }
 /** get comments */
   getCommentsList(): Observable<Comments[]> {
-    return this.http.get<Comments[]>('http://972c6e5d.ngrok.io/api/makeComment');
+    return this.http.get<Comments[]>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/makeComment');
   }
 
 }

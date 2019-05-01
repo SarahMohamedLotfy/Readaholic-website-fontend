@@ -1,24 +1,36 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { followerComponent } from '../classes/followerComponent';
-/**
- * handles  http requests of followers list 
- 
-*/
+import { catchError, retry } from 'rxjs/operators';
+
+
+/**Handles http requests related to the boks of the user*/
+
 @Injectable({
   providedIn: 'root'
 })
-
-export class HttpFollowingService {
+export class HttpsearchpeopleService {
 /**
- * Constructor for httpfollower service . 
+ * Constructor for httpmyBooks service . 
  
 */
   constructor(private http:HttpClient) { }
 
   
- /**
+
+getuserbyName(username: string): Observable<any>{
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name?name='+username);
+ 
+}
+getuserbyNameorusername(username: string): Observable<any>{
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name_username?name='+username);
+ 
+}
+getuserbyUsername(username: string): Observable<any>{
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_username?username='+username);
+ 
+}
+/**
  * Getfollowers () is a get request to get the data of the followers of the main user .
  * The data i get is ( name of user , image , id of user  ).
  */
@@ -67,4 +79,3 @@ getfollowers(){
   }
 
 }
-

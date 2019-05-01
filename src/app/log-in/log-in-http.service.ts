@@ -13,7 +13,7 @@ import { catchError, retry } from 'rxjs/operators';
 
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
-
+//http://ec2-52-90-5-77.compute-1.amazonaws.com
 
     /**Sends a request to the server with the email and password to checks if they're correct */
  login(email:string,password:string): Observable<any>
@@ -34,7 +34,7 @@ import { catchError, retry } from 'rxjs/operators';
 
   resetPass(email:string): Observable<any> {
         
-    return this.http.post<any>('http://f829bfdb.ngrok.io/api/forgotpassword',{email});
+    return this.http.post<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/forgotpassword',{email});
     
    }
   

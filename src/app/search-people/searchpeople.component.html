@@ -1,0 +1,81 @@
+<navbar></navbar>
+<div id="mainSearchContainer">
+    <div id="mainSearchContent">
+        <div id="mainSearchFloat">
+            <div id="leftSearchContainer">
+                <h1 id="search">Search For People</h1>
+
+                <form name="searchForm" id="searchBox" [formGroup]="form">
+                    <div style="padding-bottom: 10px;">
+                        <input id="searchBoxInput" type="text" placeholder="Search by name , username, username or user" formControlName="searchBox">
+                        <button id="searchButton" (click)="search()">Search</button>
+                    </div>
+                    <div>
+                        <label class="radio-inline">
+                        <input type="radio"  value="name" style="vertical-align:middle; margin: 3px 3px 0px 5px;" formControlName="searchType" name="searchType" checked="checked" >Name</label>
+                        <label class="radio-inline">
+                        <input type="radio" value="Username" style="vertical-align:middle; margin: 3px 3px 0px 5px;" name="searchType" formControlName="searchType" > User name</label>
+                        <label class="radio-inline">
+                        <input type="radio" value="userORname" style="vertical-align:middle; margin: 3px 3px 0px 5px;" name="searchType" formControlName="searchType">Name or Username</label>
+                       
+                    </div>
+
+                </form>
+
+                <h1 id="searchSubNav">Results of the search</h1>
+                
+
+                    <div class="row bootstrap snippet">
+                        <div class="col-md-6 col-xs-12 col-md-offset-3">
+                            <div class="panel" id="followers">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-group list-group-dividered list-group-full">
+                                        <li *ngFor="let person of people " class="list-group-item">
+                
+                                            <div class="media-body">
+                                                <div class="media">
+                                                    <div class="media-left">
+                                                        <a [routerLink]="['/profile', person.id]">
+                                                            <img id="profilepage" src={{person.image_link}} alt="person image">
+                                                            <i></i>
+                                                        </a>
+                                                    </div>
+                                                    <div *ngIf="noFollowbutton(person.id) ==true " class="pull-right">
+                
+                                                        <button id="followbutton" (click)="add(person.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">Follow </button>
+                                                    </div>
+                                                    <div *ngIf="noFollowbutton(person.id) ==false " class="pull-right">
+                
+                                                        <button id="followbutton" (click)="delFollowing(person.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">UnFollow </button>
+                                                    </div>
+                                                    <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter" style="clear:right" [routerLink]="['/profile', person.id]">{{person.name}}</a></div>
+                <div class="country" >{{person.city}}  , {{person.country}}</div>
+                                                </div>
+                
+                                              
+                                                <hr/>
+                
+                                            </div>
+                                        </li>
+                
+                
+                                    </ul>
+                               
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

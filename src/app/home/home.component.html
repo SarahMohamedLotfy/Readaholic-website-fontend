@@ -42,7 +42,7 @@
                             <h5 class="mt-0"  >{{update.title}}<small><i>by {{update.author_name}}</i></small></h5>
                            
                           
-                            <app-dropdown [bookId]="update.book_id" [shelfId]="update.shelf" > </app-dropdown>
+                            <app-dropdown [bookId]="update.book_id"  > </app-dropdown>
                             <div style="clear: both" >
                             <small style="float: 'left'">rate it </small>
                             <app-star   [bookId]="update.book_id" [shelf]="update.shelf"[readOnly]="false" style="float: 'left'"></app-star> 

@@ -15,7 +15,7 @@ fdescribe('dropdown component', () => {
 
     fit('should disable button if there is an input shelf', () => {
         fixture.componentInstance.shelfId = 2;
-        fixture.componentInstance.ngOnChanges();
+        //fixture.componentInstance.ngOnChanges();
 
         expect(fixture.componentInstance.buttonDisabled).toBe(true);
     });

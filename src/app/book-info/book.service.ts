@@ -12,8 +12,10 @@ import { userBookInfo } from '../classes/userBookInfo';
 
 export class BookService {
 
-  /**url */
-  url: string = 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
+  /**url */ //'http://ec2-52-90-5-77.compute-1.amazonaws.com';
+  url: string = 'http://5cb4a97d.ngrok.io';
+  
+
   /**@param {HttpClient} http to handle http requests get,post etc */
   constructor(private http: HttpClient) { }
 

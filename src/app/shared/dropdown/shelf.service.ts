@@ -11,7 +11,7 @@ export class ShelfService {
 
   constructor(private http: HttpClient) { }
   /**url */
-  url: string = 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
+  url: string = 'http://5cb4a97d.ngrok.io';
 
   /**
    * removes book from its shelf
@@ -20,7 +20,6 @@ export class ShelfService {
    */
   removeFromShelf(shelfId: number, bookId: number): Observable<any> {
     return this.http.delete<any>(this.url + '/api/shelf/remove_book?shelf_id=' + shelfId + '&book_id=' + bookId);
-
   }
 
   /**
@@ -29,7 +28,7 @@ export class ShelfService {
    * @param book_id  {number} id of the selected book
    */
   addToShelf(shelf_id: number, book_id: number): Observable<any> {
-    return this.http.post<any>(this.url + '/api/shelf/add_book', { shelf_id, book_id });
+    return this.http.post<any>(this.url +'/api/shelf/add_book', { shelf_id, book_id });
   }
 
   /**

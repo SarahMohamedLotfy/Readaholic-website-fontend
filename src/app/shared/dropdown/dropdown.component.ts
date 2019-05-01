@@ -57,11 +57,7 @@ export class DropdownComponent implements OnChanges {
           this.buttonDisabled = true;
           this.removeEnabled = true;
         }
-      },  err => {
-        if (err.status == 400)
-        {
-          console.log(err);
-        }});
+      });
     }
   }
 
@@ -98,11 +94,12 @@ export class DropdownComponent implements OnChanges {
   addBookToShelf(eventObj: Event) {
     var e = <HTMLElement>eventObj.srcElement;
     this.shelfId = +e.id
-    this.service.addToShelf(this.shelfId, this.bookId).subscribe(() => {
+    this.service.addToShelf(this.shelfId, this.bookId).subscribe((data) => {
       this.shelfStatus = this.shelves[this.shelfId]
       this.sharedService.changeShelf(this.shelfId);
       this.buttonDisabled = true;
       this.removeEnabled = true;
+      console.log(data);
     })
   }
 

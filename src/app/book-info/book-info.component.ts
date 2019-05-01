@@ -64,7 +64,23 @@ export class BookInfoComponent implements OnInit {
 
   /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
+    this.sharedService.currentshelf.subscribe(data => {
+      this.reviewShelf = data;
+      if(this.reviewShelf == 3) {
+        this.reviewBody = "";
+        this.reviewId = -1;
+        this.reviewRating = 0;
 
+        this.userInfo.id = -1;
+        this.userInfo.body = "";
+        this.userInfo.rating = 0;
+        this.userInfo.shelf_name = 3;
+      } else {
+        this.shelfName = this.shelves[this.reviewShelf];
+        this.userInfo.shelf_name = this.reviewShelf;
+      }
+
+      });
     this.getBookInfo();
     this.getBookReviews();
     this.getUserInfo();
@@ -87,7 +103,7 @@ export class BookInfoComponent implements OnInit {
   getBookInfo() {
     this.service.getBook(+this.route.snapshot.paramMap.get('id'))
       .subscribe((data) => {
-        // console.log(data)
+         console.log(data);
 
         this.myBook = data.pages[0];
 
@@ -104,27 +120,32 @@ export class BookInfoComponent implements OnInit {
   /**gets the selected book reviews */
   getBookReviews() {
     this.service.getBookReviews(+this.route.snapshot.paramMap.get('id'))
-      .subscribe((data) => this.reviews = data.pages);
+      .subscribe((data) => {
+        this.reviews = data.pages;
+      });
   }
 
   /**gets user related book information */
   getUserInfo() {
     this.shelfService.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
       this.userInfo = data.pages[0];
-      console.log(this.userInfo.rating);
+      console.log(data);
       this.reviewId = this.userInfo.id;
       this.reviewBody = this.userInfo.body;
       this.reviewShelf = this.userInfo.shelf_name;
       this.reviewRating = this.userInfo.rating;
-
+      console.log(this.reviewBody);
       this.shelfName = this.shelves[this.reviewShelf];
     });
+
+    console.log(this.userInfo.rating);
   }
 
 
   /**calls the book service funstion to create a review */
   review() {
-    if (this.reviewBody != "") {
+  
+    if (this.reviewBody != "" && this.reviewBody) {
       this.service.createReview(this.myBook.id, this.reviewShelf, this.reviewBody, this.reviewRating)
         .subscribe((data) => {
           console.log(data);
@@ -150,9 +171,10 @@ export class BookInfoComponent implements OnInit {
           this.reviewBody = this.userInfo.body;
           this.reviewRating = this.userInfo.rating;
 
-          console.log(this.shelfName);
+          this.sharedService.changeShelf(this.reviewShelf);
 
           document.getElementById("closebtn").click();
+          this.errMsg = "";
         }, (data) => console.log(data));
     }
     else {
@@ -175,9 +197,10 @@ export class BookInfoComponent implements OnInit {
         this.userInfo.shelf_name = 3;
         this.userInfo.rating = 0;
 
-        this.sharedService.changeShelf(3);
+      //  this.sharedService.changeShelf(3);
 
         document.getElementById("closebtn").click();
+        this.errMsg = "";
       });
     } 
     else {

@@ -33,16 +33,21 @@ export class StarComponent implements OnInit {
   nehal: number;
 
   /**rate done by the user */
-  userRate: number = 2;
+  userRate: number = 0;
+  
   /**@param {BookService} service the http service which the star component uses to make a rating request */
   constructor(private service: BookService, private sharedService: SharedService) { }
 
   ngOnInit() {
     this.sharedService.currentshelf.subscribe(data => {
       this.shelf = data;
+
+      console.log(this.shelf +"  sgelf");
       if (this.shelf == 3) {
+      
         this.starsCount = 0;
         this.userRate = 0;
+        
       }
     });
   }

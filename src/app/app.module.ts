@@ -15,7 +15,7 @@ import { FollowingComponent } from './following/following.component';
 import { MyBooksComponent } from './my-books/my-books.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import {AboutusComponent} from './AboutUs/AboutUs.component';
-
+import {SearchPeopleComponent} from './search-people/searchpeople.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
@@ -52,7 +52,8 @@ import { SearchBooksComponent } from './search-books/search-books.component';
    
     ForgetPasswordComponent,
    
-    SearchBooksComponent
+    SearchBooksComponent,
+    SearchPeopleComponent
    
 
   ],

@@ -30,11 +30,9 @@ fdescribe('HttpFollowingService', () => {
 
 
   // Unit testing for Get followers request
-<<<<<<< HEAD
- 
-=======
+
   /*describe('#Get the followers', () => {
->>>>>>> d26fb4c3ab919c72b0b3693153224c6d5bd99cc2
+
     it('returned Observable should match the right data', () => {
      
     const mockFollowers = [

@@ -3,6 +3,7 @@
 
 import { Component, Input, OnInit, Output,EventEmitter, OnChanges } from '@angular/core';
 import { BookService } from 'src/app/book-info/book.service';
+import {MyBooksComponent } from 'src/app/my-books/my-books.component'
 
 /**used to rate a book or display user rate on the book */
 @Component({
@@ -30,6 +31,7 @@ export class StarComponent implements OnInit {
 /**rate done by the user */
 userRate: number = 0;
   /**@param {BookService} service the http service which the star component uses to make a rating request */
+ 
   constructor(private service: BookService) { }
 
   ngOnInit() {

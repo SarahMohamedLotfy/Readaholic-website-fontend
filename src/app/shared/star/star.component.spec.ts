@@ -6,7 +6,7 @@ import { of } from 'rxjs';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HomeService } from 'src/app/home/home.service';
 import { HomeComponent } from 'src/app/home/home.component';
-
+import {MyBooksComponent } from 'src/app/my-books/my-books.component'
 
 fdescribe("star component", () => {
     let fixture: ComponentFixture<StarComponent>;

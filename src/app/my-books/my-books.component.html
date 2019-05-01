@@ -5,9 +5,21 @@
 <hr/>
 <th class ="bookShelves">Bookshelves</th>
 <table  class ="leftActivityy" *ngFor="let shelf of shelves">
-   
-    <tr> <td> <a href="#" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})</a></td></tr>
-   
+ <tr>
+<td
+*ngIf="shelf.name == 'to-read'" >
+<a (click)="getmybooks(true,1)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
+ 
+<td
+*ngIf="shelf.name == 'currently-reading'" >
+<a (click)="getmybooks(true,2)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
+
+     
+<td
+*ngIf="shelf.name == 'read'" >
+<a (click)="getmybooks(true,0)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
+</tr>
+
  </table>
    
     <form id="tfnewsearch" method="get" >
@@ -35,67 +47,30 @@
 							<th><span>DataAdded</span></th>
 							
 						</tr>
-					</thead>
-					<tbody *ngFor="let post of posts">
+          </thead>
+         
+					<tbody *ngFor="let post of books" >
 						<tr>
 							<td>
-                  <a class="bookimage"  [routerLink]="['/book', post.bookid]">
-								<img class="bookimage" src={{post.bookimage}} alt="">
+                  <a class="bookimage"  [routerLink]="['/book', post.book_id]">
+								<img class="bookimage" src={{post.image_url}} alt="">
 </a>
               </td>
               <td>
-                <a  [routerLink]="['/book', post.bookid]" class="user-link">{{post.bookname}}</a>
+                <a  [routerLink]="['/book', post.book_id]" class="user-link">{{post.title}}</a>
 						
               </td>
               <td>
-                <a href="#" class="user-link">{{post.name}}</a>
+                <a href="#" class="user-link">{{post.title}}</a>
 						
               </td>
               <td>
                 <a href="#" class="user-link">2.38</a>
 						
               </td>
-              <td
-                  *ngIf="post.id == 5" >
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-                                <a href="#"><span class="fa fa-star"></span></a>
-              </td>
-              <td
-              *ngIf="post.id == 4" >
-                            <a href="#"><span class="fa fa-star"></span></a>
-                            <a href="#"><span class="fa fa-star"></span></a>
-                            <a href="#"><span class="fa fa-star"></span></a>
-                            <a href="#"><span class="fa fa-star"></span></a>
-                            <a href="#"><span class="fa fa-star-o"></span></a>
-          </td>  
-          <td
-          *ngIf="post.id == 1" >
-                        <a href="#"><span class="fa fa-star"></span></a>
-                        <a href="#"><span class="fa fa-star-o"></span></a>
-                        <a href="#"><span class="fa fa-star-o"></span></a>
-                        <a href="#"><span class="fa fa-star-o"></span></a>
-                        <a href="#"><span class="fa fa-star-o"></span></a>
-      </td>      
-      <td
-      *ngIf="post.id == 2" >
-                    <a href="#"><span class="fa fa-star"></span></a>
-                    <a href="#"><span class="fa fa-star"></span></a>
-                    <a href="#"><span class="fa fa-star-o"></span></a>
-                    <a href="#"><span class="fa fa-star-o"></span></a>
-                    <a href="#"><span class="fa fa-star-o"></span></a>
-  </td>
-  <td
-  *ngIf="post.id == 3" >
-                <a href="#"><span class="fa fa-star"></span></a>
-                <a href="#"><span class="fa fa-star"></span></a>
-                <a href="#"><span class="fa fa-star"></span></a>
-                <a href="#"><span class="fa fa-star-o"></span></a>
-                <a href="#"><span class="fa fa-star-o"></span></a>
-</td>
-
+          
+<app-star [starsCount]="post.ratings_count" [readOnly]="true" [bookId]="post.id"
+                           ></app-star>
 							<td>
 								2013/08/08
 							</td>
@@ -110,7 +85,6 @@
 	</div>
 </div>
 </div>
-
 
 
 

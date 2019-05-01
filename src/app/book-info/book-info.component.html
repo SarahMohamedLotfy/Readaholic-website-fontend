@@ -6,7 +6,7 @@
             <div class="col-md-2" id="leftCol">
                 <img id="bookCover" src={{myBook?.img_url}} class="align-self-start mr-3">
                 <app-dropdown id="shelf" [bookId]="myBook?.id"></app-dropdown>
-                <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"
+                <app-star id="rateBook"  (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"
                     [readOnly]="false" [starsCount]="userInfo?.rating"></app-star>
             </div>
             <div class="media-body" id="bookInfo">
@@ -31,7 +31,7 @@
     </div>
 </div>
 
-<div class="container" id="activity" *ngIf="isUser && userInfo">
+<div class="container" id="activity" *ngIf="userInfo?.rating > 0">
     <h6>MY ACTIVITY</h6>
     <hr>
     <div class="row">
@@ -45,7 +45,7 @@
             <p>{{myBook?.isbn}}</p>
             <p>{{shelfName}}</p>
             <app-star [starsCount]="userInfo?.rating" [readOnly]="true"></app-star>
-            <div *ngIf="userInfo?.body == 'No Body' || !userInfo.body" id="reviewbtn">Add a review</div>
+            <div *ngIf="!userInfo.body" id="reviewbtn" (click)="open(6)">Add a review</div>
             <div *ngIf="userInfo?.body">
                 <p>{{userInfo.body}}</p>
                 <div id="reviewbtn" (click)="open(6)">Edit review</div>
@@ -98,7 +98,7 @@
                         <p>Book shelf</p>
                     </div>
                     <div class="col-8" style="width: 100%">
-                        <app-star [starsCount]="userInfo?.rating" [readOnly]="false" [bookId]="myBook?.id"
+                        <app-star  [starsCount]="userInfo?.rating" (rated)="userInfo.rating = $event" [readOnly]="false" [bookId]="myBook?.id"
                             [shelf]="userInfo?.shelf_name"></app-star>
                         <br>
                         <div class="dropdown" style="width:200px;">
@@ -106,7 +106,7 @@
                             <div id="myDropdown" class="dropdown-content">
                                 <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
                                 <a><input type="radio" name="group1"
-                                        (click)="ireviewShelf=0; modelShelf='read';">read</a>
+                                        (click)="reviewShelf=0; modelShelf='read';" checked>read</a>
                                 <a><input type="radio" name="group1"
                                         (click)="reviewShelf=1; modelShelf='currently reading';">currently
                                     reading</a>
@@ -118,16 +118,16 @@
                     </div>
                         <p style="margin-left: 2%">What did you think?</p>
                         <textarea rows="10" cols="100" [(ngModel)]="reviewBody"></textarea>
-                        <h6 style="margin-left: 20px" *ngIf="noBody" style="color:crimson">You must enter a review</h6>
+                        <h6 style="margin-left: 20px" *ngIf="errMsg" style="color:crimson">{{errMsg}}</h6>
 
                 </div>
             </div>
             <div class="modal-footer" style="border:none;">
-                <button type="button" id="save" (click)="review()">Save</button>
+                <button type="button"  (click)="review()">Save</button>
+                <button type="button"  (click)="deleteReview()">delete</button>
             </div>
         </div>
     </div>
 
-    <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal"
-        style="display: none;"></button>
+    <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;"></button>
 </div>

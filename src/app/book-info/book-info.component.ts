@@ -8,6 +8,7 @@ import { generateExpandoInstructionBlock } from '@angular/core/src/render3/instr
 import { user } from '../classes/user';
 import { ShelfService } from '../shared/dropdown/shelf.service';
 import { userInfo } from 'os';
+import { SharedService } from '../shared.service';
 
 /**component to show details of a specific book */
 @Component({
@@ -23,21 +24,29 @@ export class BookInfoComponent implements OnInit {
   reviews: review[];
 
   /**stores user related book info */
-  userInfo: userBookInfo;
+  userInfo: userBookInfo = {
+    id: -1,
+    rating: 0,
+    shelf_name: 3,
+    body: ""
+  };
 
   /**true if user mode false if guest mode */
   isUser: boolean;
 
-  /**true if user didn't write a review, false other wise */
-  noBody: boolean = false;
+  /**error msg */
+  errMsg: string;
+
+  /**shelves array */
+  shelves: string[] = ['Read', 'Currently Reading', 'Want To Read' ];
 
   /**@ignore */
   reviewId = -1;
-   /**@ignore */
+  /**@ignore */
   reviewShelf = 0;
-   /**@ignore */
+  /**@ignore */
   reviewBody = "";
-   /**@ignore */
+  /**@ignore */
   reviewRating = 0;
   /**@ignore */
   shelfName: string = "";
@@ -50,21 +59,27 @@ export class BookInfoComponent implements OnInit {
    * @param {ActivatedRoute} route activated route instance
    * @param {Router} router router inastance to route by code 
    */
-  constructor(private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService) {
+  constructor(private sharedService: SharedService,private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService) {
   }
 
   /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
+
     this.getBookInfo();
     this.getBookReviews();
     this.getUserInfo();
+    
 
     if (localStorage.getItem('token') == null) {
       this.isUser = false;
+      console.log(this.isUser+ "aaakkkk");
     }
     else {
       this.isUser = true;
+      console.log("true");
+     
     }
+    
     //document.getElementById("openModalButton").click();
   }
 
@@ -75,10 +90,6 @@ export class BookInfoComponent implements OnInit {
         // console.log(data)
 
         this.myBook = data.pages[0];
-      
-        console.log(this.myBook.title);
-
-        
 
         if (Math.floor(this.myBook.ratings_avg) > this.myBook.ratings_avg - 0.5) {
           this.myBook.ratings_avg = Math.floor(this.myBook.ratings_avg);
@@ -100,48 +111,80 @@ export class BookInfoComponent implements OnInit {
   getUserInfo() {
     this.shelfService.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
       this.userInfo = data.pages[0];
-
+      console.log(this.userInfo.rating);
       this.reviewId = this.userInfo.id;
       this.reviewBody = this.userInfo.body;
       this.reviewShelf = this.userInfo.shelf_name;
       this.reviewRating = this.userInfo.rating;
 
-      if (this.userInfo.shelf_name == 0) {
-        this.shelfName = "Read";
-      }
-      else if (this.userInfo.shelf_name == 1) {
-        this.shelfName = "Currently Reading";
-      }
-      else if (this.userInfo.shelf_name == 2) {
-        this.shelfName = "Want To Read";
-      }
+      this.shelfName = this.shelves[this.reviewShelf];
     });
   }
 
 
   /**calls the book service funstion to create a review */
   review() {
-    console.log(this.userInfo.body);
-    if(this.reviewBody != "") {
-      console.log(this.myBook.id);
+    if (this.reviewBody != "") {
       this.service.createReview(this.myBook.id, this.reviewShelf, this.reviewBody, this.reviewRating)
-      .subscribe((data) => { 
-        this.userInfo.id = data.Review_id;
-        this.userInfo.body = data.bodyOfReview
-        this.userInfo.rating = data.rate
-        this.userInfo.shelf_name = 0;
+        .subscribe((data) => {
+          console.log(data);
+          this.userInfo.id = data.Review_id;
+          this.userInfo.body = data.bodyOfReview
+          this.userInfo.rating = data.rate;
 
-        this.reviewId = this.userInfo.id;
-      this.reviewBody = this.userInfo.body;
-      this.reviewShelf = this.userInfo.shelf_name;
-      this.reviewRating = this.userInfo.rating;
+          if(data.shelfType == "read") {
+            this.userInfo.shelf_name = 0;
+            this.reviewShelf = 0; 
+            this.shelfName = this.shelves[this.reviewShelf];
+          } else if (data.shelfType == "currently-reading") {
+            this.userInfo.shelf_name = 1;
+            this.reviewShelf = 1; 
+            this.shelfName = this.shelves[this.reviewShelf];
+          } else {
+            this.userInfo.shelf_name = 2;
+            this.reviewShelf = 2; 
+            this.shelfName = this.shelves[this.reviewShelf];
+          } 
+          
+          this.reviewId = this.userInfo.id;
+          this.reviewBody = this.userInfo.body;
+          this.reviewRating = this.userInfo.rating;
 
-        document.getElementById("closebtn").click();
-       });
+          console.log(this.shelfName);
+
+          document.getElementById("closebtn").click();
+        }, (data) => console.log(data));
     }
     else {
-      this.noBody = true;
+      this.errMsg = "You must enter a review";
     }
+  }
+
+  /**deletes user review on a book */
+  deleteReview() {
+    if (this.userInfo.body) {
+      this.service.deleteReview(this.reviewId).subscribe((data) => {
+        console.log(data);
+        this.reviewId = -1;
+        this.reviewBody = "";
+        this.reviewShelf = 3;
+        this.reviewRating = 0;
+
+        this.userInfo.id = -1;
+        this.userInfo.body = ""; 
+        this.userInfo.shelf_name = 3;
+        this.userInfo.rating = 0;
+
+        this.sharedService.changeShelf(3);
+
+        document.getElementById("closebtn").click();
+      });
+    } 
+    else {
+      this.errMsg = "You don't have a review on this book"
+    }
+
+
   }
 
   /**
@@ -149,11 +192,19 @@ export class BookInfoComponent implements OnInit {
    * @param {number} rate The output rate from the star component
    */
   open(rate: number) {
-    if (!this.userInfo || rate > 5) {
-        document.getElementById("openModalButton").click();
-    }
-    else if(rate <= 5) {
+
+    if (rate <= 5) {
       this.reviewRating = rate;
+      this.userInfo.rating = rate;
+    }
+    else {
+      document.getElementById("openModalButton").click();
+      return;
+    }
+    if (this.userInfo.id == -1) {
+     /* this.userInfo.shelf_name = 0;
+      this.shelfName = "Read";*/
+      document.getElementById("openModalButton").click();
     }
   }
 

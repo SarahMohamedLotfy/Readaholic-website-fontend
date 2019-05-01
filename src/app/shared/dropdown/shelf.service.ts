@@ -18,8 +18,8 @@ export class ShelfService {
    * @param shelfId {number}  id of the shelf where the book is stored
    * @param bookId {number} id of the selected book
    */
-  removeFromShelf(shelfId: number, bookId: number): Observable<void> {
-    return this.http.delete<void>(this.url + '/api/shelf/remove_book?shelf_id=' + shelfId + '&book_id=' + bookId);
+  removeFromShelf(shelfId: number, bookId: number): Observable<any> {
+    return this.http.delete<any>(this.url + '/api/shelf/remove_book?shelf_id=' + shelfId + '&book_id=' + bookId);
 
   }
 

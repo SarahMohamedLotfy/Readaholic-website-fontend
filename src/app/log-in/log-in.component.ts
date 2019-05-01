@@ -91,7 +91,7 @@ err => {
   
   this.wrongPass=true;
   this.error=err.error.errors;
-  console.log(err);
+  
  
   
   }

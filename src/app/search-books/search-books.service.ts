@@ -22,7 +22,7 @@ import { catchError, retry } from 'rxjs/operators';
 
        getBookByGenre(genre:string): Observable<any> {
         
-        return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/books/genre?genreName='+genre);
+        return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/books/genre?genreName='+'Young Adult,Historical,Fiction,Adult');
         
        }
 

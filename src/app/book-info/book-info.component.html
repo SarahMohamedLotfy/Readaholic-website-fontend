@@ -6,8 +6,7 @@
             <div class="col-md-2" id="leftCol">
                 <img id="bookCover" src={{myBook?.img_url}} class="align-self-start mr-3">
                 <app-dropdown id="shelf" [bookId]="myBook?.id"></app-dropdown>
-                <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"
-                    [readOnly]="false" [starsCount]="userInfo?.rating"></app-star>
+                <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name" [readOnly]="false" [starsCount]="userInfo?.rating"></app-star>
             </div>
             <div class="media-body" id="bookInfo">
                 <div class="col-md-9">
@@ -15,8 +14,7 @@
                     <h5 id="authorName">by {{myBook?.author_name}}</h5>
                     <div>
                         <app-star [starsCount]="myBook?.ratings_avg" [readOnly]="true"></app-star>
-                        <span
-                            style="font-size: 13px; font-family: 'Segoe UI', Tahoma, sans-serif;">{{myBook?.ratings_avg}}
+                        <span style="font-size: 13px; font-family: 'Segoe UI', Tahoma, sans-serif;">{{myBook?.ratings_avg}}
                             {{myBook?.ratings_count}} ratings {{myBook?.reviews_count}} reviews</span>
                     </div>
                     <p>{{myBook?.description}}</p>
@@ -59,8 +57,7 @@
     <hr>
     <div class="row" style="float: left">
         <div class="media" *ngFor="let review of reviews">
-            <img [routerLink]="['/profile',review.user_id]" id="reviewerImg" src={{review?.userimagelink}}
-                class="align-self-start mr-3" style="width:50px; height: 50px">
+            <img [routerLink]="['/profile',review.user_id]" id="reviewerImg" src={{review?.userimagelink}} class="align-self-start mr-3" style="width:50px; height: 50px">
             <div class="media-body" id="reviewInfo">
                 <h6><b [routerLink]="['/profile',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it
                     <app-star [starsCount]="review?.rating" [readOnly]="true"></app-star>
@@ -98,27 +95,23 @@
                         <p>Book shelf</p>
                     </div>
                     <div class="col-8" style="width: 100%">
-                        <app-star [starsCount]="userInfo?.rating" [readOnly]="false" [bookId]="myBook?.id"
-                            [shelf]="userInfo?.shelf_name"></app-star>
+                        <app-star [starsCount]="userInfo?.rating" [readOnly]="false" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"></app-star>
                         <br>
                         <div class="dropdown" style="width:200px;">
                             <button (click)="openShelves()" class="dropbtn">choose shelves..</button>
                             <div id="myDropdown" class="dropdown-content">
                                 <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
-                                <a><input type="radio" name="group1"
-                                        (click)="ireviewShelf=0; modelShelf='read';">read</a>
-                                <a><input type="radio" name="group1"
-                                        (click)="reviewShelf=1; modelShelf='currently reading';">currently
-                                    reading</a>
-                                <a><input type="radio" name="group1"
-                                        (click)="reviewShelf=2; modelShelf='want to read';">want to read</a>
+                                <a><input type="radio" name="group1" (click)="ireviewShelf=0; modelShelf='read';">read</a>
+                                <a><input type="radio" name="group1" (click)="reviewShelf=1; modelShelf='currently reading';">currently reading
+                                </a>
+                                <a><input type="radio" name="group1" (click)="reviewShelf=2; modelShelf='want to read';">want to read</a>
                             </div>
                         </div>
                         <span style="color: #00635d;  margin-left: 10px;">{{modelShelf}}</span>
                     </div>
-                        <p style="margin-left: 2%">What did you think?</p>
-                        <textarea rows="10" cols="100" [(ngModel)]="reviewBody"></textarea>
-                        <h6 style="margin-left: 20px" *ngIf="noBody" style="color:crimson">You must enter a review</h6>
+                    <p style="margin-left: 2%">What did you think?</p>
+                    <textarea rows="10" cols="100" [(ngModel)]="reviewBody"></textarea>
+                    <h6 style="margin-left: 20px" *ngIf="noBody" style="color:crimson">You must enter a review</h6>
 
                 </div>
             </div>
@@ -128,6 +121,5 @@
         </div>
     </div>
 
-    <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal"
-        style="display: none;"></button>
+    <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;"></button>
 </div>

@@ -1,3 +1,15 @@
+.noticeBox {
+    width: 60%;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #514721;
+    background: #FFFBD9 none repeat scroll 0 0;
+    border: 2px solid #F8E395;
+    font-size: 12px;
+    text-align: left;
+}
+
 #setting {
     color: #5e2b02;
     font-size: 25px;

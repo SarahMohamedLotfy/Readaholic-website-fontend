@@ -31,5 +31,7 @@ export class myBooks {
   * Country of the user following the main user  .
   */ 
  country :string;
+ rating:number;
+ shelf_name:number;
  }
  

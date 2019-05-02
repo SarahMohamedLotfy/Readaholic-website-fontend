@@ -8,6 +8,7 @@ isUser={{isUser}}
     <a class="nav-link" [routerLink]="['/followers']" id="followers" *ngIf="isUser">Followers</a>
     <a class="nav-link" [routerLink]="['/following']" id="following"*ngIf="isUser">Following</a>
     <a class="nav-link" [routerLink]="['/Aboutus']" id="aboutUs">Aboutus</a>
+<<<<<<< HEAD
     <li class="nav-item dropdown" id="#notifications" *ngIf="isUser">
             <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-bell">
@@ -36,6 +37,22 @@ isUser={{isUser}}
          </ul>
     
         
+=======
+    <a class="nav-link" [routerLink]="['/searchpeople']" id="searchpeople">Search</a>
+
+   <div id="right">
+
+
+        <a class="nav-link" [routerLink]="['/accountSettings']" id="accountSettings">Account Settings </a>
+        <button (click)="onLogout()" id="logOut">Log out</button>
+
+    </div>
+    <div class="input-group" id="searchBox">
+        <input class="form-control border-secondary py-2" type="search" placeholder="Search books by title" [(ngModel)]='searchTerm'>
+        <button type="button" (click)="search()"><i class="fa fa-search"></i></button>
+        <div class="input-group-append">
+        </div>
+>>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
     </div>
     </li>
 

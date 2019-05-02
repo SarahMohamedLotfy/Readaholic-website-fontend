@@ -12,16 +12,19 @@ export class ShelfService {
 
   constructor(private http: HttpClient) { }
   /**url */
+<<<<<<< HEAD
   url: string = AppConstants.baseURL;
+=======
+  url: string = 'http://5cb4a97d.ngrok.io';
+>>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
 
   /**
    * removes book from its shelf
    * @param shelfId {number}  id of the shelf where the book is stored
    * @param bookId {number} id of the selected book
    */
-  removeFromShelf(shelfId: number, bookId: number): Observable<void> {
-    return this.http.delete<void>(this.url + '/api/shelf/remove_book?shelf_id=' + shelfId + '&book_id=' + bookId);
-
+  removeFromShelf(shelfId: number, bookId: number): Observable<any> {
+    return this.http.delete<any>(this.url + '/api/shelf/remove_book?shelf_id=' + shelfId + '&book_id=' + bookId);
   }
 
   /**
@@ -30,7 +33,7 @@ export class ShelfService {
    * @param book_id  {number} id of the selected book
    */
   addToShelf(shelf_id: number, book_id: number): Observable<any> {
-    return this.http.post<any>(this.url + '/api/shelf/add_book', { shelf_id, book_id });
+    return this.http.post<any>(this.url +'/api/shelf/add_book', { shelf_id, book_id });
   }
 
   /**

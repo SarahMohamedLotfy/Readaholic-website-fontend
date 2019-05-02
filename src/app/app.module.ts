@@ -1,12 +1,12 @@
 import { RatingModule } from 'ng2-rating';
 import { FilterPipe } from './filter.pipe';
 import { HttpService } from './http.service';
-import { HttpFollowingService} from '../app/followers/httpfollower.service';
+import { HttpFollowingService } from '../app/followers/httpfollower.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http' ;
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { FollowersComponent } from './followers/followers.component';
@@ -15,7 +15,7 @@ import { FollowingComponent } from './following/following.component';
 import { MyBooksComponent } from './my-books/my-books.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import {AboutusComponent} from './AboutUs/AboutUs.component';
-
+import {SearchPeopleComponent} from './search-people/searchpeople.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LogInComponent } from './log-in/log-in.component';
@@ -30,8 +30,12 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { SearchBooksComponent } from './search-books/search-books.component';
+<<<<<<< HEAD
 import { ReviewComponent } from './review/review.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+=======
+import { SharedService } from './shared.service';
+>>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
 
 
 
@@ -51,11 +55,20 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     AboutusComponent,
     PageNotFoundComponent,
     AccountSettingsComponent,
+<<<<<<< HEAD
    ReviewComponent,
     ForgetPasswordComponent,
   
     SearchBooksComponent
    
+=======
+
+    ForgetPasswordComponent,
+
+    SearchBooksComponent,
+    SearchPeopleComponent
+
+>>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
 
   ],
   imports: [
@@ -65,23 +78,25 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     FormsModule,
     NgbModule.forRoot(),
     SharedModule,
-    
+
     ReactiveFormsModule,
     RatingModule,
     RouterModule
-  
+
 
 
   ],
-  
-  
 
-  providers: [HttpService,LogInHttpService,{provide: LocationStrategy, useClass: HashLocationStrategy}
-    
-    ,{provide: HTTP_INTERCEPTORS,
 
- useClass: AuthInterceptor,
-multi: true}],
+
+  providers: [HttpService, LogInHttpService, { provide: LocationStrategy, useClass: HashLocationStrategy }
+
+    , {
+      provide: HTTP_INTERCEPTORS,
+
+      useClass: AuthInterceptor,
+      multi: true
+    }, SharedService],
 
   bootstrap: [AppComponent]
 })

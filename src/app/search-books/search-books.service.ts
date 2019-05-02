@@ -23,7 +23,11 @@ url:string=AppConstants.baseURL;
 
        getBookByGenre(genre:string): Observable<any> {
         
+<<<<<<< HEAD
         return this.http.get<any>(this.url+'/api/books/genre?genreName='+genre);
+=======
+        return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/books/genre?genreName='+'Young Adult,Historical,Fiction,Adult');
+>>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
         
        }
 

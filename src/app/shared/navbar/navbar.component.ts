@@ -19,11 +19,12 @@ export class NavbarComponent implements OnInit {
    
   constructor(private service:LogInHttpService,private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:navBarService) { }
   notifs:notifications[];
- isUser:boolean;
+ isUser:boolean=true;
   ngOnInit() {
+    /*
     if(localStorage.getitem('token')==null){
       this.isUser=false
-    }else{this.isUser=true ;}
+    }else{this.isUser=true ;}*/
     this.httpser.getNotifications().subscribe(
       data =>{
         this.notifs=data ;

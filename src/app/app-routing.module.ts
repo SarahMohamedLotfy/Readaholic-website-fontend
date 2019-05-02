@@ -13,11 +13,8 @@ import  { AboutusComponent} from './AboutUs/AboutUs.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { SearchBooksComponent } from './search-books/search-books.component';
-<<<<<<< HEAD
 import { ReviewComponent } from './review/review.component';
-=======
 import {SearchPeopleComponent} from './search-people/searchpeople.component';
->>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
 
 
 const routes: Routes = [

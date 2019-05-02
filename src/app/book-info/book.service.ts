@@ -13,21 +13,11 @@ import { AppConstants } from '../classes/appconstant';
 
 export class BookService {
 
-<<<<<<< HEAD
   /**url */
   url: string=AppConstants.baseURL ;
 /**@param {HttpClient} http to handle http requests get,post etc */
   constructor(private http:HttpClient) { }
  
-=======
-  /**url */ //'http://ec2-52-90-5-77.compute-1.amazonaws.com';
-  url: string = 'http://5cb4a97d.ngrok.io';
-  
-
-  /**@param {HttpClient} http to handle http requests get,post etc */
-  constructor(private http: HttpClient) { }
-
->>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
   /**
    * gets the selected book information by id
    * @param {number} id the book id

@@ -120,14 +120,9 @@ export class BookInfoComponent implements OnInit {
   /**gets the selected book reviews */
   getBookReviews() {
     this.service.getBookReviews(+this.route.snapshot.paramMap.get('id'))
-<<<<<<< HEAD
-      .subscribe((data) => this.reviews = data.pages);
-      
-=======
       .subscribe((data) => {
         this.reviews = data.pages;
       });
->>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
   }
 
   /**gets user related book information */

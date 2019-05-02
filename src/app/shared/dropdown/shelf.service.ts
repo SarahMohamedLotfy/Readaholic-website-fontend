@@ -12,11 +12,7 @@ export class ShelfService {
 
   constructor(private http: HttpClient) { }
   /**url */
-<<<<<<< HEAD
   url: string = AppConstants.baseURL;
-=======
-  url: string = 'http://5cb4a97d.ngrok.io';
->>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
 
   /**
    * removes book from its shelf

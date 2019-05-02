@@ -30,12 +30,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { SearchBooksComponent } from './search-books/search-books.component';
-<<<<<<< HEAD
 import { ReviewComponent } from './review/review.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-=======
 import { SharedService } from './shared.service';
->>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
 
 
 
@@ -55,20 +52,17 @@ import { SharedService } from './shared.service';
     AboutusComponent,
     PageNotFoundComponent,
     AccountSettingsComponent,
-<<<<<<< HEAD
    ReviewComponent,
     ForgetPasswordComponent,
   
-    SearchBooksComponent
    
-=======
+   
 
     ForgetPasswordComponent,
 
     SearchBooksComponent,
     SearchPeopleComponent
 
->>>>>>> b4abd65753f5811b1850769bc743e7dbcf1514ab
 
   ],
   imports: [

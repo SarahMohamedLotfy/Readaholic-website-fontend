@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { followerComponent } from '../classes/followerComponent';
+import { AppConstants } from '../classes/appconstant';
 /**
  * handles  http requests of followers list 
  
@@ -16,7 +17,7 @@ export class HttpFollowingService {
  
 */
   constructor(private http:HttpClient) { }
-
+  url: string=AppConstants.baseURL ;
   
  /**
  * Getfollowers () is a get request to get the data of the followers of the main user .
@@ -24,7 +25,7 @@ export class HttpFollowingService {
  */
 
 getfollowers(){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/followers');
+  return this.http.get(this.url+'/api/followers');
 
    }
    
@@ -32,7 +33,7 @@ getfollowers(){
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
   addFollowing ( nb):Observable<any> {
-    return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
+    return this.http.post(this.url+'/api/follow',{"user_id" : nb});
     } 
   
  /**
@@ -41,7 +42,7 @@ getfollowers(){
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
   getfollowing(){
-    return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/following');
+    return this.http.get(this.url+'/api/following');
   
   }
   /**
@@ -49,21 +50,21 @@ getfollowers(){
  */
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/unfollow?user_id='+ user_id);
+    return this.http.delete(this.url+'/api/unfollow?user_id='+ user_id);
   }
  /**
      * Get the profile information i used it to get the  name of the user.
      *
      * */
   getUserprofile(id: number): Observable<any> {
-    return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile/'+ id );
+    return this.http.get<any> (this.url+'/api/showProfile/'+ id );
   }
   /**
      * Get the profile information i used it to get the  name of the user.
      *
      * */
   getAuthUserprofile(): Observable<any> {
-    return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile');
+    return this.http.get<any> (this.url+'/api/showProfile');
   }
 
 }

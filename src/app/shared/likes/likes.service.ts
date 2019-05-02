@@ -1,3 +1,4 @@
+import { AppConstants } from './../../classes/appconstant';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -14,12 +15,13 @@ import { Likes } from 'src/app/classes/Likes';
 export class LikesService {
   /**array to save the data from the requests */
   posts: any = [];
+ url:string=AppConstants.baseURL;
   /** constructor used to make object of http to use post requests */
   constructor(private http: HttpClient) { }
 
   /** post a new like */
   addLLike(newLike: Likes): Observable<Likes> {
-    return this.http.post<Likes>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/LikeOrUnLike?id='+newLike.resourse_id+'&type='+newLike.resourse_type, newLike)
+    return this.http.post<Likes>(this.url+'/api/LikeOrUnLike?id='+newLike.resourse_id+'&type='+newLike.resourse_type, newLike)
   }
   /** like a specific object wether a review or update */
   likeObject(user: string , resourse_id: number , resourse_type: number

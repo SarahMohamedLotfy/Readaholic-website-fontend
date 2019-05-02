@@ -21,7 +21,7 @@ export class HttpmybooksService {
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
 getMybooks(){
-  return this.http.get('http://localhost:3000/following');
+  return this.http.get(this.url +'/api/following');
 
 }
 url = 'http://localhost:3000';

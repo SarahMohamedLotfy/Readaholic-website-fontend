@@ -1,3 +1,4 @@
+import { AppConstants } from './../../classes/appconstant';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +12,7 @@ export class ShelfService {
 
   constructor(private http: HttpClient) { }
   /**url */
-  url: string = 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
+  url: string = AppConstants.baseURL;
 
   /**
    * removes book from its shelf

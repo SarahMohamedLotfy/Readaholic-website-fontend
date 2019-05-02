@@ -94,6 +94,7 @@ export class BookInfoComponent implements OnInit {
   getBookReviews() {
     this.service.getBookReviews(+this.route.snapshot.paramMap.get('id'))
       .subscribe((data) => this.reviews = data.pages);
+      
   }
 
   /**gets user related book information */

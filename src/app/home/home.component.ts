@@ -61,16 +61,11 @@ export class HomeComponent implements OnInit {
    ngOnInit(){
      this.httpser.getUpdates().subscribe(
          data =>{
-           console.log(data);
            this.updatess=data ;
-           console.log(data);
            this.loadData();
 
-        },
-         
-        error => {this.error = error;
-        console.log(error);});
-       
+        }, error => this.error = error);
+
      }
     /**
  * function loadData is for checking type of updates and managing its html view 
@@ -140,7 +135,16 @@ export class HomeComponent implements OnInit {
     addFollowing(nb){
       this.httpser.addFollowing(nb).subscribe(
         data  => {
-        console.log("POST Request is successful ", data);
+        console.log("POST Request is successful ", data); 
+        this.httpser.getUpdates().subscribe(
+          data =>{
+            this.updatess=data ;
+            console.log(data);
+            this.loadData();
+ 
+         }, error => this.error = error);
+        
+
         },
         error  => {
         
@@ -164,6 +168,15 @@ export class HomeComponent implements OnInit {
         delFollowing(nb){
           this.httpser.unfollow(nb).subscribe((data) =>{
             console.log("delete Request is successful ", data);
+            this.httpser.getUpdates().subscribe(
+              data =>{
+                this.updatess=data ;
+                console.log(data);
+                this.loadData();
+     
+             }, error => this.error = error);
+            
+          
           },
           error  => {
           

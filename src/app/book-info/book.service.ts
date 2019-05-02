@@ -4,6 +4,7 @@ import { book } from '../classes/book';
 import { review } from '../classes/review';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { userBookInfo } from '../classes/userBookInfo';
+import { AppConstants } from '../classes/appconstant';
 
 /**handles book related http requests */
 @Injectable({
@@ -13,10 +14,10 @@ import { userBookInfo } from '../classes/userBookInfo';
 export class BookService {
 
   /**url */
-  url: string = 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
+  url: string=AppConstants.baseURL ;
 /**@param {HttpClient} http to handle http requests get,post etc */
   constructor(private http:HttpClient) { }
-
+ 
   /**
    * gets the selected book information by id
    * @param {number} id the book id

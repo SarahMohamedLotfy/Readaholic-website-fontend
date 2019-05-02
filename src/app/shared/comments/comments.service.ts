@@ -1,3 +1,4 @@
+import { AppConstants } from './../../classes/appconstant';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -9,11 +10,12 @@ import { Comments } from 'src/app/classes/Comments';
 export class CommentsService {
    /**array to save the data from the requests */
   posts: any = [];
+  url:string=AppConstants.baseURL;
 /** constructor used to make object of http to use post requests */
   constructor(private http: HttpClient) { }
 /** post a new comment */
   addComment(newComment: Comments): Observable<Comments> {
-    return this.http.post<Comments>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/makeComment?id='+ newComment.resourse_id+'&type='+ newComment.resourse_type + '&body=' + newComment.comment_body, newComment)
+    return this.http.post<Comments>(this.url+'/api/makeComment?id='+ newComment.resourse_id+'&type='+ newComment.resourse_type + '&body=' + newComment.comment_body, newComment)
   }
 
 /** comments on a specific object and subscribe to the given data */
@@ -29,7 +31,7 @@ export class CommentsService {
   }
 /** get comments */
   getCommentsList(): Observable<Comments[]> {
-    return this.http.get<Comments[]>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/makeComment');
+    return this.http.get<Comments[]>(this.url+'/api/makeComment');
   }
 
 }

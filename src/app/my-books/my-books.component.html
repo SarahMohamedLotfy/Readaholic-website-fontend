@@ -26,11 +26,13 @@
     <input type="text" id ="searchtextfollowing" placeholder="search for books"value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"
       maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing
       ">
+   
     </form>
 <div *ngIf="noBooks() == 0" >
     <p   id ="tagrba">You have no books.</p> 
   </div>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div id ="container">
 <div class ="tablePlace" >
 <div class ="tablePlace"class="row">
 	<div class="col-lg-7">
@@ -85,7 +87,7 @@
 	</div>
 </div>
 </div>
-
+</div>
 
 
 

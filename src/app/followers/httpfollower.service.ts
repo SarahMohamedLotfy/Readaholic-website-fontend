@@ -41,10 +41,14 @@ getfollowers(){
  * and the books they are currently reading . 
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
-  getfollowing(){
-    return this.http.get(this.url+'/api/following');
-  
-  }
+getnotauthfollowing(id:number){
+  return this.http.get(this.url+'/api/following?id='+ id);
+
+}
+getfollowing(){
+  return this.http.get(this.url+'/api/following');
+
+}
   /**
  * Unfollow is a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
  */

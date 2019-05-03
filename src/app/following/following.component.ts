@@ -62,11 +62,7 @@ export class FollowingComponent implements OnInit {
     
 
  
-   this.myfirstservice.getfollowing().subscribe((posts:any)=>{
-      this.posts =posts.following ;
-      this.temp = posts.following;
-    console.log(posts)});
-
+   
 
        /** receives id from url and send it to the get request */
     const id: number = +this.route.snapshot.paramMap.get('id');
@@ -80,6 +76,11 @@ export class FollowingComponent implements OnInit {
    this.myfirstservice.getUserprofile(id).subscribe(
        (data: profile) => this.selectedProfile = data,
               )
+              this.myfirstservice.getnotauthfollowing(id).subscribe((posts:any)=>{
+                this.posts =posts.following ;
+                this.temp = posts.following;
+              console.log(posts)});
+          
    }
    else
    {
@@ -87,6 +88,11 @@ export class FollowingComponent implements OnInit {
    (data: profile) => this.selectedProfile = data,
    (err: any) => console.log(err)
     );
+    this.myfirstservice.getfollowing().subscribe((posts:any)=>{
+      this.posts =posts.following ;
+      this.temp = posts.following;
+    console.log(posts)});
+
    }
 
       
@@ -96,7 +102,21 @@ export class FollowingComponent implements OnInit {
   /**
  * delFollowing () is a post request to remove the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
  */
+
   delFollowing(user_id){
+
+    const id: number = +this.route.snapshot.paramMap.get('id');
+    if (id > 0 ){
+      this.myfirstservice.unfollow(user_id).subscribe((data) =>{
+        console.log("success");
+        this.myfirstservice.getnotauthfollowing(id).subscribe((posts:any)=>{
+         this.posts =posts.following ;
+         this.temp = posts.following;
+       console.log(posts)});
+          });
+
+    }
+    else{
     this.myfirstservice.unfollow(user_id).subscribe((data) =>{
          console.log("success");
          this.myfirstservice.getfollowing().subscribe((posts:any)=>{
@@ -104,6 +124,7 @@ export class FollowingComponent implements OnInit {
           this.temp = posts.following;
         console.log(posts)});
            });
+          }
   }
   
   

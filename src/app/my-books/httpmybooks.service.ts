@@ -22,20 +22,20 @@ export class HttpmybooksService {
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
 getMybooks(){
-  return this.http.get(this.url +'/api/following');
+  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com' +'/api/following');
 
 }
 getMyshelfbooks( shelf_name:number){
   return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?shelf_name='+shelf_name);
 
 }
-url = 'http://localhost:3000';
+
 
 /**
  *getUsershelves() is a get request to number of books the user read and currently reading an to read */
 
 getUsershelves(): Observable<any>{
-  return this.http.get<any>(this.url+"/user_shelf");
+  return this.http.get<any>('http://localhost:3000'+"/user_shelf");
 }
 /**
  * create book review
@@ -46,7 +46,7 @@ getUsershelves(): Observable<any>{
  *  */
 createReview(bookId:number, shelf: number,  rating: number): Observable<any> {
  
-    return this.http.post(this.url + '/api/reviwes/create',{bookId,shelf,rating});
+    return this.http.post('http://localhost:3000'+ '/api/reviwes/create',{bookId,shelf,rating});
   
   
    // return this.http.post('http://localhost:3000/ReadShelf',{bookId,shelf,body,rating});

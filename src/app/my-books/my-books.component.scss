@@ -235,3 +235,35 @@ hr {
     height:70px;
     width:60px;
   }
+  @media (max-width: 1200px) {
+    #container 
+    {
+      position: absolute;
+      left:50px;
+      
+    }
+  }
+  @media (max-width: 770px) {
+    .tablePlace
+    {
+      position :relative;
+      top:2px;
+      left:40px;
+    }
+  }
+  @media (max-width: 680px) {
+    .tablePlace
+    {
+      position :relative;
+      top:2px;
+      left:30px;
+    }
+  }
+  @media (max-width: 500px) {
+    .tablePlace
+    {
+      position :relative;
+      top:2px;
+      left:2S0px;
+    }
+  }

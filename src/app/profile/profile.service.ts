@@ -22,6 +22,12 @@ export class ProfileService {
     return this.http.get<any> (this.url+'/api/showProfile');
   }
 
+  getUpdatesForuser(id: number):Observable<any>{
+    return this.http.get(this.url+"updates?id="+ id);
+       }
 
+  getUsershelves(): Observable<any> {
+    return this.http.get(this.url+'shlef/list');
+  }
 
 }

@@ -21,12 +21,12 @@ export class LikesService {
 
   /** post a new like */
   addLLike(newLike: Likes): Observable<Likes> {
-    return this.http.post<Likes>(this.url+'/api/LikeOrUnLike?id='+newLike.resourse_id+'&type='+newLike.resourse_type, newLike)
+    return this.http.post<Likes>(this.url+'/api/LikeOrUnLike?id='+ newLike.resourse_id , newLike)
   }
   /** like a specific object wether a review or update */
-  likeObject(user: string , resourse_id: number , resourse_type: number
+  likeObject(user: number , resourse_id: number
     ): void {
-    const newLike: Likes = {user, resourse_id, resourse_type} as Likes;
+    const newLike: Likes = {user, resourse_id} as Likes;
     this.addLLike(newLike)
       .subscribe(data => {this.posts.push(data),
         console.log(data);

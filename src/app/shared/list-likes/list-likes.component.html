@@ -1,0 +1,44 @@
+
+<button id='btnLink' type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">likes</button>
+
+<div class="container">
+<!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="list" *ngFor='let i of likesList | keyvalue'>
+                <ng-container *ngIf="i?.value?.length">
+              <div class="loop" *ngFor='let like of i.value'   >
+            <div class="container">
+              <div class="row">
+                  <div class=" col-md-4">
+                      <a [routerLink]="['/profile',like.user_id]" data-dismiss="modal" >
+                    <img [src]='like.image_link'> </a>
+                  </div>
+                  <div class="col-md-4">
+                      <a [routerLink]="['/profile',like.user_id]" data-dismiss="modal">  {{ like.username }} </a>
+                       <br>
+                      created at:  {{ like.created_at }}
+                  </div>
+              </div>
+            </div>
+            <br>
+          </div>
+            </ng-container>
+</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>

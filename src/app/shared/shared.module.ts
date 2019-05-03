@@ -10,6 +10,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LikesComponent } from './likes/likes.component';
 import { CommentsComponent } from './comments/comments.component';
+import { ListLikesComponent } from './list-likes/list-likes.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReviewComponent } from '../review/review.component';
 
@@ -21,11 +22,11 @@ import { ReviewComponent } from '../review/review.component';
     NavbarComponent,
     LikesComponent,
     CommentsComponent,
-
+    ListLikesComponent
   ],
   imports: [
-    
-    
+
+
     CommonModule,
   //RatingModule,
     FormsModule,
@@ -44,8 +45,9 @@ import { ReviewComponent } from '../review/review.component';
     NavbarComponent,
     LikesComponent,
     CommentsComponent,
-    NavbarComponent,
-    
+    ListLikesComponent,
+    NavbarComponent
+
 
   ]
 })

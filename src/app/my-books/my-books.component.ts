@@ -29,6 +29,7 @@ export class MyBooksComponent implements OnInit {
 reviewRating = 0;
 /**@ignore */
 shelfName: string = "";
+countt:number;
  /**
  * posts  is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ) .
 
@@ -39,9 +40,13 @@ posts:any=[];
  * Count is the length of json file array
 
  */
-count:number;
+count0:number;
+count1:number;
+count2:number;
+
 userid:number;
 shelfname:number;
+shelfNumber:number;
 /**
  * Shelves is the status of the book and the number of currently reading , to read , read .
 
@@ -55,6 +60,11 @@ used it in search function.
 */
  temp: any =[];
  books:any=[];
+ books0:any=[];
+ books1:any=[];
+ books2:any=[];
+
+ initializedarrow:boolean;
   /**
 * Search input text in search box .
 */
@@ -76,12 +86,24 @@ used it in search function.
  *getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read  
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
-this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
+this.myfirstservice.getMyshelfbooks(0).subscribe((posts:any)=>{
+  this.books0 =posts.pages ;
+  this.count0 = this.books0.length;
+ });
+ this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
+  this.books1 =posts.pages ;
+  this.count1 = this.books1.length;
+ });
+ this.myfirstservice.getMyshelfbooks(2).subscribe((posts:any)=>{
+  this.books2 =posts.pages ;
+  this.count2 = this.books2.length;
+ });
+this.myfirstservice.getMyshelfbooks(2).subscribe((posts:any)=>{
   this.books =posts.pages ;
   this.temp =  this.books;
   console.log(this.books);
+  this.initializedarrow=true;
 });
-  
 
      /**
  *getUsershelves() is a get request to number of books the user read and currently reading an to read */
@@ -117,11 +139,11 @@ getmybooks(clicked:boolean,shelfnumber)
       this.books =books.pages ;
       this.books = books.pages;
       this.temp = books.pages;
-      console.log(this.posts);
-    
+      console.log(this.books);
     });
   }
 }
+
 Getshelfbooks(shelfnumber)
 {
   this.myfirstservice.getMyshelfbooks(shelfnumber).subscribe((posts:any)=>{
@@ -132,6 +154,10 @@ Getshelfbooks(shelfnumber)
  
 }
 
+heighlight(shelfnumberr:number)
+{
+  this.shelfNumber=shelfnumberr;
+}
 
 /**
 *Search for the name of the book when click on search button  .
@@ -158,9 +184,9 @@ search(){
 */
 noBooks ():number
 {
-   this.count = Object.keys(this.books).length;
-  console.log('count');
-  return this.count;
+   this.countt = Object.keys(this.books).length;
+  console.log('countt');
+  return this.countt;
 }
 
  

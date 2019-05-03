@@ -91,13 +91,15 @@ right:132px;
 }
 
 #profilepage{
+  position: relative;
+  padding-left: -80px;
   height: 66px;
 width: 50px;
 }
 #followbutton{
 position: absolute;
-top: 160px;
-left:400px;
+top: 35px;
+left:260px;
 display: inline-block;
 border-radius: 3px;
 border: 1px solid #D6D0C4;
@@ -190,14 +192,14 @@ right: 25px;
   
   }
   #Myprofilename
-  {position: relative;
+  {position: absolute;
     color: #00635d;
     line-height: 24px;
     font-size: 20px;
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
     font-weight: bold;
     top:55px;
-    right:550px;
+    left:300px;
   }
   #Myprofilename span{
     color: #382110;  padding-bottom: 20px;
@@ -210,46 +212,7 @@ right: 25px;
     line-height: 24px;
   }
 
-  @media (max-width: 1200px) {
-    #followbutton{
-      position: relative;;
-      top: 20px;
-      left:200px;
-      display: inline-block;
-      border-radius: 3px;
-      border: 1px solid #D6D0C4;
-      font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-      font-size: 14px;
-  }
 
-  #tfheader{
-    position: relative;
-    top: 25px;
-  }
-  #Myprofilename
-  {position: relative;
-    color: #00635d;
-    line-height: 24px;
-    font-size: 20px;
-    font-family: "Merriweather", Georgia, "Times New Roman", serif;
-    font-weight: bold;
-    top:55px;
-    left:80px;
-  }
-}
-@media(max-width: 700px)
-{
-  #Myprofilename
-  {position: relative;
-    color: #00635d;
-    line-height: 24px;
-    font-size: 20px;
-    font-family: "Merriweather", Georgia, "Times New Roman", serif;
-    font-weight: bold;
-    top:40px;
-    left:80px;
-  }
-}
 
   .country
 {
@@ -259,7 +222,7 @@ font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
 text-align: left;
 line-height: 18px;
 font-size: 12px;
-left:115px;
+left:50px;
 top:43px;
 
 
@@ -401,3 +364,153 @@ font-weight: bold;
 
 
 
+@media(max-width: 480px)
+{
+  #followers
+  {
+    position: absolute;
+    left:10px;
+  }
+  #profilename
+{
+position: relative;
+font-size: 12px;
+top:2px;
+left:29px;
+}
+  .country
+{
+position: relative;
+color: #181818;
+font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+text-align: left;
+line-height: 18px;
+font-size: 12px;
+left:29px;
+top:43px;
+
+}
+#searchBoxInput {
+  float: left;
+  font-size: 14px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px;
+  height: 31px;
+  width: 45%;
+}
+#mainSearchContainer {
+  position:absolute;
+  width: 20%;
+  text-align: center;
+  padding-bottom: 25px;
+  top:110px;
+}
+#profilepage{
+  position: absolute;
+  left:10px;
+  height: 66px;
+width: 50px;
+}
+
+}
+
+
+@media(max-width: 500px)
+{
+  #followers
+  {
+    position: absolute;
+    left:10px;
+  }
+  #profilename
+{
+position: relative;
+font-size: 12px;
+top:2px;
+left:29px;
+}
+  .country
+{
+position: relative;
+color: #181818;
+font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+text-align: left;
+line-height: 18px;
+font-size: 12px;
+left:29px;
+top:43px;
+
+}
+#searchBoxInput {
+  float: left;
+  font-size: 14px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px;
+  height: 31px;
+  width: 45%;
+}
+#mainSearchContainer {
+  position:absolute;
+  width: 20%;
+  text-align: center;
+  padding-bottom: 25px;
+  top:110px;
+}
+#profilepage{
+  position: absolute;
+  left:10px;
+  height: 66px;
+width: 50px;
+}
+
+}
+
+@media(max-width: 700px)
+{
+  #Myprofilename
+  {position: absolute;
+    left:30px;
+  }
+  #profilepage
+  {
+    position: absolute;
+    left:10px;
+  }
+  #profilename
+{
+position: relative;
+font-size: 12px;
+top:2px;
+left:29px;
+}
+  
+  .country
+{
+position: relative;
+color: #181818;
+font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+text-align: left;
+line-height: 18px;
+font-size: 12px;
+left:29px;
+top:43px;
+
+}
+#mainSearchContainer {
+  position:absolute;
+  width: 70%;
+  text-align: center;
+  padding-bottom: 25px;
+  top:110px;
+}
+#followers
+  {
+    position: absolute;
+    left:10px;
+  }
+
+}

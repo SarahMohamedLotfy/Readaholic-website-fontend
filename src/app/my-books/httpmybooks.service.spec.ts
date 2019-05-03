@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@ang
 import { HttpmybooksService } from './httpmybooks.service';
 import { followingComponent } from '../classes/followingComponent';
 
-describe('HttpmybooksService', () => {
+fdescribe('HttpmybooksService', () => {
   let service: HttpmybooksService;
   let httpTestingController: HttpTestingController;
   
@@ -98,7 +98,7 @@ describe('HttpmybooksService', () => {
 
 
 
-  it('should be created', () => {
+  fit('should be created', () => {
     const service: HttpmybooksService = TestBed.get(HttpmybooksService);
     expect(service).toBeTruthy();
   });

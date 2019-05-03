@@ -141,8 +141,9 @@
   font-size: 20px;
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
     font-weight: bold;
-    top: 70px;
-    left: 200px;
+    top: 80px;
+    left:-690px;
+    padding-left: 2%;
 }
 .content-box {
   columns: 3 auto;
@@ -188,6 +189,35 @@ hr {
   margin-top: -5px;
   //right: 50px;
 }
+
+#arrow2
+{
+  position: absolute;
+  left:-300px;
+  top:22px;
+  font-size: 20px;
+  color: #00678e;
+}
+#arrow1
+{
+  position: absolute;
+  left:-300px;
+  top:50px;
+  font-size: 20px;
+  color: #00678e;
+}
+#arrow0
+{
+  position: absolute;
+  left:-300px;
+  top:1px;
+  font-size: 20px;
+  color: #00678e;
+}
+
+
+
+
 #searchtextfollowing{
   padding: 4px 10px;
   font-family: Arial, Helvetica, sans-serif;
@@ -264,18 +294,18 @@ hr {
           font-family: "Merriweather", Georgia, "Times New Roman", serif;
           font-weight: bold;
           top: 70px;
-          left: 20px;
+          left: 30px;
       }
       .leftActivityy
 {
   position: relative;
   top: 80px;
-    left: 20px;
+    left: 30px;
 }
 .bookShelves
 {
   position: relative;
-  left:20px;
+  left:30px;
   top:72px;
 }
 .tablePlace
@@ -284,6 +314,30 @@ hr {
   top:2px;
   left:200px;
 
+}
+#arrow2
+{
+  position: absolute;
+  left:10px;
+  top:-72px;
+  font-size: 15px;
+  color: #00678e;
+}
+#arrow1
+{
+  position: absolute;
+  left:10px;
+  top:-45px;
+  font-size: 15px;
+  color: #00678e;
+}
+#arrow0
+{
+  position: absolute;
+  left:10px;
+  top:-100px;
+  font-size: 15px;
+  color: #00678e;
 }
   }
   @media (max-width: 768px) 
@@ -294,7 +348,7 @@ hr {
         position: relative;
         top:69px;
           border-top: 1px solid #D6D0C4;
-          left:20px;
+          left:30px;
           margin-right: 20%;
       }
       #tfnewsearch{
@@ -319,12 +373,12 @@ hr {
 {
   position: relative;
   top: 80px;
-    left: 20px;
+    left: 30px;
 }
 .bookShelves
 {
   position: relative;
-  left:20px;
+  left:30px;
   top:72px;
 }
 .tablePlace
@@ -343,10 +397,58 @@ hr {
   font-size: 16px;
   font-family: "Merriweather", Georgia, "Times New Roman", serif;
   font-weight: bold;}
+  #arrow2
+{
+  position: absolute;
+  left:10px;
+  top:-72px;
+  font-size: 15px;
+  color: #00678e;
+}
+#arrow1
+{
+  position: absolute;
+  left:10px;
+  top:-45px;
+  font-size: 15px;
+  color: #00678e;
+}
+#arrow0
+{
+  position: absolute;
+  left:10px;
+  top:-100px;
+  font-size: 15px;
+  color: #00678e;
+}
   }
   @media (max-width: 480px) 
 
     {
+      #arrow2
+{
+  position: absolute;
+  left:10px;
+  top:-72px;
+  font-size: 15px;
+  color: #00678e;
+}
+#arrow1
+{
+  position: absolute;
+  left:10px;
+  top:-45px;
+  font-size: 15px;
+  color: #00678e;
+}
+#arrow0
+{
+  position: absolute;
+  left:10px;
+  top:-100px;
+  font-size: 15px;
+  color: #00678e;
+}
       hr {
   
         position: relative;
@@ -371,7 +473,7 @@ hr {
           font-family: "Merriweather", Georgia, "Times New Roman", serif;
           font-weight: bold;
           top: 70px;
-          left: 20px;
+          left: 30px;
       }
       .leftActivityy
 {
@@ -382,9 +484,11 @@ hr {
 .bookShelves
 {
   position: relative;
-  left:20px;
+  left:30px;
   top:72px;
 }
+
+
 .tablePlace
 {
   position :relative;
@@ -423,7 +527,7 @@ hr {
           font-family: "Merriweather", Georgia, "Times New Roman", serif;
           font-weight: bold;
           top: 70px;
-          left: 20px;
+          left: 30px;
       }
       
   }

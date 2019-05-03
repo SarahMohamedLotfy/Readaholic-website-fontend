@@ -1,3 +1,4 @@
+<navbar></navbar>
 <div class="mybooksTitle"> 
   My Books
 </div>
@@ -23,16 +24,16 @@
      <tr>
     <td
     *ngIf="shelf.name == 'to-read'" >
-    <a (click)="getmybooks(true,1)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
+    <a (click)="getmybooks(true,1)" (click)="heighlight(1)" (click)="initializedarrow=false"class="leftActivity">{{ shelf.name }} ({{count1}})  </a></td>
      
     <td
     *ngIf="shelf.name == 'currently-reading'" >
-    <a (click)="getmybooks(true,2)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
+    <a (click)="getmybooks(true,2)" (click)="heighlight(2)" (click)="initializedarrow=false"class="leftActivity">{{ shelf.name }} ({{count2}})  </a></td>
     
          
     <td
     *ngIf="shelf.name == 'read'" >
-    <a (click)="getmybooks(true,0)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
+    <a (click)="getmybooks(true,0)" (click)="heighlight(0)" (click)="initializedarrow=false" class="leftActivity">{{ shelf.name }} ({{count0}})  </a></td>
     </tr>
   </table>
 </div>
@@ -61,7 +62,7 @@
 						<tr>
 							<td>
                   <a class="bookimage"  [routerLink]="['/book', post.book_id]">
-								<img class="bookimage" src={{post.image_url}} alt="">
+								<img class="bookimage" src={{post.img_url}} alt="">
 </a>
               </td>
               <td>
@@ -86,8 +87,27 @@
             </tr>
 					
 					</tbody>
-				</table>
-			</div>
+        </table>
+        <div  *ngIf="shelfNumber== 2">
+
+            <div id="arrow2">---></div>   
+      </div>
+      <div  *ngIf="shelfNumber== 1">
+
+          <div id="arrow1">---></div>
+    </div>
+    <div  *ngIf="shelfNumber== 0">
+
+        <div id="arrow0">---></div>
+          
+
+    </div>
+    <div  *ngIf="initializedarrow== true">
+
+        <div id="arrow2">---></div>
+          
+
+    </div>
 </div>			
 		</div>
 	</div>

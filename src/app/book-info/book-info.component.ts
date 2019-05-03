@@ -64,8 +64,8 @@ export class BookInfoComponent implements OnInit {
   /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
     this.getBookInfo();
-   this.getBookReviews();
-   this.getUserInfo();
+    this.getBookReviews();
+    this.getUserInfo();
 
     this.sharedService.currentshelf.subscribe(data => {
       if (data.key != -1 && data.value != -1) {
@@ -97,8 +97,6 @@ export class BookInfoComponent implements OnInit {
       console.log("true");
 
     }
-
-    //document.getElementById("openModalButton").click();
   }
 
   /**get the selected book information */
@@ -113,8 +111,7 @@ export class BookInfoComponent implements OnInit {
         else {
           this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
         }
-      }, (data) => console.log(data));
-    //,()=> this.router.navigateByUrl("/pageNotfound")
+      }, ()=> this.router.navigateByUrl("/pageNotfound"));
   }
 
   /**gets the selected book reviews */

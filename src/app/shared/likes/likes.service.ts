@@ -21,7 +21,7 @@ export class LikesService {
 
   /** post a new like */
   addLLike(newLike: Likes): Observable<Likes> {
-    return this.http.post<Likes>(this.url+'LikeOrUnLike?id='+ newLike.resourse_id , newLike)
+    return this.http.post<Likes>(this.url+'/api/LikeOrUnLike?id='+ newLike.resourse_id , newLike)
   }
   /** like a specific object wether a review or update */
   likeObject(user: string , resourse_id: number

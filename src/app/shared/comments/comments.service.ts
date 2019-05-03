@@ -18,7 +18,7 @@ export class CommentsService {
   constructor(private http: HttpClient) { }
 /** post a new comment */
   addComment(newComment: Comments): Observable<Comments> {
-    return this.http.post<Comments>(this.url +'makeComment?id='+ newComment.resourse_id + '&body=' + newComment.comment_body, newComment)
+    return this.http.post<Comments>(this.url +'/api/makeComment?id='+ newComment.resourse_id + '&body=' + newComment.comment_body, newComment)
   }
 
 /** comments on a specific object and subscribe to the given data */
@@ -34,15 +34,15 @@ export class CommentsService {
   }
 /** get comments */
   getCommentsList(id : number): Observable<commentListwid[]> {
-    return this.http.get<commentListwid[]>(this.url+'listComments?id='+ id);
+    return this.http.get<commentListwid[]>(this.url+'/api/listComments?id='+ id);
   }
   /** get comments */
   testgetCommentsList(id : number): Observable<CommentList[]> {
-    return this.http.get<CommentList[]>(this.url+'listComments?id='+ id)
+    return this.http.get<CommentList[]>(this.url+'/api/listComments?id='+ id)
   }
 /** delete comment */
 deleteComment(id: number):Observable<Comments>{
-return this.http.delete<Comments>(this.url+'deleteComment?id='+ id);
+return this.http.delete<Comments>(this.url+'/api/deleteComment?id='+ id);
 }
 
 

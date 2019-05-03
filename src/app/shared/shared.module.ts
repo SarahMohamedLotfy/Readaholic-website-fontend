@@ -10,7 +10,10 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LikesComponent } from './likes/likes.component';
 import { CommentsComponent } from './comments/comments.component';
-import { RouterModule } from '@angular/router';
+import { ListLikesComponent } from './list-likes/list-likes.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ReviewComponent } from '../review/review.component';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +21,12 @@ import { RouterModule } from '@angular/router';
     DropdownComponent,
     NavbarComponent,
     LikesComponent,
-    CommentsComponent
+    CommentsComponent,
+    ListLikesComponent
   ],
   imports: [
-    
-    
+
+
     CommonModule,
   //RatingModule,
     FormsModule,
@@ -40,7 +44,10 @@ import { RouterModule } from '@angular/router';
     DropdownComponent,
     NavbarComponent,
     LikesComponent,
-    CommentsComponent
+    CommentsComponent,
+    ListLikesComponent,
+    NavbarComponent
+
 
   ]
 })

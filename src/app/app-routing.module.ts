@@ -13,6 +13,7 @@ import  { AboutusComponent} from './AboutUs/AboutUs.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { SearchBooksComponent } from './search-books/search-books.component';
+import { ReviewComponent } from './review/review.component';
 import {SearchPeopleComponent} from './search-people/searchpeople.component';
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'searchpeople', component: SearchPeopleComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
   {path: 'Aboutus', component: AboutusComponent,canActivate:[AuthGuard]},
+  {path: 'review/:userId/:bookId', component: ReviewComponent,canActivate:[AuthGuard]},
   {path:'pageNotfound',component: PageNotFoundComponent},
   {path: '**', redirectTo: 'pageNotfound', pathMatch:'full' }
  ];

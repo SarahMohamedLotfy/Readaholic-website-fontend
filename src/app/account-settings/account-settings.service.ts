@@ -1,3 +1,4 @@
+import { AppConstants } from './../classes/appconstant';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, observable } from 'rxjs';
@@ -9,7 +10,7 @@ import { catchError, retry } from 'rxjs/operators';
   })
 
   export class AccountSettingsService {
-
+  url:string=AppConstants.baseURL;
 
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
@@ -17,45 +18,45 @@ import { catchError, retry } from 'rxjs/operators';
 
     showSetting(): Observable<any> {
         
-        return this.http.get<any>(this.urlName+'/api/showsetting');
+        return this.http.get<any>(this.url+'/api/showsetting');
         
        }
       
        changeCountry(country:string): Observable<any> {
         
-        return this.http.get<any>(this.urlName+'/api/changecountry?newCountry='+country);
+        return this.http.get<any>(this.url+'/api/changecountry?newCountry='+country);
         
        }
     
        changeCity(city:string): Observable<any> {
         
-        return this.http.get<any>(this.urlName+'/api/changecity?newCity='+city);
+        return this.http.get<any>(this.url+'/api/changecity?newCity='+city);
         
        }
        changeBirthday(birthday:Date): Observable<any> {
         
-        return this.http.get<any>(this.urlName+'/api/changebirthday?newBirthday='+birthday);
+        return this.http.get<any>(this.url+'/api/changebirthday?newBirthday='+birthday);
         
        }
 
        changeCountryView(country:string): Observable<any> {
         
-        return this.http.get<any>(this.urlName+'/api/whocanseemycountry?seeMyCountry='+country);
+        return this.http.get<any>(this.url+'/api/whocanseemycountry?seeMyCountry='+country);
         
        }
        changeCityView(city:string): Observable<any> {
         
-        return this.http.get<any>(this.urlName+'/api/whocanseemycity?seeMyCity='+city);
+        return this.http.get<any>(this.url+'/api/whocanseemycity?seeMyCity='+city);
         
        }
        changeBirthView(birthday:string): Observable<any> {
         
-        return this.http.get<any>(this.urlName+'/api/whocanseemybirthday?seeMyBirthday='+birthday);
+        return this.http.get<any>(this.url+'/api/whocanseemybirthday?seeMyBirthday='+birthday);
         
        }
       changePassword(password:string,newPassword:string,newPassword_confirmation:string): Observable<any>
  {
-   return this.http.post(this.urlName+'/api/changepassword',{password,newPassword,newPassword_confirmation}) ;
+   return this.http.post(this.url+'/api/changepassword',{password,newPassword,newPassword_confirmation}) ;
  }
 
  changeImage(image:File): Observable<any>
@@ -65,17 +66,17 @@ import { catchError, retry } from 'rxjs/operators';
      formData.append('image', image,image.name);
      
 console.log(formData);
-   return this.http.post(this.urlName+'/api/changeimage',formData) ;
+   return this.http.post(this.url+'/api/changeimage',formData) ;
  }
  changeName(newName:string): Observable<any> {
         
-    return this.http.get<any>(this.urlName+'/api/changename?newName='+newName);
+    return this.http.get<any>(this.url+'/api/changename?newName='+newName);
     
    }
 
    delete(password:string): Observable<any>
  {
-   return this.http.post(this.urlName+'/api/delete',{password}) ;
+   return this.http.post(this.url+'/api/delete',{password}) ;
  }
 
 

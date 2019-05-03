@@ -3,6 +3,9 @@
 
 import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
 import { BookService } from 'src/app/book-info/book.service';
+
+import {MyBooksComponent } from 'src/app/my-books/my-books.component'
+
 import { SharedService } from 'src/app/shared.service';
 import { ShelfService } from '../dropdown/shelf.service';
 

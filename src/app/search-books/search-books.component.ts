@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchBooksService } from './search-books.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { book } from '../classes/book';
 
 @Component({
   selector: 'app-search-books',
@@ -76,12 +77,16 @@ this.searchForBook();
     this.service.getBookByAuthor(this.searchTerm).subscribe((books:any)=>{
       this.books =books.pages ;
 
-      this.noBooks=false;
+      
      
       this.review=books['book info for me']
       this.temp=this.review;
       
-     
+     if(books.pages.length==0){
+       this.noBooks=true;
+     }
+     else
+     this.noBooks=false;
 
       console.log(this.rating);
       },err=>{this.noBooks=true;})
@@ -93,7 +98,12 @@ this.searchForBook();
           console.log(this.books);
           console.log(books);
           this.review=books['book info for me']
+          if(books.pages.length==0){
+            this.noBooks=true;
+          }
+          else
           this.noBooks=false;
+
           },err=>{this.noBooks=true;})
       }
       else if(val.searchType=="genre" || this.searchType=="genre" )
@@ -103,6 +113,10 @@ this.searchForBook();
           
           console.log(this.books);
           console.log(books);
+          if(books.pages.length==0){
+            this.noBooks=true;
+          }
+          else
           this.noBooks=false;
           this.review=books['book info for me']
           },err=>{this.noBooks=true;})
@@ -115,6 +129,10 @@ this.searchForBook();
           console.log(this.books);
           console.log(books);
           this.review=books['book info for me']
+          if(books.pages.length==0){
+            this.noBooks=true;
+          }
+          else
           this.noBooks=false;
           },err=>{this.noBooks=true;})
       }

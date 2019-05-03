@@ -3,11 +3,17 @@
         <div class="col-md-6" id="title">
             <h1 id="Read">Readholic</h1>
         </div>
+
         <div class="col-md-6" id="signIn">
 
             <form class="form-inline " [formGroup]="form" id="signInForm">
+
                 <div class="row" style=" width: 635px;height: 38px;  min-width: 635px;">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email" style="width: 208.4px">
+                    <div class="col-md-5" style="    width: 50%; ">
+
+                        <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email" style="width: 208.4px">
+                        <p *ngIf=wrongPass style="color:crimson">{{error}}</p>
+                    </div>
                     <div class="col-md-5" style="    width: 50%; ">
 
                         <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password" style="width: 208.4px">
@@ -16,7 +22,7 @@
 
                     <button id="signInButton" class="btn btn-primary" type="submit" style="background-color:	#8B4513; width:73.86px; height: 100%  " (click)="onSubmit()">Sign in</button>
 
-                    <h6 *ngIf=wrongPass style="color:crimson">{{error}}</h6>
+
                 </div>
             </form>
         </div>
@@ -34,35 +40,50 @@
             <h6 *ngIf=signUpError style="color:crimson">{{errorUp}}</h6>
             <form [formGroup]="formUp">
                 <div class="form-group row">
+                    <div *ngIf="name.invalid&&(name.dirty||name.touched)" style="color: red">
+                        *name must be at least 3 characters long.
+                    </div>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Name" formControlName="name">
+                        <input type="text" class="form-control" placeholder="Name" formControlName="name" required>
                     </div>
                 </div>
                 <div class="form-group row">
+                    <div *ngIf="email.invalid&&(email.dirty||email.touched)" style="color: red">
+                        *email must be a valid email.
+                    </div>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Email Address" formControlName="email">
+                        <input type="text" class="form-control" placeholder="Email Address" formControlName="email" required>
                     </div>
                 </div>
                 <div class="form-group row">
+                    <div *ngIf="password.invalid&&(password.dirty||password.touched)" style="color: red">
+                        *password must be at least 5 characters long.
+                    </div>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                        <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
                     </div>
                 </div>
                 <div class="form-group row">
+                    <div *ngIf="password_confirmation.invalid&&(password_confirmation.dirty||password_confirmation.touched)" style="color: red">
+                        *password must be at least 5 characters long.
+                    </div>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" placeholder="Confirm password" formControlName="password_confirmation">
+                        <input type="password" class="form-control" placeholder="Confirm password" formControlName="password_confirmation" required>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-sm-10">
+                        <div *ngIf="gender.invalid&&(gender.dirty||gender.touched)" style="color: red">
+                            *must select a gender
+                        </div>
                         <label>Gender: </label>
                         <label class="radio-inline" style="margin-left: 1%; margin-right: 3%;">
-                                <input type="radio" value="Male" name="gender" formControlName="gender"  >Male
+                                <input type="radio" value="Male" name="gender" formControlName="gender" required >Male
                             </label>
 
                         <label class="radio-inline">
-                                    <input type="radio" value="Female" name="gender" formControlName="gender"  >Female
+                                    <input type="radio" value="Female" name="gender" formControlName="gender" required >Female
                                 </label>
 
                     </div>
@@ -73,13 +94,19 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <div *ngIf="country.invalid&&(country.dirty||country.touched)" style="color: red">
+                        *country must be at least 3 characters long.
+                    </div>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="Country" formControlName="country">
+                        <input type="text" class="form-control" placeholder="Country" formControlName="country" required>
                     </div>
                 </div>
                 <div class="form-group row">
+                    <div *ngIf="city.invalid&&(city.dirty||city.touched)" style="color: red">
+                        *city must be at least 3 characters long.
+                    </div>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" placeholder="City" formControlName="city">
+                        <input type="text" class="form-control" placeholder="City" formControlName="city" required>
                     </div>
                 </div>
 
@@ -149,8 +176,10 @@
 
 
                     <h4 class="modal-title ">Reset your Password </h4>
-                    <button type="button " class="close " data-dismiss="modal ">&times;</button>
+                    <button type="button " class="close " data-dismiss="modal">&times;</button>
                 </div>
+                <h6 *ngIf=resetError style="color:crimson;margin-left: 50px;">{{resetText}}</h6>
+                <h6 *ngIf=resetSuc style="color:black;margin-left: 50px;">{{resetMes}}</h6>
                 <form [formGroup]="formReset" style="margin-left: 10%; ">
 
                     <label id="formLabels"> Email Address </label>

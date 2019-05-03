@@ -25,7 +25,7 @@ likeFlag: boolean = false;
 likeOrUnlikereview(): void {
     this.likeFlag = !this.likeFlag;
 
-    this.likeservice.likeObject(this.user, this.resourse_id, 0);
+    this.likeservice.likeObject(this.user, this.resourse_id);
 
 
 }

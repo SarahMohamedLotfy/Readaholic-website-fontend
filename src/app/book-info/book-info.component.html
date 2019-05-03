@@ -60,12 +60,12 @@
                     <app-star [starsCount]="review?.rating" [readOnly]="true"></app-star>
                 </h6>
                 <p>{{review?.body}}</p>
-                <small>{{review?.likes_count}} like
-
+                <small>{{review?.likes_count}}
+                    <app-list-likes [resourse_id]='review.id' ></app-list-likes>
                      <app-likes [user]='review.user_id' [resourse_id]= 'review.id' ></app-likes>
 
                       {{review?.comments_count}} Comments
-                       <app-comments  [user]='review.user_id' [resourse_id]='review.id' ></app-comments>
+                       <app-comments [resourse_id]='review.id' ></app-comments>
 
 
                     </small>

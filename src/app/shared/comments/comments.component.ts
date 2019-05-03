@@ -2,23 +2,25 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CommentsService } from './comments.service';
 import { Comments } from 'src/app/classes/Comments';
+import { CommentList } from 'src/app/classes/commentList';
+import { commentListwid } from 'src/app/classes/commentListwid';
 
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
- 
+
 })
 export class CommentsComponent implements OnInit {
   /** FormGroup to control the commentForm  */
   public CommentForm: FormGroup
   /** List of Comments */
-  CommentList: Comments[] ;
+  CommentListofReview: CommentList[] ;
+
+  list: commentListwid[];
   /** commetn flag to determine whether the comment button is pressed or not */
   commentFlag: boolean = false;
-  /** input from parent component to get user id */
-  @Input () user : string;
   /** input from parent component to get resource id */
   @Input () resourse_id : number;
 
@@ -26,7 +28,14 @@ export class CommentsComponent implements OnInit {
     this.createForm();
    }
   ngOnInit() {
-   // this.ser.getCommentsList().subscribe((data: Comments[]) => this.CommentList = data);
+     this.ser.testgetCommentsList(this.resourse_id).subscribe(data => {
+          this.CommentListofReview = data,
+          console.log(data)
+        },
+           (err: any) => console.log(err)
+         );
+
+
   }
 
   createForm(){
@@ -44,9 +53,15 @@ export class CommentsComponent implements OnInit {
   /** submit comment to the server when the Add button is pressed */
      onSubmit()
      {
-           this.ser.commentOnobject( this.user, this.resourse_id, 0 , this.CommentForm.get('content').value);
+           this.ser.commentOnobject(this.resourse_id,this.CommentForm.get('content').value);
            this.CommentForm.reset();
      }
-
-
+     deleteComment(Commentid: number){
+      this.ser.deleteComment(Commentid).subscribe((data) =>{
+           console.log(data);
+       //    this.ser.getCommentsList(this.resourse_id).subscribe((posts:any)=>{
+        //    (data: CommentList[]) => this.CommentListofReview = data
+         // console.log(posts)});
+             });
+    }
 }

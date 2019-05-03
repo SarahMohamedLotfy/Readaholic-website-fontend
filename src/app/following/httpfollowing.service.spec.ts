@@ -23,7 +23,7 @@ fdescribe('HttpFollowingService', () => {
   
 
 // Unit testing for Get following request
-describe('#Get the following people', () => {
+fdescribe('#Get the following people', () => {
   it('returned Observable should match the right data', () => {
     const mockFollowing = [
       {
@@ -55,7 +55,7 @@ describe('#Get the following people', () => {
         expect(followingComponent[1].id).toEqual('7');
       });
     const req = httpTestingController.expectOne(
-      this.url+'/api/following'
+      'http://ec2-52-90-5-77.compute-1.amazonaws.com/api/following'
     );
 
     req.flush(mockFollowing);

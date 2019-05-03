@@ -24,6 +24,7 @@
                 </form>
 
                 <h1 id="searchSubNav">Results for search</h1>
+
                 <h2 *ngIf="noBooks" style="margin-top: 5%;">Your search didn't match any books</h2>
                 <table id="searchTable" *ngFor="let book of books ">
                     <tbody *ngIf="!noBooks" id="searchTableBody">
@@ -51,8 +52,8 @@
                                 </div>
 
                                 <div id="reviewing" *ngIf="isUser">
-                                    <app-dropdown [bookId]="book?.id"></app-dropdown>
-                                    <app-star id="rateBook" [bookId]="book?.id" [readOnly]="false" [starsCount]="2"></app-star>
+                                    <app-dropdown [bookId]="book?.id" (starsRating)='ratings($event)'></app-dropdown>
+                                    <app-star id="rateBook" [bookId]="book?.id" [readOnly]="true" [getRate]="true"></app-star>
                                 </div>
                             </td>
                         </tr>

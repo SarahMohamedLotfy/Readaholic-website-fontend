@@ -9,7 +9,7 @@ import { catchError, retry } from 'rxjs/operators';
   })
 
   export class LogInHttpService {
-    url= 'http://5cb4a97d.ngrok.io';
+    url= 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 

@@ -4,6 +4,7 @@
 import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
 import { BookService } from 'src/app/book-info/book.service';
 import { SharedService } from 'src/app/shared.service';
+import { ShelfService } from '../dropdown/shelf.service';
 
 /**used to rate a book or display user rate on the book */
 @Component({
@@ -18,6 +19,8 @@ export class StarComponent implements OnInit {
 
   /**detemines the state of the component whether it can be used to rate a book or display its average rate */
   @Input() readOnly: boolean;
+
+  @Input() getRate:boolean=false;
 
   /**book shelf */
   @Input() shelf: number = 0;
@@ -36,13 +39,15 @@ export class StarComponent implements OnInit {
   userRate: number = 0;
   
   /**@param {BookService} service the http service which the star component uses to make a rating request */
-  constructor(private service: BookService, private sharedService: SharedService) { }
+  constructor(private service: BookService, private sharedService: SharedService, private shelfService:ShelfService) { }
 
   ngOnInit() {
     this.sharedService.currentshelf.subscribe(data => {
       this.shelf = data;
 
-      console.log(this.shelf +"  sgelf");
+
+      
+ 
       if (this.shelf == 3) {
       
         this.starsCount = 0;
@@ -50,6 +55,14 @@ export class StarComponent implements OnInit {
         
       }
     });
+    if(this.getRate)
+    {
+      this.shelfService.getUserBookInfo(this.bookId).subscribe((data) => {
+        this.starsCount=data.pages[0].rating;
+        console.log(this.starsCount);
+      },err=>{this.starsCount=0;})
+
+    }
   }
 
   /**rates a book when the user clicks on the stars */

@@ -24,6 +24,10 @@ books:any=[];
 form: FormGroup;
 isUser:boolean;
 noBooks:boolean =false;
+review:any=[];
+str:string;
+rating:any=[];
+temp:any=[];
   ngOnInit() {
     this.activatedRoute.queryParams .subscribe(params => {
      
@@ -37,8 +41,7 @@ noBooks:boolean =false;
         this.isUser = true;
       }
     
-    
-
+  
      this.searchForBook();
 
 
@@ -65,16 +68,22 @@ this.searchForBook();
 
   searchForBook()
   {
+ 
     const val = this.form.value;
       console.log(this.searchTerm);
 
     if(val.searchType=="author" || this.searchType=="author" )
     this.service.getBookByAuthor(this.searchTerm).subscribe((books:any)=>{
       this.books =books.pages ;
-      
-      console.log(this.books);
-      console.log(books);
+
       this.noBooks=false;
+     
+      this.review=books['book info for me']
+      this.temp=this.review;
+      
+     
+
+      console.log(this.rating);
       },err=>{this.noBooks=true;})
       else if(val.searchType=="ISBN" || this.searchType=="ISBN" )
       {
@@ -83,6 +92,7 @@ this.searchForBook();
           
           console.log(this.books);
           console.log(books);
+          this.review=books['book info for me']
           this.noBooks=false;
           },err=>{this.noBooks=true;})
       }
@@ -94,6 +104,7 @@ this.searchForBook();
           console.log(this.books);
           console.log(books);
           this.noBooks=false;
+          this.review=books['book info for me']
           },err=>{this.noBooks=true;})
       }
       else 
@@ -103,10 +114,13 @@ this.searchForBook();
           
           console.log(this.books);
           console.log(books);
+          this.review=books['book info for me']
           this.noBooks=false;
           },err=>{this.noBooks=true;})
       }
+     
   }
+
   
 
 }

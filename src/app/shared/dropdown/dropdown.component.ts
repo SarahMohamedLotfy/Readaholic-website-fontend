@@ -14,6 +14,8 @@ export class DropdownComponent implements OnChanges {
   /**the input book id from the parent component */
   @Input() bookId: number;
 
+ 
+
   /**id of the shelf */
   shelfId: number;
 
@@ -36,13 +38,16 @@ export class DropdownComponent implements OnChanges {
    */
   ngOnChanges(changes: SimpleChanges) {
   
-    this.sharedService.currentshelf.subscribe(data => {this.shelfId = data; 
-      if(this.shelfId < 3) {
+ this.sharedService.currentshelf.subscribe(data => {this.shelfId = data; 
+      
+     if(this.shelfId < 3) {
+       
         this.shelfStatus = this.shelves[this.shelfId];
         this.buttonDisabled = true;
         this.removeEnabled = true;
       }
       else {
+        console.log('weeeee');
         this.shelfStatus = this.shelves[2];
         this.buttonDisabled = false;
         this.removeEnabled = false;
@@ -50,7 +55,11 @@ export class DropdownComponent implements OnChanges {
     });
     if (changes['bookId'].currentValue != null) {
       this.service.getUserBookInfo(changes['bookId'].currentValue).subscribe((data) => {
+
         this.shelfId = data.pages[0].shelf_name;
+
+        
+     
         if (this.shelfId != 3) {
           this.shelfStatus = this.shelves[this.shelfId];
           this.sharedService.changeShelf(this.shelfId);

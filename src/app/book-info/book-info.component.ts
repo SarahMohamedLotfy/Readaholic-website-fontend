@@ -64,8 +64,8 @@ export class BookInfoComponent implements OnInit {
   /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
     this.getBookInfo();
-   //this.getBookReviews();
-  // this.getUserInfo();
+   this.getBookReviews();
+   this.getUserInfo();
 
     this.sharedService.currentshelf.subscribe(data => {
       if (data.key != -1 && data.value != -1) {

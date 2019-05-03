@@ -50,7 +50,7 @@ import { ReviewComponent } from '../review/review.component';
     CommentsComponent,
     ListLikesComponent,
     NavbarComponent
-
+  ]
 
 })
 export class SharedModule { }

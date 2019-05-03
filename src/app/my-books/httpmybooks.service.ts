@@ -35,7 +35,7 @@ getMyshelfbooks( shelf_name:number){
  *getUsershelves() is a get request to number of books the user read and currently reading an to read */
 
 getUsershelves(): Observable<any>{
-  return this.http.get<any>('http://localhost:3000'+"/user_shelf");
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api'+"/user_shelf");
 }
 /**
  * create book review
@@ -46,7 +46,7 @@ getUsershelves(): Observable<any>{
  *  */
 createReview(bookId:number, shelf: number,  rating: number): Observable<any> {
  
-    return this.http.post('http://localhost:3000'+ '/api/reviwes/create',{bookId,shelf,rating});
+    return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com'+ '/api/reviwes/create',{bookId,shelf,rating});
   
   
    // return this.http.post('http://localhost:3000/ReadShelf',{bookId,shelf,body,rating});

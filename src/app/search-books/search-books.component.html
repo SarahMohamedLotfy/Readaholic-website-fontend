@@ -53,7 +53,7 @@
 
                                 <div id="reviewing" *ngIf="isUser">
                                     <app-dropdown [bookId]="book?.id" (starsRating)='ratings($event)'></app-dropdown>
-                                    <app-star id="rateBook" [bookId]="book?.id" [readOnly]="true" [getRate]="true"></app-star>
+                                    <app-star id="rateBook" [bookId]="book?.id" [readOnly]="false" [getRate]="true"></app-star>
                                 </div>
                             </td>
                         </tr>

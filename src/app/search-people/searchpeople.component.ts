@@ -97,7 +97,17 @@ ngOnInit() {
       this.isUser = true;
     }
   
-  
+    this.service.getfollowers().subscribe((posts:any)=>{
+      this.posts =posts.followers ;
+      this.temp = posts;
+      console.log(posts);
+      })
+
+      
+      this.service.getfollowing().subscribe((following:any)=>{
+       this.following =following.following ;
+       });
+
 
    this.searchForBook();
 
@@ -111,6 +121,8 @@ ngOnInit() {
        this.service.getfollowing().subscribe((following:any)=>{
         this.following =following.following ;
         });
+
+
 
      /** receives id from url and send it to the get request */
     //const id: number = +this.route.snapshot.paramMap.get('id');
@@ -168,9 +180,10 @@ searchForBook()
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
  
-add(nb) {
-  this.service.addFollowing(nb).subscribe(
-    data  => {
+
+delFollowing(id:number){
+  
+    this.service.unfollow(id).subscribe((data)=>{
       this.service.getfollowing().subscribe((following:any)=>{
         this.following =following.following ;
         });
@@ -180,16 +193,12 @@ add(nb) {
         this.temp = posts;
         console.log(posts);
         })
-    console.log("POST Request is successful ", data);
-    },
-    error  => {
-    
-    console.log("Error", error);
-    
-    }
-    
-    );}
+        
+        console.log("success");
 
+    });
+  
+}
 
 /**
  * noFollowers () is function to show message to the user if he has no one follow him .
@@ -217,25 +226,38 @@ noFollowbutton(personId):boolean
 }
 return true;
 }
-/**
- * delFollowing () function contains a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
+
+   /**
+ * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
-  delFollowing(id:number){
-    this.service.unfollow(id).subscribe((data)=>{
-      this.service.getfollowing().subscribe((following:any)=>{
-        this.following =following.following ;
-        });
+ 
+  add(nb) {
 
-      this.service.getfollowers().subscribe((posts:any)=>{
-        this.posts =posts.followers ;
-        this.temp = posts;
-        console.log(posts);
-        })
+      this.service.addFollowing(nb).subscribe(
+        data  => {
+          this.service.getfollowing().subscribe((following:any)=>{
+            this.following =following.following ;
+            });
+    
+          this.service.getfollowers().subscribe((posts:any)=>{
+            this.posts =posts.followers ;
+            this.temp = posts;
+            console.log(posts);
+            })
+        console.log("POST Request is successful ", data);
+        },
+        error  => {
         
-        console.log("success");
-
-    });
+        console.log("Error", error);
+        
+        }
+        
+        );
+    
+  
   }
+
+
 
 
   

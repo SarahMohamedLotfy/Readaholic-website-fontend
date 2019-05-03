@@ -76,10 +76,11 @@ used it in search function.
  *getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read  
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
-this.myfirstservice.getMybooks().subscribe((books:any)=>{
-  this.books =books ;
+this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
+  this.books =posts.pages ;
+  this.temp =  this.books;
   console.log(this.books);
- ;});
+});
   
 
      /**
@@ -115,6 +116,7 @@ getmybooks(clicked:boolean,shelfnumber)
     this.myfirstservice.getMyshelfbooks(shelfnumber).subscribe((books:any)=>{
       this.books =books.pages ;
       this.books = books.pages;
+      this.temp = books.pages;
       console.log(this.posts);
     
     });
@@ -156,7 +158,7 @@ search(){
 */
 noBooks ():number
 {
-   this.count = Object.keys(this.posts).length;
+   this.count = Object.keys(this.books).length;
   console.log('count');
   return this.count;
 }

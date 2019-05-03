@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import {HttpFollowingService} from '../app/followers/httpfollower.service'
  /**
 *Used in search .
  */

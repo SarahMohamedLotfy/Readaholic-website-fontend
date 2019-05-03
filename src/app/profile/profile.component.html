@@ -10,7 +10,8 @@
            </div>
       </div>
       <div class=" col-md-4" >
-        <div class="userName" id="userNameprofile">  {{ selectedProfile.name }} ( edit profile ) </div>
+        <div class="userName" id="userNameprofile">  {{ selectedProfile.name }}
+          <a [routerLink]="['/accountSettings']"> ( edit profile )</a> </div>
           <hr>
           <div class="Details">
              <b>Details:</b>
@@ -37,9 +38,9 @@
                      <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
                         <hr>
                     <div class="userBookshelves">
-                        <a [routerLink]="['/myBooks']" id="bookShelvesmore" > read </a>
-                        <a [routerLink]="['/myBooks']" id="bookShelvesmore" > to-read </a>
-                        <a [routerLink]="['/myBooks']" id="bookShelvesmore" > currently-reading </a>
+                        <a [routerLink]="['/myBooks']"  > read </a>
+                        <a [routerLink]="['/myBooks']"  > to-read </a>
+                        <a [routerLink]="['/myBooks']"  > currently-reading </a>
 
                   </div>
                   <a [routerLink]="['/myBooks']" id="bookShelvesmore" > More.. </a>
@@ -61,23 +62,25 @@
                             <div class="action" *ngIf="update.actionText != ' started following  : '"  >
                               {{update.name }} {{ update.actionText }}
                               <div class="media">
-                                  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" >
+                               <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
                                   <div id="bookDetails" class=" col-md-6" *ngIf="update.actionText != ' started following  : '"   >
-                                   <p>  {{ update. title }} <br>
+                                   <p> <a [routerLink]="['/book',update.book_id]" > {{ update. title }}</a>  <br>
                                        by {{ update.author_name}} <br></p>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <app-dropdown [bookId]='update.book_id' ></app-dropdown>
                                       </div>
                               </div>
                             </div>
                          <!--   <img  [src]="update.image_link">-->
                          <div class="choosePerson" *ngIf="update.actionText == ' started following  : '">
-                            {{update.name }} {{ update.actionText }} {{ update.followed_name }}
+                           <b> {{update.name }} </b>{{ update.actionText }}
+                           <a [routerLink]="['/myBooks',update.followed_id]">{{ update.followed_name }} </a>
                             <div class="image">
                               <img [src]="update.followed_image_link" >
                               </div>
                          </div>
                           </div>
-
-
                       </div>
                     </div>
                      <hr>

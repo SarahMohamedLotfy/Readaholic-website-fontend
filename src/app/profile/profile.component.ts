@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
   /** stores the following of user */
    allFollowings: any[];
    posts: any[];
-   temp: any =[];
+   temp: any = [];
 
    allUpdates: updates[];
    allShelves: userShelves[];
@@ -47,36 +47,28 @@ export class ProfileComponent implements OnInit {
     this.loadData(); } ,
     (err: any) => console.log(err)
      );
-
-   this.httpService.getUsershelves().subscribe(
-       (data: userShelves[]) => this.allShelves = data,
-       (err: any) => console.log(err)
-       );
-
-
+   this.httpService.getUpdatesForuser(id).subscribe(data => {
+        this.allUpdates = data ;
+        console.log(data);
+        this.loadData(); } ,
+        (err: any) => console.log(err)
+         );
     } else {
       /** get authenticated user profile */
     this.httpService.getAuthUserprofile().subscribe(
     (data: profile) => this.selectedProfile = data,
     (err: any) => console.log(err)
      );
-    this.httpService.getUsershelves().subscribe(
-      (data: userShelves[]) => this.allShelves = data,
-      (err: any) => console.log(err)
-      );
     this.httpService.getUpdatesForuser(0).subscribe(data => {
       this.allUpdates = data ;
       console.log(data);
       this.loadData(); } ,
       (err: any) => console.log(err)
        );
-    this.pro.getfollowing().subscribe((posts:any)=>{
-      this.posts =posts.following ;
+    this.pro.getfollowing().subscribe((posts: any) => {
+      this.posts = posts.following ;
       this.temp = posts.following;
-    console.log(posts)});
-
-
-
+      console.log(posts);});
     }
     /**
      * subscribe to the data received from json file which contain the following users information and if any error occurs it prints it to the log

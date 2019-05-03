@@ -37,8 +37,8 @@ export class CommentsService {
     return this.http.get<commentListwid[]>(this.url+'/api/listComments?id='+ id);
   }
   /** get comments */
-  testgetCommentsList(id : number): Observable<CommentList[]> {
-    return this.http.get<CommentList[]>(this.url+'/api/listComments?id='+ id)
+  testgetCommentsList(id : number): Observable<any> {
+    return this.http.get<any>(this.url+'/api/listComments?id='+ id)
   }
 /** delete comment */
 deleteComment(id: number):Observable<Comments>{

@@ -4,8 +4,26 @@
   <div *ngIf="commentFlag==true">
 <div class="detailBox">
     <div class="actionBox" >
+      <div class="CommenList" *ngFor='let com of CommentListofReview' >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+                <img src='https://vignette.wikia.nocookie.net/hunter-x-hunter-fanon/images/a/a9/BABC6A23-98EF-498E-9D0E-3EBFC7ED8626.jpeg/revision/latest?cb=20170930221652' />
+            </div>
+            <div class="col-md-6">
+                {{ com.username }} <br>
+                {{ com.body }}
+            </div>
+            <div class="col-md-4" *ngIf='com.have_the_comment == "Yes" '>
+                <small> <button id="btn" class="btn btn-light" (click)="deleteComment(com.id)">x</button>
+                </small>
+            </div>
+          </div>
+        </div>
 
+      </div>
 
+<!--
           <div class="CommentsList" *ngFor='let com of CommentListofReview | keyvalue'>
                      <div class="loop" *ngFor='let lc of com.value | keyvalue'>
                              <div class="kk" *ngFor='let ll of lc.value | keyvalue'>
@@ -14,7 +32,7 @@
                                  <div class="row">
                                 <div class=" col-md-4">
                                <div class="commenterImage"  *ngIf=" ll.key == 'image_link'" >
-                                         <!--   <img [src]='ll.value'/>-->
+                                           <img [src]='ll.value'/>
                                            <img src='https://vignette.wikia.nocookie.net/hunter-x-hunter-fanon/images/a/a9/BABC6A23-98EF-498E-9D0E-3EBFC7ED8626.jpeg/revision/latest?cb=20170930221652' />
 
                                      </div>
@@ -54,7 +72,7 @@
 
           </div>
 
-</div>
+</div>-->
         </div>
         <form [formGroup]="CommentForm" class="form-inline" role="form">
             <div class="form-group">

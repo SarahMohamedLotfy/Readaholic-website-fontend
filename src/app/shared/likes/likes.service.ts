@@ -24,7 +24,7 @@ export class LikesService {
     return this.http.post<Likes>(this.url+'/api/LikeOrUnLike?id='+ newLike.resourse_id , newLike)
   }
   /** like a specific object wether a review or update */
-  likeObject(user: string , resourse_id: number
+  likeObject(user: number , resourse_id: number
     ): void {
     const newLike: Likes = {user, resourse_id} as Likes;
     this.addLLike(newLike)

@@ -121,12 +121,13 @@ color: #333333;
   
   #tfheader{
     position: relative;
-    top: 50px;
 			}
-	#tfnewsearch{
-		float:right;
-		padding:20px;
-	}
+      #tfnewsearch{
+        float:right;
+      
+      padding-right:60px;
+      padding-top: 10px;
+      }
 	#searchtextfollower{
 		margin: 0;
 		padding: 10px 15px;
@@ -189,12 +190,12 @@ color: #333333;
     #Myprofilename
     {position: relative;
       color: #00635d;
-      line-height: 24px;
-      font-size: 20px;
+      line-height: 26px;
+      font-size: 22px;
       font-family: "Merriweather", Georgia, "Times New Roman", serif;
       font-weight: bold;
-      top:55px;
-      right:550px;
+      padding-top: 5%;
+      padding-left: 10%;
     }
     #Myprofilename span{
       color: #382110;  padding-bottom: 20px;
@@ -207,46 +208,7 @@ color: #333333;
       line-height: 24px;
     }
 
-    @media (max-width: 1200px) {
-      #followbutton{
-        position: relative;;
-        top: 20px;
-        left:200px;
-        display: inline-block;
-        border-radius: 3px;
-        border: 1px solid #D6D0C4;
-        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-        font-size: 14px;
-    }
-  
-    #tfheader{
-      position: relative;
-      top: 25px;
-    }
-    #Myprofilename
-    {position: relative;
-      color: #00635d;
-      line-height: 24px;
-      font-size: 20px;
-      font-family: "Merriweather", Georgia, "Times New Roman", serif;
-      font-weight: bold;
-      top:55px;
-      left:80px;
-    }
-  }
-  @media(max-width: 700px)
-  {
-    #Myprofilename
-    {position: relative;
-      color: #00635d;
-      line-height: 24px;
-      font-size: 20px;
-      font-family: "Merriweather", Georgia, "Times New Roman", serif;
-      font-weight: bold;
-      top:40px;
-      left:80px;
-    }
-  }
+    
 
     .country
 {
@@ -270,3 +232,85 @@ top:17px;
   font-size: 16px;
   font-family: "Merriweather", Georgia, "Times New Roman", serif;
   font-weight: bold;}
+
+  @media (max-width:750px) 
+{
+  #followbutton{
+    position: absolute;;
+    top: 11px;
+    left:210px;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+    
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #F4F1EA;
+    line-height: 1;
+    padding: 8px 12px;
+    color: #333333;
+      }
+      
+    hr {
+      position: relative;
+      display: block;
+      height: 1px;
+      border-top: 1px solid #D6D0C4;
+    margin-right: 3%;
+    margin-left:1%;
+}
+#profilepage
+{
+  position: relative;
+  padding-left:-50px;
+}
+.namecenter {
+  
+  position: absolute;
+  color: #00635d;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  line-height: 18px;
+  left:210px;
+  display: inline-block;
+
+}
+}
+
+@media (min-width: 320px) and (max-width: 480px){
+  #profilepage
+{
+  position: relative;
+  padding-left:-50px;
+}
+  hr {
+    position: relative;
+    display: block;
+    height: 1px;
+    border-top: 1px solid #D6D0C4;
+  margin-right: 6%;
+  margin-left:1%;
+}
+  #followbutton{
+    position: absolute;;
+    top: 11px;
+    left:90px;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+    
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    background-color: #F4F1EA;
+    line-height: 1;
+    padding: 8px 12px;
+    color: #333333;
+    
+    
+      }
+}

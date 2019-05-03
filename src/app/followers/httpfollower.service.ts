@@ -3,6 +3,10 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { followerComponent } from '../classes/followerComponent';
 import { AppConstants } from '../classes/appconstant';
+
+
+import { nbind } from 'q';
+
 /**
  * handles  http requests of followers list 
  

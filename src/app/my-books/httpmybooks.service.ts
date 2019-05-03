@@ -22,7 +22,7 @@ export class HttpmybooksService {
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
 getMybooks(){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com' +'/api/following');
+  return this.http.get(this.urll +'/api/following');
 
 }
 getMyshelfbooks( shelf_name:number){

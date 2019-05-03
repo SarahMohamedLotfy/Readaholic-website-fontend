@@ -4,6 +4,10 @@ import { profile } from '../classes/profile';
 import {followerComponent} from '../classes/followerComponent';
 import  {HttpService} from '../http.service';
 import { ActivatedRoute } from '@angular/router';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import {ProfileService} from '../profile/profile.service';
 /**
  * Show the followers list and Search for the followers of the main user, You can Follow or unfollow somwone .
  */
@@ -185,20 +189,22 @@ result:number;
   /**
 *Search for the name of follower person when click on search button  .
  */ 
-  search(){
+search(){
 
-      if (!this.posts) {
-        return [];
-      }
-      if (this.searchText=='') {
-        this.posts = this.temp;
-      }
-      this.searchText = this.searchText.toLocaleLowerCase();
-  
-      this.posts = this.temp.filter(it => 
-        it["name"].toLocaleLowerCase().includes(this.searchText)
-      );
+  if (!this.posts) {
+    return [];
   }
+  if (this.searchText=='') {
+    this.posts = this.temp;
+  }
+  this.searchText = this.searchText.toLocaleLowerCase();
+/**
+*Filter for names of following people.
+ */ 
+  this.posts = this.temp.filter(it => 
+    it["name"].toLocaleLowerCase().includes(this.searchText)
+  );
+}
 
   /**
 *Remove the follow button if the person is already in following list and make it  unfollow .

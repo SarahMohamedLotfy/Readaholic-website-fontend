@@ -10,8 +10,11 @@
 .userName {
   margin-left: 30%;
 }
-#btn {
-  float: left;
+.button2 {
+  float: right;
+  background-color: #ffffff;
+  color: red;
+  border: none;
 }
 /*
 .commentList {

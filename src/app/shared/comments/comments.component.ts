@@ -16,38 +16,26 @@ export class CommentsComponent implements OnInit {
   /** FormGroup to control the commentForm  */
   public CommentForm: FormGroup;
   /** List of Comments */
-  CommentListofReview: CommentList[] ;
+  CommentListofReview: CommentList[];
 
-  list: commentListwid[];
+  list: commentListwid;
   /** commetn flag to determine whether the comment button is pressed or not */
   commentFlag = false;
   /** input from parent component to get resource id */
   @Input () resourse_id: number;
 
-  stackjson: any;
-  stackdata  = [];
+  //arraylength = this.CommentListofReview.length;
   constructor( private fb: FormBuilder, private ser: CommentsService ) {
     this.createForm();
    }
   ngOnInit() {
-       this.ser.testgetCommentsList(this.resourse_id).subscribe(res => {
-        this.stackjson = res.json().json;
-        console.log(this.stackjson);
-        for (const index in this.stackjson) {
-            console.log(this.stackjson[index][0]);
-            this.stackdata.push(this.stackjson[index][0]); // using this array to display data
-          }
-          this.CommentListofReview=this.stackdata;
-       });
-
-
-    /**
+    console.log('got here')
      this.ser.testgetCommentsList(this.resourse_id).subscribe(data => {
           this.CommentListofReview = data,
-          console.log(data)
+          console.log(this.CommentListofReview)
         },
            (err: any) => console.log(err)
-         );*/
+         );
 
 
 

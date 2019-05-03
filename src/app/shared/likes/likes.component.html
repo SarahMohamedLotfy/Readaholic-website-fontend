@@ -1,8 +1,1 @@
  <button (click)="likeOrUnlikereview()" > {{ likeFlag? btnTextunlike:btnTextlike }} </button>
-<div class="likeslist" *ngFor="let like of likesList" >
-<div class="authUser" *ngIf='user == like.user_id'>
-  <div class="authMadecomment" *ngIf='like.have_the_like=="Yes"' >
-
-  </div>
-</div>
-</div>

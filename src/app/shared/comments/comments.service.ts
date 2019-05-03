@@ -33,11 +33,15 @@ export class CommentsService {
       (err: any) => console.log(err));
   }
 /** get comments */
-  getCommentsList(id : number): Observable<commentListwid[]> {
-    return this.http.get<commentListwid[]>(this.url+'/api/listComments?id='+ id);
+  getCommentsList(id : number): Observable<commentListwid> {
+    return this.http.get<commentListwid>(this.url+'/api/listComments?id='+ id);
   }
   /** get comments */
-  testgetCommentsList(id : number): Observable<any> {
+  testgetCommentsList(id : number): Observable<CommentList[]> {
+    return this.http.get<CommentList[]>(this.url+'/api/listComments?id='+ id)
+  }
+   /** get comments */
+   testthisgetCommentsList(id : number): Observable<any> {
     return this.http.get<any>(this.url+'/api/listComments?id='+ id)
   }
 /** delete comment */

@@ -1,4 +1,4 @@
-import { RatingModule } from 'ng2-rating';
+
 import { FilterPipe } from './filter.pipe';
 import { HttpService } from './http.service';
 import { HttpFollowingService } from '../app/followers/httpfollower.service';
@@ -36,6 +36,7 @@ import { SharedService } from './shared.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,6 @@ import { SharedService } from './shared.service';
     SharedModule,
 
     ReactiveFormsModule,
-    RatingModule,
     RouterModule
 
 

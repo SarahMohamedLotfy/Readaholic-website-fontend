@@ -11,7 +11,7 @@ export class ShelfService {
 
   constructor(private http: HttpClient) { }
   /**url */
-  url: string = 'http://5cb4a97d.ngrok.io';
+  url: string = 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
 
   /**
    * removes book from its shelf

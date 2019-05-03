@@ -4,11 +4,9 @@ import { review } from '../classes/review';
 import { book } from '../classes/book';
 import { userBookInfo } from '../classes/userBookInfo';
 import { BookService } from './book.service';
-import { generateExpandoInstructionBlock } from '@angular/core/src/render3/instructions';
-import { user } from '../classes/user';
 import { ShelfService } from '../shared/dropdown/shelf.service';
-import { userInfo } from 'os';
 import { SharedService } from '../shared.service';
+import { userInfo } from 'os';
 
 /**component to show details of a specific book */
 @Component({
@@ -22,6 +20,7 @@ export class BookInfoComponent implements OnInit {
 
   /**reviews array of the selectec book */
   reviews: review[];
+
 
   /**stores user related book info */
   userInfo: userBookInfo = {
@@ -38,7 +37,7 @@ export class BookInfoComponent implements OnInit {
   errMsg: string;
 
   /**shelves array */
-  shelves: string[] = ['Read', 'Currently Reading', 'Want To Read' ];
+  shelves: string[] = ['Read', 'Currently Reading', 'Want To Read'];
 
   /**@ignore */
   reviewId = -1;
@@ -53,49 +52,52 @@ export class BookInfoComponent implements OnInit {
   /**@ignore */
   modelShelf: string = "read";
 
+  nehal = 5;
 
   /**
    * @param {BookService} service injected book service instance
    * @param {ActivatedRoute} route activated route instance
    * @param {Router} router router inastance to route by code 
    */
-  constructor(private sharedService: SharedService,private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService) {
+  constructor(private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService, private sharedService: SharedService, ) {
   }
-
   /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
-    this.sharedService.currentshelf.subscribe(data => {
-      this.reviewShelf = data;
-      if(this.reviewShelf == 3) {
-        this.reviewBody = "";
-        this.reviewId = -1;
-        this.reviewRating = 0;
-
-        this.userInfo.id = -1;
-        this.userInfo.body = "";
-        this.userInfo.rating = 0;
-        this.userInfo.shelf_name = 3;
-      } else {
-        this.shelfName = this.shelves[this.reviewShelf];
-        this.userInfo.shelf_name = this.reviewShelf;
-      }
-
-      });
     this.getBookInfo();
-    this.getBookReviews();
-    this.getUserInfo();
-    
+   //this.getBookReviews();
+  // this.getUserInfo();
+
+    this.sharedService.currentshelf.subscribe(data => {
+      if (data.key != -1 && data.value != -1) {
+        if (data.key == this.myBook.id) {
+          this.reviewShelf = data.value;
+          if (this.reviewShelf == 3) {
+            this.reviewBody = "";
+            this.reviewId = -1;
+            this.reviewRating = 0;
+
+            this.userInfo.id = -1;
+            this.userInfo.body = "";
+            this.userInfo.rating = 0;
+            this.userInfo.shelf_name = 3;
+          } else {
+            this.shelfName = this.shelves[this.reviewShelf];
+            this.userInfo.shelf_name = this.reviewShelf;
+          }
+        }
+      }
+    });
 
     if (localStorage.getItem('token') == null) {
       this.isUser = false;
-      console.log(this.isUser+ "aaakkkk");
+      console.log(this.isUser + "aaakkkk");
     }
     else {
       this.isUser = true;
       console.log("true");
-     
+
     }
-    
+
     //document.getElementById("openModalButton").click();
   }
 
@@ -103,8 +105,6 @@ export class BookInfoComponent implements OnInit {
   getBookInfo() {
     this.service.getBook(+this.route.snapshot.paramMap.get('id'))
       .subscribe((data) => {
-         console.log(data);
-
         this.myBook = data.pages[0];
 
         if (Math.floor(this.myBook.ratings_avg) > this.myBook.ratings_avg - 0.5) {
@@ -129,13 +129,14 @@ export class BookInfoComponent implements OnInit {
   getUserInfo() {
     this.shelfService.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
       this.userInfo = data.pages[0];
-      console.log(data);
+      console.log(this.userInfo)
       this.reviewId = this.userInfo.id;
       this.reviewBody = this.userInfo.body;
       this.reviewShelf = this.userInfo.shelf_name;
       this.reviewRating = this.userInfo.rating;
-      console.log(this.reviewBody);
+      
       this.shelfName = this.shelves[this.reviewShelf];
+      
     });
 
     console.log(this.userInfo.rating);
@@ -144,7 +145,7 @@ export class BookInfoComponent implements OnInit {
 
   /**calls the book service funstion to create a review */
   review() {
-  
+
     if (this.reviewBody != "" && this.reviewBody) {
       this.service.createReview(this.myBook.id, this.reviewShelf, this.reviewBody, this.reviewRating)
         .subscribe((data) => {
@@ -153,25 +154,25 @@ export class BookInfoComponent implements OnInit {
           this.userInfo.body = data.bodyOfReview
           this.userInfo.rating = data.rate;
 
-          if(data.shelfType == "read") {
+          if (data.shelfType == "read") {
             this.userInfo.shelf_name = 0;
-            this.reviewShelf = 0; 
+            this.reviewShelf = 0;
             this.shelfName = this.shelves[this.reviewShelf];
           } else if (data.shelfType == "currently-reading") {
             this.userInfo.shelf_name = 1;
-            this.reviewShelf = 1; 
+            this.reviewShelf = 1;
             this.shelfName = this.shelves[this.reviewShelf];
           } else {
             this.userInfo.shelf_name = 2;
-            this.reviewShelf = 2; 
+            this.reviewShelf = 2;
             this.shelfName = this.shelves[this.reviewShelf];
-          } 
-          
+          }
+
           this.reviewId = this.userInfo.id;
           this.reviewBody = this.userInfo.body;
           this.reviewRating = this.userInfo.rating;
 
-          this.sharedService.changeShelf(this.reviewShelf);
+          this.sharedService.changeShelf(this.myBook.id,this.reviewShelf);
 
           document.getElementById("closebtn").click();
           this.errMsg = "";
@@ -193,16 +194,16 @@ export class BookInfoComponent implements OnInit {
         this.reviewRating = 0;
 
         this.userInfo.id = -1;
-        this.userInfo.body = ""; 
+        this.userInfo.body = "";
         this.userInfo.shelf_name = 3;
         this.userInfo.rating = 0;
 
-      //  this.sharedService.changeShelf(3);
+        this.sharedService.changeShelf(this.myBook.id, 3);
 
         document.getElementById("closebtn").click();
         this.errMsg = "";
       });
-    } 
+    }
     else {
       this.errMsg = "You don't have a review on this book"
     }
@@ -225,8 +226,8 @@ export class BookInfoComponent implements OnInit {
       return;
     }
     if (this.userInfo.id == -1) {
-     /* this.userInfo.shelf_name = 0;
-      this.shelfName = "Read";*/
+      /* this.userInfo.shelf_name = 0;
+       this.shelfName = "Read";*/
       document.getElementById("openModalButton").click();
     }
   }

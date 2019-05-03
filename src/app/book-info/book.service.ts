@@ -12,8 +12,8 @@ import { userBookInfo } from '../classes/userBookInfo';
 
 export class BookService {
 
-  /**url */ //'http://ec2-52-90-5-77.compute-1.amazonaws.com';
-  url: string = 'http://5cb4a97d.ngrok.io';
+  /**url */ 
+  url: string = 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
   
 
   /**@param {HttpClient} http to handle http requests get,post etc */
@@ -25,9 +25,9 @@ export class BookService {
    * @returns the book of the passed id
    */
   getBook(id: number): Observable<any> {
-    // return this.http.get<any>('http://localhost:3000/book/'+id);
-    //let params = new HttpParams({ fromObject: { book_id:id} });
-    return this.http.get(this.url + '/api/books/show?book_id=' + id);
+     return this.http.get<any>('http://localhost:3000/book/3');
+    
+    //return this.http.get(this.url + '/api/books/show?book_id=' + id);
   }
 
   /**

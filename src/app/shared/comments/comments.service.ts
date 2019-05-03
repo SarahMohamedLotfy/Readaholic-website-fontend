@@ -1,3 +1,4 @@
+import { AppConstants } from './../../classes/appconstant';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -10,9 +11,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CommentsService {
-  url="http://5cb4a97d.ngrok.io/api/";
    /**array to save the data from the requests */
-  posts: any =[];
+  posts: any = [];
+  url:string=AppConstants.baseURL;
 /** constructor used to make object of http to use post requests */
   constructor(private http: HttpClient) { }
 /** post a new comment */

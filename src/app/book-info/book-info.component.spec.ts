@@ -31,7 +31,7 @@ export class RouterLinkDirectiveStub {
 }
 
 
-describe('BookInfoComponent', () => {
+fdescribe('BookInfoComponent', () => {
   let fixture: ComponentFixture<BookInfoComponent>;
   let mockActivatedRoute,mockRouter,mockService;
 
@@ -63,7 +63,7 @@ describe('BookInfoComponent', () => {
 
     mockService.getBook.and.returnValue(of({
 
-        id: 3,
+      id: 3,
       title: "book title",
       isbn: 555,
       img_url: "https://images.gr-assets.com/books/1529823092l/39320115.jpg",
@@ -116,7 +116,7 @@ describe('BookInfoComponent', () => {
     expect(fixture.componentInstance.myBook.title).toEqual('book title');
   });
 
-  fit('should create review', () => {
+  it('should create review', () => {
     mockService.createReview.and.returnValue(of({
       id: 2,
       book_id: 3,
@@ -145,7 +145,7 @@ describe('BookInfoComponent', () => {
 
   it('should create review', () => {
     fixture.componentInstance.ngOnInit();
-    fixture.componentInstance.createReview();
+    fixture.componentInstance.review();
     //document.getElementById('post').click();
     expect(mockService.createReview).toHaveBeenCalled();
    /* let de = fixture.debugElement;
@@ -188,8 +188,7 @@ describe('BookInfoComponent', () => {
   });
 
   it('should show book reviews', () => {
-*/
-/*
+
   fit('should show book reviews', () => {
     component.reviews =  [{
       "id": 5,

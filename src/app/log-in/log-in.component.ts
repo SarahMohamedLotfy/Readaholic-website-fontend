@@ -66,7 +66,7 @@ export class LogInComponent implements OnInit {
   /**Checks if the guest is already logged in or not if already logged in it re routes them automaticaly to the home page */
   ngOnInit() {
     
-    if(localStorage.getItem('token')!=null)
+   if(localStorage.getItem('token')!=null)
     this.router.navigateByUrl('/home');
     
   }
@@ -91,7 +91,7 @@ err => {
   
   this.wrongPass=true;
   this.error=err.error.errors;
-  console.log(err);
+  
  
   
   }

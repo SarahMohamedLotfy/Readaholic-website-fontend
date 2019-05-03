@@ -14,7 +14,8 @@
 /* Style the links inside the navigation bar */
 
 .topnav a {
-    float: left;
+
+ float:left;
     display: block;
     color: #5e2b02;
     text-align: bottom;
@@ -35,21 +36,29 @@
 
 #searchBox {
     width: 300px;
-    height: 20px;
-    float: middle;
+    height: 10px;
+    margin-top: -20px;
     padding-bottom: 10px;
 }
 
-#right {
-    float: right;
-}
-
-#notif {
-    clear: both;
-    float: left;
+#searchbutton{
+height:10px;
 }
 
 #logOut {
     background-color: #f4f1ea;
-    margin-right: 5px;
+    margin-top: 10px;
+   /* margin-right: 5px;*/
 }
+#right{
+    float:right;
+  margin-top: -25px;
+}
+#parent_container{
+    position:relative;
+}
+        .dropdown-menu{
+              max-height:200px;
+              overflow-y:auto;
+           }
+        

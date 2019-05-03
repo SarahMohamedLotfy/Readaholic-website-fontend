@@ -1,9 +1,13 @@
 
 .container
 {
-    margin-left: 210px;
+    width: 100%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+  /*  margin-left: 210px;
     margin-right: 280px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;*/
 }
 
 #leftCol {
@@ -45,10 +49,10 @@
 }
 
 #bookInfo {
-    margin-left: 0x;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    min-width:600px;
+    margin-left: 0px;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    min-width:60%;
     font-size: 1rem;
     font-family:"Merriweather", "Georgia", serif;
     color: #382110;
@@ -76,7 +80,26 @@
 
 #activity {
     font-family: "Merriweather", "Georgia", serif;
-    font-size: 0.92rem;
+    font-size: 1rem;
+}
+
+#actCol1 {
+    width: 4%;
+    margin-right: 0;
+}
+
+#actCol2 {
+    width: 40%;
+    margin-left: 0;
+}
+
+#reviewbtn {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #00635d;
+   cursor: pointer;
+   
 }
 
 .modal-content {
@@ -84,6 +107,7 @@
     font-size: 0.9rem;
     font-weight: 300;
     color: #382110;
+    width: 100%;
 }
 
 .modal-footer button {
@@ -97,8 +121,18 @@
 
 textarea {
     width: 100%;
+    
+    margin-left: 4%;
+    margin-right: 5%;
 }
 
+@media only screen and (max-width: 995px) {
+    textarea {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2%;
+    }
+}
 .dropbtn {
     width: 100%;
     height: 25;

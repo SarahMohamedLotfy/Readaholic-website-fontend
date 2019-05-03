@@ -6,6 +6,9 @@ import { userBookInfo } from '../classes/userBookInfo';
 import { BookService } from './book.service';
 import { generateExpandoInstructionBlock } from '@angular/core/src/render3/instructions';
 import { user } from '../classes/user';
+import { ShelfService } from '../shared/dropdown/shelf.service';
+import { userInfo } from 'os';
+import { SharedService } from '../shared.service';
 
 /**component to show details of a specific book */
 @Component({
@@ -21,144 +24,231 @@ export class BookInfoComponent implements OnInit {
   reviews: review[];
 
   /**stores user related book info */
-  userInfo:userBookInfo;
+  userInfo: userBookInfo = {
+    id: -1,
+    rating: 0,
+    shelf_name: 3,
+    body: ""
+  };
 
   /**true if user mode false if guest mode */
   isUser: boolean;
 
-  /**@ignore */
-  info: userBookInfo = {
-    "body": "",
-    "shelf_name": 0,
-    "rating": 0
-  };
+  /**error msg */
+  errMsg: string;
 
+  /**shelves array */
+  shelves: string[] = ['Read', 'Currently Reading', 'Want To Read' ];
+
+  /**@ignore */
+  reviewId = -1;
+  /**@ignore */
+  reviewShelf = 0;
+  /**@ignore */
+  reviewBody = "";
+  /**@ignore */
+  reviewRating = 0;
   /**@ignore */
   shelfName: string = "";
-   /**@ignore */
-   modelShelf: string = "read";
-nehal = 5;
+  /**@ignore */
+  modelShelf: string = "read";
 
 
-/**
- * @param {BookService} service injected book service instance
- * @param {ActivatedRoute} route activated route instance
- * @param {Router} router router inastance to route by code 
- */
-  constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
+  /**
+   * @param {BookService} service injected book service instance
+   * @param {ActivatedRoute} route activated route instance
+   * @param {Router} router router inastance to route by code 
+   */
+  constructor(private sharedService: SharedService,private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService) {
   }
 
   /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
+    this.sharedService.currentshelf.subscribe(data => {
+      this.reviewShelf = data;
+      if(this.reviewShelf == 3) {
+        this.reviewBody = "";
+        this.reviewId = -1;
+        this.reviewRating = 0;
+
+        this.userInfo.id = -1;
+        this.userInfo.body = "";
+        this.userInfo.rating = 0;
+        this.userInfo.shelf_name = 3;
+      } else {
+        this.shelfName = this.shelves[this.reviewShelf];
+        this.userInfo.shelf_name = this.reviewShelf;
+      }
+
+      });
     this.getBookInfo();
     this.getBookReviews();
     this.getUserInfo();
-
-    if(localStorage.getItem('token') == null){
-      this.isUser = false;
-    }
-    else{
-     this.isUser = true;
-    }
-}
-
-/**get the selected book information */
-getBookInfo() {
-  this.service.getBook(+this.route.snapshot.paramMap.get('id'))
-  .subscribe((data) => {
-    // console.log(data)
-    this.myBook = data;
-console.log(this.myBook.title);
-
-
     
-    if(Math.floor(this.myBook.ratings_avg) > this.myBook.ratings_avg-0.5)
-     {
-       this.myBook.ratings_avg = Math.floor(this.myBook.ratings_avg);
-     }
-     else
-     {
-       this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
-     }
-   });
-   //,()=> this.router.navigateByUrl("/pageNotfound")
-}
 
-/**gets the selected book reviews */
-getBookReviews() {
-  this.service.getBookReviews(+this.route.snapshot.paramMap.get('id'))
-  .subscribe((data) => this.reviews = data.pages);
-}
-
-/**gets user related book information */
-getUserInfo() {
-  this.service.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
-    this.userInfo = data.pages[0];
-    this.info = data.pages[0];
-
-    if(this.userInfo.shelf_name == 0)
-    {
-      this.shelfName = "Read";
+    if (localStorage.getItem('token') == null) {
+      this.isUser = false;
+      console.log(this.isUser+ "aaakkkk");
     }
-    else if(this.userInfo.shelf_name == 1)
-    {
-      this.shelfName = "Currently Reading";
+    else {
+      this.isUser = true;
+      console.log("true");
+     
     }
-    else if(this.userInfo.shelf_name == 2)
-    {
-      this.shelfName = "Want To Read";
-    }
-  }, (data)=> console.log(data));
-}
-
-
-/**calls the book service funstion to create a review */
-review () {
-  console.log(this.nehal);
-  if(!this.userInfo.body || this.userInfo.body == "no body")
-  {
-    this.service.createReview(this.myBook.id,this.info.shelf_name,this.info.body,this.info.rating)
-    .subscribe((data) => {this.userInfo = data.pages; console.log(data);});
-  }
-  else
-  {
-    //H3ML CALL BL USERINFO
+    
+    //document.getElementById("openModalButton").click();
   }
 
-}
+  /**get the selected book information */
+  getBookInfo() {
+    this.service.getBook(+this.route.snapshot.paramMap.get('id'))
+      .subscribe((data) => {
+         console.log(data);
 
-/**
- * opens the review model when the user rates a book
- * @param {number} rate The output rate from the star component
- */
-open(rate: number) {
-  //hl a3ml hna call l get user info?
+        this.myBook = data.pages[0];
 
-  document.getElementById("openModalButton").click();
-  this.info.rating = rate;
-  if(!this.userInfo) {
-  //  document.getElementById("openModalButton").click();
+        if (Math.floor(this.myBook.ratings_avg) > this.myBook.ratings_avg - 0.5) {
+          this.myBook.ratings_avg = Math.floor(this.myBook.ratings_avg);
+        }
+        else {
+          this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
+        }
+      }, (data) => console.log(data));
+    //,()=> this.router.navigateByUrl("/pageNotfound")
   }
-}
 
- openShelves() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+  /**gets the selected book reviews */
+  getBookReviews() {
+    this.service.getBookReviews(+this.route.snapshot.paramMap.get('id'))
+      .subscribe((data) => {
+        this.reviews = data.pages;
+      });
+  }
 
- filterFunction() {
-  var input, filter, a, i,text;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
+  /**gets user related book information */
+  getUserInfo() {
+    this.shelfService.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
+      this.userInfo = data.pages[0];
+      console.log(data);
+      this.reviewId = this.userInfo.id;
+      this.reviewBody = this.userInfo.body;
+      this.reviewShelf = this.userInfo.shelf_name;
+      this.reviewRating = this.userInfo.rating;
+      console.log(this.reviewBody);
+      this.shelfName = this.shelves[this.reviewShelf];
+    });
 
-  var div  = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    text = a[i].textContent || a[i].innerText;
-    if (text.toUpperCase().indexOf(filter) == 0) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
+    console.log(this.userInfo.rating);
+  }
+
+
+  /**calls the book service funstion to create a review */
+  review() {
+  
+    if (this.reviewBody != "" && this.reviewBody) {
+      this.service.createReview(this.myBook.id, this.reviewShelf, this.reviewBody, this.reviewRating)
+        .subscribe((data) => {
+          console.log(data);
+          this.userInfo.id = data.Review_id;
+          this.userInfo.body = data.bodyOfReview
+          this.userInfo.rating = data.rate;
+
+          if(data.shelfType == "read") {
+            this.userInfo.shelf_name = 0;
+            this.reviewShelf = 0; 
+            this.shelfName = this.shelves[this.reviewShelf];
+          } else if (data.shelfType == "currently-reading") {
+            this.userInfo.shelf_name = 1;
+            this.reviewShelf = 1; 
+            this.shelfName = this.shelves[this.reviewShelf];
+          } else {
+            this.userInfo.shelf_name = 2;
+            this.reviewShelf = 2; 
+            this.shelfName = this.shelves[this.reviewShelf];
+          } 
+          
+          this.reviewId = this.userInfo.id;
+          this.reviewBody = this.userInfo.body;
+          this.reviewRating = this.userInfo.rating;
+
+          this.sharedService.changeShelf(this.reviewShelf);
+
+          document.getElementById("closebtn").click();
+          this.errMsg = "";
+        }, (data) => console.log(data));
+    }
+    else {
+      this.errMsg = "You must enter a review";
     }
   }
-}
+
+  /**deletes user review on a book */
+  deleteReview() {
+    if (this.userInfo.body) {
+      this.service.deleteReview(this.reviewId).subscribe((data) => {
+        console.log(data);
+        this.reviewId = -1;
+        this.reviewBody = "";
+        this.reviewShelf = 3;
+        this.reviewRating = 0;
+
+        this.userInfo.id = -1;
+        this.userInfo.body = ""; 
+        this.userInfo.shelf_name = 3;
+        this.userInfo.rating = 0;
+
+      //  this.sharedService.changeShelf(3);
+
+        document.getElementById("closebtn").click();
+        this.errMsg = "";
+      });
+    } 
+    else {
+      this.errMsg = "You don't have a review on this book"
+    }
+
+
+  }
+
+  /**
+   * opens the review model when the user rates a book
+   * @param {number} rate The output rate from the star component
+   */
+  open(rate: number) {
+
+    if (rate <= 5) {
+      this.reviewRating = rate;
+      this.userInfo.rating = rate;
+    }
+    else {
+      document.getElementById("openModalButton").click();
+      return;
+    }
+    if (this.userInfo.id == -1) {
+     /* this.userInfo.shelf_name = 0;
+      this.shelfName = "Read";*/
+      document.getElementById("openModalButton").click();
+    }
+  }
+
+  openShelves() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  filterFunction() {
+    var input, filter, a, i, text;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+
+    var div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+      text = a[i].textContent || a[i].innerText;
+      if (text.toUpperCase().indexOf(filter) == 0) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
 }

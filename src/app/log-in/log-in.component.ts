@@ -105,11 +105,14 @@ onSubmit(){
 (data:any) => {
   console.log(data);
   localStorage.setItem('token',data.token);
+  
   this.users=data.user;
- 
+  localStorage.setItem('user',JSON.stringify({userInfo:this.users}));
   this.router.navigateByUrl('/home');
   this.wrongPass=false;
-  console.log(this.users);
+ // console.log(this.users);
+ //this.users=JSON.parse(localStorage.getItem('user'));
+ //console.log(this.users);
 },
 err => {
   if(err.status ==405)

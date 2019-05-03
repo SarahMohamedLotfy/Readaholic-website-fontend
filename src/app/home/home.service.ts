@@ -1,3 +1,4 @@
+import { AppConstants } from './../classes/appconstant';
 import { Injectable, NgModule } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, observable } from 'rxjs';
@@ -13,7 +14,7 @@ import { CommonModule } from '@angular/common';
  * Home service is responsible for http get requests od updates 
  */
 export class HomeService {
-
+url:string=AppConstants.baseURL ;
 
 /**
  * we pass an object of httpclient to the constuctor
@@ -25,23 +26,24 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable<any>{
-return this.http.get("http://ec2-52-90-5-77.compute-1.amazonaws.com/api/updates")
+return this.http.get(this.url+'/api/updates')
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
 
     );
    }
+  
    addFollowing (nb):Observable<any> {
-  return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
+  return this.http.post(this.url+'/api/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
-    return this.http.post('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/shelf/add_book',{"shelf_id": shelf,
+    return this.http.post(this.url+'/api/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://ec2-3-87-221-152.compute-1.amazonaws.com/api/unfollow?user_id='+ user_id);
+    return this.http.delete(this.url+'/api/unfollow?user_id='+ user_id);
   }
   
   /**

@@ -4,17 +4,32 @@
   <div *ngIf="commentFlag==true">
 <div class="detailBox">
     <div class="actionBox" >
-          <div class="CommentsList" *ngFor='let com of CommentList'>
-            <div class="condition" *ngIf=" com.resourse_id == resourse_id ">
-             <div class="commenterImage">
-                  <img src="http://placekitten.com/40/40" />
+      <div class="CommenList" *ngFor='let i of CommentListofReview | keyvalue ' >
+        <ng-container *ngIf="i?.value?.length">
+        <div class="loop" *ngFor='let com of i.value' >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="commenterImage">
+                <img src='https://vignette.wikia.nocookie.net/hunter-x-hunter-fanon/images/a/a9/BABC6A23-98EF-498E-9D0E-3EBFC7ED8626.jpeg/revision/latest?cb=20170930221652' />
                 </div>
-                      <div class="commentText">
-                       <p>{{com?.comment_body}}</p>
-                            </div>
-                            <hr>
-              </div>
           </div>
+            <div class="col-md-6">
+            <b>  {{ com.username }} </b> <br>
+                {{ com.body }} <br>
+              <small color="#a2a6ad" > created at: {{com.created_at}}</small>
+            </div>
+            <div class="col-md-2" *ngIf='com.have_the_comment == "Yes" '>
+               <button  class="button button2" (click)="deleteComment(com.id)">  x  </button>
+
+            </div>
+          </div>
+        </div>
+         <hr>
+     </div>
+</ng-container>
+      </div>
+        </div>
         <form [formGroup]="CommentForm" class="form-inline" role="form">
             <div class="form-group">
                 <input class="form-control" type="text" formControlName="content" placeholder="Write a comment.." />
@@ -25,4 +40,4 @@
         </form>
     </div>
 </div>
-</div>
+

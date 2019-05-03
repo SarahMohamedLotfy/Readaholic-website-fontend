@@ -1,3 +1,5 @@
+import { data } from './data';
+
 /** receive the data of book from the json file */
 export class review{
    /**id of the review */
@@ -20,4 +22,5 @@ export class review{
    username: string;
    /**image of the user */
    userimagelink: string;
+   
 }

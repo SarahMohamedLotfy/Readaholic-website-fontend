@@ -4,6 +4,10 @@ import { profile } from '../classes/profile';
 import {followerComponent} from '../classes/followerComponent';
 import  {HttpService} from '../http.service';
 import { ActivatedRoute } from '@angular/router';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import {ProfileService} from '../profile/profile.service';
 /**
  * Show the followers list and Search for the followers of the main user, You can Follow or unfollow somwone .
  */
@@ -96,6 +100,10 @@ result:number;
    this.myfirstservice.getUserprofile(id).subscribe(
        (data: profile) => this.selectedProfile = data,
               )
+              this.myfirstservice.getnotauthfollowing(id).subscribe((following:any)=>{
+                this.following =following.following ;
+                });
+
    }
    else
    {
@@ -103,6 +111,10 @@ result:number;
    (data: profile) => this.selectedProfile = data,
    (err: any) => console.log(err)
     );
+
+    this.myfirstservice.getfollowing().subscribe((following:any)=>{
+      this.following =following.following ;
+      });
    }
   }
 
@@ -112,26 +124,55 @@ result:number;
  */
  
   add(nb) {
-  this.myfirstservice.addFollowing(nb).subscribe(
-    data  => {
-      this.myfirstservice.getfollowing().subscribe((following:any)=>{
-        this.following =following.following ;
-        });
 
-      this.myfirstservice.getfollowers().subscribe((posts:any)=>{
-        this.posts =posts.followers ;
-        this.temp = posts;
-        console.log(posts);
-        })
-    console.log("POST Request is successful ", data);
-    },
-    error  => {
+    const id: number = +this.route.snapshot.paramMap.get('id');
+    if (id>0)
+    {
+      this.myfirstservice.addFollowing(nb).subscribe(
+        data  => {
+          this.myfirstservice.getnotauthfollowing(id).subscribe((following:any)=>{
+            this.following =following.following ;
+            });
     
-    console.log("Error", error);
-    
+          this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+            this.posts =posts.followers ;
+            this.temp = posts;
+            console.log(posts);
+            })
+        console.log("POST Request is successful ", data);
+        },
+        error  => {
+        
+        console.log("Error", error);
+        
+        }
+        
+        );
     }
+    else{
+      this.myfirstservice.addFollowing(nb).subscribe(
+        data  => {
+          this.myfirstservice.getfollowing().subscribe((following:any)=>{
+            this.following =following.following ;
+            });
     
-    );}
+          this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+            this.posts =posts.followers ;
+            this.temp = posts;
+            console.log(posts);
+            })
+        console.log("POST Request is successful ", data);
+        },
+        error  => {
+        
+        console.log("Error", error);
+        
+        }
+        
+        );
+    }
+  
+  }
 
 
 /**
@@ -148,20 +189,22 @@ result:number;
   /**
 *Search for the name of follower person when click on search button  .
  */ 
-  search(){
+search(){
 
-      if (!this.posts) {
-        return [];
-      }
-      if (this.searchText=='') {
-        this.posts = this.temp;
-      }
-      this.searchText = this.searchText.toLocaleLowerCase();
-  
-      this.posts = this.temp.filter(it => 
-        it["name"].toLocaleLowerCase().includes(this.searchText)
-      );
+  if (!this.posts) {
+    return [];
   }
+  if (this.searchText=='') {
+    this.posts = this.temp;
+  }
+  this.searchText = this.searchText.toLocaleLowerCase();
+/**
+*Filter for names of following people.
+ */ 
+  this.posts = this.temp.filter(it => 
+    it["name"].toLocaleLowerCase().includes(this.searchText)
+  );
+}
 
   /**
 *Remove the follow button if the person is already in following list and make it  unfollow .
@@ -181,20 +224,42 @@ return true;
  * delFollowing () function contains a post request resonsible for unfollow button it removes the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
  */
   delFollowing(id:number){
-    this.myfirstservice.unfollow(id).subscribe((data)=>{
-      this.myfirstservice.getfollowing().subscribe((following:any)=>{
-        this.following =following.following ;
-        });
+    const idd: number = +this.route.snapshot.paramMap.get('id');
+    if (idd>0)
+    {
+      this.myfirstservice.unfollow(id).subscribe((data)=>{
+        this.myfirstservice.getnotauthfollowing(idd).subscribe((following:any)=>{
+          this.following =following.following ;
+          });
+  
+        this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+          this.posts =posts.followers ;
+          this.temp = posts;
+          console.log(posts);
+          })
+          
+          console.log("success");
+  
+      });
 
-      this.myfirstservice.getfollowers().subscribe((posts:any)=>{
-        this.posts =posts.followers ;
-        this.temp = posts;
-        console.log(posts);
-        })
-        
-        console.log("success");
-
-    });
+    }else{
+      this.myfirstservice.unfollow(id).subscribe((data)=>{
+        this.myfirstservice.getfollowing().subscribe((following:any)=>{
+          this.following =following.following ;
+          });
+  
+        this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+          this.posts =posts.followers ;
+          this.temp = posts;
+          console.log(posts);
+          })
+          
+          console.log("success");
+  
+      });
+      
+    }
+    
   }
 
 

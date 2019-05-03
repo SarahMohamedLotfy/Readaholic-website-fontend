@@ -1,59 +1,67 @@
+<div id='parent_container'>
+
 <div class="topnav" id="myTopnav">
     <a class="nav-link" [routerLink]="['/home']" id="Readholic">Readholic </a>
     <a class="nav-link" [routerLink]="['/home']" id="home">Home </a>
-    <a class="nav-link" [routerLink]="['/myBooks']" id="myBooks">My Books</a>
-    <a class="nav-link" [routerLink]="['/profile']" id="profile">My Profile</a>
-    <a class="nav-link" [routerLink]="['/followers']" id="followers">Followers</a>
-    <a class="nav-link" [routerLink]="['/following']" id="following">Following</a>
+    <a class="nav-link" [routerLink]="['/myBooks']" id="myBooks" *ngIf="isUser">My Books</a>
+    <a class="nav-link" [routerLink]="['/profile']" id="profile" *ngIf="isUser">My Profile</a>
+    <a class="nav-link" [routerLink]="['/followers']" id="followers" *ngIf="isUser">Followers</a>
+    <a class="nav-link" [routerLink]="['/following']" id="following"*ngIf="isUser">Following</a>
     <a class="nav-link" [routerLink]="['/Aboutus']" id="aboutUs">Aboutus</a>
-    <a class="nav-link" [routerLink]="['/searchpeople']" id="searchpeople">Search</a>
+    <a class="nav-link" [routerLink]="['/searchpeople']" id="searchpeople">Search People</a>
 
-   <div id="right">
-
-
-        <a class="nav-link" [routerLink]="['/accountSettings']" id="accountSettings">Account Settings </a>
-        <button (click)="onLogout()" id="logOut">Log out</button>
-
+    <li class="nav-item dropdown" id="#notifications" *ngIf="isUser">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-bell">
+                <span class="badge badge-primary">1</span>
+              </i>
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown"    >
+         <a class="menu-title pull-right" >ViewAll<i class="glyphicon glyphicon-circle-arrow-right"></i></a> 
+         
+            <ul *ngFor="let notif of notifs">
+            <div class="notification-wrapper" id="notif">
+    
+                <a class="notification-image">
+                    <img src="{{notif.data.user_image_link}}" alt="Generic placeholder image" width="32">
+                </a>
+                <a class="notification-text" >
+                    
+                    <span  [routerLink]="['/profile']">{{notif.data.user_name}}</span> 
+                    <span style=" font-weight:normal"  *ngIf="notif.data.type == 0"  [routerLink]="['/review',notif.data.user_id,notif.data.book_id]"> liked your review </span>
+                    <span style=" font-weight:normal"  *ngIf="notif.data.type == 1" [routerLink]="['/review',notif.data.user_id,notif.data.book_id]"> commented on your review </span>
+                    <span style=" font-weight:normal"  *ngIf="notif.data.type == 2" [routerLink]="['/profile',notif.data.user_id]"> followed you </span>
+                    
+                </a>
+            </div>
+         </ul>
+    
+        
     </div>
+    </li>
+
+   
     <div class="input-group" id="searchBox">
-        <input class="form-control border-secondary py-2" type="search" placeholder="Search books by title" [(ngModel)]='searchTerm'>
-        <button type="button" (click)="search()"><i class="fa fa-search"></i></button>
-        <div class="input-group-append">
-        </div>
-    </div>
+            <input class="form-control border-secondary py-2" type="search" placeholder="Search books by title" [(ngModel)]='searchTerm'>
+            <button type="button" (click)="search()" id='searchbutton'><i class="fa fa-search" ></i></button>
+       <!--  <div class="input-group-append">
+            </div>-->
+            </div>
+        
+    
+            <div id='right'>
+        <a class="nav-link" [routerLink]="['/accountSettings']" id="accountSettings" *ngIf="isUser">Account Settings </a>
+        <button (click)="onLogout()" id="logOut"*ngIf="isUser" >Log out</button>
+
+    
+</div>
+  
 
 
-    <!--
-<li class="nav-item dropdown" id="#notifications" >
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-bell">
-            <span class="badge badge-primary">1</span>
-          </i>
-    </a>
-
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="menu-title pull-right" href='/notifications'>View all<i class="glyphicon glyphicon-circle-arrow-right"></i></a>
 
 
-        <div class="notification-wrapper" id="notif">
-
-            <a class="notification-image">
-                <img src="https://appharbor.com/assets/images/stackoverflow-logo.png" alt="" width="32">
-            </a>
-            <a class="notification-text" href="#">
-                
-                <span >Sara</span> 
-                <span style=" font-weight:normal" > reviewed a book </span>
-                
-                
-            </a>
-        </div>
-     
-
-    </div>
-</li>
--->
+</div>
 </div>
 
-
-<router-outlet></router-outlet>
+<router-outlet> </router-outlet>

@@ -14,8 +14,7 @@
                     <h5 id="authorName">by {{myBook?.author_name}}</h5>
                     <div>
                         <app-star [starsCount]="myBook?.ratings_avg" [readOnly]="true"></app-star>
-                        <span
-                            style="font-size: 13px; font-family: 'Segoe UI', Tahoma, sans-serif;">{{myBook?.ratings_avg}}
+                        <span style="font-size: 13px; font-family: 'Segoe UI', Tahoma, sans-serif;">{{myBook?.ratings_avg}}
                             {{myBook?.ratings_count}} ratings {{myBook?.reviews_count}} reviews</span>
                     </div>
                     <p>{{myBook?.description}}</p>
@@ -57,27 +56,22 @@
 
 
 <div class="container">
-    <div class="row" style="float: left">  
-        <ng-container *ngFor="let review of reviews">
-            <div class="media">
-                <img [routerLink]="['/profile',review.user_id]" id="reviewerImg" src={{review?.userimagelink}}
-                    class="align-self-start mr-3" style="width:50px; height: 50px">
-                <div class="media-body" id="reviewInfo">
-                    <h6><b [routerLink]="['/profile',review.user_id]" id="reviewerName">{{review?.username}}</b> rated
-                        it
-                        <app-star [starsCount]="review?.rating" [readOnly]="true"></app-star>
-                    </h6>
-                    <p *ngIf="review.body != 'No Body'">{{review?.body}}</p>
-                    <small>{{review?.likes_count}} like
-
-                        <app-likes [user]='review.user_id' [resourse_id]='review.id'></app-likes>
-
-                        {{review?.comments_count}} Comments
-                        <app-comments [user]='review.user_id' [resourse_id]='review.id'></app-comments>
-
-
-                    </small>
-                </div>
+    <hr>
+    <div class="row" style="float: left">
+      <ng-container *ngFor="let review of reviews">
+        <div class="media" >
+            <img [routerLink]="['/profile',review.user_id]" id="reviewerImg" src={{review?.userimagelink}} class="align-self-start mr-3" style="width:50px; height: 50px">
+            <div class="media-body" id="reviewInfo">
+                <h6><b [routerLink]="['/profile',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it
+                    <app-star [starsCount]="review?.rating" [readOnly]="true"></app-star>
+                </h6>
+                <p *ngIf="review.body != 'No Body'">{{review?.body}}</p>
+                <small>{{review?.likes_count}}
+                 <app-list-likes [resourse_id]='review.id' ></app-list-likes>
+                     <app-likes [user]='review.user_id' [resourse_id]= 'review.id' ></app-likes>
+                      {{review?.comments_count}} Comments
+                   <app-comments [resourse_id]='review.id'></app-comments>
+                </small>
             </div>
         </ng-container>
     </div>

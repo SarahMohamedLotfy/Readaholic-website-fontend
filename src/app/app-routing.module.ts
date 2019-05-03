@@ -13,6 +13,7 @@ import  { AboutusComponent} from './AboutUs/AboutUs.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { SearchBooksComponent } from './search-books/search-books.component';
+import { ReviewComponent } from './review/review.component';
 import {SearchPeopleComponent} from './search-people/searchpeople.component';
 
 
@@ -21,16 +22,17 @@ const routes: Routes = [
   {path:'login',component: LogInComponent},
   {path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
   {path:'searchBooks',component: SearchBooksComponent},
-  {path: 'book/:id' , component: BookInfoComponent,canActivate:[AuthGuard]},
+  {path: 'book/:id' , component: BookInfoComponent},
   {path:'forgetPassword',component: ForgetPasswordComponent},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
-  {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
-  {path: 'accountSettings', component: AccountSettingsComponent},
+  {path: 'profile/:id', component: ProfileComponent},
+  {path: 'accountSettings', component: AccountSettingsComponent,canActivate:[AuthGuard]},
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'searchpeople', component: SearchPeopleComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
   {path: 'Aboutus', component: AboutusComponent,canActivate:[AuthGuard]},
+  {path: 'review/:userId/:bookId', component: ReviewComponent,canActivate:[AuthGuard]},
   {path:'pageNotfound',component: PageNotFoundComponent},
   {path: '**', redirectTo: 'pageNotfound', pathMatch:'full' }
  ];

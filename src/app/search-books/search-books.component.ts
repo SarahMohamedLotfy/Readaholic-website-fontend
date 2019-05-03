@@ -18,14 +18,21 @@ export class SearchBooksComponent implements OnInit {
       });
    }
 searchTerm:any;
+searchType:string;
 
 books:any=[];
 form: FormGroup;
 isUser:boolean;
+noBooks:boolean =false;
+review:any=[];
+str:string;
+rating:any=[];
+temp:any=[];
   ngOnInit() {
     this.activatedRoute.queryParams .subscribe(params => {
      
-      this.searchTerm = params['search'];});
+      this.searchTerm = params['search'];
+    this.searchType=params['searchType']});
 
       if(localStorage.getItem('token') == null){
         this.isUser = false;}
@@ -34,52 +41,71 @@ isUser:boolean;
         this.isUser = true;
       }
     
-    
-
+  
      this.searchForBook();
 
 
   }
 
- 
-search(){
+ searchClicked(){
+
   const val = this.form.value;
-    this.router.navigate(['/searchBooks'],{queryParams:{'search':val.searchBox}});
+    this.router.navigate(['/searchBooks'],{queryParams:{'search':val.searchBox,'searchType':val.searchType}});
     this.searchTerm=val.searchBox;
       console.log(this.searchTerm);
+this.searchForBook();
+
+ }
+search(term){
+
+  const val = this.form.value;
+this.searchTerm=term;
+this.searchType='title';
+val.searchType='title';
 this.searchForBook();
   
   }
 
   searchForBook()
   {
+ 
     const val = this.form.value;
       console.log(this.searchTerm);
 
-    if(val.searchType=="author" )
+    if(val.searchType=="author" || this.searchType=="author" )
     this.service.getBookByAuthor(this.searchTerm).subscribe((books:any)=>{
       this.books =books.pages ;
+
+      this.noBooks=false;
+     
+      this.review=books['book info for me']
+      this.temp=this.review;
       
-      console.log(this.books);
-      console.log(books);
-      },err=>console.log('nooo'))
-      else if(val.searchType=="ISBN" )
+     
+
+      console.log(this.rating);
+      },err=>{this.noBooks=true;})
+      else if(val.searchType=="ISBN" || this.searchType=="ISBN" )
       {
         this.service.getBookByIsbn(this.searchTerm).subscribe((books:any)=>{
           this.books =books.pages ;
           
           console.log(this.books);
           console.log(books);
-          })
+          this.review=books['book info for me']
+          this.noBooks=false;
+          },err=>{this.noBooks=true;})
       }
-      else if(val.searchType=="genre" )
+      else if(val.searchType=="genre" || this.searchType=="genre" )
       {
         this.service.getBookByGenre(this.searchTerm).subscribe((books:any)=>{
           this.books =books.pages ;
           
           console.log(this.books);
           console.log(books);
-          })
+          this.noBooks=false;
+          this.review=books['book info for me']
+          },err=>{this.noBooks=true;})
       }
       else 
       {
@@ -88,9 +114,13 @@ this.searchForBook();
           
           console.log(this.books);
           console.log(books);
-          })
+          this.review=books['book info for me']
+          this.noBooks=false;
+          },err=>{this.noBooks=true;})
       }
+     
   }
+
   
 
 }

@@ -1,4 +1,4 @@
-<navbar (clickBtn)="search()"></navbar>
+<navbar (clickBtn)="search($event)"></navbar>
 <div id="mainSearchContainer">
     <div id="mainSearchContent">
         <div id="mainSearchFloat">
@@ -8,7 +8,7 @@
                 <form name="searchForm" id="searchBox" [formGroup]="form">
                     <div style="padding-bottom: 10px;">
                         <input id="searchBoxInput" type="text" placeholder="Search by Book Title,Author,Genre,or ISBN" formControlName="searchBox">
-                        <button id="searchButton" (click)="search()">Search</button>
+                        <button id="searchButton" (click)="searchClicked()">Search</button>
                     </div>
                     <div>
                         <label class="radio-inline">
@@ -24,8 +24,10 @@
                 </form>
 
                 <h1 id="searchSubNav">Results for search</h1>
+
+                <h2 *ngIf="noBooks" style="margin-top: 5%;">Your search didn't match any books</h2>
                 <table id="searchTable" *ngFor="let book of books ">
-                    <tbody id="searchTableBody">
+                    <tbody *ngIf="!noBooks" id="searchTableBody">
                         <tr id="singleBook">
                             <td id="img">
                                 <div></div>
@@ -50,8 +52,8 @@
                                 </div>
 
                                 <div id="reviewing" *ngIf="isUser">
-                                    <app-dropdown [bookId]="book?.id"></app-dropdown>
-                                    <app-star id="rateBook" [bookId]="book?.id" [readOnly]="false"></app-star>
+                                    <app-dropdown [bookId]="book?.id" (starsRating)='ratings($event)'></app-dropdown>
+                                    <app-star id="rateBook" [bookId]="book?.id" [readOnly]="true" [getRate]="true"></app-star>
                                 </div>
                             </td>
                         </tr>

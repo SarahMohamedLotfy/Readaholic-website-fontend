@@ -21,10 +21,9 @@ export class NavbarComponent implements OnInit {
   notifs:notifications[];
  isUser:boolean=true;
   ngOnInit() {
-    /*
-    if(localStorage.getitem('token')==null){
+       if(localStorage.getItem('token')==null){
       this.isUser=false
-    }else{this.isUser=true ;}*/
+    }else{this.isUser=true ;}
     this.httpser.getNotifications().subscribe(
       data =>{
         this.notifs=data ;

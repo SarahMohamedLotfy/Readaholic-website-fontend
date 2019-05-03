@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { user } from '../classes/user';
 import { user_shelves } from '../classes/user_shelves';
 import { LogInHttpService } from './log-in-http.service';
+import { data } from '../classes/data';
 
 /**The component that sets the login page html and css and the functionality of logging users in */
 @Component({
@@ -30,11 +31,15 @@ export class LogInComponent implements OnInit {
 /**true if there is an error in signing up false otherwise */
   signUpError:boolean;
 
+  books:any[];
+  numbers:number[];
+  searchTerm:string;
 
 
   
 /**sets the varibales in the form using form builder */
   constructor(private service:LogInHttpService,private fb:FormBuilder,private router:Router) { 
+    this.numbers = Array(4).fill(0).map((x,i)=>i);
     this.form=this.fb.group({
     email: ['',[Validators.required,Validators.minLength(1)]],
     password: ['',[Validators.required,Validators.minLength(1)]]
@@ -53,8 +58,7 @@ export class LogInComponent implements OnInit {
 
       this.formReset=this.fb.group({
         email: ['',[Validators.required]],
-       
-        
+
          });
 
 
@@ -68,6 +72,14 @@ export class LogInComponent implements OnInit {
     
    if(localStorage.getItem('token')!=null)
     this.router.navigateByUrl('/home');
+
+    this.service.getBookByGenre('action').subscribe((books:any)=>{
+      this.books =books.pages ;
+     
+      console.log(this.books);
+    
+    
+      },err=>{})
     
   }
   /**On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they're valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  */
@@ -81,6 +93,7 @@ onSubmit(){
   console.log(data);
   localStorage.setItem('token',data.token);
   this.users=data.user;
+ 
   this.router.navigateByUrl('/home');
   this.wrongPass=false;
   console.log(this.users);
@@ -118,8 +131,17 @@ onSigUp(){
   
   this.service.signUp(val.email,val.password,val.password_confirmation,val.name,val.gender,val.birthday,val.country,val.city).subscribe(
 (data:any) => {
+  
+  
+ 
+
+
   localStorage.setItem('token',data.token);
   this.users=data;
+  this.service.verify().subscribe((data:any)=>{
+    console.log(data);
+  
+  },err=>{console.log(err);});
   this.router.navigateByUrl('/home'); 
 },
 err => {
@@ -153,6 +175,11 @@ reset(){
   );
 
 
+}
+
+search(){
+  this.router.navigate(['/searchBooks'],{queryParams:{'search':this.searchTerm,'searchType':'title'}});
+  
 }
 
 

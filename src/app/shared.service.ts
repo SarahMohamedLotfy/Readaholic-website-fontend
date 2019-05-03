@@ -4,13 +4,12 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class SharedService {
 
-  private shelfSource = new BehaviorSubject(4);
+  private shelfSource = new BehaviorSubject({key:-1, value:-1});
   currentshelf = this.shelfSource.asObservable();
 
   constructor() { }
 
-  changeShelf(message: number) {
-    this.shelfSource.next(message)
+  changeShelf(key:number, val: number) {
+    this.shelfSource.next({key: key, value: val})
   }
-
 }

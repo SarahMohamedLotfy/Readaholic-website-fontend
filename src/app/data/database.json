@@ -1,5 +1,7 @@
 {
-    "book": [
+  "book": [
+    {
+      "pages": [
         {
           "id": 3,
           "title": "once and future",
@@ -18,25 +20,31 @@
           "created_at": "2010",
           "updated_at": "2010",
           "genre": "action"
-        },
-        {
-            "id": 2,
-            "title": "sherwood",
-            "isbn": 555,
-            "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
-            "publication_date": "2015",
-            "publisher": "kkkll",
-            "language": "english",
-            "description": "book overview",
-            "reviews_count": 55,
-            "ratings_count": 63,
-            "ratings_avg": 3,
-            "author_id": 3,
-            "author_name": "ali",
-            "pages_no": 100,
-            "created_at": "2010",
-            "updated_at": "2010",
-            "genre": "action"
-          }
+        }
       ]
+    },
+    {
+      "pages": [
+        {
+          "id": 2,
+          "title": "sherwood",
+          "isbn": 555,
+          "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+          "publication_date": "2015",
+          "publisher": "kkkll",
+          "language": "english",
+          "description": "book overview",
+          "reviews_count": 55,
+          "ratings_count": 63,
+          "ratings_avg": 3,
+          "author_id": 3,
+          "author_name": "ali",
+          "pages_no": 100,
+          "created_at": "2010",
+          "updated_at": "2010",
+          "genre": "action"
+        }
+      ]
+    }
+  ]
 }

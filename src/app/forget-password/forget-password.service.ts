@@ -11,7 +11,7 @@ import { catchError, retry } from 'rxjs/operators';
 
   export class ForgetPasswordService {
   url:string=AppConstants.baseURL;
-
+ //url:string='http://0ea47257.ngrok.io';
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 
@@ -24,6 +24,16 @@ import { catchError, retry } from 'rxjs/operators';
  changePass(password:string,password_confirmation:string,userId:number)
  {
      return this.http.post(this.url+'/api/resetpassword',{password,password_confirmation,userId});
+ }
+
+ verify(): Observable<any>
+ {
+     return this.http.get(this.url+'/api/verify');
+ }
+
+ checkVerify(token:string): Observable<any>
+ {
+     return this.http.get(this.url+'/api/checktokenverify?token='+token);
  }
 
 

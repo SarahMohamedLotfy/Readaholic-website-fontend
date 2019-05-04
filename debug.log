@@ -2,3 +2,4 @@
 [0325/071401.801:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
 [0413/233211.819:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Magic\AppData\Local\Temp\karma-22364702\Crashpad\reports\726a499d-6d58-44ae-9582-5c1dd1d63f3d.dmp: The system cannot find the path specified. (0x3)
 [0413/233212.347:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0503/234229.590:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)

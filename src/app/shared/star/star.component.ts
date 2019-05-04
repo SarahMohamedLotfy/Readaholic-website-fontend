@@ -1,26 +1,30 @@
 //import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 //import { RatingModule } from 'ng2-rating';
 
-import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnChanges, AfterViewChecked, AfterViewInit, SimpleChanges } from '@angular/core';
 import { BookService } from 'src/app/book-info/book.service';
 
 import {MyBooksComponent } from 'src/app/my-books/my-books.component'
 
 import { SharedService } from 'src/app/shared.service';
+import { ShelfService } from '../dropdown/shelf.service';
 
 /**used to rate a book or display user rate on the book */
+
 @Component({
   selector: 'app-star',
   templateUrl: './star.component.html',
   styleUrls: ['./star.component.css']
 })
-
 export class StarComponent implements OnInit {
+
   /**displayed rate */
-  @Input() starsCount: number;
+  @Input() starsCount: number = 0;
 
   /**detemines the state of the component whether it can be used to rate a book or display its average rate */
   @Input() readOnly: boolean;
+
+  @Input() getRate:boolean=false;
 
   /**book shelf */
   @Input() shelf: number = 0;
@@ -28,56 +32,66 @@ export class StarComponent implements OnInit {
   /**book id */
   @Input() bookId: number;
 
-  /**@ignore */
+  /**emitted event when the rating is done */
+
   @Output() rated: EventEmitter<number> = new EventEmitter<number>();
-  /**@ignore */
+
+  /**the displayed shelf */
   shelfStatus: string;
 
-  nehal: number;
+  /**@ignore */
+  keepRate: number;
 
-  /**rate done by the user */
-  userRate: number = 0;
-  
   /**@param {BookService} service the http service which the star component uses to make a rating request */
-
- 
- 
-  constructor(private service: BookService, private sharedService: SharedService) { }
+  constructor(private service: BookService, private sharedService: SharedService, private shelfService:ShelfService) { }
 
   ngOnInit() {
-    this.sharedService.currentshelf.subscribe(data => {
-      this.shelf = data;
 
-      console.log(this.shelf +"  sgelf");
-      if (this.shelf == 3) {
-      
-        this.starsCount = 0;
-        this.userRate = 0;
-        
+    if (this.starsCount == null) {
+      console.log("yalahwaaay1111")
+    }
+    this.sharedService.currentshelf.subscribe(data => {
+      if (data.key != -1 && data.value != -1) {
+        if (data.key == this.bookId) {
+          this.shelf = data.value;
+          if (this.shelf == 3) {
+            console.log("yalahwaaay")
+            this.starsCount = 0;
+          }
+        }
       }
     });
+    if(this.getRate)
+    {
+      this.shelfService.getUserBookInfo(this.bookId).subscribe((data) => {
+        this.starsCount=data.pages[0].rating;
+        console.log(this.starsCount);
+      },err=>{this.starsCount=0;})
+
+    }
   }
 
   /**rates a book when the user clicks on the stars */
   onClick() {
     if (this.readOnly == false) {
+      console.log(this.starsCount)
       if (this.shelf == 4 || !this.shelf) {
-        this.shelf = 0;
+        this.shelf = 3;
       }
 
-      this.service.createReview(this.bookId, this.shelf, "", this.userRate).subscribe((data) => {
+      this.service.createReview(this.bookId, this.shelf, "", this.starsCount).subscribe((data) => {
         console.log(data);
-        if(data.shelfType == "read") {
+        if (data.shelfType == "read") {
           this.shelf = 0;
         } else if (data.shelfType == "currently-reading") {
           this.shelf = 1;
         } else {
           this.shelf = 2;
-        } 
-        this.rated.emit(this.userRate);
+        }
+        this.rated.emit(this.starsCount);
         console.log("star" + this.shelf);
-        this.sharedService.changeShelf(this.shelf);
-      });
+        this.sharedService.changeShelf(this.bookId, this.shelf);
+      }, (data) => console.log(data));
     }
   }
 }

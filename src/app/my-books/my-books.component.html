@@ -1,36 +1,40 @@
-
-<div class="mybooksTitle"> 
-  My Books
+<navbar></navbar>
+<div class="mybooksTitle">
+    <a [routerLink]="['/profile',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a> 's Books
 </div>
 <hr/>
-<th class ="bookShelves">Bookshelves</th>
-<table  class ="leftActivityy" *ngFor="let shelf of shelves">
- <tr>
-<td
-*ngIf="shelf.name == 'to-read'" >
-<a (click)="getmybooks(true,1)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
- 
-<td
-*ngIf="shelf.name == 'currently-reading'" >
-<a (click)="getmybooks(true,2)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
 
-     
-<td
-*ngIf="shelf.name == 'read'" >
-<a (click)="getmybooks(true,0)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
-</tr>
 
- </table>
-   
+
+
     <form id="tfnewsearch" method="get" >
     <input type="text" id ="searchtextfollowing" placeholder="search for books"value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"
       maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing
       ">
+
     </form>
 <div *ngIf="noBooks() == 0" >
-    <p   id ="tagrba">You have no books.</p> 
+    <p   id ="tagrba">You have no books.</p>
   </div>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div id ="container">
+  <div id="leftcolumn">
+    <th class ="bookShelves">Bookshelves</th>
+    <div  class ="leftActivityy" >
+
+    <a (click)="getmybooks(true,1)" (click)="heighlight(1)" (click)="initializedarrow=false"class="leftActivity">to-read ({{count1}}) <br />  </a>
+
+
+    <a (click)="getmybooks(true,2)" (click)="heighlight(2)" (click)="initializedarrow=false"class="leftActivity">currently-reading ({{count2}}) <br/> </a>
+
+
+
+    <a (click)="getmybooks(true,0)" (click)="heighlight(0)" (click)="initializedarrow=false" class="leftActivity">read ({{count0}})  </a>
+  </div>
+</div>
+
+<div id="rightcolumn">
+
 <div class ="tablePlace" >
 <div class ="tablePlace"class="row">
 	<div class="col-lg-7">
@@ -45,47 +49,66 @@
               <th><span>avgrating</span></th>
               <th><span>rating</span></th>
 							<th><span>DataAdded</span></th>
-							
+
 						</tr>
           </thead>
-         
+
 					<tbody *ngFor="let post of books" >
 						<tr>
 							<td>
                   <a class="bookimage"  [routerLink]="['/book', post.book_id]">
-								<img class="bookimage" src={{post.image_url}} alt="">
+								<img class="bookimage" src={{post.img_url}} alt="">
 </a>
               </td>
               <td>
                 <a  [routerLink]="['/book', post.book_id]" class="user-link">{{post.title}}</a>
-						
+
               </td>
               <td>
                 <a href="#" class="user-link">{{post.title}}</a>
-						
+
               </td>
               <td>
                 <a href="#" class="user-link">2.38</a>
-						
+
               </td>
-          
+
 <app-star [starsCount]="post.ratings_count" [readOnly]="true" [bookId]="post.id"
                            ></app-star>
 							<td>
 								2013/08/08
 							</td>
-								
+
             </tr>
-					
+
 					</tbody>
-				</table>
-			</div>
-			
+        </table>
+        <div  *ngIf="shelfNumber== 2">
+
+            <div id="arrow2">---></div>
+      </div>
+      <div  *ngIf="shelfNumber== 1">
+
+          <div id="arrow1">---></div>
+    </div>
+    <div  *ngIf="shelfNumber== 0">
+
+        <div id="arrow0">---></div>
+
+
+    </div>
+    <div  *ngIf="initializedarrow== true">
+
+        <div id="arrow1">---></div>
+
+
+    </div>
+</div>
 		</div>
 	</div>
 </div>
 </div>
-
+</div>
 
 
 

@@ -12,6 +12,7 @@ import { catchError, retry } from 'rxjs/operators';
   export class LogInHttpService {
 
   url:string=AppConstants.baseURL;
+ //url:string='http://0ea47257.ngrok.io';
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 
@@ -36,6 +37,18 @@ import { catchError, retry } from 'rxjs/operators';
   resetPass(email:string): Observable<any> {
         
     return this.http.post<any>(this.url+'/api/forgotpassword',{email});
+    
+   }
+
+   verify(): Observable<any>
+   {
+       return this.http.get(this.url+'/api/verify');
+   }
+
+   
+   getBookByGenre(genre:string): Observable<any> {
+        
+    return this.http.get<any>(this.url+'/api/books/genre?genreName='+genre);
     
    }
   

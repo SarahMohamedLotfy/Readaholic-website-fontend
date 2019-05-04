@@ -8,6 +8,8 @@
     <a class="nav-link" [routerLink]="['/followers']" id="followers" *ngIf="isUser">Followers</a>
     <a class="nav-link" [routerLink]="['/following']" id="following"*ngIf="isUser">Following</a>
     <a class="nav-link" [routerLink]="['/Aboutus']" id="aboutUs">Aboutus</a>
+    <a class="nav-link" [routerLink]="['/searchpeople']" id="searchpeople">Search People</a>
+
     <li class="nav-item dropdown" id="#notifications" *ngIf="isUser">
             <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-bell">

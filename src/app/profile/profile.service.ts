@@ -23,11 +23,20 @@ export class ProfileService {
   }
 
   getUpdatesForuser(id: number):Observable<any>{
-    return this.http.get(this.url+"updates?id="+ id);
+    return this.http.get(this.url+"/api/updates?user_id="+ id);
        }
 
   getUsershelves(): Observable<any> {
-    return this.http.get(this.url+'shlef/list');
+    return this.http.get(this.url+'/api/shlef/list');
   }
+  getMyshelfbooks( shelf_name:number){
+    return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?shelf_name='+shelf_name);
+
+  }
+
+  getfollowersforusers(id:number): Observable<any> {
+    return this.http.get(this.url+'/api/following?id='+ id )
+  }
+
 
 }

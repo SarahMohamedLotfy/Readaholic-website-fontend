@@ -154,6 +154,9 @@ if(this.formUp.valid){
 (data:any) => {
   localStorage.setItem('token',data.token);
   this.users=data;
+  localStorage.setItem('user',JSON.stringify({userInfo:this.users}));
+  
+  
   this.service.verify().subscribe((data:any)=>{
     console.log(data);
   

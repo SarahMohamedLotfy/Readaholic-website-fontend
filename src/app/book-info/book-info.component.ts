@@ -87,7 +87,7 @@ export class BookInfoComponent implements OnInit {
         }
       }
     });
-
+    console.log(JSON.parse(localStorage.getItem('user')));
     if (localStorage.getItem('token') == null) {
       this.isUser = false;
       console.log(this.isUser + "aaakkkk");

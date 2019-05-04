@@ -31,6 +31,9 @@ const routes: Routes = [
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'searchpeople', component: SearchPeopleComponent,canActivate:[AuthGuard]},
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
+  {path: 'myBooks/:user_id', component: MyBooksComponent},
+  {path: 'following/:id', component: FollowingComponent},
+
   {path: 'Aboutus', component: AboutusComponent,canActivate:[AuthGuard]},
   {path: 'review/:userId/:bookId', component: ReviewComponent,canActivate:[AuthGuard]},
   {path:'pageNotfound',component: PageNotFoundComponent},

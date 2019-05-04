@@ -38,12 +38,12 @@
                      <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
                         <hr>
                     <div class="userBookshelves">
-                        <a [routerLink]="['/myBooks']"  > read </a>
-                        <a [routerLink]="['/myBooks']"  > to-read </a>
-                        <a [routerLink]="['/myBooks']"  > currently-reading </a>
+                        <a [routerLink]="['/myBooks',selectedProfile.id]"  > read </a>
+                        <a [routerLink]="['/myBooks',selectedProfile.id]"  > to-read </a>
+                        <a [routerLink]="['/myBooks',selectedProfile.id]"  > currently-reading </a>
 
                   </div>
-                  <a [routerLink]="['/myBooks']" id="bookShelvesmore" > More.. </a>
+                  <a [routerLink]="['/myBooks',selectedProfile.id/1]" id="bookShelvesmore" > More.. </a>
                </div>
 
                   <br>

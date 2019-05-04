@@ -30,8 +30,7 @@ getMyshelfbooks( shelf_name:number){
 
 }
 gethisshelfbooks( shelf_name:number,user_id:number){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf'+{user_id,shelf_name});
-
+  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?user_id=' + user_id +'&shelf_name='+shelf_name);
 }
 /**
      * Get the profile information i used it to get the  name of the user.

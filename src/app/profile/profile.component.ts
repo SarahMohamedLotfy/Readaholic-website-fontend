@@ -7,6 +7,7 @@ import { HttpFollowinggService } from '../following/httpfollowing.service';
 import { updates } from '../classes/updates';
 import { userShelves } from '../classes/userShelves';
 import { myBooks } from '../classes/myBooks';
+import { HttpmybooksService } from '../my-books/httpmybooks.service';
 
 /** The component that sets the profile page html and scss  */
 @Component({
@@ -24,15 +25,23 @@ export class ProfileComponent implements OnInit {
 
    allUpdates: updates[];
    currentlyReading: myBooks[];
-   books: any = [];
    showEditbtn = false;
+
+   books0: any = [];
+   books2: any = [];
+   books1: any = [];
+   count0: number;
+   count1: number;
+   count2: number;
+
+
 /**
  * the constructor creates instances of http service
  *
  *  and the routing to make the profile able to navigate between pages
 */
   constructor(private httpService: ProfileService ,
-              private route: ActivatedRoute , private router: Router , private pro: HttpFollowinggService ) { }
+              private route: ActivatedRoute , private router: Router , private pro: HttpFollowinggService , private bookService: HttpmybooksService) { }
 /** get the auth user data and his following */
   ngOnInit() {
     /** receives id from url and send it to the get request */
@@ -61,6 +70,26 @@ export class ProfileComponent implements OnInit {
           this.temp = posts.following;
           console.log(posts); });
 
+   this.bookService.gethisshelfbooks(2, id).subscribe((posts: any) => {
+            this.books2 = posts.pages ;
+            this.count2 = this.books2.length;
+
+           });
+           if(!this.count2){ this.count2=0; }
+   this.bookService.gethisshelfbooks(1, id).subscribe((posts: any) => {
+            this.books1 = posts.pages ;
+            this.count1 = this.books1.length;
+
+           });
+            if(!this.count1){ this.count1=0; }
+
+   this.bookService.gethisshelfbooks(0, id).subscribe((posts: any) => {
+            this.books0 = posts.pages ;
+            this.count0= this.books0.length;
+            console.log(this.books0);
+          });
+         if(!this.count0){ this.count0=0; }
+
     } else {
       /** get authenticated user profile */
     this.showEditbtn = true;
@@ -79,11 +108,24 @@ export class ProfileComponent implements OnInit {
       this.temp = posts.following;
       console.log(posts); });
 
-    this.httpService.getMyshelfbooks(2).subscribe((posts: any) => {
-        this.books = posts.pages ;
-        this.temp = posts.pages;
-        console.log(this.books);
-      });
+    this.bookService.getMyshelfbooks(2).subscribe((posts: any) => {
+        this.books2 = posts.pages ;
+        this.count2 = this.books2.length;
+
+       });
+         if(!this.count2){ this.count2=0;}
+
+    this.bookService.getMyshelfbooks(0).subscribe((posts: any) => {
+        this.books0 = posts.pages ;
+        this.count0 = this.books0.length;
+       });
+       if(!this.count0){ this.count0=0;}
+    this.bookService.getMyshelfbooks(1).subscribe((posts: any) => {
+        this.books1 = posts.pages ;
+        this.count1 = this.books1.length;
+
+       });
+        if(!this.count1){ this.count1=0;}
     }
     /**
      * subscribe to the data received from json file which contain the following users information and if any error occurs it prints it to the log

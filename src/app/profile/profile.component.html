@@ -1,43 +1,39 @@
 <navbar></navbar>
-  <div class="container" id="firstContainer" *ngIf="selectedProfile" >
+<div class="container" id="firstContainer" *ngIf="selectedProfile">
     <div class="row">
-      <div class=" col-md-4 ">
-           <img id="profilePicture" [src]="selectedProfile.image_link" >
-           <div >
-             <p class="moreUseractivity" >
-            <a [routerLink]="['/myBooks']" style="color: #B7673C"> {{ selectedProfile.rating_count }} rating</a>( {{ selectedProfile.rating_avg }} avg ) <br>
-             </p>
-           </div>
-      </div>
-      <div class=" col-md-4" >
-        <div class="userName" id="userNameprofile">  {{ selectedProfile.name }}
-          <a *ngIf="showEditbtn" [routerLink]="['/accountSettings']"> ( edit profile )</a> </div>
-
-          <hr>
-          <div class="Details">
-             <b>Details:</b>
-            Age {{ selectedProfile.age }} , {{ selectedProfile.city }}
-          </div>
-          <div class="Activity">
-           <b>Activity:</b>
-            Joined in {{ selectedProfile.joined_at }} , Last Active in {{ selectedProfile.last_active }}
-          </div>
-          <div class="Birthday">
-          <b>Birthday:</b>
-          {{ selectedProfile.birthday }}
+        <div class=" col-md-4 ">
+            <img id="profilePicture" [src]="selectedProfile.image_link">
+            <div>
+                <p class="moreUseractivity">
+                    <a [routerLink]="['/myBooks']" style="color: #B7673C"> {{ selectedProfile.rating_count }} rating</a>( {{ selectedProfile.rating_avg }} avg ) <br>
+                </p>
+            </div>
         </div>
-      </div>
-    </div>
-    </div>
-      <br>
-      <br>
+        <div class=" col-md-4">
+            <div class="userName" id="userNameprofile"> {{ selectedProfile.name }}
+                <a *ngIf="showEditbtn" [routerLink]="['/accountSettings']"> ( edit profile )</a> </div>
 
-    <div class="container" id="profileTitles" *ngIf="selectedProfile" >
-    <div class="row">
-        <div class=" col-md-8 ">
-               <div class="bookShelves" >
-                     <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
-                        <hr>
+            <hr>
+            <div class="Details">
+                <b>Details:</b> Age {{ selectedProfile.age }} , {{ selectedProfile.city }}
+            </div>
+            <div class="Activity">
+                <b>Activity:</b> Joined in {{ selectedProfile.joined_at }} , Last Active in {{ selectedProfile.last_active }}
+            </div>
+            <div class="Birthday">
+                <b>Birthday:</b> {{ selectedProfile.birthday }}
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container" id="profileTitles" *ngIf="selectedProfile">
+        <div class="row">
+            <div class=" col-md-8 ">
+                <div class="bookShelves">
+                    <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
+                    <hr>
                     <div class="userBookshelves">
                       <div class="who" *ngIf='authid==0'>
                         <a [routerLink]="['/myBooks']" id="singleBookshelf" > read ({{count0}}) </a>
@@ -56,7 +52,10 @@
                <div class="currentlyReading" *ngIf="count2 > 0" >
                 <b>  {{ selectedProfile.name}} IS CURRENTLY READING </b>
                 <hr>
-                <div class="loop"  *ngFor="let post of books2">
+                <div class="currentlyReading" *ngIf="count2 > 0">
+                    <b>  {{ selectedProfile.name}} IS CURRENTLY READING </b>
+                    <hr>
+                    <div class="loop" *ngFor="let post of books2">
 
                    <div class="container">
                       <div class="row">
@@ -73,17 +72,17 @@
                                        </div>
                                </div>
 
-                      </div>
-                      </div>
-                      </div>
-                      <hr>
-                  </div>
-                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
 
-               <b>
+                <b>
                   {{ selectedProfile.name }}'S RECENT UPDATES </b>
-                  <hr>
-                  <div class="updates" *ngFor='let update of allUpdates' >
+                <hr>
+                <div class="updates" *ngFor='let update of allUpdates'>
                     <div class="container">
                       <div class="row">
                           <div class=" col-md-6">
@@ -129,11 +128,12 @@
                            </div>
 
 
-                          </div>
-                      </div>
+                            </div>
+                        </div>
                     </div>
-                     <hr>
-                  </div>
+                </div>
+                <hr>
+            </div>
 
                         </div>
                         <div class="col-md-4"  >
@@ -151,7 +151,6 @@
                             </tr>
                           </tbody>
 
-                        </div>
         </div>
     </div>
-
+</div>

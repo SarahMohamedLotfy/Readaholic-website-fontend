@@ -8,6 +8,8 @@ import { notifications } from 'src/app/classes/notifications';
 import { navBarService } from "./navbar.service";
 import { data } from 'src/app/classes/data';
 import { CommonModule } from '@angular/common';
+import { Observable, interval, Subscription } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'navbar',
@@ -15,21 +17,41 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  
+  public notifss: notifications[] = [];
+
+  private notifSubscription: Subscription;
    
-  constructor(private service:LogInHttpService,private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:navBarService) { }
-  notifs:notifications[];
+  constructor(private service:LogInHttpService,private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:navBarService) { 
+    this.notifSubscription = httpser.
+    getnotifItems()
+    .subscribe((data: notifications) => {
+      this.notifss.push(data);
+    });
+
+  }
+  notifs$ :Observable<notifications[]>;
  isUser:boolean=true;
+ notifsnb:number;
+
   ngOnInit() {
-       if(localStorage.getItem('token')==null){
+    
+    if(localStorage.getItem('token')== null){
       this.isUser=false
     }else{this.isUser=true ;}
-    this.httpser.getNotifications().subscribe(
-      data =>{
-        this.notifs=data ;
-        console.log(data);
-     }, error => this.error = error);
+    
+   
+       // this.notifsnb=this.notifs.forEach.length;
+     this.notifs$ =this.httpser.getNotifications();
+       // console.log(data);
+      
+    
   }
+  onRead(nb:number){
+    this.httpser.onRead(nb);
+    console.log(nb);
+  }
+
+  
   /**stores any error message recived  */
   error :any;
   searchTerm:string;
@@ -58,10 +80,11 @@ export class NavbarComponent implements OnInit {
     }
 
     search(){
+      console.log(this.searchTerm);
       this.router.navigate(['/searchBooks'],{queryParams:{'search':this.searchTerm,'searchType':'title'}});
       
       this.clickBtn.emit(this.searchTerm);
       
     }
-
+    
 }

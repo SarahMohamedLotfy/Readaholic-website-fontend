@@ -21,6 +21,24 @@
                         </div>
                     </div>
 
+                    <div class="email">
+                        <div class="userEmail">
+                            <p *ngIf='verSucc' style="color:brown"> An email was sent to you to verify your account</p>
+                            <p *ngIf='verErr' style="color:red;"> *something went wrong please try again later</p>
+                            <h1 style="font-size: 19px">Email
+                                <div *ngIf='isNotVer' style="color:red; font-size: 14px;">
+                                    *Account is not verified to resend email to verify click
+                                    <button (click)='verEm()' style="background-color: Transparent; background-repeat:no-repeat;border: none;cursor:pointer;overflow: hidden;color: red; ">here</button>
+
+                                </div>
+                            </h1>
+
+
+                            <p>{{settings?.email}}</p>
+                        </div>
+
+                    </div>
+
                 </div>
                 <div class="col-md-3" style="width:25%">
                     <img id="profileImg" src={{settings?.image_link}} alt="Avatar">

@@ -3,6 +3,8 @@ import { AccountSettingsService } from './account-settings.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { ForgetPasswordService } from '../forget-password/forget-password.service';
+import { LogInHttpService } from '../log-in/log-in-http.service';
 /**page that show account settings of user */
 @Component({
   selector: 'app-account-settings',
@@ -38,10 +40,18 @@ export class AccountSettingsComponent implements OnInit {
   btnClicked:boolean=false;
   /**@ignore */
   uploadClicked:boolean=false;
+  email:String;
+
+  verifys:number;
+isNotVer:boolean;
+
+verErr:boolean=false;
+verSucc:boolean=false;
+verText:string;
   /**consturctor that builds all the forms */
-  constructor(private service:AccountSettingsService,private fb:FormBuilder,private router:Router ) { 
-   
+  constructor(private service:AccountSettingsService,private fb:FormBuilder,private router:Router,private ser:LogInHttpService ) { 
     
+  
     this.form=this.fb.group({
       name: ['',[Validators.required,Validators.minLength(3)]],
       country: ['',[Validators.required,Validators.minLength(3)]],
@@ -91,8 +101,15 @@ export class AccountSettingsComponent implements OnInit {
         this.form.value.cityViewable=this.settings.see_my_city;
         this.form.value.birthViewable=this.settings.see_my_birthday; 
         console.log(data);
-       
-       
+       this.verifys = this.settings.verified;
+       if(this.verifys==0)
+       {
+        this.isNotVer=true;
+       }
+       else{
+         this.isNotVer=false;
+       }
+       this.email=this.settings.email;
 
       },
       err => {console.log(err);})
@@ -228,6 +245,19 @@ this.deText='password field is required'
 
   }
 
+  verEm(){
+    this.verErr=false;
+    this.verSucc=false;
+    this.ser.verify().subscribe((data:any)=>{
+      console.log(data);
+      this.verSucc=true
+
+    
+    },err=>{console.log(err);
+    this.verErr=true;
+});
+
+  }
 
 
 }

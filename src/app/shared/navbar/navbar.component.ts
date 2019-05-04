@@ -39,9 +39,11 @@ export class NavbarComponent implements OnInit {
       this.isUser=false
     }else{this.isUser=true ;}
     
+    console.log(this.isUser);
    
        // this.notifsnb=this.notifs.forEach.length;
-     this.notifs$ =this.httpser.getNotifications();
+       if(this.isUser){
+     this.notifs$ =this.httpser.getNotifications();}
        // console.log(data);
       
     
@@ -63,12 +65,14 @@ export class NavbarComponent implements OnInit {
       this.service.logOut().subscribe(
         res=>{localStorage.removeItem('token');
         this.router.navigate(['/login']);
+        localStorage.clear();
         
         },err => {
           if(err.status ==405)
           {
           
            localStorage.removeItem('token');
+           localStorage.clear();
             this.router.navigate(['/login']);
             console.log(err);
           }

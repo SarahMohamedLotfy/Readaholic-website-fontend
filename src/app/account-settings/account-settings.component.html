@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <label id="formLabels">City</label>
-                <div *ngIf="city.invalid&&(city.dirty||city.touched)" style="color: red">
+                <div *ngIf="city.invalid&&(city.dirty||city.touched)" id='errorSet' style="color: red">
                     *city must be at least 3 characters long.
                 </div>
                 <div class="form-group row">

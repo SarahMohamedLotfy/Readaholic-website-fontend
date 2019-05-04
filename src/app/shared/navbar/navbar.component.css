@@ -1,9 +1,8 @@
-.navbar{
+.navbar {
     background-color: #f4f1ea;
-   overflow: visible;
- /* height: 40px;
+    overflow: visible;
+    /* height: 40px;
     min-width: 200px;*/
-   
 }
 
 .active {
@@ -15,18 +14,25 @@
 /* Style the links inside the navigation bar */
 
 .navbar a {
-
- float:left;
+    float: left;
     display: block;
     color: #5e2b02;
     text-align: bottom;
-  /*  padding-left: 10px;
+    /*  padding-left: 10px;
     padding-right: 10px;*/
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
-  /*  margin-top: 10px;
+    /*  margin-top: 10px;
     margin-bottom: 10px;*/
+}
+
+.nav-link a:hover {
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: wheat;
 }
 
 #Readholic {
@@ -34,6 +40,8 @@
     font-size: 30px;
     margin-top: 0;
 }
+
+
 /*
 #searchbox {
    width: 100px;
@@ -44,16 +52,20 @@
 #searchbutton{
  height:10px;
 }*/
-#notif{
-    width:300px;
-  clear: both;
+
+#notif {
+    width: 300px;
+    clear: both;
 }
+
 #logOut {
-    background-color:  hsl(27, 58%, 62%);
+    background-color: hsl(27, 58%, 62%);
     color: #f4f1ea;
     margin-top: 10px;
-   /* margin-right: 5px;*/
+    /* margin-right: 5px;*/
 }
+
+
 /*
 #right{
     float:right;
@@ -62,8 +74,8 @@
 #parent_container{
     position:relative;
 }*/
-        .dropdown-menu{
-              max-height:200px;
-              overflow-y:auto;
-           }
-        
+
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}

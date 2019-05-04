@@ -29,14 +29,28 @@ getMyshelfbooks( shelf_name:number){
   return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?shelf_name='+shelf_name);
 
 }
+gethisshelfbooks( shelf_name:number,user_id:number){
+  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf'+{user_id,shelf_name});
+
+}
+/**
+     * Get the profile information i used it to get the  name of the user.
+     * */
+    getUserprofile(id: number): Observable<any> {
+      return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile/'+ id );
+    }
+     /**
+     * Get the profile information i used it to get the  name of the user.
+     * */
+    getAuthUserprofile(): Observable<any> {
+      return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile');
+    }
+  
 
 
 /**
  *getUsershelves() is a get request to number of books the user read and currently reading an to read */
 
-getUsershelves(): Observable<any>{
-  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api'+"/user_shelf");
-}
 /**
  * create book review
  * @param {number} bookId id of the reviewd book

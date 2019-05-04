@@ -68,7 +68,7 @@
                     <small>{{review?.likes_count}}
                  <app-list-likes [resourse_id]='review.id' ></app-list-likes>
                      <app-likes [user]='review.user_id' [resourse_id]= 'review.id' ></app-likes>
-                      {{review?.comments_count}} Comments
+                      {{review?.comments_count}}
                    <app-comments [resourse_id]='review.id'></app-comments>
                 </small>
                 </div>
@@ -128,5 +128,5 @@
         </div>
     </div>
 
-    <button type="button" id="openModalButton1" data-toggle="modal" data-target="#myModal1" style="display: none;"></button>
+    <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;"></button>
 </div>

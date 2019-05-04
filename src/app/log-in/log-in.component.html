@@ -9,12 +9,12 @@
             <form class="form-inline " [formGroup]="form" id="signInForm">
 
                 <div class="row" style=" width: 635px;height: 38px;  min-width: 635px;">
-                    <div class="col-md-5" style="    width: 50%; ">
+                    <div class="col-md-5" style="    width: 40%; ">
 
                         <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email" style="width: 208.4px">
                         <p *ngIf=wrongPass style="color:crimson">{{error}}</p>
                     </div>
-                    <div class="col-md-5" style="    width: 50%; ">
+                    <div class="col-md-5" style="    width: 40%; ">
 
                         <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password" style="width: 208.4px">
                         <button style="    padding: 0; border: none;background: none; " data-toggle="modal" data-target="#myModalDelete" type="button">Forgot password?</button>

@@ -30,7 +30,9 @@ const routes: Routes = [
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
   {path: 'searchpeople', component: SearchPeopleComponent,canActivate:[AuthGuard]},
+ 
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
+  {path: 'myBooks/:id', component: MyBooksComponent,canActivate:[AuthGuard]},
   {path: 'Aboutus', component: AboutusComponent,canActivate:[AuthGuard]},
   {path: 'review/:userId/:bookId', component: ReviewComponent,canActivate:[AuthGuard]},
   {path:'pageNotfound',component: PageNotFoundComponent},

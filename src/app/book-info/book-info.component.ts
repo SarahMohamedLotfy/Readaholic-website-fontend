@@ -219,13 +219,13 @@ export class BookInfoComponent implements OnInit {
       this.userInfo.rating = rate;
     }
     else {
-      document.getElementById("openModalButton").click();
+      document.getElementById("openModalButton1").click();
       return;
     }
     if (this.userInfo.id == -1) {
       /* this.userInfo.shelf_name = 0;
        this.shelfName = "Read";*/
-      document.getElementById("openModalButton").click();
+      document.getElementById("openModalButton1").click();
     }
   }
 

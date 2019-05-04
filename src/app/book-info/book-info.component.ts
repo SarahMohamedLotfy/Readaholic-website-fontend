@@ -52,12 +52,14 @@ export class BookInfoComponent implements OnInit {
   /**@ignore */
   modelShelf: string = "read";
 
-  nehal = 5;
 
   /**
+   * constructor that takes in the passes parameters 
    * @param {BookService} service injected book service instance
    * @param {ActivatedRoute} route activated route instance
    * @param {Router} router router inastance to route by code
+   * @param {shelfService} shelf http service
+   * @param {shelfService} a shared service to communicate between bookInfoComponent, starComponent, dropdwonComponent
    */
   constructor(private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService, private sharedService: SharedService, ) {
     
@@ -83,7 +85,9 @@ export class BookInfoComponent implements OnInit {
     });
   }
 
-
+  /**checks if a user has logged in to shift between guest mode and user mode
+   * gets the selected book information
+    */
   ngOnInit() {
     if (localStorage.getItem('token') == null) {
       this.isUser = false;
@@ -94,8 +98,8 @@ export class BookInfoComponent implements OnInit {
 
     this.getBookInfo();
     if(this.isUser) {
-      this.getBookReviews();
       this.getUserInfo();
+      this.getBookReviews();
     }
   }
 
@@ -137,8 +141,7 @@ export class BookInfoComponent implements OnInit {
     });
   }
 
-
-  /**calls the book service funstion to create a review */
+  /**checks if there is an input body then calls the book service funstion to create a review */
   review() {
     if (this.reviewBody != "" && this.reviewBody) {
       this.service.createReview(this.myBook.id, this.reviewShelf, this.reviewBody, this.reviewRating)
@@ -176,7 +179,7 @@ export class BookInfoComponent implements OnInit {
     }
   }
 
-  /**deletes user review on a book */
+  /** checks if the user has a review on this book then deletes it */
   deleteReview() {
     if (this.isUser && this.reviewId != -1) {
       this.service.deleteReview(this.reviewId).subscribe((data) => {
@@ -224,10 +227,12 @@ export class BookInfoComponent implements OnInit {
     }
   }
 
+  /**function to toggle a dropdown menu */
   openShelves() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
 
+  /**filters the dropdown menu when user enters a filter */
   filterFunction() {
     var input, filter, a, i, text;
     input = document.getElementById("myInput");

@@ -1,6 +1,7 @@
 {
   "book": [
     {
+      "id":3,
       "pages": [
         {
           "id": 3,
@@ -24,6 +25,7 @@
       ]
     },
     {
+      "id":2,
       "pages": [
         {
           "id": 2,
@@ -46,6 +48,74 @@
         }
       ]
     }
+  ],
+  "userBookInfo": [
+    {
+      "id":1,
+      "pages": [
+        {
+          "id": 1,
+          "rating": 3.5,
+          "shelf_name": 0,
+          "body": "Wow! Great closure on all levels. The pace was smooth. Written well. I couldn't put it down. I just found Cinda two years ago. Since then I have plowed through everything she has written. Every book was a joy to read. Highly recommend this author!!!"
+        }
+      ]
+    }
+  ],
+  "review": [
+    {
+      "pages": [
+        {
+          "id": 2,
+          "book_id": 3,
+          "body": "what a great book!!!",
+          "rating": 5,
+          "shelf_name": "read",
+          "likes_count": 5,
+          "comments_count": 5,
+          "user_id": 3,
+          "username": "salma",
+          "userimagelink": "https://images.gr-assets.com/books/1529823092l/39320115.jpg"
+        },
+        {
+          "id": 2,
+          "book_id": 3,
+          "body": "5 staaarsssss",
+          "rating": 5,
+          "shelf_name": "read",
+          "likes_count": 5,
+          "comments_count": 5,
+          "user_id": 3,
+          "username": "waleed",
+          "userimagelink": "https://images.gr-assets.com/books/1529823092l/39320115.jpg"
+        },
+        {
+          "id": 2,
+          "book_id": 3,
+          "body": "had a great time reading it",
+          "rating": 5,
+          "shelf_name": "read",
+          "likes_count": 5,
+          "comments_count": 5,
+          "user_id": 3,
+          "username": "nour",
+          "userimagelink": "https://images.gr-assets.com/books/1529823092l/39320115.jpg"
+        }
+      ]
+    }
+  ],
+  "getShelf": [
+    {
+      "id":1,
+      "ShelfName": 0
+    },
+    {
+      "id":2,
+      "ShelfName": 0
+    },
+    {
+      "id":3,
+      "ShelfName": 0
+    }
   ]
 }
-

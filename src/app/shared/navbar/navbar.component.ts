@@ -80,6 +80,7 @@ export class NavbarComponent implements OnInit {
     }
 
     search(){
+      console.log(this.searchTerm);
       this.router.navigate(['/searchBooks'],{queryParams:{'search':this.searchTerm,'searchType':'title'}});
       
       this.clickBtn.emit(this.searchTerm);

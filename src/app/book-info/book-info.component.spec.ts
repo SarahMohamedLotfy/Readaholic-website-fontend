@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BookInfoComponent } from './book-info.component';
-import {  NO_ERRORS_SCHEMA, DebugElement, Directive, Input } from '@angular/core';
+import {  NO_ERRORS_SCHEMA, DebugElement, Directive, Input, Component } from '@angular/core';
 import { BookService } from './book.service';
 import { StarComponent } from '../shared/star/star.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
@@ -32,14 +32,22 @@ import { SharedService } from '../shared.service';
 import { book } from '../classes/book';
 import { ReviewComponent } from '../review/review.component';
 import { ShelfService } from '../shared/dropdown/shelf.service';
+import { AppRoutingModule } from '../app-routing.module';
 
 
-fdescribe('BookInfo component', () => {
+describe('BookInfo component', () => {
   let fixture: ComponentFixture<BookInfoComponent>;
   let mockBookService, mockShelfService;
 
   mockBookService = jasmine.createSpyObj(['getBook','getBookReviews','createReview','deleteReview']);
   mockShelfService = jasmine.createSpyObj(['getUserBookInfo','getShelf','removeFromShelf','addToShelf'])
+
+  @Component({
+    selector: 'navbar',
+    template: '<div></div>'
+  })
+  class FakeNavbarComponent {
+  }
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -57,15 +65,16 @@ fdescribe('BookInfo component', () => {
         MyBooksComponent,
         AboutusComponent,
         PageNotFoundComponent,
-        ReviewComponent
+        ReviewComponent,
+        FakeNavbarComponent
       ],
       imports: [
-        SharedModule,
         HttpClientModule,
         FormsModule, 
         NgbModule,
         BrowserModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AppRoutingModule
       ],
       providers: [
         SharedService,
@@ -73,7 +82,7 @@ fdescribe('BookInfo component', () => {
         { provide: BookService, useValue: mockBookService},
         { provide: ShelfService, useValue: mockShelfService}
       ],
-      schemas: [ NO_ERRORS_SCHEMA  ]
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     
     mockBookService.getBook.and.returnValue(of(
@@ -135,7 +144,6 @@ fdescribe('BookInfo component', () => {
       shelfType: "read"
     }));
 
-
     fixture = TestBed.createComponent(BookInfoComponent);
    
   })
@@ -143,31 +151,7 @@ fdescribe('BookInfo component', () => {
     expect(fixture.componentInstance).toBeTruthy();
   })
 
-  it(('should render book title'), () => {
-    fixture.componentInstance.myBook = {
-      "id": 3,
-      "title": "once and future",
-      "isbn": 555,
-      "img_url": "https://images-na.ssl-images-amazon.com/images/I/51Jb2iLFuXL._SX329_BO1,204,203,200_.jpg",
-      "publication_date": "2015",
-      "publisher": "kkkll",
-      "language": "english",
-      "description": "Robin of Locksley is dead. Maid Marian doesn’t know how she’ll go on, but the people of Locksley town, persecuted by the Sheriff of Nottingham, need a protector. And the dreadful Guy of Gisborne, the Sheriff’s right hand, wishes to step into Robin’s shoes as Lord of Locksley and Marian’s fiancé. Who is there to stop them? Marian never meant to tread in Robin’s footsteps—never intended to stand as a beacon of hope to those awaiting his triumphant return. But with a sweep of his green cloak and the flash of her sword, Marian makes the choice to become her own hero: Robin Hood.",
-      "reviews_count": 55,
-      "ratings_count": 63,
-      "ratings_avg": 3,
-      "author_id": 3,
-      "author_name": "Meagan Spooner",
-      "pages_no": 100,
-      "created_at": "2010",
-      "updated_at": "2010",
-      "genre": "action"
-    }
-    
 
-    expect(fixture.debugElement.query( By.css('#Booktitle')).nativeElement.innerText).toContain('once and future');
-
-  })
 
   fit(('should set myBook property to the book returned from the server'), () => {
     fixture.componentInstance.getBookInfo();
@@ -207,17 +191,33 @@ fdescribe('BookInfo component', () => {
     let bt= fixture.debugElement.query(By.css('button#save'));
     bt.triggerEventHandler('click',null);
     
-    //expect(fixture.componentInstance.errMsg).toContain("You must enter a review");
-  expect(mockBookService.createReview).toHaveBeenCalled();
+   expect(fixture.componentInstance.errMsg).toContain("You must enter a review");
+  
   });
 
-  it(('should set error msg if user tries to delete a review and he does not have one on this book'), () => {
+  fit(('should set error msg if user tries to delete a review and he does not have one on this book'), () => {
+    mockBookService.deleteReview.and.returnValue(of(true));
     fixture.componentInstance.reviewId = -1;
+    fixture.componentInstance.isUser = true;
 
-    fixture.componentInstance.deleteReview();
+    let bt= fixture.debugElement.query(By.css('button#delete'));
+    bt.triggerEventHandler('click',null);
+  
 
-   // expect(fixture.componentInstance.errMsg).toContain("You don't have a review on this book");
-   expect(mockBookService.deleteReview).toHaveBeenCalled();
+   expect(fixture.componentInstance.errMsg).toContain("You don't have a review on this book");
+    
+  })
+
+  fit(('should delete review'), () => {
+    mockBookService.deleteReview.and.returnValue(of(true));
+    fixture.componentInstance.getUserInfo();
+    fixture.componentInstance.isUser = true;
+
+    let bt= fixture.debugElement.query(By.css('button#delete'));
+    bt.triggerEventHandler('click',null);
+    
+    expect(mockBookService.deleteReview).toHaveBeenCalledWith(5);
+    //expect(fixture.componentInstance.reviewId).toEqual(-1);
   })
 })
 /*fdescribe('BookInfoComponent', () => {

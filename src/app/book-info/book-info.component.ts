@@ -81,20 +81,21 @@ export class BookInfoComponent implements OnInit {
         }
       }
     });
+  }
 
-    ngOnInit() {
-    this.getBookInfo();
-    this.getBookReviews();
-    this.getUserInfo();  
-    console.log(JSON.parse(localStorage.getItem('user')));
+
+  ngOnInit() {
     if (localStorage.getItem('token') == null) {
       this.isUser = false;
-      console.log(this.isUser + "aaakkkk");
     }
     else {
       this.isUser = true;
-      console.log("true");
+    }
 
+    this.getBookInfo();
+    if(this.isUser) {
+      this.getBookReviews();
+      this.getUserInfo();
     }
   }
 
@@ -110,7 +111,7 @@ export class BookInfoComponent implements OnInit {
         else {
           this.myBook.ratings_avg = Math.ceil(this.myBook.ratings_avg);
         }
-      }, ()=> this.router.navigateByUrl("/pageNotfound"));
+      }, () => this.router.navigateByUrl("/pageNotfound"));
   }
 
   /**gets the selected book reviews */
@@ -125,7 +126,7 @@ export class BookInfoComponent implements OnInit {
   getUserInfo() {
     this.shelfService.getUserBookInfo(+this.route.snapshot.paramMap.get('id')).subscribe((data) => {
       this.userInfo = data.pages[0];
-      console.log(this.userInfo)
+
       this.reviewId = this.userInfo.id;
       this.reviewBody = this.userInfo.body;
       this.reviewShelf = this.userInfo.shelf_name;
@@ -134,18 +135,14 @@ export class BookInfoComponent implements OnInit {
       this.shelfName = this.shelves[this.reviewShelf];
 
     });
-
-    console.log(this.userInfo.rating);
   }
 
 
   /**calls the book service funstion to create a review */
   review() {
-
     if (this.reviewBody != "" && this.reviewBody) {
       this.service.createReview(this.myBook.id, this.reviewShelf, this.reviewBody, this.reviewRating)
         .subscribe((data) => {
-          console.log(data);
           this.userInfo.id = data.Review_id;
           this.userInfo.body = data.bodyOfReview
           this.userInfo.rating = data.rate;
@@ -168,11 +165,11 @@ export class BookInfoComponent implements OnInit {
           this.reviewBody = this.userInfo.body;
           this.reviewRating = this.userInfo.rating;
 
-          this.sharedService.changeShelf(this.myBook.id,this.reviewShelf);
+          this.sharedService.changeShelf(this.myBook.id, this.reviewShelf);
 
           document.getElementById("closebtn").click();
           this.errMsg = "";
-        }, (data) => console.log(data));
+        });
     }
     else {
       this.errMsg = "You must enter a review";
@@ -186,15 +183,14 @@ export class BookInfoComponent implements OnInit {
         console.log(data);
         this.reviewId = -1;
         this.reviewBody = "";
-        this.reviewShelf = 3;
         this.reviewRating = 0;
 
         this.userInfo.id = -1;
         this.userInfo.body = "";
-        this.userInfo.shelf_name = 3;
+        //this.userInfo.shelf_name = 3;
         this.userInfo.rating = 0;
 
-        this.sharedService.changeShelf(this.myBook.id, 3);
+        //this.sharedService.changeShelf(this.myBook.id, 3);
 
         document.getElementById("closebtn").click();
         this.errMsg = "";
@@ -218,13 +214,13 @@ export class BookInfoComponent implements OnInit {
       this.userInfo.rating = rate;
     }
     else {
-      document.getElementById("openModalButton1").click();
+      document.getElementById("openModalButton").click();
       return;
     }
     if (this.userInfo.id == -1) {
       /* this.userInfo.shelf_name = 0;
        this.shelfName = "Read";*/
-      document.getElementById("openModalButton1").click();
+      document.getElementById("openModalButton").click();
     }
   }
 

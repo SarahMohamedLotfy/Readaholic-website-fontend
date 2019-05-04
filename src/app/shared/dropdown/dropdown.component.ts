@@ -57,18 +57,8 @@ export class DropdownComponent implements OnChanges {
     });
 
     if (changes['bookId'].currentValue != null) {
-      this.service.getShelf(changes['bookId'].currentValue).subscribe((data) => {
-        console.log(data);
-        if(data.ShelfName < 3) {
-        console.log("shelfname " + data.ShelfName);
-          this.shelfId = data.ShelfName;
-          console.log("iddd " + this.shelfId);
-          this.shelfStatus = this.shelves[this.shelfId];
-          this.sharedService.changeShelf(this.bookId, this.shelfId);
-          this.buttonDisabled = true;
-          this.removeEnabled = true;
-        }
-      });
+      this.bookId = changes['bookId'].currentValue;
+     this.getShelfId();
     }
   }
 
@@ -100,12 +90,27 @@ export class DropdownComponent implements OnChanges {
     })
   }
 
+  /**gets the shelf id */
+  getShelfId() {
+    this.service.getShelf(this.bookId).subscribe((data) => {
+      console.log(data);
+      if(data.ShelfName < 3) {
+      console.log("shelfname " + data.ShelfName);
+        this.shelfId = data.ShelfName;
+        console.log("iddd " + this.shelfId);
+        this.shelfStatus = this.shelves[this.shelfId];
+        this.sharedService.changeShelf(this.bookId, this.shelfId);
+        this.buttonDisabled = true;
+        this.removeEnabled = true;
+      }
+    });
+  }
+
 
   /**adds a book to the selected shelf */
-  addBookToShelf(eventObj: Event) {
-    var e = <HTMLElement>eventObj.srcElement;
-    this.shelfId = +e.id
-    this.service.addToShelf(this.shelfId, this.bookId).subscribe((data) => {
+  addBookToShelf(id: number) {
+    this.service.addToShelf(id, this.bookId).subscribe((data) => {
+      this.shelfId = id;
       this.shelfStatus = this.shelves[this.shelfId]
       this.sharedService.changeShelf(this.bookId,this.shelfId);
       this.buttonDisabled = true;

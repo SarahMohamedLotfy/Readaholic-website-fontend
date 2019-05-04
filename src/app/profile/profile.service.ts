@@ -23,7 +23,7 @@ export class ProfileService {
   }
 
   getUpdatesForuser(id: number):Observable<any>{
-    return this.http.get(this.url+"/api/updates?user_id="+ id);
+    return this.http.get(this.url+"/api/updates?user_id="+ id + "&max_updates=" + 15);
        }
   getfollowersforusers(id:number): Observable<any> {
     return this.http.get(this.url+'/api/following?id='+ id )

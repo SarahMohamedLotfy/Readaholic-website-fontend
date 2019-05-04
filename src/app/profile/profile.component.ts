@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
    allUpdates: updates[];
    currentlyReading: myBooks[];
    showEditbtn = false;
+   authid: number;
 
    books0: any = [];
    books2: any = [];
@@ -45,6 +46,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     /** receives id from url and send it to the get request */
     const id: number = +this.route.snapshot.paramMap.get('id');
+    this.authid=id;
 /** to choose auth or another profile */
     if (id > 0 ) {
 /** get user profile by id */

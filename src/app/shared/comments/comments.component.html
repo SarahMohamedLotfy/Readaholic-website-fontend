@@ -1,6 +1,6 @@
-<small><button class="btn btn-link" (click)="toggleComments()" > comments
+<button class="btn btn-link" (click)="toggleComments()" > comments
    </button>
-  </small>
+
   <div *ngIf="commentFlag==true">
 <div class="detailBox">
     <div class="actionBox"  >
@@ -13,11 +13,11 @@
               <div class="commenterImage">
                    <div class="userRoute" *ngIf='com.have_the_comment == "Yes"'>
                       <a [routerLink]="['/profile']">
-                         <img src='https://vignette.wikia.nocookie.net/hunter-x-hunter-fanon/images/a/a9/BABC6A23-98EF-498E-9D0E-3EBFC7ED8626.jpeg/revision/latest?cb=20170930221652' />
+                         <img src='{{com.image_link}}' />
                     </a>
                   </div>
                   <div class="userRoute" *ngIf='com.have_the_comment == "No"'>
-                      <a [routerLink]="['/profile', com.user_id]">   <img src='https://vignette.wikia.nocookie.net/hunter-x-hunter-fanon/images/a/a9/BABC6A23-98EF-498E-9D0E-3EBFC7ED8626.jpeg/revision/latest?cb=20170930221652' /></a>
+                      <a [routerLink]="['/profile', com.user_id]">   <img src='{{com.image_link}' /></a>
                     </div>
              </div>
           </div>
@@ -48,7 +48,7 @@
                 <input class="form-control" type="text" formControlName="content" placeholder="Write a comment.." />
             </div>
             <div class="form-group">
-                <button id="submitbtn" class="btn btn-default" [disabled]="CommentForm.invalid" (click)="onSubmit()" >Add</button>
+                <button  id="submitbtn" class="btn btn-default" [disabled]="CommentForm.invalid" (click)="onSubmit()" >Add</button>
             </div>
         </form>
     </div>

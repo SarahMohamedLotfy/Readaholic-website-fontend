@@ -520,46 +520,46 @@
         {
           "id": 3,
           "name": "Mohamed Hayalla",
-          "img_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+          "image_link": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
           "bookid": 144,
-          "title": "A Gathering of Shadows",
-          "bookimage": "https://images.gr-assets.com/books/1429627728l/20764879.jpg",
+          "currently_reading": "A Gathering of Shadows",
+          "book_image": "https://images.gr-assets.com/books/1429627728l/20764879.jpg",
           "country": "Cairo,11,Egypt"
         },
         {
           "id": 5,
           "name": "Kamal Shaker",
-          "img_url": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
+          "image_link": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
           "bookid": 6,
-          "title": "حكاية الاسم الجيديد",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377934260i/18400361._SX120_.jpg",
+          "currently_reading": "حكاية الاسم الجيديد",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377934260i/18400361._SX120_.jpg",
           "country": "Suez,Egypt"
         },
         {
           "id": 4,
           "name": "Walid Hassan",
-          "img_url": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
+          "image_link": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
           "bookid": 2,
-          "title": "Stormcaster-Shattered Realms",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
+          "currently_reading": "Stormcaster-Shattered Realms",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
           "country": "Giza,11,Egypt"
         },
         {
           "id": 1,
           "name": "Huda Yahya",
-          "img_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+          "image_link": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
           "bookid": 3,
-          "title": "اخر ايام الارض ",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
+          "currently_reading": "اخر ايام الارض ",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
           "country": "Asuit,Egypt"
         },
         {
           "id": 2,
           "name": "Ahmed Elsayed",
-          "img_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+          "image_link": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
           "bookid": 8,
-          "title": "Deathcaster - Shattered Realms",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529823092i/39320115._SY180_.jpg",
+          "currently_reading": "Deathcaster - Shattered Realms",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529823092i/39320115._SY180_.jpg",
           "country": "Aswan,11,Egypt"
         }
       ],
@@ -614,56 +614,47 @@
         {
           "id": 1,
           "name": "Huda Yahya",
-          "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
-          "bookid": 3,
-          "bookname": "اخر ايام الارض ",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
+          "image_link": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+          "book_id": 3,
+          "currently_reading": "اخر ايام الارض ",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
           "country": "Asuit,Egypt"
         },
         {
           "id": 2,
           "name": "Ahmed Elsayed",
-          "image_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
-          "bookid": 8,
-          "bookname": "Deathcaster - Shattered Realms",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529823092i/39320115._SY180_.jpg",
+          "image_link": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+          "book_id": 8,
+          "currently_reading": "Deathcaster - Shattered Realms",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529823092i/39320115._SY180_.jpg",
           "country": "Aswan,11,Egypt"
         },
         {
           "id": 3,
           "name": "Mohamed Hayalla",
-          "image_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
-          "bookid": 7,
-          "bookname": "A Tale of Two Cities",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310124698i/9847899._SY180_.jpg",
+          "image_link": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+          "book_id": 7,
+          "currently_reading": "A Tale of Two Cities",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310124698i/9847899._SY180_.jpg",
           "country": "Cairo,11,Egypt"
         },
         {
           "id": 4,
           "name": "Walid Hassan",
-          "image_url": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
-          "bookid": 2,
-          "bookname": "Stormcaster-Shattered Realms",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
+          "image_link": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
+          "book_id": 2,
+          "currently_reading": "Stormcaster-Shattered Realms",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
           "country": "Giza,11,Egypt"
         },
         {
           "id": 5,
           "name": "Kamal Shaker",
-          "image_url": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
-          "bookid": 6,
-          "bookname": "حكاية الاسم الجيديد",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377934260i/18400361._SX120_.jpg",
+          "image_link": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
+          "book_id": 6,
+          "currently_reading": "حكاية الاسم الجيديد",
+          "book_image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377934260i/18400361._SX120_.jpg",
           "country": "Suez,Egypt"
-        },
-        {
-          "id": 6,
-          "name": "Eslam Ahmed",
-          "image_url": "https://images.gr-assets.com/photos/1551961617p8/3783093.jpg",
-          "bookid": 5,
-          "bookname": "شاى بالنعناع ",
-          "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309610934i/11922284._SX120_.jpg",
-          "country": "Aswan,11,Egypt"
         }
       ],
       "review": [

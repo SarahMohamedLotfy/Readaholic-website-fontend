@@ -170,24 +170,7 @@ this.myfirstservice.gethisshelfbooks(1,id).subscribe((posts:any)=>{
 }
   );
 
-  this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
-    this.books =posts.pages ;
-    this.temp =  this.books;
-    console.log(this.books);
-    this.initializedarrow=true;
-  },
-  (ERROR:any)   => {
-    if(ERROR .status ==400)
-    {
-      this.books1=[];
-    this.nobooks1=true;
-    console.log('hghghghghg');
-
-    }
-  });
-
-
-
+  
 }
   else 
   {

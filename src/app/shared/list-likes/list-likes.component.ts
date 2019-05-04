@@ -10,16 +10,16 @@ import { listLikes } from 'src/app/classes/listLikes';
 export class ListLikesComponent implements OnInit {
 
  @Input () resourse_id : number;
-likesList : listLikes[];
+  likesList : listLikes[];
   constructor(private ser: ListLikesService) { }
 
 
   ngOnInit() {
     this.ser.getLikesList(this.resourse_id).subscribe(data => {
       this.likesList = data,
-      console.log(data)
+      console.log(this.likesList)
     },
-       (err: any) => console.log(err)
+     // (err: any) => console.log(err)
      );
 
   }

@@ -39,6 +39,7 @@ export class NavbarComponent implements OnInit {
     
     if(localStorage.getItem('token')== null){
       this.isUser=false
+<<<<<<< HEAD
     }else{this.isUser=true ;
       this.users=JSON.parse(localStorage.getItem('user')) ;
       this.id1=this.users.userInfo.id ;
@@ -51,6 +52,15 @@ export class NavbarComponent implements OnInit {
       console.log(data);
       }
     ),1000});
+=======
+    }else{this.isUser=true ;}
+    
+    console.log(this.isUser);
+   
+       // this.notifsnb=this.notifs.forEach.length;
+       if(this.isUser){
+     this.notifs$ =this.httpser.getNotifications();}
+>>>>>>> fd0459842a2c3240958491751e586802400bd062
        // console.log(data);
       
     
@@ -72,12 +82,14 @@ export class NavbarComponent implements OnInit {
       this.service.logOut().subscribe(
         res=>{localStorage.removeItem('token');
         this.router.navigate(['/login']);
+        localStorage.clear();
         
         },err => {
           if(err.status ==405)
           {
           
            localStorage.removeItem('token');
+           localStorage.clear();
             this.router.navigate(['/login']);
             console.log(err);
           }
@@ -89,6 +101,7 @@ export class NavbarComponent implements OnInit {
     }
 
     search(){
+      console.log(this.searchTerm);
       this.router.navigate(['/searchBooks'],{queryParams:{'search':this.searchTerm,'searchType':'title'}});
       
       this.clickBtn.emit(this.searchTerm);

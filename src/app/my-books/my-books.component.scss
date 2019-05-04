@@ -129,9 +129,14 @@
 .tablePlace
 {
   position :absolute;
-  top:180px;
-  left:500px;
+  top:260px;
+  left:440px;
 width:100%;
+}
+#avgratingg
+{
+
+  text-align: center;
 }
 .mybooksTitle
 {
@@ -142,7 +147,7 @@ width:100%;
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
     font-weight: bold;
     top: 80px;
-    left:-690px;
+    left:180px;
     padding-left: 2%;
 }
 .content-box {
@@ -178,12 +183,17 @@ hr {
   border-top-left-radius: 5px 5px;
   border-bottom-left-radius: 5px 5px;
 }
+.starplace
+{
+  position: absolute;
+  padding-top:25px;
+}
 #tfnewsearch{
   
   float:right;
   padding:20px;
   left:750px;
-  top:20px;
+  top:10px;
  // position: relative;
   padding-right: 20%;
   margin-top: -5px;
@@ -193,24 +203,24 @@ hr {
 #arrow2
 {
   position: absolute;
-  left:-330px;
-  top:50px;
+  left:-260px;
+  top:30px;
   font-size: 20px;
   color: #00678e;
 }
 #arrow1
 {
   position: absolute;
-  left:-330px;
-  top:22px;
+  left:-260px;
+  top:7px;
   font-size: 20px;
   color: #00678e;
 }
 #arrow0
 {
   position: absolute;
-  left:-330px;
-  top:70px;
+  left:-260px;
+  top:50px;
   font-size: 20px;
   color: #00678e;
 }
@@ -259,8 +269,8 @@ hr {
 #tagrba
 {
   position: relative;
-  top:300px;
-  left:600px;
+  top:50px;
+  left:400px;
   line-height: 26px;
   font-size: 16px;
   font-family: "Merriweather", Georgia, "Times New Roman", serif;
@@ -275,6 +285,12 @@ hr {
   @media (max-width: 800px) 
 
     {
+
+      .starplace
+{
+  position: relative;
+  padding-top:25px;
+}
       #tfnewsearch{
   
         float:right;
@@ -343,6 +359,11 @@ hr {
   @media (max-width: 768px) 
 
     {
+      .starplace
+{
+  position: relative;
+  padding-top:25px;
+}
       hr {
   
         position: relative;
@@ -425,6 +446,11 @@ hr {
   @media (max-width: 480px) 
 
     {
+      .starplace
+{
+  position: relative;
+  padding-top:25px;
+}
       #arrow2
 {
   position: absolute;

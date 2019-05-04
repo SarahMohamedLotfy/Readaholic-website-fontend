@@ -1,151 +1,161 @@
 <navbar></navbar>
-  <div class="container" id="firstContainer" *ngIf="selectedProfile" >
+<div class="container" id="firstContainer" *ngIf="selectedProfile">
     <div class="row">
-      <div class=" col-md-4 ">
-           <img id="profilePicture" [src]="selectedProfile.image_link" >
-           <div >
-             <p class="moreUseractivity" >
-            <a [routerLink]="['/myBooks']" style="color: #B7673C"> {{ selectedProfile.rating_count }} rating</a>( {{ selectedProfile.rating_avg }} avg ) <br>
-             </p>
-           </div>
-      </div>
-      <div class=" col-md-4" >
-        <div class="userName" id="userNameprofile">  {{ selectedProfile.name }}
-          <a *ngIf="showEditbtn" [routerLink]="['/accountSettings']"> ( edit profile )</a> </div>
-
-          <hr>
-          <div class="Details">
-             <b>Details:</b>
-            Age {{ selectedProfile.age }} , {{ selectedProfile.city }}
-          </div>
-          <div class="Activity">
-           <b>Activity:</b>
-            Joined in {{ selectedProfile.joined_at }} , Last Active in {{ selectedProfile.last_active }}
-          </div>
-          <div class="Birthday">
-          <b>Birthday:</b>
-          {{ selectedProfile.birthday }}
+        <div class=" col-md-4 ">
+            <img id="profilePicture" [src]="selectedProfile.image_link">
+            <div>
+                <p class="moreUseractivity">
+                    <a [routerLink]="['/myBooks']" style="color: #B7673C"> {{ selectedProfile.rating_count }} rating</a>( {{ selectedProfile.rating_avg }} avg ) <br>
+                </p>
+            </div>
         </div>
-      </div>
-    </div>
-    </div>
-      <br>
-      <br>
+        <div class=" col-md-4">
+            <div class="userName" id="userNameprofile"> {{ selectedProfile.name }}
+                <a *ngIf="showEditbtn" [routerLink]="['/accountSettings']"> ( edit profile )</a> </div>
 
-    <div class="container" id="profileTitles" *ngIf="selectedProfile" >
-    <div class="row">
-        <div class=" col-md-8 ">
-               <div class="bookShelves" >
-                     <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
-                        <hr>
+            <hr>
+            <div class="Details">
+                <b>Details:</b> Age {{ selectedProfile.age }} , {{ selectedProfile.city }}
+            </div>
+            <div class="Activity">
+                <b>Activity:</b> Joined in {{ selectedProfile.joined_at }} , Last Active in {{ selectedProfile.last_active }}
+            </div>
+            <div class="Birthday">
+                <b>Birthday:</b> {{ selectedProfile.birthday }}
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container" id="profileTitles" *ngIf="selectedProfile && isUser">
+        <div class="row">
+            <div class=" col-md-8 ">
+                <div class="bookShelves">
+                    <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
+                    <hr>
                     <div class="userBookshelves">
-                        <a [routerLink]="['/myBooks']" id="singleBookshelf" > read ({{count0}}) </a>
-                        <a [routerLink]="['/myBooks']"  id="singleBookshelf"> to-read ({{count1}}) </a>
-                        <a [routerLink]="['/myBooks']"  id="singleBookshelf"> currently-reading({{count2}}) </a>
-
-                  </div>
-                  <a [routerLink]="['/myBooks']" id="bookShelvesmore" > more.. </a>
-               </div>
-                  <hr>
-               <div class="currentlyReading" *ngIf="count2 > 0" >
-                <b>  {{ selectedProfile.name}} IS CURRENTLY READING </b>
-                <hr>
-                <div class="loop"  *ngFor="let post of books2">
-
-                   <div class="container">
-                      <div class="row">
-                        <div class="col-md-6">
-                            <div class="media">
-                                <a [routerLink]="['/book',post.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
-                                   <div id="bookDetails" class=" col-md-6" *ngIf="post.actionText != ' started following  : '"   >
-                                    <p> <a [routerLink]="['/book',post.book_id]" > {{ post. title }}</a>  <br>
-                                        </p>
-                                       </div>
-                                       <div class="col-md-6">
-                                         <app-dropdown [bookId]='post.book_id' ></app-dropdown>
-                                         <app-star id='stars'  [bookId]='post.book_id' [starsCount]="post.ratings_avg" [readOnly]="false" [shelf]="post.shelf"  ></app-star>
-                                       </div>
-                               </div>
-
-                      </div>
-                      </div>
-                      </div>
-                      <hr>
-                  </div>
-                  </div>
-
-               <b>
-                  {{ selectedProfile.name }}'S RECENT UPDATES </b>
-                  <hr>
-                  <div class="updates" *ngFor='let update of allUpdates' >
-                    <div class="container">
-                      <div class="row">
-                          <div class=" col-md-6">
-                            <div class="action" *ngIf="update.update_type !=0 "  >
-                            <div class="action" *ngIf="update.actionText != ' started following  : ' "  >
-                             <b> {{update.name }}</b>  {{ update.actionText }}
-                              <div class="media">
-                               <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
-                                  <div id="bookDetails" class=" col-md-6" *ngIf="update.actionText != ' started following  : '"   >
-                                   <p> <a [routerLink]="['/book',update.book_id]" > {{ update. title }}</a>  <br>
-                                       by {{ update.author_name}} <br></p>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <app-dropdown [bookId]='update.book_id' ></app-dropdown>
-                                        <app-star id='stars'  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="false" [shelf]="update.shelf"  ></app-star>
-                                      </div>
-                              </div>
-                            </div>
-
-
-                          </div>
-                         <!--   <img  [src]="update.image_link">-->
-                         <div class="choosePerson" *ngIf="update.actionText == ' started following  : '">
-                           <b> {{update.name }} </b>{{ update.actionText }}
-                           <a [routerLink]="['/myBooks',update.followed_id]">{{ update.followed_name }} </a>
-                            <div class="image">
-                              <img [src]="update.followed_image_link" >
-                              </div>
-                         </div>
-                         <div class="action" *ngIf="update.update_type == 0 "  >
-                            <b> {{update.name }}</b>  {{ update.actionText }} <small>  <app-star  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="true" [shelf]="update.shelf"  ></app-star></small>
-                            <div class="media">
-                                <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
-                                   <div id="bookDetails" class=" col-md-6"  >
-                                    <p> <a [routerLink]="['/book',update.book_id]" > {{ update. title }}</a>  <br>
-                                        by {{ update.author_name}} <br></p>
-                                       </div>
-                                       <div class="col-md-6">
-                                         <app-dropdown  [bookId]='update.book_id' ></app-dropdown>
-                                         <app-star id='stars'  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="false" [shelf]="update.shelf"  ></app-star>
-                                       </div>
-                               </div>
-                           </div>
-
-
-                          </div>
-                      </div>
+                        <div class="who" *ngIf='authid==0'>
+                            <a [routerLink]="['/myBooks']" id="singleBookshelf"> read ({{count0}}) </a>
+                            <a [routerLink]="['/myBooks']" id="singleBookshelf"> to-read ({{count1}}) </a>
+                            <a [routerLink]="['/myBooks']" id="singleBookshelf"> currently-reading({{count2}}) </a>
+                        </div>
+                        <div class="who" *ngIf='authid > 0'>
+                            <a [routerLink]="['/myBooks',selectedProfile.id]" id="singleBookshelf"> read ({{count0}}) </a>
+                            <a [routerLink]="['/myBooks',selectedProfile.id]" id="singleBookshelf"> to-read ({{count1}}) </a>
+                            <a [routerLink]="['/myBooks',selectedProfile.id]" id="singleBookshelf"> currently-reading({{count2}}) </a>
+                        </div>
                     </div>
-                     <hr>
-                  </div>
 
-                        </div>
-                        <div class="col-md-4"  >
-                         <b> {{ selectedProfile.name }} IS FOLLOWING  </b>
-                          <hr>
-                          <tbody>
-                            <tr *ngFor='let post of posts'>
-                                <td>
-                                  <img id="followerProfilepicture"  src="https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg" >
-                                  <!-- <img [src]="post.image_link"  id="followerProfilepicture"  >-->
-                                   </td>
-                                 <td>  <a [routerLink]="['/profile',post.id]">
-                                   <!--<a id="followName" href="#/profile/{{post.id }}">--> {{ post.name }} </a>
-                                </td>
-                            </tr>
-                          </tbody>
+                    <a [routerLink]="['/myBooks',selectedProfile.id]" id="bookShelvesmore"> More.. </a>
+                </div>
 
+
+
+                <hr>
+                <div class="currentlyReading" *ngIf="count2 > 0">
+                    <b>  {{ selectedProfile.name}} IS CURRENTLY READING </b>
+                    <hr>
+                    <div class="loop" *ngFor="let post of books2">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="media">
+                                        <a [routerLink]="['/book',post.book_id]"> <img id="bookUpdate" src="{{ post.image_link }}"> </a>
+                                        <div id="bookDetails" class=" col-md-6" *ngIf="post.actionText != ' started following  : '">
+                                            <p> <a [routerLink]="['/book',post.book_id]"> {{ post. title }}</a> <br>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <app-dropdown [bookId]='post.book_id'></app-dropdown>
+                                            <app-star id='stars' [bookId]='post.book_id' [starsCount]="post.ratings_avg" [readOnly]="false" [shelf]="post.shelf"></app-star>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
+                        <hr>
+                    </div>
+                </div>
+
+
+                <b>
+                  {{ selectedProfile.name }}'S RECENT UPDATES </b>
+                <hr>
+                <div class="updates" *ngFor='let update of allUpdates'>
+                    <div class="container">
+                        <div class="row">
+                            <div class=" col-md-6">
+                                <div class="action" *ngIf="update.update_type !=0 ">
+                                    <div class="action" *ngIf="update.actionText != ' started following  : ' ">
+                                        <b> {{update.name }}</b> {{ update.actionText }}
+                                        <div class="media">
+                                            <a [routerLink]="['/book',update.book_id]"> <img id="bookUpdate" src="{{ update.image_link }}"> </a>
+                                            <div id="bookDetails" class=" col-md-6" *ngIf="update.actionText != ' started following  : '">
+                                                <p> <a [routerLink]="['/book',update.book_id]"> {{ update. title }}</a> <br> by {{ update.author_name}} <br></p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <app-dropdown [bookId]='update.book_id'></app-dropdown>
+                                                <app-star id='stars' [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="false" [shelf]="update.shelf"></app-star>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!--   <img  [src]="update.image_link">-->
+                                <div class="choosePerson" *ngIf="update.actionText == ' started following  : '">
+                                    <b> {{update.name }} </b>{{ update.actionText }}
+                                    <a [routerLink]="['/myBooks',update.followed_id]">{{ update.followed_name }} </a>
+                                    <div class="image">
+                                        <img id="bookUpdate" [src]="update.followed_image_link">
+                                    </div>
+                                </div>
+                                <div class="action" *ngIf="update.update_type == 0 ">
+                                    <b> {{update.name }}</b> {{ update.actionText }} <small>  <app-star  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="true" [shelf]="update.shelf"  ></app-star></small>
+                                    <div class="media">
+                                        <a [routerLink]="['/book',update.book_id]"> <img id="bookUpdate" [src]='update.image_link'> </a>
+                                        <div id="bookDetails" class=" col-md-6">
+                                            <p> <a [routerLink]="['/book',update.book_id]"> {{ update. title }}</a> <br> by {{ update.author_name}} <br></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <app-dropdown [bookId]='update.book_id'></app-dropdown>
+                                            <app-star id='stars' [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="false" [shelf]="update.shelf"></app-star>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-md-4">
+                <b> {{ selectedProfile.name }} IS FOLLOWING  </b>
+                <hr>
+                <tbody>
+                    <tr *ngFor='let post of posts'>
+                        <td>
+                            <!-- <img id="followerProfilepicture"  src="https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg" >-->
+                            <img [src]="post.image_link" id="followerProfilepicture">
+                        </td>
+                        <td>
+                            <a id="followName" [routerLink]="['/profile',post.id]">
+                                <!--<a  href="#/profile/{{post.id }}">-->{{ post.name }} </a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </div>
         </div>
     </div>
 
+</div>

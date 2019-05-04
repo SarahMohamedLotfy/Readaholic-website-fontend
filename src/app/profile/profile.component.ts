@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
    allUpdates: updates[];
    currentlyReading: myBooks[];
    showEditbtn = false;
+   authid: number;
 
    books0: any = [];
    books2: any = [];
@@ -32,6 +33,7 @@ export class ProfileComponent implements OnInit {
    count0: number;
    count1: number;
    count2: number;
+   isUser:boolean;
 
 
 /**
@@ -45,12 +47,23 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     /** receives id from url and send it to the get request */
     const id: number = +this.route.snapshot.paramMap.get('id');
+    this.authid=id;
+
+    if(localStorage.getItem('token') == null){
+      this.isUser = false;}
+    
+    else{
+      this.isUser = true;
+    }
 /** to choose auth or another profile */
     if (id > 0 ) {
 /** get user profile by id */
    this.httpService.getUserprofile(id).subscribe(
         (data: profile) => this.selectedProfile = data,
                );
+
+         if(this.isUser)      
+         {
    this.httpService.getUpdatesForuser(id).subscribe(data => {
     this.allUpdates = data ;
     console.log(data);
@@ -87,7 +100,7 @@ export class ProfileComponent implements OnInit {
             this.count0= this.books0.length;
             console.log(this.books0);
           });
-         if(!this.count0){ this.count0=0; }
+         if(!this.count0){ this.count0=0; }}
 
     } else {
       /** get authenticated user profile */

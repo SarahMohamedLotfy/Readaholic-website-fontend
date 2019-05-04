@@ -17,51 +17,32 @@ export class navBarService {
     /**
      * we pass an object of httpclient to the constuctor
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     users:any;
     id:number;
     message:data;
      
    
-=======
-=======
->>>>>>> fd0459842a2c3240958491751e586802400bd062
+
     
-    users:any=JSON.parse(localStorage.getItem('user')) ;
-    
-    id:number;
-<<<<<<< HEAD
->>>>>>> fd0459842a2c3240958491751e586802400bd062
-=======
->>>>>>> fd0459842a2c3240958491751e586802400bd062
+
     private subject: Subject<notifications> = new Subject<notifications>();
     isUser:boolean;
    
     private pusherClient: Pusher
     constructor(private http: HttpClient) {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
        
-    if(localStorage.getItem('token')== null){
-      
-    }else{
-      this.users=JSON.parse(localStorage.getItem('user')) ;
-      this.id=this.users.userInfo.id ;
+  
     
-=======
-=======
->>>>>>> fd0459842a2c3240958491751e586802400bd062
+
 
       if(localStorage.getItem('token')== null){
         this.isUser=false
       }else{
         this.id==this.users.userInfo.id ;
         this.isUser=true ;
-<<<<<<< HEAD
->>>>>>> fd0459842a2c3240958491751e586802400bd062
-=======
->>>>>>> fd0459842a2c3240958491751e586802400bd062
+
         console.log(this.users);
         console.log(this.id);
         this.pusherClient = new Pusher('aa5ca7b55f8f7685a9cc',{ cluster: 'eu' });
@@ -87,18 +68,13 @@ export class navBarService {
             //alert(this.message.user_name+);
             //console.log(data);
           }
-<<<<<<< HEAD
-<<<<<<< HEAD
-          
+
         );
         }
-=======
-=======
->>>>>>> fd0459842a2c3240958491751e586802400bd062
-        );}
+
+        }
+
      
->>>>>>> fd0459842a2c3240958491751e586802400bd062
-     }
      getnotifItems(): Observable<notifications> {
         return this.subject.asObservable();
       }

@@ -22,5 +22,8 @@ export class review{
    username: string;
    /**image of the user */
    userimagelink: string;
+  name:string ;
+  image_link:string;
+
    
 }

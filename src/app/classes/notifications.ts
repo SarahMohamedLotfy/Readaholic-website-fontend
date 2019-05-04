@@ -5,5 +5,6 @@ n_id:number;
 read:number;
 
 data:data;
+message:data;
 
 }

@@ -20,7 +20,7 @@ import { catchError, retry } from 'rxjs/operators';
     /**Sends a request to the server with the email and password to checks if they're correct */
  login(email:string,password:string): Observable<any>
  {
-   return this.http.post('http://4404e3cc.ngrok.io/api/login',{email,password}) ;
+   return this.http.post(this.url+'/api/login',{email,password}) ;
  }
 
 
@@ -49,6 +49,13 @@ import { catchError, retry } from 'rxjs/operators';
    getBookByGenre(genre:string): Observable<any> {
         
     return this.http.get<any>(this.url+'/api/books/genre?genreName='+genre);
+    
+   }
+
+   /**searchs for books by their title and returns them */
+   getBookByTitle(title:string): Observable<any> {
+        
+    return this.http.get<any>(this.url+'/api/Books/book_title?title='+title);
     
    }
   

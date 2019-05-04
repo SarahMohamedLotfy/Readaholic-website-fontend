@@ -31,6 +31,7 @@ reviewRating = 0;
 /**@ignore */
 shelfName: string = "";
 countt:number;
+useridd:boolean;
  /**
  * posts  is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ) .
 
@@ -98,7 +99,7 @@ this.idUser=id;
  this.myfirstservice.getUserprofile(id).subscribe(
      (data: profile) => this.selectedProfile = data,
             )
-         
+         this.useridd= true;
         
  }
  else
@@ -107,7 +108,8 @@ this.idUser=id;
  (data: profile) => this.selectedProfile = data,
  (err: any) => console.log('ehuuhfuihdiuhfrr')
   );
-  
+  this.useridd= false;
+
  }
 
     

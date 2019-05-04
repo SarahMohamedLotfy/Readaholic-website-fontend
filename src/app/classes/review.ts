@@ -24,6 +24,8 @@ export class review{
    userimagelink: string;
   name:string ;
   image_link:string;
+  title:string;
+  
 
    
 }

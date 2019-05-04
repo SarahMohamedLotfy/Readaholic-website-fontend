@@ -1,14 +1,16 @@
 <navbar></navbar>
-<div *ngIf="idUser== 0" >
+
+<div *ngIf="useridd == true" >
 
   <div class="mybooksTitle"> 
-    <a [routerLink]="['/profile',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a>Books</div>
+ Books
+ </div>
 </div>
 
-<div *ngIf="idUser!= 0" >
+<div *ngIf="useridd ==false" >
 
     <div class="mybooksTitle"> 
-    Books  
+      Books
   </div>
   </div>
 <hr/>

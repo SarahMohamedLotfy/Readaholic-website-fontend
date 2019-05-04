@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit {
      this.httpser.getUpdates().subscribe(
          data =>{
            this.updatess=data ;
+           console.log(data);
            this.loadData();
 
         }, error => this.error = error);

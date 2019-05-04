@@ -3,6 +3,9 @@
     border:1px solid #bbb;
     margin:50px;
 }
+html{
+  display: inline-block;
+}
 .commentBox {
     padding:10px;
     border-top:1px dotted #bbb;
@@ -16,21 +19,8 @@
   color: red;
   border: none;
 }
-/*
-.commentList {
-   padding:0;
-    list-style:none;
-    max-height:200px;
-    overflow:auto;
-}
-.commenterImage {
-    width:30px;
-    margin-right:5px;
-    margin-bottom: 10px;
-    height:100%;
-    float:left;
-}*/
-.commenterImage img {
+
+.commenterImage div img {
     width:100%;
     border-radius:50%;
     float: left;
@@ -42,4 +32,18 @@
 .actionBox {
     border-top:1px dotted #bbb;
     padding:10px;
+}
+.form-control{
+  width: 100%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+#submitbtn{
+  margin-left: 40px;
+
+}
+.btn-link{
+  padding: 1px 1px;
 }

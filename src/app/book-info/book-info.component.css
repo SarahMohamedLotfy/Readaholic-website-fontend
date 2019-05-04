@@ -66,7 +66,7 @@
 }
 
 #reviewInfo {
-    min-width:600px; 
+    min-width:600px;
 }
 
 #bookFormat {
@@ -99,7 +99,7 @@
     background: none;
     color: #00635d;
    cursor: pointer;
-   
+
 }
 
 .modal-content {
@@ -121,7 +121,7 @@
 
 textarea {
     width: 100%;
-    
+
     margin-left: 4%;
     margin-right: 5%;
 }
@@ -144,22 +144,22 @@ textarea {
     border: 0.7px solid #D7D7D7;
     text-align: left;
   }
-  
-  
+
+
   #myInput {
     font-size: 0.9rem;
     width: 100%;
     border-radius: 7px;
     border: 0.7px solid #D7D7D7;
   }
-  
+
   #myInput:focus {outline: 3px solid #ddd;}
-  
+
   .dropdown {
     position: relative;
     display: inline-block;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -170,7 +170,7 @@ textarea {
     border: 0.7px solid #D7D7D7;
     z-index: 1;
   }
-  
+
   .dropdown-content a {
     color: black;
     text-decoration: none;
@@ -180,8 +180,21 @@ textarea {
     padding-bottom: 3px;
     padding-top: 3px;
   }
-  
+
   .dropdown a:hover {background-color: #FFFFE0;}
-  
+
   .show {display: block;}
+
+app-list-likes{
+  display: inline-block;
+
+}
+app-comment{
+  display: inline-block;
+
+}
+app-likes{
+  display: inline-block;
+}
+
 

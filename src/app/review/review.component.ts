@@ -1,3 +1,4 @@
+import { user } from './../classes/user';
 import { AppRoutingModule } from '../app-routing.module';
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { LogInHttpService } from 'src/app/log-in/log-in-http.service';
@@ -15,23 +16,25 @@ import { review } from 'src/app/classes/review';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-
+  revieww:review;
+  userr:review;
+  id: number = +this.route.snapshot.paramMap.get('userId');
+  
+  bookid: number = +this.route.snapshot.paramMap.get('bookId');
   constructor(private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:ReviewService) { }
- reviews:review[] ;
- id: number = +this.route.snapshot.paramMap.get('userId');
- 
- bookid: number = +this.route.snapshot.paramMap.get('bookId');
+
  
   ngOnInit() {
    
     this.httpser.getReview(this.id,this.bookid).subscribe(
       data =>{
-        this.reviews=data.pages ;
-        /*
-        this.reviews.user_id=this.id;
-        console.log(this.review.user_id);*/
+        this.revieww=data.pages ;
+        this.userr =data.user;
+        
+        this.revieww.user_id=this.id;
+        console.log(this.revieww.user_id);
        
-        console.log(data);
+      console.log(data);
      })
   }
  

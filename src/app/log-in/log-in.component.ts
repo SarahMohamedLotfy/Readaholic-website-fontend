@@ -143,11 +143,20 @@ onSigUp(){
   const val = this.formUp.value;
   this.signUpError=false;
 if(this.formUp.valid){
-  
+  if(val.password!=val.password_confirmation)
+  {
+    this.signUpError=true;
+    this.errorUp="Password and password confirmation don't match"
+  }
+  else
+  {
   this.service.signUp(val.email,val.password,val.password_confirmation,val.name,val.gender,val.birthday,val.country,val.city).subscribe(
 (data:any) => {
   localStorage.setItem('token',data.token);
   this.users=data;
+  localStorage.setItem('user',JSON.stringify({userInfo:this.users}));
+  
+  
   this.service.verify().subscribe((data:any)=>{
     console.log(data);
   
@@ -171,7 +180,7 @@ err => {
   else
   console.log(err);
 }
-  );}
+  );}}
   else{
     this.signUpError=true;
   this.errorUp="you must fill all boxes"

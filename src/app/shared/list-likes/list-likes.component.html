@@ -1,11 +1,12 @@
 
-<button id='btnLink' type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">likes</button>
+<button id='btnLink' type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+<small> likes</small>
+</button>
 
 <div class="container">
 <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -14,16 +15,26 @@
           <div class="modal-body">
             <div class="list" *ngFor='let i of likesList | keyvalue'>
                 <ng-container *ngIf="i?.value?.length">
-              <div class="loop" *ngFor='let like of i.value'   >
+              <div class="loop" *ngFor='let like of i.value'>
             <div class="container">
               <div class="row">
                   <div class=" col-md-4">
+                    <div class="userRoute" *ngIf='like.have_the_like== "No" '>
                       <a [routerLink]="['/profile',like.user_id]" data-dismiss="modal" >
                     <img [src]='like.image_link'> </a>
                   </div>
-                  <div class="col-md-4">
+                  <div class="userRoute" *ngIf='like.have_the_like== "Yes" '>
+                      <a [routerLink]="['/profile']" data-dismiss="modal" >
+                    <img [src]='like.image_link'> </a>
+                  </div>
+                  </div>
+                  <div class="col-md-6" >
+                    <div class="userRoute" *ngIf='like.have_the_like == "No" '>
                       <a [routerLink]="['/profile',like.user_id]" data-dismiss="modal">  {{ like.username }} </a>
-                       <br>
+                    </div>
+                    <div class="userRoute" *ngIf='like.have_the_like == "Yes" '>
+                        <a [routerLink]="['/profile']" data-dismiss="modal"> {{ like.username }} </a>
+                    </div>
                       created at:  {{ like.created_at }}
                   </div>
               </div>

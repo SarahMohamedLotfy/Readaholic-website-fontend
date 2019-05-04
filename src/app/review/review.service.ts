@@ -16,7 +16,7 @@ export class ReviewService {
     constructor(private http: HttpClient) { }
    url:string=AppConstants.baseURL;
     getReview(userid:number,bookid:number): Observable<any> {
-        return this.http.get(this.url+"/api/showReviewForBookForUser?bookId="+bookid)
+        return this.http.get(this.url+'/api/showReviewForBookForUser?bookId='+ bookid +'&userId='+userid)
             .pipe(retry(3), // retry a failed request up to 3 times
                 catchError(this.handleError) // then handle the error
             );

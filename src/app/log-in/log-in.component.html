@@ -11,13 +11,13 @@
                 <div class="row" style=" width: 635px;height: 38px;  min-width: 635px;">
                     <div class="col-md-5" style="    width: 40%; ">
 
-                        <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email" style="width: 208.4px">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email" id='error' style="width: 208.4px">
                         <p *ngIf=wrongPass style="color:crimson">{{error}}</p>
                     </div>
                     <div class="col-md-5" style="    width: 40%; ">
 
                         <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password" style="width: 208.4px">
-                        <button style="    padding: 0; border: none;background: none; " data-toggle="modal" data-target="#myModalDelete" type="button">Forgot password?</button>
+                        <button style="    padding: 0; border: none;background: none; " data-toggle="modal" data-target="#myModalDelete" type="button" id="forgotButton">Forgot password?</button>
                     </div>
 
                     <button id="signInButton" class="btn btn-primary" type="submit" style="background-color:	#8B4513; width:73.86px; height: 100%  " (click)="onSubmit()">Sign in</button>
@@ -37,10 +37,10 @@
             <br>
             <h4>New here? Create a free account!</h4>
             <br>
-            <h6 *ngIf=signUpError style="color:crimson">{{errorUp}}</h6>
+            <h6 *ngIf=signUpError style="color:crimson" id='errorUp'>{{errorUp}}</h6>
             <form [formGroup]="formUp">
                 <div class="form-group row">
-                    <div *ngIf="name.invalid&&(name.dirty||name.touched)" style="color: red">
+                    <div *ngIf="name.invalid&&(name.dirty||name.touched)" id='error' style="color: red">
                         *name must be at least 3 characters long.
                     </div>
                     <div class="col-sm-10">
@@ -191,7 +191,7 @@
 
                 </form>
                 <div class="modal-footer ">
-                    <button type="button " class="btn btn-default " style="margin-right: 45%; " data-dismiss="modal " (click)="reset() "> Reset Password</button>
+                    <button type="button " class="btn btn-default " style="margin-right: 45%; " data-dismiss="modal " (click)="reset() " id="resetButton"> Reset Password</button>
                 </div>
             </div>
 

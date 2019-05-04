@@ -39,12 +39,18 @@
                      <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
                         <hr>
                     <div class="userBookshelves">
+                      <div class="who" *ngIf='authid==0'>
                         <a [routerLink]="['/myBooks']" id="singleBookshelf" > read ({{count0}}) </a>
                         <a [routerLink]="['/myBooks']"  id="singleBookshelf"> to-read ({{count1}}) </a>
                         <a [routerLink]="['/myBooks']"  id="singleBookshelf"> currently-reading({{count2}}) </a>
-
+                    </div>
+                    <div class="who" *ngIf='authid > 0'>
+                        <a [routerLink]="['/myBooks',selectedProfile.id]" id="singleBookshelf" > read ({{count0}}) </a>
+                        <a [routerLink]="['/myBooks',selectedProfile.id]"  id="singleBookshelf"> to-read ({{count1}}) </a>
+                        <a [routerLink]="['/myBooks',selectedProfile.id]"  id="singleBookshelf"> currently-reading({{count2}}) </a>
+                    </div>
                   </div>
-                  <a [routerLink]="['/myBooks']" id="bookShelvesmore" > more.. </a>
+
                </div>
                   <hr>
                <div class="currentlyReading" *ngIf="count2 > 0" >
@@ -56,7 +62,7 @@
                       <div class="row">
                         <div class="col-md-6">
                             <div class="media">
-                                <a [routerLink]="['/book',post.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
+                                <a [routerLink]="['/book',post.book_id]" >  <img id="bookUpdate" src="{{ post.image_link }}" > </a>
                                    <div id="bookDetails" class=" col-md-6" *ngIf="post.actionText != ' started following  : '"   >
                                     <p> <a [routerLink]="['/book',post.book_id]" > {{ post. title }}</a>  <br>
                                         </p>
@@ -85,7 +91,7 @@
                             <div class="action" *ngIf="update.actionText != ' started following  : ' "  >
                              <b> {{update.name }}</b>  {{ update.actionText }}
                               <div class="media">
-                               <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
+                               <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" src="{{ update.image_link }}" > </a>
                                   <div id="bookDetails" class=" col-md-6" *ngIf="update.actionText != ' started following  : '"   >
                                    <p> <a [routerLink]="['/book',update.book_id]" > {{ update. title }}</a>  <br>
                                        by {{ update.author_name}} <br></p>
@@ -110,7 +116,7 @@
                          <div class="action" *ngIf="update.update_type == 0 "  >
                             <b> {{update.name }}</b>  {{ update.actionText }} <small>  <app-star  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="true" [shelf]="update.shelf"  ></app-star></small>
                             <div class="media">
-                                <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
+                                <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" [src]='update.image_link'> </a>
                                    <div id="bookDetails" class=" col-md-6"  >
                                     <p> <a [routerLink]="['/book',update.book_id]" > {{ update. title }}</a>  <br>
                                         by {{ update.author_name}} <br></p>
@@ -136,11 +142,11 @@
                           <tbody>
                             <tr *ngFor='let post of posts'>
                                 <td>
-                                  <img id="followerProfilepicture"  src="https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg" >
-                                  <!-- <img [src]="post.image_link"  id="followerProfilepicture"  >-->
+                                 <!-- <img id="followerProfilepicture"  src="https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg" >-->
+                                   <img [src]="post.image_link"  id="followerProfilepicture"  >
                                    </td>
-                                 <td>  <a [routerLink]="['/profile',post.id]">
-                                   <!--<a id="followName" href="#/profile/{{post.id }}">--> {{ post.name }} </a>
+                                 <td>  <a id="followName" [routerLink]="['/profile',post.id]">
+                                   <!--<a  href="#/profile/{{post.id }}">--> {{ post.name }} </a>
                                 </td>
                             </tr>
                           </tbody>

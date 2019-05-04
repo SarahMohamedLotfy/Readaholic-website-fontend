@@ -31,15 +31,13 @@ export class CommentsComponent implements OnInit {
   ngOnInit() {
     console.log('got here');
     this.ser.testgetCommentsList(this.resourse_id).subscribe(data => {
-          this.CommentListofReview = data,
-          console.log(this.CommentListofReview);
+          this.CommentListofReview = data;
+        //  console.log(this.CommentListofReview);
         },
           // (err: any) => console.log(err)
          );
 
   }
-
-
   createForm() {
     this.CommentForm = this.fb.group({
       content: ['', [

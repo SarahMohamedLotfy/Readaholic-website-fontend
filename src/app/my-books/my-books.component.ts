@@ -70,7 +70,7 @@ used it in search function.
  books1:any=[];
  books2:any=[];
  nobookss:number;
- initializedarrow:boolean;
+ initializedarrow:boolean = true;
   /**
 * Search input text in search box .
 */

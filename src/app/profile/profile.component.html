@@ -39,36 +39,41 @@
                      <b>  {{ selectedProfile.name }}'S BOOKSHELVES </b>
                         <hr>
                     <div class="userBookshelves">
-                        <a [routerLink]="['/myBooks',selectedProfile.id]"  > read </a>
-                        <a [routerLink]="['/myBooks',selectedProfile.id]"  > to-read </a>
-                        <a [routerLink]="['/myBooks',selectedProfile.id]"  > currently-reading </a>
+                        <a [routerLink]="['/myBooks']" id="singleBookshelf" > read ({{count0}}) </a>
+                        <a [routerLink]="['/myBooks']"  id="singleBookshelf"> to-read ({{count1}}) </a>
+                        <a [routerLink]="['/myBooks']"  id="singleBookshelf"> currently-reading({{count2}}) </a>
 
                   </div>
-                  <a [routerLink]="['/myBooks',selectedProfile.id/1]" id="bookShelvesmore" > More.. </a>
+                  <a [routerLink]="['/myBooks']" id="bookShelvesmore" > more.. </a>
                </div>
-
-                  <br>
-                  <br>
                   <hr>
-               <b>
-                  {{ selectedProfile.name}} IS CURRENTLY READING </b>
-                  <div class="currentlyReading">
-            <!--          <tbody *ngFor="let post of books" >
+               <div class="currentlyReading" *ngIf="count2 > 0" >
+                <b>  {{ selectedProfile.name}} IS CURRENTLY READING </b>
+                <hr>
+                <div class="loop"  *ngFor="let post of books2">
 
+                   <div class="container">
+                      <div class="row">
+                        <div class="col-md-6">
+                            <div class="media">
+                                <a [routerLink]="['/book',post.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
+                                   <div id="bookDetails" class=" col-md-6" *ngIf="post.actionText != ' started following  : '"   >
+                                    <p> <a [routerLink]="['/book',post.book_id]" > {{ post. title }}</a>  <br>
+                                        </p>
+                                       </div>
+                                       <div class="col-md-6">
+                                         <app-dropdown [bookId]='post.book_id' ></app-dropdown>
+                                         <app-star id='stars'  [bookId]='post.book_id' [starsCount]="post.ratings_avg" [readOnly]="false" [shelf]="post.shelf"  ></app-star>
+                                       </div>
+                               </div>
 
-                                <a class="bookimage"  [routerLink]="['/book', post.book_id]">
-                              <img class="bookimage" src={{post.image_url}} > </a>
-
-                              <a  [routerLink]="['/book', post.book_id]" class="user-link">{{post.title}}</a>
-              <app-star  id='stars' [starsCount]="post.ratings_count" [readOnly]="true" [bookId]="post.id"
-                                         ></app-star>
-
-
-
-                        </tbody>-->
+                      </div>
+                      </div>
+                      </div>
+                      <hr>
+                  </div>
                   </div>
 
-                <hr>
                <b>
                   {{ selectedProfile.name }}'S RECENT UPDATES </b>
                   <hr>

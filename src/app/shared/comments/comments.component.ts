@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CommentsService } from './comments.service';
 import { Comments } from 'src/app/classes/Comments';
 import { CommentList } from 'src/app/classes/commentList';
-import { commentListwid } from 'src/app/classes/commentListwid';
+
 
 
 @Component({
@@ -17,29 +17,28 @@ export class CommentsComponent implements OnInit {
   public CommentForm: FormGroup;
   /** List of Comments */
   CommentListofReview: CommentList[];
-
-  list: commentListwid;
+  listFlag: number;
+  haveTheComment: string;
   /** commetn flag to determine whether the comment button is pressed or not */
   commentFlag = false;
   /** input from parent component to get resource id */
   @Input () resourse_id: number;
 
-  //arraylength = this.CommentListofReview.length;
+  // arraylength = this.CommentListofReview.length;
   constructor( private fb: FormBuilder, private ser: CommentsService ) {
     this.createForm();
    }
   ngOnInit() {
-    console.log('got here')
-     this.ser.testgetCommentsList(this.resourse_id).subscribe(data => {
+    console.log('got here');
+    this.ser.testgetCommentsList(this.resourse_id).subscribe(data => {
           this.CommentListofReview = data,
-          console.log(this.CommentListofReview)
+          console.log(this.CommentListofReview);
         },
-           (err: any) => console.log(err)
+          // (err: any) => console.log(err)
          );
 
-
-
   }
+
 
   createForm() {
     this.CommentForm = this.fb.group({

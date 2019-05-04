@@ -29,24 +29,24 @@ getMybooks(){
 
 }
 getMyshelfbooks( shelf_name:number){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?shelf_name='+shelf_name);
+  return this.http.get('http://4404e3cc.ngrok.io/api/shelf?shelf_name='+shelf_name);
 
 }
 gethisshelfbooks( shelf_name:number,user_id:number){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?user_id='+user_id
+  return this.http.get('http://4404e3cc.ngrok.io/api/shelf?user_id='+user_id
   +'&&shelf_name='+shelf_name);
 }
 /**
      * Get the profile information i used it to get the  name of the user.
      * */
     getUserprofile(id: number): Observable<any> {
-      return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile/'+ id );
+      return this.http.get<any> ('http://4404e3cc.ngrok.io/api/showProfile/'+ id );
     }
      /**
      * Get the profile information i used it to get the  name of the user.
      * */
     getAuthUserprofile(): Observable<any> {
-      return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile');
+      return this.http.get<any> ('http://4404e3cc.ngrok.ioapi/showProfile');
     }
   
 

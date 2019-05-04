@@ -12,7 +12,7 @@ import { catchError, retry } from 'rxjs/operators';
   export class LogInHttpService {
 /**@ignore */
   url:string=AppConstants.baseURL;
- //url:string='http://0ea47257.ngrok.io';
+
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 
@@ -20,7 +20,7 @@ import { catchError, retry } from 'rxjs/operators';
     /**Sends a request to the server with the email and password to checks if they're correct */
  login(email:string,password:string): Observable<any>
  {
-   return this.http.post(this.url+'/api/login',{email,password}) ;
+   return this.http.post('http://4404e3cc.ngrok.io/api/login',{email,password}) ;
  }
 
 

@@ -21,15 +21,15 @@ url:string=AppConstants.baseURL;
   
 
 getuserbyName(username: string): Observable<any>{
-  return this.http.get<any>(this.url+'/api/search_by_name?name='+username);
+  return this.http.get<any>('http://4404e3cc.ngrok.io/api/search_by_name?name='+username);
  
 }
 getuserbyNameorusername(username: string): Observable<any>{
-  return this.http.get<any>(this.url+'/api/search_by_name_username?name='+username);
+  return this.http.get<any>('http://4404e3cc.ngrok.io/api/search_by_name_username?name='+username);
  
 }
 getuserbyUsername(username: string): Observable<any>{
-  return this.http.get<any>(this.url+'/api/search_by_username?username='+username);
+  return this.http.get<any>('http://4404e3cc.ngrok.io/api/search_by_username?username='+username);
  
 }
 /**
@@ -38,7 +38,7 @@ getuserbyUsername(username: string): Observable<any>{
  */
 
 getfollowers(){
-  return this.http.get(this.url+'/api/followers');
+  return this.http.get('http://4404e3cc.ngrok.io/api/followers');
 
    }
    

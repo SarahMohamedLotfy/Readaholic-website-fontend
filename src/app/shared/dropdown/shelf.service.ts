@@ -13,6 +13,7 @@ export class ShelfService {
   constructor(private http: HttpClient) { }
   /**url */
   url: string = AppConstants.baseURL;
+ 
 
   /**
    * removes book from its shelf
@@ -40,6 +41,10 @@ export class ShelfService {
 *  */
   getUserBookInfo(id: number): Observable<any> {
     return this.http.get<any>(this.url + '/api/showReviewForBookForUser?bookId=' + id);
+  }
+
+  getShelf(id: number): Observable<any> {
+    return this.http.get<any>(this.url + '/api/showShelf?bookId=' + id);
   }
 
 }

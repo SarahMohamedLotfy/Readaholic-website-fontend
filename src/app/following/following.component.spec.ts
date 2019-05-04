@@ -69,77 +69,16 @@ fit(' Unfollow button clicked',fakeAsync((id)=>{
          fixture.detectChanges();
           expect(component.delFollowing(id)).toHaveBeenCalled();
 }));
-/*
-fit('should', async(() => {
-  spyOn(component, 'delFollowing');
-  let button = fixture.debugElement.nativeElement.querySelector('#stopfollow');
-  button.click();
-  fixture.whenStable().then(() => {
-      expect(component.delFollowing).toHaveBeenCalled();
-  })
-  alert(1);
-}));
-
-
-
-
-
 
 // Unit test for delete function check if the count of following peole decrease ?
-it('should be able to decrement the count (-1)', () => {
+fit('should be able to decrement the count (-1)', () => {
 
   component.delFollowing(7);
 
   expect(component.count).toEqual(5);
 });
-// Unit test for deletefollowing function check if the count of following peole decrease ?
-
-it('should be able to decrement the count (-1)', () => {
-
-  component.delFollowing(7);
-  expect(component.count).toEqual(5);
-});*/
 
 
-
-/*it(' Unfollow button clicked',fakeAsync((id)=>{
-        spyOn(component, 'delFollowing');
-        let bt= fixture.debugElement.query(By.css('#stopfollow'));
-          bt.triggerEventHandler('click',id);
-        tick(); // simulates the passage of time until all pending asynchronous activities finish
-         fixture.detectChanges();
-          expect(component.delFollowing(id)).toHaveBeenCalled();
-}));
-
-fit('should', async(() => {
-  spyOn(component, 'delFollowing');
-  let button = fixture.debugElement.nativeElement.querySelector('#stopfollow');
-  button.click();
-  fixture.whenStable().then(() => {
-      expect(component.delFollowing).toHaveBeenCalled();
-  })
-  alert(1);
-}));
-
-
-
-
-
-
-// Unit test for delete function check if the count of following peole decrease ?
-it('should be able to decrement the count (-1)', () => {
-
-  component.delFollowing(7);
-
-  expect(component.count).toEqual(5);
-});
-// Unit test for deletefollowing function check if the count of following peole decrease ?
-
-it('should be able to decrement the count (-1)', () => {
-
-  component.delFollowing(7);
-  expect(component.count).toEqual(5);
-});*/
 
 
 });

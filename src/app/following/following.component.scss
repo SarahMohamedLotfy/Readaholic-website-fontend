@@ -52,10 +52,9 @@ margin-left: 103px;}
 width: 150px;
 }
 #stopfollow{
-   position:absolute;
-    top: 20px;
-    right: 50px;
-    display: inline-block;
+  position: absolute;
+  right:60px;
+  top:40px;
     border-radius: 3px;
     border: 1px solid #D6D0C4;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
@@ -73,12 +72,14 @@ width: 150px;
 
 	#tfheader{
     position: relative;
-    top: 50px;
 	}
-	#tfnewsearch{
+	
+  #tfnewsearch{
 		float:right;
-		padding:20px;
-	}
+  
+  padding-right:60px;
+  padding-top: 10px;
+  }
 	.tftextinput{
 		margin: 0;
 		padding: 5px 15px;
@@ -186,10 +187,8 @@ body{
 }
 .listt
 {
-  position: relative;
-  top:10px;
-  margin-top: 5px;
-  padding-top: 5px;
+  float:left;
+  padding-top: 100px;
 }
 #bookimage
 {
@@ -222,11 +221,25 @@ body{
   background: #FFFFFF;
   left:100px;
 
+
+}
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 .directory-info-row2 {
   display: inline-block;
   width: 60%;
   margin-top: 1px;
+  padding-top: 20px;
+
 }
 .directory-info-row1 {
   display: inline-block;
@@ -279,8 +292,8 @@ padding: 3px;
   font-size: 22px;
   font-family: "Merriweather", Georgia, "Times New Roman", serif;
   font-weight: bold;
-  top:28px;
-  left:-500px;
+  padding-top: 7%;
+  padding-left: 14%;
 }
 #Myprofilename ,span
 {
@@ -295,7 +308,6 @@ margin-left: 14%;
 margin-right: 38%;
 }
 
-
 .country
 {
   position: absolute;
@@ -305,139 +317,6 @@ margin-right: 38%;
 font-size: 12px;
 left:168px;
 top:17px;
-
-
-}
-
-@media (max-width: 1200px) {
-
-  #bookimage
-{
-  position: absolute;
-  width: 50px;
-  max-width: 100%;
-  height: 66px;
-  border: 0;
-  cursor: pointer;
-  text-decoration: underline;
-  float: left;
-    margin-right: 2px;
-    left:30;
-}
-.left{
-position: absolute;
-left:90px;
-}
-.directory-info-row {
-  position: relative;
-  display: block;
-  width: 90%;
-  margin-left: 5px;
-  margin-top: 5px;
-  background: #FFFFFF;
-  left:100px;
-
-
-}
-
-#bookname{
-  position: absolute;
-  top:20px;
-  left:76px;
-  font-size: 12px;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-  color: #181818;
-}
-.currentext
-{
-  position: absolute;
-  top:3px;
-  left:76px;
-  color: #999999;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-
-  font-size: 12px;
-}
-.directory-info-row1
-{
-  position: absolute;
-  left:20px;
-}
-#tfheader{
-  position: relative;
-  top: 25px;
-}
-hr {
-  position: relative;
-  display: block;
-  height: 1px;
-  border-top: 1px solid #D6D0C4;
-margin-left: 14%;
-margin-right: 15%;
-}
-}
-
-
-@media (max-width: 770px) {
-
-  #bookimage
-{
-  position: absolute;
-  width: 0px;
-  max-width: 100%;
-  height: 0px;
-  
-}
-.bookhide{
-  font-size: 0px;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-  color: #181818;
-}
-.currentext
-{
-  font-size: 0px;
-}
-
-#stopfollow{
-  position:absolute;
-    top: -10px;
-    right: 10px;
-display: inline-block;
-border-radius: 3px;
-    
-
-}
-}
-
-@media (max-width: 680px) {
-
-  #bookimage
-{
-  position: absolute;
-  width: 0px;
-  max-width: 100%;
-  height: 0px;
-  
-}
-.bookhide{
-  font-size: 0px;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-  color: #181818;
-}
-.currentext
-{
-  font-size: 0px;
-}
-
-#stopfollow{
-  position:absolute;
-    top: -10px;
-    right: -60px;
-display: inline-block;
-border-radius: 3px;
-    
-}
-
 }
 #tagrba
 {
@@ -448,3 +327,75 @@ border-radius: 3px;
   font-size: 16px;
   font-family: "Merriweather", Georgia, "Times New Roman", serif;
   font-weight: bold;}
+
+  @media (max-width:500px) 
+  {
+    #stopfollow{
+      position: absolute;
+      right:10px;
+      top:40px;
+        border-radius: 3px;
+        border: 1px solid #D6D0C4;
+        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+        font-size: 14px;
+        display: inline-block;
+        text-decoration: none;
+        background-color: #F4F1EA;
+        line-height: 1;
+        padding: 8px 12px;
+        color: #333333;
+    }
+    #profilepagef
+{
+  position: relative;
+  width: 50px;
+  max-width: 100%;
+  height: 66px;
+  cursor: pointer;
+  left:3px;
+  color: #00635d;
+  margin-bottom: 5%;
+}
+#profilename
+{position: relative;
+  margin-bottom: 10%;
+  padding-bottom: 10%;
+
+}
+  }
+  @media (max-width:800px) 
+  {
+    #stopfollow{
+      position: absolute;
+      right:10px;
+      top:40px;
+        border-radius: 3px;
+        border: 1px solid #D6D0C4;
+        font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+        font-size: 14px;
+        display: inline-block;
+        text-decoration: none;
+        background-color: #F4F1EA;
+        line-height: 1;
+        padding: 8px 12px;
+        color: #333333;
+    }
+    #profilepagef
+{
+  position: relative;
+  width: 50px;
+  max-width: 100%;
+  height: 66px;
+  cursor: pointer;
+  left:3px;
+  color: #00635d;
+  margin-bottom: 5%;
+}
+#profilename
+{position: relative;
+  margin-bottom: 10%;
+  padding-bottom: 10%;
+
+}
+  }
+

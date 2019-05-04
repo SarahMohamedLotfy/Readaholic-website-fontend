@@ -1,4 +1,4 @@
-import { RatingModule } from 'ng2-rating';
+
 import { FilterPipe } from './filter.pipe';
 import { HttpService } from './http.service';
 import { HttpFollowingService } from '../app/followers/httpfollower.service';
@@ -33,6 +33,7 @@ import { SearchBooksComponent } from './search-books/search-books.component';
 import { ReviewComponent } from './review/review.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SharedService } from './shared.service';
+
 
 
 
@@ -74,7 +75,6 @@ import { SharedService } from './shared.service';
     SharedModule,
 
     ReactiveFormsModule,
-    RatingModule,
     RouterModule
 
 

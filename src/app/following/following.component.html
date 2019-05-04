@@ -1,20 +1,8 @@
-<!doctype html>
-
-<html lang="en">
 <navbar></navbar>
 
-<head>
 
-
-    <meta charset="utf-8">
-    <script src="angular.min.js"></script>
-    <title>Followers</title>
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 <router-outlet></router-outlet>
 
-<body>
 
 
     <div *ngIf="selectedProfile">
@@ -40,7 +28,7 @@
     <p *ngIf="noFollowing() == 0" id="tagrba">You are not following anyone.</p>
 
 
-    <ul style="list-style: none;">
+    <ul  style="list-style: none;">
         <li class="list" *ngFor="let post of posts  ">
 
             <div class="directory-info-row">
@@ -50,7 +38,7 @@
                             <div class="panelbodychar" class="panel-body">
                                 <div class="panelbodychar" class="media">
                                     <a class="left" class="pull-left" [routerLink]="['/profile', post.id]">
-                                        <img id="profilepagef" src={{post.image_link}} alt="">
+                                        <img id="profilepagef" src={{post.image_link}} alt="jj">
                                     </a>
                                     <div class="media-body">
                                         <a [routerLink]="['/profile', post.id]" id="profilename" class="nameoffollower ">
@@ -113,6 +101,4 @@
 
 
 
-</body>
 
-</html>

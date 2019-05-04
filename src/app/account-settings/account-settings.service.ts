@@ -11,7 +11,7 @@ import { catchError, retry } from 'rxjs/operators';
 
   export class AccountSettingsService {
   url:string=AppConstants.baseURL;
-
+  //url:string='http://0ea47257.ngrok.io';
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
     urlName:string='http://ec2-52-90-5-77.compute-1.amazonaws.com';

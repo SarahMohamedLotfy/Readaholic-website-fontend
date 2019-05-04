@@ -1,7 +1,6 @@
 <navbar></navbar>
 <div class="container">
     <div class="row" style="float:left">
-        <!--book info-->
         <div class="media">
             <div class="col-md-2" id="leftCol">
                 <img id="bookCover" src={{myBook?.img_url}} class="align-self-start mr-3">
@@ -58,25 +57,33 @@
 <div class="container">
     <hr>
     <div class="row" style="float: left">
-        <div class="media" *ngFor="let review of reviews">
-            <img [routerLink]="['/profile',review.user_id]" id="reviewerImg" src={{review?.userimagelink}} class="align-self-start mr-3" style="width:50px; height: 50px">
-            <div class="media-body" id="reviewInfo">
-                <h6><b [routerLink]="['/profile',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it
-                    <app-star [starsCount]="review?.rating" [readOnly]="true"></app-star>
-                </h6>
-                <p>{{review?.body}}</p>
-                <small>{{review?.likes_count}}
+        <ng-container *ngFor="let review of reviews">
+            <div class="media">
+                <img [routerLink]="['/profile',review.user_id]" id="reviewerImg" src={{review?.userimagelink}} class="align-self-start mr-3" style="width:50px; height: 50px">
+                <div class="media-body" id="reviewInfo">
+                    <h6><b [routerLink]="['/profile',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it
+                        <app-star [starsCount]="review?.rating" [readOnly]="true"></app-star>
+                    </h6>
+                    <p *ngIf="review.body != 'No Body'">{{review?.body}}</p>
+                    <small>{{review?.likes_count}}
                  <app-list-likes [resourse_id]='review.id' ></app-list-likes>
                      <app-likes [user]='review.user_id' [resourse_id]= 'review.id' ></app-likes>
                       {{review?.comments_count}} Comments
                    <app-comments [resourse_id]='review.id'></app-comments>
                 </small>
+                </div>
             </div>
 
-        </div>
-        <div class="col-md-3"></div>
+
+
+        </ng-container>
     </div>
+
 </div>
+<div class="col-md-3"></div>
+
+
+
 
 <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-lg">
@@ -94,7 +101,7 @@
                         <p>Book shelf</p>
                     </div>
                     <div class="col-8" style="width: 100%">
-                        <app-star [starsCount]="userInfo?.rating" (rated)="userInfo.rating = $event" [readOnly]="false" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"></app-star>
+                        <app-star [starsCount]="userInfo?.rating" (rated)="userInfo.rating = $event; reviewRating = $event" [readOnly]="false" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"></app-star>
                         <br>
                         <div class="dropdown" style="width:200px;">
                             <button (click)="openShelves()" class="dropbtn">choose shelves..</button>

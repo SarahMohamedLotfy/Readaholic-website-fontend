@@ -1,5 +1,4 @@
-<navbar>
-</navbar>
+<navbar></navbar>
 
 
 
@@ -15,7 +14,7 @@
 <div id="tfheader">
     <form id="tfnewsearch" method="get">
 
-        <input type="text" value="searchText" [(ngModel)]="searchText" id="searchtextfollower" name="q" size="21" maxlength="120"><input id="searchfollower" type="button" (click)="search()" value="search" class="searchfollowers
+        <input type="text" value="searchText" [(ngModel)]="searchText"  id="searchtextfollower" name="q" size="21" maxlength="120"><input id="searchfollower" type="button" (click)="search()" value="search" class="searchfollowers
         ">
     </form>
 
@@ -49,7 +48,7 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <a [routerLink]="['/profile', post.id]">
-                                            <img id="profilepage" src={{post.image_link}} alt="">
+                                            <img id="profilepage" src={{post.image_link}} alt="jj">
                                             <i></i>
                                         </a>
                                     </div>

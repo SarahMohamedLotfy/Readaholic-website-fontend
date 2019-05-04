@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchBooksService } from './search-books.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { book } from '../classes/book';
 
 @Component({
   selector: 'app-search-books',
@@ -24,6 +25,10 @@ books:any=[];
 form: FormGroup;
 isUser:boolean;
 noBooks:boolean =false;
+review:any=[];
+str:string;
+rating:any=[];
+temp:any=[];
   ngOnInit() {
     this.activatedRoute.queryParams .subscribe(params => {
      
@@ -37,8 +42,7 @@ noBooks:boolean =false;
         this.isUser = true;
       }
     
-    
-
+  
      this.searchForBook();
 
 
@@ -65,16 +69,26 @@ this.searchForBook();
 
   searchForBook()
   {
+ 
     const val = this.form.value;
       console.log(this.searchTerm);
 
     if(val.searchType=="author" || this.searchType=="author" )
     this.service.getBookByAuthor(this.searchTerm).subscribe((books:any)=>{
       this.books =books.pages ;
+
       
-      console.log(this.books);
-      console.log(books);
-      this.noBooks=false;
+     
+      this.review=books['book info for me']
+      this.temp=this.review;
+      
+     if(books.pages.length==0){
+       this.noBooks=true;
+     }
+     else
+     this.noBooks=false;
+
+      console.log(this.rating);
       },err=>{this.noBooks=true;})
       else if(val.searchType=="ISBN" || this.searchType=="ISBN" )
       {
@@ -83,7 +97,13 @@ this.searchForBook();
           
           console.log(this.books);
           console.log(books);
+          this.review=books['book info for me']
+          if(books.pages.length==0){
+            this.noBooks=true;
+          }
+          else
           this.noBooks=false;
+
           },err=>{this.noBooks=true;})
       }
       else if(val.searchType=="genre" || this.searchType=="genre" )
@@ -93,7 +113,12 @@ this.searchForBook();
           
           console.log(this.books);
           console.log(books);
+          if(books.pages.length==0){
+            this.noBooks=true;
+          }
+          else
           this.noBooks=false;
+          this.review=books['book info for me']
           },err=>{this.noBooks=true;})
       }
       else 
@@ -103,10 +128,17 @@ this.searchForBook();
           
           console.log(this.books);
           console.log(books);
+          this.review=books['book info for me']
+          if(books.pages.length==0){
+            this.noBooks=true;
+          }
+          else
           this.noBooks=false;
           },err=>{this.noBooks=true;})
       }
+     
   }
+
   
 
 }

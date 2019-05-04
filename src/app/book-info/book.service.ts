@@ -17,15 +17,15 @@ export class BookService {
   url: string=AppConstants.baseURL ;
 /**@param {HttpClient} http to handle http requests get,post etc */
   constructor(private http:HttpClient) { }
- 
+
   /**
    * gets the selected book information by id
    * @param {number} id the book id
    * @returns the book of the passed id
    */
   getBook(id: number): Observable<any> {
-    // return this.http.get<any>('http://localhost:3000/book/'+id);
-    //let params = new HttpParams({ fromObject: { book_id:id} });
+     //return this.http.get<any>('http://localhost:3000/book/3');
+
     return this.http.get(this.url + '/api/books/show?book_id=' + id);
   }
 

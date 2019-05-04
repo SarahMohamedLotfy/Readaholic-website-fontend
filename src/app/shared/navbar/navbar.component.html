@@ -45,89 +45,9 @@
     </li>
 
    
-    <form class="form-inline my-2 my-lg-0" id="searchbox">
-=======
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="nav-link" [routerLink]="['/home']" id="Readholic">Readholic </a>
-        <a class="nav-link" [routerLink]="['/home']" id="home">Home </a>
-        <a class="nav-link" [routerLink]="['/myBooks']" id="myBooks" *ngIf="isUser">My Books</a>
-        <a class="nav-link" [routerLink]="['/profile']" id="profile" *ngIf="isUser">My Profile</a>
-        <a class="nav-link" [routerLink]="['/followers']" id="followers" *ngIf="isUser">Followers</a>
-        <a class="nav-link" [routerLink]="['/following']" id="following" *ngIf="isUser">Following</a>
-        <a class="nav-link" [routerLink]="['/Aboutus']" id="aboutUs">Aboutus</a>
-        <a class="nav-link" [routerLink]="['/searchpeople']" id="searchpeople">Search People</a>
+   
 
-        <li class="nav-item dropdown" id="#notifications" *ngIf="isUser">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-bell">
-                <span class="badge badge-primary">{{(notifs$ | async).length}}</span>
-              </i>
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="menu-title pull-right"><i class="glyphicon glyphicon-circle-arrow-right"></i></a>
-
-                <ul *ngFor="let notif of notifs$ | async ">
-                    <div class="notification-wrapper" id="notif">
-
-                        <a class="notification-image">
-                            <img src="{{notif.data.user_image_link}}" width="32">
-                        </a>
-                        <a class="notification-text" [ngStyle]="{'background-color':notif.read === 1 ? 'bg-light' : 'white' }">
-
-                            <span [routerLink]="['/profile',notif.data.user_id]" (click)="onRead(notif?.n_id)">{{notif.data.user_name}} </span>
-                            <span style=" font-weight:normal" *ngIf="notif.data.type == 0" [routerLink]="['/review',notif.data.user_id,notif.data.book_id]"> liked your review </span>
-                            <span style=" font-weight:normal" *ngIf="notif.data.type == 1" [routerLink]="['/review',notif.data.user_id,notif.data.book_id]"> commented on your review </span>
-                            <span style=" font-weight:normal" *ngIf="notif.data.type == 2" [routerLink]="['/profile',notif.data.user_id]"> followed you </span>
-
-                        </a>
-                    </div>
-                </ul>
-
-
-            </div>
-
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="nav-link" [routerLink]="['/home']" id="Readholic">Readholic </a>
-        <a class="nav-link" [routerLink]="['/home']" id="home">Home </a>
-        <a class="nav-link" [routerLink]="['/myBooks']" id="myBooks" *ngIf="isUser">My Books</a>
-        <a class="nav-link" [routerLink]="['/profile']" id="profile" *ngIf="isUser">My Profile</a>
-        <a class="nav-link" [routerLink]="['/followers']" id="followers" *ngIf="isUser">Followers</a>
-        <a class="nav-link" [routerLink]="['/following']" id="following" *ngIf="isUser">Following</a>
-        <a class="nav-link" [routerLink]="['/Aboutus']" id="aboutUs">Aboutus</a>
-        <a class="nav-link" [routerLink]="['/searchpeople']" id="searchpeople">Search People</a>
-
-        <li class="nav-item dropdown" id="#notifications" *ngIf="isUser">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-bell">
-                <span class="badge badge-primary">{{(notifs$ | async).length}}</span>
-              </i>
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="menu-title pull-right"><i class="glyphicon glyphicon-circle-arrow-right"></i></a>
-
-                <ul *ngFor="let notif of notifs$ | async ">
-                    <div class="notification-wrapper" id="notif">
-
-                        <a class="notification-image">
-                            <img src="{{notif.data.user_image_link}}" width="32">
-                        </a>
-                        <a class="notification-text" [ngStyle]="{'background-color':notif.read === 1 ? 'bg-light' : 'white' }">
-
-                            <span [routerLink]="['/profile',notif.data.user_id]" (click)="onRead(notif?.n_id)">{{notif.data.user_name}} </span>
-                            <span style=" font-weight:normal" *ngIf="notif.data.type == 0" [routerLink]="['/review',notif.data.user_id,notif.data.book_id]"> liked your review </span>
-                            <span style=" font-weight:normal" *ngIf="notif.data.type == 1" [routerLink]="['/review',notif.data.user_id,notif.data.book_id]"> commented on your review </span>
-                            <span style=" font-weight:normal" *ngIf="notif.data.type == 2" [routerLink]="['/profile',notif.data.user_id]"> followed you </span>
-
-                        </a>
-                    </div>
-                </ul>
-
-
-            </div>
->>>>>>> fd0459842a2c3240958491751e586802400bd062
-        </li>
+        
 
 
         <form class="form-inline my-2 my-lg-0" id="searchBox">

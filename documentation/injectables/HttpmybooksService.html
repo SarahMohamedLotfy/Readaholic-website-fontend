@@ -82,7 +82,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#url">url</a>
+                                <a href="#urll">urll</a>
                             </li>
                         </ul>
                     </td>
@@ -97,10 +97,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#createReview">createReview</a>
+                            </li>
+                            <li>
+                                <a href="#getAuthUserprofile">getAuthUserprofile</a>
+                            </li>
+                            <li>
+                                <a href="#gethisshelfbooks">gethisshelfbooks</a>
+                            </li>
+                            <li>
                                 <a href="#getMybooks">getMybooks</a>
                             </li>
                             <li>
-                                <a href="#getUsershelves">getUsershelves</a>
+                                <a href="#getMyshelfbooks">getMyshelfbooks</a>
+                            </li>
+                            <li>
+                                <a href="#getUserprofile">getUserprofile</a>
                             </li>
                         </ul>
                     </td>
@@ -125,7 +137,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -174,6 +186,225 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="createReview"></a>
+                    <span class="name">
+                        <b>
+                            createReview
+                        </b>
+                        <a href="#createReview"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createReview(bookId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, shelf: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, rating: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>getUsershelves() is a get request to number of books the user read and currently reading an to read </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bookId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>shelf</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>rating</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAuthUserprofile"></a>
+                    <span class="name">
+                        <b>
+                            getAuthUserprofile
+                        </b>
+                        <a href="#getAuthUserprofile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAuthUserprofile()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the profile information i used it to get the  name of the user.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gethisshelfbooks"></a>
+                    <span class="name">
+                        <b>
+                            gethisshelfbooks
+                        </b>
+                        <a href="#gethisshelfbooks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>gethisshelfbooks(shelf_name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>shelf_name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user_id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getMybooks"></a>
                     <span class="name">
                         <b>
@@ -192,8 +423,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -215,38 +446,139 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getUsershelves"></a>
+                    <a name="getMyshelfbooks"></a>
                     <span class="name">
                         <b>
-                            getUsershelves
+                            getMyshelfbooks
                         </b>
-                        <a href="#getUsershelves"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getMyshelfbooks"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getUsershelves()</code>
+<code>getMyshelfbooks(shelf_name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>getUsershelves() is a get request to number of books the user read and currently reading an to read </p>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>shelf_name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserprofile"></a>
+                    <span class="name">
+                        <b>
+                            getUserprofile
+                        </b>
+                        <a href="#getUserprofile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserprofile(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the profile information i used it to get the  name of the user.</p>
 </div>
 
                     <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -262,11 +594,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="url"></a>
+                        <a name="urll"></a>
                         <span class="name">
                             <b>
-                            url</b>
-                            <a href="#url"><span class="icon ion-ios-link"></span></a>
+                            urll</b>
+                            <a href="#urll"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -278,12 +610,12 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;http://localhost:3000&#x27;</code>
+                            <i>Default value : </i><code>&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com&#x27;</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -307,6 +639,7 @@ import { myBooks } from &#x27;../classes/myBooks&#x27;;
   providedIn: &#x27;root&#x27;
 })
 export class HttpmybooksService {
+  urll: string &#x3D; &#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com&#x27;;
 /**
  * Constructor for httpmyBooks service . 
  
@@ -319,17 +652,52 @@ export class HttpmybooksService {
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
 getMybooks(){
-  return this.http.get(&#x27;http://localhost:3000/following&#x27;);
+  return this.http.get(this.urll +&#x27;/api/following&#x27;);
 
 }
-url &#x3D; &#x27;http://localhost:3000&#x27;;
+getMyshelfbooks( shelf_name:number){
+  return this.http.get(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?shelf_name&#x3D;&#x27;+shelf_name);
+
+}
+gethisshelfbooks( shelf_name:number,user_id:number){
+  return this.http.get(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?user_id&#x3D;&#x27;+user_id
+  +&#x27;&amp;&amp;shelf_name&#x3D;&#x27;+shelf_name);
+}
+/**
+     * Get the profile information i used it to get the  name of the user.
+     * */
+    getUserprofile(id: number): Observable&lt;any&gt; {
+      return this.http.get&lt;any&gt; (&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile/&#x27;+ id );
+    }
+     /**
+     * Get the profile information i used it to get the  name of the user.
+     * */
+    getAuthUserprofile(): Observable&lt;any&gt; {
+      return this.http.get&lt;any&gt; (&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile&#x27;);
+    }
+  
+
 
 /**
  *getUsershelves() is a get request to number of books the user read and currently reading an to read */
 
-getUsershelves(): Observable&lt;any&gt;{
-  return this.http.get&lt;any&gt;(this.url+&quot;/user_shelf&quot;);
+/**
+ * create book review
+ * @param {number} bookId id of the reviewd book
+ * @param {number} shelf the id of the shelf
+ * @param {string} body the body of the review
+ * @param {number rating the user rating of the book}
+ *  */
+createReview(bookId:number, shelf: number,  rating: number): Observable&lt;any&gt; {
+ 
+    return this.http.post(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com&#x27;+ &#x27;/api/reviwes/create&#x27;,{bookId,shelf,rating});
+  
+  
+   // return this.http.post(&#x27;http://localhost:3000/ReadShelf&#x27;,{bookId,shelf,body,rating});
 }
+ 
+  
+
 }
 </code></pre>
     </div>

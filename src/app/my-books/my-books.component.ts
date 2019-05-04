@@ -48,13 +48,18 @@ selectedProfile:profile;
 userid:number;
 shelfname:number;
 shelfNumber:number;
+nobooks:boolean;
+nobooks0:boolean ;
+nobooks1:boolean;
+nobooks2:boolean;
+
 /**
  * Shelves is the status of the book and the number of currently reading , to read , read .
 
  */
 shelves:any=[];
 
-
+idUser:number;
   /**
 * temp is is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ) .
 used it in search function.
@@ -64,8 +69,8 @@ used it in search function.
  books0:any=[];
  books1:any=[];
  books2:any=[];
-
- initializedarrow:boolean;
+ nobookss:number;
+ initializedarrow:boolean = true;
   /**
 * Search input text in search box .
 */
@@ -82,8 +87,8 @@ used it in search function.
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
  ngOnInit() {
-  const id: number = +this.route.snapshot.paramMap.get('id');
-
+  const id: number =+ this.route.snapshot.paramMap.get('id');
+this.idUser=id;
   /**
   * subscribe to the data received from json file which contain the profile of the authenticated user info information
   *
@@ -100,7 +105,7 @@ used it in search function.
  {
  this.myfirstservice.getAuthUserprofile().subscribe(
  (data: profile) => this.selectedProfile = data,
- (err: any) => console.log(err)
+ (err: any) => console.log('ehuuhfuihdiuhfrr')
   );
   
  }
@@ -114,41 +119,115 @@ used it in search function.
   this.myfirstservice.gethisshelfbooks(0,id).subscribe((posts:any)=>{
   this.books0 =posts.pages ;
   this.count0 = this.books0.length;
- });
+ },
+ (ERROR:any)   => {
+  if(ERROR .status ==400)
+  {
+  this.nobooks0=true;
+  this.books0=[];
+  console.log('hghghghghg');
+
+  }});
  this.myfirstservice.gethisshelfbooks(1,id).subscribe((posts:any)=>{
   this.books1 =posts.pages ;
   this.count1 = this.books1.length;
- });
+ },(ERROR:any)   => {
+  if(ERROR .status ==400)
+  {
+  this.nobooks1=true;
+  this.books1=[];
+  console.log('hghghghghg');
+
+  }});
  this.myfirstservice.gethisshelfbooks(2,id).subscribe((posts:any)=>{
   this.books2 =posts.pages ;
   this.count2 = this.books2.length;
- });
+ },(ERROR:any)   => {
+  if(ERROR .status ==400)
+  {
+  this.nobooks2=true;
+  this.books2=[];
+
+  console.log('hghghghghg');
+
+  }});
 this.myfirstservice.gethisshelfbooks(1,id).subscribe((posts:any)=>{
   this.books =posts.pages ;
   this.temp =  this.books;
   console.log(this.books);
   this.initializedarrow=true;
-});
+},
+
+(ERROR:any)  => {
+  if(ERROR .status ==400)
+  {
+    this.books1=[];
+
+  this.nobooks1=true;
+  console.log('hbjhbhvhv');
   }
+  
+}
+  );
+
+  
+}
   else 
   {
     this.myfirstservice.getMyshelfbooks(0).subscribe((posts:any)=>{
       this.books0 =posts.pages ;
       this.count0 = this.books0.length;
-     });
+     },(ERROR:any)   => {
+      if(ERROR .status ==400)
+      {
+      this.nobooks0=true;
+      this.books0=[];
+
+      console.log('hghghghghg');
+
+      }});
      this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
       this.books1 =posts.pages ;
       this.count1 = this.books1.length;
-     });
+     },(ERROR:any)   => {
+      if(ERROR .status ==400)
+      {
+      this.nobooks1=true;
+      this.books1=[];
+
+      console.log('hghghghghg');
+
+      }
+    });
      this.myfirstservice.getMyshelfbooks(2).subscribe((posts:any)=>{
       this.books2 =posts.pages ;
       this.count2 = this.books2.length;
-     });
+     },
+     (ERROR:any)   => {
+      if(ERROR .status ==400)
+      {
+      this.nobooks2=true;
+      this.books2=[];
+
+      console.log('hghghghghg');
+
+      }
+    });
     this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
       this.books =posts.pages ;
       this.temp =  this.books;
       console.log(this.books);
       this.initializedarrow=true;
+    },
+    (ERROR:any)   => {
+      if(ERROR .status ==400)
+      {
+      this.nobooks1=true;
+      this.books1=[];
+
+      console.log('hghghghghg');
+
+      }
     });
   }
 
@@ -156,18 +235,6 @@ this.myfirstservice.gethisshelfbooks(1,id).subscribe((posts:any)=>{
 
               
  }
- review() {
- 
-  this.myfirstservice.createReview(this.posts.id, this.reviewShelf, this.reviewRating)
-  .subscribe((data) => { 
-    this.userInfo.id = data.Review_id;
-    this.userInfo.rating = data.rate
-    this.userInfo.shelf_name = 0;
- 
-  this.reviewShelf = this.userInfo.shelf_name;
-  this.reviewRating = this.userInfo.rating;
-   });
-}
 getmybooks(clicked:boolean,shelfnumber)
 {
  
@@ -182,7 +249,32 @@ getmybooks(clicked:boolean,shelfnumber)
       this.books = books.pages;
       this.temp = books.pages;
       console.log(this.books);
-    });
+    },(ERROR:any)   => {
+      if(ERROR.status ==400)
+      {
+        if (shelfnumber==0)
+        {
+          this.books=[];
+
+          this.nobooks=true;
+          console.log('hghghghghg');
+        }
+     else if (shelfnumber==1)
+     {
+       this.nobooks1=true;
+       this.books=[];
+
+       console.log('hghghghghg');
+     }
+     if (shelfnumber==2)
+        {
+          this.books=[];
+
+          this.nobooks2=true;
+          console.log('hghghghghg');
+        } 
+
+      }});
   }
 }
   else{
@@ -193,6 +285,33 @@ getmybooks(clicked:boolean,shelfnumber)
       this.books = books.pages;
       this.temp = books.pages;
       console.log(this.books);
+    },
+    (ERROR:any)   => {
+      if(ERROR .status ==400)
+      {
+        if (shelfnumber==0)
+        {
+          this.books=[];
+
+          this.nobooks=true;
+          console.log(this.nobooks2);
+        }
+     else if (shelfnumber==1)
+     {
+      this.books=[];
+
+       this.nobooks1=true;
+       console.log(this.nobooks2);
+     }
+     if (shelfnumber==2)
+        {
+          this.books=[];
+
+          this.nobooks2=true;
+          console.log(this.nobooks2);
+        } 
+
+      }
     });
   }
   
@@ -212,6 +331,30 @@ Getshelfbooks(shelfnumber)
 heighlight(shelfnumberr:number)
 {
   this.shelfNumber=shelfnumberr;
+}
+showNoboksmsg(shelfnum:number)
+{
+  if (shelfnum==0)
+  {
+  if ( this.nobooks0 ==true)
+  {
+  this.nobookss= 0;
+  }
+}
+else if (shelfnum==0)
+{
+ if (this.nobooks1 ==true)
+{
+  this.nobookss= 1;
+
+}}
+else if (shelfnum==0)
+{
+ if (this.nobooks2 ==true)
+{
+  this.nobookss= 2;
+
+}}
 }
 
 /**
@@ -242,6 +385,18 @@ noBooks ():number
    this.countt = Object.keys(this.books).length;
   console.log('countt');
   return this.countt;
+}
+noBooksOnshelf0()
+{
+  return this.nobooks0;
+}
+noBooksOnshelf1()
+{
+  return this.nobooks1;
+}
+noBooksOnshelf2()
+{
+  return this.nobooks2;
 }
 
  

@@ -25,15 +25,16 @@ const routes: Routes = [
   {path: 'book/:id' , component: BookInfoComponent},
   {path:'forgetPassword',component: ForgetPasswordComponent},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
-  {path: 'profile/:id', component: ProfileComponent,canActivate:[AuthGuard]},
+  {path: 'profile/:id', component: ProfileComponent},
   {path: 'accountSettings', component: AccountSettingsComponent,canActivate:[AuthGuard]},
   {path: 'followers', component: FollowersComponent,canActivate:[AuthGuard]},
   {path: 'following', component: FollowingComponent,canActivate:[AuthGuard]},
-  {path: 'searchpeople', component: SearchPeopleComponent,canActivate:[AuthGuard]},
+  {path: 'searchpeople', component: SearchPeopleComponent},
  
   {path: 'myBooks', component: MyBooksComponent,canActivate:[AuthGuard]},
-  {path: 'myBooks/:user_id', component: MyBooksComponent,canActivate:[AuthGuard]},
-  {path: 'following/:id', component: FollowingComponent,canActivate:[AuthGuard]},
+  {path: 'myBooks/:id', component: MyBooksComponent},
+  {path: 'following/:id', component: FollowingComponent},
+
 
   {path: 'Aboutus', component: AboutusComponent,canActivate:[AuthGuard]},
   {path: 'review/:userId/:bookId', component: ReviewComponent,canActivate:[AuthGuard]},

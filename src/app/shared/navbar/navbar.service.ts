@@ -16,12 +16,21 @@ export class navBarService {
     /**
      * we pass an object of httpclient to the constuctor
      */
+    
     users:any=JSON.parse(localStorage.getItem('user')) ;
-    id:number=this.users.userInfo.id ;
+    
+    id:number;
     private subject: Subject<notifications> = new Subject<notifications>();
+    isUser:boolean;
    
-    private pusherClient: Pusher;
+    private pusherClient: Pusher
     constructor(private http: HttpClient) {
+
+      if(localStorage.getItem('token')== null){
+        this.isUser=false
+      }else{
+        this.id==this.users.userInfo.id ;
+        this.isUser=true ;
         console.log(this.users);
         this.pusherClient = new Pusher('aa5ca7b55f8f7685a9cc',{ cluster: 'eu' });
 
@@ -33,7 +42,7 @@ export class navBarService {
             alert(JSON.stringify(data));
             console.log(data);
           }
-        );
+        );}
      
      }
      getnotifItems(): Observable<notifications> {

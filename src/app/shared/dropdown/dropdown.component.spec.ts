@@ -6,12 +6,12 @@ import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
 
-fdescribe('dropdown component', () => {
+describe('dropdown component', () => {
     let fixture: ComponentFixture<DropdownComponent>;
     let mockShelfService;
 
     mockShelfService = jasmine.createSpyObj(['getShelf', 'removeFromShelf', 'addToShelf']);
-    
+
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [DropdownComponent],
@@ -52,7 +52,7 @@ fdescribe('dropdown component', () => {
 
         const de = fixture.debugElement.query(By.css('#test'));
         const element: HTMLElement = de.nativeElement;
-        
+
         expect(element.textContent).toContain("Read");
     });
 
@@ -72,7 +72,7 @@ fdescribe('dropdown component', () => {
 
         let bt= fixture.debugElement.query(By.css('#want'));
         bt.triggerEventHandler('click',null);
-        
+
         expect(fixture.componentInstance.buttonDisabled).toEqual(true);
     });
 })

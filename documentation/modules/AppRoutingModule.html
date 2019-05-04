@@ -82,18 +82,34 @@ import { AuthGuard } from &#x27;./auth.guard&#x27;;
 import { BookInfoComponent } from &#x27;./book-info/book-info.component&#x27;;
 import  { PageNotFoundComponent }  from &#x27;./page-not-found.component&#x27; ;
 import  { AboutusComponent} from &#x27;./AboutUs/AboutUs.component&#x27;;
+import { AccountSettingsComponent } from &#x27;./account-settings/account-settings.component&#x27;;
+import { ForgetPasswordComponent } from &#x27;./forget-password/forget-password.component&#x27;;
+import { SearchBooksComponent } from &#x27;./search-books/search-books.component&#x27;;
+import { ReviewComponent } from &#x27;./review/review.component&#x27;;
+import {SearchPeopleComponent} from &#x27;./search-people/searchpeople.component&#x27;;
+
 
 const routes: Routes &#x3D; [
   {path:  &#x27;&#x27;, pathMatch: &#x27;full&#x27;, redirectTo:  &#x27;login&#x27;},
   {path:&#x27;login&#x27;,component: LogInComponent},
   {path: &#x27;home&#x27;, component: HomeComponent,canActivate:[AuthGuard]},
-  {path: &#x27;book/:id&#x27; , component: BookInfoComponent,canActivate:[AuthGuard]},
+  {path:&#x27;searchBooks&#x27;,component: SearchBooksComponent},
+  {path: &#x27;book/:id&#x27; , component: BookInfoComponent},
+  {path:&#x27;forgetPassword&#x27;,component: ForgetPasswordComponent},
   {path: &#x27;profile&#x27;, component: ProfileComponent,canActivate:[AuthGuard]},
-  {path: &#x27;profile/:id&#x27;, component: ProfileComponent,canActivate:[AuthGuard]},
+  {path: &#x27;profile/:id&#x27;, component: ProfileComponent},
+  {path: &#x27;accountSettings&#x27;, component: AccountSettingsComponent,canActivate:[AuthGuard]},
   {path: &#x27;followers&#x27;, component: FollowersComponent,canActivate:[AuthGuard]},
   {path: &#x27;following&#x27;, component: FollowingComponent,canActivate:[AuthGuard]},
+  {path: &#x27;searchpeople&#x27;, component: SearchPeopleComponent},
+ 
   {path: &#x27;myBooks&#x27;, component: MyBooksComponent,canActivate:[AuthGuard]},
+  {path: &#x27;myBooks/:id&#x27;, component: MyBooksComponent},
+  {path: &#x27;following/:id&#x27;, component: FollowingComponent},
+
+
   {path: &#x27;Aboutus&#x27;, component: AboutusComponent,canActivate:[AuthGuard]},
+  {path: &#x27;review/:userId/:bookId&#x27;, component: ReviewComponent,canActivate:[AuthGuard]},
   {path:&#x27;pageNotfound&#x27;,component: PageNotFoundComponent},
   {path: &#x27;**&#x27;, redirectTo: &#x27;pageNotfound&#x27;, pathMatch:&#x27;full&#x27; }
  ];

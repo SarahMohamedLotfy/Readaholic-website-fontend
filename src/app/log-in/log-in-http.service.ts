@@ -12,7 +12,7 @@ import { catchError, retry } from 'rxjs/operators';
   export class LogInHttpService {
 /**@ignore */
   url:string=AppConstants.baseURL;
- //url:string='http://0ea47257.ngrok.io';
+
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 
@@ -49,6 +49,13 @@ import { catchError, retry } from 'rxjs/operators';
    getBookByGenre(genre:string): Observable<any> {
         
     return this.http.get<any>(this.url+'/api/books/genre?genreName='+genre);
+    
+   }
+
+   /**searchs for books by their title and returns them */
+   getBookByTitle(title:string): Observable<any> {
+        
+    return this.http.get<any>(this.url+'/api/Books/book_title?title='+title);
     
    }
   

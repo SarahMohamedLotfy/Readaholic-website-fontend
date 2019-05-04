@@ -98,13 +98,37 @@ export class LogInComponent implements OnInit {
    if(localStorage.getItem('token')!=null)
     this.router.navigateByUrl('/home');
 
-    this.service.getBookByGenre('action').subscribe((books:any)=>{
+    this.service.getBookByGenre('young adult').subscribe((books:any)=>{
       this.books =books.pages ;
      
       console.log(this.books);
     
     
-      },err=>{})
+      },err=>{
+
+        this.service.getBookByGenre('action').subscribe((books:any)=>{
+          this.books =books.pages ;
+         
+          console.log(this.books);
+        
+        
+          },err=>{
+            this.service.getBookByTitle('sherwood').subscribe((books:any)=>{
+              this.books =books.pages ;
+             
+              console.log(this.books);
+            
+            
+              },err=>{
+        
+                
+              })
+    
+            
+          })
+
+
+      })
     
   }
   /**On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they're valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  */

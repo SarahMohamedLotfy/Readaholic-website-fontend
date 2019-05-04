@@ -51,6 +51,13 @@ import { catchError, retry } from 'rxjs/operators';
     return this.http.get<any>(this.url+'/api/books/genre?genreName='+genre);
     
    }
+
+   /**searchs for books by their title and returns them */
+   getBookByTitle(title:string): Observable<any> {
+        
+    return this.http.get<any>(this.url+'/api/Books/book_title?title='+title);
+    
+   }
   
   }
   

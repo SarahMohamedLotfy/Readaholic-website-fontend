@@ -8,7 +8,7 @@ import { HomeService } from 'src/app/home/home.service';
 import { HomeComponent } from 'src/app/home/home.component';
 import {MyBooksComponent } from 'src/app/my-books/my-books.component'
 
-fdescribe("star component", () => {
+describe("star component", () => {
     let fixture: ComponentFixture<StarComponent>;
     let mockService;
 
@@ -22,7 +22,7 @@ fdescribe("star component", () => {
         fixture = TestBed.createComponent(StarComponent);
     })
 
-    fit('should be able to rate a book if rating made activated', () => {
+    it('should be able to rate a book if rating made activated', () => {
       mockService.createReview.and.returnValue(of(true));
       fixture.componentInstance.readOnly = false;
 

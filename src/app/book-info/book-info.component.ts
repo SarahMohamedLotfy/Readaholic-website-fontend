@@ -60,14 +60,8 @@ export class BookInfoComponent implements OnInit {
    * @param {Router} router router inastance to route by code 
    */
   constructor(private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService, private sharedService: SharedService, ) {
-  }
-  /** calss the needed requests to the get the selected book info  */
-  ngOnInit() {
-    this.getBookInfo();
-    this.getBookReviews();
-    this.getUserInfo();
-
-    this.sharedService.currentshelf.subscribe(data => {
+    console.log("hello");
+    this.sharedService.currentShelf.subscribe(data => {
       if (data.key != -1 && data.value != -1) {
         if (data.key == this.myBook.id) {
           this.reviewShelf = data.value;
@@ -87,7 +81,14 @@ export class BookInfoComponent implements OnInit {
         }
       }
     });
+  }
+  /** calss the needed requests to the get the selected book info  */
+  ngOnInit() {
+    this.getBookInfo();
+    this.getBookReviews();
+    this.getUserInfo();
 
+    
     if (localStorage.getItem('token') == null) {
       this.isUser = false;
       console.log(this.isUser + "aaakkkk");
@@ -182,7 +183,7 @@ export class BookInfoComponent implements OnInit {
 
   /**deletes user review on a book */
   deleteReview() {
-    if (this.userInfo.body) {
+    if (this.isUser && this.reviewId != -1) {
       this.service.deleteReview(this.reviewId).subscribe((data) => {
         console.log(data);
         this.reviewId = -1;

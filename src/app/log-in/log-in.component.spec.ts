@@ -13,7 +13,7 @@ import { FakeBackendInterceptor } from '../fake-backend';
 import { user } from '../classes/user';
 import { of } from 'rxjs/internal/observable/of';
 
-fdescribe('LogInComponent', () => {
+describe('LogInComponent', () => {
   let component: LogInComponent;
   let fixture: ComponentFixture<LogInComponent>;
   let de:DebugElement;
@@ -55,7 +55,7 @@ fit('form invalid when empty', ()=>{
     
 });
 
-fit('login button clicked',fakeAsync(()=>{
+it('login button clicked',fakeAsync(()=>{
 
 
         spyOn(component, 'onSubmit');
@@ -69,7 +69,7 @@ fit('login button clicked',fakeAsync(()=>{
  
 }));
 
-fit('sign up button clicked',fakeAsync(()=>{
+it('sign up button clicked',fakeAsync(()=>{
   
   
           spyOn(component, 'onSigUp');
@@ -83,7 +83,7 @@ fit('sign up button clicked',fakeAsync(()=>{
    
   }));
 
-  fit('sign in service called',async(()=>{
+  it('sign in service called',async(()=>{
       let loginElement: DebugElement;
            let debugElement = fixture.debugElement;
             let authService = debugElement.injector.get(LogInHttpService);
@@ -96,7 +96,7 @@ fit('sign up button clicked',fakeAsync(()=>{
      
     }));
 
-    fit('sign up service called',async(()=>{
+    it('sign up service called',async(()=>{
       let loginElement: DebugElement;
            let debugElement = fixture.debugElement;
             let authService = debugElement.injector.get(LogInHttpService);

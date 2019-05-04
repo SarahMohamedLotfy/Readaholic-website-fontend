@@ -12,7 +12,7 @@ import { catchError, retry } from 'rxjs/operators';
   export class LogInHttpService {
 
   url:string=AppConstants.baseURL;
- //url:string='http://0ea47257.ngrok.io';
+
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 

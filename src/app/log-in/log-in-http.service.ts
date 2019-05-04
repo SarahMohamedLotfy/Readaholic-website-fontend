@@ -10,7 +10,7 @@ import { catchError, retry } from 'rxjs/operators';
   })
 
   export class LogInHttpService {
-
+/**@ignore */
   url:string=AppConstants.baseURL;
  //url:string='http://0ea47257.ngrok.io';
     /**Constructor that takes HttpClient */
@@ -33,19 +33,19 @@ import { catchError, retry } from 'rxjs/operators';
  logOut():Observable<any>{
     return this.http.delete(this.url+'/api/logout');
   }
-
+/**resets the password of the user by sending him an email to use for creating a new pass */
   resetPass(email:string): Observable<any> {
         
     return this.http.post<any>(this.url+'/api/forgotpassword',{email});
     
    }
-
+/**request send to users when they sign up to send them an email to verify their email account */
    verify(): Observable<any>
    {
        return this.http.get(this.url+'/api/verify');
    }
 
-   
+  /**request that search for books by there genre */ 
    getBookByGenre(genre:string): Observable<any> {
         
     return this.http.get<any>(this.url+'/api/books/genre?genreName='+genre);

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchBooksService } from './search-books.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { book } from '../classes/book';
-
+/**page for searchin for books by title,authorname,ISBN,genre */
 @Component({
   selector: 'app-search-books',
   templateUrl: './search-books.component.html',
@@ -11,24 +11,35 @@ import { book } from '../classes/book';
 })
 export class SearchBooksComponent implements OnInit {
 
-
+/**@ignore */
   constructor(private activatedRoute: ActivatedRoute, private service:SearchBooksService,private fb:FormBuilder,private router:Router) {
     this.form=this.fb.group({
       searchBox: ['',[Validators.required]],
       searchType: ['',[Validators.required]]
       });
    }
+   /**search value entered in the search box */
 searchTerm:any;
+/** type of search by:author,title,..etc */
 searchType:string;
-
+/**saves the books that get from response */
 books:any=[];
+/**@ignore */
 form: FormGroup;
+/**define wheather the user is auth or a guest */
 isUser:boolean;
+/**boolean to check if nobooks from search */
 noBooks:boolean =false;
+/**@ignore */
 review:any=[];
+/**@ignore */
 str:string;
+/**@ignore */
 rating:any=[];
+/**@ignore */
 temp:any=[];
+
+/**checks the routes params to search and calls the function that calls the requests */
   ngOnInit() {
     this.activatedRoute.queryParams .subscribe(params => {
      
@@ -47,7 +58,7 @@ temp:any=[];
 
 
   }
-
+/**called when search button clicked to get the type of search and name of the search from the search box in page */
  searchClicked(){
 
   const val = this.form.value;
@@ -57,6 +68,8 @@ temp:any=[];
 this.searchForBook();
 
  }
+
+ /** @ignore*/
 search(term){
 
   const val = this.form.value;
@@ -66,7 +79,7 @@ val.searchType='title';
 this.searchForBook();
   
   }
-
+/**calls the requests responsible for getting the books */
   searchForBook()
   {
  

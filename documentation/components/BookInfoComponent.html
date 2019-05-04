@@ -137,13 +137,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#errMsg">errMsg</a>
+                            </li>
+                            <li>
                                 <a href="#isUser">isUser</a>
                             </li>
                             <li>
                                 <a href="#myBook">myBook</a>
                             </li>
                             <li>
+                                <a href="#nehal">nehal</a>
+                            </li>
+                            <li>
                                 <a href="#reviews">reviews</a>
+                            </li>
+                            <li>
+                                <a href="#shelves">shelves</a>
                             </li>
                             <li>
                                 <a href="#userInfo">userInfo</a>
@@ -161,13 +170,31 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#createReview">createReview</a>
+                                <a href="#deleteReview">deleteReview</a>
+                            </li>
+                            <li>
+                                <a href="#filterFunction">filterFunction</a>
+                            </li>
+                            <li>
+                                <a href="#getBookInfo">getBookInfo</a>
+                            </li>
+                            <li>
+                                <a href="#getBookReviews">getBookReviews</a>
+                            </li>
+                            <li>
+                                <a href="#getUserInfo">getUserInfo</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
                                 <a href="#open">open</a>
+                            </li>
+                            <li>
+                                <a href="#openShelves">openShelves</a>
+                            </li>
+                            <li>
+                                <a href="#review">review</a>
                             </li>
                         </ul>
                     </td>
@@ -187,12 +214,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(service: <a href="../injectables/BookService.html">BookService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(service: <a href="../injectables/BookService.html">BookService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, shelfService: ShelfService, sharedService: <a href="../injectables/SharedService.html">SharedService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/book-info/book-info.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/book-info/book-info.component.ts:55</a></div>
                             </td>
                         </tr>
 
@@ -258,6 +285,34 @@
 </code>
                                                         </td>
                                                 </tr>
+                                                <tr>
+                                                        <td>shelfService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ShelfService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>sharedService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SharedService.html" target="_self" >SharedService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -280,33 +335,195 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createReview"></a>
+                    <a name="deleteReview"></a>
                     <span class="name">
                         <b>
-                            createReview
+                            deleteReview
                         </b>
-                        <a href="#createReview"><span class="icon ion-ios-link"></span></a>
+                        <a href="#deleteReview"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>createReview()</code>
+<code>deleteReview()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="92"
-                            class="link-to-prism">src/app/book-info/book-info.component.ts:92</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:184</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>calls the book service funstion to create a review </p>
+                    <div class="io-description"><p>deletes user review on a book </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterFunction"></a>
+                    <span class="name">
+                        <b>
+                            filterFunction
+                        </b>
+                        <a href="#filterFunction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterFunction()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="236"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:236</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBookInfo"></a>
+                    <span class="name">
+                        <b>
+                            getBookInfo
+                        </b>
+                        <a href="#getBookInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBookInfo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get the selected book information </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBookReviews"></a>
+                    <span class="name">
+                        <b>
+                            getBookReviews
+                        </b>
+                        <a href="#getBookReviews"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBookReviews()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>gets the selected book reviews </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserInfo"></a>
+                    <span class="name">
+                        <b>
+                            getUserInfo
+                        </b>
+                        <a href="#getUserInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserInfo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>gets user related book information </p>
 </div>
 
                     <div class="io-description">
@@ -339,8 +556,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/book-info/book-info.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -380,8 +597,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/app/book-info/book-info.component.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:215</a></div>
                 </td>
             </tr>
 
@@ -435,12 +652,125 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openShelves"></a>
+                    <span class="name">
+                        <b>
+                            openShelves
+                        </b>
+                        <a href="#openShelves"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openShelves()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="232"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:232</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="review"></a>
+                    <span class="name">
+                        <b>
+                            review
+                        </b>
+                        <a href="#review"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>review()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">src/app/book-info/book-info.component.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>calls the book service funstion to create a review </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
     <section>
     
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="errMsg"></a>
+                        <span class="name">
+                            <b>
+                            errMsg</b>
+                            <a href="#errMsg"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/book-info/book-info.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>error msg </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -461,7 +791,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/book-info/book-info.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/book-info/book-info.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -494,7 +824,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/book-info/book-info.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/book-info/book-info.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -504,6 +834,38 @@
 </div>
                     </td>
                 </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nehal"></a>
+                        <span class="name">
+                            <b>
+                            nehal</b>
+                            <a href="#nehal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>5</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/book-info/book-info.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
 
             </tbody>
         </table>
@@ -527,13 +889,51 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/book-info/book-info.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/book-info/book-info.component.ts:22</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>reviews array of the selectec book </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shelves"></a>
+                        <span class="name">
+                            <b>
+                            shelves</b>
+                            <a href="#shelves"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;Read&#x27;, &#x27;Currently Reading&#x27;, &#x27;Want To Read&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/book-info/book-info.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>shelves array </p>
 </div>
                     </td>
                 </tr>
@@ -558,9 +958,19 @@
 
                         </td>
                     </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    id: -1,
+    rating: 0,
+    shelf_name: 3,
+    body: &quot;&quot;
+  }</code>
+                        </td>
+                    </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/book-info/book-info.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/book-info/book-info.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -585,7 +995,9 @@ import { review } from &#x27;../classes/review&#x27;;
 import { book } from &#x27;../classes/book&#x27;;
 import { userBookInfo } from &#x27;../classes/userBookInfo&#x27;;
 import { BookService } from &#x27;./book.service&#x27;;
-import { generateExpandoInstructionBlock } from &#x27;@angular/core/src/render3/instructions&#x27;;
+import { ShelfService } from &#x27;../shared/dropdown/shelf.service&#x27;;
+import { SharedService } from &#x27;../shared.service&#x27;;
+import { userInfo } from &#x27;os&#x27;;
 
 /**component to show details of a specific book */
 @Component({
@@ -600,215 +1012,371 @@ export class BookInfoComponent implements OnInit {
   /**reviews array of the selectec book */
   reviews: review[];
 
+
   /**stores user related book info */
-  userInfo:userBookInfo;
+  userInfo: userBookInfo &#x3D; {
+    id: -1,
+    rating: 0,
+    shelf_name: 3,
+    body: &quot;&quot;
+  };
 
   /**true if user mode false if guest mode */
   isUser: boolean;
 
-  /**@ignore */
-  info: userBookInfo &#x3D; {
-    &quot;body&quot;: &quot;&quot;,
-    &quot;shelf_name&quot;: 0,
-    &quot;rating&quot;: 0
-  };
+  /**error msg */
+  errMsg: string;
+
+  /**shelves array */
+  shelves: string[] &#x3D; [&#x27;Read&#x27;, &#x27;Currently Reading&#x27;, &#x27;Want To Read&#x27;];
 
   /**@ignore */
-  shelfName:string &#x3D; &quot;&quot;;
+  reviewId &#x3D; -1;
+  /**@ignore */
+  reviewShelf &#x3D; 0;
+  /**@ignore */
+  reviewBody &#x3D; &quot;&quot;;
+  /**@ignore */
+  reviewRating &#x3D; 0;
+  /**@ignore */
+  shelfName: string &#x3D; &quot;&quot;;
+  /**@ignore */
+  modelShelf: string &#x3D; &quot;read&quot;;
 
+  nehal &#x3D; 5;
 
-/**
- * @param {BookService} service injected book service instance
- * @param {ActivatedRoute} route activated route instance
- * @param {Router} router router inastance to route by code 
- */
-  constructor(private service: BookService, private route: ActivatedRoute,private router: Router) {
+  /**
+   * @param {BookService} service injected book service instance
+   * @param {ActivatedRoute} route activated route instance
+   * @param {Router} router router inastance to route by code 
+   */
+  constructor(private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService, private sharedService: SharedService, ) {
   }
-
   /** calss the needed requests to the get the selected book info  */
   ngOnInit() {
+    this.getBookInfo();
+    this.getBookReviews();
+    this.getUserInfo();
 
-    this.service.getBook(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data) &#x3D;&gt; {
-     this.myBook &#x3D; data.pages[0];
-     console.log(data);
-      if(Math.floor(this.myBook.ratings_avg) &gt; this.myBook.ratings_avg-0.5)
-      {
-        this.myBook.ratings_avg &#x3D; Math.floor(this.myBook.ratings_avg);
+    this.sharedService.currentshelf.subscribe(data &#x3D;&gt; {
+      if (data.key !&#x3D; -1 &amp;&amp; data.value !&#x3D; -1) {
+        if (data.key &#x3D;&#x3D; this.myBook.id) {
+          this.reviewShelf &#x3D; data.value;
+          if (this.reviewShelf &#x3D;&#x3D; 3) {
+            this.reviewBody &#x3D; &quot;&quot;;
+            this.reviewId &#x3D; -1;
+            this.reviewRating &#x3D; 0;
+
+            this.userInfo.id &#x3D; -1;
+            this.userInfo.body &#x3D; &quot;&quot;;
+            this.userInfo.rating &#x3D; 0;
+            this.userInfo.shelf_name &#x3D; 3;
+          } else {
+            this.shelfName &#x3D; this.shelves[this.reviewShelf];
+            this.userInfo.shelf_name &#x3D; this.reviewShelf;
+          }
+        }
       }
-      else
-      {
-        this.myBook.ratings_avg &#x3D; Math.ceil(this.myBook.ratings_avg);
+    });
+    console.log(JSON.parse(localStorage.getItem(&#x27;user&#x27;)));
+    if (localStorage.getItem(&#x27;token&#x27;) &#x3D;&#x3D; null) {
+      this.isUser &#x3D; false;
+      console.log(this.isUser + &quot;aaakkkk&quot;);
+    }
+    else {
+      this.isUser &#x3D; true;
+      console.log(&quot;true&quot;);
+
+    }
+  }
+
+  /**get the selected book information */
+  getBookInfo() {
+    this.service.getBook(+this.route.snapshot.paramMap.get(&#x27;id&#x27;))
+      .subscribe((data) &#x3D;&gt; {
+        this.myBook &#x3D; data.pages[0];
+
+        if (Math.floor(this.myBook.ratings_avg) &gt; this.myBook.ratings_avg - 0.5) {
+          this.myBook.ratings_avg &#x3D; Math.floor(this.myBook.ratings_avg);
+        }
+        else {
+          this.myBook.ratings_avg &#x3D; Math.ceil(this.myBook.ratings_avg);
+        }
+      }, ()&#x3D;&gt; this.router.navigateByUrl(&quot;/pageNotfound&quot;));
+  }
+
+  /**gets the selected book reviews */
+  getBookReviews() {
+    this.service.getBookReviews(+this.route.snapshot.paramMap.get(&#x27;id&#x27;))
+      .subscribe((data) &#x3D;&gt; {
+        this.reviews &#x3D; data.pages;
+      });
+  }
+
+  /**gets user related book information */
+  getUserInfo() {
+    this.shelfService.getUserBookInfo(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data) &#x3D;&gt; {
+      this.userInfo &#x3D; data.pages[0];
+      console.log(this.userInfo)
+      this.reviewId &#x3D; this.userInfo.id;
+      this.reviewBody &#x3D; this.userInfo.body;
+      this.reviewShelf &#x3D; this.userInfo.shelf_name;
+      this.reviewRating &#x3D; this.userInfo.rating;
+      
+      this.shelfName &#x3D; this.shelves[this.reviewShelf];
+      
+    });
+
+    console.log(this.userInfo.rating);
+  }
+
+
+  /**calls the book service funstion to create a review */
+  review() {
+
+    if (this.reviewBody !&#x3D; &quot;&quot; &amp;&amp; this.reviewBody) {
+      this.service.createReview(this.myBook.id, this.reviewShelf, this.reviewBody, this.reviewRating)
+        .subscribe((data) &#x3D;&gt; {
+          console.log(data);
+          this.userInfo.id &#x3D; data.Review_id;
+          this.userInfo.body &#x3D; data.bodyOfReview
+          this.userInfo.rating &#x3D; data.rate;
+
+          if (data.shelfType &#x3D;&#x3D; &quot;read&quot;) {
+            this.userInfo.shelf_name &#x3D; 0;
+            this.reviewShelf &#x3D; 0;
+            this.shelfName &#x3D; this.shelves[this.reviewShelf];
+          } else if (data.shelfType &#x3D;&#x3D; &quot;currently-reading&quot;) {
+            this.userInfo.shelf_name &#x3D; 1;
+            this.reviewShelf &#x3D; 1;
+            this.shelfName &#x3D; this.shelves[this.reviewShelf];
+          } else {
+            this.userInfo.shelf_name &#x3D; 2;
+            this.reviewShelf &#x3D; 2;
+            this.shelfName &#x3D; this.shelves[this.reviewShelf];
+          }
+
+          this.reviewId &#x3D; this.userInfo.id;
+          this.reviewBody &#x3D; this.userInfo.body;
+          this.reviewRating &#x3D; this.userInfo.rating;
+
+          this.sharedService.changeShelf(this.myBook.id,this.reviewShelf);
+
+          document.getElementById(&quot;closebtn&quot;).click();
+          this.errMsg &#x3D; &quot;&quot;;
+        }, (data) &#x3D;&gt; console.log(data));
+    }
+    else {
+      this.errMsg &#x3D; &quot;You must enter a review&quot;;
+    }
+  }
+
+  /**deletes user review on a book */
+  deleteReview() {
+    if (this.userInfo.body) {
+      this.service.deleteReview(this.reviewId).subscribe((data) &#x3D;&gt; {
+        console.log(data);
+        this.reviewId &#x3D; -1;
+        this.reviewBody &#x3D; &quot;&quot;;
+        this.reviewShelf &#x3D; 3;
+        this.reviewRating &#x3D; 0;
+
+        this.userInfo.id &#x3D; -1;
+        this.userInfo.body &#x3D; &quot;&quot;;
+        this.userInfo.shelf_name &#x3D; 3;
+        this.userInfo.rating &#x3D; 0;
+
+        this.sharedService.changeShelf(this.myBook.id, 3);
+
+        document.getElementById(&quot;closebtn&quot;).click();
+        this.errMsg &#x3D; &quot;&quot;;
+      });
+    }
+    else {
+      this.errMsg &#x3D; &quot;You don&#x27;t have a review on this book&quot;
+    }
+
+
+  }
+
+  /**
+   * opens the review model when the user rates a book
+   * @param {number} rate The output rate from the star component
+   */
+  open(rate: number) {
+
+    if (rate &lt;&#x3D; 5) {
+      this.reviewRating &#x3D; rate;
+      this.userInfo.rating &#x3D; rate;
+    }
+    else {
+      document.getElementById(&quot;openModalButton1&quot;).click();
+      return;
+    }
+    if (this.userInfo.id &#x3D;&#x3D; -1) {
+      /* this.userInfo.shelf_name &#x3D; 0;
+       this.shelfName &#x3D; &quot;Read&quot;;*/
+      document.getElementById(&quot;openModalButton1&quot;).click();
+    }
+  }
+
+  openShelves() {
+    document.getElementById(&quot;myDropdown&quot;).classList.toggle(&quot;show&quot;);
+  }
+
+  filterFunction() {
+    var input, filter, a, i, text;
+    input &#x3D; document.getElementById(&quot;myInput&quot;);
+    filter &#x3D; input.value.toUpperCase();
+
+    var div &#x3D; document.getElementById(&quot;myDropdown&quot;);
+    a &#x3D; div.getElementsByTagName(&quot;a&quot;);
+    for (i &#x3D; 0; i &lt; a.length; i++) {
+      text &#x3D; a[i].textContent || a[i].innerText;
+      if (text.toUpperCase().indexOf(filter) &#x3D;&#x3D; 0) {
+        a[i].style.display &#x3D; &quot;&quot;;
+      } else {
+        a[i].style.display &#x3D; &quot;none&quot;;
       }
-    },()&#x3D;&gt; this.router.navigateByUrl(&quot;/pageNotfound&quot;));
-
-  this.service.getUserBookInfo(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data) &#x3D;&gt; {
-
-    this.userInfo &#x3D; data.pages[0];
-    this.info &#x3D; data.pages[0];
-    if(this.userInfo.shelf_name &#x3D;&#x3D; 0)
-    {
-      this.shelfName &#x3D; &quot;Read&quot;;
     }
-    else if(this.userInfo.shelf_name &#x3D;&#x3D; 1)
-    {
-      this.shelfName &#x3D; &quot;Currently Reading&quot;;
-    }
-    else if(this.userInfo.shelf_name &#x3D;&#x3D; 2)
-    {
-      this.shelfName &#x3D; &quot;Want To Read&quot;;
-    }
-  }, (data)&#x3D;&gt; console.log(data));
-
- this.service.getBookReviews(+this.route.snapshot.paramMap.get(&#x27;id&#x27;)).subscribe((data) &#x3D;&gt; this.reviews &#x3D; data.pages);
-
-  if(localStorage.getItem(&#x27;token&#x27;) &#x3D;&#x3D; null){
-    this.isUser &#x3D; false;
   }
-  else{
-    this.isUser &#x3D; true;
-  }
-}
-
-/**calls the book service funstion to create a review */
-createReview () {
- this.service.createReview(this.myBook.id,this.info.shelf_name,this.info.body,this.info.rating).subscribe((data) &#x3D;&gt; {this.userInfo &#x3D; data.pages; console.log(data);});
-}
-
-/**
- * opens the review model when the user rates a book
- * @param {number} rate The output rate from the star component
- */
-open(rate: number) {
-  this.info.rating &#x3D; rate;
-  if(!this.userInfo) {
-    document.getElementById(&quot;openModalButton&quot;).click();
-  }
-}
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;navbar&gt;&lt;/navbar&gt;
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-        &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;float:left&quot;&gt; &lt;!--book info--&gt;
-            &lt;div class&#x3D;&quot;media&quot;&gt;
-                &lt;div class&#x3D;&quot;col-md-2&quot; id&#x3D;&quot;leftCol&quot;&gt;
-                    &lt;img id&#x3D;&quot;bookCover&quot; src&#x3D;{{myBook?.img_url}} class&#x3D;&quot;align-self-start mr-3&quot;&gt;
-                    &lt;app-dropdown id&#x3D;&quot;shelf&quot; [bookId]&#x3D;&quot;myBook?.id&quot; [shelfId]&#x3D;&quot;userInfo?.shelf_name&quot;&gt;&lt;/app-dropdown&gt;
-                    &lt;app-star id&#x3D;&quot;rateBook&quot; (rated)&#x3D;&quot;open($event)&quot; [bookId]&#x3D;&quot;myBook?.id&quot; [shelf]&#x3D;&quot;userInfo?.shelf_name&quot; [readOnly]&#x3D;&quot;false&quot;&gt;&lt;/app-star&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;media-body&quot; id&#x3D;&quot;bookInfo&quot;&gt;
-                    &lt;div class&#x3D;&quot;col-md-9&quot;&gt;
-                        &lt;h1 id&#x3D;&quot;Booktitle&quot;&gt;{{myBook?.title}}&lt;/h1&gt;
-                        &lt;h5 id&#x3D;&quot;authorName&quot;&gt;by {{myBook?.author_name}}&lt;/h5&gt;
-                        &lt;div&gt;
-                            &lt;app-star [starsCount]&#x3D;&quot;myBook?.ratings_avg&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
-                            &lt;span style&#x3D;&quot;font-size: 13px; font-family: &#x27;Segoe UI&#x27;, Tahoma, sans-serif;&quot;&gt;{{myBook?.ratings_avg}}   {{myBook?.ratings_count}} ratings {{myBook?.reviews_count}} reviews&lt;/span&gt;
-                        &lt;/div&gt;
-                        &lt;p&gt;{{myBook?.description}}&lt;/p&gt;
-                        &lt;div id&#x3D;&quot;bookFormat&quot;&gt;
-                            &lt;p&gt;Paperback {{myBook?.pages_no}} pages&lt;/p&gt;
-                            &lt;p&gt;Published {{myBook?.publication_date}} by {{myBook?.publisher}}&lt;/p&gt;
-                        &lt;/div&gt;
+&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;float:left&quot;&gt;
+        &lt;div class&#x3D;&quot;media&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-2&quot; id&#x3D;&quot;leftCol&quot;&gt;
+                &lt;img id&#x3D;&quot;bookCover&quot; src&#x3D;{{myBook?.img_url}} class&#x3D;&quot;align-self-start mr-3&quot;&gt;
+                &lt;app-dropdown id&#x3D;&quot;shelf&quot; [bookId]&#x3D;&quot;myBook?.id&quot;&gt;&lt;/app-dropdown&gt;
+                &lt;app-star id&#x3D;&quot;rateBook&quot; (rated)&#x3D;&quot;open($event)&quot; [bookId]&#x3D;&quot;myBook?.id&quot; [shelf]&#x3D;&quot;userInfo?.shelf_name&quot; [readOnly]&#x3D;&quot;false&quot; [starsCount]&#x3D;&quot;userInfo?.rating&quot;&gt;&lt;/app-star&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;media-body&quot; id&#x3D;&quot;bookInfo&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-9&quot;&gt;
+                    &lt;h1 id&#x3D;&quot;Booktitle&quot;&gt;{{myBook?.title}}&lt;/h1&gt;
+                    &lt;h5 id&#x3D;&quot;authorName&quot;&gt;by {{myBook?.author_name}}&lt;/h5&gt;
+                    &lt;div&gt;
+                        &lt;app-star [starsCount]&#x3D;&quot;myBook?.ratings_avg&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
+                        &lt;span style&#x3D;&quot;font-size: 13px; font-family: &#x27;Segoe UI&#x27;, Tahoma, sans-serif;&quot;&gt;{{myBook?.ratings_avg}}
+                            {{myBook?.ratings_count}} ratings {{myBook?.reviews_count}} reviews&lt;/span&gt;
                     &lt;/div&gt;
-                    &lt;div class&#x3D;&quot;col-md-1&quot;&gt;&lt;/div&gt;
+                    &lt;p&gt;{{myBook?.description}}&lt;/p&gt;
+                    &lt;div id&#x3D;&quot;bookFormat&quot;&gt;
+                        &lt;p&gt;Paperback {{myBook?.pages_no}} pages&lt;/p&gt;
+                        &lt;p&gt;Published {{myBook?.publication_date}} by {{myBook?.publisher}}&lt;/p&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
-
+                &lt;div class&#x3D;&quot;col-md-1&quot;&gt;&lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
+&lt;/div&gt;
 
-    &lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;isUser &amp;&amp; userInfo&quot; id&#x3D;&quot;activity&quot;&gt;
-        &lt;h6&gt;MY ACTIVITY&lt;/h6&gt;
-        &lt;hr&gt;
-        &lt;div class&#x3D;&quot;row&quot; &gt;
-            &lt;div class&#x3D;&quot;col-2&quot; style&#x3D;&quot;min-width: 50px&quot;&gt;
-                &lt;p&gt;Review Of&lt;/p&gt;
-                &lt;p&gt;shelf&lt;/p&gt;
-                &lt;p&gt;Rating&lt;/p&gt;
-                &lt;p&gt;Review&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;col-8&quot; style&#x3D;&quot;min-width: 300px&quot;&gt;
-                &lt;p&gt;{{myBook?.isbn}}&lt;/p&gt;
-                &lt;p&gt;{{userInfo?.shelf_name}}&lt;/p&gt;
-                &lt;app-star [starsCount]&#x3D;&quot;userInfo?.rating&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
-                &lt;p&gt;{{userInfo?.body}}&lt;/p&gt;
+&lt;div class&#x3D;&quot;container&quot; id&#x3D;&quot;activity&quot; *ngIf&#x3D;&quot;isUser &amp;&amp; (userInfo?.rating &gt; 0 || userInfo?.shelf_name &lt; 3)&quot;&gt;
+    &lt;h6&gt;MY ACTIVITY&lt;/h6&gt;
+    &lt;hr&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-2&quot; id&#x3D;&quot;ActCol1&quot;&gt;
+            &lt;!--50--&gt;
+            &lt;p style&#x3D;&quot;white-space: nowrap;&quot;&gt;Review Of&lt;/p&gt;
+            &lt;p&gt;shelf&lt;/p&gt;
+            &lt;p&gt;Rating&lt;/p&gt;
+            &lt;p&gt;Review&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-8&quot; id&#x3D;&quot;ActCol2&quot;&gt;
+            &lt;!--300--&gt;
+            &lt;p&gt;{{myBook?.isbn}}&lt;/p&gt;
+            &lt;p&gt;{{shelfName}}&lt;/p&gt;
+            &lt;app-star [starsCount]&#x3D;&quot;userInfo?.rating&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
+            &lt;div *ngIf&#x3D;&quot;!userInfo.body&quot; id&#x3D;&quot;reviewbtn&quot; (click)&#x3D;&quot;open(6)&quot;&gt;Add a review&lt;/div&gt;
+            &lt;div *ngIf&#x3D;&quot;userInfo?.body&quot;&gt;
+                &lt;p&gt;{{userInfo.body}}&lt;/p&gt;
+                &lt;div id&#x3D;&quot;reviewbtn&quot; (click)&#x3D;&quot;open(6)&quot;&gt;Edit review&lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
+&lt;/div&gt;
 
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-        &lt;hr&gt;
-        &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;float: down&quot;&gt;
-            &lt;div class&#x3D;&quot;media&quot; *ngFor&#x3D;&quot;let review of reviews&quot;&gt;
-                &lt;img  [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.user_id]&quot; id&#x3D;&quot;reviewerImg&quot; src&#x3D;{{review?.userimagelink}} class&#x3D;&quot;align-self-start mr-3&quot; style&#x3D;&quot;width:50px; height: 50px&quot;&gt;
+
+&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;hr&gt;
+    &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;float: left&quot;&gt;
+        &lt;ng-container *ngFor&#x3D;&quot;let review of reviews&quot;&gt;
+            &lt;div class&#x3D;&quot;media&quot;&gt;
+                &lt;img [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.user_id]&quot; id&#x3D;&quot;reviewerImg&quot; src&#x3D;{{review?.userimagelink}} class&#x3D;&quot;align-self-start mr-3&quot; style&#x3D;&quot;width:50px; height: 50px&quot;&gt;
                 &lt;div class&#x3D;&quot;media-body&quot; id&#x3D;&quot;reviewInfo&quot;&gt;
-                    &lt;h6 &gt;&lt;b [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.user_id]&quot; id&#x3D;&quot;reviewerName&quot;&gt;{{review?.username}}&lt;/b&gt; rated it &lt;app-star  [starsCount]&#x3D;&quot;review?.rating&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;&lt;/h6&gt;
-                    &lt;p&gt;{{review?.body}}&lt;/p&gt;
-                    &lt;small&gt;{{review?.likes_count}} like
-
+                    &lt;h6&gt;&lt;b [routerLink]&#x3D;&quot;[&#x27;/profile&#x27;,review.user_id]&quot; id&#x3D;&quot;reviewerName&quot;&gt;{{review?.username}}&lt;/b&gt; rated it
+                        &lt;app-star [starsCount]&#x3D;&quot;review?.rating&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
+                    &lt;/h6&gt;
+                    &lt;p *ngIf&#x3D;&quot;review.body !&#x3D; &#x27;No Body&#x27;&quot;&gt;{{review?.body}}&lt;/p&gt;
+                    &lt;small&gt;{{review?.likes_count}}
+                 &lt;app-list-likes [resourse_id]&#x3D;&#x27;review.id&#x27; &gt;&lt;/app-list-likes&gt;
                      &lt;app-likes [user]&#x3D;&#x27;review.user_id&#x27; [resourse_id]&#x3D; &#x27;review.id&#x27; &gt;&lt;/app-likes&gt;
-
-                      {{review?.comments_count}} Comments
-                       &lt;app-comments  [user]&#x3D;&#x27;review.user_id&#x27; [resourse_id]&#x3D;&#x27;review.id&#x27; &gt;&lt;/app-comments&gt;
-
-
-                    &lt;/small&gt;
+                      {{review?.comments_count}}
+                   &lt;app-comments [resourse_id]&#x3D;&#x27;review.id&#x27;&gt;&lt;/app-comments&gt;
+                &lt;/small&gt;
                 &lt;/div&gt;
-
             &lt;/div&gt;
-        &lt;/div&gt;
+
+
+
+        &lt;/ng-container&gt;
     &lt;/div&gt;
 
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;col-md-3&quot;&gt;&lt;/div&gt;
 
 
-      &lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;myModal&quot;&gt;
-        &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
-          &lt;div class&#x3D;&quot;modal-content&quot;&gt;
 
+
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;myModal1&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog modal-lg&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
 
             &lt;div class&#x3D;&quot;modal-header&quot;&gt;
-                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Thanks for rating! would you like to write a review?&lt;/h5&gt;
-                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;&amp;times;&lt;/button&gt;
-              &lt;/div&gt;
-
-
-              &lt;div class&#x3D;&quot;modal-body&quot; style&#x3D;&quot;margin-bottom:5px; padding-bottom: 0px;&quot;&gt;
-                      &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-bottom:0px&quot;&gt;
-                              &lt;div class&#x3D;&quot;col-2&quot; style&#x3D;&quot;min-width: 50px&quot;&gt;
-                                  &lt;p&gt;My rating&lt;/p&gt;
-                                  &lt;p&gt;Book shelf&lt;/p&gt;
-                              &lt;/div&gt;
-                              &lt;div class&#x3D;&quot;col-8&quot; style&#x3D;&quot;min-width: 300px&quot;&gt;
-                                  &lt;app-star [starsCount]&#x3D;&quot;info?.rating&quot; [readOnly]&#x3D;&quot;false&quot; [bookId]&#x3D;&quot;myBook?.id&quot; [shelf]&#x3D;&quot;userInfo?.shelf_name&quot;&gt;&lt;/app-star&gt;
-                                  &lt;div&gt;
-                                      &lt;input type&#x3D;&quot;radio&quot; (click)&#x3D;&quot;info.shelf_name&#x3D;0&quot;&gt;
-                                      &lt;label style&#x3D;&quot;margin-right:10px&quot;&gt;read&lt;/label&gt;
-                                      &lt;input type&#x3D;&quot;radio&quot; (click)&#x3D;&quot;info.shelf_name&#x3D;1&quot;&gt;
-                                      &lt;label style&#x3D;&quot;margin-right:10px&quot;&gt;currently reading&lt;/label&gt;
-                                      &lt;input type&#x3D;&quot;radio&quot; (click)&#x3D;&quot;info.shelf_name&#x3D;2&quot;&gt;
-                                      &lt;label style&#x3D;&quot;margin-right:10px&quot;&gt;want to read&lt;/label&gt;
-                                  &lt;/div&gt;
-
-                      &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;p &gt;What did you think?&lt;/p&gt;
-              &lt;textarea rows&#x3D;&quot;10&quot; cols&#x3D;&quot;92&quot; wrap&#x3D;&quot;physical&quot; [(ngModel)]&#x3D;&quot;info.body&quot; &gt;&lt;/textarea&gt;
-
-
-              &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
-                &lt;button type&#x3D;&quot;button&quot; id&#x3D;&quot;post&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot; (click)&#x3D;&quot;createReview()&quot; style&#x3D;&quot;background-color: #218838&quot;&gt;Post&lt;/button&gt;
-              &lt;/div&gt;
-
+                &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Review of {{myBook?.title}}&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; id&#x3D;&quot;closebtn&quot; data-dismiss&#x3D;&quot;modal&quot; (click)&#x3D;&quot;errMsg&#x3D;&#x27;&#x27;&quot;&gt;&amp;times;&lt;/button&gt;
             &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
 
-      &lt;button type&#x3D;&quot;button&quot; id&#x3D;&quot;openModalButton&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#myModal&quot; style&#x3D;&quot;display: none;&quot;  &gt;&lt;/button&gt;
-</code></pre>
+            &lt;div class&#x3D;&quot;modal-body&quot; style&#x3D;&quot;margin-bottom:5px; padding-bottom: 0px;&quot;&gt;
+                &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-bottom:0px&quot;&gt;
+                    &lt;div class&#x3D;&quot;col-2&quot; style&#x3D;&quot;width: 100%&quot;&gt;
+                        &lt;p&gt;My rating&lt;/p&gt;
+                        &lt;p&gt;Book shelf&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col-8&quot; style&#x3D;&quot;width: 100%&quot;&gt;
+                        &lt;app-star [starsCount]&#x3D;&quot;userInfo?.rating&quot; (rated)&#x3D;&quot;userInfo.rating &#x3D; $event; reviewRating &#x3D; $event&quot; [readOnly]&#x3D;&quot;false&quot; [bookId]&#x3D;&quot;myBook?.id&quot; [shelf]&#x3D;&quot;userInfo?.shelf_name&quot;&gt;&lt;/app-star&gt;
+                        &lt;br&gt;
+                        &lt;div class&#x3D;&quot;dropdown&quot; style&#x3D;&quot;width:200px;&quot;&gt;
+                            &lt;button (click)&#x3D;&quot;openShelves()&quot; class&#x3D;&quot;dropbtn&quot;&gt;choose shelves..&lt;/button&gt;
+                            &lt;div id&#x3D;&quot;myDropdown&quot; class&#x3D;&quot;dropdown-content&quot;&gt;
+                                &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search..&quot; id&#x3D;&quot;myInput&quot; (keyup)&#x3D;&quot;filterFunction()&quot;&gt;
+                                &lt;a&gt;&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;group1&quot; (click)&#x3D;&quot;reviewShelf&#x3D;0; modelShelf&#x3D;&#x27;read&#x27;;&quot; checked&gt;read&lt;/a&gt;
+                                &lt;a&gt;&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;group1&quot; (click)&#x3D;&quot;reviewShelf&#x3D;1; modelShelf&#x3D;&#x27;currently reading&#x27;;&quot;&gt;currently reading
+                                &lt;/a&gt;
+                                &lt;a&gt;&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;group1&quot; (click)&#x3D;&quot;reviewShelf&#x3D;2; modelShelf&#x3D;&#x27;want to read&#x27;;&quot;&gt;want to read&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span style&#x3D;&quot;color: #00635d;  margin-left: 10px;&quot;&gt;{{modelShelf}}&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;p style&#x3D;&quot;margin-left: 2%&quot;&gt;What did you think?&lt;/p&gt;
+                    &lt;textarea rows&#x3D;&quot;10&quot; cols&#x3D;&quot;100&quot; [(ngModel)]&#x3D;&quot;reviewBody&quot;&gt;&lt;/textarea&gt;
+                    &lt;h6 style&#x3D;&quot;margin-left: 20px&quot; *ngIf&#x3D;&quot;errMsg&quot; style&#x3D;&quot;color:crimson&quot;&gt;{{errMsg}}&lt;/h6&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot; style&#x3D;&quot;border:none;&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;review()&quot;&gt;Save&lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;deleteReview()&quot;&gt;delete&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;button type&#x3D;&quot;button&quot; id&#x3D;&quot;openModalButton&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#myModal&quot; style&#x3D;&quot;display: none;&quot;&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -818,9 +1386,13 @@ open(rate: number) {
                 <pre class="line-numbers"><code class="language-scss">
 .container
 {
-    margin-left: 210px;
+    width: 100%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+  /*  margin-left: 210px;
     margin-right: 280px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;*/
 }
 
 #leftCol {
@@ -850,6 +1422,7 @@ open(rate: number) {
 #bookTitle {
     font-size: 24px;
     font-family: &quot;Merriweather&quot;, &quot;Georgia&quot;, serif;
+    color: #382110;
 }
 
 #authorName {
@@ -861,23 +1434,24 @@ open(rate: number) {
 }
 
 #bookInfo {
-    margin-left: 0x;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    min-width:600px;
+    margin-left: 0px;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    min-width:60%;
     font-size: 1rem;
     font-family:&quot;Merriweather&quot;, &quot;Georgia&quot;, serif;
-    
+    color: #382110;
 }
 
 #reviewInfo {
+    color: #382110;
     font-family:&quot;Merriweather&quot;, &quot;Georgia&quot;, serif;
     font-size: 1rem;
     margin-bottom: 10px;
 }
 
 #reviewInfo {
-    min-width:600px; 
+    min-width:600px;
 }
 
 #bookFormat {
@@ -886,24 +1460,127 @@ open(rate: number) {
     margin-bottom: 0px;
     margin-top: 0px;
     font-family: &#x27;Segoe UI&#x27;, Tahoma, sans-serif;
+    color: #382110;
 }
 
 #activity {
     font-family: &quot;Merriweather&quot;, &quot;Georgia&quot;, serif;
-    font-size: 0.92rem;
+    font-size: 1rem;
+}
+
+#actCol1 {
+    width: 4%;
+    margin-right: 0;
+}
+
+#actCol2 {
+    width: 40%;
+    margin-left: 0;
+}
+
+#reviewbtn {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #00635d;
+   cursor: pointer;
+
 }
 
 .modal-content {
     font-family: &quot;Merriweather&quot;, &quot;Georgia&quot;, serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #382110;
+    width: 100%;
+}
+
+.modal-footer button {
+    background-color: #EDE6D6;
+    color: #382110;
+    border-radius: 4px;
+    width: 60px;
+    height: 40px;
+    margin-right: 0;
 }
 
 textarea {
-    padding: 0px;
-    margin-left:10px;
-    margin-right:20px;
+    width: 100%;
+
+    margin-left: 4%;
+    margin-right: 5%;
 }
 
+@media only screen and (max-width: 995px) {
+    textarea {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2%;
+    }
+}
+.dropbtn {
+    width: 100%;
+    height: 25;
+    font-size: 0.9rem;
+    color: #00635d;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    border: 0.7px solid #D7D7D7;
+    text-align: left;
+  }
 
+
+  #myInput {
+    font-size: 0.9rem;
+    width: 100%;
+    border-radius: 7px;
+    border: 0.7px solid #D7D7D7;
+  }
+
+  #myInput:focus {outline: 3px solid #ddd;}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width:100%;
+    overflow: auto;
+    background: #F4F1EA;
+    border-radius: 7px;
+    border: 0.7px solid #D7D7D7;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8rem;
+    border-bottom: 0.5px solid #D7D7D7;
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+
+  .dropdown a:hover {background-color: #FFFFE0;}
+
+  .show {display: block;}
+
+app-list-likes{
+  display: inline-block;
+
+}
+app-comment{
+  display: inline-block;
+
+}
+app-likes{
+  display: inline-block;
+}
 
 
 </code></pre>
@@ -934,8 +1611,8 @@ textarea {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><navbar></navbar>    <div class="container">        <div class="row" style="float:left"> <!--book info-->            <div class="media">                <div class="col-md-2" id="leftCol">                    <img id="bookCover" src={{myBook?.img_url}} class="align-self-start mr-3">                    <app-dropdown id="shelf" [bookId]="myBook?.id" [shelfId]="userInfo?.shelf_name"></app-dropdown>                    <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name" [readOnly]="false"></app-star>                </div>                <div class="media-body" id="bookInfo">                    <div class="col-md-9">                        <h1 id="Booktitle">{{myBook?.title}}</h1>                        <h5 id="authorName">by {{myBook?.author_name}}</h5>                        <div>                            <app-star [starsCount]="myBook?.ratings_avg" [readOnly]="true"></app-star>                            <span style="font-size: 13px; font-family: \'Segoe UI\', Tahoma, sans-serif;">{{myBook?.ratings_avg}}   {{myBook?.ratings_count}} ratings {{myBook?.reviews_count}} reviews</span>                        </div>                        <p>{{myBook?.description}}</p>                        <div id="bookFormat">                            <p>Paperback {{myBook?.pages_no}} pages</p>                            <p>Published {{myBook?.publication_date}} by {{myBook?.publisher}}</p>                        </div>                    </div>                    <div class="col-md-1"></div>                </div>            </div>        </div>    </div>    <div class="container" *ngIf="isUser && userInfo" id="activity">        <h6>MY ACTIVITY</h6>        <hr>        <div class="row" >            <div class="col-2" style="min-width: 50px">                <p>Review Of</p>                <p>shelf</p>                <p>Rating</p>                <p>Review</p>            </div>            <div class="col-8" style="min-width: 300px">                <p>{{myBook?.isbn}}</p>                <p>{{userInfo?.shelf_name}}</p>                <app-star [starsCount]="userInfo?.rating" [readOnly]="true"></app-star>                <p>{{userInfo?.body}}</p>            </div>        </div>    </div>    <div class="container">        <hr>        <div class="row" style="float: down">            <div class="media" *ngFor="let review of reviews">                <img  [routerLink]="[\'/profile\',review.user_id]" id="reviewerImg" src={{review?.userimagelink}} class="align-self-start mr-3" style="width:50px; height: 50px">                <div class="media-body" id="reviewInfo">                    <h6 ><b [routerLink]="[\'/profile\',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it <app-star  [starsCount]="review?.rating" [readOnly]="true"></app-star></h6>                    <p>{{review?.body}}</p>                    <small>{{review?.likes_count}} like                     <app-likes [user]=\'review.user_id\' [resourse_id]= \'review.id\' ></app-likes>                      {{review?.comments_count}} Comments                       <app-comments  [user]=\'review.user_id\' [resourse_id]=\'review.id\' ></app-comments>                    </small>                </div>            </div>        </div>    </div>      <div class="modal fade" id="myModal">        <div class="modal-dialog modal-lg">          <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Thanks for rating! would you like to write a review?</h5>                <button type="button" class="close" data-dismiss="modal">&times;</button>              </div>              <div class="modal-body" style="margin-bottom:5px; padding-bottom: 0px;">                      <div class="row" style="margin-bottom:0px">                              <div class="col-2" style="min-width: 50px">                                  <p>My rating</p>                                  <p>Book shelf</p>                              </div>                              <div class="col-8" style="min-width: 300px">                                  <app-star [starsCount]="info?.rating" [readOnly]="false" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"></app-star>                                  <div>                                      <input type="radio" (click)="info.shelf_name=0">                                      <label style="margin-right:10px">read</label>                                      <input type="radio" (click)="info.shelf_name=1">                                      <label style="margin-right:10px">currently reading</label>                                      <input type="radio" (click)="info.shelf_name=2">                                      <label style="margin-right:10px">want to read</label>                                  </div>                      </div>              </div>              <p >What did you think?</p>              <textarea rows="10" cols="92" wrap="physical" [(ngModel)]="info.body" ></textarea>              <div class="modal-footer">                <button type="button" id="post" class="btn btn-secondary" data-dismiss="modal" (click)="createReview()" style="background-color: #218838">Post</button>              </div>            </div>          </div>        </div>      </div>      <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;"  ></button></div>'
-    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'StarComponent', 'selector': 'app-star'}];
+        var COMPONENT_TEMPLATE = '<div><navbar></navbar><div class="container">    <div class="row" style="float:left">        <div class="media">            <div class="col-md-2" id="leftCol">                <img id="bookCover" src={{myBook?.img_url}} class="align-self-start mr-3">                <app-dropdown id="shelf" [bookId]="myBook?.id"></app-dropdown>                <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name" [readOnly]="false" [starsCount]="userInfo?.rating"></app-star>            </div>            <div class="media-body" id="bookInfo">                <div class="col-md-9">                    <h1 id="Booktitle">{{myBook?.title}}</h1>                    <h5 id="authorName">by {{myBook?.author_name}}</h5>                    <div>                        <app-star [starsCount]="myBook?.ratings_avg" [readOnly]="true"></app-star>                        <span style="font-size: 13px; font-family: \'Segoe UI\', Tahoma, sans-serif;">{{myBook?.ratings_avg}}                            {{myBook?.ratings_count}} ratings {{myBook?.reviews_count}} reviews</span>                    </div>                    <p>{{myBook?.description}}</p>                    <div id="bookFormat">                        <p>Paperback {{myBook?.pages_no}} pages</p>                        <p>Published {{myBook?.publication_date}} by {{myBook?.publisher}}</p>                    </div>                </div>                <div class="col-md-1"></div>            </div>        </div>    </div></div><div class="container" id="activity" *ngIf="isUser && (userInfo?.rating > 0 || userInfo?.shelf_name < 3)">    <h6>MY ACTIVITY</h6>    <hr>    <div class="row">        <div class="col-2" id="ActCol1">            <!--50-->            <p style="white-space: nowrap;">Review Of</p>            <p>shelf</p>            <p>Rating</p>            <p>Review</p>        </div>        <div class="col-8" id="ActCol2">            <!--300-->            <p>{{myBook?.isbn}}</p>            <p>{{shelfName}}</p>            <app-star [starsCount]="userInfo?.rating" [readOnly]="true"></app-star>            <div *ngIf="!userInfo.body" id="reviewbtn" (click)="open(6)">Add a review</div>            <div *ngIf="userInfo?.body">                <p>{{userInfo.body}}</p>                <div id="reviewbtn" (click)="open(6)">Edit review</div>            </div>        </div>    </div></div><div class="container">    <hr>    <div class="row" style="float: left">        <ng-container *ngFor="let review of reviews">            <div class="media">                <img [routerLink]="[\'/profile\',review.user_id]" id="reviewerImg" src={{review?.userimagelink}} class="align-self-start mr-3" style="width:50px; height: 50px">                <div class="media-body" id="reviewInfo">                    <h6><b [routerLink]="[\'/profile\',review.user_id]" id="reviewerName">{{review?.username}}</b> rated it                        <app-star [starsCount]="review?.rating" [readOnly]="true"></app-star>                    </h6>                    <p *ngIf="review.body != \'No Body\'">{{review?.body}}</p>                    <small>{{review?.likes_count}}                 <app-list-likes [resourse_id]=\'review.id\' ></app-list-likes>                     <app-likes [user]=\'review.user_id\' [resourse_id]= \'review.id\' ></app-likes>                      {{review?.comments_count}}                   <app-comments [resourse_id]=\'review.id\'></app-comments>                </small>                </div>            </div>        </ng-container>    </div></div><div class="col-md-3"></div><div class="modal fade" id="myModal1">    <div class="modal-dialog modal-lg">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title">Review of {{myBook?.title}}</h5>                <button type="button" class="close" id="closebtn" data-dismiss="modal" (click)="errMsg=\'\'">&times;</button>            </div>            <div class="modal-body" style="margin-bottom:5px; padding-bottom: 0px;">                <div class="row" style="margin-bottom:0px">                    <div class="col-2" style="width: 100%">                        <p>My rating</p>                        <p>Book shelf</p>                    </div>                    <div class="col-8" style="width: 100%">                        <app-star [starsCount]="userInfo?.rating" (rated)="userInfo.rating = $event; reviewRating = $event" [readOnly]="false" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"></app-star>                        <br>                        <div class="dropdown" style="width:200px;">                            <button (click)="openShelves()" class="dropbtn">choose shelves..</button>                            <div id="myDropdown" class="dropdown-content">                                <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">                                <a><input type="radio" name="group1" (click)="reviewShelf=0; modelShelf=\'read\';" checked>read</a>                                <a><input type="radio" name="group1" (click)="reviewShelf=1; modelShelf=\'currently reading\';">currently reading                                </a>                                <a><input type="radio" name="group1" (click)="reviewShelf=2; modelShelf=\'want to read\';">want to read</a>                            </div>                        </div>                        <span style="color: #00635d;  margin-left: 10px;">{{modelShelf}}</span>                    </div>                    <p style="margin-left: 2%">What did you think?</p>                    <textarea rows="10" cols="100" [(ngModel)]="reviewBody"></textarea>                    <h6 style="margin-left: 20px" *ngIf="errMsg" style="color:crimson">{{errMsg}}</h6>                </div>            </div>            <div class="modal-footer" style="border:none;">                <button type="button" (click)="review()">Save</button>                <button type="button" (click)="deleteReview()">delete</button>            </div>        </div>    </div>    <button type="button" id="openModalButton" data-toggle="modal" data-target="#myModal" style="display: none;"></button></div></div>'
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AccountSettingsComponent', 'selector': 'app-account-settings'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'ListLikesComponent', 'selector': 'app-list-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ReviewComponent', 'selector': 'review'},{'name': 'SearchBooksComponent', 'selector': 'app-search-books'},{'name': 'SearchPeopleComponent', 'selector': 'app-searchpeople'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BookInfoComponent'};
 </script>

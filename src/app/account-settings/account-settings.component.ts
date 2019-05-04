@@ -3,30 +3,42 @@ import { AccountSettingsService } from './account-settings.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
-
+/**page that show account settings of user */
 @Component({
   selector: 'app-account-settings',
   templateUrl: './account-settings.component.html',
   styleUrls: ['./account-settings.component.css']
 })
 export class AccountSettingsComponent implements OnInit {
-
+/**form that shows settings */
   form: FormGroup;
+  /**form for changing password */
   formPass: FormGroup;
+  /**stores user settings info */
   settings:any;
+  /**form for deactivating account */
   formDelete: FormGroup;
+  /**input to store img file */
   selectedFile: File= null;
+  /**boolean to check wheathe img uploaded */
   saved:boolean=false;
+  /**@ignore */
   errorNum: number=0;
+  /**@ignore */
   imgSuccess:boolean;
+  /**@ignore */
   passBtn:boolean=false;
+  /**@ignore */
   passErr:string;
+  /**@ignore */
   deErr:boolean=false;
+  /**@ignore */
   deText:string;
-  
+  /**@ignore */
   btnClicked:boolean=false;
+  /**@ignore */
   uploadClicked:boolean=false;
-  
+  /**consturctor that builds all the forms */
   constructor(private service:AccountSettingsService,private fb:FormBuilder,private router:Router ) { 
    
     
@@ -53,14 +65,19 @@ export class AccountSettingsComponent implements OnInit {
           
            });
   }
-  
+  /**@ignore */
   get name() { return this.form.get('name'); }
+  /**@ignore */
   get country() { return this.form.get('country'); }
+  /**@ignore */
   get city() { return this.form.get('city'); }
+  /**@ignore */
   get password() { return this.formPass.get('password'); }
+  /**@ignore */
   get newPassword() { return this.formPass.get('newPassword'); }
+  /**@ignore */
   get newPassword_confirmation() { return this.formPass.get('newPassword_confirmation'); }
-
+/**initates the page by calling the service that gets the current settings of the user and display them */
   ngOnInit() {
     
     
@@ -83,7 +100,7 @@ export class AccountSettingsComponent implements OnInit {
 
  
   }
-
+/**function when select img button clicked to choose a file and store it as input and display it */
   onFileSelected(event){
     this.selectedFile=<File>event.srcElement.files[0];
     console.log(this.selectedFile);
@@ -96,6 +113,8 @@ export class AccountSettingsComponent implements OnInit {
     
   }
 
+
+/**fuction called when upload button clicked to upload img to server and change img of the user */
   onUpload(){
     
     this.service.changeImage(this.selectedFile).subscribe(
@@ -107,6 +126,8 @@ export class AccountSettingsComponent implements OnInit {
         this.uploadClicked=true;
       this.imgSuccess=false;})
   }
+
+  /**function called to save changes done to the profile settings */
   onSaving(){
     const val = this.form.value;
     this.btnClicked=true;
@@ -175,7 +196,7 @@ else
    
     
   }
-
+/**fuction that changes password of user */
   changePass(){
    const val= this.formPass.value;
    if(this.formPass.valid){
@@ -189,7 +210,7 @@ else
       
 
   }
-  
+  /**function to deactivate the account of the user */
   deactivate(){
     const val=this.formDelete.value;
     if(this.formDelete.valid){

@@ -93,27 +93,95 @@ fit('settings city than 3 chars wont call service render error message', ()=>{
 });
 
 fit('open change password modal and input invalid form', ()=>{
-  let settingsElement: DebugElement;
-  let debugElement = fixture.debugElement;    
-  const compiled = fixture.debugElement.nativeElement;     
-  component.form.controls['city'].setValue('de');
-  component.form.controls['country'].setValue('Egypt');
-  expect(component.form.controls['city'].valid).toBeFalsy();
-  expect(component.form.controls['country'].valid).toBeTruthy();
-   let authService = debugElement.injector.get(AccountSettingsService);
-   let citySpy = spyOn(authService, 'changeCity').and.callThrough();
-   let countrySpy = spyOn(authService, 'changeCountry').and.callThrough();
+  let loginElement: DebugElement;
+  let debugElement = fixture.debugElement;
+  loginElement = fixture.debugElement.query(By.css('button#changePassword'));
+  
+
+  let bt= fixture.debugElement.query(By.css('button#changeButton'));
+    bt.triggerEventHandler('click',null);
+    component.formPass.controls['password'].setValue('user123');
+    component.formPass.controls['newPassword'].setValue('user');
+    
+    component.formPass.controls['newPassword_confirmation'].setValue('user');
+    expect(component.formPass.valid).toBeFalsy();
+    expect(component.formPass.controls['newPassword'].valid).toBeFalsy();
+    expect(component.formPass.controls['password'].valid).toBeTruthy();
+    let authService = debugElement.injector.get(AccountSettingsService);
+
+    let passSpy = spyOn(authService, 'changePassword').and.callThrough();
    
-   settingsElement = fixture.debugElement.query(By.css('button#saveButton'));
-   component.form.controls['city'].markAsTouched();
-   fixture.detectChanges();
-   fixture.whenStable().then(() => { 
-     const messages = compiled.querySelector('#errorSet');
-     expect(messages).toBeTruthy();
-   });
-   settingsElement.triggerEventHandler('click', null);
-   expect(citySpy).toHaveBeenCalledTimes(0);
-   expect(countrySpy).toHaveBeenCalledTimes(1);
+  
+    loginElement.triggerEventHandler('click', null);
+    expect(passSpy).toHaveBeenCalledTimes(0);
+});
+
+fit('open change password modal and input valid form', ()=>{
+  let loginElement: DebugElement;
+  let debugElement = fixture.debugElement;
+  loginElement = fixture.debugElement.query(By.css('button#changePassword'));
+  
+
+  let bt= fixture.debugElement.query(By.css('button#changeButton'));
+    bt.triggerEventHandler('click',null);
+    component.formPass.controls['password'].setValue('user123');
+    component.formPass.controls['newPassword'].setValue('useruser');
+    
+    component.formPass.controls['newPassword_confirmation'].setValue('useruser');
+    expect(component.formPass.valid).toBeTruthy();
+    expect(component.formPass.controls['newPassword'].valid).toBeTruthy();
+    expect(component.formPass.controls['password'].valid).toBeTruthy();
+    let authService = debugElement.injector.get(AccountSettingsService);
+
+    let passSpy = spyOn(authService, 'changePassword').and.callThrough();
+   
+  
+    loginElement.triggerEventHandler('click', null);
+    expect(passSpy).toHaveBeenCalledTimes(1);
+});
+
+fit('open deactivate modal and input empty form', ()=>{
+  let loginElement: DebugElement;
+  let debugElement = fixture.debugElement;
+  loginElement = fixture.debugElement.query(By.css('button#deactiveButton'));
+  
+
+  let bt= fixture.debugElement.query(By.css('button#deModal'));
+    bt.triggerEventHandler('click',null);
+    component.formDelete.controls['password'].setValue('');
+
+    
+    expect(component.formDelete.valid).toBeFalsy();
+  
+    let authService = debugElement.injector.get(AccountSettingsService);
+
+    let passSpy = spyOn(authService, 'delete').and.callThrough();
+   
+  
+    loginElement.triggerEventHandler('click', null);
+    expect(passSpy).toHaveBeenCalledTimes(0);
+});
+
+fit('open deactivate modal and input a valid password', ()=>{
+  let loginElement: DebugElement;
+  let debugElement = fixture.debugElement;
+  loginElement = fixture.debugElement.query(By.css('button#deactiveButton'));
+  
+
+  let bt= fixture.debugElement.query(By.css('button#deModal'));
+    bt.triggerEventHandler('click',null);
+    component.formDelete.controls['password'].setValue('123456');
+
+    
+    expect(component.formDelete.valid).toBeTruthy();
+  
+    let authService = debugElement.injector.get(AccountSettingsService);
+
+    let passSpy = spyOn(authService, 'delete').and.callThrough();
+   
+  
+    loginElement.triggerEventHandler('click', null);
+    expect(passSpy).toHaveBeenCalledTimes(1);
 });
 
 

@@ -5,7 +5,6 @@ import { ActivatedRoute , Router } from '@angular/router';
 import { ProfileService } from './profile.service';
 import { HttpFollowinggService } from '../following/httpfollowing.service';
 import { updates } from '../classes/updates';
-import { userShelves } from '../classes/userShelves';
 import { myBooks } from '../classes/myBooks';
 import { HttpmybooksService } from '../my-books/httpmybooks.service';
 

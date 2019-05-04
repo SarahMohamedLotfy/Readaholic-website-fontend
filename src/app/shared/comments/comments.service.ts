@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Comments } from 'src/app/classes/Comments';
 import { CommentList } from 'src/app/classes/commentList';
-import { commentListwid } from 'src/app/classes/commentListwid';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -32,18 +30,12 @@ export class CommentsService {
       },
       (err: any) => console.log(err));
   }
-/** get comments */
-  getCommentsList(id : number): Observable<commentListwid> {
-    return this.http.get<commentListwid>(this.url+'/api/listComments?id='+ id);
-  }
+
   /** get comments */
   testgetCommentsList(id : number): Observable<CommentList[]> {
     return this.http.get<CommentList[]>(this.url+'/api/listComments?id='+ id)
   }
-   /** get comments */
-   testthisgetCommentsList(id : number): Observable<any> {
-    return this.http.get<any>(this.url+'/api/listComments?id='+ id)
-  }
+
 /** delete comment */
 deleteComment(id: number):Observable<Comments>{
 return this.http.delete<Comments>(this.url+'/api/deleteComment?id='+ id);

@@ -6,7 +6,7 @@
             <div class="container" id="updateContainer">
         <div class="media">
              <a   [routerLink]="['/profile',update.user_id]">
-            <img class="avatar" src={{update.img_url}} alt="Generic placeholder image" >
+            <img class="avatar" src={{update.image_link}} alt="Generic placeholder image" >
               </a>
             <div class="media-body" >
                    
@@ -25,7 +25,7 @@
     
                 <div class="media mt-3">
                         <a class="pr-3" [routerLink]="['/book',update.book_id]" *ngIf="update.update_type === 0 || update.update_type === 1" >
-                            <img src={{update.image_link}} alt="Generic placeholder image" style="float:'left'"  >
+                            <img src={{update.img_url}} alt="Generic placeholder image" style="float:'left'"  >
                         </a>
                             <!--if someone followed someone -->
                         <a class="pr-3" [routerLink]="['/profile',update.followed_id]" *ngIf="update.update_type === 2">

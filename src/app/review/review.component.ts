@@ -16,11 +16,14 @@ import { review } from 'src/app/classes/review';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-  revieww:review;
-  userr:review;
+  revieww:review[];
+  userr:review[];
+  book:review[];
   id: number = +this.route.snapshot.paramMap.get('userId');
   
   bookid: number = +this.route.snapshot.paramMap.get('bookId');
+ 
+     you:boolean ;
   constructor(private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:ReviewService) { }
 
  
@@ -30,9 +33,11 @@ export class ReviewComponent implements OnInit {
       data =>{
         this.revieww=data.pages ;
         this.userr =data.user;
-        
-        this.revieww.user_id=this.id;
-        console.log(this.revieww.user_id);
+        this.book=data.book_title;
+        this.revieww[0].user_id=this.id;
+       this.book[0].book_id=this.bookid;
+
+      //  console.log(this.revieww.user_id);
        
       console.log(data);
      })

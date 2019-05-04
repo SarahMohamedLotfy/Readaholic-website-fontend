@@ -6,6 +6,7 @@ import { Observable, throwError, Subject } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { notifications } from 'src/app/classes/notifications';
 import Pusher from 'pusher-js';
+import { data } from 'src/app/classes/data';
 @Injectable({
     providedIn: 'root'
 })
@@ -16,25 +17,50 @@ export class navBarService {
     /**
      * we pass an object of httpclient to the constuctor
      */
-    users:any=JSON.parse(localStorage.getItem('user')) ;
-    id:number=this.users.userInfo.id ;
+    users:any;
+    id:number;
+    message:data;
+     
+   
     private subject: Subject<notifications> = new Subject<notifications>();
    
     private pusherClient: Pusher;
     constructor(private http: HttpClient) {
+       
+    if(localStorage.getItem('token')== null){
+      
+    }else{
+      this.users=JSON.parse(localStorage.getItem('user')) ;
+      this.id=this.users.userInfo.id ;
+    
         console.log(this.users);
+        console.log(this.id);
         this.pusherClient = new Pusher('aa5ca7b55f8f7685a9cc',{ cluster: 'eu' });
 
-        const channel = this.pusherClient.subscribe('users'+this.id);
+        const channel = this.pusherClient.subscribe('user.'+this.id);
 
         channel.bind(
           'notify',
-          function(data) {
-            alert(JSON.stringify(data));
-            console.log(data);
+          data => {
+            this.message=data.message;
+            console.log(this.message);
+            if(this.message.type == 0 && this.message.review_user_id == this.id)
+            alert(this.message.user_name+'liked your review');
+              else if(this.message.type ==1 && this.message.review_user_id == this.id )
+               alert(this.message.user_name+'commented on your review');
+            else if(this.message.type == 0 )
+          alert(this.message.user_name+'liked '+this.message.review_user_name+'review');
+            else if(this.message.type ==1 )
+             alert(this.message.user_name+'commented on'+this.message.review_user_name+'s review');
+            else if(this.message.type ==2)
+             alert(this.message.user_name+'followed you');
+           
+            //alert(this.message.user_name+);
+            //console.log(data);
           }
+          
         );
-     
+        }
      }
      getnotifItems(): Observable<notifications> {
         return this.subject.asObservable();
@@ -44,16 +70,18 @@ export class navBarService {
      */
    
     url:string=AppConstants.baseURL;
-    getNotifications(): Observable<notifications[]> {
-        return this.http.get<notifications[]>(this.url+"/api/notification")
+    getNotifications(): Observable<any> {
+        return this.http.get(this.url+"/api/notification")
             .pipe(retry(4), // retry a failed request up to 3 times
                 catchError(this.handleError) // then handle the error
             );
         
     }
-    onRead(id:number):Observable <any>{
-return this.http.post(this.url+"/api/mark_notification/",{"id" : id}).
-pipe(retry(4),catchError(this.handleError));
+    onRead(idd:number):Observable <any>{
+      
+      console.log("any");
+return this.http.post(this.url+'/api/mark_notification',{"id" : idd});
+//.pipe(retry(4),catchError(this.handleError));
   }
     /**
    * function for handling errors in ui and in console
@@ -72,5 +100,5 @@ pipe(retry(4),catchError(this.handleError));
         // return an observable with a user-facing error message
         return throwError('Something bad happened; please try again later.');
     }
-    ;
+  
 }

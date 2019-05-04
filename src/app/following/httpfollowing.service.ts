@@ -29,7 +29,7 @@ getnotauthfollowing(id:number){
 
 }
 getfollowing(){
-  return this.http.get(this.url+'/api/following');
+  return this.http.get('http://4404e3cc.ngrok.io/api/following');
 
 }
   /**
@@ -38,7 +38,7 @@ getfollowing(){
     
     unfollow ( user_id:number):Observable<any> {
       
-      return this.http.delete(this.url+'/api/unfollow?user_id='+ user_id);
+      return this.http.delete('http://4404e3cc.ngrok.io/api/unfollow?user_id='+ user_id);
     }
     
 
@@ -46,13 +46,13 @@ getfollowing(){
      * Get the profile information i used it to get the  name of the user.
      * */
     getUserprofile(id: number): Observable<any> {
-      return this.http.get<any> (this.url+'/api/showProfile/'+ id );
+      return this.http.get<any> ('http://4404e3cc.ngrok.io/api/showProfile/'+ id );
     }
      /**
      * Get the profile information i used it to get the  name of the user.
      * */
     getAuthUserprofile(): Observable<any> {
-      return this.http.get<any> (this.url+'/api/showProfile');
+      return this.http.get<any> ('http://4404e3cc.ngrok.io/api/showProfile');
     }
   
 }

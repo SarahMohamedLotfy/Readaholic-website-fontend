@@ -5,7 +5,9 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "moduleResolution": "node" 
+
   },
   "files": [
     "test.ts",

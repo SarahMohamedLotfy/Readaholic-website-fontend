@@ -114,6 +114,7 @@ result:number;
 
     this.myfirstservice.getfollowing().subscribe((following:any)=>{
       this.following =following.following ;
+      console.log(this.following);
       });
    }
   }

@@ -6,6 +6,7 @@ import { ProfileService } from './profile.service';
 import { HttpFollowinggService } from '../following/httpfollowing.service';
 import { updates } from '../classes/updates';
 import { userShelves } from '../classes/userShelves';
+import { myBooks } from '../classes/myBooks';
 
 /** The component that sets the profile page html and scss  */
 @Component({
@@ -22,8 +23,9 @@ export class ProfileComponent implements OnInit {
    temp: any = [];
 
    allUpdates: updates[];
-   allShelves: userShelves[];
-
+   currentlyReading: myBooks[];
+   books: any = [];
+   showEditbtn = false;
 /**
  * the constructor creates instances of http service
  *
@@ -53,8 +55,15 @@ export class ProfileComponent implements OnInit {
         this.loadData(); } ,
         (err: any) => console.log(err)
          );
+
+   this.httpService.getfollowersforusers(id).subscribe((posts: any) => {
+          this.posts = posts.following ;
+          this.temp = posts.following;
+          console.log(posts); });
+
     } else {
       /** get authenticated user profile */
+    this.showEditbtn = true;
     this.httpService.getAuthUserprofile().subscribe(
     (data: profile) => this.selectedProfile = data,
     (err: any) => console.log(err)
@@ -68,7 +77,13 @@ export class ProfileComponent implements OnInit {
     this.pro.getfollowing().subscribe((posts: any) => {
       this.posts = posts.following ;
       this.temp = posts.following;
-      console.log(posts);});
+      console.log(posts); });
+
+    this.httpService.getMyshelfbooks(2).subscribe((posts: any) => {
+        this.books = posts.pages ;
+        this.temp = posts.pages;
+        console.log(this.books);
+      });
     }
     /**
      * subscribe to the data received from json file which contain the following users information and if any error occurs it prints it to the log

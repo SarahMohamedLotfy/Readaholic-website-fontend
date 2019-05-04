@@ -14,16 +14,22 @@
   margin-top: 20px;
 }
 
+#stars{
+  margin: 25px;
+}
 #profilePicture {
  border-radius: 50%;
  width: 300px;
  height: 300px;
 }
 #followerProfilepicture{
-width: 70px;
-height: 70px;
+width: 65px;
+height: 65px;
 padding: 10px;
-
+}
+#followName{
+  padding: 10%;
+  color: black;
 }
 
 .userBookshelves {

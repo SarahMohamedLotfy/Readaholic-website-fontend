@@ -11,7 +11,8 @@
       </div>
       <div class=" col-md-4" >
         <div class="userName" id="userNameprofile">  {{ selectedProfile.name }}
-          <a [routerLink]="['/accountSettings']"> ( edit profile )</a> </div>
+          <a *ngIf="showEditbtn" [routerLink]="['/accountSettings']"> ( edit profile )</a> </div>
+
           <hr>
           <div class="Details">
              <b>Details:</b>
@@ -48,8 +49,24 @@
 
                   <br>
                   <br>
+                  <hr>
                <b>
                   {{ selectedProfile.name}} IS CURRENTLY READING </b>
+                  <div class="currentlyReading">
+            <!--          <tbody *ngFor="let post of books" >
+
+
+                                <a class="bookimage"  [routerLink]="['/book', post.book_id]">
+                              <img class="bookimage" src={{post.image_url}} > </a>
+
+                              <a  [routerLink]="['/book', post.book_id]" class="user-link">{{post.title}}</a>
+              <app-star  id='stars' [starsCount]="post.ratings_count" [readOnly]="true" [bookId]="post.id"
+                                         ></app-star>
+
+
+
+                        </tbody>-->
+                  </div>
 
                 <hr>
                <b>
@@ -59,8 +76,9 @@
                     <div class="container">
                       <div class="row">
                           <div class=" col-md-6">
-                            <div class="action" *ngIf="update.actionText != ' started following  : '"  >
-                              {{update.name }} {{ update.actionText }}
+                            <div class="action" *ngIf="update.update_type !=0 "  >
+                            <div class="action" *ngIf="update.actionText != ' started following  : ' "  >
+                             <b> {{update.name }}</b>  {{ update.actionText }}
                               <div class="media">
                                <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
                                   <div id="bookDetails" class=" col-md-6" *ngIf="update.actionText != ' started following  : '"   >
@@ -69,9 +87,13 @@
                                       </div>
                                       <div class="col-md-6">
                                         <app-dropdown [bookId]='update.book_id' ></app-dropdown>
+                                        <app-star id='stars'  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="false" [shelf]="update.shelf"  ></app-star>
                                       </div>
                               </div>
                             </div>
+
+
+                          </div>
                          <!--   <img  [src]="update.image_link">-->
                          <div class="choosePerson" *ngIf="update.actionText == ' started following  : '">
                            <b> {{update.name }} </b>{{ update.actionText }}
@@ -80,6 +102,22 @@
                               <img [src]="update.followed_image_link" >
                               </div>
                          </div>
+                         <div class="action" *ngIf="update.update_type == 0 "  >
+                            <b> {{update.name }}</b>  {{ update.actionText }} <small>  <app-star  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="true" [shelf]="update.shelf"  ></app-star></small>
+                            <div class="media">
+                                <a [routerLink]="['/book',update.book_id]" >  <img id="bookUpdate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCiiC3VqIqcx-szsb0ohBKcQ2rPT4zlEuCszHp_zOT0-4_8_Plw" > </a>
+                                   <div id="bookDetails" class=" col-md-6"  >
+                                    <p> <a [routerLink]="['/book',update.book_id]" > {{ update. title }}</a>  <br>
+                                        by {{ update.author_name}} <br></p>
+                                       </div>
+                                       <div class="col-md-6">
+                                         <app-dropdown  [bookId]='update.book_id' ></app-dropdown>
+                                         <app-star id='stars'  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="false" [shelf]="update.shelf"  ></app-star>
+                                       </div>
+                               </div>
+                           </div>
+
+
                           </div>
                       </div>
                     </div>
@@ -93,9 +131,11 @@
                           <tbody>
                             <tr *ngFor='let post of posts'>
                                 <td>
-                                   <img [src]="post.image_link"  id="followerProfilepicture"  >
+                                  <img id="followerProfilepicture"  src="https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg" >
+                                  <!-- <img [src]="post.image_link"  id="followerProfilepicture"  >-->
                                    </td>
-                                 <td>  <a href="profile/{{post.id }}"> {{ post.name }} </a>
+                                 <td>  <a [routerLink]="['/profile',post.id]">
+                                   <!--<a id="followName" href="#/profile/{{post.id }}">--> {{ post.name }} </a>
                                 </td>
                             </tr>
                           </tbody>

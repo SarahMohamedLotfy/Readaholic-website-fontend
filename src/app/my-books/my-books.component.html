@@ -1,5 +1,5 @@
-
-<div class="mybooksTitle"> 
+<navbar></navbar>
+<div class="mybooksTitle">
   My Books
 </div>
 <hr/>
@@ -9,26 +9,26 @@
 <td
 *ngIf="shelf.name == 'to-read'" >
 <a (click)="getmybooks(true,1)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
- 
+
 <td
 *ngIf="shelf.name == 'currently-reading'" >
 <a (click)="getmybooks(true,2)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
 
-     
+
 <td
 *ngIf="shelf.name == 'read'" >
 <a (click)="getmybooks(true,0)" class="leftActivity">{{ shelf.name }} ({{shelf.book_count}})  </a></td>
 </tr>
 
  </table>
-   
+
     <form id="tfnewsearch" method="get" >
     <input type="text" id ="searchtextfollowing" placeholder="search for books"value="searchText" [(ngModel)]="searchText" class="tftextinput" name="q" size="21"
       maxlength="120"><input id = "searchfollowingg" type="button" (click)="search()" value="search" class ="searchfollowing
       ">
     </form>
 <div *ngIf="noBooks() == 0" >
-    <p   id ="tagrba">You have no books.</p> 
+    <p   id ="tagrba">You have no books.</p>
   </div>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class ="tablePlace" >
@@ -45,10 +45,10 @@
               <th><span>avgrating</span></th>
               <th><span>rating</span></th>
 							<th><span>DataAdded</span></th>
-							
+
 						</tr>
           </thead>
-         
+
 					<tbody *ngFor="let post of books" >
 						<tr>
 							<td>
@@ -58,29 +58,29 @@
               </td>
               <td>
                 <a  [routerLink]="['/book', post.book_id]" class="user-link">{{post.title}}</a>
-						
+
               </td>
               <td>
                 <a href="#" class="user-link">{{post.title}}</a>
-						
+
               </td>
               <td>
                 <a href="#" class="user-link">2.38</a>
-						
+
               </td>
-          
+
 <app-star [starsCount]="post.ratings_count" [readOnly]="true" [bookId]="post.id"
                            ></app-star>
 							<td>
 								2013/08/08
 							</td>
-								
+
             </tr>
-					
+
 					</tbody>
 				</table>
 			</div>
-			
+
 		</div>
 	</div>
 </div>

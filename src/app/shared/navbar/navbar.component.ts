@@ -60,6 +60,9 @@ export class NavbarComponent implements OnInit {
        // this.notifsnb=this.notifs.forEach.length;
        if(this.isUser){
      this.notifs$ =this.httpser.getNotifications();}
+<<<<<<< HEAD
+>>>>>>> fd0459842a2c3240958491751e586802400bd062
+=======
 >>>>>>> fd0459842a2c3240958491751e586802400bd062
        // console.log(data);
       

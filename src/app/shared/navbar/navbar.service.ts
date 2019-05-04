@@ -40,6 +40,7 @@ export class navBarService {
       if(localStorage.getItem('token')== null){
         this.isUser=false
       }else{
+        this.users=JSON.parse(localStorage.getItem('user')) ;
         this.id==this.users.userInfo.id ;
         this.isUser=true ;
 

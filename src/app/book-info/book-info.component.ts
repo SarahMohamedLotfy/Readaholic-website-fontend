@@ -60,7 +60,7 @@ export class BookInfoComponent implements OnInit {
    * @param {Router} router router inastance to route by code
    */
   constructor(private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService, private sharedService: SharedService, ) {
-    console.log("hello");
+    
     this.sharedService.currentShelf.subscribe(data => {
       if (data.key != -1 && data.value != -1) {
         if (data.key == this.myBook.id) {

@@ -81,12 +81,10 @@ export class DropdownComponent implements OnChanges {
   /**removes a book from its shelf */
   removeBookFromShelf() {
     this.service.removeFromShelf(this.shelfId, this.bookId).subscribe((data) => {
-      console.log(data);
       this.shelfStatus = this.shelves[2];
       this.sharedService.changeShelf(this.bookId,3);
       this.buttonDisabled = false;
       this.removeEnabled = false;
-      console.log("aaaaaaaa");
     })
   }
 
@@ -95,15 +93,13 @@ export class DropdownComponent implements OnChanges {
     this.service.getShelf(this.bookId).subscribe((data) => {
       console.log(data);
       if(data.ShelfName < 3) {
-      console.log("shelfname " + data.ShelfName);
         this.shelfId = data.ShelfName;
-        console.log("iddd " + this.shelfId);
         this.shelfStatus = this.shelves[this.shelfId];
         this.sharedService.changeShelf(this.bookId, this.shelfId);
         this.buttonDisabled = true;
         this.removeEnabled = true;
       }
-    });
+    }, (data) => console.log(data));
   }
 
 
@@ -115,7 +111,6 @@ export class DropdownComponent implements OnChanges {
       this.sharedService.changeShelf(this.bookId,this.shelfId);
       this.buttonDisabled = true;
       this.removeEnabled = true;
-      console.log(data);
     })
   }
 

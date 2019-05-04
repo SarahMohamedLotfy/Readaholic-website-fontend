@@ -47,15 +47,11 @@ export class StarComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.starsCount == null) {
-      console.log("yalahwaaay1111")
-    }
     this.sharedService.currentShelf.subscribe(data => {
       if (data.key != -1 && data.value != -1) {
         if (data.key == this.bookId) {
           this.shelf = data.value;
           if (this.shelf == 3) {
-            console.log("yalahwaaay")
             this.starsCount = 0;
           }
         }
@@ -74,13 +70,11 @@ export class StarComponent implements OnInit {
   /**rates a book when the user clicks on the stars */
   onClick() {
     if (this.readOnly == false) {
-      console.log(this.starsCount)
       if (this.shelf == 4 || !this.shelf) {
         this.shelf = 3;
       }
-
+      this.keepRate = this.starsCount;
       this.service.createReview(this.bookId, this.shelf, "", this.starsCount).subscribe((data) => {
-        console.log(data);
         if (data.shelfType == "read") {
           this.shelf = 0;
         } else if (data.shelfType == "currently-reading") {
@@ -89,9 +83,9 @@ export class StarComponent implements OnInit {
           this.shelf = 2;
         }
         this.rated.emit(this.starsCount);
-        console.log("star" + this.shelf);
+       
         this.sharedService.changeShelf(this.bookId, this.shelf);
-      }, (data) => console.log(data));
+      },() => this.starsCount = 0);
     }
   }
 }

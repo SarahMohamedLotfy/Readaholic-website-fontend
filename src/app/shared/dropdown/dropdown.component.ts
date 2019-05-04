@@ -38,7 +38,7 @@ export class DropdownComponent implements OnChanges {
    */
   ngOnChanges(changes: SimpleChanges) {
 
-    this.sharedService.currentshelf.subscribe(data => {
+    this.sharedService.currentShelf.subscribe(data => {
       if (data.key != -1 && data.value != -1) {
         if (data.key == this.bookId) {
           this.shelfId = data.value;
@@ -57,19 +57,8 @@ export class DropdownComponent implements OnChanges {
     });
 
     if (changes['bookId'].currentValue != null) {
-      this.service.getUserBookInfo(changes['bookId'].currentValue).subscribe((data) => {
-
-        this.shelfId = data.pages[0].shelf_name;
-
-
-
-        if (this.shelfId != 3) {
-          this.shelfStatus = this.shelves[this.shelfId];
-          this.sharedService.changeShelf(this.bookId, this.shelfId);
-          this.buttonDisabled = true;
-          this.removeEnabled = true;
-        }
-      });
+      this.bookId = changes['bookId'].currentValue;
+     this.getShelfId();
     }
   }
 
@@ -92,26 +81,36 @@ export class DropdownComponent implements OnChanges {
   /**removes a book from its shelf */
   removeBookFromShelf() {
     this.service.removeFromShelf(this.shelfId, this.bookId).subscribe((data) => {
-      console.log(data);
       this.shelfStatus = this.shelves[2];
       this.sharedService.changeShelf(this.bookId,3);
       this.buttonDisabled = false;
       this.removeEnabled = false;
-      console.log("aaaaaaaa");
     })
+  }
+
+  /**gets the shelf id */
+  getShelfId() {
+    this.service.getShelf(this.bookId).subscribe((data) => {
+      console.log(data);
+      if(data.ShelfName < 3) {
+        this.shelfId = data.ShelfName;
+        this.shelfStatus = this.shelves[this.shelfId];
+        this.sharedService.changeShelf(this.bookId, this.shelfId);
+        this.buttonDisabled = true;
+        this.removeEnabled = true;
+      }
+    }, (data) => console.log(data));
   }
 
 
   /**adds a book to the selected shelf */
-  addBookToShelf(eventObj: Event) {
-    var e = <HTMLElement>eventObj.srcElement;
-    this.shelfId = +e.id
-    this.service.addToShelf(this.shelfId, this.bookId).subscribe((data) => {
+  addBookToShelf(id: number) {
+    this.service.addToShelf(id, this.bookId).subscribe((data) => {
+      this.shelfId = id;
       this.shelfStatus = this.shelves[this.shelfId]
       this.sharedService.changeShelf(this.bookId,this.shelfId);
       this.buttonDisabled = true;
       this.removeEnabled = true;
-      console.log(data);
     })
   }
 

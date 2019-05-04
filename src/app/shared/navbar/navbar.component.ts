@@ -9,7 +9,7 @@ import { navBarService } from "./navbar.service";
 import { data } from 'src/app/classes/data';
 import { CommonModule } from '@angular/common';
 import { Observable, interval, Subscription } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'navbar',
@@ -18,7 +18,7 @@ import { map, switchMap } from 'rxjs/operators';
 })
 export class NavbarComponent implements OnInit {
   public notifss: notifications[] = [];
-
+  
   private notifSubscription: Subscription;
    
   constructor(private service:LogInHttpService,private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:navBarService) { 
@@ -29,26 +29,33 @@ export class NavbarComponent implements OnInit {
     });
 
   }
-  notifs$ :Observable<notifications[]>;
+  notifs :notifications[];
+ users:any;
+ id1:number;
  isUser:boolean=true;
- notifsnb:number;
+ notifsnb:number=0;
 
   ngOnInit() {
     
     if(localStorage.getItem('token')== null){
       this.isUser=false
-    }else{this.isUser=true ;}
-    
-    console.log(this.isUser);
+
+    }else{this.isUser=true ;
+      this.users=JSON.parse(localStorage.getItem('user')) ;
+      this.id1=this.users.userInfo.id ;
+    }
+ 
+   setTimeout(()=>{this.httpser.getNotifications().subscribe(
+      data =>{
+        this.notifs=data ;
+        this.loaddata();
+      console.log(data);
+      }
+    ),1000});
+
    
-       // this.notifsnb=this.notifs.forEach.length;
-       if(this.isUser){
-     this.notifs$ =this.httpser.getNotifications();}
-       // console.log(data);
-      
-    
   }
-  onRead(nb:number){
+  onReadd(nb:number){
     this.httpser.onRead(nb);
     console.log(nb);
   }
@@ -90,5 +97,15 @@ export class NavbarComponent implements OnInit {
       this.clickBtn.emit(this.searchTerm);
       
     }
-    
+
+    loaddata(){
+      var i;
+  
+      for(i=0;i<this.notifs.length;i++){
+        if(this.notifs[i].data.type !=2 && this.notifs[i].data.review_user_id== this.id1)
+       this. notifs[i].you=true;
+       if(this.notifs[i].read == 0)
+        this.notifsnb =this.notifsnb+1;
+    }
+  }
 }

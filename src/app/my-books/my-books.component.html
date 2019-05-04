@@ -1,15 +1,16 @@
 <navbar></navbar>
-<div *ngIf="idUser== 0" >
+
+<div *ngIf="useridd == true" >
 
   <div class="mybooksTitle"> 
-     Books
-</div>
+ Books
+ </div>
 </div>
 
-<div *ngIf="idUser!= 0" >
+<div *ngIf="useridd ==false" >
 
     <div class="mybooksTitle"> 
-      <a  style=" color: #00635d;"> </a>Books
+      Books
   </div>
   </div>
 <hr/>
@@ -111,6 +112,10 @@
 
 					</tbody>
         </table>
+        <div  *ngIf="initializedarrow== true">
+
+          <div id="arrow1">---></div>
+      </div>
         <div  *ngIf="shelfNumber== 2">
 
             <div id="arrow2">---></div>
@@ -126,10 +131,7 @@
 
     </div>
     
-    <div  *ngIf="initializedarrow== true">
-
-        <div id="arrow1">---></div>
-    </div>
+   
 </div>
 		</div>
 	</div>

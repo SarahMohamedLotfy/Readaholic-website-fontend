@@ -59,13 +59,13 @@ export class HomeComponent implements OnInit {
  * get data on loading home
  */
    ngOnInit(){
-     this.httpser.getUpdates().subscribe(
+     setTimeout(()=>{this.httpser.getUpdates().subscribe(
          data =>{
            this.updatess=data ;
            console.log(data);
            this.loadData();
 
-        }, error => this.error = error);
+        }, error => this.error = error);},1000)
 
      }
     /**

@@ -17,8 +17,26 @@
                         </div>
 
                         <div class="buttonPlace">
-                            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal" style="color:black;background-color: white">Change</button>
+                            <button type="button" id="changeButton" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal" style="color:black;background-color: white">Change</button>
                         </div>
+                    </div>
+
+                    <div class="email">
+                        <div class="userEmail">
+                            <p *ngIf='verSucc' style="color:brown"> An email was sent to you to verify your account</p>
+                            <p *ngIf='verErr' style="color:red;"> *something went wrong please try again later</p>
+                            <h1 style="font-size: 19px">Email
+                                <div *ngIf='isNotVer' style="color:red; font-size: 14px;">
+                                    *Account is not verified to resend email to verify click
+                                    <button (click)='verEm()' style="background-color: Transparent; background-repeat:no-repeat;border: none;cursor:pointer;overflow: hidden;color: red; ">here</button>
+
+                                </div>
+                            </h1>
+
+
+                            <p>{{settings?.email}}</p>
+                        </div>
+
                     </div>
 
                 </div>
@@ -117,7 +135,7 @@
 
             <br>
 
-            <button type="submit" class="btn btn-primary" style="background-color:white; color: rgb(228, 10, 10); float: right; margin-bottom: 20%;" data-toggle="modal" data-target="#myModalDelete">Deactivate Account
+            <button type="submit" id="deModal" class="btn btn-primary" style="background-color:white; color: rgb(228, 10, 10); float: right; margin-bottom: 20%;" data-toggle="modal" data-target="#myModalDelete">Deactivate Account
                  
             </button>
             <div *ngIf="deErr" style="color:red; ">{{deText}}</div>
@@ -174,7 +192,7 @@
                 </div>
             </form>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" style="margin-right: 45%;" (click)="changePass()">Save</button>
+                <button type="button" id="changePassword" class="btn btn-default" style="margin-right: 45%;" (click)="changePass()">Save</button>
             </div>
         </div>
 
@@ -207,7 +225,7 @@
 
             </form>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" style="margin-right: 45%;" data-dismiss="modal" (click)="deactivate()"> Deactivate</button>
+                <button type="button" id="deactiveButton" class="btn btn-default" style="margin-right: 45%;" data-dismiss="modal" (click)="deactivate()"> Deactivate</button>
             </div>
         </div>
 

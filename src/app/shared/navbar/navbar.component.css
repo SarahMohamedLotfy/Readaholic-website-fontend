@@ -38,7 +38,7 @@
 #Readholic {
     font-weight: bold;
     font-size: 30px;
-    margin-top: 0;
+    
 }
 
 
@@ -53,9 +53,10 @@
  height:10px;
 }*/
 
-#notif {
-    width: 300px;
-    clear: both;
+#notif{
+    width:auto;
+  clear: both;
+
 }
 
 #logOut {

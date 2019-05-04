@@ -1,0 +1,1008 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SearchBooksComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/search-books/search-books.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>page for searchin for books by title,authorname,ISBN,genre </p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-search-books</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./search-books.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./search-books.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#books">books</a>
+                            </li>
+                            <li>
+                                <a href="#isUser">isUser</a>
+                            </li>
+                            <li>
+                                <a href="#noBooks">noBooks</a>
+                            </li>
+                            <li>
+                                <a href="#searchTerm">searchTerm</a>
+                            </li>
+                            <li>
+                                <a href="#searchType">searchType</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#searchClicked">searchClicked</a>
+                            </li>
+                            <li>
+                                <a href="#searchForBook">searchForBook</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/search-books/search-books.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>checks the routes params to search and calls the function that calls the requests </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchClicked"></a>
+                    <span class="name">
+                        <b>
+                            searchClicked
+                        </b>
+                        <a href="#searchClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchClicked()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/search-books/search-books.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>called when search button clicked to get the type of search and name of the search from the search box in page </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchForBook"></a>
+                    <span class="name">
+                        <b>
+                            searchForBook
+                        </b>
+                        <a href="#searchForBook"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchForBook()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/search-books/search-books.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>calls the requests responsible for getting the books </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="books"></a>
+                        <span class="name">
+                            <b>
+                            books</b>
+                            <a href="#books"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/search-books/search-books.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>saves the books that get from response </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isUser"></a>
+                        <span class="name">
+                            <b>
+                            isUser</b>
+                            <a href="#isUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/search-books/search-books.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>define wheather the user is auth or a guest </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="noBooks"></a>
+                        <span class="name">
+                            <b>
+                            noBooks</b>
+                            <a href="#noBooks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/search-books/search-books.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>boolean to check if nobooks from search </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchTerm"></a>
+                        <span class="name">
+                            <b>
+                            searchTerm</b>
+                            <a href="#searchTerm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/search-books/search-books.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>search value entered in the search box </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchType"></a>
+                        <span class="name">
+                            <b>
+                            searchType</b>
+                            <a href="#searchType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/search-books/search-books.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>type of search by:author,title,..etc </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { SearchBooksService } from &#x27;./search-books.service&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { book } from &#x27;../classes/book&#x27;;
+/**page for searchin for books by title,authorname,ISBN,genre */
+@Component({
+  selector: &#x27;app-search-books&#x27;,
+  templateUrl: &#x27;./search-books.component.html&#x27;,
+  styleUrls: [&#x27;./search-books.component.css&#x27;]
+})
+export class SearchBooksComponent implements OnInit {
+
+/**@ignore */
+  constructor(private activatedRoute: ActivatedRoute, private service:SearchBooksService,private fb:FormBuilder,private router:Router) {
+    this.form&#x3D;this.fb.group({
+      searchBox: [&#x27;&#x27;,[Validators.required]],
+      searchType: [&#x27;&#x27;,[Validators.required]]
+      });
+   }
+   /**search value entered in the search box */
+searchTerm:any;
+/** type of search by:author,title,..etc */
+searchType:string;
+/**saves the books that get from response */
+books:any&#x3D;[];
+/**@ignore */
+form: FormGroup;
+/**define wheather the user is auth or a guest */
+isUser:boolean;
+/**boolean to check if nobooks from search */
+noBooks:boolean &#x3D;false;
+/**@ignore */
+review:any&#x3D;[];
+/**@ignore */
+str:string;
+/**@ignore */
+rating:any&#x3D;[];
+/**@ignore */
+temp:any&#x3D;[];
+
+/**checks the routes params to search and calls the function that calls the requests */
+  ngOnInit() {
+    this.activatedRoute.queryParams .subscribe(params &#x3D;&gt; {
+     
+      this.searchTerm &#x3D; params[&#x27;search&#x27;];
+    this.searchType&#x3D;params[&#x27;searchType&#x27;]});
+
+      if(localStorage.getItem(&#x27;token&#x27;) &#x3D;&#x3D; null){
+        this.isUser &#x3D; false;}
+      
+      else{
+        this.isUser &#x3D; true;
+      }
+    
+  
+     this.searchForBook();
+
+
+  }
+/**called when search button clicked to get the type of search and name of the search from the search box in page */
+ searchClicked(){
+
+  const val &#x3D; this.form.value;
+    this.router.navigate([&#x27;/searchBooks&#x27;],{queryParams:{&#x27;search&#x27;:val.searchBox,&#x27;searchType&#x27;:val.searchType}});
+    this.searchTerm&#x3D;val.searchBox;
+      console.log(this.searchTerm);
+this.searchForBook();
+
+ }
+
+ /** @ignore*/
+search(term){
+
+  const val &#x3D; this.form.value;
+this.searchTerm&#x3D;term;
+this.searchType&#x3D;&#x27;title&#x27;;
+val.searchType&#x3D;&#x27;title&#x27;;
+this.searchForBook();
+  
+  }
+/**calls the requests responsible for getting the books */
+  searchForBook()
+  {
+ 
+    const val &#x3D; this.form.value;
+      console.log(this.searchTerm);
+
+    if(val.searchType&#x3D;&#x3D;&quot;author&quot; || this.searchType&#x3D;&#x3D;&quot;author&quot; )
+    this.service.getBookByAuthor(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
+      this.books &#x3D;books.pages ;
+
+      
+     
+      this.review&#x3D;books[&#x27;book info for me&#x27;]
+      this.temp&#x3D;this.review;
+      
+     if(books.pages.length&#x3D;&#x3D;0){
+       this.noBooks&#x3D;true;
+     }
+     else
+     this.noBooks&#x3D;false;
+
+      console.log(this.rating);
+      },err&#x3D;&gt;{this.noBooks&#x3D;true;})
+      else if(val.searchType&#x3D;&#x3D;&quot;ISBN&quot; || this.searchType&#x3D;&#x3D;&quot;ISBN&quot; )
+      {
+        this.service.getBookByIsbn(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
+          this.books &#x3D;books.pages ;
+          
+          console.log(this.books);
+          console.log(books);
+          this.review&#x3D;books[&#x27;book info for me&#x27;]
+          if(books.pages.length&#x3D;&#x3D;0){
+            this.noBooks&#x3D;true;
+          }
+          else
+          this.noBooks&#x3D;false;
+
+          },err&#x3D;&gt;{this.noBooks&#x3D;true;})
+      }
+      else if(val.searchType&#x3D;&#x3D;&quot;genre&quot; || this.searchType&#x3D;&#x3D;&quot;genre&quot; )
+      {
+        this.service.getBookByGenre(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
+          this.books &#x3D;books.pages ;
+          
+          console.log(this.books);
+          console.log(books);
+          if(books.pages.length&#x3D;&#x3D;0){
+            this.noBooks&#x3D;true;
+          }
+          else
+          this.noBooks&#x3D;false;
+          this.review&#x3D;books[&#x27;book info for me&#x27;]
+          },err&#x3D;&gt;{this.noBooks&#x3D;true;})
+      }
+      else 
+      {
+        this.service.getBookByTitle(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
+          this.books &#x3D;books.pages ;
+          
+          console.log(this.books);
+          console.log(books);
+          this.review&#x3D;books[&#x27;book info for me&#x27;]
+          if(books.pages.length&#x3D;&#x3D;0){
+            this.noBooks&#x3D;true;
+          }
+          else
+          this.noBooks&#x3D;false;
+          },err&#x3D;&gt;{this.noBooks&#x3D;true;})
+      }
+     
+  }
+
+  
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;navbar (clickBtn)&#x3D;&quot;search($event)&quot;&gt;&lt;/navbar&gt;
+&lt;div id&#x3D;&quot;mainSearchContainer&quot;&gt;
+    &lt;div id&#x3D;&quot;mainSearchContent&quot;&gt;
+        &lt;div id&#x3D;&quot;mainSearchFloat&quot;&gt;
+            &lt;div id&#x3D;&quot;leftSearchContainer&quot;&gt;
+                &lt;h1 id&#x3D;&quot;search&quot;&gt;Search &lt;/h1&gt;
+
+                &lt;form name&#x3D;&quot;searchForm&quot; id&#x3D;&quot;searchBox&quot; [formGroup]&#x3D;&quot;form&quot;&gt;
+                    &lt;div style&#x3D;&quot;padding-bottom: 10px;&quot;&gt;
+                        &lt;input id&#x3D;&quot;searchBoxInput&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Search by Book Title,Author,Genre,or ISBN&quot; formControlName&#x3D;&quot;searchBox&quot;&gt;
+                        &lt;button id&#x3D;&quot;searchButton&quot; (click)&#x3D;&quot;searchClicked()&quot;&gt;Search&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label class&#x3D;&quot;radio-inline&quot;&gt;
+                        &lt;input type&#x3D;&quot;radio&quot;  value&#x3D;&quot;title&quot; style&#x3D;&quot;vertical-align:middle; margin: 3px 3px 0px 5px;&quot; formControlName&#x3D;&quot;searchType&quot; name&#x3D;&quot;searchType&quot; checked&#x3D;&quot;checked&quot; &gt; title&lt;/label&gt;
+                        &lt;label class&#x3D;&quot;radio-inline&quot;&gt;
+                        &lt;input type&#x3D;&quot;radio&quot; value&#x3D;&quot;author&quot; style&#x3D;&quot;vertical-align:middle; margin: 3px 3px 0px 5px;&quot; name&#x3D;&quot;searchType&quot; formControlName&#x3D;&quot;searchType&quot; &gt; author&lt;/label&gt;
+                        &lt;label class&#x3D;&quot;radio-inline&quot;&gt;
+                        &lt;input type&#x3D;&quot;radio&quot; value&#x3D;&quot;genre&quot; style&#x3D;&quot;vertical-align:middle; margin: 3px 3px 0px 5px;&quot; name&#x3D;&quot;searchType&quot; formControlName&#x3D;&quot;searchType&quot;&gt; genre&lt;/label&gt;
+                        &lt;label class&#x3D;&quot;radio-inline&quot;&gt;
+                        &lt;input type&#x3D;&quot;radio&quot; value&#x3D;&quot;ISBN&quot; style&#x3D;&quot;vertical-align:middle;margin: 3px 3px 0px 5px;&quot; name&#x3D;&quot;searchType&quot; formControlName&#x3D;&quot;searchType&quot;&gt; ISBN&lt;/label&gt;
+                    &lt;/div&gt;
+
+                &lt;/form&gt;
+
+                &lt;h1 id&#x3D;&quot;searchSubNav&quot;&gt;Results for search&lt;/h1&gt;
+
+                &lt;h2 *ngIf&#x3D;&quot;noBooks&quot; style&#x3D;&quot;margin-top: 5%;&quot;&gt;Your search didn&#x27;t match any books&lt;/h2&gt;
+                &lt;table id&#x3D;&quot;searchTable&quot; *ngFor&#x3D;&quot;let book of books &quot;&gt;
+                    &lt;tbody *ngIf&#x3D;&quot;!noBooks&quot; id&#x3D;&quot;searchTableBody&quot;&gt;
+                        &lt;tr id&#x3D;&quot;singleBook&quot;&gt;
+                            &lt;td id&#x3D;&quot;img&quot;&gt;
+                                &lt;div&gt;&lt;/div&gt;
+                                &lt;img src&#x3D;{{book.img_url}} id&#x3D;&quot;bookImg&quot;&gt;
+                            &lt;/td&gt;
+                            &lt;td id&#x3D;&quot;bookDetails&quot;&gt;
+                                &lt;a id&#x3D;&quot;bookTitle&quot; [routerLink]&#x3D;&quot;[&#x27;/book&#x27;,book.id]&quot;&gt;{{book.title}}&lt;/a&gt;
+                                &lt;br&gt;
+                                &lt;span&gt;by &lt;/span&gt;
+                                &lt;span&gt;{{book.author_name}}&lt;/span&gt;
+                                &lt;br&gt;
+
+
+
+                                &lt;div style&#x3D;&quot; margin-top: 1%;&quot;&gt;
+                                    &lt;span id&#x3D;&quot;ratings&quot;&gt;
+                                        &lt;span id&#x3D;&quot;miniRating&quot;&gt;
+                                    &lt;app-star [starsCount]&#x3D;&quot;book?.ratings_avg&quot; [readOnly]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
+                                    {{book.ratings_avg}} avg rating - {{book.ratings_count}} ratings
+                                &lt;/span&gt; - published {{book.publication_date}}
+                                    &lt;/span&gt;
+                                &lt;/div&gt;
+
+                                &lt;div id&#x3D;&quot;reviewing&quot; *ngIf&#x3D;&quot;isUser&quot;&gt;
+                                    &lt;app-dropdown [bookId]&#x3D;&quot;book?.id&quot; (starsRating)&#x3D;&#x27;ratings($event)&#x27;&gt;&lt;/app-dropdown&gt;
+                                    &lt;app-star id&#x3D;&quot;rateBook&quot; [bookId]&#x3D;&quot;book?.id&quot; [readOnly]&#x3D;&quot;false&quot; [getRate]&#x3D;&quot;true&quot;&gt;&lt;/app-star&gt;
+                                &lt;/div&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./search-books.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#mainSearchContainer {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+#mainSearchContent {
+    margin: 0px auto;
+    text-align: left;
+    width: 970px;
+    background: #FFFFFF;
+}
+
+#mainSearchFloat {
+    float: left;
+    width: 960px;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-size: 12px;
+    min-height: 400px;
+    background: #FFFFFF;
+}
+
+#leftSearchContainer {
+    float: left;
+    width: 625px;
+    padding-right: 10px;
+    padding-left: 8px;
+    word-wrap: break-word;
+}
+
+#search {
+    padding: 0px 0px 2px 0px;
+    font-size: 20px;
+    font-family: &quot;Merriweather&quot;, Georgia, &quot;Times New Roman&quot;, serif;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #382110;
+    line-height: 24px;
+}
+
+#searchBox {
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    flex: 1;
+    position: relative;
+    background-color: #eeeeee;
+}
+
+#searchBoxInput {
+    float: left;
+    font-size: 14px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px;
+    height: 31px;
+    width: 80%;
+}
+
+#searchButton {
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: &quot;Lato&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+    color: #333333;
+    background-color: #F4F1EA;
+    line-height: 1;
+    padding: 8px 12px;
+    margin-left: 5px;
+}
+
+#searchSubNav {
+    padding: 2px 0px 3px 0px;
+    border-bottom: 2px solid #d7d7d7;
+    color: #382110;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 1.15;
+    margin: 12px 0;
+    text-transform: uppercase;
+    margin-block-start: 2em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#searchTable {
+    width: 100%;
+    border-collapse: collapse;
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+
+#searchTableBody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-spacing: 2px;
+    font-size: 12px;
+}
+
+#singleBook {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    text-align: left;
+    line-height: 18px;
+}
+
+#img {
+    border-bottom: 1px solid #E8E8E8;
+    padding: 5px;
+    line-height: 18px;
+    width: 13%;
+    vertical-align: top;
+}
+
+#bookImg {
+    width: 100%
+}
+
+#bookDetails {
+    border-bottom: 1px solid #E8E8E8;
+    padding: 5px;
+    width: 100%;
+    vertical-align: top;
+}
+
+#bookTitle {
+    color: #333333;
+    font-family: &quot;Merriweather&quot;, &quot;Georgia&quot;, serif;
+    font-size: 120%;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+#ratings {
+    color: #999999;
+    font-size: 11px;
+    line-height: 14px;
+    border-spacing: 2px;
+}
+
+#miniRating {
+    color: #999999;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+#reviewing {
+    float: left;
+    height: 67px;
+    width: 140px;
+    position: relative;
+    float: right;
+}
+
+#rateBook {
+    margin-left: 23%;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><navbar (clickBtn)="search($event)"></navbar><div id="mainSearchContainer">    <div id="mainSearchContent">        <div id="mainSearchFloat">            <div id="leftSearchContainer">                <h1 id="search">Search </h1>                <form name="searchForm" id="searchBox" [formGroup]="form">                    <div style="padding-bottom: 10px;">                        <input id="searchBoxInput" type="text" placeholder="Search by Book Title,Author,Genre,or ISBN" formControlName="searchBox">                        <button id="searchButton" (click)="searchClicked()">Search</button>                    </div>                    <div>                        <label class="radio-inline">                        <input type="radio"  value="title" style="vertical-align:middle; margin: 3px 3px 0px 5px;" formControlName="searchType" name="searchType" checked="checked" > title</label>                        <label class="radio-inline">                        <input type="radio" value="author" style="vertical-align:middle; margin: 3px 3px 0px 5px;" name="searchType" formControlName="searchType" > author</label>                        <label class="radio-inline">                        <input type="radio" value="genre" style="vertical-align:middle; margin: 3px 3px 0px 5px;" name="searchType" formControlName="searchType"> genre</label>                        <label class="radio-inline">                        <input type="radio" value="ISBN" style="vertical-align:middle;margin: 3px 3px 0px 5px;" name="searchType" formControlName="searchType"> ISBN</label>                    </div>                </form>                <h1 id="searchSubNav">Results for search</h1>                <h2 *ngIf="noBooks" style="margin-top: 5%;">Your search didn\'t match any books</h2>                <table id="searchTable" *ngFor="let book of books ">                    <tbody *ngIf="!noBooks" id="searchTableBody">                        <tr id="singleBook">                            <td id="img">                                <div></div>                                <img src={{book.img_url}} id="bookImg">                            </td>                            <td id="bookDetails">                                <a id="bookTitle" [routerLink]="[\'/book\',book.id]">{{book.title}}</a>                                <br>                                <span>by </span>                                <span>{{book.author_name}}</span>                                <br>                                <div style=" margin-top: 1%;">                                    <span id="ratings">                                        <span id="miniRating">                                    <app-star [starsCount]="book?.ratings_avg" [readOnly]="true"></app-star>                                    {{book.ratings_avg}} avg rating - {{book.ratings_count}} ratings                                </span> - published {{book.publication_date}}                                    </span>                                </div>                                <div id="reviewing" *ngIf="isUser">                                    <app-dropdown [bookId]="book?.id" (starsRating)=\'ratings($event)\'></app-dropdown>                                    <app-star id="rateBook" [bookId]="book?.id" [readOnly]="false" [getRate]="true"></app-star>                                </div>                            </td>                        </tr>                    </tbody>                </table>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AccountSettingsComponent', 'selector': 'app-account-settings'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'ListLikesComponent', 'selector': 'app-list-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ReviewComponent', 'selector': 'review'},{'name': 'SearchBooksComponent', 'selector': 'app-search-books'},{'name': 'SearchPeopleComponent', 'selector': 'app-searchpeople'},{'name': 'StarComponent', 'selector': 'app-star'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SearchBooksComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SearchBooksComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

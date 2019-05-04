@@ -31,6 +31,7 @@ reviewRating = 0;
 /**@ignore */
 shelfName: string = "";
 countt:number;
+useridd:boolean;
  /**
  * posts  is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ) .
 
@@ -70,7 +71,7 @@ used it in search function.
  books1:any=[];
  books2:any=[];
  nobookss:number;
- initializedarrow:boolean;
+ initializedarrow:boolean = true;
   /**
 * Search input text in search box .
 */
@@ -98,7 +99,7 @@ this.idUser=id;
  this.myfirstservice.getUserprofile(id).subscribe(
      (data: profile) => this.selectedProfile = data,
             )
-         
+         this.useridd= true;
         
  }
  else
@@ -107,7 +108,8 @@ this.idUser=id;
  (data: profile) => this.selectedProfile = data,
  (err: any) => console.log('ehuuhfuihdiuhfrr')
   );
-  
+  this.useridd= false;
+
  }
 
     
@@ -170,24 +172,7 @@ this.myfirstservice.gethisshelfbooks(1,id).subscribe((posts:any)=>{
 }
   );
 
-  this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
-    this.books =posts.pages ;
-    this.temp =  this.books;
-    console.log(this.books);
-    this.initializedarrow=true;
-  },
-  (ERROR:any)   => {
-    if(ERROR .status ==400)
-    {
-      this.books1=[];
-    this.nobooks1=true;
-    console.log('hghghghghg');
-
-    }
-  });
-
-
-
+  
 }
   else 
   {

@@ -83,13 +83,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#getBookByGenre">getBookByGenre</a>
+                            </li>
+                            <li>
                                 <a href="#login">login</a>
                             </li>
                             <li>
                                 <a href="#logOut">logOut</a>
                             </li>
                             <li>
+                                <a href="#resetPass">resetPass</a>
+                            </li>
+                            <li>
                                 <a href="#signUp">signUp</a>
+                            </li>
+                            <li>
+                                <a href="#verify">verify</a>
                             </li>
                         </ul>
                     </td>
@@ -114,7 +123,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/log-in/log-in-http.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/log-in/log-in-http.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -163,6 +172,78 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getBookByGenre"></a>
+                    <span class="name">
+                        <b>
+                            getBookByGenre
+                        </b>
+                        <a href="#getBookByGenre"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBookByGenre(genre: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>request that search for books by there genre </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>genre</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="login"></a>
                     <span class="name">
                         <b>
@@ -181,8 +262,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:21</a></div>
                 </td>
             </tr>
 
@@ -265,8 +346,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -279,6 +360,78 @@
                     <div class="io-description">
                         <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPass"></a>
+                    <span class="name">
+                        <b>
+                            resetPass
+                        </b>
+                        <a href="#resetPass"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetPass(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>resets the password of the user by sending him an email to use for creating a new pass </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -306,8 +459,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -440,13 +593,55 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verify"></a>
+                    <span class="name">
+                        <b>
+                            verify
+                        </b>
+                        <a href="#verify"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>verify()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/log-in/log-in-http.service.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>request send to users when they sign up to send them an email to verify their email account </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AppConstants } from &#x27;./../classes/appconstant&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
 import { HttpClient, HttpErrorResponse, HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import { Observable, throwError, observable } from &#x27;rxjs&#x27;;
 import { catchError, retry } from &#x27;rxjs/operators&#x27;;
@@ -457,8 +652,9 @@ import { catchError, retry } from &#x27;rxjs/operators&#x27;;
   })
 
   export class LogInHttpService {
-
-
+/**@ignore */
+  url:string&#x3D;AppConstants.baseURL;
+ //url:string&#x3D;&#x27;http://0ea47257.ngrok.io&#x27;;
     /**Constructor that takes HttpClient */
     constructor(private http:HttpClient) {}
 
@@ -466,20 +662,40 @@ import { catchError, retry } from &#x27;rxjs/operators&#x27;;
     /**Sends a request to the server with the email and password to checks if they&#x27;re correct */
  login(email:string,password:string): Observable&lt;any&gt;
  {
-   return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/login&#x27;,{email,password}) ;
+   return this.http.post(this.url+&#x27;/api/login&#x27;,{email,password}) ;
  }
 
 
 /**Sends a request to server with the variables that user entered to sign up a new user */
  signUp(email:string,password:string,password_confirmation:string,name:string,gender:string,birthday:Date,country:string,city:string): Observable&lt;any&gt;
  {
-   return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/signup&#x27;,{email,password,password_confirmation,name,gender,birthday,country,city}) ;
+   return this.http.post(this.url+&#x27;/api/signup&#x27;,{email,password,password_confirmation,name,gender,birthday,country,city}) ;
  }
 /**Loggs out the user from the website */
  logOut():Observable&lt;any&gt;{
-    return this.http.delete(&#x27;http://972c6e5d.ngrok.io/api/logout&#x27;);
+    return this.http.delete(this.url+&#x27;/api/logout&#x27;);
   }
+/**resets the password of the user by sending him an email to use for creating a new pass */
+  resetPass(email:string): Observable&lt;any&gt; {
+        
+    return this.http.post&lt;any&gt;(this.url+&#x27;/api/forgotpassword&#x27;,{email});
+    
+   }
+/**request send to users when they sign up to send them an email to verify their email account */
+   verify(): Observable&lt;any&gt;
+   {
+       return this.http.get(this.url+&#x27;/api/verify&#x27;);
+   }
+
+  /**request that search for books by there genre */ 
+   getBookByGenre(genre:string): Observable&lt;any&gt; {
+        
+    return this.http.get&lt;any&gt;(this.url+&#x27;/api/books/genre?genreName&#x3D;&#x27;+genre);
+    
+   }
+  
   }
+  
 </code></pre>
     </div>
 

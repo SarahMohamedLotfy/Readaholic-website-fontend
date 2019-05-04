@@ -4,27 +4,34 @@
 <div class="card">
     <div class="card-body">
         <div class="row">
-      <!-- <ul *ngFor="let revieww of revieww"  > -->
+       <ul *ngFor="let revieww of revieww">
+       <ul *ngFor="let userr of userr"   > 
             
-
+        <ul *ngFor="let book of book"   > 
             <div class="col-md-2"  >
                 <img  src="{{userr?.image_link}}" class="avatar" alt="Generic placeholder image" >
             </div>
             <div class="col-md-10">
                 <p>
-                    <a class="float-left" [routerLink]="['/profile',revieww?.user_id]"><strong> {{userr?.name}}</strong></a>
-
+                    <a class="float-left" >
+                        <strong [routerLink]="['/profile',revieww?.user_id]"> {{userr?.name}}<i> 's review on</i></strong>
+                    <strong  [routerLink]="['/book',book?.book_id]"> {{book?.title}}</strong>
+                    </a>
+              
                </p>
             <div class="clearfix"></div>  
-                <p >{{revieww?.body}} </p>
+                <p >{{revieww?.body}}</p>
                
                  <!--{{review?.likes_count}} like -->
-
+<small >
                     <app-likes  [resourse_id]='revieww?.id'></app-likes>
 
                 <!--  {{review?.comments_count}} Comments -->
                     <app-comments  [resourse_id]='revieww?.id'></app-comments>
-            
-
+                </small>
+                    </div>
+     </ul>
+     </ul>       
+</ul>
     </div>
 </div>

@@ -19,6 +19,7 @@ export class LogInComponent implements OnInit {
   form:FormGroup;
  /**stores the input typed in the signup form */
   formUp:FormGroup;
+  /**stores the input typed in the forget password form */
   formReset:FormGroup;
   /**stores the information of the user logged in */
   users:user;
@@ -30,14 +31,19 @@ export class LogInComponent implements OnInit {
   errorUp:string;
 /**true if there is an error in signing up false otherwise */
   signUpError:boolean;
-
+/**stores some recommended books to display */
   books:any[];
+  /**@ignore */
   numbers:number[];
+  /**search text entered in the text box */
   searchTerm:string;
-
+/**true if invalid email entered to reset pass */
   resetError:boolean=false;
+  /**store error msg for forget password form */
   resetText:string;
+  /**@ignore */
   resetMes:string;
+  /**@ignore */
   resetSuc:boolean;
 
 
@@ -71,13 +77,19 @@ export class LogInComponent implements OnInit {
  
     
   }
-
+/**@ignore */
   get gender() { return this.formUp.get('gender'); }
+  /**@ignore */
   get email() { return this.formUp.get('email'); }
+  /**@ignore */
   get name() { return this.formUp.get('name'); }
+  /**@ignore */
   get country() { return this.formUp.get('country'); }
+  /**@ignore */
   get city() { return this.formUp.get('city'); }
+  /**@ignore */
   get password() { return this.formUp.get('password'); }
+  /**@ignore */
   get password_confirmation() { return this.formUp.get('password_confirmation'); }
   
   /**Checks if the guest is already logged in or not if already logged in it re routes them automaticaly to the home page */
@@ -86,13 +98,37 @@ export class LogInComponent implements OnInit {
    if(localStorage.getItem('token')!=null)
     this.router.navigateByUrl('/home');
 
-    this.service.getBookByGenre('action').subscribe((books:any)=>{
+    this.service.getBookByGenre('young adult').subscribe((books:any)=>{
       this.books =books.pages ;
      
       console.log(this.books);
     
     
-      },err=>{})
+      },err=>{
+
+        this.service.getBookByGenre('action').subscribe((books:any)=>{
+          this.books =books.pages ;
+         
+          console.log(this.books);
+        
+        
+          },err=>{
+            this.service.getBookByTitle('sherwood').subscribe((books:any)=>{
+              this.books =books.pages ;
+             
+              console.log(this.books);
+            
+            
+              },err=>{
+        
+                
+              })
+    
+            
+          })
+
+
+      })
     
   }
   /**On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they're valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  */
@@ -186,10 +222,11 @@ err => {
   this.errorUp="you must fill all boxes"
 
   }
-
- 
-
   }
+
+
+
+  /**function called when reset button clicked it checks the form validity and send the email entered to the server and shows a sucsses or error message accordingly */
 reset(){
   const val = this.formReset.value;
   this.resetError=false;
@@ -213,7 +250,7 @@ reset(){
 
 
 }
-
+/**searchs for the book entered in the search box and navigate to the search page */
 search(){
   console.log(this.searchTerm);
   this.router.navigate(['/searchBooks'],{queryParams:{'search':this.searchTerm,'searchType':'title'}});

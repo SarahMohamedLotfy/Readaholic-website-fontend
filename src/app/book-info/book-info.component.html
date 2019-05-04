@@ -5,8 +5,7 @@
             <div class="col-md-2" id="leftCol">
                 <img id="bookCover" src={{myBook?.img_url}} class="align-self-start mr-3">
                 <app-dropdown id="shelf" [bookId]="myBook?.id"></app-dropdown>
-                <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name"
-                    [readOnly]="false" [starsCount]="userInfo?.rating"></app-star>
+                <app-star id="rateBook" (rated)="open($event)" [bookId]="myBook?.id" [shelf]="userInfo?.shelf_name" [readOnly]="false" [starsCount]="userInfo?.rating"></app-star>
             </div>
             <div class="media-body" id="bookInfo">
                 <div class="col-md-9">
@@ -78,10 +77,14 @@
                     </small>
                 </div>
             </div>
+
+
+
         </ng-container>
     </div>
     <div class="col-md-3"></div>
 </div>
+
 
 
 <div class="modal fade" id="Modal">
@@ -89,8 +92,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Review of {{myBook?.title}}</h5>
-                <button type="button" class="close" id="closebtn" data-dismiss="modal"
-                    (click)="errMsg=''">&times;</button>
+                <button type="button" class="close" id="closebtn" data-dismiss="modal" (click)="errMsg=''">&times;</button>
             </div>
             <div class="modal-body" style="margin-bottom:5px; padding-bottom: 0px;">
                 <div class="row" style="margin-bottom:0px">
@@ -107,13 +109,10 @@
                             <button (click)="openShelves()" class="dropbtn">choose shelves..</button>
                             <div id="myDropdown" class="dropdown-content">
                                 <input type="text" placeholder="Search.." id="myInput" (keyup)="filterFunction()">
-                                <a><input type="radio" name="group1" (click)="reviewShelf=0; modelShelf='read';"
-                                        checked>read</a>
-                                <a><input type="radio" name="group1"
-                                        (click)="reviewShelf=1; modelShelf='currently reading';">currently
-                                    reading</a>
-                                <a><input type="radio" name="group1"
-                                        (click)="reviewShelf=2; modelShelf='want to read';">want to read</a>
+                                <a><input type="radio" name="group1" (click)="reviewShelf=0; modelShelf='read';" checked>read</a>
+                                <a><input type="radio" name="group1" (click)="reviewShelf=1; modelShelf='currently reading';">currently reading
+                                </a>
+                                <a><input type="radio" name="group1" (click)="reviewShelf=2; modelShelf='want to read';">want to read</a>
                             </div>
                         </div>
                         <span style="color: #00635d;  margin-left: 10px;">{{modelShelf}}</span>

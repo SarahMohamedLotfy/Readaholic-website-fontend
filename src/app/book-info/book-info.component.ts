@@ -57,7 +57,7 @@ export class BookInfoComponent implements OnInit {
   /**
    * @param {BookService} service injected book service instance
    * @param {ActivatedRoute} route activated route instance
-   * @param {Router} router router inastance to route by code 
+   * @param {Router} router router inastance to route by code
    */
   constructor(private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService, private sharedService: SharedService, ) {
     console.log("hello");
@@ -81,14 +81,12 @@ export class BookInfoComponent implements OnInit {
         }
       }
     });
-  }
-  /** calss the needed requests to the get the selected book info  */
-  ngOnInit() {
+
+    ngOnInit() {
     this.getBookInfo();
     this.getBookReviews();
-    this.getUserInfo();
-
-    
+    this.getUserInfo();  
+    console.log(JSON.parse(localStorage.getItem('user')));
     if (localStorage.getItem('token') == null) {
       this.isUser = false;
       console.log(this.isUser + "aaakkkk");
@@ -132,9 +130,9 @@ export class BookInfoComponent implements OnInit {
       this.reviewBody = this.userInfo.body;
       this.reviewShelf = this.userInfo.shelf_name;
       this.reviewRating = this.userInfo.rating;
-      
+
       this.shelfName = this.shelves[this.reviewShelf];
-      
+
     });
 
     console.log(this.userInfo.rating);
@@ -220,13 +218,13 @@ export class BookInfoComponent implements OnInit {
       this.userInfo.rating = rate;
     }
     else {
-      document.getElementById("openModalButton").click();
+      document.getElementById("openModalButton1").click();
       return;
     }
     if (this.userInfo.id == -1) {
       /* this.userInfo.shelf_name = 0;
        this.shelfName = "Read";*/
-      document.getElementById("openModalButton").click();
+      document.getElementById("openModalButton1").click();
     }
   }
 

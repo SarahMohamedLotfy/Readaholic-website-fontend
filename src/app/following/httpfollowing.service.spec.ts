@@ -20,15 +20,10 @@ fdescribe('HttpFollowingService', () => {
     httpTestingController.verify();
   });
 
-  fit('should be created', () => {
-    const service: HttpFollowinggService = TestBed.get(HttpFollowinggService);
-    expect(service).toBeTruthy();
-  });
-
-
+  
 
 // Unit testing for Get following request
-/*describe('#Get the following people', () => {
+fdescribe('#Get the following people', () => {
   it('returned Observable should match the right data', () => {
     const mockFollowing = [
       {
@@ -47,6 +42,8 @@ fdescribe('HttpFollowingService', () => {
         "id": 7,
         "image_link": "mohamed.jpg",
         "name": "Mohamed",
+        "pages": null
+
       }
     ];
 
@@ -58,14 +55,14 @@ fdescribe('HttpFollowingService', () => {
         expect(followingComponent[1].id).toEqual('7');
       });
     const req = httpTestingController.expectOne(
-      'http://972c6e5d.ngrok.io/api/following'
+      'http://ec2-52-90-5-77.compute-1.amazonaws.com/api/following'
     );
 
     req.flush(mockFollowing);
   });
 });
 
-*/
+
 
 
 

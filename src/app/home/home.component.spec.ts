@@ -48,7 +48,7 @@ describe('HomeComponent', () => {
  it('should create', () => {
     expect(component).toBeTruthy();
   });
- it('should follow and unfollow',async()=>{
+ fit('should contain unfollow',async()=>{
   const fakeUpdates: updates[]  = [{
     id: 2,
       body:null,
@@ -90,6 +90,51 @@ describe('HomeComponent', () => {
     fixture.whenStable().then(() => { // wait for async 
     //  fixture.detectChanges();        
       expect(p.textContent).toContain('Unfollow');
+
+ })
+})
+fit('should contain unfollow',async()=>{
+  const fakeUpdates: updates[]  = [{
+    id: 2,
+      body:null,
+     rating:3,
+     likes_count:null,
+     comments_count:null,
+     updated_at:"2019-03-21 00:00:00",
+     book_id:1,
+     title:"DeathCaster",
+     description:"book description ",
+     img_url:"",
+     reviews_count:null,
+     ratings_count:null,
+     ratings_avg:null,
+     pages_no:null,
+     user_id:1,
+     name:"Huda Yahyaa",
+     image_link:"",
+     author_name:"Huda Yahyaa",
+     update_type: 2,
+     shelf:1,
+     actionText:"FR",
+     followed_image_link:"",
+     followed_name:null,
+     followed_id:null,
+     shelf_type:1,
+     rev_user_id:1,
+     rev_user_imageLink:"",
+     rev_user_image:"",
+     auth_user_following:0
+
+
+    }];
+    component.updatess=fakeUpdates ;
+    const De: DebugElement = fixture.debugElement;
+    const follow = De.query(By.css('#followButton'));
+    const p: HTMLElement = follow.nativeElement;
+    fixture.detectChanges();
+    fixture.whenStable().then(() => { // wait for async 
+    //  fixture.detectChanges();        
+      expect(p.textContent).toContain('Follow');
 
  })
 })

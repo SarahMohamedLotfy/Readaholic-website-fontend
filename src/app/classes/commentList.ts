@@ -7,5 +7,6 @@ export class CommentList {
   id: number;
   body: string;
   have_the_comment: string;
+  status: string;
 
 }

@@ -13,7 +13,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
-describe('SearchPeopleComponent', () => {
+fdescribe('SearchPeopleComponent', () => {
   let component: SearchPeopleComponent;
   let fixture: ComponentFixture<SearchPeopleComponent>;
 
@@ -39,7 +39,7 @@ describe('SearchPeopleComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  fit('should create', () => {
     expect(component).toBeTruthy();
   });
 });

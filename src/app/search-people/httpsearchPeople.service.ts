@@ -21,15 +21,15 @@ url:string=AppConstants.baseURL;
   
 
 getuserbyName(username: string): Observable<any>{
-  return this.http.get<any>('http://4404e3cc.ngrok.io/api/search_by_name?name='+username);
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name?name='+username);
  
 }
 getuserbyNameorusername(username: string): Observable<any>{
-  return this.http.get<any>('http://4404e3cc.ngrok.io/api/search_by_name_username?name='+username);
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name_username?name='+username);
  
 }
 getuserbyUsername(username: string): Observable<any>{
-  return this.http.get<any>('http://4404e3cc.ngrok.io/api/search_by_username?username='+username);
+  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_username?username='+username);
  
 }
 /**
@@ -38,7 +38,7 @@ getuserbyUsername(username: string): Observable<any>{
  */
 
 getfollowers(){
-  return this.http.get('http://4404e3cc.ngrok.io/api/followers');
+  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/followers');
 
    }
    
@@ -46,7 +46,7 @@ getfollowers(){
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
 addFollowing ( nb):Observable<any> {
-  return this.http.post(this.url+'api/follow',{"user_id" : nb});
+  return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
   } 
 
 /**

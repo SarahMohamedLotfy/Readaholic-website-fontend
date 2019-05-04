@@ -14,7 +14,7 @@ import { DebugElement } from '@angular/core';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
 
-fdescribe('MyBooksComponent', () => {
+describe('MyBooksComponent', () => {
   let component: MyBooksComponent;
   let fixture: ComponentFixture<MyBooksComponent>;
 
@@ -40,7 +40,7 @@ fdescribe('MyBooksComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

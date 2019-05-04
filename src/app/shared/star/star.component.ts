@@ -50,7 +50,7 @@ export class StarComponent implements OnInit {
     if (this.starsCount == null) {
       console.log("yalahwaaay1111")
     }
-    this.sharedService.currentshelf.subscribe(data => {
+    this.sharedService.currentShelf.subscribe(data => {
       if (data.key != -1 && data.value != -1) {
         if (data.key == this.bookId) {
           this.shelf = data.value;

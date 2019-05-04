@@ -26,9 +26,9 @@
                 <a class="notification-image">
                     <img src="{{notif.data.user_image_link}}"  width="32"  >
                 </a>
-                <a class="notification-text" [ngStyle]="{'background-color':notif.read === 1 ? 'green' : 'blue' }" >
+                <a class="notification-text" [ngStyle]="{'background-color':notif.read === 1 ? 'bg-light' : 'white' }" >
                     
-                    <span [routerLink]="['/profile',notif.data.user_id]" (click)="onRead(notif?.n_id)">{{notif.data.user_name}}</span> 
+                    <span [routerLink]="['/profile',notif.data.user_id]" (click)="onRead(notif?.n_id)">{{notif.data.user_name}} </span> 
                     <span style=" font-weight:normal"  *ngIf="notif.data.type == 0"  [routerLink]="['/review',notif.data.user_id,notif.data.book_id]"> liked your review </span>
                     <span style=" font-weight:normal"  *ngIf="notif.data.type == 1" [routerLink]="['/review',notif.data.user_id,notif.data.book_id]"> commented on your review </span>
                     <span style=" font-weight:normal"  *ngIf="notif.data.type == 2" [routerLink]="['/profile',notif.data.user_id]"> followed you </span>

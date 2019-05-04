@@ -16,13 +16,13 @@ import { review } from 'src/app/classes/review';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-
+  revieww:review;
+  userr:review;
+  id: number = +this.route.snapshot.paramMap.get('userId');
+  
+  bookid: number = +this.route.snapshot.paramMap.get('bookId');
   constructor(private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:ReviewService) { }
- revieww:review;
- userr:review;
- id: number = +this.route.snapshot.paramMap.get('userId');
- 
- bookid: number = +this.route.snapshot.paramMap.get('bookId');
+
  
   ngOnInit() {
    

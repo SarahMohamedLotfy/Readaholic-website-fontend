@@ -16,13 +16,16 @@ export class navBarService {
     /**
      * we pass an object of httpclient to the constuctor
      */
+    users:any=JSON.parse(localStorage.getItem('user')) ;
+    id:number=this.users.userInfo.id ;
     private subject: Subject<notifications> = new Subject<notifications>();
-
+   
     private pusherClient: Pusher;
-    constructor(private http: HttpClient,) {
+    constructor(private http: HttpClient) {
+        console.log(this.users);
         this.pusherClient = new Pusher('aa5ca7b55f8f7685a9cc',{ cluster: 'eu' });
 
-        const channel = this.pusherClient.subscribe('user.1');
+        const channel = this.pusherClient.subscribe('users'+this.id);
 
         channel.bind(
           'notify',
@@ -49,7 +52,7 @@ export class navBarService {
         
     }
     onRead(id:number):Observable <any>{
-return this.http.post(this.url+"/api/mark_notification/",{id}).
+return this.http.post(this.url+"/api/mark_notification/",{"id" : id}).
 pipe(retry(4),catchError(this.handleError));
   }
     /**

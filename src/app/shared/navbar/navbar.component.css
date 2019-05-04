@@ -3,6 +3,7 @@
    overflow: visible;
  /* height: 40px;
     min-width: 200px;*/
+   
 }
 
 .active {
@@ -19,8 +20,8 @@
     display: block;
     color: #5e2b02;
     text-align: bottom;
-    padding-left: 10px;
-    padding-right: 10px;
+  /*  padding-left: 10px;
+    padding-right: 10px;*/
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
@@ -54,13 +55,14 @@
     margin-top: 10px;
    /* margin-right: 5px;*/
 }
+/*
 #right{
     float:right;
  
 }
 #parent_container{
     position:relative;
-}
+}*/
         .dropdown-menu{
               max-height:200px;
               overflow-y:auto;

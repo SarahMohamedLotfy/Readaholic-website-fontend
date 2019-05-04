@@ -34,11 +34,11 @@ export class NavbarComponent implements OnInit {
  notifsnb:number;
 
   ngOnInit() {
-<<<<<<< HEAD
     
     if(localStorage.getItem('token')== null){
       this.isUser=false
     }else{this.isUser=true ;}
+    
    
        // this.notifsnb=this.notifs.forEach.length;
      this.notifs$ =this.httpser.getNotifications();
@@ -49,16 +49,6 @@ export class NavbarComponent implements OnInit {
   onRead(nb:number){
     this.httpser.onRead(nb);
     console.log(nb);
-=======
-       if(localStorage.getItem('token')==null){
-      this.isUser=false
-    }else{this.isUser=true ;}
-    this.httpser.getNotifications().subscribe(
-      data =>{
-        this.notifs=data ;
-        console.log(data);
-     }, error => this.error = error);
->>>>>>> 59beb06bca2fd9f1598fb25e934340d8a6cdc09f
   }
 
   

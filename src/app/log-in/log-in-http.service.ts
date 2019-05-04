@@ -20,7 +20,11 @@ import { catchError, retry } from 'rxjs/operators';
     /**Sends a request to the server with the email and password to checks if they're correct */
  login(email:string,password:string): Observable<any>
  {
+<<<<<<< HEAD
    return this.http.post(this.url+'/api/login',{email,password}) ;
+=======
+   return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/login',{email,password}) ;
+>>>>>>> bbc0946e8577ae38ba659294d0ad62f06dcc9f80
  }
 
 

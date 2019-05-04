@@ -111,19 +111,7 @@ ngOnInit() {
 
    this.searchForBook();
 
-    this.service.getfollowers().subscribe((posts:any)=>{
-       this.posts =posts.followers ;
-       this.temp = posts;
-       console.log(posts);
-       })
-
-       
-       this.service.getfollowing().subscribe((following:any)=>{
-        this.following =following.following ;
-        });
-
-
-
+   
      /** receives id from url and send it to the get request */
     //const id: number = +this.route.snapshot.paramMap.get('id');
 

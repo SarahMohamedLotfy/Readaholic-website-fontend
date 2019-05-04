@@ -77,6 +77,9 @@
                             <li>
                                 <a href="#posts">posts</a>
                             </li>
+                            <li>
+                                <a href="#url">url</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -96,7 +99,10 @@
                                 <a href="#commentOnobject">commentOnobject</a>
                             </li>
                             <li>
-                                <a href="#getCommentsList">getCommentsList</a>
+                                <a href="#deleteComment">deleteComment</a>
+                            </li>
+                            <li>
+                                <a href="#testgetCommentsList">testgetCommentsList</a>
                             </li>
                         </ul>
                     </td>
@@ -121,7 +127,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/comments/comments.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/comments/comments.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -188,8 +194,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/shared/comments/comments.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/shared/comments/comments.service.ts:18</a></div>
                 </td>
             </tr>
 
@@ -253,15 +259,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>commentOnobject(user: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, resourse_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, resourse_type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, comment_body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>commentOnobject(resourse_id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, comment_body: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/shared/comments/comments.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/shared/comments/comments.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -283,31 +289,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>user</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
                                     <td>resourse_id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>resourse_type</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                     </td>
@@ -350,26 +332,98 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getCommentsList"></a>
+                    <a name="deleteComment"></a>
                     <span class="name">
                         <b>
-                            getCommentsList
+                            deleteComment
                         </b>
-                        <a href="#getCommentsList"><span class="icon ion-ios-link"></span></a>
+                        <a href="#deleteComment"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getCommentsList()</code>
+<code>deleteComment(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/shared/comments/comments.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/shared/comments/comments.service.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>delete comment </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Comments.html" target="_self" >Observable&lt;Comments&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="testgetCommentsList"></a>
+                    <span class="name">
+                        <b>
+                            testgetCommentsList
+                        </b>
+                        <a href="#testgetCommentsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>testgetCommentsList(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/shared/comments/comments.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -380,8 +434,39 @@
 </div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Comments.html" target="_self" >Observable&lt;Comments[]&gt;</a></code>
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
 
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/CommentList.html" target="_self" >Observable&lt;CommentList[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -418,7 +503,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/comments/comments.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/comments/comments.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -431,16 +516,50 @@
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="url"></a>
+                        <span class="name">
+                            <b>
+                            url</b>
+                            <a href="#url"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>AppConstants.baseURL</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/comments/comments.service.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AppConstants } from &#x27;./../../classes/appconstant&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Comments } from &#x27;src/app/classes/Comments&#x27;;
+import { CommentList } from &#x27;src/app/classes/commentList&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -448,17 +567,18 @@ import { Comments } from &#x27;src/app/classes/Comments&#x27;;
 export class CommentsService {
    /**array to save the data from the requests */
   posts: any &#x3D; [];
+  url:string&#x3D;AppConstants.baseURL;
 /** constructor used to make object of http to use post requests */
   constructor(private http: HttpClient) { }
 /** post a new comment */
   addComment(newComment: Comments): Observable&lt;Comments&gt; {
-    return this.http.post&lt;Comments&gt;(&#x27;http://972c6e5d.ngrok.io/api/makeComment?id&#x3D;&#x27;+ newComment.resourse_id+&#x27;&amp;type&#x3D;&#x27;+ newComment.resourse_type + &#x27;&amp;body&#x3D;&#x27; + newComment.comment_body, newComment)
+    return this.http.post&lt;Comments&gt;(this.url +&#x27;/api/makeComment?id&#x3D;&#x27;+ newComment.resourse_id + &#x27;&amp;body&#x3D;&#x27; + newComment.comment_body, newComment)
   }
 
 /** comments on a specific object and subscribe to the given data */
-  commentOnobject(user: string , resourse_id: number , resourse_type: number, comment_body: string
+  commentOnobject( resourse_id: number, comment_body: string
     ): void {
-    const newComment: Comments &#x3D; { user, resourse_id, resourse_type, comment_body } as Comments;
+    const newComment: Comments &#x3D; { resourse_id, comment_body } as Comments;
     console.log(newComment);
     this.addComment(newComment)
       .subscribe(data &#x3D;&gt; {this.posts.push(data),
@@ -466,10 +586,17 @@ export class CommentsService {
       },
       (err: any) &#x3D;&gt; console.log(err));
   }
-/** get comments */
-  getCommentsList(): Observable&lt;Comments[]&gt; {
-    return this.http.get&lt;Comments[]&gt;(&#x27;http://972c6e5d.ngrok.io/api/makeComment&#x27;);
+
+  /** get comments */
+  testgetCommentsList(id : number): Observable&lt;CommentList[]&gt; {
+    return this.http.get&lt;CommentList[]&gt;(this.url+&#x27;/api/listComments?id&#x3D;&#x27;+ id)
   }
+
+/** delete comment */
+deleteComment(id: number):Observable&lt;Comments&gt;{
+return this.http.delete&lt;Comments&gt;(this.url+&#x27;/api/deleteComment?id&#x3D;&#x27;+ id);
+}
+
 
 }
 </code></pre>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
+import { AppConstants } from './../classes/appconstant';
 
 
 /**Handles http requests related to the boks of the user*/
@@ -14,20 +15,21 @@ export class HttpsearchpeopleService {
  * Constructor for httpmyBooks service . 
  
 */
+url:string=AppConstants.baseURL;
   constructor(private http:HttpClient) { }
 
   
 
 getuserbyName(username: string): Observable<any>{
-  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name?name='+username);
+  return this.http.get<any>(this.url+'/api/search_by_name?name='+username);
  
 }
 getuserbyNameorusername(username: string): Observable<any>{
-  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name_username?name='+username);
+  return this.http.get<any>(this.url+'/api/search_by_name_username?name='+username);
  
 }
 getuserbyUsername(username: string): Observable<any>{
-  return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_username?username='+username);
+  return this.http.get<any>(this.url+'/api/search_by_username?username='+username);
  
 }
 /**
@@ -36,7 +38,7 @@ getuserbyUsername(username: string): Observable<any>{
  */
 
 getfollowers(){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/followers');
+  return this.http.get(this.url+'/api/followers');
 
    }
    
@@ -44,7 +46,7 @@ getfollowers(){
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
 addFollowing ( nb):Observable<any> {
-  return this.http.post('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/follow',{"user_id" : nb});
+  return this.http.post(this.url+'api/follow',{"user_id" : nb});
   } 
 
 /**
@@ -53,7 +55,7 @@ addFollowing ( nb):Observable<any> {
 * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
 */
 getnotauthfollowing(id:number){
-return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/following?id='+ id);
+return this.http.get(this.url+'/api/following?id='+ id);
 
 }
 g
@@ -62,7 +64,7 @@ g
 */
 unfollow ( user_id:number):Observable<any> {
     
-  return this.http.delete('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/unfollow?user_id='+ user_id);
+  return this.http.delete(this.url+'/api/unfollow?user_id='+ user_id);
 }
   
  /**
@@ -71,7 +73,7 @@ unfollow ( user_id:number):Observable<any> {
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
   getfollowing(){
-    return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/following');
+    return this.http.get(this.url+'/api/following');
   
   }
  
@@ -80,14 +82,14 @@ unfollow ( user_id:number):Observable<any> {
      *
      * */
   getUserprofile(id: number): Observable<any> {
-    return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile/'+ id );
+    return this.http.get<any> (this.url+'/api/showProfile/'+ id );
   }
   /**
      * Get the profile information i used it to get the  name of the user.
      *
      * */
   getAuthUserprofile(): Observable<any> {
-    return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile');
+    return this.http.get<any> (this.url+'/api/showProfile');
   }
 
 }

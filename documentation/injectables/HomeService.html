@@ -66,6 +66,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#url">url</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -114,7 +128,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/home/home.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/home/home.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -181,8 +195,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/home/home.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/home/home.service.ts:40</a></div>
                 </td>
             </tr>
 
@@ -256,8 +270,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/home/home.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/home/home.service.ts:37</a></div>
                 </td>
             </tr>
 
@@ -322,8 +336,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/home/home.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/home/home.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -365,8 +379,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app/home/home.service.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/home/home.service.ts:52</a></div>
                 </td>
             </tr>
 
@@ -437,8 +451,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/home/home.service.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/home/home.service.ts:44</a></div>
                 </td>
             </tr>
 
@@ -486,12 +500,51 @@
         </tbody>
     </table>
 </section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="url"></a>
+                        <span class="name">
+                            <b>
+                            url</b>
+                            <a href="#url"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>AppConstants.baseURL</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/home/home.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, NgModule } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AppConstants } from &#x27;./../classes/appconstant&#x27;;
+import { Injectable, NgModule } from &#x27;@angular/core&#x27;;
 import { HttpClient, HttpErrorResponse, HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import { Observable, throwError, observable } from &#x27;rxjs&#x27;;
 import { catchError, retry } from &#x27;rxjs/operators&#x27;;
@@ -506,7 +559,7 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
  * Home service is responsible for http get requests od updates 
  */
 export class HomeService {
-
+url:string&#x3D;AppConstants.baseURL ;
 
 /**
  * we pass an object of httpclient to the constuctor
@@ -518,23 +571,24 @@ export class HomeService {
  * updates get requests
  */
    getUpdates():Observable&lt;any&gt;{
-return this.http.get(&quot;http://972c6e5d.ngrok.io/api/updates&quot;)
+return this.http.get(this.url+&#x27;/api/updates&#x27;)
 .pipe(
       retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
 
     );
    }
+  
    addFollowing (nb):Observable&lt;any&gt; {
-  return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/follow&#x27;,{&quot;user_id&quot; : nb});
+  return this.http.post(this.url+&#x27;/api/follow&#x27;,{&quot;user_id&quot; : nb});
   } 
   addBook(shelf,book_id):Observable&lt;any&gt;{
-    return this.http.post(&#x27;http://972c6e5d.ngrok.io/api/shelf/add_book&#x27;,{&quot;shelf_id&quot;: shelf,
+    return this.http.post(this.url+&#x27;/api/shelf/add_book&#x27;,{&quot;shelf_id&quot;: shelf,
     &quot;book_id&quot;: book_id});
   }
   unfollow ( user_id:number):Observable&lt;any&gt; {
       
-    return this.http.delete(&#x27;http://972c6e5d.ngrok.io/api/unfollow?user_id&#x3D;&#x27;+ user_id);
+    return this.http.delete(this.url+&#x27;/api/unfollow?user_id&#x3D;&#x27;+ user_id);
   }
   
   /**

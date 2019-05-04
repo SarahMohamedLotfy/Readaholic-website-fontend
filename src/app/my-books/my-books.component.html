@@ -1,6 +1,6 @@
 <navbar></navbar>
 <div class="mybooksTitle"> 
-  My Books
+    <a [routerLink]="['/profile',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a> 's Books
 </div>
 <hr/>
 
@@ -20,22 +20,17 @@
 <div id ="container">
   <div id="leftcolumn">
     <th class ="bookShelves">Bookshelves</th>
-    <table  class ="leftActivityy" *ngFor="let shelf of shelves">
-     <tr>
-    <td
-    *ngIf="shelf.name == 'to-read'" >
-    <a (click)="getmybooks(true,1)" (click)="heighlight(1)" (click)="initializedarrow=false"class="leftActivity">{{ shelf.name }} ({{count1}})  </a></td>
+    <div  class ="leftActivityy" >
      
-    <td
-    *ngIf="shelf.name == 'currently-reading'" >
-    <a (click)="getmybooks(true,2)" (click)="heighlight(2)" (click)="initializedarrow=false"class="leftActivity">{{ shelf.name }} ({{count2}})  </a></td>
+    <a (click)="getmybooks(true,1)" (click)="heighlight(1)" (click)="initializedarrow=false"class="leftActivity">to-read ({{count1}}) <br />  </a>
+     
+    
+    <a (click)="getmybooks(true,2)" (click)="heighlight(2)" (click)="initializedarrow=false"class="leftActivity">currently-reading ({{count2}}) <br/> </a>
     
          
-    <td
-    *ngIf="shelf.name == 'read'" >
-    <a (click)="getmybooks(true,0)" (click)="heighlight(0)" (click)="initializedarrow=false" class="leftActivity">{{ shelf.name }} ({{count0}})  </a></td>
-    </tr>
-  </table>
+    
+    <a (click)="getmybooks(true,0)" (click)="heighlight(0)" (click)="initializedarrow=false" class="leftActivity">read ({{count0}})  </a>
+  </div>
 </div>
 
 <div id="rightcolumn">
@@ -104,7 +99,7 @@
     </div>
     <div  *ngIf="initializedarrow== true">
 
-        <div id="arrow2">---></div>
+        <div id="arrow1">---></div>
           
 
     </div>

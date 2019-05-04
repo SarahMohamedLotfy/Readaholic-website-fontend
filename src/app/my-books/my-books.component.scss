@@ -128,10 +128,10 @@
 }
 .tablePlace
 {
-  position :relative;
-  top:2px;
-  left:470px;
-
+  position :absolute;
+  top:180px;
+  left:500px;
+width:100%;
 }
 .mybooksTitle
 {
@@ -193,24 +193,24 @@ hr {
 #arrow2
 {
   position: absolute;
-  left:-300px;
-  top:22px;
+  left:-330px;
+  top:50px;
   font-size: 20px;
   color: #00678e;
 }
 #arrow1
 {
   position: absolute;
-  left:-300px;
-  top:50px;
+  left:-330px;
+  top:22px;
   font-size: 20px;
   color: #00678e;
 }
 #arrow0
 {
   position: absolute;
-  left:-300px;
-  top:1px;
+  left:-330px;
+  top:70px;
   font-size: 20px;
   color: #00678e;
 }
@@ -310,8 +310,8 @@ hr {
 }
 .tablePlace
 {
-  position :relative;
-  top:2px;
+  position :absolute;
+  top:400px;
   left:200px;
 
 }
@@ -327,7 +327,7 @@ hr {
 {
   position: absolute;
   left:10px;
-  top:-45px;
+  top:-100px;
   font-size: 15px;
   color: #00678e;
 }
@@ -335,7 +335,7 @@ hr {
 {
   position: absolute;
   left:10px;
-  top:-100px;
+  top:-45px;
   font-size: 15px;
   color: #00678e;
 }
@@ -383,8 +383,8 @@ hr {
 }
 .tablePlace
 {
-  position :relative;
-  top:100px;
+  position :absolute;
+  top:400px;
   left:10px;
 
 }
@@ -401,7 +401,7 @@ hr {
 {
   position: absolute;
   left:10px;
-  top:-72px;
+  top:-80px;
   font-size: 15px;
   color: #00678e;
 }
@@ -409,7 +409,7 @@ hr {
 {
   position: absolute;
   left:10px;
-  top:-45px;
+  top:-113px;
   font-size: 15px;
   color: #00678e;
 }
@@ -417,7 +417,7 @@ hr {
 {
   position: absolute;
   left:10px;
-  top:-100px;
+  top:-60px;
   font-size: 15px;
   color: #00678e;
 }
@@ -429,7 +429,7 @@ hr {
 {
   position: absolute;
   left:10px;
-  top:-72px;
+  top:-20px;
   font-size: 15px;
   color: #00678e;
 }
@@ -437,7 +437,7 @@ hr {
 {
   position: absolute;
   left:10px;
-  top:-45px;
+  top:-60px;
   font-size: 15px;
   color: #00678e;
 }
@@ -445,7 +445,7 @@ hr {
 {
   position: absolute;
   left:10px;
-  top:-100px;
+  top:-80px;
   font-size: 15px;
   color: #00678e;
 }
@@ -491,8 +491,8 @@ hr {
 
 .tablePlace
 {
-  position :relative;
-  top:100px;
+  position :absolute;
+  top:400px;
   left:10px;
 
 }

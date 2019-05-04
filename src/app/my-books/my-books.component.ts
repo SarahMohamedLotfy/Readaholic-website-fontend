@@ -9,6 +9,7 @@ import {ProfileService} from '../profile/profile.service';
 import {myBooks}  from '../classes/myBooks'
 import { generateExpandoInstructionBlock } from '@angular/core/src/render3/instructions';
 import { StarComponent } from '../shared/star/star.component';
+
  /**
  * Connect with the fmy-books.html and my-books.css .
  */
@@ -43,7 +44,7 @@ posts:any=[];
 count0:number;
 count1:number;
 count2:number;
-
+selectedProfile:profile;
 userid:number;
 shelfname:number;
 shelfNumber:number;
@@ -81,38 +82,78 @@ used it in search function.
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
  ngOnInit() {
-   
+  const id: number = +this.route.snapshot.paramMap.get('id');
+
+  /**
+  * subscribe to the data received from json file which contain the profile of the authenticated user info information
+  *
+  * and if any error occurs it prints it to the log
+*/  if (id > 0 ){
+
+ this.myfirstservice.getUserprofile(id).subscribe(
+     (data: profile) => this.selectedProfile = data,
+            )
+         
+        
+ }
+ else
+ {
+ this.myfirstservice.getAuthUserprofile().subscribe(
+ (data: profile) => this.selectedProfile = data,
+ (err: any) => console.log(err)
+  );
+  
+ }
+
+    
 /**
  *getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read  
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
  */
-this.myfirstservice.getMyshelfbooks(0).subscribe((posts:any)=>{
+  if (id > 0 ){
+  this.myfirstservice.gethisshelfbooks(0,id).subscribe((posts:any)=>{
   this.books0 =posts.pages ;
   this.count0 = this.books0.length;
  });
- this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
+ this.myfirstservice.gethisshelfbooks(1,id).subscribe((posts:any)=>{
   this.books1 =posts.pages ;
   this.count1 = this.books1.length;
  });
- this.myfirstservice.getMyshelfbooks(2).subscribe((posts:any)=>{
+ this.myfirstservice.gethisshelfbooks(2,id).subscribe((posts:any)=>{
   this.books2 =posts.pages ;
   this.count2 = this.books2.length;
  });
-this.myfirstservice.getMyshelfbooks(2).subscribe((posts:any)=>{
+this.myfirstservice.gethisshelfbooks(1,id).subscribe((posts:any)=>{
   this.books =posts.pages ;
   this.temp =  this.books;
   console.log(this.books);
   this.initializedarrow=true;
 });
+  }
+  else 
+  {
+    this.myfirstservice.getMyshelfbooks(0).subscribe((posts:any)=>{
+      this.books0 =posts.pages ;
+      this.count0 = this.books0.length;
+     });
+     this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
+      this.books1 =posts.pages ;
+      this.count1 = this.books1.length;
+     });
+     this.myfirstservice.getMyshelfbooks(2).subscribe((posts:any)=>{
+      this.books2 =posts.pages ;
+      this.count2 = this.books2.length;
+     });
+    this.myfirstservice.getMyshelfbooks(1).subscribe((posts:any)=>{
+      this.books =posts.pages ;
+      this.temp =  this.books;
+      console.log(this.books);
+      this.initializedarrow=true;
+    });
+  }
 
-     /**
- *getUsershelves() is a get request to number of books the user read and currently reading an to read */
-     this.myfirstservice.getUsershelves().subscribe(
-      data => {
-        this.shelves = data,
-        (err: any) => console.log(err),
-        console.log(this.shelves)
-               }) ;
+   
+
               
  }
  review() {
@@ -131,9 +172,21 @@ getmybooks(clicked:boolean,shelfnumber)
 {
  
   
-   
+  const id: number = +this.route.snapshot.paramMap.get('id');
+  if (id > 0 ){
   
   if (clicked == true)
+  {
+    this.myfirstservice.gethisshelfbooks(shelfnumber,id).subscribe((books:any)=>{
+      this.books =books.pages ;
+      this.books = books.pages;
+      this.temp = books.pages;
+      console.log(this.books);
+    });
+  }
+}
+  else{
+    if (clicked == true)
   {
     this.myfirstservice.getMyshelfbooks(shelfnumber).subscribe((books:any)=>{
       this.books =books.pages ;
@@ -141,6 +194,8 @@ getmybooks(clicked:boolean,shelfnumber)
       this.temp = books.pages;
       console.log(this.books);
     });
+  }
+  
   }
 }
 

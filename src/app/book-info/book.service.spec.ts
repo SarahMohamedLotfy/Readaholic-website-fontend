@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+/*import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
 import { BookService } from './book.service';
 import { book } from '../classes/book';
@@ -24,7 +24,7 @@ describe('Book Service', () => {
 
   })
 
-});
+});*/
 
 /*describe('BookService', () => {
   let service: BookService;

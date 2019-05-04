@@ -10,7 +10,6 @@
     "e2e": "ng e2e",
     "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json -w -s "
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^7.2.12",
     "@angular/cdk": "^7.3.7",
@@ -32,10 +31,12 @@
     "ng2-rating": "0.0.7",
     "node-sass": "^4.12.0",
     "popper.js": "^1.14.7",
+    "pusher-js": "^4.4.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
+  "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.5",
     "@angular/cli": "~7.3.3",

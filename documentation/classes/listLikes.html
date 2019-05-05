@@ -139,10 +139,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/classes/listLikes.ts:7</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/classes/listLikes.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>time when like was made </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -166,10 +172,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/classes/listLikes.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/classes/listLikes.ts:14</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>determine auth user made a like or not </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -193,10 +205,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/classes/listLikes.ts:5</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/classes/listLikes.ts:7</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>id of user </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -220,10 +238,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/classes/listLikes.ts:4</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/classes/listLikes.ts:5</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>image link of user  </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -247,7 +271,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/classes/listLikes.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/classes/listLikes.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -274,10 +298,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/classes/listLikes.ts:6</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/classes/listLikes.ts:9</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>user id of the user who commented </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -305,6 +335,12 @@
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>username of user  </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -321,13 +357,18 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class listLikes {
-
+/** username of user  */
   username : string;
+  /** image link of user  */
   image_link : string;
+  /** id of user */
   id: number;
+  /** user id of the user who commented */
   user_id: number;
+  /** time when like was made */
   created_at: string;
   updated_at: string;
+  /** determine auth user made a like or not */
   have_the_like: string;
 
 

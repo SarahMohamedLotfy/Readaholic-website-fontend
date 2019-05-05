@@ -17,11 +17,17 @@ import { map, switchMap, timeout } from 'rxjs/operators';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  /**
+        * array of notifications
+        */
   public notifss: notifications[] = [];
   
   private notifSubscription: Subscription;
    
   constructor(private service:LogInHttpService,private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:navBarService) { 
+   /**
+        *for push notifications
+        */
     this.notifSubscription = httpser.
     getnotifItems()
     .subscribe((data: notifications) => {
@@ -36,7 +42,9 @@ export class NavbarComponent implements OnInit {
  notifsnb:number=0;
 
   ngOnInit() {
-    
+    /**
+        * if there is no token enable guest mode
+        */
     if(localStorage.getItem('token')== null){
       this.isUser=false
 
@@ -44,7 +52,9 @@ export class NavbarComponent implements OnInit {
       this.users=JSON.parse(localStorage.getItem('user')) ;
       this.id1=this.users.userInfo.id ;
     }
- 
+ /**
+        * call notifications service 
+        */
    setTimeout(()=>{this.httpser.getNotifications().subscribe(
       data =>{
         this.notifs=data ;
@@ -54,7 +64,9 @@ export class NavbarComponent implements OnInit {
     ),1000});
 
    
-  }
+  }/**
+        * mark notification to be read
+        */
   onReadd(nb:number){
     this.httpser.onRead(nb);
     console.log(nb);
@@ -89,7 +101,9 @@ export class NavbarComponent implements OnInit {
         })
       
     }
-
+/**
+        * function search responsible for searching boooks
+        */
     search(){
       console.log(this.searchTerm);
       this.router.navigate(['/searchBooks'],{queryParams:{'search':this.searchTerm,'searchType':'title'}});
@@ -97,7 +111,9 @@ export class NavbarComponent implements OnInit {
       this.clickBtn.emit(this.searchTerm);
       
     }
-
+/**
+        * calculates the number of notifications and checks if the auth user is concerned with it
+        */
     loaddata(){
       var i;
   

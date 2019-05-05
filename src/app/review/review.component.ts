@@ -15,16 +15,24 @@ import { review } from 'src/app/classes/review';
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.css']
 })
+/**
+        * reviewcomponent is trigeered when user presses on a notification's review
+        */
 export class ReviewComponent implements OnInit {
   revieww:review[];
   userr:review[];
   book:review[];
+  /**
+        * the id and the userid are got from the router
+        */
   id: number = +this.route.snapshot.paramMap.get('userId');
   
   bookid: number = +this.route.snapshot.paramMap.get('bookId');
  
-     you:boolean ;
-  constructor(private route: ActivatedRoute,private router: Router,private modalService: NgbModal,private httpser:ReviewService) { }
+/**
+        *pass to the constructor router object and review service object
+        */
+  constructor(private route: ActivatedRoute,private router: Router,private httpser:ReviewService) { }
 
  
   ngOnInit() {
@@ -37,7 +45,6 @@ export class ReviewComponent implements OnInit {
         this.revieww[0].user_id=this.id;
        this.book[0].book_id=this.bookid;
 
-      //  console.log(this.revieww.user_id);
        
       console.log(data);
      })

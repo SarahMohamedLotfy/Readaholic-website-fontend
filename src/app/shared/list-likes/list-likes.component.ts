@@ -9,11 +9,12 @@ import { LikesService } from '../likes/likes.service';
   styleUrls: ['./list-likes.component.css']
 })
 export class ListLikesComponent implements OnInit {
-
+/** id of reviewed post */
  @Input () resourse_id : number;
 
-  likesList : listLikes[];
+  /** array of likes list */
   temp: any =[];
+  /** stores likes list of the review */
   posts:any=[];
   constructor(private ser: ListLikesService) { }
 
@@ -28,7 +29,7 @@ export class ListLikesComponent implements OnInit {
     );
 
   }
-
+/** reload list of likes to get any updates synchrounsely */
   reload(){
     this.ser.getLikesList(this.resourse_id).subscribe((posts:any)=>{
       this.posts =posts.likes ;

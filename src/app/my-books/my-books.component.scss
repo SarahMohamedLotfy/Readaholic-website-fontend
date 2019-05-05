@@ -1,559 +1,528 @@
-
-
 /* USER LIST TABLE */
-.user-list tbody td > img {
-    position: relative;
-	max-width: 50px;
-	float: left;
-	margin-right: 15px;
-}
-.user-list tbody td .user-link {
-	display: block;
-  font-size: 14px;
-  color: #00635d;
 
-	padding-top: 3px;
-	margin-left: 0px;
+.user-list tbody td>img {
+    position: relative;
+    max-width: 50px;
+    float: left;
+    margin-right: 15px;
 }
+
+.user-list tbody td .user-link {
+    display: block;
+    font-size: 14px;
+    color: #00635d;
+    padding-top: 3px;
+    margin-left: 0px;
+}
+
 .user-list tbody td .user-subhead {
-	font-size: 0.875em;
-	font-style: italic;
+    font-size: 0.875em;
+    font-style: italic;
 }
+
 
 /* TABLES */
+
 .table {
     border-collapse: separate;
 }
-.table-hover > tbody > tr:hover > td,
-.table-hover > tbody > tr:hover > th {
-	background-color: #eee;
+
+.table-hover>tbody>tr:hover>td,
+.table-hover>tbody>tr:hover>th {
+    background-color: #eee;
 }
 
-.table tbody > tr > td {
-	font-size: 0.875em;
-	background: #f5f5f5;
-	border-top: 8px solid #fff;
-	vertical-align: middle;
-	padding: 12px 8px;
+.table tbody>tr>td {
+    font-size: 0.875em;
+    background: #f5f5f5;
+    border-top: 8px solid #fff;
+    vertical-align: middle;
+    padding: 12px 8px;
 }
-.table tbody > tr > td:first-child,
-.table thead > tr > th:first-child {
-	padding-left: 20px;
+
+.table tbody>tr>td:first-child,
+.table thead>tr>th:first-child {
+    padding-left: 20px;
 }
-.table thead > tr > th span {
-	border-bottom: 2px solid #382110;
-	display: inline-block;
-	padding: 0 5px;
-  padding-bottom: 5px;
-  font-size: 12px;
+
+.table thead>tr>th span {
+    border-bottom: 2px solid #382110;
+    display: inline-block;
+    padding: 0 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
 }
-.table thead > tr > th > a span {
-	color: #344644;
+
+.table thead>tr>th>a span {
+    color: #344644;
 }
-.table thead > tr > th > a span:after {
-	content: "\f0dc";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	text-decoration: inherit;
-	margin-left: 5px;
-	font-size: 0.75em;
+
+.table thead>tr>th>a span:after {
+    content: "\f0dc";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    margin-left: 5px;
+    font-size: 0.75em;
 }
-.table thead > tr > th > a.asc span:after {
-	content: "\f0dd";
+
+.table thead>tr>th>a.asc span:after {
+    content: "\f0dd";
 }
-.table thead > tr > th > a.desc span:after {
-	content: "\f0de";
+
+.table thead>tr>th>a.desc span:after {
+    content: "\f0de";
 }
-.table thead > tr > th > a:hover span {
-	text-decoration: none;
-	color: #2bb6a3;
-	border-color: #2bb6a3;
+
+.table thead>tr>th>a:hover span {
+    text-decoration: none;
+    color: #2bb6a3;
+    border-color: #2bb6a3;
 }
-.table.table-hover tbody > tr > td {
-	-webkit-transition: background-color 0.15s ease-in-out 0s;
-	transition: background-color 0.15s ease-in-out 0s;
+
+.table.table-hover tbody>tr>td {
+    -webkit-transition: background-color 0.15s ease-in-out 0s;
+    transition: background-color 0.15s ease-in-out 0s;
 }
+
 .table tbody tr td .call-type {
-	display: block;
-	font-size: 0.75em;
-	text-align: center;
+    display: block;
+    font-size: 0.75em;
+    text-align: center;
 }
+
 .table tbody tr td .first-line {
-	line-height: 1.5;
-	font-weight: 400;
-	font-size: 1.125em;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1.125em;
 }
+
 .table tbody tr td .first-line span {
-	font-size: 0.875em;
-	color: #969696;
-	font-weight: 300;
+    font-size: 0.875em;
+    color: #969696;
+    font-weight: 300;
 }
+
 .table tbody tr td .second-line {
-	font-size: 0.875em;
-	line-height: 1.2;
+    font-size: 0.875em;
+    line-height: 1.2;
 }
+
 .table a.table-link {
-	margin: 0 5px;
-	font-size: 1.125em;
+    margin: 0 5px;
+    font-size: 1.125em;
 }
 
+.table-products tbody>tr>td {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ebebeb;
+    -webkit-transition: background-color 0.15s ease-in-out 0s;
+    transition: background-color 0.15s ease-in-out 0s;
+    position: relative;
+}
 
-.table-products tbody > tr > td {
-	background: none;
-	border: none;
-	border-bottom: 1px solid #ebebeb;
-	-webkit-transition: background-color 0.15s ease-in-out 0s;
-	transition: background-color 0.15s ease-in-out 0s;
-	position: relative;
+.table-products tbody>tr:hover>td {
+    text-decoration: none;
+    background-color: #f6f6f6;
 }
-.table-products tbody > tr:hover > td {
-	text-decoration: none;
-	background-color: #f6f6f6;
-}
+
 .table-products .name {
-	display: block;
-	font-weight: 600;
-	padding-bottom: 7px;
+    display: block;
+    font-weight: 600;
+    padding-bottom: 7px;
 }
 
-.table tbody > tr.table-line-fb > td {
-	background-color: #9daccb;
-	color: #262525;
+.table tbody>tr.table-line-fb>td {
+    background-color: #9daccb;
+    color: #262525;
 }
-.ratings
-{
-  text-align: left;
+
+.ratings {
+    text-align: left;
     font-size: 16px;
 }
-.tablePlace
-{
-  position :absolute;
-  top:260px;
-  left:440px;
-width:100%;
-}
-#avgratingg
-{
 
-  text-align: center;
+.tablePlace {
+    position: absolute;
+    top: 260px;
+    left: 440px;
+    width: 100%;
 }
-.mybooksTitle
-{
-  position: relative;
-  color: #00635d;
-  line-height: 1.3;
-  font-size: 20px;
+
+#avgratingg {
+    text-align: center;
+}
+
+.mybooksTitle {
+    position: relative;
+    color: #00635d;
+    line-height: 1.3;
+    font-size: 20px;
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
     font-weight: bold;
     top: 80px;
-    left:180px;
+    left: 180px;
     padding-left: 2%;
 }
+
 .content-box {
-  columns: 3 auto;
+    columns: 3 auto;
 }
-.leftActivity
-{
-  color: #00635d;
+
+.leftActivity {
+    color: #00635d;
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
-.leftActivityy
-{
-  position: relative;
-  top: 80px;
+
+.leftActivityy {
+    position: relative;
+    top: 80px;
     left: 200px;
 }
+
 hr {
-  
-  position: relative;
-  top:69px;
+    position: relative;
+    top: 69px;
     border-top: 1px solid #D6D0C4;
-    left:200px;
+    left: 200px;
     margin-right: 31%;
 }
 
-.tftextinput{
-  margin: 0;
-  padding: 5px 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size:10px;
-  border:1px solid #00ced0; border-right:0px;
-  border-top-left-radius: 5px 5px;
-  border-bottom-left-radius: 5px 5px;
-}
-.starplace
-{
-  position: absolute;
-  padding-top:25px;
-}
-#tfnewsearch{
-  
-  float:right;
-  padding:20px;
-  left:750px;
-  top:10px;
- // position: relative;
-  padding-right: 20%;
-  margin-top: -5px;
-  //right: 50px;
+.tftextinput {
+    margin: 0;
+    padding: 5px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    border: 1px solid #00ced0;
+    border-right: 0px;
+    border-top-left-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
 }
 
-#arrow2
-{
-  position: absolute;
-  left:-260px;
-  top:30px;
-  font-size: 20px;
-  color: #00678e;
-}
-#arrow1
-{
-  position: absolute;
-  left:-260px;
-  top:7px;
-  font-size: 20px;
-  color: #00678e;
-}
-#arrow0
-{
-  position: absolute;
-  left:-260px;
-  top:50px;
-  font-size: 20px;
-  color: #00678e;
+.starplace {
+    position: absolute;
+    padding-top: 25px;
 }
 
-
-
-
-#searchtextfollowing{
-  padding: 4px 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size:14px;
-  border:1px solid #D6D0C4; border-right:0px;
-  border-top-left-radius: 5px 5px;
-  border-bottom-left-radius: 5px 5px;
-
+#tfnewsearch {
+    float: right;
+    padding: 20px;
+    left: 750px;
+    top: 10px;
+    // position: relative;
+    padding-right: 20%;
+    margin-top: -5px;
+    //right: 50px;
 }
-#searchfollowingg
-{
-  background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-  background: -moz-linear-gradient(top,  #0095cc,  #00678e);
 
+#arrow2 {
+    position: absolute;
+    left: -260px;
+    top: 20px;
+    font-size: 20px;
+    color: #00678e;
 }
-.searchfollowing
-{
-  position: relative;
-  padding: 6px 11px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size:12px;
-  cursor: pointer;
-  text-align: center;
-  color:black;
-  border: solid 1px #D6D0C4; border-right:0px;
-  background: #F4F1EA;
-  background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-  background: -moz-linear-gradient(top,  #00adee,  #0078a5);
-  border-top-right-radius: 5px 5px;
-  border-bottom-right-radius: 5px 5px;
 
+#arrow1 {
+    position: absolute;
+    left: -260px;
+    top: 4px;
+    font-size: 20px;
+    color: #00678e;
 }
-.bookShelves
-{
-  position: relative;
-  left:200px;
-  top:72px;
-}
-#tagrba
-{
-  position: relative;
-  top:50px;
-  left:400px;
-  line-height: 26px;
-  font-size: 16px;
-  font-family: "Merriweather", Georgia, "Times New Roman", serif;
-  font-weight: bold;}
-  .bookimage
-  {
-    height:70px;
-    width:60px;
-  }
-  
-  
-  @media (max-width: 800px) 
 
-    {
-
-      .starplace
-{
-  position: relative;
-  padding-top:25px;
+#arrow0 {
+    position: absolute;
+    left: -260px;
+    top: 28px;
+    font-size: 20px;
+    color: #00678e;
 }
-      #tfnewsearch{
-  
-        float:right;
-        padding:20px;
-        left:750px;
-        top:20px;
+
+#searchtextfollowing {
+    padding: 4px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: 1px solid #D6D0C4;
+    border-right: 0px;
+    border-top-left-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+}
+
+#searchfollowingg {
+    background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+    background: -moz-linear-gradient(top, #0095cc, #00678e);
+}
+
+.searchfollowing {
+    position: relative;
+    padding: 6px 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    border: solid 1px #D6D0C4;
+    border-right: 0px;
+    background: #F4F1EA;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+    background: -moz-linear-gradient(top, #00adee, #0078a5);
+    border-top-right-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+}
+
+.bookShelves {
+    position: relative;
+    left: 200px;
+    top: 72px;
+}
+
+#tagrba {
+    position: relative;
+    top: 50px;
+    left: 400px;
+    line-height: 26px;
+    font-size: 16px;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    font-weight: bold;
+}
+
+.bookimage {
+    height: 70px;
+    width: 60px;
+}
+
+@media (max-width: 800px) {
+    .starplace {
+        position: relative;
+        padding-top: 25px;
+    }
+    #tfnewsearch {
+        float: right;
+        padding: 20px;
+        left: 750px;
+        top: 20px;
         padding-right: 1%;
         margin-top: -5px;
-      }
-      
-      .mybooksTitle
-      {
+    }
+    .mybooksTitle {
         position: relative;
         color: #00635d;
         line-height: 1.3;
         font-size: 20px;
-          font-family: "Merriweather", Georgia, "Times New Roman", serif;
-          font-weight: bold;
-          top: 70px;
-          left: 30px;
-      }
-      .leftActivityy
-{
-  position: relative;
-  top: 80px;
-    left: 30px;
-}
-.bookShelves
-{
-  position: relative;
-  left:30px;
-  top:72px;
-}
-.tablePlace
-{
-  position :absolute;
-  top:400px;
-  left:200px;
-
-}
-#arrow2
-{
-  position: absolute;
-  left:10px;
-  top:-72px;
-  font-size: 15px;
-  color: #00678e;
-}
-#arrow1
-{
-  position: absolute;
-  left:10px;
-  top:-100px;
-  font-size: 15px;
-  color: #00678e;
-}
-#arrow0
-{
-  position: absolute;
-  left:10px;
-  top:-45px;
-  font-size: 15px;
-  color: #00678e;
-}
-  }
-  @media (max-width: 768px) 
-
-    {
-      .starplace
-{
-  position: relative;
-  padding-top:25px;
-}
-      hr {
-  
+        font-family: "Merriweather", Georgia, "Times New Roman", serif;
+        font-weight: bold;
+        top: 70px;
+        left: 30px;
+    }
+    .leftActivityy {
         position: relative;
-        top:69px;
-          border-top: 1px solid #D6D0C4;
-          left:30px;
-          margin-right: 20%;
-      }
-      #tfnewsearch{
-  
-        float:right;
-        padding:20px;
+        top: 80px;
+        left: 30px;
+    }
+    .bookShelves {
+        position: relative;
+        left: 30px;
+        top: 72px;
+    }
+    .tablePlace {
+        position: absolute;
+        top: 400px;
+        left: 200px;
+    }
+    #arrow2 {
+        position: absolute;
+        left: 10px;
+        top: -72px;
+        font-size: 15px;
+        color: #00678e;
+    }
+    #arrow1 {
+        position: absolute;
+        left: 10px;
+        top: -100px;
+        font-size: 15px;
+        color: #00678e;
+    }
+    #arrow0 {
+        position: absolute;
+        left: 10px;
+        top: -45px;
+        font-size: 15px;
+        color: #00678e;
+    }
+}
+
+@media (max-width: 768px) {
+    .starplace {
+        position: relative;
+        padding-top: 25px;
+    }
+    hr {
+        position: relative;
+        top: 69px;
+        border-top: 1px solid #D6D0C4;
+        left: 30px;
+        margin-right: 20%;
+    }
+    #tfnewsearch {
+        float: right;
+        padding: 20px;
         padding-left: 1%;
         margin-top: -5px;
-      }
-      .mybooksTitle
-      {
+    }
+    .mybooksTitle {
         position: relative;
         color: #00635d;
         line-height: 1.3;
         font-size: 20px;
-          font-family: "Merriweather", Georgia, "Times New Roman", serif;
-          font-weight: bold;
-          top: 70px;
-          left: 20px;
-      }
-      .leftActivityy
-{
-  position: relative;
-  top: 80px;
-    left: 30px;
-}
-.bookShelves
-{
-  position: relative;
-  left:30px;
-  top:72px;
-}
-.tablePlace
-{
-  position :absolute;
-  top:400px;
-  left:10px;
-
-}
-#tagrba
-{
-  position: relative;
-  top:400px;
-  left:80px;
-  line-height: 26px;
-  font-size: 16px;
-  font-family: "Merriweather", Georgia, "Times New Roman", serif;
-  font-weight: bold;}
-  #arrow2
-{
-  position: absolute;
-  left:10px;
-  top:-80px;
-  font-size: 15px;
-  color: #00678e;
-}
-#arrow1
-{
-  position: absolute;
-  left:10px;
-  top:-113px;
-  font-size: 15px;
-  color: #00678e;
-}
-#arrow0
-{
-  position: absolute;
-  left:10px;
-  top:-60px;
-  font-size: 15px;
-  color: #00678e;
-}
-  }
-  @media (max-width: 480px) 
-
-    {
-      .starplace
-{
-  position: relative;
-  padding-top:25px;
-}
-      #arrow2
-{
-  position: absolute;
-  left:10px;
-  top:-20px;
-  font-size: 15px;
-  color: #00678e;
-}
-#arrow1
-{
-  position: absolute;
-  left:10px;
-  top:-60px;
-  font-size: 15px;
-  color: #00678e;
-}
-#arrow0
-{
-  position: absolute;
-  left:10px;
-  top:-80px;
-  font-size: 15px;
-  color: #00678e;
-}
-      hr {
-  
+        font-family: "Merriweather", Georgia, "Times New Roman", serif;
+        font-weight: bold;
+        top: 70px;
+        left: 20px;
+    }
+    .leftActivityy {
         position: relative;
-        top:69px;
-          border-top: 1px solid #D6D0C4;
-          left:20px;
-          margin-right: 20%;
-      }
-      #tfnewsearch{
-  
-        float:right;
-        padding:20px;
+        top: 80px;
+        left: 30px;
+    }
+    .bookShelves {
+        position: relative;
+        left: 30px;
+        top: 72px;
+    }
+    .tablePlace {
+        position: absolute;
+        top: 400px;
+        left: 10px;
+    }
+    #tagrba {
+        position: relative;
+        top: 400px;
+        left: 80px;
+        line-height: 26px;
+        font-size: 16px;
+        font-family: "Merriweather", Georgia, "Times New Roman", serif;
+        font-weight: bold;
+    }
+    #arrow2 {
+        position: absolute;
+        left: 10px;
+        top: -80px;
+        font-size: 15px;
+        color: #00678e;
+    }
+    #arrow1 {
+        position: absolute;
+        left: 10px;
+        top: -113px;
+        font-size: 15px;
+        color: #00678e;
+    }
+    #arrow0 {
+        position: absolute;
+        left: 10px;
+        top: -60px;
+        font-size: 15px;
+        color: #00678e;
+    }
+}
+
+@media (max-width: 480px) {
+    .starplace {
+        position: relative;
+        padding-top: 25px;
+    }
+    #arrow2 {
+        position: absolute;
+        left: 10px;
+        top: -20px;
+        font-size: 15px;
+        color: #00678e;
+    }
+    #arrow1 {
+        position: absolute;
+        left: 10px;
+        top: -60px;
+        font-size: 15px;
+        color: #00678e;
+    }
+    #arrow0 {
+        position: absolute;
+        left: 10px;
+        top: -80px;
+        font-size: 15px;
+        color: #00678e;
+    }
+    hr {
+        position: relative;
+        top: 69px;
+        border-top: 1px solid #D6D0C4;
+        left: 20px;
+        margin-right: 20%;
+    }
+    #tfnewsearch {
+        float: right;
+        padding: 20px;
         padding-left: 1%;
         margin-top: -5px;
-      }
-      .mybooksTitle
-      {
+    }
+    .mybooksTitle {
         position: relative;
         color: #00635d;
         line-height: 1.3;
         font-size: 20px;
-          font-family: "Merriweather", Georgia, "Times New Roman", serif;
-          font-weight: bold;
-          top: 70px;
-          left: 30px;
-      }
-      .leftActivityy
-{
-  position: relative;
-  top: 80px;
-    left: 20px;
-}
-.bookShelves
-{
-  position: relative;
-  left:30px;
-  top:72px;
+        font-family: "Merriweather", Georgia, "Times New Roman", serif;
+        font-weight: bold;
+        top: 70px;
+        left: 30px;
+    }
+    .leftActivityy {
+        position: relative;
+        top: 80px;
+        left: 20px;
+    }
+    .bookShelves {
+        position: relative;
+        left: 30px;
+        top: 72px;
+    }
+    .tablePlace {
+        position: absolute;
+        top: 400px;
+        left: 10px;
+    }
+    #tagrba {
+        position: relative;
+        top: 400px;
+        left: 80px;
+        line-height: 26px;
+        font-size: 16px;
+        font-family: "Merriweather", Georgia, "Times New Roman", serif;
+        font-weight: bold;
+    }
 }
 
-
-.tablePlace
-{
-  position :absolute;
-  top:400px;
-  left:10px;
-
-}
-#tagrba
-{
-  position: relative;
-  top:400px;
-  left:80px;
-  line-height: 26px;
-  font-size: 16px;
-  font-family: "Merriweather", Georgia, "Times New Roman", serif;
-  font-weight: bold;}
-  }
- 
-  @media (max-width: 600px) 
-    {
-      #tfnewsearch{
-  
-        float:right;
-        padding:20px;
-        left:750px;
-        top:20px;
+@media (max-width: 600px) {
+    #tfnewsearch {
+        float: right;
+        padding: 20px;
+        left: 750px;
+        top: 20px;
         padding-left: 1%;
         margin-top: -5px;
-      }
-      .mybooksTitle
-      {
+    }
+    .mybooksTitle {
         position: relative;
         color: #00635d;
         line-height: 1.3;
         font-size: 20px;
-          font-family: "Merriweather", Georgia, "Times New Roman", serif;
-          font-weight: bold;
-          top: 70px;
-          left: 30px;
-      }
-      
-  }
+        font-family: "Merriweather", Georgia, "Times New Roman", serif;
+        font-weight: bold;
+        top: 70px;
+        left: 30px;
+    }
+}

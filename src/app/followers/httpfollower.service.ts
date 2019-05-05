@@ -14,6 +14,9 @@ import { nbind } from 'q';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * handles  http requests of followers list 
+*/
 
 export class HttpFollowingService {
 /**
@@ -21,6 +24,9 @@ export class HttpFollowingService {
  
 */
   constructor(private http:HttpClient) { }
+  /**
+ * The url of the database.
+ */
   url: string=AppConstants.baseURL ;
   
  /**
@@ -41,7 +47,7 @@ getfollowers(){
     } 
   
  /**
- *Getfollowing () is a get request to get the data of people following the main user 
+ *Getfollowing () is a get request to get the data of people following the not auth user 
  * and the books they are currently reading . 
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
@@ -49,6 +55,11 @@ getnotauthfollowing(id:number){
   return this.http.get(this.url+'/api/following?id='+ id);
 
 }
+/**
+ *Getfollowing () is a get request to get the data of people following the main user 
+ * and the books they are currently reading . 
+ * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
+ */
 getfollowing(){
   return this.http.get(this.url+'/api/following');
 

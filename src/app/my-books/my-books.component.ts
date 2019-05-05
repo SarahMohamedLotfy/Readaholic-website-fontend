@@ -22,7 +22,7 @@ import { StarComponent } from '../shared/star/star.component';
  * Show the  list of books that the user have and Search for books .
  */
 export class MyBooksComponent implements OnInit {
-  userInfo: myBooks;
+
  /**@ignore */
  reviewShelf = 0;
  
@@ -30,7 +30,13 @@ export class MyBooksComponent implements OnInit {
 reviewRating = 0;
 /**@ignore */
 shelfName: string = "";
+/**
+ * Count of books in the array
+ */
 countt:number;
+/**
+ * Check if the userid is id of auth or  non auth user.
+ */
 useridd:boolean;
  /**
  * posts  is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ) .
@@ -39,19 +45,48 @@ useridd:boolean;
 posts:any=[];
 
 /**
- * Count is the length of json file array
-
+ * Count is the length of  array of books in read shelf.
  */
 count0:number;
+/**
+ * Count is the length of  array of books in currently reading shelf.
+ */
 count1:number;
+/**
+ * Count is the length of  array of books in to-read  shelf.
+ */
 count2:number;
+/**
+ *The profile of the user.
+ */
 selectedProfile:profile;
+/**
+ *The id  of the user.
+ */
 userid:number;
+/**
+ *The shelf number of the books.
+ */
 shelfname:number;
+/**
+ *The shelf number of the books.
+ */
 shelfNumber:number;
+/**
+ *Boolean to check if there is no books at whole.
+ */
 nobooks:boolean;
+/**
+ *Boolean to check if there is no books at read shelf.
+ */
 nobooks0:boolean ;
+/**
+ *Boolean to check if there is no books at to read shelf.
+ */
 nobooks1:boolean;
+/**
+ *Boolean to check if there is no books at currently reading shelf.
+ */
 nobooks2:boolean;
 
 /**
@@ -59,18 +94,39 @@ nobooks2:boolean;
 
  */
 shelves:any=[];
+/**
+ * Id of the user.
 
+ */
 idUser:number;
   /**
 * temp is is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ) .
 used it in search function.
 */
  temp: any =[];
+  /**
+* books is is array of the books the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ).
+*/
  books:any=[];
+  /**
+* books is is array of the books in shelf read the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ).
+*/
  books0:any=[];
+  /**
+* books is is array of the books in shelf to readthe user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ).
+*/
  books1:any=[];
+  /**
+* books2 is is array of the books in shelf currently reading the user have ( bookid ,bookname,bookimage,rating ,avgrating ,dateread.data of publication ).
+*/
  books2:any=[];
+ /**
+* Boolean to check if there is no books in the shelves.
+*/
  nobookss:number;
+ /**
+* Boolean to put the arrow of the to-read in the initialization of the page.
+*/
  initializedarrow:boolean = true;
   /**
 * Search input text in search box .
@@ -231,12 +287,12 @@ this.myfirstservice.gethisshelfbooks(1,id).subscribe((posts:any)=>{
 
       }
     });
-  }
-
-   
-
-              
+  }           
  }
+ /**
+ *getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read  
+ * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
+ */
 getmybooks(clicked:boolean,shelfnumber)
 {
  
@@ -320,6 +376,10 @@ getmybooks(clicked:boolean,shelfnumber)
   }
 }
 
+/**
+ *Getshelfbooks() is a function contains get request to get the data of the books of the main user he read and currently reading an to read  
+ * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
+ */
 Getshelfbooks(shelfnumber)
 {
   this.myfirstservice.getMyshelfbooks(shelfnumber).subscribe((posts:any)=>{
@@ -329,11 +389,18 @@ Getshelfbooks(shelfnumber)
   });
  
 }
-
+/**
+  
+ * Used to put arrows on shelves when the user click on the shelf.
+ */
 heighlight(shelfnumberr:number)
 {
   this.shelfNumber=shelfnumberr;
 }
+/**
+  
+ * Used to put msg no books when there is no books in certain shelf.
+ */
 showNoboksmsg(shelfnum:number)
 {
   if (shelfnum==0)
@@ -380,7 +447,7 @@ search(){
 }
 
 /**
-*noBooks() is a function that show mmessage that thre is no books to the user if there are no books he have .
+*noBooks() is a function that show mmessage that there is no books to the user if there are no books he have .
 */
 noBooks ():number
 {
@@ -388,46 +455,30 @@ noBooks ():number
   console.log('countt');
   return this.countt;
 }
+/**
+*noBooks() is a function that show mmessage that there is no books to the user on shelf read.
+*/
 noBooksOnshelf0()
 {
   return this.nobooks0;
 }
+/**
+*noBooks() is a function that show mmessage that there is no books to the user on shelf to read.
+*/
 noBooksOnshelf1()
 {
   return this.nobooks1;
 }
+/**
+*noBooks() is a function that show mmessage that there is no books to the user on shelf currently reading.
+*/
 noBooksOnshelf2()
 {
   return this.nobooks2;
 }
 
  
-//onclick(){
-// this.router.navigateByUrl('/bookinfo/https://my-json-server.typicode.com/SarahMohamedAhmed/followinggg/following/id');
-//}
 
-/*title = 'Star Rating';
-
-  recordList:any[]=[  
-    {'Id':1,'Framework':'Angular JS', 'myList':[true,true,true,true,true]},  
-    {'Id':2,'Framework':'Angular 2', 'myList':[true,true,true,true,true]},  
-    {'Id':3,'Framework':'Angular 4', 'myList':[true,true,true,true,true]},  
-    {'Id':4,'Framework':'Angular 5', 'myList':[true,true,true,true,true]},  
-    {'Id':5,'Framework':'Angular 6', 'myList':[true,true,true,true,true]},  
-      
-  ];  
-    setStarTable(record:any,data:any){  
-      this.rating=data+1;  
-      var tableList = this.recordList.find(function (obj: any) { return obj.Id === record.Id });  
-      for(var i=0;i<=4;i++){  
-        if(i<=data){  
-          tableList.myList[i]=false;  
-        }  
-        else{  
-          tableList.myList[i]=true;  
-        }  
-      }  
-    } */
 }
 
 

@@ -994,7 +994,7 @@ import { catchError, retry } from &#x27;rxjs/operators&#x27;;
     //urlName:string&#x3D;&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com&#x27;;
 /**request to show current settings of user */
     showSetting(): Observable&lt;any&gt; {
-        
+      //return this.http.get&lt;any&gt;(&#x27;http://localhost:3000/accountSettings&#x27; );
         return this.http.get&lt;any&gt;(this.url+&#x27;/api/showsetting&#x27;);
         
        }

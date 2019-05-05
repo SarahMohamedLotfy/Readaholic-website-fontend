@@ -75,7 +75,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#currentshelf">currentshelf</a>
+                                <a href="#currentShelf">currentShelf</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
@@ -224,11 +224,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="currentshelf"></a>
+                        <a name="currentShelf"></a>
                         <span class="name">
                             <b>
-                            currentshelf</b>
-                            <a href="#currentshelf"><span class="icon ion-ios-link"></span></a>
+                            currentShelf</b>
+                            <a href="#currentShelf"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -280,16 +280,16 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
 
 @Injectable()
 export class SharedService {
 
   private shelfSource &#x3D; new BehaviorSubject({key:-1, value:-1});
-  currentshelf &#x3D; this.shelfSource.asObservable();
+  currentShelf &#x3D; this.shelfSource.asObservable();
 
   constructor() { }
-
+  
   changeShelf(key:number, val: number) {
     this.shelfSource.next({key: key, value: val})
   }

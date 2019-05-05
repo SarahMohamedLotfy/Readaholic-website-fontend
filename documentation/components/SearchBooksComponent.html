@@ -524,7 +524,7 @@ export class SearchBooksComponent implements OnInit {
       searchType: [&#x27;&#x27;,[Validators.required]]
       });
    }
-   /**search value entered in the search box */
+/**search value entered in the search box */
 searchTerm:any;
 /** type of search by:author,title,..etc */
 searchType:string;
@@ -595,17 +595,21 @@ this.searchForBook();
     if(val.searchType&#x3D;&#x3D;&quot;author&quot; || this.searchType&#x3D;&#x3D;&quot;author&quot; )
     this.service.getBookByAuthor(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
       this.books &#x3D;books.pages ;
-
       
-     
+      //this.books[0].author_name&#x3D;this.searchTerm;
+      console.log(this.books);
       this.review&#x3D;books[&#x27;book info for me&#x27;]
       this.temp&#x3D;this.review;
       
      if(books.pages.length&#x3D;&#x3D;0){
        this.noBooks&#x3D;true;
+     
      }
      else
+     {
      this.noBooks&#x3D;false;
+     this.books[0].author_name&#x3D;this.searchTerm;
+    }
 
       console.log(this.rating);
       },err&#x3D;&gt;{this.noBooks&#x3D;true;})
@@ -638,12 +642,13 @@ this.searchForBook();
           else
           this.noBooks&#x3D;false;
           this.review&#x3D;books[&#x27;book info for me&#x27;]
-          },err&#x3D;&gt;{this.noBooks&#x3D;true;})
+          },err&#x3D;&gt;{this.noBooks&#x3D;true;
+          console.log(err);})
       }
       else 
       {
         this.service.getBookByTitle(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
-          this.books &#x3D;books.pages ;
+          this.books &#x3D;books.pages;
           
           console.log(this.books);
           console.log(books);

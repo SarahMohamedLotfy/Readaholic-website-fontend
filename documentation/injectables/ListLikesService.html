@@ -220,7 +220,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;listLikes[]&gt;</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -288,8 +288,8 @@ export class ListLikesService {
   constructor(private http: HttpClient) { }
 
   /** get comments */
-  getLikesList(id : number): Observable&lt;listLikes[]&gt; {
-    return this.http.get&lt;listLikes[]&gt;(this.url+&#x27;/api/listLikes?id&#x3D;&#x27;+ id);
+  getLikesList(id : number) {
+    return this.http.get(this.url+&#x27;/api/listLikes?id&#x3D;&#x27;+ id);
   }
 }
 </code></pre>

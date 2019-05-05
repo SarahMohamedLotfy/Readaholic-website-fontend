@@ -358,8 +358,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/app/shared/comments/comments.component.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/shared/comments/comments.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -748,6 +748,13 @@ export class CommentsComponent implements OnInit {
      onSubmit() {
            this.ser.commentOnobject(this.resourse_id, this.CommentForm.get(&#x27;content&#x27;).value);
            this.CommentForm.reset();
+           this.ser.testgetCommentsList(this.resourse_id).subscribe(data &#x3D;&gt; {
+            this.CommentListofReview &#x3D; data;
+          //  console.log(this.CommentListofReview);
+          },
+            // (err: any) &#x3D;&gt; console.log(err)
+           );
+
      }
      deleteComment(Commentid: number) {
       this.ser.deleteComment(Commentid).subscribe((data) &#x3D;&gt; {
@@ -756,6 +763,13 @@ export class CommentsComponent implements OnInit {
         //    (data: CommentList[]) &#x3D;&gt; this.CommentListofReview &#x3D; data
          // console.log(posts)});
              });
+             this.ser.testgetCommentsList(this.resourse_id).subscribe(data &#x3D;&gt; {
+              this.CommentListofReview &#x3D; data;
+            //  console.log(this.CommentListofReview);
+            },
+              // (err: any) &#x3D;&gt; console.log(err)
+             );
+
     }
 }
 </code></pre>

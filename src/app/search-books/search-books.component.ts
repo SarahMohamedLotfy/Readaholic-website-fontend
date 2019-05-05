@@ -18,7 +18,7 @@ export class SearchBooksComponent implements OnInit {
       searchType: ['',[Validators.required]]
       });
    }
-   /**search value entered in the search box */
+/**search value entered in the search box */
 searchTerm:any;
 /** type of search by:author,title,..etc */
 searchType:string;

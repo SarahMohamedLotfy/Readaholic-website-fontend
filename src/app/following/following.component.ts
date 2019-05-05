@@ -18,6 +18,9 @@ import {ProfileService} from '../profile/profile.service';
   templateUrl: './following.component.html',
   styleUrls: ['./following.component.scss']
 })
+/**
+ * Show the following list with books they are currently reading and Search for people following you 
+ */
 export class FollowingComponent implements OnInit {
 
 
@@ -59,12 +62,7 @@ export class FollowingComponent implements OnInit {
  * GetUserprofile get the data of the profile of main user i used it to get the name of the main  user
  */
   ngOnInit() {
-    
-
- 
-   
-
-       /** receives id from url and send it to the get request */
+     /** receives id from url and send it to the get request */
     const id: number = +this.route.snapshot.paramMap.get('id');
 
     /**
@@ -91,10 +89,7 @@ export class FollowingComponent implements OnInit {
     this.Getfollowing();
 
    }
-
-      
-  
-                 
+             
   }
   /**
  * delFollowing () is a post request to remove the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
@@ -123,6 +118,11 @@ export class FollowingComponent implements OnInit {
            });
           }
   }
+  /**
+ * Getfollowing () is a get request ti get the data of people following the main user 
+ * and the books they are currently reading . 
+ * The data i get is ( name of user , image of user  , id of user  , bookid, bookname,bookimage).
+ */
   Getfollowing()
   {this.myfirstservice.getfollowing().subscribe((posts:any)=>{
     this.posts =posts.following ;

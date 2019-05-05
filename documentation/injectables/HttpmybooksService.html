@@ -63,7 +63,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Handles http requests related to the boks of the user</p>
+                <p>Handles hhttp requests related to the books of the user</p>
 
             </p>
 
@@ -96,9 +96,6 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
-                            <li>
-                                <a href="#createReview">createReview</a>
-                            </li>
                             <li>
                                 <a href="#getAuthUserprofile">getAuthUserprofile</a>
                             </li>
@@ -137,7 +134,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -186,102 +183,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createReview"></a>
-                    <span class="name">
-                        <b>
-                            createReview
-                        </b>
-                        <a href="#createReview"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>createReview(bookId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, shelf: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, rating: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:61</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>getUsershelves() is a get request to number of books the user read and currently reading an to read </p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>bookId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>shelf</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>rating</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="getAuthUserprofile"></a>
                     <span class="name">
                         <b>
@@ -300,8 +201,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:45</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:56</a></div>
                 </td>
             </tr>
 
@@ -341,14 +242,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:43</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>gethisshelfbooks() is a get request to get the data of the books of certain shelf of the not auth user he read and currently reading an to read<br> The data i get is ( name of book , image of book  , id of book  ,ratiing of book , avgrating , date o publication , date read).</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -423,15 +326,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read<br> The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).</p>
+                    <div class="io-description"><p>getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read<br> The data i get is ( name of book , image of book  , id of book  ,ratiing of book , avgrating , date o publication , date read).</p>
 </div>
 
                     <div class="io-description">
@@ -464,14 +367,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:36</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>getMyshelfbooks() is a get request to get the data of the books of certain shelf of the main user he read and currently reading an to read<br> The data i get is ( name of book , image of book  , id of book  ,ratiing of book , avgrating , date o publication , date read).</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -534,8 +439,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/my-books/httpmybooks.service.ts:50</a></div>
                 </td>
             </tr>
 
@@ -615,10 +520,17 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/my-books/httpmybooks.service.ts:17</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Handles h
+url of the database.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -632,13 +544,18 @@
 import { Observable } from &#x27;rxjs&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { myBooks } from &#x27;../classes/myBooks&#x27;;
+import { nbind } from &#x27;q&#x27;;
 
-/**Handles http requests related to the boks of the user*/
+/**Handles hhttp requests related to the books of the user*/
 
 @Injectable({
   providedIn: &#x27;root&#x27;
+ 
 })
+/**Handles hhttp requests related to the books of the user*/
 export class HttpmybooksService {
+  /**Handles h
+ *url of the database.*/
   urll: string &#x3D; &#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com&#x27;;
 /**
  * Constructor for httpmyBooks service . 
@@ -649,16 +566,22 @@ export class HttpmybooksService {
   
  /**
  *getMybooks() is a get request to get the data of the books of the main user he read and currently reading an to read  
- * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , angrating , date o publication , date read).
+ * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , avgrating , date o publication , date read).
  */
 getMybooks(){
   return this.http.get(this.urll +&#x27;/api/following&#x27;);
-
 }
+/**
+ *getMyshelfbooks() is a get request to get the data of the books of certain shelf of the main user he read and currently reading an to read  
+ * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , avgrating , date o publication , date read).
+ */
 getMyshelfbooks( shelf_name:number){
   return this.http.get(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?shelf_name&#x3D;&#x27;+shelf_name);
-
 }
+/**
+ *gethisshelfbooks() is a get request to get the data of the books of certain shelf of the not auth user he read and currently reading an to read  
+ * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , avgrating , date o publication , date read).
+ */
 gethisshelfbooks( shelf_name:number,user_id:number){
   return this.http.get(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?user_id&#x3D;&#x27;+user_id
   +&#x27;&amp;&amp;shelf_name&#x3D;&#x27;+shelf_name);
@@ -677,26 +600,6 @@ gethisshelfbooks( shelf_name:number,user_id:number){
     }
   
 
-
-/**
- *getUsershelves() is a get request to number of books the user read and currently reading an to read */
-
-/**
- * create book review
- * @param {number} bookId id of the reviewd book
- * @param {number} shelf the id of the shelf
- * @param {string} body the body of the review
- * @param {number rating the user rating of the book}
- *  */
-createReview(bookId:number, shelf: number,  rating: number): Observable&lt;any&gt; {
- 
-    return this.http.post(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com&#x27;+ &#x27;/api/reviwes/create&#x27;,{bookId,shelf,rating});
-  
-  
-   // return this.http.post(&#x27;http://localhost:3000/ReadShelf&#x27;,{bookId,shelf,body,rating});
-}
- 
-  
 
 }
 </code></pre>

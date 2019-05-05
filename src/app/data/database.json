@@ -46,6 +46,39 @@
         }
       ]
     }
-  ]
+  ],
+  "shelf":
+  {
+    "pages":
+  [{
+    "author_id": 1,
+    "author_name": "G. Willow Wilson",
+    "book_id": 1,
+    "created_at": "2019-05-04 21:53:31",
+    "id": 1,
+    "img_url": "https://i5.walmartimages.com/asr/8bae6257-b3ed-43ba-b5d4-c55b6479697f_1.c6a36804e0a9cbfd0e408a4b96f8a94e.jpeg?odnHeight=560&odnWidth=560&odnBg=FFFFFF",
+    "isbn": 9780802129031,
+    "ratings_avg": 3.14,
+    "ratings_count": 80,
+    "reviews_count": 80,
+    "title":"The Bird King"
+
+  },
+  {
+    "author_id": 2,
+    "author_name": "Sarah Wilson",
+    "book_id": 3,
+    "created_at": "2019-05-04 21:53:31",
+    "id": 3,
+    "img_url": "https://i5.walmartimages.com/asr/8bae6257-b3ed-43ba-b5d4-c55b6479697f_1.c6a36804e0a9cbfd0e408a4b96f8a94e.jpeg?odnHeight=560&odnWidth=560&odnBg=FFFFFF",
+    "isbn": 9780802129031,
+    "ratings_avg": 3.14,
+    "ratings_count": 2,
+    "reviews_count": 1,
+    "title":"The Beautiful world"
+
+  }
+]
 }
 
+}

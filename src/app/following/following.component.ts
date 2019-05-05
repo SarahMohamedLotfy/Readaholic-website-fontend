@@ -88,10 +88,7 @@ export class FollowingComponent implements OnInit {
    (data: profile) => this.selectedProfile = data,
    (err: any) => console.log(err)
     );
-    this.myfirstservice.getfollowing().subscribe((posts:any)=>{
-      this.posts =posts.following ;
-      this.temp = posts.following;
-    console.log(posts)});
+    this.Getfollowing();
 
    }
 
@@ -126,7 +123,13 @@ export class FollowingComponent implements OnInit {
            });
           }
   }
-  
+  Getfollowing()
+  {this.myfirstservice.getfollowing().subscribe((posts:any)=>{
+    this.posts =posts.following ;
+    this.temp = posts.following;
+  console.log(posts)});
+
+  }
   
  /**
 *Search for the name of following person when click on search button  .

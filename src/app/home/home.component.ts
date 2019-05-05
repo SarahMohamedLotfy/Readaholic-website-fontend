@@ -132,7 +132,9 @@ export class HomeComponent implements OnInit {
        // console.log(this.updatess[i].actionText);
        }
           }
-     
+     /**
+        * function addfollowing is trigeered when user follow someone
+        */
     addFollowing(nb){
       this.httpser.addFollowing(nb).subscribe(
         data  => {
@@ -154,6 +156,9 @@ export class HomeComponent implements OnInit {
         }
         
         );}
+        /**
+        * function addbooktoshelf is trigeered when user add a book to a new shelf
+        */
         addBook(shelf,book_id){
           this.httpser.addBook(shelf,book_id).subscribe(
             data  => {
@@ -166,6 +171,9 @@ export class HomeComponent implements OnInit {
               }
           )
         }
+        /**
+        * function  is trigeered when user unfollow someone
+        */
         delFollowing(nb){
           this.httpser.unfollow(nb).subscribe((data) =>{
             console.log("delete Request is successful ", data);

@@ -794,7 +794,7 @@ export class FollowingComponent implements OnInit {
          this.myfirstservice.getfollowing().subscribe((posts:any)&#x3D;&gt;{
           this.posts &#x3D;posts.following ;
           this.temp &#x3D; posts.following;
-        console.log(posts)});
+        console.log(this.posts)});
            });
           }
   }
@@ -869,7 +869,6 @@ noFollowing ():number
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;navbar&gt;&lt;/navbar&gt;
-
 
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
 

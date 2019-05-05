@@ -595,9 +595,9 @@ this.searchForBook();
     if(val.searchType&#x3D;&#x3D;&quot;author&quot; || this.searchType&#x3D;&#x3D;&quot;author&quot; )
     this.service.getBookByAuthor(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
       this.books &#x3D;books.pages ;
-
       
-     
+      this.books[0].author_name&#x3D;this.searchTerm;
+      console.log(this.books);
       this.review&#x3D;books[&#x27;book info for me&#x27;]
       this.temp&#x3D;this.review;
       
@@ -638,12 +638,13 @@ this.searchForBook();
           else
           this.noBooks&#x3D;false;
           this.review&#x3D;books[&#x27;book info for me&#x27;]
-          },err&#x3D;&gt;{this.noBooks&#x3D;true;})
+          },err&#x3D;&gt;{this.noBooks&#x3D;true;
+          console.log(err);})
       }
       else 
       {
         this.service.getBookByTitle(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
-          this.books &#x3D;books.pages ;
+          this.books &#x3D;books.pages;
           
           console.log(this.books);
           console.log(books);

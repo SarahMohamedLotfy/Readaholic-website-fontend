@@ -577,7 +577,7 @@ export class CommentsService {
 
 /** comments on a specific object and subscribe to the given data */
   commentOnobject( resourse_id: number, comment_body: string
-    ): void {
+    ):void {
     const newComment: Comments &#x3D; { resourse_id, comment_body } as Comments;
     console.log(newComment);
     this.addComment(newComment)

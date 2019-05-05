@@ -11,7 +11,7 @@ import { data } from 'src/app/classes/data';
     providedIn: 'root'
 })
 /**
- * Home service is responsible for http get requests od updates
+ * navbar service is responsible for notifications and logout and seaarch
  */
 export class navBarService {
     /**
@@ -33,7 +33,9 @@ export class navBarService {
     constructor(private http: HttpClient) {
 
        
-  
+  /**
+        * push notifications are get in the constructor
+        */
     
 
 
@@ -46,13 +48,22 @@ export class navBarService {
 
         console.log(this.users);
         console.log(this.id);
+        /**
+        * pass api key to pusher
+        */
         this.pusherClient = new Pusher('aa5ca7b55f8f7685a9cc',{ cluster: 'eu' });
+        /**
+        * pass auth. user id to channel 
+        */
 
         const channel = this.pusherClient.subscribe('user.'+this.id);
 
         channel.bind(
           'notify',
           data => {
+            /**
+        * describe the text of the alert
+        */
             this.message=data.message;
             console.log(this.message);
             if(this.message.type == 0 && this.message.review_user_id == this.id)
@@ -66,8 +77,7 @@ export class navBarService {
             else if(this.message.type ==2)
              alert(this.message.user_name+'followed you');
            
-            //alert(this.message.user_name+);
-            //console.log(data);
+          
           }
 
         );
@@ -80,7 +90,7 @@ export class navBarService {
         return this.subject.asObservable();
       }
     /**
-     * updates get requests
+     * notifications get requests
      */
    
     url:string=AppConstants.baseURL;
@@ -91,6 +101,9 @@ export class navBarService {
             );
         
     }
+    /**
+        * mark_notification as read
+        */
     onRead(idd:number):Observable <any>{
       
       console.log("any");

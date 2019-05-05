@@ -314,8 +314,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">src/app/followers/followers.component.ts:126</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/app/followers/followers.component.ts:127</a></div>
                 </td>
             </tr>
 
@@ -382,8 +382,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="226"
-                            class="link-to-prism">src/app/followers/followers.component.ts:226</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="227"
+                            class="link-to-prism">src/app/followers/followers.component.ts:227</a></div>
                 </td>
             </tr>
 
@@ -498,8 +498,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="212"
-                            class="link-to-prism">src/app/followers/followers.component.ts:212</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">src/app/followers/followers.component.ts:213</a></div>
                 </td>
             </tr>
 
@@ -566,8 +566,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="181"
-                            class="link-to-prism">src/app/followers/followers.component.ts:181</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">src/app/followers/followers.component.ts:182</a></div>
                 </td>
             </tr>
 
@@ -607,8 +607,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="192"
-                            class="link-to-prism">src/app/followers/followers.component.ts:192</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/app/followers/followers.component.ts:193</a></div>
                 </td>
             </tr>
 
@@ -1104,6 +1104,7 @@ result:number;
 
     this.myfirstservice.getfollowing().subscribe((following:any)&#x3D;&gt;{
       this.following &#x3D;following.following ;
+      console.log(this.following);
       });
    }
   }
@@ -1274,15 +1275,7 @@ return true;
     You haven&#x27;t got any followers ,don&#x27;t be sad..&lt;/p&gt;
 
 
-&lt;div id&#x3D;&quot;tfheader&quot;&gt;
-    &lt;form id&#x3D;&quot;tfnewsearch&quot; method&#x3D;&quot;get&quot;&gt;
 
-        &lt;input type&#x3D;&quot;text&quot; value&#x3D;&quot;searchText&quot; [(ngModel)]&#x3D;&quot;searchText&quot;  id&#x3D;&quot;searchtextfollower&quot; name&#x3D;&quot;q&quot; size&#x3D;&quot;21&quot; maxlength&#x3D;&quot;120&quot;&gt;&lt;input id&#x3D;&quot;searchfollower&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;search()&quot; value&#x3D;&quot;search&quot; class&#x3D;&quot;searchfollowers
-        &quot;&gt;
-    &lt;/form&gt;
-
-    &lt;div class&#x3D;&quot;tfclear&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
 
 
 
@@ -1545,7 +1538,7 @@ color: #333333;
       font-family: &quot;Merriweather&quot;, Georgia, &quot;Times New Roman&quot;, serif;
       font-weight: bold;
       padding-top: 5%;
-      padding-left: 10%;
+      padding-left: 14%;
     }
     #Myprofilename span{
       color: #382110;  padding-bottom: 20px;
@@ -1691,7 +1684,7 @@ top:17px;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><navbar></navbar><div *ngIf="selectedProfile">    <div id="Myprofilename">        <a [routerLink]="[\'/profile\',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>    </div></div><p *ngIf="noFollowers() == 0" id="tagrba">    You haven\'t got any followers ,don\'t be sad..</p><div id="tfheader">    <form id="tfnewsearch" method="get">        <input type="text" value="searchText" [(ngModel)]="searchText"  id="searchtextfollower" name="q" size="21" maxlength="120"><input id="searchfollower" type="button" (click)="search()" value="search" class="searchfollowers        ">    </form>    <div class="tfclear"></div></div><div *ngIf="empty">    <h1>have no followers</h1></div><div *ngIf="!empty">    <div class="row bootstrap snippet">        <div class="col-md-6 col-xs-12 col-md-offset-3">            <div class="panel" id="followers">                <div class="panel-heading">                    <h3 class="panel-title">                    </h3>                </div>                <div class="panel-body">                    <ul class="list-group list-group-dividered list-group-full">                        <li *ngFor="let post of posts " class="list-group-item">                            <div class="media-body">                                <div class="media">                                    <div class="media-left">                                        <a [routerLink]="[\'/profile\', post.id]">                                            <img id="profilepage" src={{post.image_link}} alt="jj">                                            <i></i>                                        </a>                                    </div>                                    <div *ngIf="noFollowbutton(post.id) ==true " class="pull-right">                                        <button id="followbutton" (click)="add(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">Follow </button>                                    </div>                                    <div *ngIf="noFollowbutton(post.id) ==false " class="pull-right">                                        <button id="followbutton" (click)="delFollowing(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">UnFollow </button>                                    </div>                                    <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter" style="clear:right" [routerLink]="[\'/profile\', post.id]">{{post.name}}</a></div>                                </div>                                                              <hr/>                            </div>                        </li>                    </ul>                </div>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><navbar></navbar><div *ngIf="selectedProfile">    <div id="Myprofilename">        <a [routerLink]="[\'/profile\',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>    </div></div><p *ngIf="noFollowers() == 0" id="tagrba">    You haven\'t got any followers ,don\'t be sad..</p><div *ngIf="empty">    <h1>have no followers</h1></div><div *ngIf="!empty">    <div class="row bootstrap snippet">        <div class="col-md-6 col-xs-12 col-md-offset-3">            <div class="panel" id="followers">                <div class="panel-heading">                    <h3 class="panel-title">                    </h3>                </div>                <div class="panel-body">                    <ul class="list-group list-group-dividered list-group-full">                        <li *ngFor="let post of posts " class="list-group-item">                            <div class="media-body">                                <div class="media">                                    <div class="media-left">                                        <a [routerLink]="[\'/profile\', post.id]">                                            <img id="profilepage" src={{post.image_link}} alt="jj">                                            <i></i>                                        </a>                                    </div>                                    <div *ngIf="noFollowbutton(post.id) ==true " class="pull-right">                                        <button id="followbutton" (click)="add(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">Follow </button>                                    </div>                                    <div *ngIf="noFollowbutton(post.id) ==false " class="pull-right">                                        <button id="followbutton" (click)="delFollowing(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">UnFollow </button>                                    </div>                                    <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter" style="clear:right" [routerLink]="[\'/profile\', post.id]">{{post.name}}</a></div>                                </div>                                                              <hr/>                            </div>                        </li>                    </ul>                </div>            </div>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AccountSettingsComponent', 'selector': 'app-account-settings'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'ListLikesComponent', 'selector': 'app-list-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ReviewComponent', 'selector': 'review'},{'name': 'SearchBooksComponent', 'selector': 'app-search-books'},{'name': 'SearchPeopleComponent', 'selector': 'app-searchpeople'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FollowersComponent'};

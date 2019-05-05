@@ -221,6 +221,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/AppConstants.html" data-type="entity-link">AppConstants</a>
                             </li>
                             <li class="link">
+                                <a href="classes/AppPage.html" data-type="entity-link">AppPage</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/book.html" data-type="entity-link">book</a>
                             </li>
                             <li class="link">
@@ -374,6 +377,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse" ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
+                            <li class="link">
+                                <a href="miscellaneous/functions.html" data-type="entity-link">Functions</a>
+                            </li>
                             <li class="link">
                                 <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
                             </li>

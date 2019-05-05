@@ -536,8 +536,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/shared/star/star.component.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/shared/star/star.component.ts:71</a></div>
                 </td>
             </tr>
 
@@ -646,15 +646,11 @@ export class StarComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.starsCount &#x3D;&#x3D; null) {
-      console.log(&quot;yalahwaaay1111&quot;)
-    }
-    this.sharedService.currentshelf.subscribe(data &#x3D;&gt; {
+    this.sharedService.currentShelf.subscribe(data &#x3D;&gt; {
       if (data.key !&#x3D; -1 &amp;&amp; data.value !&#x3D; -1) {
         if (data.key &#x3D;&#x3D; this.bookId) {
           this.shelf &#x3D; data.value;
           if (this.shelf &#x3D;&#x3D; 3) {
-            console.log(&quot;yalahwaaay&quot;)
             this.starsCount &#x3D; 0;
           }
         }
@@ -673,13 +669,11 @@ export class StarComponent implements OnInit {
   /**rates a book when the user clicks on the stars */
   onClick() {
     if (this.readOnly &#x3D;&#x3D; false) {
-      console.log(this.starsCount)
       if (this.shelf &#x3D;&#x3D; 4 || !this.shelf) {
         this.shelf &#x3D; 3;
       }
-
+      this.keepRate &#x3D; this.starsCount;
       this.service.createReview(this.bookId, this.shelf, &quot;&quot;, this.starsCount).subscribe((data) &#x3D;&gt; {
-        console.log(data);
         if (data.shelfType &#x3D;&#x3D; &quot;read&quot;) {
           this.shelf &#x3D; 0;
         } else if (data.shelfType &#x3D;&#x3D; &quot;currently-reading&quot;) {
@@ -688,9 +682,9 @@ export class StarComponent implements OnInit {
           this.shelf &#x3D; 2;
         }
         this.rated.emit(this.starsCount);
-        console.log(&quot;star&quot; + this.shelf);
+       
         this.sharedService.changeShelf(this.bookId, this.shelf);
-      }, (data) &#x3D;&gt; console.log(data));
+      },() &#x3D;&gt; this.starsCount &#x3D; 0);
     }
   }
 }

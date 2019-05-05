@@ -10,20 +10,12 @@ import { listLikes } from 'src/app/classes/listLikes';
   styleUrls: ['./likes.component.css']
 })
 export class LikesComponent implements OnInit {
-/** flag to determine whter the like button is clicked or not */
-likeFlag = false;
-//likesList: listLikes[];
+
 /** input from parent component to get user id */
 @Input () user: number;
 /** input from parent component to get resource id */
 @Input () resourse_id: number;
 
-btnTextlike = "like";
-btnTextunlike ='unlike';
-likesList: listLikes[];
-flag : boolean ;
-newflag: boolean;
-count : number;
 temp: any =[];
 posts:any=[];
 
@@ -43,13 +35,13 @@ posts:any=[];
 
 
   }
-
+/** function used to loop over list of likes array to get if the auth has liked the review or not to determine its state */
    exists() {
     const found = this.posts.some(el => el.have_the_like == 'Yes');
     return found;
   }
 
-/** like a review  */
+/** like or unlike a review  */
 likeOrUnlikereview(): void {
   this.likeservice.likeObject(this.user, this.resourse_id);
 

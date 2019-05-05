@@ -12,7 +12,7 @@ export class ListLikesService {
   constructor(private http: HttpClient) { }
 
   /** get comments */
-  getLikesList(id : number): Observable<listLikes[]> {
-    return this.http.get<listLikes[]>(this.url+'/api/listLikes?id='+ id);
+  getLikesList(id : number) {
+    return this.http.get(this.url+'/api/listLikes?id='+ id);
   }
 }

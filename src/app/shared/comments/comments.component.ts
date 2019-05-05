@@ -54,6 +54,13 @@ export class CommentsComponent implements OnInit {
      onSubmit() {
            this.ser.commentOnobject(this.resourse_id, this.CommentForm.get('content').value);
            this.CommentForm.reset();
+           this.ser.testgetCommentsList(this.resourse_id).subscribe(data => {
+            this.CommentListofReview = data;
+          //  console.log(this.CommentListofReview);
+          },
+            // (err: any) => console.log(err)
+           );
+
      }
      deleteComment(Commentid: number) {
       this.ser.deleteComment(Commentid).subscribe((data) => {
@@ -62,5 +69,12 @@ export class CommentsComponent implements OnInit {
         //    (data: CommentList[]) => this.CommentListofReview = data
          // console.log(posts)});
              });
+             this.ser.testgetCommentsList(this.resourse_id).subscribe(data => {
+              this.CommentListofReview = data;
+            //  console.log(this.CommentListofReview);
+            },
+              // (err: any) => console.log(err)
+             );
+
     }
 }

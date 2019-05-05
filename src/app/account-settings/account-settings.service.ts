@@ -18,7 +18,7 @@ import { catchError, retry } from 'rxjs/operators';
     //urlName:string='http://ec2-52-90-5-77.compute-1.amazonaws.com';
 /**request to show current settings of user */
     showSetting(): Observable<any> {
-        
+      //return this.http.get<any>('http://localhost:3000/accountSettings' );
         return this.http.get<any>(this.url+'/api/showsetting');
         
        }

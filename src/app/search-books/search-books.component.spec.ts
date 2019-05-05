@@ -106,6 +106,5 @@ searchElement.triggerEventHandler('click',null);
 expect(IsbnSpy).toHaveBeenCalledTimes(0);
 expect(genreSpy).toHaveBeenCalledTimes(1);
 
-
   });
 });

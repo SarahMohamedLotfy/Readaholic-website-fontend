@@ -153,6 +153,14 @@ fit(' Search button clicked',fakeAsync(()=>{
       expect(component.search).toHaveBeenCalled();
   
   }));
+
+   
+//Unit test for deletefollowing function check if the count of following peole decrease ?
+it('should be able to decrement the count (-1)', () => {
+  component.delFollowing(7);
+  expect(component.count).toEqual(5);
+});
+
   }));
 
 

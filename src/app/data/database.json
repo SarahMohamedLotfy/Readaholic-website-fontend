@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "book": [
     {
       "pages": [
@@ -183,3 +184,524 @@
     "country": "Aswan,11,Egypt"
   }
 ]}
+=======
+
+    "book": [{
+            "id": 3,
+            "pages": [{
+                "id": 3,
+                "title": "once and future",
+                "isbn": 555,
+                "img_url": "https://images-na.ssl-images-amazon.com/images/I/51Jb2iLFuXL._SX329_BO1,204,203,200_.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "Robin of Locksley is dead. Maid Marian doesn’t know how she’ll go on, but the people of Locksley town, persecuted by the Sheriff of Nottingham, need a protector. And the dreadful Guy of Gisborne, the Sheriff’s right hand, wishes to step into Robin’s shoes as Lord of Locksley and Marian’s fiancé. Who is there to stop them? Marian never meant to tread in Robin’s footsteps—never intended to stand as a beacon of hope to those awaiting his triumphant return. But with a sweep of his green cloak and the flash of her sword, Marian makes the choice to become her own hero: Robin Hood.",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "Meagan Spooner",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        },
+        {
+            "id": 2,
+            "pages": [{
+                "id": 2,
+                "title": "sherwood",
+                "isbn": 555,
+                "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "book overview",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "ali",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        }
+    ],
+    "shelf": {
+        "pages": [{
+                "author_id": 1,
+                "author_name": "G. Willow Wilson",
+                "book_id": 1,
+                "created_at": "2019-05-04 21:53:31",
+                "id": 1,
+                "img_url": "https://i5.walmartimages.com/asr/8bae6257-b3ed-43ba-b5d4-c55b6479697f_1.c6a36804e0a9cbfd0e408a4b96f8a94e.jpeg?odnHeight=560&odnWidth=560&odnBg=FFFFFF",
+                "isbn": 9780802129031,
+                "ratings_avg": 3.14,
+                "ratings_count": 80,
+                "reviews_count": 80,
+                "title": "The Bird King"
+
+            },
+            {
+                "author_id": 2,
+                "author_name": "Sarah Wilson",
+                "book_id": 3,
+                "created_at": "2019-05-04 21:53:31",
+                "id": 3,
+                "img_url": "https://i5.walmartimages.com/asr/8bae6257-b3ed-43ba-b5d4-c55b6479697f_1.c6a36804e0a9cbfd0e408a4b96f8a94e.jpeg?odnHeight=560&odnWidth=560&odnBg=FFFFFF",
+                "isbn": 9780802129031,
+                "ratings_avg": 3.14,
+                "ratings_count": 2,
+                "reviews_count": 1,
+                "title": "The Beautiful world"
+
+            }
+        ]
+    },
+
+    "userBookInfo": [{
+        "id": 1,
+        "pages": [{
+            "id": 2,
+            "pages": [{
+                "id": 2,
+                "title": "sherwood",
+                "isbn": 555,
+                "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "book overview",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "ali",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        }],
+        "profile": [{
+                "id": 1,
+                "name": "mai",
+                "username": "mai",
+                "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+                "about": "hi",
+                "age": 20,
+                "city": "cairo",
+                "joined_at": " any date",
+                "following_count": 2,
+                "followers_count": 3,
+                "rating_count": 2.2,
+                "birthday": "any day",
+                "created_at": "1/1/1999"
+
+            },
+            {
+                "id": 2,
+                "name": "menna",
+                "username": "mai",
+                "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+                "about": "hi",
+                "age": 20,
+                "city": "cairo",
+                "joined_at": " any date",
+                "following_count": 2,
+                "followers_count": 3,
+                "rating_count": 2.2,
+                "birthday": "any day",
+                "created_at": "1/1/1999"
+
+            }, {
+                "id": 3,
+                "name": "user",
+                "username": "mai",
+                "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+                "about": "hi",
+                "age": 20,
+                "city": "cairo",
+                "joined_at": " any date",
+                "following_count": 2,
+                "followers_count": 3,
+                "rating_count": 2.2,
+                "birthday": "any day",
+                "created_at": "1/1/1999"
+
+            },
+            {
+                "id": 4,
+                "name": "salma",
+                "username": "mai",
+                "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+                "about": "hi",
+                "age": 20,
+                "city": "cairo",
+                "joined_at": " any date",
+                "following_count": 2,
+                "followers_count": 3,
+                "rating_count": 2.2,
+                "birthday": "any day",
+                "created_at": "1/1/1999"
+
+            }
+        ],
+        "userBookInfo": [{
+            "id": 1,
+            "pages": [{
+                "id": 2,
+                "pages": [{
+                    "id": 2,
+                    "title": "sherwood",
+                    "isbn": 555,
+                    "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+                    "publication_date": "2015",
+                    "publisher": "kkkll",
+                    "language": "english",
+                    "description": "book overview",
+                    "reviews_count": 55,
+                    "ratings_count": 63,
+                    "ratings_avg": 3,
+                    "author_id": 3,
+                    "author_name": "ali",
+                    "pages_no": 100,
+                    "created_at": "2010",
+                    "updated_at": "2010",
+                    "genre": "action"
+                }]
+            }],
+            "userBookInfo": [{
+                "id": 1,
+                "pages": [{
+                    "id": 1,
+                    "rating": 3.5,
+                    "shelf_name": 0,
+                    "body": "Wow! Great closure on all levels. The pace was smooth. Written well. I couldn't put it down. I just found Cinda two years ago. Since then I have plowed through everything she has written. Every book was a joy to read. Highly recommend this author!!!"
+                }]
+            }],
+            "review": [{
+                "pages": [{
+                        "id": 2,
+                        "book_id": 3,
+                        "body": "what a great book!!!",
+                        "rating": 5,
+                        "shelf_name": "read",
+                        "likes_count": 5,
+                        "comments_count": 5,
+                        "user_id": 3,
+                        "username": "salma",
+                        "userimagelink": "https://images.gr-assets.com/books/1529823092l/39320115.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "book_id": 3,
+                        "body": "5 staaarsssss",
+                        "rating": 5,
+                        "shelf_name": "read",
+                        "likes_count": 5,
+                        "comments_count": 5,
+                        "user_id": 3,
+                        "username": "waleed",
+                        "userimagelink": "https://images.gr-assets.com/books/1529823092l/39320115.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "book_id": 3,
+                        "body": "had a great time reading it",
+                        "rating": 5,
+                        "shelf_name": "read",
+                        "likes_count": 5,
+                        "comments_count": 5,
+                        "user_id": 3,
+                        "username": "nour",
+                        "userimagelink": "https://images.gr-assets.com/books/1529823092l/39320115.jpg"
+                    }
+                ]
+            }],
+            "getShelf": [{
+                    "id": 1,
+                    "ShelfName": 0
+                },
+                {
+                    "id": 2,
+                    "ShelfName": 0
+                },
+                {
+                    "id": 3,
+                    "ShelfName": 0
+                }
+            ],
+            "getBookByTitle": [{
+                    "title": "once and future",
+                    "pages": [{
+                        "title": "once and future",
+                        "id": 3,
+                        "isbn": 555,
+                        "img_url": "https://images-na.ssl-images-amazon.com/images/I/51Jb2iLFuXL._SX329_BO1,204,203,200_.jpg",
+                        "publication_date": "2015",
+                        "publisher": "kkkll",
+                        "language": "english",
+                        "description": "Robin of Locksley is dead. Maid Marian doesn’t know how she’ll go on, but the people of Locksley town, persecuted by the Sheriff of Nottingham, need a protector. And the dreadful Guy of Gisborne, the Sheriff’s right hand, wishes to step into Robin’s shoes as Lord of Locksley and Marian’s fiancé. Who is there to stop them? Marian never meant to tread in Robin’s footsteps—never intended to stand as a beacon of hope to those awaiting his triumphant return. But with a sweep of his green cloak and the flash of her sword, Marian makes the choice to become her own hero: Robin Hood.",
+                        "reviews_count": 55,
+                        "ratings_count": 63,
+                        "ratings_avg": 3,
+                        "author_id": 3,
+                        "author_name": "Meagan Spooner",
+                        "pages_no": 100,
+                        "created_at": "2010",
+                        "updated_at": "2010",
+                        "genre": "action"
+                    }]
+                },
+                {
+                    "title": "sherwood",
+                    "pages": [{
+                        "title": "sherwood",
+                        "id": 2,
+                        "isbn": 555,
+                        "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+                        "publication_date": "2015",
+                        "publisher": "kkkll",
+                        "language": "english",
+                        "description": "book overview",
+                        "reviews_count": 55,
+                        "ratings_count": 63,
+                        "ratings_avg": 3,
+                        "author_id": 3,
+                        "author_name": "ali",
+                        "pages_no": 100,
+                        "created_at": "2010",
+                        "updated_at": "2010",
+                        "genre": "action"
+                    }]
+                }
+            ]
+        }]
+    }],
+    "getShelf": [{
+            "id": 1,
+            "ShelfName": 0
+        },
+        {
+            "id": 2,
+            "ShelfName": 0
+        },
+        {
+            "id": 3,
+            "ShelfName": 0
+        }
+    ],
+
+    "accountSettings": {
+        "user": {
+            "about": null,
+            "age": 21,
+            "birthday": "1998-02-21",
+            "book_count": 0,
+            "city": "Atawwa",
+            "country": "Canada",
+            "email": "mai@yahoo.com",
+
+            "gender": "female",
+            "id": 1,
+            "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+
+            "name": "mai",
+
+            "see_my_birthday": "Everyone",
+            "see_my_city": "Everyone",
+            "see_my_country": "Everyone",
+            "small_image_link": null,
+            "username": "test",
+            "verified": 0
+        }
+    },
+    "getBookByTitle": [{
+            "title": "once and future",
+            "pages": [{
+                "id": 3,
+                "title": "once and future",
+                "isbn": 555,
+                "img_url": "https://images-na.ssl-images-amazon.com/images/I/51Jb2iLFuXL._SX329_BO1,204,203,200_.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "Robin of Locksley is dead. Maid Marian doesn’t know how she’ll go on, but the people of Locksley town, persecuted by the Sheriff of Nottingham, need a protector. And the dreadful Guy of Gisborne, the Sheriff’s right hand, wishes to step into Robin’s shoes as Lord of Locksley and Marian’s fiancé. Who is there to stop them? Marian never meant to tread in Robin’s footsteps—never intended to stand as a beacon of hope to those awaiting his triumphant return. But with a sweep of his green cloak and the flash of her sword, Marian makes the choice to become her own hero: Robin Hood.",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "Meagan Spooner",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        },
+        {
+            "title": "sherwood",
+            "pages": [{
+                "id": 2,
+                "title": "sherwood",
+                "isbn": 555,
+                "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "book overview",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "ali",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        }
+    ],
+    "getBookByAuthor": [{
+            "author_name": "Meagan Spooner",
+            "pages": [{
+                "id": 3,
+                "title": "once and future",
+                "isbn": 555,
+                "img_url": "https://images-na.ssl-images-amazon.com/images/I/51Jb2iLFuXL._SX329_BO1,204,203,200_.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "Robin of Locksley is dead. Maid Marian doesn’t know how she’ll go on, but the people of Locksley town, persecuted by the Sheriff of Nottingham, need a protector. And the dreadful Guy of Gisborne, the Sheriff’s right hand, wishes to step into Robin’s shoes as Lord of Locksley and Marian’s fiancé. Who is there to stop them? Marian never meant to tread in Robin’s footsteps—never intended to stand as a beacon of hope to those awaiting his triumphant return. But with a sweep of his green cloak and the flash of her sword, Marian makes the choice to become her own hero: Robin Hood.",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "Meagan Spooner",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        },
+        {
+            "author_name": "ali",
+            "pages": [{
+                "id": 2,
+                "title": "sherwood",
+                "isbn": 555,
+                "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "book overview",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "ali",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        }
+    ],
+    "getBookByISBN": [{
+            "isbn": 555,
+            "pages": [{
+                "id": 3,
+                "title": "once and future",
+                "isbn": 555,
+                "img_url": "https://images-na.ssl-images-amazon.com/images/I/51Jb2iLFuXL._SX329_BO1,204,203,200_.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "Robin of Locksley is dead. Maid Marian doesn’t know how she’ll go on, but the people of Locksley town, persecuted by the Sheriff of Nottingham, need a protector. And the dreadful Guy of Gisborne, the Sheriff’s right hand, wishes to step into Robin’s shoes as Lord of Locksley and Marian’s fiancé. Who is there to stop them? Marian never meant to tread in Robin’s footsteps—never intended to stand as a beacon of hope to those awaiting his triumphant return. But with a sweep of his green cloak and the flash of her sword, Marian makes the choice to become her own hero: Robin Hood.",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "Meagan Spooner",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        },
+        {
+            "isbn": 5553,
+            "pages": [{
+                "id": 2,
+                "title": "sherwood",
+                "isbn": 5553,
+                "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "book overview",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "ali",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        }
+    ],
+
+    "getBookByGenre": [{
+            "genre": "action",
+            "pages": [{
+                "id": 3,
+                "title": "once and future",
+                "isbn": 555,
+                "img_url": "https://images-na.ssl-images-amazon.com/images/I/51Jb2iLFuXL._SX329_BO1,204,203,200_.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "Robin of Locksley is dead. Maid Marian doesn’t know how she’ll go on, but the people of Locksley town, persecuted by the Sheriff of Nottingham, need a protector. And the dreadful Guy of Gisborne, the Sheriff’s right hand, wishes to step into Robin’s shoes as Lord of Locksley and Marian’s fiancé. Who is there to stop them? Marian never meant to tread in Robin’s footsteps—never intended to stand as a beacon of hope to those awaiting his triumphant return. But with a sweep of his green cloak and the flash of her sword, Marian makes the choice to become her own hero: Robin Hood.",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "Meagan Spooner",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        },
+        {
+            "genre": "action",
+            "pages": [{
+                "id": 2,
+                "title": "sherwood",
+                "isbn": 555,
+                "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+                "publication_date": "2015",
+                "publisher": "kkkll",
+                "language": "english",
+                "description": "book overview",
+                "reviews_count": 55,
+                "ratings_count": 63,
+                "ratings_avg": 3,
+                "author_id": 3,
+                "author_name": "ali",
+                "pages_no": 100,
+                "created_at": "2010",
+                "updated_at": "2010",
+                "genre": "action"
+            }]
+        }
+    ]
+
+}
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61

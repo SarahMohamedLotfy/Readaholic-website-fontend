@@ -308,8 +308,9 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="98"
-                            class="link-to-prism">src/app/following/following.component.ts:98</a></div>
+
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/following/following.component.ts:103</a></div>
                 </td>
             </tr>
 
@@ -384,10 +385,6 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Getfollowing () is a get request ti get the data of people following the main user 
-and the books they are currently reading . 
-The data i get is ( name of user , image of user  , id of user  , bookid, bookname,bookimage).</p>
-</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -836,11 +833,6 @@ export class FollowingComponent implements OnInit {
            });
           }
   }
-  /**
- * Getfollowing () is a get request ti get the data of people following the main user 
- * and the books they are currently reading . 
- * The data i get is ( name of user , image of user  , id of user  , bookid, bookname,bookimage).
- */
   Getfollowing()
   {this.myfirstservice.getfollowing().subscribe((posts:any)&#x3D;&gt;{
     this.posts &#x3D;posts.following ;

@@ -150,6 +150,15 @@ fdescribe('FollowersComponent', () => {
     expect(mockfollowerService.deletefollowingw).toHaveBeenCalledWith(5);
   })
   
+  fit(('should follow follower'), () => {
+    mockfollowerService.addFollowing.and.returnValue(of(true));
+    fixture.componentInstance.Getfollowers();
+
+    let bt= fixture.debugElement.query(By.css('button#followbutton'));
+    bt.triggerEventHandler('click',null);
+    
+    expect(mockfollowerService.addFollowing).toHaveBeenCalledWith(5);
+  })
    // Unit test for search function
 fit(' Search button clicked',fakeAsync(()=>{
   jasmine.createSpy('search').and.callThrough();

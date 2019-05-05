@@ -317,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="139"
-                            class="link-to-prism">src/app/followers/followers.component.ts:139</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/followers/followers.component.ts:131</a></div>
                 </td>
             </tr>
 
@@ -385,8 +385,13 @@
 
             <tr>
                 <td class="col-md-4">
+<<<<<<< HEAD
                     <div class="io-line">Defined in <a href="" data-line="239"
                             class="link-to-prism">src/app/followers/followers.component.ts:239</a></div>
+=======
+                    <div class="io-line">Defined in <a href="" data-line="231"
+                            class="link-to-prism">src/app/followers/followers.component.ts:231</a></div>
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61
                 </td>
             </tr>
 
@@ -457,17 +462,25 @@
 
             <tr>
                 <td class="col-md-4">
+<<<<<<< HEAD
                     <div class="io-line">Defined in <a href="" data-line="126"
                             class="link-to-prism">src/app/followers/followers.component.ts:126</a></div>
+=======
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/followers/followers.component.ts:118</a></div>
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+<<<<<<< HEAD
                     <div class="io-description"><p>Get request to get followers list and to get the profile data to get the name of the main user .
 Getfollowing () is a get request to get the data of the followers of the main user .</p>
 </div>
+=======
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -543,8 +556,13 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
+<<<<<<< HEAD
                     <div class="io-line">Defined in <a href="" data-line="225"
                             class="link-to-prism">src/app/followers/followers.component.ts:225</a></div>
+=======
+                    <div class="io-line">Defined in <a href="" data-line="217"
+                            class="link-to-prism">src/app/followers/followers.component.ts:217</a></div>
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61
                 </td>
             </tr>
 
@@ -611,8 +629,13 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
+<<<<<<< HEAD
                     <div class="io-line">Defined in <a href="" data-line="194"
                             class="link-to-prism">src/app/followers/followers.component.ts:194</a></div>
+=======
+                    <div class="io-line">Defined in <a href="" data-line="186"
+                            class="link-to-prism">src/app/followers/followers.component.ts:186</a></div>
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61
                 </td>
             </tr>
 
@@ -652,8 +675,13 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
+<<<<<<< HEAD
                     <div class="io-line">Defined in <a href="" data-line="205"
                             class="link-to-prism">src/app/followers/followers.component.ts:205</a></div>
+=======
+                    <div class="io-line">Defined in <a href="" data-line="197"
+                            class="link-to-prism">src/app/followers/followers.component.ts:197</a></div>
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61
                 </td>
             </tr>
 
@@ -1153,11 +1181,14 @@ result:number;
       });
    }
   }
+<<<<<<< HEAD
 
   /**
  * Get request to get followers list and to get the profile data to get the name of the main user .
  * Getfollowing () is a get request to get the data of the followers of the main user .
  */
+=======
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61
   Getfollowers()
   {
     this.myfirstservice.getfollowers().subscribe((posts:any)&#x3D;&gt;{
@@ -1741,7 +1772,11 @@ top:17px;
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><navbar></navbar><div *ngIf="selectedProfile">    <div id="Myprofilename">        <a [routerLink]="[\'/profile\',selectedProfile.id ]" style=" color: #00635d;">{{ selectedProfile.name }} </a><span> > Followers</span>    </div></div><p *ngIf="noFollowers() == 0" id="tagrba">    You haven\'t got any followers ,don\'t be sad..</p><div *ngIf="empty">    <h1>have no followers</h1></div><div *ngIf="!empty">    <div class="row bootstrap snippet">        <div class="col-md-6 col-xs-12 col-md-offset-3">            <div class="panel" id="followers">                <div class="panel-heading">                    <h3 class="panel-title">                    </h3>                </div>                <div class="panel-body">                    <ul class="list-group list-group-dividered list-group-full">                        <li *ngFor="let post of posts " class="list-group-item">                            <div class="media-body">                                <div class="media">                                    <div class="media-left">                                        <a [routerLink]="[\'/profile\', post.id]">                                            <img id="profilepage" src={{post.image_link}} alt="jj">                                            <i></i>                                        </a>                                    </div>                                    <div *ngIf="noFollowbutton(post.id) ==true " class="pull-right">                                        <button id="followbutton" (click)="add(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">Follow </button>                                    </div>                                    <div *ngIf="noFollowbutton(post.id) ==false " class="pull-right">                                        <button id="followbutton" (click)="delFollowing(post.id)" type="button" class="btn btn-info btn-sm waves-effect waves-light">UnFollow </button>                                    </div>                                    <div id="profilename" class="namecenter" style="clear:right" class="media-right"><a id="profilename" class="namecenter" style="clear:right" [routerLink]="[\'/profile\', post.id]">{{post.name}}</a></div>                                </div>                                                              <hr/>                            </div>                        </li>                    </ul>                </div>            </div>        </div>    </div></div></div>'
+<<<<<<< HEAD
     var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'ListLikesComponent', 'selector': 'app-list-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ReviewComponent', 'selector': 'review'},{'name': 'SearchBooksComponent', 'selector': 'app-search-books'},{'name': 'SearchPeopleComponent', 'selector': 'app-searchpeople'},{'name': 'StarComponent', 'selector': 'app-star'}];
+=======
+    var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AccountSettingsComponent', 'selector': 'app-account-settings'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'ListLikesComponent', 'selector': 'app-list-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ReviewComponent', 'selector': 'review'},{'name': 'SearchBooksComponent', 'selector': 'app-search-books'},{'name': 'SearchPeopleComponent', 'selector': 'app-searchpeople'},{'name': 'StarComponent', 'selector': 'app-star'}];
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FollowersComponent'};
 </script>

@@ -617,7 +617,7 @@ this.searchForBook();
       {
         this.service.getBookByIsbn(this.searchTerm).subscribe((books:any)&#x3D;&gt;{
           this.books &#x3D;books.pages ;
-          
+          //this.books&#x3D;books[0].pages
           console.log(this.books);
           console.log(books);
           this.review&#x3D;books[&#x27;book info for me&#x27;]

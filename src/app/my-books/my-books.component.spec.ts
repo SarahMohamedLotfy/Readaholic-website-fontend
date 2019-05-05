@@ -12,7 +12,8 @@ import {FormsModule} from '@angular/forms'
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
-import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
+import { NO_ERRORS_SCHEMA }from '@angular/core';
+
 
 
 import { DropdownComponent } from './../shared/dropdown/dropdown.component';

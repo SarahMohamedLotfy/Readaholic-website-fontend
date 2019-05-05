@@ -45,8 +45,10 @@ posts:any=[];
   }
 
    exists() {
+     if(this.posts!=null){
+
     const found = this.posts.some(el => el.have_the_like == 'Yes');
-    return found;
+    return found;}
   }
 
 /** like a review  */

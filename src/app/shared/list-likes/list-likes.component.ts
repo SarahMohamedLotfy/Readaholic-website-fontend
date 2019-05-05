@@ -22,7 +22,8 @@ export class ListLikesComponent implements OnInit {
   this.ser.getLikesList(this.resourse_id).subscribe((posts:any)=>{
     this.posts =posts.likes ;
     this.temp = posts;
-    console.log(posts);
+    console.log(posts.likes);
+    console.log(this.posts[0].username);
     }
     ,
        (err: any) => console.log(err)
@@ -35,6 +36,7 @@ export class ListLikesComponent implements OnInit {
       this.posts =posts.likes ;
       this.temp = posts;
       console.log(posts);
+      console.log(this.posts[0].username);
       }
       ,
          (err: any) => console.log(err)

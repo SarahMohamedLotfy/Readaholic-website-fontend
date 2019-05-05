@@ -92,7 +92,7 @@
                                     <div class="action" *ngIf="update.actionText != ' started following  : ' ">
                                         <b> {{update.name }}</b> {{ update.actionText }}
                                         <div class="media">
-                                            <a [routerLink]="['/book',update.book_id]"> <img id="bookUpdate" src="{{ update.image_link }}"> </a>
+                                            <a [routerLink]="['/book',update.book_id]"> <img id="bookUpdate" src="{{ update.img_url }}"> </a>
                                             <div id="bookDetails" class=" col-md-6" *ngIf="update.actionText != ' started following  : '">
                                                 <p> <a [routerLink]="['/book',update.book_id]"> {{ update. title }}</a> <br> by {{ update.author_name}} <br></p>
                                             </div>
@@ -116,7 +116,7 @@
                                 <div class="action" *ngIf="update.update_type == 0 ">
                                     <b> {{update.name }}</b> {{ update.actionText }} <small>  <app-star  [bookId]='update.book_id' [starsCount]="update.ratings_avg" [readOnly]="true" [shelf]="update.shelf"  ></app-star></small>
                                     <div class="media">
-                                        <a [routerLink]="['/book',update.book_id]"> <img id="bookUpdate" [src]='update.image_link'> </a>
+                                        <a [routerLink]="['/book',update.book_id]"> <img id="bookUpdate" [src]='update.img_url'> </a>
                                         <div id="bookDetails" class=" col-md-6">
                                             <p> <a [routerLink]="['/book',update.book_id]"> {{ update. title }}</a> <br> by {{ update.author_name}} <br></p>
                                         </div>

@@ -64,7 +64,7 @@ export class BookInfoComponent implements OnInit {
   constructor(private service: BookService, private route: ActivatedRoute, private router: Router, private shelfService: ShelfService, private sharedService: SharedService, ) {
     
     this.sharedService.currentShelf.subscribe(data => {
-      if (data.key != -1 && data.value != -1) {
+      if (data.key != -1 && data.value != -1 && this.myBook) {
         if (data.key == this.myBook.id) {
           this.reviewShelf = data.value;
           if (this.reviewShelf == 3) {

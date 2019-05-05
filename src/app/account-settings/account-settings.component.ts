@@ -93,6 +93,7 @@ verText:string;
     
     this.service.showSetting().subscribe(
       (data:any) => {
+    
         this.settings=data.user;
         this.form.value.country=this.settings.country; 
         this.form.value.city=this.settings.city;
@@ -100,7 +101,7 @@ verText:string;
         this.form.value.countryViewable=this.settings.see_my_country; 
         this.form.value.cityViewable=this.settings.see_my_city;
         this.form.value.birthViewable=this.settings.see_my_birthday; 
-        console.log(data);
+       
        this.verifys = this.settings.verified;
        if(this.verifys==0)
        {

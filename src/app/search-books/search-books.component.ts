@@ -111,7 +111,7 @@ this.searchForBook();
       {
         this.service.getBookByIsbn(this.searchTerm).subscribe((books:any)=>{
           this.books =books.pages ;
-          
+          //this.books=books[0].pages
           console.log(this.books);
           console.log(books);
           this.review=books['book info for me']

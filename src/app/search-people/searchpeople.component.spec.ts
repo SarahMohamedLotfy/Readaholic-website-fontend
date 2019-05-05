@@ -123,7 +123,55 @@ fdescribe('searc', () => {
   expect(nameSpy).toHaveBeenCalledTimes(0);
 
     });
+    mocksaerchService.getfollowers.and.returnValue(of(
+      [{
+        "id": 1,
+        "name": "Huda Yahya",
+        "image_link": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+         "country": "Asuit,Egypt"
+      },
+      {
+        "id": 2,
+        "name": "Ahmed Elsayed",
+        "image_link": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+         "country": "Aswan,11,Egypt"
+      }
+    ]
+    ));
+    fit(('should get the lenght of the array of people correctly'), () => {
+      fixture.componentInstance.searchForBook();
+      expect(fixture.componentInstance.posts.length).toEqual(1);
+    });
+   
+    fit(('should follow person  with the passed arguments'), () => {
   
+      fixture.componentInstance.searchForBook();
+      let bt= fixture.debugElement.query(By.css('button#followbutton'));
+      bt.triggerEventHandler('click',null);
+  
+      expect(mocksaerchService.addfollowing).toHaveBeenCalledWith(3,"sarah mohamed","https://images.gr-assets.com/photos/1530363365p8/3711511.jpg"
+      ,5,"great book","https://images.gr-assets.com/photos/1530363365p8/3711511.jpg","Giza,11,Egypt");
+    });
+      // Unit test for search function
+  fit((' Search button clicked'),fakeAsync(()=>{
+    jasmine.createSpy('search').and.callThrough();
+      let bt= fixture.debugElement.query(By.css('button#searchButton'));
+        bt.triggerEventHandler('click',null);
+    
+      tick(); // simulates the passage of time until all pending asynchronous activities finish
+       fixture.detectChanges();
+        expect(component.search).toHaveBeenCalled();
+    
+      }));
+    fit(('should unfollow peolpe'), () => {
+      mocksaerchService.deletefollowing.and.returnValue(of(true));
+      fixture.componentInstance.searchForBook();
+  
+      let bt= fixture.debugElement.query(By.css('button#followbutton'));
+      bt.triggerEventHandler('click',null);
+      
+      expect(mocksaerchService.deletefollowingw).toHaveBeenCalledWith(5);
+    });
 
   }));
 

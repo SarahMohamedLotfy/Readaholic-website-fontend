@@ -5,7 +5,7 @@ import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core
 import { MyBooksComponent } from './my-books.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
-
+import { Injectable, Type } from '@angular/core';
 
 import {FormsModule} from '@angular/forms'
 //import { FilterPipe }from '../filter.pipe';
@@ -44,9 +44,9 @@ fdescribe('FollowersComponent', () => {
   let fixture: ComponentFixture<MyBooksComponent>;
   let component: MyBooksComponent;
   let de: DebugElement;
-  let mockfollowerService;
+  let mockbookService;
 
-  mockfollowerService = jasmine.createSpyObj(['getmybooks','search']);
+  mockbookService = jasmine.createSpyObj(['getmybooks','search']);
   
   let el:HTMLElement;
   var originalTimeout;
@@ -67,7 +67,7 @@ fdescribe('FollowersComponent', () => {
                 ],
         providers: [
           //{ provide: SharedService, useValue: mockSharedService},
-          { provide: MyBooksComponent, useValue: mockfollowerService},
+          { provide: MyBooksComponent, useValue: mockbookService},
         ],
         schemas: [ NO_ERRORS_SCHEMA ]
         
@@ -79,7 +79,7 @@ fdescribe('FollowersComponent', () => {
     originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
        jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
     
-  mockfollowerService.getmybooks.and.returnValue(of(
+       mockbookService.getmybooks.and.returnValue(of(
     [{
       "author_id": 1,
       "author_name": "G. Willow Wilson",

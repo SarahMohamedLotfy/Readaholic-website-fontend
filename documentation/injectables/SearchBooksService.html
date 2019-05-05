@@ -475,25 +475,25 @@ url:string&#x3D;AppConstants.baseURL;
     constructor(private http:HttpClient) {}
 /**searchs for books by their title and returns them */
     getBookByTitle(title:string): Observable&lt;any&gt; {
-        //return this.http.get&lt;any&gt;(&#x27;http://localhost:3000/getBookByTitle/&#x27;+ title);
-        return this.http.get&lt;any&gt;(this.url+&#x27;/api/Books/book_title?title&#x3D;&#x27;+title);
+      // return this.http.get&lt;any&gt;(&#x27;http://localhost:3000/getBookByTitle?title&#x3D;&#x27;+ title);
+     return this.http.get&lt;any&gt;(this.url+&#x27;/api/Books/book_title?title&#x3D;&#x27;+title);
         
        }
 /**searchs for books by their genre and returns them */
        getBookByGenre(genre:string): Observable&lt;any&gt; {
-        
+       // return this.http.get&lt;any&gt;(&#x27;http://localhost:3000/getBookByGenre?genre&#x3D;&#x27;+ genre);
         return this.http.get&lt;any&gt;(this.url+&#x27;/api/books/genre?genreName&#x3D;&#x27;+genre);
         
        }
 /**searchs for books by their author name and returns them */
        getBookByAuthor(Author:string): Observable&lt;any&gt; {
-        
+       // return this.http.get&lt;any&gt;(&#x27;http://localhost:3000/getBookByAuthor?author_name&#x3D;&#x27;+ Author);
         return this.http.get&lt;any&gt;(this.url+&#x27;/api/Books/book_Authorname?Author_name&#x3D;&#x27;+Author);
         
        }
        /**searchs for books by their isbn and returns them */
        getBookByIsbn(Isbn:number): Observable&lt;any&gt; {
-        
+       // return this.http.get&lt;any&gt;(&#x27;http://localhost:3000/getBookByISBN?isbn&#x3D;&#x27;+ Isbn);
         return this.http.get&lt;any&gt;(this.url+&#x27;/api/Books/book_ISBN?ISBN&#x3D;&#x27;+Isbn);
         
        }

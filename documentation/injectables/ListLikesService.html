@@ -115,12 +115,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/list-likes/list-likes.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/list-likes/list-likes.service.ts:12</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor used to initialize httpClient object </p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -180,15 +182,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/shared/list-likes/list-likes.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/shared/list-likes/list-likes.service.ts:17</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>get comments </p>
+                    <div class="io-description"><p>get Likes list </p>
 </div>
 
                     <div class="io-description">
@@ -220,7 +222,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -261,10 +263,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/list-likes/list-likes.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/list-likes/list-likes.service.ts:12</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>url of server </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -284,12 +292,14 @@ import { AppConstants } from &#x27;src/app/classes/appconstant&#x27;;
   providedIn: &#x27;root&#x27;
 })
 export class ListLikesService {
+  /** url of server */
   url :string&#x3D;AppConstants.baseURL;
+  /** constructor used to initialize httpClient object */
   constructor(private http: HttpClient) { }
 
-  /** get comments */
-  getLikesList(id : number) {
-    return this.http.get(this.url+&#x27;/api/listLikes?id&#x3D;&#x27;+ id);
+  /** get Likes list */
+  getLikesList(id : number):Observable&lt;any&gt; {
+    return this.http.get&lt;any&gt;(this.url+&#x27;/api/listLikes?id&#x3D;&#x27;+ id);
   }
 }
 </code></pre>

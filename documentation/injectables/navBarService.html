@@ -210,8 +210,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/app/shared/navbar/navbar.service.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/shared/navbar/navbar.service.ts:97</a></div>
                 </td>
             </tr>
 
@@ -249,8 +249,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/app/shared/navbar/navbar.service.ts:79</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/shared/navbar/navbar.service.ts:89</a></div>
                 </td>
             </tr>
 
@@ -290,8 +290,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="103"
-                            class="link-to-prism">src/app/shared/navbar/navbar.service.ts:103</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/shared/navbar/navbar.service.ts:116</a></div>
                 </td>
             </tr>
 
@@ -362,14 +362,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/shared/navbar/navbar.service.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/shared/navbar/navbar.service.ts:107</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>mark_notification as read</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -583,13 +585,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/shared/navbar/navbar.service.ts:86</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/shared/navbar/navbar.service.ts:96</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>updates get requests</p>
+                        <div class="io-description"><p>notifications get requests</p>
 </div>
                     </td>
                 </tr>
@@ -647,7 +649,7 @@ import { data } from &#x27;src/app/classes/data&#x27;;
     providedIn: &#x27;root&#x27;
 })
 /**
- * Home service is responsible for http get requests od updates
+ * navbar service is responsible for notifications and logout and seaarch
  */
 export class navBarService {
     /**
@@ -669,7 +671,9 @@ export class navBarService {
     constructor(private http: HttpClient) {
 
        
-  
+  /**
+        * push notifications are get in the constructor
+        */
     
 
 
@@ -682,13 +686,22 @@ export class navBarService {
 
         console.log(this.users);
         console.log(this.id);
+        /**
+        * pass api key to pusher
+        */
         this.pusherClient &#x3D; new Pusher(&#x27;aa5ca7b55f8f7685a9cc&#x27;,{ cluster: &#x27;eu&#x27; });
+        /**
+        * pass auth. user id to channel 
+        */
 
         const channel &#x3D; this.pusherClient.subscribe(&#x27;user.&#x27;+this.id);
 
         channel.bind(
           &#x27;notify&#x27;,
           data &#x3D;&gt; {
+            /**
+        * describe the text of the alert
+        */
             this.message&#x3D;data.message;
             console.log(this.message);
             if(this.message.type &#x3D;&#x3D; 0 &amp;&amp; this.message.review_user_id &#x3D;&#x3D; this.id)
@@ -702,8 +715,7 @@ export class navBarService {
             else if(this.message.type &#x3D;&#x3D;2)
              alert(this.message.user_name+&#x27;followed you&#x27;);
            
-            //alert(this.message.user_name+);
-            //console.log(data);
+          
           }
 
         );
@@ -716,7 +728,7 @@ export class navBarService {
         return this.subject.asObservable();
       }
     /**
-     * updates get requests
+     * notifications get requests
      */
    
     url:string&#x3D;AppConstants.baseURL;
@@ -727,6 +739,9 @@ export class navBarService {
             );
         
     }
+    /**
+        * mark_notification as read
+        */
     onRead(idd:number):Observable &lt;any&gt;{
       
       console.log(&quot;any&quot;);

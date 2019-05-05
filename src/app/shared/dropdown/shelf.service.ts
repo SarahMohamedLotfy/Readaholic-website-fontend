@@ -3,13 +3,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-/**@ignore */
+/**http service used to maniplate user shelves */
 @Injectable({
   providedIn: 'root'
 })
 
 export class ShelfService {
 
+  /**
+   * constructor that takes in the passes parameters 
+   * @param http httpClient 
+   */
   constructor(private http: HttpClient) { }
   /**url */
   url: string = AppConstants.baseURL;
@@ -41,10 +45,16 @@ export class ShelfService {
 *  */
   getUserBookInfo(id: number): Observable<any> {
     return this.http.get<any>(this.url + '/api/showReviewForBookForUser?bookId=' + id);
+    //return this.http.get<any>('http://localhost:3000/userBookInfo/1');
   }
 
+  /**
+   * gets shelf id where the user stores the selected book
+   * @param id {number} id of the book
+   */
   getShelf(id: number): Observable<any> {
     return this.http.get<any>(this.url + '/api/showShelf?bookId=' + id);
+    //return this.http.get<any>('http://localhost:3000/getShelf/1');
   }
 
 }

@@ -4,8 +4,6 @@
 import { Component, Input, OnInit, Output, EventEmitter, OnChanges, AfterViewChecked, AfterViewInit, SimpleChanges } from '@angular/core';
 import { BookService } from 'src/app/book-info/book.service';
 
-import {MyBooksComponent } from 'src/app/my-books/my-books.component'
-
 import { SharedService } from 'src/app/shared.service';
 import { ShelfService } from '../dropdown/shelf.service';
 
@@ -24,6 +22,7 @@ export class StarComponent implements OnInit {
   /**detemines the state of the component whether it can be used to rate a book or display its average rate */
   @Input() readOnly: boolean;
 
+  /**@ignore */
   @Input() getRate:boolean=false;
 
   /**book shelf */
@@ -42,11 +41,16 @@ export class StarComponent implements OnInit {
   /**@ignore */
   keepRate: number;
 
-  /**@param {BookService} service the http service which the star component uses to make a rating request */
+  /**
+   * constructor that takes in the passes parameters 
+   * @param service service the http service which the star component uses to make a rating request
+   * @param sharedService a shared service to communicate between bookInfoComponent, starComponent, dropdwonComponent
+   * @param shelfService http service to get user ralted info
+   */
   constructor(private service: BookService, private sharedService: SharedService, private shelfService:ShelfService) { }
 
+  /**subscribes to the current shelf id */
   ngOnInit() {
-
     this.sharedService.currentShelf.subscribe(data => {
       if (data.key != -1 && data.value != -1) {
         if (data.key == this.bookId) {

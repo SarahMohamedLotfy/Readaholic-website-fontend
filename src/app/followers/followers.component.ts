@@ -77,11 +77,8 @@ result:number;
   ngOnInit() {
     
 
-    this.myfirstservice.getfollowers().subscribe((posts:any)=>{
-       this.posts =posts.followers ;
-       this.temp = posts;
-       console.log(posts);
-       })
+    this.Getfollowers();
+
 
        
        this.myfirstservice.getfollowing().subscribe((following:any)=>{
@@ -118,7 +115,14 @@ result:number;
       });
    }
   }
-
+  Getfollowers()
+  {
+    this.myfirstservice.getfollowers().subscribe((posts:any)=>{
+      this.posts =posts.followers ;
+      this.temp = posts;
+      console.log(posts);
+      })
+  }
   
   /**
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.

@@ -164,6 +164,38 @@ searchForBook()
     }
    
 }
+getuserbyName()
+{  const val = this.form.value;
+  if(val.searchType=="name" )
+  {
+    this.service.getuserbyName(this.searchTerm).subscribe((people:any)=>{
+      this.people =people.users ;
+      console.log(people);
+      })
+  }
+}
+getuserbyUsername()
+{
+  const val = this.form.value;
+  if(val.searchType=="Username" )
+  {
+    this.service.getuserbyUsername(this.searchTerm).subscribe((people:any)=>{
+      this.people =people.users ;
+      console.log(people);
+      })
+  }
+}
+getuserbyUsernameorName()
+{
+  const val = this.form.value;
+
+ if(val.searchType=="userORname" )
+{
+  this.service.getuserbyNameorusername(this.searchTerm).subscribe((people:any)=>{
+    this.people =people.users ;
+    console.log(people);
+    })
+}}
 /**
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */

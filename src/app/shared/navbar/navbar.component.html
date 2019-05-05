@@ -31,7 +31,7 @@
                     <span [routerLink]="['/profile',notif.data.user_id]" >{{notif.data.user_name}}</span> 
                     <span style=" font-weight:normal"  *ngIf="notif.data.type==0 && notif?.you"  [routerLink]="['/review',notif.data.review_user_id,notif.data.book_id]"> liked  your review </span>
                     <span style=" font-weight:normal"  *ngIf="notif.data.type==1 && notif?.you" [routerLink]="['/review',notif.data.review_user_id,notif.data.book_id]"> commented on your review </span>
-                    <span style=" font-weight:normal"  *ngIf="notif.data.type==2" [routerLink]="['/profile',notif.data.user_id]"> followed you </span>
+                    <span style=" font-weight:normal" id="notiftext" *ngIf="notif.data.type==2" [routerLink]="['/profile',notif.data.user_id]"> followed you </span>
                     
                     <span style=" font-weight:normal"  *ngIf="notif.data.type==0 && !(notif?.you)"   [routerLink]="['/review',notif.data.review_user_id,notif.data.book_id]"> also liked <i>{{notif.data.review_user_name}}</i> review</span>
                     <span style=" font-weight:normal"  *ngIf="notif.data.type==1 && !(notif?.you)" [routerLink]="['/review',notif.data.review_user_id,notif.data.book_id]"> also commented on<i>{{notif.data.review_user_name}}</i> review </span>

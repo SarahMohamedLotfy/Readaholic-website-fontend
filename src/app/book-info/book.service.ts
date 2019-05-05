@@ -25,7 +25,7 @@ export class BookService {
    * @returns the book of the passed id
    */
   getBook(id: number): Observable<any> {
-   // 
+   //return this.http.get<any>('http://localhost:3000/book/' + id);
 
     return this.http.get(this.url + '/api/books/show?book_id=' + id);
   }

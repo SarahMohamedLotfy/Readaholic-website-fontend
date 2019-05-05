@@ -33,7 +33,9 @@ return this.http.get(this.url+'/api/updates')
 
     );
    }
-  
+  /**
+        * function addfollowing is trigeered when user follow someone
+        */
    addFollowing (nb):Observable<any> {
   return this.http.post(this.url+'/api/follow',{"user_id" : nb});
   } 
@@ -41,6 +43,9 @@ return this.http.get(this.url+'/api/updates')
     return this.http.post(this.url+'/api/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
+  /**
+        * function is trigeered when user unfollow someone
+        */
   unfollow ( user_id:number):Observable<any> {
       
     return this.http.delete(this.url+'/api/unfollow?user_id='+ user_id);

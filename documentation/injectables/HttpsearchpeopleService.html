@@ -911,15 +911,15 @@ url:string&#x3D;AppConstants.baseURL;
   
 
 getuserbyName(username: string): Observable&lt;any&gt;{
-  return this.http.get&lt;any&gt;(this.url+&#x27;/api/search_by_name?name&#x3D;&#x27;+username);
+  return this.http.get&lt;any&gt;(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name?name&#x3D;&#x27;+username);
  
 }
 getuserbyNameorusername(username: string): Observable&lt;any&gt;{
-  return this.http.get&lt;any&gt;(this.url+&#x27;/api/search_by_name_username?name&#x3D;&#x27;+username);
+  return this.http.get&lt;any&gt;(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name_username?name&#x3D;&#x27;+username);
  
 }
 getuserbyUsername(username: string): Observable&lt;any&gt;{
-  return this.http.get&lt;any&gt;(this.url+&#x27;/api/search_by_username?username&#x3D;&#x27;+username);
+  return this.http.get&lt;any&gt;(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_username?username&#x3D;&#x27;+username);
  
 }
 /**
@@ -928,7 +928,7 @@ getuserbyUsername(username: string): Observable&lt;any&gt;{
  */
 
 getfollowers(){
-  return this.http.get(this.url+&#x27;/api/followers&#x27;);
+  return this.http.get(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/followers&#x27;);
 
    }
    
@@ -936,7 +936,7 @@ getfollowers(){
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
 addFollowing ( nb):Observable&lt;any&gt; {
-  return this.http.post(this.url+&#x27;api/follow&#x27;,{&quot;user_id&quot; : nb});
+  return this.http.post(&#x27;http://ec2-52-90-5-77.compute-1.amazonaws.com/api/follow&#x27;,{&quot;user_id&quot; : nb});
   } 
 
 /**

@@ -266,7 +266,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         
         const users: any[] &#x3D; [
            
-            { id:1,  username: &#x27;mai&#x27;, password: &#x27;mai&#x27;, image_link: &#x27;kd&#x27; }
+            { id:1,  username: &#x27;mai@yahoo.com&#x27;, password: &#x27;mai&#x27;, image_link: &#x27;kd&#x27; }
         ];
         const authHeader &#x3D; request.headers.get(&#x27;Authorization&#x27;);
         const isLoggedIn &#x3D; authHeader &amp;&amp; authHeader.startsWith(&#x27;Bearer fake-jwt-token&#x27;);

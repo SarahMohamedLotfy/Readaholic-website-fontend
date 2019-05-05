@@ -8,11 +8,13 @@ import { AppConstants } from 'src/app/classes/appconstant';
   providedIn: 'root'
 })
 export class ListLikesService {
+  /** url of server */
   url :string=AppConstants.baseURL;
+  /** constructor used to initialize httpClient object */
   constructor(private http: HttpClient) { }
 
-  /** get comments */
-  getLikesList(id : number): Observable<listLikes[]> {
-    return this.http.get<listLikes[]>(this.url+'/api/listLikes?id='+ id);
+  /** get Likes list */
+  getLikesList(id : number):Observable<any> {
+    return this.http.get<any>(this.url+'/api/listLikes?id='+ id);
   }
 }

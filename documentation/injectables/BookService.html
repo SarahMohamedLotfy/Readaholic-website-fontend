@@ -201,8 +201,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/book-info/book.service.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/book-info/book.service.ts:52</a></div>
                 </td>
             </tr>
 
@@ -326,8 +326,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/book-info/book.service.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">src/app/book-info/book.service.ts:67</a></div>
                 </td>
             </tr>
 
@@ -603,10 +603,10 @@ import { AppConstants } from &#x27;../classes/appconstant&#x27;;
 export class BookService {
 
   /**url */
-  url: string&#x3D;AppConstants.baseURL ;
- 
-/**@param {HttpClient} http to handle http requests get,post etc */
-  constructor(private http:HttpClient) { }
+  url: string &#x3D; AppConstants.baseURL;
+
+  /**@param {HttpClient} http to handle http requests get,post etc */
+  constructor(private http: HttpClient) { }
 
   /**
    * gets the selected book information by id
@@ -614,7 +614,7 @@ export class BookService {
    * @returns the book of the passed id
    */
   getBook(id: number): Observable&lt;any&gt; {
-     //return this.http.get&lt;any&gt;(&#x27;http://localhost:3000/book/3&#x27;);
+   //return this.http.get&lt;any&gt;(&#x27;http://localhost:3000/book/&#x27; + id);
 
     return this.http.get(this.url + &#x27;/api/books/show?book_id&#x3D;&#x27; + id);
   }
@@ -626,10 +626,9 @@ export class BookService {
    */
   getBookReviews(id: number): Observable&lt;any&gt; {
     //let params &#x3D; new HttpParams().set(&quot;bookId&quot;,id);
-    return this.http.get&lt;any&gt;(this.url + &#x27;/api/showReviewsForABook?bookId&#x3D;&#x27; + id);
+   return this.http.get&lt;any&gt;(this.url + &#x27;/api/showReviewsForABook?bookId&#x3D;&#x27; + id);
     // return this.http.get&lt;review[]&gt;(&quot;http://localhost:3000/review&quot;);
   }
-
 
 
   /**
@@ -647,7 +646,7 @@ export class BookService {
       return this.http.post(this.url + &#x27;/api/reviwes/create&#x27;, { bookId, shelf, body, rating });
     }
 
-    // return this.http.post(&#x27;http://localhost:3000/ReadShelf&#x27;,{bookId,shelf,body,rating});
+    // return this.http.post(&#x27;http://localhost:3000/userReview&#x27;,{bookId,shelf,body,rating});
   }
 
   /**
@@ -657,7 +656,6 @@ export class BookService {
   deleteReview(reviewId: number): Observable&lt;any&gt; {
     return this.http.delete&lt;any&gt;(this.url + &#x27;/api/reviwes/delete?reviewId&#x3D;&#x27; + reviewId);
   }
-
 
 }
 </code></pre>

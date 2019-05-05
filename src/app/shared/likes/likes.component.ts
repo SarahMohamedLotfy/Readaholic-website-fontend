@@ -10,65 +10,56 @@ import { listLikes } from 'src/app/classes/listLikes';
   styleUrls: ['./likes.component.css']
 })
 export class LikesComponent implements OnInit {
-/** flag to determine whter the like button is clicked or not */
-likeFlag = false;
-//likesList: listLikes[];
+
 /** input from parent component to get user id */
 @Input () user: number;
 /** input from parent component to get resource id */
 @Input () resourse_id: number;
 
-btnTextlike = "like";
-btnTextunlike ='unlike';
-likesList: listLikes[];
-flag : boolean ;
-count : number;
-var0=0;
-var00=0;
-var1=1;
-
+temp: any =[];
+posts:any=[];
 
 /** initiate likeservice object in the constructor to use likeservice functions */
   constructor( private likeservice: LikesService, private listLike: ListLikesService ) { }
 
   ngOnInit() {
-   this.listLike.getLikesList(this.resourse_id).subscribe(data => {
-     this.likesList = data,
-     this.flag=this.likesList.hasOwnProperty('Message');
-     console.log(this.flag),
-      console.log(data);
-    },
+   this.listLike.getLikesList(this.resourse_id).subscribe((posts:any)=>{
+    this.posts =posts.likes ;
+    this.temp = posts;
+    this.exists();
+    console.log(posts);
+    }
+    ,
        (err: any) => console.log(err)
     );
-    console.log(JSON.stringify(this.likesList));
+
 
   }
+/** function used to loop over list of likes array to get if the auth has liked the review or not to determine its state */
+   exists() {
+     if(this.posts!=null){
 
-  hereOrnot(){
-    this.flag= this.likesList.hasOwnProperty('Message');
+    const found = this.posts.some(el => el.have_the_like == 'Yes');
+    return found;}
   }
 
-/** like a review  */
+/** like or unlike a review  */
 likeOrUnlikereview(): void {
-  this.likeFlag = !this.likeFlag;
   this.likeservice.likeObject(this.user, this.resourse_id);
+
+  this.listLike.getLikesList(this.resourse_id).subscribe((posts:any)=>{
+    this.posts =posts.likes ;
+    this.temp = posts;
+    this.exists();
+    console.log(posts);
+    }
+    ,
+       (err: any) => console.log(err)
+    );
+
+
 }
-likeOrUnlikereviewstate(): void {
-  this.likeservice.likeObject(this.user, this.resourse_id);
-}
-counter0(){
-  this.var0=1
-}
-counter00(){
-  this.var00=1;
-}
-checkCount(): boolean {
-if(this.var0==0 && this.var00==0)
-return false;
-if(this.var0==1 && this.var00 == 0)
-return true;
-if(this.var0==1 && this.var00 ==1)
-return false;
-}
+
+
 
 }

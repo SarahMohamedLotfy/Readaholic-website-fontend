@@ -185,6 +185,9 @@
                                 <a href="#delFollowing">delFollowing</a>
                             </li>
                             <li>
+                                <a href="#Getfollowers">Getfollowers</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
@@ -314,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="127"
-                            class="link-to-prism">src/app/followers/followers.component.ts:127</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/followers/followers.component.ts:131</a></div>
                 </td>
             </tr>
 
@@ -382,8 +385,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="227"
-                            class="link-to-prism">src/app/followers/followers.component.ts:227</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="231"
+                            class="link-to-prism">src/app/followers/followers.component.ts:231</a></div>
                 </td>
             </tr>
 
@@ -427,6 +430,45 @@
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Getfollowers"></a>
+                    <span class="name">
+                        <b>
+                            Getfollowers
+                        </b>
+                        <a href="#Getfollowers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>Getfollowers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/followers/followers.component.ts:118</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
                     </div>
                 </td>
             </tr>
@@ -498,8 +540,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="213"
-                            class="link-to-prism">src/app/followers/followers.component.ts:213</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="217"
+                            class="link-to-prism">src/app/followers/followers.component.ts:217</a></div>
                 </td>
             </tr>
 
@@ -566,8 +608,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="182"
-                            class="link-to-prism">src/app/followers/followers.component.ts:182</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="186"
+                            class="link-to-prism">src/app/followers/followers.component.ts:186</a></div>
                 </td>
             </tr>
 
@@ -607,8 +649,8 @@ GetUserprofile get the data of the profile of main user i used it to get the nam
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="193"
-                            class="link-to-prism">src/app/followers/followers.component.ts:193</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="197"
+                            class="link-to-prism">src/app/followers/followers.component.ts:197</a></div>
                 </td>
             </tr>
 
@@ -1067,11 +1109,8 @@ result:number;
   ngOnInit() {
     
 
-    this.myfirstservice.getfollowers().subscribe((posts:any)&#x3D;&gt;{
-       this.posts &#x3D;posts.followers ;
-       this.temp &#x3D; posts;
-       console.log(posts);
-       })
+    this.Getfollowers();
+
 
        
        this.myfirstservice.getfollowing().subscribe((following:any)&#x3D;&gt;{
@@ -1108,7 +1147,14 @@ result:number;
       });
    }
   }
-
+  Getfollowers()
+  {
+    this.myfirstservice.getfollowers().subscribe((posts:any)&#x3D;&gt;{
+      this.posts &#x3D;posts.followers ;
+      this.temp &#x3D; posts;
+      console.log(posts);
+      })
+  }
   
   /**
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
@@ -1411,7 +1457,6 @@ return true;
     margin-bottom: -1px;
     border: 10px solid transparent;
   }
-  
   .namecenter {
   
     position: absolute;

@@ -212,12 +212,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:30</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor that takes in the passes parameters </p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -226,6 +228,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -240,6 +243,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>http service used to manipulate user shelves</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>sharedService</td>
@@ -252,6 +259,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>a shared service to communicate between bookInfoComponent, starComponent, dropdwonComponent</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -322,15 +333,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="107"
-                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:107</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:109</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>adds a book to the selected shelf </p>
+                    <div class="io-description"><p>adds a book to the selected shelf</p>
 </div>
 
                     <div class="io-description">
@@ -341,6 +352,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -355,6 +367,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>of the shelf to add the book to </p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -579,8 +595,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -599,6 +615,7 @@ if the user has the specified book on a certain shelf then it displayes the shel
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -613,6 +630,10 @@ if the user has the specified book on a certain shelf then it displayes the shel
                                     </td>
 
 
+                                    <td>
+                                        <p>to detect changes on the component</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -697,7 +718,7 @@ if the user has the specified book on a certain shelf then it displayes the shel
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -735,7 +756,7 @@ if the user has the specified book on a certain shelf then it displayes the shel
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -773,7 +794,7 @@ if the user has the specified book on a certain shelf then it displayes the shel
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/dropdown/dropdown.component.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -808,8 +829,6 @@ export class DropdownComponent implements OnChanges {
   /**the input book id from the parent component */
   @Input() bookId: number;
 
-
-
   /**id of the shelf */
   shelfId: number;
 
@@ -825,10 +844,17 @@ export class DropdownComponent implements OnChanges {
   /**@ignore */
   removeEnabled: boolean &#x3D; false;
 
+  /**
+   * constructor that takes in the passes parameters 
+   * @param service http service used to manipulate user shelves
+   * @param sharedService a shared service to communicate between bookInfoComponent, starComponent, dropdwonComponent
+   */
   constructor(private service: ShelfService, private sharedService: SharedService) { }
-  /** sets the displayed shelf
+
+  /**
+   *  sets the displayed shelf
    *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it&#x27;s set to its default value
-   *
+   * @param changes to detect changes on the component
    */
   ngOnChanges(changes: SimpleChanges) {
 
@@ -841,11 +867,6 @@ export class DropdownComponent implements OnChanges {
             this.buttonDisabled &#x3D; true;
             this.removeEnabled &#x3D; true;
           }
-         /* else {
-            this.shelfStatus &#x3D; this.shelves[2];
-            this.buttonDisabled &#x3D; false;
-            this.removeEnabled &#x3D; false;
-          }*/
         }
       }
     });
@@ -893,11 +914,13 @@ export class DropdownComponent implements OnChanges {
         this.buttonDisabled &#x3D; true;
         this.removeEnabled &#x3D; true;
       }
-    }, (data) &#x3D;&gt; console.log(data));
+    });
   }
 
 
-  /**adds a book to the selected shelf */
+  /**adds a book to the selected shelf
+   * @param {id} id of the shelf to add the book to 
+   */
   addBookToShelf(id: number) {
     this.service.addToShelf(id, this.bookId).subscribe((data) &#x3D;&gt; {
       this.shelfId &#x3D; id;

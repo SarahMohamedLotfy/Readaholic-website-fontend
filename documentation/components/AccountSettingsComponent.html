@@ -335,8 +335,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="217"
-                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:217</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="218"
+                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:218</a></div>
                 </td>
             </tr>
 
@@ -376,8 +376,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="231"
-                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:231</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="232"
+                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:232</a></div>
                 </td>
             </tr>
 
@@ -458,8 +458,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="121"
-                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:121</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:122</a></div>
                 </td>
             </tr>
 
@@ -526,8 +526,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="148"
-                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:148</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:149</a></div>
                 </td>
             </tr>
 
@@ -567,8 +567,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="135"
-                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:135</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:136</a></div>
                 </td>
             </tr>
 
@@ -608,8 +608,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="248"
-                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:248</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="249"
+                            class="link-to-prism">src/app/account-settings/account-settings.component.ts:249</a></div>
                 </td>
             </tr>
 
@@ -1112,6 +1112,7 @@ verText:string;
     
     this.service.showSetting().subscribe(
       (data:any) &#x3D;&gt; {
+    
         this.settings&#x3D;data.user;
         this.form.value.country&#x3D;this.settings.country; 
         this.form.value.city&#x3D;this.settings.city;
@@ -1119,7 +1120,7 @@ verText:string;
         this.form.value.countryViewable&#x3D;this.settings.see_my_country; 
         this.form.value.cityViewable&#x3D;this.settings.see_my_city;
         this.form.value.birthViewable&#x3D;this.settings.see_my_birthday; 
-        console.log(data);
+       
        this.verifys &#x3D; this.settings.verified;
        if(this.verifys&#x3D;&#x3D;0)
        {

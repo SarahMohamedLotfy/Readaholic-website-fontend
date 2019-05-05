@@ -90,16 +90,20 @@ this.searchForBook();
     this.service.getBookByAuthor(this.searchTerm).subscribe((books:any)=>{
       this.books =books.pages ;
       
-      this.books[0].author_name=this.searchTerm;
+      //this.books[0].author_name=this.searchTerm;
       console.log(this.books);
       this.review=books['book info for me']
       this.temp=this.review;
       
      if(books.pages.length==0){
        this.noBooks=true;
+     
      }
      else
+     {
      this.noBooks=false;
+     this.books[0].author_name=this.searchTerm;
+    }
 
       console.log(this.rating);
       },err=>{this.noBooks=true;})

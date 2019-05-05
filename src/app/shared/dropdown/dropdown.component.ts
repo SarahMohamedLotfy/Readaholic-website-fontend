@@ -14,8 +14,6 @@ export class DropdownComponent implements OnChanges {
   /**the input book id from the parent component */
   @Input() bookId: number;
 
-
-
   /**id of the shelf */
   shelfId: number;
 
@@ -31,10 +29,17 @@ export class DropdownComponent implements OnChanges {
   /**@ignore */
   removeEnabled: boolean = false;
 
+  /**
+   * constructor that takes in the passes parameters 
+   * @param service http service used to manipulate user shelves
+   * @param sharedService a shared service to communicate between bookInfoComponent, starComponent, dropdwonComponent
+   */
   constructor(private service: ShelfService, private sharedService: SharedService) { }
-  /** sets the displayed shelf
+
+  /**
+   *  sets the displayed shelf
    *  if the user has the specified book on a certain shelf then it displayes the shelf name other wise it's set to its default value
-   *
+   * @param changes to detect changes on the component
    */
   ngOnChanges(changes: SimpleChanges) {
 
@@ -47,11 +52,6 @@ export class DropdownComponent implements OnChanges {
             this.buttonDisabled = true;
             this.removeEnabled = true;
           }
-         /* else {
-            this.shelfStatus = this.shelves[2];
-            this.buttonDisabled = false;
-            this.removeEnabled = false;
-          }*/
         }
       }
     });
@@ -81,12 +81,10 @@ export class DropdownComponent implements OnChanges {
   /**removes a book from its shelf */
   removeBookFromShelf() {
     this.service.removeFromShelf(this.shelfId, this.bookId).subscribe((data) => {
-      console.log(data);
       this.shelfStatus = this.shelves[2];
       this.sharedService.changeShelf(this.bookId,3);
       this.buttonDisabled = false;
       this.removeEnabled = false;
-      console.log("aaaaaaaa");
     })
   }
 
@@ -95,9 +93,7 @@ export class DropdownComponent implements OnChanges {
     this.service.getShelf(this.bookId).subscribe((data) => {
       console.log(data);
       if(data.ShelfName < 3) {
-      console.log("shelfname " + data.ShelfName);
         this.shelfId = data.ShelfName;
-        console.log("iddd " + this.shelfId);
         this.shelfStatus = this.shelves[this.shelfId];
         this.sharedService.changeShelf(this.bookId, this.shelfId);
         this.buttonDisabled = true;
@@ -107,7 +103,9 @@ export class DropdownComponent implements OnChanges {
   }
 
 
-  /**adds a book to the selected shelf */
+  /**adds a book to the selected shelf
+   * @param {id} id of the shelf to add the book to 
+   */
   addBookToShelf(id: number) {
     this.service.addToShelf(id, this.bookId).subscribe((data) => {
       this.shelfId = id;
@@ -115,7 +113,6 @@ export class DropdownComponent implements OnChanges {
       this.sharedService.changeShelf(this.bookId,this.shelfId);
       this.buttonDisabled = true;
       this.removeEnabled = true;
-      console.log(data);
     })
   }
 

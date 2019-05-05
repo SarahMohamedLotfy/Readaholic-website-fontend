@@ -25,7 +25,6 @@ import { HomeComponent } from '../home/home.component';
 import { SearchBooksComponent } from '../search-books/search-books.component';
 import { ForgetPasswordComponent } from '../forget-password/forget-password.component';
 import { ProfileComponent } from '../profile/profile.component';
-import { AccountSettingsComponent } from '../account-settings/account-settings.component';
 import { FollowingComponent } from '../following/following.component';
 import { ReviewComponent } from '../review/review.component';
 import { ShelfService } from '../shared/dropdown/shelf.service';

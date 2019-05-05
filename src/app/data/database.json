@@ -46,6 +46,74 @@
         }
       ]
     }
+  ], "profile":
+  [
+    {
+      "id": 1,
+      "name": "mai",
+      "username": "mai",
+      "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+      "about": "hi",
+      "age": 20,
+      "city": "cairo",
+      "joined_at": " any date",
+      "following_count":2,
+      "followers_count":3,
+      "rating_count": 2.2,
+      "birthday":"any day",
+      "created_at":"1/1/1999"
+
+    }
+    ,
+    {
+      "id": 2,
+      "name": "menna",
+      "username": "mai",
+      "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+      "about": "hi",
+      "age": 20,
+      "city": "cairo",
+      "joined_at": " any date",
+      "following_count":2,
+      "followers_count":3,
+      "rating_count": 2.2,
+      "birthday":"any day",
+      "created_at":"1/1/1999"
+
+    },{
+      "id": 3,
+      "name": "user",
+      "username": "mai",
+      "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+      "about": "hi",
+      "age": 20,
+      "city": "cairo",
+      "joined_at": " any date",
+      "following_count":2,
+      "followers_count":3,
+      "rating_count": 2.2,
+      "birthday":"any day",
+      "created_at":"1/1/1999"
+
+    }
+    ,
+    {
+      "id": 4,
+      "name": "salma",
+      "username": "mai",
+      "image_link": "https://i.ytimg.com/vi/hm-mjjc1LoY/maxresdefault.jpg",
+      "about": "hi",
+      "age": 20,
+      "city": "cairo",
+      "joined_at": " any date",
+      "following_count":2,
+      "followers_count":3,
+      "rating_count": 2.2,
+      "birthday":"any day",
+      "created_at":"1/1/1999"
+
+    }
   ]
+
 }
 

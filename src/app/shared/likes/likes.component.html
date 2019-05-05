@@ -1,20 +1,7 @@
-
- <div class="list" *ngFor='let i of likesList | keyvalue'>
-    <ng-container *ngIf="i?.value?.length">
-      <div class="exists" *ngIf='!flag' >
-        {{counter0()}}
-  <div class="loop" *ngFor='let like of i.value'>
-        <div class="userRoute" *ngIf='like.have_the_like == "Yes" '>
-            <button  (click)="likeOrUnlikereview()" > {{flag? 'like':'unlike'}} </button>
-            {{counter00()}}
-        </div>
-      </div>
-  </div>
-</ng-container>
+<div *ngIf="exists()">
+    <button  (click)="likeOrUnlikereview()" > unlike </button>
 </div>
-<div class="anothrt" *ngIf='flag' >
-    <button (click)="likeOrUnlikereview()" > {{flag? 'like':'unlike'}} </button>
-</div>
-<div  class="anothrt" *ngIf='checkCount()' >
+<div *ngIf="!exists()">
     <button  (click)="likeOrUnlikereview()" > like </button>
 </div>
+

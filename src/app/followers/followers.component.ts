@@ -19,6 +19,9 @@ import {ProfileService} from '../profile/profile.service';
   templateUrl: './followers.component.html',
   styleUrls: ['./followers.component.scss']
 })
+/**
+ * Show the followers list and Search for the followers of the main user, You can Follow or unfollow somwone .
+ */
 export class FollowersComponent implements OnInit {
 /**
  * posts is array of the followers of the main users it contains ( name , id , image) .
@@ -115,6 +118,11 @@ result:number;
       });
    }
   }
+
+  /**
+ * Get request to get followers list and to get the profile data to get the name of the main user .
+ * Getfollowing () is a get request to get the data of the followers of the main user .
+ */
   Getfollowers()
   {
     this.myfirstservice.getfollowers().subscribe((posts:any)=>{

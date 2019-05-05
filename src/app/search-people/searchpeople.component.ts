@@ -11,7 +11,7 @@ import {followingComponent}  from '../classes/followingComponent'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
  /**
- * Connect with the fmy-books.html and my-books.css .
+ * Connect with the searchpeople.html and searchpeople.css .
  */
 @Component({
   selector: 'app-searchpeople',
@@ -19,11 +19,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./searchpeople.component.scss']
 })
 /**
- * Show the  list of books that the user have and Search for books .
+ * Show the person who i am search for.
  */
 export class SearchPeopleComponent implements OnInit {
 
- 
+ /**
+* Name of the user.
+*/
 username:string;
   /**
 * Search input text in search box .
@@ -80,11 +82,26 @@ constructor(private activatedRoute: ActivatedRoute, private service:Httpsearchpe
 
 
  }
+ /**
+* Search input text in search box .
+*/
 searchTerm:any;
-
+/**
+* Array of people who have the same name of that in the search box.
+*/
 people:any=[];
+/**
+* The search form.
+*/
 form: FormGroup;
+/**
+* Tell me if the user is auth or not
+*/
 isUser:boolean;
+
+/**
+* ngoninit to get followers and following to handle follow and unfollow button of the searched people.
+*/
 ngOnInit() {
   this.activatedRoute.queryParams .subscribe(params => {
    
@@ -107,26 +124,12 @@ ngOnInit() {
       this.service.getfollowing().subscribe((following:any)=>{
        this.following =following.following ;
        });
-
-
    this.searchForBook();
-
-   
-     /** receives id from url and send it to the get request */
-    //const id: number = +this.route.snapshot.paramMap.get('id');
-
-    /**
-    * subscribe to the data received from json file which contain the profile of the authenticated user info information
-    *
-    * and if any error occurs it prints it to the log
-*/  
-
-   
-   
-
 }
 
-
+/**
+* The search function which take the input text and search for it.
+*/
 search(){
 const val = this.form.value;
   this.router.navigate(['/searchpeople'],{queryParams:{'search':val.searchBox}});
@@ -135,7 +138,9 @@ const val = this.form.value;
 this.searchForBook();
 
 }
-
+/**
+* The search function which take the input text and search for it.
+*/
 searchForBook()
 {
   const val = this.form.value;
@@ -164,6 +169,9 @@ searchForBook()
     }
    
 }
+/**
+* Get request to get the person whose name = input of searchbox.
+*/
 getuserbyName()
 {  const val = this.form.value;
   if(val.searchType=="name" )
@@ -174,6 +182,9 @@ getuserbyName()
       })
   }
 }
+/**
+* Get request to get the person whose username = input of searchbox.
+*/
 getuserbyUsername()
 {
   const val = this.form.value;
@@ -185,6 +196,9 @@ getuserbyUsername()
       })
   }
 }
+/**
+* Get request to get the person whose name or username = input of searchbox.
+*/
 getuserbyUsernameorName()
 {
   const val = this.form.value;
@@ -196,11 +210,9 @@ getuserbyUsernameorName()
     console.log(people);
     })
 }}
-/**
- * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
+ /**
+ * delFollowing () is a post request to remove the data of certain user of this id from the followers of the main user the data is  ( name of user , image , id of user ).
  */
- 
-
 delFollowing(id:number){
   
     this.service.unfollow(id).subscribe((data)=>{
@@ -229,9 +241,6 @@ delFollowing(id:number){
   return this.count;
 }
 
-
-
-
   /**
 *Remove the follow button if the person is already in following list and make it  unfollow .
  */ 
@@ -250,7 +259,6 @@ return true;
    /**
  * addFollowing () is a post request responsible for follow button it takes the id of the user to add it in following list.
  */
- 
   add(nb) {
 
       this.service.addFollowing(nb).subscribe(
@@ -267,21 +275,10 @@ return true;
         console.log("POST Request is successful ", data);
         },
         error  => {
-        
-        console.log("Error", error);
-        
+        console.log("Error", error); 
         }
-        
         );
-    
-  
   }
-
-
-
-
-  
-  
 
 }
 

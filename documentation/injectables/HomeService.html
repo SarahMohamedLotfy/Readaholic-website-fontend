@@ -195,8 +195,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/home/home.service.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/home/home.service.ts:42</a></div>
                 </td>
             </tr>
 
@@ -270,14 +270,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/home/home.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/home/home.service.ts:39</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>function addfollowing is trigeered when user follow someone</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -379,8 +381,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/home/home.service.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/home/home.service.ts:57</a></div>
                 </td>
             </tr>
 
@@ -451,14 +453,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/home/home.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/home/home.service.ts:49</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>function is trigeered when user unfollow someone</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -578,7 +582,9 @@ return this.http.get(this.url+&#x27;/api/updates&#x27;)
 
     );
    }
-  
+  /**
+        * function addfollowing is trigeered when user follow someone
+        */
    addFollowing (nb):Observable&lt;any&gt; {
   return this.http.post(this.url+&#x27;/api/follow&#x27;,{&quot;user_id&quot; : nb});
   } 
@@ -586,6 +592,9 @@ return this.http.get(this.url+&#x27;/api/updates&#x27;)
     return this.http.post(this.url+&#x27;/api/shelf/add_book&#x27;,{&quot;shelf_id&quot;: shelf,
     &quot;book_id&quot;: book_id});
   }
+  /**
+        * function is trigeered when user unfollow someone
+        */
   unfollow ( user_id:number):Observable&lt;any&gt; {
       
     return this.http.delete(this.url+&#x27;/api/unfollow?user_id&#x3D;&#x27;+ user_id);

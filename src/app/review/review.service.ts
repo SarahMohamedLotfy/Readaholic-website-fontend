@@ -6,12 +6,10 @@ import { catchError, retry } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root'
 })
-/**
- * Home service is responsible for http get requests od updates
- */
+
 export class ReviewService {
     /**
-     * we pass an object of httpclient to the constuctor
+     * review service is responsiblle for get requests of review page
      */
     constructor(private http: HttpClient) { }
    url:string=AppConstants.baseURL;

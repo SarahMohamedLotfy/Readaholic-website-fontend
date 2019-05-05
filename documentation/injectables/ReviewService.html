@@ -119,13 +119,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/review/review.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/review/review.service.ts:10</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>we pass an object of httpclient to the constuctor</p>
+                            <div class="io-description"><p>review service is responsiblle for get requests of review page</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -186,8 +186,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/review/review.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/review/review.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -270,8 +270,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/review/review.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/review/review.service.ts:25</a></div>
                 </td>
             </tr>
 
@@ -351,7 +351,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/review/review.service.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/review/review.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -372,12 +372,10 @@ import { catchError, retry } from &#x27;rxjs/operators&#x27;;
 @Injectable({
     providedIn: &#x27;root&#x27;
 })
-/**
- * Home service is responsible for http get requests od updates
- */
+
 export class ReviewService {
     /**
-     * we pass an object of httpclient to the constuctor
+     * review service is responsiblle for get requests of review page
      */
     constructor(private http: HttpClient) { }
    url:string&#x3D;AppConstants.baseURL;

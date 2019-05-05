@@ -26,7 +26,6 @@ import { HomeComponent } from '../home/home.component';
 import { SearchBooksComponent } from '../search-books/search-books.component';
 import { ForgetPasswordComponent } from '../forget-password/forget-password.component';
 import { ProfileComponent } from '../profile/profile.component';
-import { AccountSettingsComponent } from '../account-settings/account-settings.component';
 import { FollowingComponent } from '../following/following.component';
 import { SearchPeopleComponent } from '../search-people/searchpeople.component';
 import { MyBooksComponent } from '../my-books/my-books.component';
@@ -151,6 +150,15 @@ fdescribe('FollowersComponent', () => {
     expect(mockfollowerService.deletefollowingw).toHaveBeenCalledWith(5);
   })
   
+  fit(('should follow follower'), () => {
+    mockfollowerService.addFollowing.and.returnValue(of(true));
+    fixture.componentInstance.Getfollowers();
+
+    let bt= fixture.debugElement.query(By.css('button#followbutton'));
+    bt.triggerEventHandler('click',null);
+    
+    expect(mockfollowerService.addFollowing).toHaveBeenCalledWith(5);
+  })
    // Unit test for search function
 fit(' Search button clicked',fakeAsync(()=>{
   jasmine.createSpy('search').and.callThrough();
@@ -162,6 +170,23 @@ fit(' Search button clicked',fakeAsync(()=>{
       expect(component.search).toHaveBeenCalled();
   
   }));
+
+
+
+  
+//Unit test for deletefollowing function check if the count of following peole decrease ?
+  it('should be able to decrement the count (-1)', () => {
+    component.delFollowing(7);
+    expect(component.count).toEqual(5);
+  });
+  // Unit test for addfollowing function check if the count of following peole decrease ?
+
+  it('should be able to increment the count (+1)', () => {
+
+    component.add(7);
+    expect(component.count).toEqual(6);
+  });
+
   }));
 
 

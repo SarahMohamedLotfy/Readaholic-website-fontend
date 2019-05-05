@@ -1,4 +1,190 @@
 {
+<<<<<<< HEAD
+  "book": [
+    {
+      "pages": [
+        {
+          "id": 3,
+          "title": "once and future",
+          "isbn": 555,
+          "img_url": "https://images-na.ssl-images-amazon.com/images/I/51Jb2iLFuXL._SX329_BO1,204,203,200_.jpg",
+          "publication_date": "2015",
+          "publisher": "kkkll",
+          "language": "english",
+          "description": "Robin of Locksley is dead. Maid Marian doesn’t know how she’ll go on, but the people of Locksley town, persecuted by the Sheriff of Nottingham, need a protector. And the dreadful Guy of Gisborne, the Sheriff’s right hand, wishes to step into Robin’s shoes as Lord of Locksley and Marian’s fiancé. Who is there to stop them? Marian never meant to tread in Robin’s footsteps—never intended to stand as a beacon of hope to those awaiting his triumphant return. But with a sweep of his green cloak and the flash of her sword, Marian makes the choice to become her own hero: Robin Hood.",
+          "reviews_count": 55,
+          "ratings_count": 63,
+          "ratings_avg": 3,
+          "author_id": 3,
+          "author_name": "Meagan Spooner",
+          "pages_no": 100,
+          "created_at": "2010",
+          "updated_at": "2010",
+          "genre": "action"
+        }
+      ]
+    },
+    {
+      "pages": [
+        {
+          "id": 2,
+          "title": "sherwood",
+          "isbn": 555,
+          "img_url": "https://kbimages1-a.akamaihd.net/6954f4cc-6e4e-46e3-8bc2-81b93f57a723/353/569/90/False/sherwood-7.jpg",
+          "publication_date": "2015",
+          "publisher": "kkkll",
+          "language": "english",
+          "description": "book overview",
+          "reviews_count": 55,
+          "ratings_count": 63,
+          "ratings_avg": 3,
+          "author_id": 3,
+          "author_name": "ali",
+          "pages_no": 100,
+          "created_at": "2010",
+          "updated_at": "2010",
+          "genre": "action"
+        }
+      ]
+    }
+  ],
+  "shelf":[
+  {
+    "pages":
+  [{
+    "author_id": 1,
+    "author_name": "G. Willow Wilson",
+    "book_id": 1,
+    "created_at": "2019-05-04 21:53:31",
+    "id": 1,
+    "img_url": "https://i5.walmartimages.com/asr/8bae6257-b3ed-43ba-b5d4-c55b6479697f_1.c6a36804e0a9cbfd0e408a4b96f8a94e.jpeg?odnHeight=560&odnWidth=560&odnBg=FFFFFF",
+    "isbn": 9780802129031,
+    "ratings_avg": 3.14,
+    "ratings_count": 80,
+    "reviews_count": 80,
+    "title":"The Bird King"
+
+  },
+  {
+    "author_id": 2,
+    "author_name": "Sarah Wilson",
+    "book_id": 3,
+    "created_at": "2019-05-04 21:53:31",
+    "id": 3,
+    "img_url": "https://i5.walmartimages.com/asr/8bae6257-b3ed-43ba-b5d4-c55b6479697f_1.c6a36804e0a9cbfd0e408a4b96f8a94e.jpeg?odnHeight=560&odnWidth=560&odnBg=FFFFFF",
+    "isbn": 9780802129031,
+    "ratings_avg": 3.14,
+    "ratings_count": 2,
+    "reviews_count": 1,
+    "title":"The Beautiful world"
+
+  }
+]}
+],
+"following": [
+  {
+    "id": 1,
+    "name": "Huda Yahya",
+    "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+    "bookid": 1,
+    "bookname": "To Kill a Kingdom ",
+    "bookimage": "https://images.gr-assets.com/books/1524322945l/34499221.jpg",
+    "country": "Asuit,Egypt"
+  },
+  {
+    "id": 2,
+    "name": "Ahmed Elsayed",
+    "image_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+    "bookid": 45,
+    "bookname": "The Coldest Girl in Coldtown",
+    "bookimage": "https://images.gr-assets.com/books/1367312471l/12813630.jpg",
+    "country": "Aswan,11,Egypt"
+  },
+  {
+    "id": 3,
+    "name": "Mohamed Hayalla",
+    "image_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+    "bookid": 144,
+    "bookname": "A Gathering of Shadows",
+    "bookimage": "https://images.gr-assets.com/books/1429627728l/20764879.jpg",
+    "country": "Cairo,11,Egypt"
+  },
+  {
+    "id": 4,
+    "name": "Walid Hassan",
+    "image_url": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
+    "bookid": 2,
+    "bookname": "Stormcaster-Shattered Realms",
+    "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
+    "country": "Giza,11,Egypt"
+  },
+  {
+    "id": 6,
+    "name": "Eslam Ahmed",
+    "image_url": "https://images.gr-assets.com/photos/1551961617p8/3783093.jpg",
+    "bookid": 5,
+    "bookname": "شاى بالنعناع ",
+    "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309610934i/11922284._SX120_.jpg",
+    "country": "Aswan,11,Egypt"
+  }
+],
+"followers": [
+  {
+    "id": 1,
+    "name": "Huda Yahya",
+    "image_url": "https://images.gr-assets.com/photos/1530363365p8/3711511.jpg",
+    "bookid": 3,
+    "bookname": "اخر ايام الارض ",
+    "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1471448936i/31544463._SX120_.jpg",
+    "country": "Asuit,Egypt"
+  },
+  {
+    "id": 2,
+    "name": "Ahmed Elsayed",
+    "image_url": "https://images.gr-assets.com/photos/1523534805p8/3689876.jpg",
+    "bookid": 8,
+    "bookname": "Deathcaster - Shattered Realms",
+    "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529823092i/39320115._SY180_.jpg",
+    "country": "Aswan,11,Egypt"
+  },
+  {
+    "id": 3,
+    "name": "Mohamed Hayalla",
+    "image_url": "https://images.gr-assets.com/authors/1551668618p5/5010669.jpg",
+    "bookid": 7,
+    "bookname": "A Tale of Two Cities",
+    "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310124698i/9847899._SY180_.jpg",
+    "country": "Cairo,11,Egypt"
+  },
+  {
+    "id": 4,
+    "name": "Walid Hassan",
+    "image_url": "https://images.gr-assets.com/users/1503461635p8/70530862.jpg",
+    "bookid": 2,
+    "bookname": "Stormcaster-Shattered Realms",
+    "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500578312i/33816845._SY180_.jpg",
+    "country": "Giza,11,Egypt"
+  },
+  {
+    "id": 5,
+    "name": "Kamal Shaker",
+    "image_url": "https://images.gr-assets.com/photos/1517756015p8/3669409.jpg",
+    "bookid": 6,
+    "bookname": "حكاية الاسم الجيديد",
+    "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377934260i/18400361._SX120_.jpg",
+    "country": "Suez,Egypt"
+  },
+  {
+    "id": 6,
+    "name": "Eslam Ahmed",
+    "image_url": "https://images.gr-assets.com/photos/1551961617p8/3783093.jpg",
+    "bookid": 5,
+    "bookname": "شاى بالنعناع ",
+    "bookimage": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309610934i/11922284._SX120_.jpg",
+    "country": "Aswan,11,Egypt"
+  }
+]}
+=======
 
     "book": [{
             "id": 3,
@@ -518,3 +704,4 @@
     ]
 
 }
+>>>>>>> c2d4be4dfd533755f1bc65bc965a616263339c61

@@ -5,29 +5,41 @@ import { catchError, retry } from 'rxjs/operators';
 import { AppConstants } from './../classes/appconstant';
 
 
-/**Handles http requests related to the boks of the user*/
+/**Handles http requests related to the search for people.*/
 
 @Injectable({
   providedIn: 'root'
 })
+/**Handles http requests related to the search for people.*/
+
 export class HttpsearchpeopleService {
-/**
- * Constructor for httpmyBooks service . 
+
+  /**
+ * url of the database. 
  
 */
 url:string=AppConstants.baseURL;
+/**
+ * Constructor for httpsearchpeople service . 
+*/
   constructor(private http:HttpClient) { }
-
-  
-
+/**
+* Get request to get the person whose name = input of searchbox.
+*/
 getuserbyName(username: string): Observable<any>{
   return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name?name='+username);
  
 }
+/**
+* Get request to get the person whose name or username = input of searchbox.
+*/
 getuserbyNameorusername(username: string): Observable<any>{
   return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_name_username?name='+username);
  
 }
+/**
+* Get request to get the person whose username = input of searchbox.
+*/
 getuserbyUsername(username: string): Observable<any>{
   return this.http.get<any>('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/search_by_username?username='+username);
  

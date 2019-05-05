@@ -320,8 +320,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="238"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:238</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="262"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:262</a></div>
                 </td>
             </tr>
 
@@ -402,8 +402,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="154"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:154</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:178</a></div>
                 </td>
             </tr>
 
@@ -443,8 +443,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="111"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:111</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:135</a></div>
                 </td>
             </tr>
 
@@ -484,8 +484,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="206"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:206</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="230"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:230</a></div>
                 </td>
             </tr>
 
@@ -525,8 +525,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="230"
-                            class="link-to-prism">src/app/log-in/log-in.component.ts:230</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="254"
+                            class="link-to-prism">src/app/log-in/log-in.component.ts:254</a></div>
                 </td>
             </tr>
 
@@ -1057,13 +1057,37 @@ export class LogInComponent implements OnInit {
    if(localStorage.getItem(&#x27;token&#x27;)!&#x3D;null)
     this.router.navigateByUrl(&#x27;/home&#x27;);
 
-    this.service.getBookByGenre(&#x27;action&#x27;).subscribe((books:any)&#x3D;&gt;{
+    this.service.getBookByGenre(&#x27;young adult&#x27;).subscribe((books:any)&#x3D;&gt;{
       this.books &#x3D;books.pages ;
      
       console.log(this.books);
     
     
-      },err&#x3D;&gt;{})
+      },err&#x3D;&gt;{
+
+        this.service.getBookByGenre(&#x27;action&#x27;).subscribe((books:any)&#x3D;&gt;{
+          this.books &#x3D;books.pages ;
+         
+          console.log(this.books);
+        
+        
+          },err&#x3D;&gt;{
+            this.service.getBookByTitle(&#x27;sherwood&#x27;).subscribe((books:any)&#x3D;&gt;{
+              this.books &#x3D;books.pages ;
+             
+              console.log(this.books);
+            
+            
+              },err&#x3D;&gt;{
+        
+                
+              })
+    
+            
+          })
+
+
+      })
     
   }
   /**On clicking the login button it sends the email and password entered in the login form to the server and checks the response if they&#x27;re valid it redirects them to the home page and stores  the token and the user information recieved from the service if not it shows an error message  */
@@ -1310,7 +1334,256 @@ ngOnChanges(): void{
                         *country must be at least 3 characters long.
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;col-sm-10&quot;&gt;
-                        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Country&quot; formControlName&#x3D;&quot;country&quot; required&gt;
+
+                        &lt;select id&#x3D;&quot;country&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Country&quot; formControlName&#x3D;&quot;country&quot; required&gt;
+                                &lt;option value&#x3D;&quot;&quot; hidden&gt;Country&lt;/option&gt; 
+                            &lt;option value&#x3D;&quot;Afganistan&quot;&gt;Afghanistan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Albania&quot;&gt;Albania&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Algeria&quot;&gt;Algeria&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;American Samoa&quot;&gt;American Samoa&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Andorra&quot;&gt;Andorra&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Angola&quot;&gt;Angola&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Anguilla&quot;&gt;Anguilla&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Antigua &amp; Barbuda&quot;&gt;Antigua &amp; Barbuda&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Argentina&quot;&gt;Argentina&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Armenia&quot;&gt;Armenia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Aruba&quot;&gt;Aruba&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Australia&quot;&gt;Australia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Austria&quot;&gt;Austria&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Azerbaijan&quot;&gt;Azerbaijan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bahamas&quot;&gt;Bahamas&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bahrain&quot;&gt;Bahrain&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bangladesh&quot;&gt;Bangladesh&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Barbados&quot;&gt;Barbados&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Belarus&quot;&gt;Belarus&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Belgium&quot;&gt;Belgium&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Belize&quot;&gt;Belize&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Benin&quot;&gt;Benin&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bermuda&quot;&gt;Bermuda&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bhutan&quot;&gt;Bhutan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bolivia&quot;&gt;Bolivia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bonaire&quot;&gt;Bonaire&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bosnia &amp; Herzegovina&quot;&gt;Bosnia &amp; Herzegovina&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Botswana&quot;&gt;Botswana&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Brazil&quot;&gt;Brazil&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;British Indian Ocean Ter&quot;&gt;British Indian Ocean Ter&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Brunei&quot;&gt;Brunei&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Bulgaria&quot;&gt;Bulgaria&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Burkina Faso&quot;&gt;Burkina Faso&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Burundi&quot;&gt;Burundi&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cambodia&quot;&gt;Cambodia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cameroon&quot;&gt;Cameroon&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Canada&quot;&gt;Canada&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Canary Islands&quot;&gt;Canary Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cape Verde&quot;&gt;Cape Verde&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cayman Islands&quot;&gt;Cayman Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Central African Republic&quot;&gt;Central African Republic&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Chad&quot;&gt;Chad&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Channel Islands&quot;&gt;Channel Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Chile&quot;&gt;Chile&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;China&quot;&gt;China&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Christmas Island&quot;&gt;Christmas Island&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cocos Island&quot;&gt;Cocos Island&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Colombia&quot;&gt;Colombia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Comoros&quot;&gt;Comoros&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Congo&quot;&gt;Congo&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cook Islands&quot;&gt;Cook Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Costa Rica&quot;&gt;Costa Rica&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cote DIvoire&quot;&gt;Cote DIvoire&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Croatia&quot;&gt;Croatia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cuba&quot;&gt;Cuba&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Curaco&quot;&gt;Curacao&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Cyprus&quot;&gt;Cyprus&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Czech Republic&quot;&gt;Czech Republic&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Denmark&quot;&gt;Denmark&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Djibouti&quot;&gt;Djibouti&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Dominica&quot;&gt;Dominica&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Dominican Republic&quot;&gt;Dominican Republic&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;East Timor&quot;&gt;East Timor&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Ecuador&quot;&gt;Ecuador&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Egypt&quot; &gt;Egypt&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;El Salvador&quot;&gt;El Salvador&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Equatorial Guinea&quot;&gt;Equatorial Guinea&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Eritrea&quot;&gt;Eritrea&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Estonia&quot;&gt;Estonia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Ethiopia&quot;&gt;Ethiopia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Falkland Islands&quot;&gt;Falkland Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Faroe Islands&quot;&gt;Faroe Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Fiji&quot;&gt;Fiji&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Finland&quot;&gt;Finland&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;France&quot;&gt;France&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;French Guiana&quot;&gt;French Guiana&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;French Polynesia&quot;&gt;French Polynesia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;French Southern Ter&quot;&gt;French Southern Ter&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Gabon&quot;&gt;Gabon&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Gambia&quot;&gt;Gambia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Georgia&quot;&gt;Georgia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Germany&quot;&gt;Germany&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Ghana&quot;&gt;Ghana&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Gibraltar&quot;&gt;Gibraltar&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Great Britain&quot;&gt;Great Britain&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Greece&quot;&gt;Greece&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Greenland&quot;&gt;Greenland&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Grenada&quot;&gt;Grenada&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Guadeloupe&quot;&gt;Guadeloupe&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Guam&quot;&gt;Guam&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Guatemala&quot;&gt;Guatemala&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Guinea&quot;&gt;Guinea&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Guyana&quot;&gt;Guyana&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Haiti&quot;&gt;Haiti&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Hawaii&quot;&gt;Hawaii&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Honduras&quot;&gt;Honduras&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Hong Kong&quot;&gt;Hong Kong&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Hungary&quot;&gt;Hungary&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Iceland&quot;&gt;Iceland&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Indonesia&quot;&gt;Indonesia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;India&quot;&gt;India&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Iran&quot;&gt;Iran&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Iraq&quot;&gt;Iraq&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Ireland&quot;&gt;Ireland&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Isle of Man&quot;&gt;Isle of Man&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Israel&quot;&gt;Israel&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Italy&quot;&gt;Italy&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Jamaica&quot;&gt;Jamaica&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Japan&quot;&gt;Japan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Jordan&quot;&gt;Jordan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Kazakhstan&quot;&gt;Kazakhstan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Kenya&quot;&gt;Kenya&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Kiribati&quot;&gt;Kiribati&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Korea North&quot;&gt;Korea North&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Korea Sout&quot;&gt;Korea South&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Kuwait&quot;&gt;Kuwait&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Kyrgyzstan&quot;&gt;Kyrgyzstan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Laos&quot;&gt;Laos&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Latvia&quot;&gt;Latvia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Lebanon&quot;&gt;Lebanon&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Lesotho&quot;&gt;Lesotho&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Liberia&quot;&gt;Liberia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Libya&quot;&gt;Libya&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Liechtenstein&quot;&gt;Liechtenstein&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Lithuania&quot;&gt;Lithuania&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Luxembourg&quot;&gt;Luxembourg&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Macau&quot;&gt;Macau&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Macedonia&quot;&gt;Macedonia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Madagascar&quot;&gt;Madagascar&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Malaysia&quot;&gt;Malaysia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Malawi&quot;&gt;Malawi&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Maldives&quot;&gt;Maldives&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Mali&quot;&gt;Mali&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Malta&quot;&gt;Malta&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Marshall Islands&quot;&gt;Marshall Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Martinique&quot;&gt;Martinique&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Mauritania&quot;&gt;Mauritania&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Mauritius&quot;&gt;Mauritius&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Mayotte&quot;&gt;Mayotte&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Mexico&quot;&gt;Mexico&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Midway Islands&quot;&gt;Midway Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Moldova&quot;&gt;Moldova&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Monaco&quot;&gt;Monaco&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Mongolia&quot;&gt;Mongolia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Montserrat&quot;&gt;Montserrat&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Morocco&quot;&gt;Morocco&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Mozambique&quot;&gt;Mozambique&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Myanmar&quot;&gt;Myanmar&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Nambia&quot;&gt;Nambia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Nauru&quot;&gt;Nauru&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Nepal&quot;&gt;Nepal&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Netherland Antilles&quot;&gt;Netherland Antilles&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Netherlands&quot;&gt;Netherlands (Holland, Europe)&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Nevis&quot;&gt;Nevis&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;New Caledonia&quot;&gt;New Caledonia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;New Zealand&quot;&gt;New Zealand&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Nicaragua&quot;&gt;Nicaragua&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Niger&quot;&gt;Niger&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Nigeria&quot;&gt;Nigeria&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Niue&quot;&gt;Niue&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Norfolk Island&quot;&gt;Norfolk Island&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Norway&quot;&gt;Norway&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Oman&quot;&gt;Oman&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Pakistan&quot;&gt;Pakistan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Palau Island&quot;&gt;Palau Island&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Palestine&quot;&gt;Palestine&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Panama&quot;&gt;Panama&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Papua New Guinea&quot;&gt;Papua New Guinea&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Paraguay&quot;&gt;Paraguay&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Peru&quot;&gt;Peru&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Phillipines&quot;&gt;Philippines&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Pitcairn Island&quot;&gt;Pitcairn Island&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Poland&quot;&gt;Poland&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Portugal&quot;&gt;Portugal&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Puerto Rico&quot;&gt;Puerto Rico&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Qatar&quot;&gt;Qatar&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Republic of Montenegro&quot;&gt;Republic of Montenegro&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Republic of Serbia&quot;&gt;Republic of Serbia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Reunion&quot;&gt;Reunion&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Romania&quot;&gt;Romania&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Russia&quot;&gt;Russia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Rwanda&quot;&gt;Rwanda&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;St Barthelemy&quot;&gt;St Barthelemy&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;St Eustatius&quot;&gt;St Eustatius&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;St Helena&quot;&gt;St Helena&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;St Kitts-Nevis&quot;&gt;St Kitts-Nevis&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;St Lucia&quot;&gt;St Lucia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;St Maarten&quot;&gt;St Maarten&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;St Pierre &amp; Miquelon&quot;&gt;St Pierre &amp; Miquelon&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;St Vincent &amp; Grenadines&quot;&gt;St Vincent &amp; Grenadines&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Saipan&quot;&gt;Saipan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Samoa&quot;&gt;Samoa&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Samoa American&quot;&gt;Samoa American&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;San Marino&quot;&gt;San Marino&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Sao Tome &amp; Principe&quot;&gt;Sao Tome &amp; Principe&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Saudi Arabia&quot;&gt;Saudi Arabia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Senegal&quot;&gt;Senegal&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Seychelles&quot;&gt;Seychelles&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Sierra Leone&quot;&gt;Sierra Leone&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Singapore&quot;&gt;Singapore&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Slovakia&quot;&gt;Slovakia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Slovenia&quot;&gt;Slovenia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Solomon Islands&quot;&gt;Solomon Islands&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Somalia&quot;&gt;Somalia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;South Africa&quot;&gt;South Africa&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Spain&quot;&gt;Spain&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Sri Lanka&quot;&gt;Sri Lanka&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Sudan&quot;&gt;Sudan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Suriname&quot;&gt;Suriname&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Swaziland&quot;&gt;Swaziland&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Sweden&quot;&gt;Sweden&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Switzerland&quot;&gt;Switzerland&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Syria&quot;&gt;Syria&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Tahiti&quot;&gt;Tahiti&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Taiwan&quot;&gt;Taiwan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Tajikistan&quot;&gt;Tajikistan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Tanzania&quot;&gt;Tanzania&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Thailand&quot;&gt;Thailand&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Togo&quot;&gt;Togo&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Tokelau&quot;&gt;Tokelau&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Tonga&quot;&gt;Tonga&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Trinidad &amp; Tobago&quot;&gt;Trinidad &amp; Tobago&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Tunisia&quot;&gt;Tunisia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Turkey&quot;&gt;Turkey&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Turkmenistan&quot;&gt;Turkmenistan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Turks &amp; Caicos Is&quot;&gt;Turks &amp; Caicos Is&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Tuvalu&quot;&gt;Tuvalu&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Uganda&quot;&gt;Uganda&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;United Kingdom&quot;&gt;United Kingdom&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Ukraine&quot;&gt;Ukraine&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;United Arab Erimates&quot;&gt;United Arab Emirates&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;United States of America&quot;&gt;United States of America&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Uraguay&quot;&gt;Uruguay&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Uzbekistan&quot;&gt;Uzbekistan&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Vanuatu&quot;&gt;Vanuatu&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Vatican City State&quot;&gt;Vatican City State&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Venezuela&quot;&gt;Venezuela&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Vietnam&quot;&gt;Vietnam&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Virgin Islands (Brit)&quot;&gt;Virgin Islands (Brit)&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Virgin Islands (USA)&quot;&gt;Virgin Islands (USA)&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Wake Island&quot;&gt;Wake Island&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Wallis &amp; Futana Is&quot;&gt;Wallis &amp; Futana Is&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Yemen&quot;&gt;Yemen&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Zaire&quot;&gt;Zaire&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Zambia&quot;&gt;Zambia&lt;/option&gt;
+                            &lt;option value&#x3D;&quot;Zimbabwe&quot;&gt;Zimbabwe&lt;/option&gt;
+                         &lt;/select&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
                 &lt;div class&#x3D;&quot;form-group row&quot;&gt;
@@ -1578,7 +1851,7 @@ ngOnChanges(): void{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div id="main">    <div class="row" id="head">        <div class="col-md-6" id="title">            <h1 id="Read">Readholic</h1>        </div>        <div class="col-md-6" id="signIn">            <form class="form-inline " [formGroup]="form" id="signInForm">                <div class="row" style=" width: 635px;height: 38px;  min-width: 635px;">                    <div class="col-md-5" style="    width: 40%; ">                        <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email" id=\'error\' style="width: 208.4px">                        <p *ngIf=wrongPass style="color:crimson">{{error}}</p>                    </div>                    <div class="col-md-5" style="    width: 40%; ">                        <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password" style="width: 208.4px">                        <button style="    padding: 0; border: none;background: none; " data-toggle="modal" data-target="#myModalDelete" type="button" id="forgotButton">Forgot password?</button>                    </div>                    <button id="signInButton" class="btn btn-primary" type="submit" style="background-color:	#8B4513; width:73.86px; height: 100%  " (click)="onSubmit()">Sign in</button>                </div>            </form>        </div>    </div>    <div class="row" id="signUp">        <div class="col-md-7" id="nextBook">            <img src="assets/book.png" id="nextBookImg" />        </div>        <div class="col-md-5" id="signUpForm">            <br>            <h4>New here? Create a free account!</h4>            <br>            <h6 *ngIf=signUpError style="color:crimson" id=\'errorUp\'>{{errorUp}}</h6>            <form [formGroup]="formUp">                <div class="form-group row">                    <div *ngIf="name.invalid&&(name.dirty||name.touched)" id=\'error\' style="color: red">                        *name must be at least 3 characters long.                    </div>                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="Name" formControlName="name" required>                    </div>                </div>                <div class="form-group row">                    <div *ngIf="email.invalid&&(email.dirty||email.touched)" style="color: red">                        *email must be a valid email.                    </div>                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="Email Address" formControlName="email" required>                    </div>                </div>                <div class="form-group row">                    <div *ngIf="password.invalid&&(password.dirty||password.touched)" style="color: red">                        *password must be at least 5 characters long.                    </div>                    <div class="col-sm-10">                        <input type="password" class="form-control" placeholder="Password" formControlName="password" required>                    </div>                </div>                <div class="form-group row">                    <div *ngIf="password_confirmation.invalid&&(password_confirmation.dirty||password_confirmation.touched)" style="color: red">                        *password must be at least 5 characters long.                    </div>                    <div class="col-sm-10">                        <input type="password" class="form-control" placeholder="Confirm password" formControlName="password_confirmation" required>                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <div *ngIf="gender.invalid&&(gender.dirty||gender.touched)" style="color: red">                            *must select a gender                        </div>                        <label>Gender: </label>                        <label class="radio-inline" style="margin-left: 1%; margin-right: 3%;">                                <input type="radio" value="Male" name="gender" formControlName="gender" required >Male                            </label>                        <label class="radio-inline">                                    <input type="radio" value="Female" name="gender" formControlName="gender" required >Female                                </label>                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <input type="date" class="form-control" formControlName="birthday">                    </div>                </div>                <div class="form-group row">                    <div *ngIf="country.invalid&&(country.dirty||country.touched)" style="color: red">                        *country must be at least 3 characters long.                    </div>                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="Country" formControlName="country" required>                    </div>                </div>                <div class="form-group row">                    <div *ngIf="city.invalid&&(city.dirty||city.touched)" style="color: red">                        *city must be at least 3 characters long.                    </div>                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="City" formControlName="city" required>                    </div>                </div>                <button id="signUpButton" type="submit" class="btn btn-primary" style="background-color:	#8B4513" (click)="onSigUp()">Sign up</button>            </form>        </div>    </div>    <div id="suggestions">        <div class="mainContent">            <div class="mainContentFloat">                <div class="leftContainer">                    <div id="pointLeft">                        <h1 style="font-size: 18px; font-weight: normal">Deciding what to read next? </h1>                        <p class="writing">                            You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll tell you all about them.                        </p>                    </div>                    <div id="pointRight">                        <h1 style="font-size: 18px; font-weight: normal">What are your friends reading?</h1>                        <p class="writing">                            Chances are your friends are discussing their favorite (and least favorite) books on Goodreads. </p>                    </div>                    <div id="browseBox">                        <h1 style="font-size: 24px; font-weight: normal;    margin-top: 20px; ">Search and Browse books </h1>                        <div class="input-group md-form form-sm form-2 pl-0" style="    margin-top: 30px; width: 50%; margin-bottom: 30px;">                            <input class="form-control my-0 py-1 red-border" type="text" [(ngModel)]=\'searchTerm\' placeholder="Search by Title" aria-label="Search">                            <div class="input-group-append">                                <button class="input-group-text red lighten-3" id="basic-text1 " (click)="search()"><i class="fas fa-search text-grey " aria-hidden="true "></i></button>                            </div>                        </div>                    </div>                    <div id="discoveryBox">                        <h1 style="font-size: 20px; font-weight: normal;padding-left: 20px; ">What will you discover? </h1>                        <div id="booksBox">                            <div style=" float: left;margin-left: 100px; ">                                <p>You will discover new and exciting books such as...</p>                                <div class="row ">                                    <div *ngFor="let book of books " class="column ">                                        <a [routerLink]="[ \'/book\',book.id] ">                                            <img src={{book.img_url}} style=" float: left;height: 120px; margin: 0 20px 0 0;width: 80px; ">                                        </a>                                    </div>                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </div>    <div class="modal fade" id="myModalDelete" role="dialog ">        <div class="modal-dialog ">            <!-- Modal content-->            <div class="modal-content ">                <div class="modal-header " style="margin-left: 10%; ">                    <h4 class="modal-title ">Reset your Password </h4>                    <button type="button " class="close " data-dismiss="modal">&times;</button>                </div>                <h6 *ngIf=resetError style="color:crimson;margin-left: 50px;">{{resetText}}</h6>                <h6 *ngIf=resetSuc style="color:black;margin-left: 50px;">{{resetMes}}</h6>                <form [formGroup]="formReset" style="margin-left: 10%; ">                    <label id="formLabels"> Email Address </label>                    <div class="form-group row ">                        <div class="col-sm-10 ">                            <input type="text " class="form-control " placeholder="Email" formControlName="email">                        </div>                    </div>                </form>                <div class="modal-footer ">                    <button type="button " class="btn btn-default " style="margin-right: 45%; " data-dismiss="modal " (click)="reset() " id="resetButton"> Reset Password</button>                </div>            </div>        </div>    </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div id="main">    <div class="row" id="head">        <div class="col-md-6" id="title">            <h1 id="Read">Readholic</h1>        </div>        <div class="col-md-6" id="signIn">            <form class="form-inline " [formGroup]="form" id="signInForm">                <div class="row" style=" width: 635px;height: 38px;  min-width: 635px;">                    <div class="col-md-5" style="    width: 40%; ">                        <input class="form-control mr-sm-2" type="text" placeholder="Email" formControlName="email" id=\'error\' style="width: 208.4px">                        <p *ngIf=wrongPass style="color:crimson">{{error}}</p>                    </div>                    <div class="col-md-5" style="    width: 40%; ">                        <input class="form-control mr-sm-2" type="password" placeholder="password" formControlName="password" style="width: 208.4px">                        <button style="    padding: 0; border: none;background: none; " data-toggle="modal" data-target="#myModalDelete" type="button" id="forgotButton">Forgot password?</button>                    </div>                    <button id="signInButton" class="btn btn-primary" type="submit" style="background-color:	#8B4513; width:73.86px; height: 100%  " (click)="onSubmit()">Sign in</button>                </div>            </form>        </div>    </div>    <div class="row" id="signUp">        <div class="col-md-7" id="nextBook">            <img src="assets/book.png" id="nextBookImg" />        </div>        <div class="col-md-5" id="signUpForm">            <br>            <h4>New here? Create a free account!</h4>            <br>            <h6 *ngIf=signUpError style="color:crimson" id=\'errorUp\'>{{errorUp}}</h6>            <form [formGroup]="formUp">                <div class="form-group row">                    <div *ngIf="name.invalid&&(name.dirty||name.touched)" id=\'error\' style="color: red">                        *name must be at least 3 characters long.                    </div>                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="Name" formControlName="name" required>                    </div>                </div>                <div class="form-group row">                    <div *ngIf="email.invalid&&(email.dirty||email.touched)" style="color: red">                        *email must be a valid email.                    </div>                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="Email Address" formControlName="email" required>                    </div>                </div>                <div class="form-group row">                    <div *ngIf="password.invalid&&(password.dirty||password.touched)" style="color: red">                        *password must be at least 5 characters long.                    </div>                    <div class="col-sm-10">                        <input type="password" class="form-control" placeholder="Password" formControlName="password" required>                    </div>                </div>                <div class="form-group row">                    <div *ngIf="password_confirmation.invalid&&(password_confirmation.dirty||password_confirmation.touched)" style="color: red">                        *password must be at least 5 characters long.                    </div>                    <div class="col-sm-10">                        <input type="password" class="form-control" placeholder="Confirm password" formControlName="password_confirmation" required>                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <div *ngIf="gender.invalid&&(gender.dirty||gender.touched)" style="color: red">                            *must select a gender                        </div>                        <label>Gender: </label>                        <label class="radio-inline" style="margin-left: 1%; margin-right: 3%;">                                <input type="radio" value="Male" name="gender" formControlName="gender" required >Male                            </label>                        <label class="radio-inline">                                    <input type="radio" value="Female" name="gender" formControlName="gender" required >Female                                </label>                    </div>                </div>                <div class="form-group row">                    <div class="col-sm-10">                        <input type="date" class="form-control" formControlName="birthday">                    </div>                </div>                <div class="form-group row">                    <div *ngIf="country.invalid&&(country.dirty||country.touched)" style="color: red">                        *country must be at least 3 characters long.                    </div>                    <div class="col-sm-10">                        <select id="country" class="form-control" placeholder="Country" formControlName="country" required>                                <option value="" hidden>Country</option>                             <option value="Afganistan">Afghanistan</option>                            <option value="Albania">Albania</option>                            <option value="Algeria">Algeria</option>                            <option value="American Samoa">American Samoa</option>                            <option value="Andorra">Andorra</option>                            <option value="Angola">Angola</option>                            <option value="Anguilla">Anguilla</option>                            <option value="Antigua & Barbuda">Antigua & Barbuda</option>                            <option value="Argentina">Argentina</option>                            <option value="Armenia">Armenia</option>                            <option value="Aruba">Aruba</option>                            <option value="Australia">Australia</option>                            <option value="Austria">Austria</option>                            <option value="Azerbaijan">Azerbaijan</option>                            <option value="Bahamas">Bahamas</option>                            <option value="Bahrain">Bahrain</option>                            <option value="Bangladesh">Bangladesh</option>                            <option value="Barbados">Barbados</option>                            <option value="Belarus">Belarus</option>                            <option value="Belgium">Belgium</option>                            <option value="Belize">Belize</option>                            <option value="Benin">Benin</option>                            <option value="Bermuda">Bermuda</option>                            <option value="Bhutan">Bhutan</option>                            <option value="Bolivia">Bolivia</option>                            <option value="Bonaire">Bonaire</option>                            <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>                            <option value="Botswana">Botswana</option>                            <option value="Brazil">Brazil</option>                            <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>                            <option value="Brunei">Brunei</option>                            <option value="Bulgaria">Bulgaria</option>                            <option value="Burkina Faso">Burkina Faso</option>                            <option value="Burundi">Burundi</option>                            <option value="Cambodia">Cambodia</option>                            <option value="Cameroon">Cameroon</option>                            <option value="Canada">Canada</option>                            <option value="Canary Islands">Canary Islands</option>                            <option value="Cape Verde">Cape Verde</option>                            <option value="Cayman Islands">Cayman Islands</option>                            <option value="Central African Republic">Central African Republic</option>                            <option value="Chad">Chad</option>                            <option value="Channel Islands">Channel Islands</option>                            <option value="Chile">Chile</option>                            <option value="China">China</option>                            <option value="Christmas Island">Christmas Island</option>                            <option value="Cocos Island">Cocos Island</option>                            <option value="Colombia">Colombia</option>                            <option value="Comoros">Comoros</option>                            <option value="Congo">Congo</option>                            <option value="Cook Islands">Cook Islands</option>                            <option value="Costa Rica">Costa Rica</option>                            <option value="Cote DIvoire">Cote DIvoire</option>                            <option value="Croatia">Croatia</option>                            <option value="Cuba">Cuba</option>                            <option value="Curaco">Curacao</option>                            <option value="Cyprus">Cyprus</option>                            <option value="Czech Republic">Czech Republic</option>                            <option value="Denmark">Denmark</option>                            <option value="Djibouti">Djibouti</option>                            <option value="Dominica">Dominica</option>                            <option value="Dominican Republic">Dominican Republic</option>                            <option value="East Timor">East Timor</option>                            <option value="Ecuador">Ecuador</option>                            <option value="Egypt" >Egypt</option>                            <option value="El Salvador">El Salvador</option>                            <option value="Equatorial Guinea">Equatorial Guinea</option>                            <option value="Eritrea">Eritrea</option>                            <option value="Estonia">Estonia</option>                            <option value="Ethiopia">Ethiopia</option>                            <option value="Falkland Islands">Falkland Islands</option>                            <option value="Faroe Islands">Faroe Islands</option>                            <option value="Fiji">Fiji</option>                            <option value="Finland">Finland</option>                            <option value="France">France</option>                            <option value="French Guiana">French Guiana</option>                            <option value="French Polynesia">French Polynesia</option>                            <option value="French Southern Ter">French Southern Ter</option>                            <option value="Gabon">Gabon</option>                            <option value="Gambia">Gambia</option>                            <option value="Georgia">Georgia</option>                            <option value="Germany">Germany</option>                            <option value="Ghana">Ghana</option>                            <option value="Gibraltar">Gibraltar</option>                            <option value="Great Britain">Great Britain</option>                            <option value="Greece">Greece</option>                            <option value="Greenland">Greenland</option>                            <option value="Grenada">Grenada</option>                            <option value="Guadeloupe">Guadeloupe</option>                            <option value="Guam">Guam</option>                            <option value="Guatemala">Guatemala</option>                            <option value="Guinea">Guinea</option>                            <option value="Guyana">Guyana</option>                            <option value="Haiti">Haiti</option>                            <option value="Hawaii">Hawaii</option>                            <option value="Honduras">Honduras</option>                            <option value="Hong Kong">Hong Kong</option>                            <option value="Hungary">Hungary</option>                            <option value="Iceland">Iceland</option>                            <option value="Indonesia">Indonesia</option>                            <option value="India">India</option>                            <option value="Iran">Iran</option>                            <option value="Iraq">Iraq</option>                            <option value="Ireland">Ireland</option>                            <option value="Isle of Man">Isle of Man</option>                            <option value="Israel">Israel</option>                            <option value="Italy">Italy</option>                            <option value="Jamaica">Jamaica</option>                            <option value="Japan">Japan</option>                            <option value="Jordan">Jordan</option>                            <option value="Kazakhstan">Kazakhstan</option>                            <option value="Kenya">Kenya</option>                            <option value="Kiribati">Kiribati</option>                            <option value="Korea North">Korea North</option>                            <option value="Korea Sout">Korea South</option>                            <option value="Kuwait">Kuwait</option>                            <option value="Kyrgyzstan">Kyrgyzstan</option>                            <option value="Laos">Laos</option>                            <option value="Latvia">Latvia</option>                            <option value="Lebanon">Lebanon</option>                            <option value="Lesotho">Lesotho</option>                            <option value="Liberia">Liberia</option>                            <option value="Libya">Libya</option>                            <option value="Liechtenstein">Liechtenstein</option>                            <option value="Lithuania">Lithuania</option>                            <option value="Luxembourg">Luxembourg</option>                            <option value="Macau">Macau</option>                            <option value="Macedonia">Macedonia</option>                            <option value="Madagascar">Madagascar</option>                            <option value="Malaysia">Malaysia</option>                            <option value="Malawi">Malawi</option>                            <option value="Maldives">Maldives</option>                            <option value="Mali">Mali</option>                            <option value="Malta">Malta</option>                            <option value="Marshall Islands">Marshall Islands</option>                            <option value="Martinique">Martinique</option>                            <option value="Mauritania">Mauritania</option>                            <option value="Mauritius">Mauritius</option>                            <option value="Mayotte">Mayotte</option>                            <option value="Mexico">Mexico</option>                            <option value="Midway Islands">Midway Islands</option>                            <option value="Moldova">Moldova</option>                            <option value="Monaco">Monaco</option>                            <option value="Mongolia">Mongolia</option>                            <option value="Montserrat">Montserrat</option>                            <option value="Morocco">Morocco</option>                            <option value="Mozambique">Mozambique</option>                            <option value="Myanmar">Myanmar</option>                            <option value="Nambia">Nambia</option>                            <option value="Nauru">Nauru</option>                            <option value="Nepal">Nepal</option>                            <option value="Netherland Antilles">Netherland Antilles</option>                            <option value="Netherlands">Netherlands (Holland, Europe)</option>                            <option value="Nevis">Nevis</option>                            <option value="New Caledonia">New Caledonia</option>                            <option value="New Zealand">New Zealand</option>                            <option value="Nicaragua">Nicaragua</option>                            <option value="Niger">Niger</option>                            <option value="Nigeria">Nigeria</option>                            <option value="Niue">Niue</option>                            <option value="Norfolk Island">Norfolk Island</option>                            <option value="Norway">Norway</option>                            <option value="Oman">Oman</option>                            <option value="Pakistan">Pakistan</option>                            <option value="Palau Island">Palau Island</option>                            <option value="Palestine">Palestine</option>                            <option value="Panama">Panama</option>                            <option value="Papua New Guinea">Papua New Guinea</option>                            <option value="Paraguay">Paraguay</option>                            <option value="Peru">Peru</option>                            <option value="Phillipines">Philippines</option>                            <option value="Pitcairn Island">Pitcairn Island</option>                            <option value="Poland">Poland</option>                            <option value="Portugal">Portugal</option>                            <option value="Puerto Rico">Puerto Rico</option>                            <option value="Qatar">Qatar</option>                            <option value="Republic of Montenegro">Republic of Montenegro</option>                            <option value="Republic of Serbia">Republic of Serbia</option>                            <option value="Reunion">Reunion</option>                            <option value="Romania">Romania</option>                            <option value="Russia">Russia</option>                            <option value="Rwanda">Rwanda</option>                            <option value="St Barthelemy">St Barthelemy</option>                            <option value="St Eustatius">St Eustatius</option>                            <option value="St Helena">St Helena</option>                            <option value="St Kitts-Nevis">St Kitts-Nevis</option>                            <option value="St Lucia">St Lucia</option>                            <option value="St Maarten">St Maarten</option>                            <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>                            <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>                            <option value="Saipan">Saipan</option>                            <option value="Samoa">Samoa</option>                            <option value="Samoa American">Samoa American</option>                            <option value="San Marino">San Marino</option>                            <option value="Sao Tome & Principe">Sao Tome & Principe</option>                            <option value="Saudi Arabia">Saudi Arabia</option>                            <option value="Senegal">Senegal</option>                            <option value="Seychelles">Seychelles</option>                            <option value="Sierra Leone">Sierra Leone</option>                            <option value="Singapore">Singapore</option>                            <option value="Slovakia">Slovakia</option>                            <option value="Slovenia">Slovenia</option>                            <option value="Solomon Islands">Solomon Islands</option>                            <option value="Somalia">Somalia</option>                            <option value="South Africa">South Africa</option>                            <option value="Spain">Spain</option>                            <option value="Sri Lanka">Sri Lanka</option>                            <option value="Sudan">Sudan</option>                            <option value="Suriname">Suriname</option>                            <option value="Swaziland">Swaziland</option>                            <option value="Sweden">Sweden</option>                            <option value="Switzerland">Switzerland</option>                            <option value="Syria">Syria</option>                            <option value="Tahiti">Tahiti</option>                            <option value="Taiwan">Taiwan</option>                            <option value="Tajikistan">Tajikistan</option>                            <option value="Tanzania">Tanzania</option>                            <option value="Thailand">Thailand</option>                            <option value="Togo">Togo</option>                            <option value="Tokelau">Tokelau</option>                            <option value="Tonga">Tonga</option>                            <option value="Trinidad & Tobago">Trinidad & Tobago</option>                            <option value="Tunisia">Tunisia</option>                            <option value="Turkey">Turkey</option>                            <option value="Turkmenistan">Turkmenistan</option>                            <option value="Turks & Caicos Is">Turks & Caicos Is</option>                            <option value="Tuvalu">Tuvalu</option>                            <option value="Uganda">Uganda</option>                            <option value="United Kingdom">United Kingdom</option>                            <option value="Ukraine">Ukraine</option>                            <option value="United Arab Erimates">United Arab Emirates</option>                            <option value="United States of America">United States of America</option>                            <option value="Uraguay">Uruguay</option>                            <option value="Uzbekistan">Uzbekistan</option>                            <option value="Vanuatu">Vanuatu</option>                            <option value="Vatican City State">Vatican City State</option>                            <option value="Venezuela">Venezuela</option>                            <option value="Vietnam">Vietnam</option>                            <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>                            <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>                            <option value="Wake Island">Wake Island</option>                            <option value="Wallis & Futana Is">Wallis & Futana Is</option>                            <option value="Yemen">Yemen</option>                            <option value="Zaire">Zaire</option>                            <option value="Zambia">Zambia</option>                            <option value="Zimbabwe">Zimbabwe</option>                         </select>                    </div>                </div>                <div class="form-group row">                    <div *ngIf="city.invalid&&(city.dirty||city.touched)" style="color: red">                        *city must be at least 3 characters long.                    </div>                    <div class="col-sm-10">                        <input type="text" class="form-control" placeholder="City" formControlName="city" required>                    </div>                </div>                <button id="signUpButton" type="submit" class="btn btn-primary" style="background-color:	#8B4513" (click)="onSigUp()">Sign up</button>            </form>        </div>    </div>    <div id="suggestions">        <div class="mainContent">            <div class="mainContentFloat">                <div class="leftContainer">                    <div id="pointLeft">                        <h1 style="font-size: 18px; font-weight: normal">Deciding what to read next? </h1>                        <p class="writing">                            You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll tell you all about them.                        </p>                    </div>                    <div id="pointRight">                        <h1 style="font-size: 18px; font-weight: normal">What are your friends reading?</h1>                        <p class="writing">                            Chances are your friends are discussing their favorite (and least favorite) books on Goodreads. </p>                    </div>                    <div id="browseBox">                        <h1 style="font-size: 24px; font-weight: normal;    margin-top: 20px; ">Search and Browse books </h1>                        <div class="input-group md-form form-sm form-2 pl-0" style="    margin-top: 30px; width: 50%; margin-bottom: 30px;">                            <input class="form-control my-0 py-1 red-border" type="text" [(ngModel)]=\'searchTerm\' placeholder="Search by Title" aria-label="Search">                            <div class="input-group-append">                                <button class="input-group-text red lighten-3" id="basic-text1 " (click)="search()"><i class="fas fa-search text-grey " aria-hidden="true "></i></button>                            </div>                        </div>                    </div>                    <div id="discoveryBox">                        <h1 style="font-size: 20px; font-weight: normal;padding-left: 20px; ">What will you discover? </h1>                        <div id="booksBox">                            <div style=" float: left;margin-left: 100px; ">                                <p>You will discover new and exciting books such as...</p>                                <div class="row ">                                    <div *ngFor="let book of books " class="column ">                                        <a [routerLink]="[ \'/book\',book.id] ">                                            <img src={{book.img_url}} style=" float: left;height: 120px; margin: 0 20px 0 0;width: 80px; ">                                        </a>                                    </div>                                </div>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </div>    <div class="modal fade" id="myModalDelete" role="dialog ">        <div class="modal-dialog ">            <!-- Modal content-->            <div class="modal-content ">                <div class="modal-header " style="margin-left: 10%; ">                    <h4 class="modal-title ">Reset your Password </h4>                    <button type="button " class="close " data-dismiss="modal">&times;</button>                </div>                <h6 *ngIf=resetError style="color:crimson;margin-left: 50px;">{{resetText}}</h6>                <h6 *ngIf=resetSuc style="color:black;margin-left: 50px;">{{resetMes}}</h6>                <form [formGroup]="formReset" style="margin-left: 10%; ">                    <label id="formLabels"> Email Address </label>                    <div class="form-group row ">                        <div class="col-sm-10 ">                            <input type="text " class="form-control " placeholder="Email" formControlName="email">                        </div>                    </div>                </form>                <div class="modal-footer ">                    <button type="button " class="btn btn-default " style="margin-right: 45%; " data-dismiss="modal " (click)="reset() " id="resetButton"> Reset Password</button>                </div>            </div>        </div>    </div></div>'
     var COMPONENTS = [{'name': 'AboutusComponent', 'selector': 'app-aboutus'},{'name': 'AccountSettingsComponent', 'selector': 'app-account-settings'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BookInfoComponent', 'selector': 'app-book-info'},{'name': 'CommentsComponent', 'selector': 'app-comments'},{'name': 'DropdownComponent', 'selector': 'app-dropdown'},{'name': 'FollowersComponent', 'selector': 'app-followers'},{'name': 'FollowingComponent', 'selector': 'app-following'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LikesComponent', 'selector': 'app-likes'},{'name': 'ListLikesComponent', 'selector': 'app-list-likes'},{'name': 'LogInComponent', 'selector': 'app-log-in'},{'name': 'MyBooksComponent', 'selector': 'app-my-books'},{'name': 'NavbarComponent', 'selector': 'navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-404NotFound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ReviewComponent', 'selector': 'review'},{'name': 'SearchBooksComponent', 'selector': 'app-search-books'},{'name': 'SearchPeopleComponent', 'selector': 'app-searchpeople'},{'name': 'StarComponent', 'selector': 'app-star'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LogInComponent'};

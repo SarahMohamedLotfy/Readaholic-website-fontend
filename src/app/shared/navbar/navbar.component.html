@@ -15,6 +15,7 @@
                 <i class="fa fa-bell">
                 <span class="badge badge-primary">{{notifsnb}}</span>
               </i>
+<<<<<<< HEAD
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,6 +42,30 @@
                 </ul>
 
 
+=======
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown"    >
+         <a class="menu-title pull-right" ><i class="glyphicon glyphicon-circle-arrow-right"></i></a> 
+        
+            <ul *ngFor="let notif of notifs  ">
+            <div class="notification-wrapper" id="notif"   >
+    
+                <a class="notification-image">
+                    <img src="{{notif.data.user_image_link}}"  width="30" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfvb-YYfF7E0hankmBEq2CUssoaKEds3amiuHbsMo9yDOlLXkl" >
+                </a>
+                <a class="notification-text" (click)="onReadd(notif?.n_id)" [ngStyle]="{'background-color':notif.read === 1 ? 'green' : 'white' }" >
+                    
+                    <span [routerLink]="['/profile',notif.data.user_id]" >{{notif.data.user_name}}</span> 
+                    <span style=" font-weight:normal"  *ngIf="notif.data.type==0 && notif?.you"  [routerLink]="['/review',notif.data.review_user_id,notif.data.book_id]"> liked  your review </span>
+                    <span style=" font-weight:normal"  *ngIf="notif.data.type==1 && notif?.you" [routerLink]="['/review',notif.data.review_user_id,notif.data.book_id]"> commented on your review </span>
+                    <span style=" font-weight:normal" id="notiftext" *ngIf="notif.data.type==2" [routerLink]="['/profile',notif.data.user_id]"> followed you </span>
+                    
+                    <span style=" font-weight:normal"  *ngIf="notif.data.type==0 && !(notif?.you)"   [routerLink]="['/review',notif.data.review_user_id,notif.data.book_id]"> also liked <i>{{notif.data.review_user_name}}</i> review</span>
+                    <span style=" font-weight:normal"  *ngIf="notif.data.type==1 && !(notif?.you)" [routerLink]="['/review',notif.data.review_user_id,notif.data.book_id]"> also commented on<i>{{notif.data.review_user_name}}</i> review </span>
+                   
+                </a>
+>>>>>>> dcef8e516d5628b4bbe3e65f6265af8db0d716a4
             </div>
         </li>
 

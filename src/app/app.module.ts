@@ -90,7 +90,9 @@ import { SharedService } from './shared.service';
 
       useClass: AuthInterceptor,
       multi: true
-    }, SharedService],
+    }, SharedService
+    //,fakeBackendProvider
+  ],
 
   bootstrap: [AppComponent]
 })

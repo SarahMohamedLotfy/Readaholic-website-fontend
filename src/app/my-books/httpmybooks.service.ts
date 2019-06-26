@@ -14,7 +14,7 @@ import { nbind } from 'q';
 export class HttpmybooksService {
   /**Handles h
  *url of the database.*/
-  urll: string = 'http://ec2-52-90-5-77.compute-1.amazonaws.com';
+  urll: string = 'http://ec2-34-205-32-73.compute-1.amazonaws.com/app';
 /**
  * Constructor for httpmyBooks service . 
  
@@ -34,27 +34,27 @@ getMybooks(){
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , avgrating , date o publication , date read).
  */
 getMyshelfbooks( shelf_name:number){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?shelf_name='+shelf_name);
+  return this.http.get('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/shelf?shelf_name='+shelf_name);
 }
 /**
  *gethisshelfbooks() is a get request to get the data of the books of certain shelf of the not auth user he read and currently reading an to read  
  * The data i get is ( name of book , image of book  , id of book  ,ratiing of book , avgrating , date o publication , date read).
  */
 gethisshelfbooks( shelf_name:number,user_id:number){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/shelf?user_id='+user_id
+  return this.http.get('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/shelf?user_id='+user_id
   +'&&shelf_name='+shelf_name);
 }
 /**
      * Get the profile information i used it to get the  name of the user.
      * */
     getUserprofile(id: number): Observable<any> {
-      return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile/'+ id );
+      return this.http.get<any> ('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/showProfile/'+ id );
     }
      /**
      * Get the profile information i used it to get the  name of the user.
      * */
     getAuthUserprofile(): Observable<any> {
-      return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile');
+      return this.http.get<any> ('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/showProfile');
     }
   
 

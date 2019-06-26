@@ -19,50 +19,50 @@ import { catchError, retry } from 'rxjs/operators';
 /**request to show current settings of user */
     showSetting(): Observable<any> {
     //  return this.http.get<any>('http://localhost:3000/accountSettings' );
-        return this.http.get<any>(this.url+'/api/showsetting');
+        return this.http.get<any>('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/showsetting');
         
        }
       /**request to change country of user */
        changeCountry(country:string): Observable<any> {
         
-        return this.http.get<any>(this.url+'/api/changecountry?newCountry='+country);
+        return this.http.get<any>('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/changecountry?newCountry='+country);
         
        }
     /**request to change city of user */
        changeCity(city:string): Observable<any> {
         
-        return this.http.get<any>(this.url+'/api/changecity?newCity='+city);
+        return this.http.get<any>('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/changecity?newCity='+city);
         
        }
        /**request to change birthday of user */
        changeBirthday(birthday:Date): Observable<any> {
         
-        return this.http.get<any>(this.url+'/api/changebirthday?newBirthday='+birthday);
+        return this.http.get<any>('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/changebirthday?newBirthday='+birthday);
         
        }
 /**request to show who can view my country  */
        changeCountryView(country:string): Observable<any> {
         
-        return this.http.get<any>(this.url+'/api/whocanseemycountry?seeMyCountry='+country);
+        return this.http.get<any>('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/whocanseemycountry?seeMyCountry='+country);
         
        }
 
        /**request to show who can view my city */
        changeCityView(city:string): Observable<any> {
         
-        return this.http.get<any>(this.url+'/api/whocanseemycity?seeMyCity='+city);
+        return this.http.get<any>('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/whocanseemycity?seeMyCity='+city);
         
        }
        /**request to show who can see my birthday */
        changeBirthView(birthday:string): Observable<any> {
         
-        return this.http.get<any>(this.url+'/api/whocanseemybirthday?seeMyBirthday='+birthday);
+        return this.http.get<any>('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/whocanseemybirthday?seeMyBirthday='+birthday);
         
        }
        /**request to change pass */
       changePassword(password:string,newPassword:string,newPassword_confirmation:string): Observable<any>
  {
-   return this.http.post(this.url+'/api/changepassword',{password,newPassword,newPassword_confirmation}) ;
+   return this.http.post('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/changepassword',{password,newPassword,newPassword_confirmation}) ;
  }
 /**request to upload new image */
  changeImage(image:File): Observable<any>
@@ -72,19 +72,19 @@ import { catchError, retry } from 'rxjs/operators';
      formData.append('image', image,image.name);
      
 console.log(formData);
-   return this.http.post(this.url+'/api/changeimage',formData) ;
+   return this.http.post('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/changeimage',formData) ;
  }
 
  /**request to change name of user */
  changeName(newName:string): Observable<any> {
         
-    return this.http.get<any>(this.url+'/api/changename?newName='+newName);
+    return this.http.get<any>('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/changename?newName='+newName);
     
    }
 /**request to delete account */
    delete(password:string): Observable<any>
  {
-   return this.http.post(this.url+'/api/delete',{password}) ;
+   return this.http.post('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/delete',{password}) ;
  }
 
 

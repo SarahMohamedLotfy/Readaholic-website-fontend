@@ -27,7 +27,7 @@ export class HttpFollowinggService {
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
 getnotauthfollowing(id:number){
-  return this.http.get(this.url+'/api/following?id='+ id);
+  return this.http.get('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/following?id='+ id);
 
 }
 /**
@@ -36,7 +36,7 @@ getnotauthfollowing(id:number){
  * The data i get is ( name of user , image of user  , id of user  , bookid,image of the book).
  */
 getfollowing(){
-  return this.http.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/following');
+  return this.http.get('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/following');
 
 }
   /**
@@ -45,7 +45,7 @@ getfollowing(){
     
     unfollow ( user_id:number):Observable<any> {
       
-      return this.http.delete('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/unfollow?user_id='+ user_id);
+      return this.http.delete('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/unfollow?user_id='+ user_id);
     }
     
 
@@ -53,13 +53,13 @@ getfollowing(){
      * Get the profile information i used it to get the  name of the user.
      * */
     getUserprofile(id: number): Observable<any> {
-      return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile/'+ id );
+      return this.http.get<any> ('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/showProfile/'+ id );
     }
      /**
      * Get the profile information i used it to get the  name of the user.
      * */
     getAuthUserprofile(): Observable<any> {
-      return this.http.get<any> ('http://ec2-52-90-5-77.compute-1.amazonaws.com/api/showProfile');
+      return this.http.get<any> ('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/showProfile');
     }
   
 }

@@ -15,11 +15,11 @@ export class ProfileService {
    /** http request to get user profile info  */
   getUserprofile(id: number): Observable<any> {
 
-    return this.http.get<any> ('http://ec2-34-205-32-73.compute-1.amazonaws.com/app'/api/showProfile?id='+ id );
+    return this.http.get<any> ('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/showProfile?id='+ id );
   }
 /** http request to get authenticated user profile info */
   getAuthUserprofile(): Observable<any> {
-    return this.http.get<any> ('http://ec2-34-205-32-73.compute-1.amazonaws.com/app'/api/showProfile');
+    return this.http.get<any> ('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/showProfile');
   }
 
   getUpdatesForuser(id: number):Observable<any>{

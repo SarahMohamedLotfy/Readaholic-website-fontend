@@ -37,10 +37,10 @@ return this.http.get(this.url+'/api/updates')
         * function addfollowing is trigeered when user follow someone
         */
    addFollowing (nb):Observable<any> {
-  return this.http.post('http://ec2-34-205-32-73.compute-1.amazonaws.com/app'/api/follow',{"user_id" : nb});
+  return this.http.post('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/follow',{"user_id" : nb});
   } 
   addBook(shelf,book_id):Observable<any>{
-    return this.http.post('http://ec2-34-205-32-73.compute-1.amazonaws.com/app'/api/shelf/add_book',{"shelf_id": shelf,
+    return this.http.post('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/shelf/add_book',{"shelf_id": shelf,
     "book_id": book_id});
   }
   /**
@@ -48,7 +48,7 @@ return this.http.get(this.url+'/api/updates')
         */
   unfollow ( user_id:number):Observable<any> {
       
-    return this.http.delete('http://ec2-34-205-32-73.compute-1.amazonaws.com/app'/api/unfollow?user_id='+ user_id);
+    return this.http.delete('http://ec2-34-205-32-73.compute-1.amazonaws.com/app/api/unfollow?user_id='+ user_id);
   }
   
   /**
